@@ -1,0 +1,44 @@
+{
+  "fengli_animation_hashes": {
+    "attack": "ec8eb1217b34e0ccb6d410df8e889086d691dc53ad29463c10dbeb7057e23c29",
+    "dash": "079a3d52b618b735dd0cf698b8e1b5e76f4c0c64050bc8efa99b7c14de43e4de",
+    "death": "8fc4e8584dc0edfd679ff3b70d3161a73313f2f2b2d867d965d337a8918f14fc",
+    "hit": "1a04393942613f01e69db9d7a9cd790486b194c8309d81416a77f0e9930f19bd",
+    "idle": "f5570145edd744c5849dd7c46c15e92db42679f7559723ee0c5edc2972c86109",
+    "overload": "5e832e5a8da91cf019218ec959aa725778433b4ede108b83cf1dccecf2063cec",
+    "run": "d98320cb0408d0c10315ba6bf941e24b759120f646ce252975efbcb961ac8b7f",
+    "thrust": "b7c910f09e079a5ef86e1878666dc831da4f749d453e49f1b23ecd2b2c275182",
+    "ultimate": "5dcb2c1b31ac06cc9ffdbb5884acaad36e5a88f9a18dadb646bcb1cd4240f4c0"
+  },
+  "unchanged_since": "7ac9746438bf81f7dc79e9d9475967616711fdef",
+  "enemies": {
+    "minion": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ],
+    "elite": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ],
+    "boss": [
+      "attack",
+      "death",
+      "heavy_attack",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ]
+  }
+}

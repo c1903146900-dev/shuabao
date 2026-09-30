@@ -1,0 +1,150 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/enemy_review.tscn"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 40,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_assets()"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "minion",
+      "elite",
+      "boss",
+      "heavy_attack"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "pose_status()"
+    },
+    "wait_after": 0.4,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "pose_status()"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(0.9)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(1.0)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"walk\",0.4)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"hit\",0.4)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"death\",0.4)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "combat_camera()"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(0.9)"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  }
+]
