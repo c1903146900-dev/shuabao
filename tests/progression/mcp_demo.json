@@ -1,0 +1,224 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/demo.tscn",
+      "root_type": "Node",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/demo.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "add_node",
+    "arguments": {
+      "type": "Label",
+      "name": "Readout",
+      "properties": {
+        "offset_left": "24",
+        "offset_top": "20",
+        "offset_right": "1250",
+        "offset_bottom": "700",
+        "theme_override_font_sizes/font_size": "18"
+      }
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/progression/demo.gd"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/main.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/demo.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_scene_tree",
+    "arguments": {},
+    "expect_text": [
+      "Readout"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "validate_script",
+    "arguments": {
+      "script_path": "res://scripts/progression/model.gd"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "update_property",
+    "arguments": {
+      "node_path": "Readout",
+      "property": "theme_override_font_sizes/font_size",
+      "value": "16"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect().suite.passed and inspect().suite.failures.is_empty()"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "probe_key(80)"
+    },
+    "expect_text": [
+      "accepted"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"buy\", {\"item\":\"component\"}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"buy\", {\"item\":\"blade\"}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"learn\", {\"slot\":\"Q\",\"candidate\":\"Q1\",\"expected_rank\":0}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"hex_refresh\", {\"milestone\":1,\"slot\":3}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"hex_refresh\", {\"milestone\":1,\"slot\":3}).reason"
+    },
+    "expect_text": [
+      "refresh_exhausted"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"hex_select\", {\"milestone\":1,\"slot\":3}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect().shop_open and inspect().snapshot.gold == 750 and inspect().snapshot.points == 5"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "issue(\"context\", {\"phase\":\"combat\"}).accepted"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "probe_key(80)"
+    },
+    "expect_text": [
+      "unsafe_phase"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]

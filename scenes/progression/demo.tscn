@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mbghi7l4hbl1"]
+
+[ext_resource type="Script" uid="uid://kx0ioqfccv7t" path="res://scripts/progression/demo.gd" id="1_nwjh5"]
+
+[node name="demo" type="Node" unique_id=2015778278]
+script = ExtResource("1_nwjh5")
+
+[node name="Readout" type="Label" parent="." unique_id=1038927005]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 1250.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 16

@@ -1,0 +1,344 @@
+{
+  "version": "progression-fixture-v1",
+  "provenance": "test_initial",
+  "source_ref": "User delegation 2026-09-30; docs/FENGLI_PROTOTYPE_SPEC.md. All economy/content values below are synthetic fixtures, NOT official content.",
+  "candidates": {
+    "P": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "Q": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "E": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "R": [
+      "R1",
+      "R2"
+    ]
+  },
+  "r_gates": [
+    6,
+    6,
+    6
+  ],
+  "xp_per_level": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "potion_policy": {
+    "normal_stack": true,
+    "mutex": "holding",
+    "provenance": "experimental_not_final"
+  },
+  "body": {
+    "cost": 50,
+    "stats": {
+      "AD": 1
+    }
+  },
+  "items": {
+    "component": {
+      "price": 100,
+      "stats": {
+        "AD": 1
+      }
+    },
+    "blade": {
+      "price": 250,
+      "components": [
+        "component"
+      ],
+      "stats": {
+        "AD": 3
+      },
+      "passive": "fixture_edge"
+    },
+    "normal": {
+      "price": 10,
+      "kind": "normal"
+    },
+    "special": {
+      "price": 20,
+      "kind": "special"
+    }
+  },
+  "hexes": {
+    "fixture_hex_00": {
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_01": {
+      "hero": "",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_02": {
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_03": {
+      "hero": "",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_04": {
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_05": {
+      "hero": "",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_06": {
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_07": {
+      "hero": "",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_08": {
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_09": {
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_10": {
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_11": {
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_12": {
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_13": {
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_14": {
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "provenance": "test_initial"
+    },
+    "fixture_hex_15": {
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "provenance": "test_initial"
+    }
+  },
+  "skill_numbers": {
+    "P1": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      }
+    ],
+    "P2": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      }
+    ],
+    "P3": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      }
+    ],
+    "Q1": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "Q2": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "Q3": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "E1": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "E2": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "E3": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      },
+      {
+        "fixture_numeric_scale": 1.3
+      },
+      {
+        "fixture_numeric_scale": 1.4
+      }
+    ],
+    "R1": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      }
+    ],
+    "R2": [
+      {
+        "fixture_numeric_scale": 1.0
+      },
+      {
+        "fixture_numeric_scale": 1.1
+      },
+      {
+        "fixture_numeric_scale": 1.2
+      }
+    ]
+  }
+}
