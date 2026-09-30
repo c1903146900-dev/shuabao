@@ -1,0 +1,78 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/combat_hud.tscn",
+      "root_type": "Control",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/ui/combat_hud.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/hud_demo.tscn",
+      "root_type": "Node3D",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/ui/hud_demo.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]
