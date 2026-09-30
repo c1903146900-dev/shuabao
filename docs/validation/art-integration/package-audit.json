@@ -1,0 +1,130 @@
+{
+  "source_commit": "239e44e0c30756aab1cfad02f279ab3736a8aa4e",
+  "tracked_files_scanned": 274,
+  "credential_findings": [],
+  "scope": "Tracked file bytes and distribution bytes; signature scan is not a proof of absence of all secrets. No environment or user credentials read.",
+  "packages": [
+    {
+      "platform": "windows",
+      "bytes": 104669584,
+      "files": [
+        {
+          "name": "shuabao-smoke.exe",
+          "bytes": 104659456,
+          "sha256": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6"
+        },
+        {
+          "name": "shuabao-smoke.pck",
+          "bytes": 10128,
+          "sha256": "caa60f1cd12d45c9ac3e6fab4ceaa8bf7bb5353ef52ffc6db20527215e7a11a3",
+          "pck": {
+            "format": 3,
+            "engine": [
+              4,
+              6,
+              3
+            ],
+            "entries": [
+              {
+                "path": ".godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn",
+                "bytes": 5657,
+                "sha256": "7af87fff6722ca759b4734abfdf330bcc910936fa73707accf48311afee99422"
+              },
+              {
+                "path": ".godot/global_script_class_cache.cfg",
+                "bytes": 8,
+                "sha256": "f61aa7ad3097022d6a9d110ca3f73fa7bb348ec2cf9a6e7c9523574dc75f5a16"
+              },
+              {
+                "path": ".godot/uid_cache.bin",
+                "bytes": 2688,
+                "sha256": "5dfdf902580dfa573837d7f29878d2cf6009d7f525222a913abfe57cc5d5a26e"
+              },
+              {
+                "path": "project.binary",
+                "bytes": 583,
+                "sha256": "8e1f00d92cec3c3e0b9ed6c0f2d7ea5132be41e4b0d14ab3b84e4ea2f3359644"
+              },
+              {
+                "path": "scenes/main.tscn.remap",
+                "bytes": 97,
+                "sha256": "e06953e0896a129b556ff2dc6ee7ab070f7032689d0d08ce8bba6f62ed084668"
+              },
+              {
+                "path": "scripts/main.gd.remap",
+                "bytes": 39,
+                "sha256": "49fa76d6d4c786bc0ffa6e2674ce7fadcd33649ece61eadbd4c2784a6d2e75c9"
+              },
+              {
+                "path": "scripts/main.gdc",
+                "bytes": 392,
+                "sha256": "671f4677856c70a26584e776101823cb31156bd515f526dedcf90fe7002e6493"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "platform": "linux",
+      "bytes": 71086040,
+      "files": [
+        {
+          "name": "shuabao-headless.pck",
+          "bytes": 10176,
+          "sha256": "26ee6422e969e48f828d845d15eb37fbf2c81fe2fd1e5181439f19a3ca36cff3",
+          "pck": {
+            "format": 3,
+            "engine": [
+              4,
+              6,
+              3
+            ],
+            "entries": [
+              {
+                "path": ".godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn",
+                "bytes": 5657,
+                "sha256": "7af87fff6722ca759b4734abfdf330bcc910936fa73707accf48311afee99422"
+              },
+              {
+                "path": ".godot/global_script_class_cache.cfg",
+                "bytes": 8,
+                "sha256": "f61aa7ad3097022d6a9d110ca3f73fa7bb348ec2cf9a6e7c9523574dc75f5a16"
+              },
+              {
+                "path": ".godot/uid_cache.bin",
+                "bytes": 2688,
+                "sha256": "5dfdf902580dfa573837d7f29878d2cf6009d7f525222a913abfe57cc5d5a26e"
+              },
+              {
+                "path": "project.binary",
+                "bytes": 631,
+                "sha256": "d47f0a0763b4beeaf33298ebb9898cc292e1e9d305cb38a5dd4aa4e33f2a9fe8"
+              },
+              {
+                "path": "scenes/main.tscn.remap",
+                "bytes": 97,
+                "sha256": "e06953e0896a129b556ff2dc6ee7ab070f7032689d0d08ce8bba6f62ed084668"
+              },
+              {
+                "path": "scripts/main.gd.remap",
+                "bytes": 39,
+                "sha256": "49fa76d6d4c786bc0ffa6e2674ce7fadcd33649ece61eadbd4c2784a6d2e75c9"
+              },
+              {
+                "path": "scripts/main.gdc",
+                "bytes": 392,
+                "sha256": "671f4677856c70a26584e776101823cb31156bd515f526dedcf90fe7002e6493"
+              }
+            ]
+          }
+        },
+        {
+          "name": "shuabao-headless.x86_64",
+          "bytes": 71075864,
+          "sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+        }
+      ]
+    }
+  ]
+}

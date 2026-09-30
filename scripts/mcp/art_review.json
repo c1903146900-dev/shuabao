@@ -1,0 +1,168 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/showcase.tscn"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 40,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_output_log",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[set_process(false), inspect_art()]"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "ultimate",
+      "death"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"idle\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"run\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"attack\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"dash\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"thrust\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"overload\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"ultimate\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"hit\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[sample_clip(\"death\",0.1), pose_evidence()]"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[players[0].set(\"speed_scale\",0.25), play_clip(\"run\")]"
+    },
+    "wait_after": 0.2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "pose_evidence()"
+    },
+    "wait_after": 0.4,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "pose_evidence()"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_output_log",
+    "arguments": {
+      "clear": false
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  }
+]

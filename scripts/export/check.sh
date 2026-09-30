@@ -16,4 +16,5 @@ app_path="$PWD/build/linux/shuabao-headless.x86_64"
 grep -q 'SHUABAO_BOOT_OK' .local/export-evidence/linux-boot.log
 if grep -Eq 'SCRIPT ERROR:|ERROR:' .local/export-evidence/linux-boot.log; then cat .local/export-evidence/linux-boot.log; exit 1; fi
 sha256sum build/windows/shuabao-smoke.exe build/windows/shuabao-smoke.pck build/linux/shuabao-headless.x86_64 build/linux/shuabao-headless.pck > .local/export-evidence/SHA256SUMS
+python3 scripts/export/audit.py
 printf '%s\n' 'PASS: two real exports, PE/ELF inspection and standalone Linux boot. Windows execution NOT RUN.'
