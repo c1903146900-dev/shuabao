@@ -19,9 +19,11 @@ func _ready() -> void:
  var sun := DirectionalLight3D.new()
  sun.rotation_degrees = Vector3(-55,-25,0)
  sun.light_energy = 0.65
+ sun.name = "ArtSun"
+ sun.shadow_blur = .2
  sun.shadow_enabled = true
- sun.shadow_bias = 0.02
- sun.shadow_normal_bias = 0.1
+ sun.shadow_bias = 0.005
+ sun.shadow_normal_bias = 0.01
  sun.directional_shadow_max_distance = 25.0
  add_child(sun)
  var camera := Camera3D.new()
@@ -44,6 +46,10 @@ func _ready() -> void:
  add_child(hero)
  hero.position = Vector3(-1,0,0)
  models.append(hero)
+ var contact := preload("res://scenes/art/foot_contact.gd").new()
+ contact.name = "FootContact"
+ add_child(contact)
+ contact.setup(hero)
  var ap := hero.find_child("AnimationPlayer",true,false) as AnimationPlayer
  if ap:
   players.append(ap)

@@ -1,0 +1,17 @@
+[
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/assets/fengli/source/fengli.blend')"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "# Run via Blender MCP after opening the existing approved Fengli .blend.\nimport bpy\nfrom pathlib import Path\nr=bpy.data.objects['Fengli']\nblade=bpy.data.materials['07 • honed silver'];p=blade.node_tree.nodes.get('Principled BSDF')\nblade.diffuse_color=(.07,.15,.19,1);p.inputs['Base Color'].default_value=blade.diffuse_color;p.inputs['Roughness'].default_value=.38;p.inputs['Metallic'].default_value=.55\nedge=bpy.data.materials.get('09 • readable silver bevel') or bpy.data.materials.new('09 • readable silver bevel')\nedge.use_nodes=True;edge.diffuse_color=(.58,.72,.73,1);p=edge.node_tree.nodes.get('Principled BSDF');p.inputs['Base Color'].default_value=edge.diffuse_color;p.inputs['Metallic'].default_value=.6;p.inputs['Roughness'].default_value=.32\nsword=bpy.data.objects['Long diamond blade']\nif edge.name not in sword.data.materials:sword.data.materials.append(edge)\nfor polygon in sword.data.polygons:polygon.material_index=1 if polygon.index in [3,7] else 0\nbpy.context.scene.frame_set(0);r.animation_data.action=bpy.data.actions['idle']\nbpy.ops.object.select_all(action='DESELECT');r.select_set(True)\nfor o in bpy.data.objects:\n if o.type=='MESH':o.select_set(True)\nbpy.context.view_layer.objects.active=r\nout=Path('/workspace/shuabao/.local/mcp-fixture/assets/fengli')\nbpy.ops.wm.save_as_mainfile(filepath=str(out/'source/fengli.blend'))\nbpy.ops.export_scene.gltf(filepath=str(out/'fengli.glb'),export_format='GLB',use_selection=True,export_animations=True,export_animation_mode='ACTIONS',export_force_sampling=True,export_frame_range=False)\nprint('FENGLI_MATERIAL_ONLY_READABILITY_UPDATE')\n"
+    }
+  }
+]
