@@ -1,0 +1,38 @@
+{
+  "art_commit": "7ac9746438bf81f7dc79e9d9475967616711fdef",
+  "merge_commit": "6dfe69ac22105b8527379f5fadedfc282b0cce55",
+  "workflow": "scripts/mcp/art_review.json",
+  "workflow_calls": 19,
+  "workflow_application_errors": 0,
+  "initial_cold_start_query": "FAIL; preserved separately",
+  "tracks_per_clip": 19,
+  "runtime_run_times": [
+    0.0790354047619,
+    0.2187714047619
+  ],
+  "library_upload": "FAIL before preparation; no IDs",
+  "checksums": {
+    "step-02-get_output_log.json": "0efa6724082805f2efcaaa7f2e86758693127a1d906f7fb0907d86921b94292d",
+    "step-08-execute_game_script.json": "1894cca5d596a1df94d6684d2f75f44f008087e5a7385e0110749194006421fe",
+    "library-upload.json": "2649aa883892fd82d35a28ff39f01db10921bac952c1784f276ac66864acfec6",
+    "step-11-execute_game_script.json": "6f77c39c2bc30fdfe6476e8203344eec08cbbe389a397c7b30d732a0990de62a",
+    "step-16-get_game_screenshot.json": "e27709e5f46644752819f69863abed67967da0d3861ca373878bcdf108b87224",
+    "step-10-execute_game_script.json": "2ee1f455414572bbe8ea194b4d2cc28ea0ec1f2b87620d2aeac3c0e4aaa9286a",
+    "failed-cold-start-query.json": "e413341bce530f20a2b8d706c5c8d1fb2b101604838724ce014b58c5755298fa",
+    "step-05-execute_game_script.json": "5af3052b3793859ae6db2a191b53b70ff7c27419294969209176f35f0a08d3bd",
+    "step-12-execute_game_script.json": "7bab01d15d091daea402571f610d9fcccbe6aab5e62040f5ec9cfd89f0fb5292",
+    "step-07-execute_game_script.json": "ee50099f4ee5df76a0f7eafffbdc4518f6af09994cc7e411642cb5951968237a",
+    "step-01-play_scene.json": "d92be10d14c40f2048efa1e383dda297558381ec5f85d68a870eeab946239734",
+    "step-16-get_game_screenshot-0.png": "9762e5776b4157e153cec7e29ded20f381d0a449411c16b42d5d5180c0795e3f",
+    "step-14-execute_game_script.json": "b1602e12cf754938f79a1ecc6b3a958da62201246f084923fe7aeb4f0384625d",
+    "step-06-execute_game_script.json": "2ae28a2430a7cd511b7123cda68e363a7fc801a322fcbe2626fa38d3f51791c5",
+    "step-18-stop_scene.json": "4a21f1c487300c4e1a24b794637709f96573f326b20ea97fba52cf0fdf8a84d7",
+    "step-09-execute_game_script.json": "c29dae3a6df0a7d402f86858bb047539509ca45578eb5e56af0122c278475b0c",
+    "step-04-execute_game_script.json": "6f2267275d1e2cdfb53d94bb5cb96242993988e4fea18c45b2d6d264db76231b",
+    "step-13-execute_game_script.json": "c6734b6f5ea21638461392a58044dc063e78913e8b456293d44344838f4f8d52",
+    "step-00-open_scene.json": "2f2d29b09b8450f62f45f3a5ebdbeb66105405c4444a97a25242c84ad62357c4",
+    "step-03-execute_game_script.json": "b2930502e2504dbe44b97029de11a364a23797d7f18dce95534b28253f238f6b",
+    "step-15-execute_game_script.json": "afbe839b648a2053006a3c8c409e8747c358c188bf81eb1a32ad53352b6d3ecd",
+    "step-17-get_output_log.json": "0efa6724082805f2efcaaa7f2e86758693127a1d906f7fb0907d86921b94292d"
+  }
+}
