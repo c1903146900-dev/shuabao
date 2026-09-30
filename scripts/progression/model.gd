@@ -143,7 +143,10 @@ func _apply(action: String, a: Dictionary) -> String:
 			if state.phase != "safe": return "unsafe_phase"
 			if action == "undo_shop":
 				if state.shop_undo.is_empty(): return "undo_boundary"
-				var undo: Dictionary = state.shop_undo.pop_back()
+				var undo: Dictionary = state.shop_undo.back()
+				# Sale proceeds may already fund irreversible body purchases.
+				if state.gold + undo.gold_delta < 0: return "insufficient_gold"
+				state.shop_undo.pop_back()
 				state.gold += undo.gold_delta
 				state.inventory = undo.inventory
 				return ""
