@@ -1,0 +1,49 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/precision_import.tscn",
+      "root_type": "Node3D",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/import_quality.gd",
+      "content": "@tool\nextends Node\nfunc configure() -> String:\n var config := ConfigFile.new()\n var path := \"res://assets/fengli/fengli.glb.import\"\n assert(config.load(path)==OK)\n config.set_value(\"params\",\"_subresources\",{\"nodes\":{\"PATH:AnimationPlayer\":{\"optimizer/enabled\":false}}})\n assert(config.save(path)==OK)\n call_deferred(\"reimport\")\n return \"PRECISE_IMPORT_REQUESTED\"\nfunc reimport() -> void:\n EditorInterface.get_resource_filesystem().reimport_files(PackedStringArray([\"res://assets/fengli/fengli.glb\"]))\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "add_node",
+    "arguments": {
+      "type": "Node",
+      "name": "PrecisionImport",
+      "parent_path": "."
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": "PrecisionImport",
+      "script_path": "res://scenes/art/import_quality.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_editor_script",
+    "arguments": {
+      "code": "get_node(\"PrecisionImport\").configure()"
+    },
+    "wait_after": 10
+  }
+]
