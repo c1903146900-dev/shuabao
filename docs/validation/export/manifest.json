@@ -1,0 +1,29 @@
+{
+  "built_source_commit": "20be58282ad9a9f9ba93c89d11e7a207b6ce1511",
+  "windows_export": "PASS",
+  "windows_PE_x86_64": "PASS",
+  "windows_startup": "NOT_RUN: no Windows runtime; no Wine installed",
+  "linux_export": "PASS",
+  "linux_ELF_x86_64": "PASS",
+  "linux_standalone_no_display_startup": "PASS: SHUABAO_BOOT_OK, exit 0, cwd /tmp, no --headless argument",
+  "pck_headers": "PASS",
+  "server_network_gameplay": "NOT_IMPLEMENTED",
+  "artifacts": {
+    "build/windows/shuabao-smoke.exe": {
+      "bytes": 104659456,
+      "sha256": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6"
+    },
+    "build/windows/shuabao-smoke.pck": {
+      "bytes": 7808,
+      "sha256": "f4edbaf87cf98338d9991f282331a22f39f270c5fe310bf33d4bea754c338933"
+    },
+    "build/linux/shuabao-headless.x86_64": {
+      "bytes": 71075864,
+      "sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+    },
+    "build/linux/shuabao-headless.pck": {
+      "bytes": 7856,
+      "sha256": "fe0e5a7282b09a7c2b5e86e860f3f703732b8b84d3dfc8700622132c1dcf178e"
+    }
+  }
+}

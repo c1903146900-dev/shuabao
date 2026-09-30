@@ -1,5 +1,7 @@
 # 可复用的标准 MCP 客户端
 
+> 最新：骨骼 GLB 跨应用播放、干净 clone 和两平台实际导出已验证，见 [集成验收](INTEGRATION_VALIDATION.md) 与 [完整复用步骤](CLOUD_REPRO.md)。
+
 本文件取代早期“必须另开 CLI/等待平台插件”的接入建议。托管助手仍没有原生 Godot/Blender 工具菜单，但本云环境可以通过 shell 启动官方 Python MCP SDK 客户端；这是用户明确允许的标准客户端入口。
 
 ## 实际调用路径
@@ -43,7 +45,7 @@ bash scripts/mcp/setup.sh
 - Godot get_project_info 读到实际 4.6.3 编辑器和隔离项目路径；Blender get_scene_info 读到默认场景。Blender 版本通过 MCP execute_blender_code 只读查询确认为 4.3.2。
 - Godot 通过 MCP 添加 AnimationPlayer，写入 0/1/2 秒三帧位置动画，保存并打开；另一次完全重启编辑器后仍读到中间帧 1 秒 / x=2。运行时两次查询位置变化，实际 MCP 游戏截图已查看。
 - Blender 通过 MCP 创建立方体探针，在 1/12/24 帧写 x=0/3/0，保存 .blend，重开后断言关键帧和值正确；MCP 视口截图可见探针。
-- 两应用的 GUI、截图与动画往返通过，但没有战斗原型、生产资产或性能验收。导出模板仍未安装，没有实际 Windows/Linux 导出。
+- 两应用的 GUI、截图与动画往返通过，但没有战斗原型、生产资产或性能验收。此段为最初验收范围；后续已安装官方模板并完成 Windows/Linux 实际导出，结果见上方集成验收。
 
 已知问题必须保留：Blender get_addon_status 返回缺少 `blender_mcp.config`，虽然 isError=false，仍明确记失败；未修改上游代码掩盖该问题。可通过其它已经验证的查询/制作工具工作，不能将所有状态工具或第三方集成宣称为通过。
 

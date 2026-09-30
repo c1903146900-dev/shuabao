@@ -1,5 +1,7 @@
 # 初始化状态与交接
 
+> 最新集成状态：骨骼 GLB 经 MCP 导入 Godot 播放、干净 clone 复用、Windows/Linux 实际导出通过；Linux 独立无头启动通过，Windows 启动未运行。见 [集成验收](INTEGRATION_VALIDATION.md)。下文为历史阶段记录。
+
 > 最新接入结果：标准 MCP SDK 客户端已完成两服务握手、工具调用和动画往返，见 [可复用 MCP 客户端](MCP_CLIENT.md)。下文保留此前阶段记录。
 
 > 后续复核：图形入口与部分网络访问已验证可用；MCP 仍待宿主接入。最新证据见 [MCP 与图形接入复核](MCP_HANDOFF.md)。以下保留初始化阶段的历史结果。
