@@ -1,0 +1,250 @@
+[
+  {
+    "window_size": "(1920, 1080)",
+    "checks": [
+      {
+        "name": "adapter deep copies snapshot",
+        "passed": true
+      },
+      {
+        "name": "feedback cannot change HP",
+        "passed": true
+      },
+      {
+        "name": "world click reaches demo attack",
+        "passed": true
+      },
+      {
+        "name": "skill button emits request without attack passthrough",
+        "passed": true
+      },
+      {
+        "name": "mouse opens allocation",
+        "passed": true
+      },
+      {
+        "name": "initial panel focus",
+        "passed": true
+      },
+      {
+        "name": "allocation never pauses demo clock or cooldown",
+        "passed": true
+      },
+      {
+        "name": "tab navigates within allocation",
+        "passed": true
+      },
+      {
+        "name": "modal background blocks mouse attack",
+        "passed": true
+      },
+      {
+        "name": "modal keyboard does not issue ability",
+        "passed": true
+      },
+      {
+        "name": "escape closes and restores focus",
+        "passed": true
+      },
+      {
+        "name": "12 reopen/cancel cycles stable",
+        "passed": true
+      },
+      {
+        "name": "R pre-level-6 blocked with reason",
+        "passed": true
+      },
+      {
+        "name": "zero-point upgrade blocked",
+        "passed": true
+      },
+      {
+        "name": "unlearned Q/E/R/P choices total eleven",
+        "passed": true
+      },
+      {
+        "name": "18-point full allocation 5/5/3/3 leaves zero",
+        "passed": true
+      },
+      {
+        "name": "R costs 1/2/2 represented",
+        "passed": true
+      },
+      {
+        "name": "full ranks block further upgrade",
+        "passed": true
+      },
+      {
+        "name": "six equipment slots include medicine",
+        "passed": true
+      },
+      {
+        "name": "request includes actor/revision/id/expected rank",
+        "passed": true
+      },
+      {
+        "name": "result visible with fixture label",
+        "passed": true
+      },
+      {
+        "name": "result panel traps tab focus",
+        "passed": true
+      },
+      {
+        "name": "fixture end freezes cooldown and HP",
+        "passed": true
+      },
+      {
+        "name": "fixture undo restores only points/ranks",
+        "passed": true
+      },
+      {
+        "name": "keyboard selects second initial Q candidate",
+        "passed": true
+      },
+      {
+        "name": "keyboard learning emits Q2 and renders authoritative response",
+        "passed": true
+      },
+      {
+        "name": "keyboard activates close button",
+        "passed": true
+      },
+      {
+        "name": "undo newly learned fixture skill restores unlearned label",
+        "passed": true
+      },
+      {
+        "name": "bundled font contains required Chinese glyphs",
+        "passed": true
+      }
+    ],
+    "count": 29,
+    "failures": 0,
+    "scope": "UI fixture only; no real combat integration"
+  },
+  {
+    "window_size": "(960, 540)",
+    "checks": [
+      {
+        "name": "adapter deep copies snapshot",
+        "passed": true
+      },
+      {
+        "name": "feedback cannot change HP",
+        "passed": true
+      },
+      {
+        "name": "world click reaches demo attack",
+        "passed": true
+      },
+      {
+        "name": "skill button emits request without attack passthrough",
+        "passed": true
+      },
+      {
+        "name": "mouse opens allocation",
+        "passed": true
+      },
+      {
+        "name": "initial panel focus",
+        "passed": true
+      },
+      {
+        "name": "allocation never pauses demo clock or cooldown",
+        "passed": true
+      },
+      {
+        "name": "tab navigates within allocation",
+        "passed": true
+      },
+      {
+        "name": "modal background blocks mouse attack",
+        "passed": true
+      },
+      {
+        "name": "modal keyboard does not issue ability",
+        "passed": true
+      },
+      {
+        "name": "escape closes and restores focus",
+        "passed": true
+      },
+      {
+        "name": "12 reopen/cancel cycles stable",
+        "passed": true
+      },
+      {
+        "name": "R pre-level-6 blocked with reason",
+        "passed": true
+      },
+      {
+        "name": "zero-point upgrade blocked",
+        "passed": true
+      },
+      {
+        "name": "unlearned Q/E/R/P choices total eleven",
+        "passed": true
+      },
+      {
+        "name": "18-point full allocation 5/5/3/3 leaves zero",
+        "passed": true
+      },
+      {
+        "name": "R costs 1/2/2 represented",
+        "passed": true
+      },
+      {
+        "name": "full ranks block further upgrade",
+        "passed": true
+      },
+      {
+        "name": "six equipment slots include medicine",
+        "passed": true
+      },
+      {
+        "name": "request includes actor/revision/id/expected rank",
+        "passed": true
+      },
+      {
+        "name": "result visible with fixture label",
+        "passed": true
+      },
+      {
+        "name": "result panel traps tab focus",
+        "passed": true
+      },
+      {
+        "name": "fixture end freezes cooldown and HP",
+        "passed": true
+      },
+      {
+        "name": "fixture undo restores only points/ranks",
+        "passed": true
+      },
+      {
+        "name": "keyboard selects second initial Q candidate",
+        "passed": true
+      },
+      {
+        "name": "keyboard learning emits Q2 and renders authoritative response",
+        "passed": true
+      },
+      {
+        "name": "keyboard activates close button",
+        "passed": true
+      },
+      {
+        "name": "undo newly learned fixture skill restores unlearned label",
+        "passed": true
+      },
+      {
+        "name": "bundled font contains required Chinese glyphs",
+        "passed": true
+      }
+    ],
+    "count": 29,
+    "failures": 0,
+    "scope": "UI fixture only; no real combat integration"
+  }
+]
