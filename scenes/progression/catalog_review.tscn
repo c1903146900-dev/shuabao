@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c61ugsafptfhd"]
+
+[ext_resource type="Script" uid="uid://druiog2grneb6" path="res://scripts/progression/catalog_demo.gd" id="1_7wf5b"]
+
+[node name="catalog_review" type="Node" unique_id=1368984445]
+script = ExtResource("1_7wf5b")
+
+[node name="Readout" type="Label" parent="." unique_id=1010932230]
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 1260.0
+offset_bottom = 715.0
+theme_override_font_sizes/font_size = 16

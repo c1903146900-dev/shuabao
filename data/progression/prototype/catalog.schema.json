@@ -1,0 +1,808 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shuabao prototype catalog v2 (tunable, not historical final values)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "provenance",
+    "source_ref",
+    "candidates",
+    "r_gates",
+    "profile",
+    "design_notice",
+    "schema_version",
+    "xp_per_level",
+    "potion_policy",
+    "items",
+    "hexes",
+    "passives",
+    "policies",
+    "body",
+    "stat_units"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^progression-prototype-"
+    },
+    "provenance": {
+      "const": "new_tunable_initial"
+    },
+    "source_ref": {
+      "const": "User source extraction 2026-09-30"
+    },
+    "candidates": {
+      "const": {
+        "P": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "Q": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "E": [
+          "E1",
+          "E2",
+          "E3"
+        ],
+        "R": [
+          "R1",
+          "R2"
+        ]
+      }
+    },
+    "r_gates": {
+      "const": [
+        6,
+        null,
+        null
+      ]
+    },
+    "profile": {
+      "const": "playable_prototype"
+    },
+    "design_notice": {
+      "const": "新增可调初值，非历史确认定值"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "xp_per_level": {
+      "type": "array",
+      "minItems": 17,
+      "maxItems": 17,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "potion_policy": {
+      "const": {
+        "normal_stack": true,
+        "mutex": "holding",
+        "provenance": "experimental_not_final",
+        "source_ref": "round1 explicit prototype policy"
+      }
+    },
+    "items": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "prototype_initial",
+              "unsupported"
+            ]
+          },
+          "provenance": {
+            "const": "new_tunable_initial"
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "design_notice": {
+            "const": "新增可调初值，非历史确认定值"
+          },
+          "unresolved": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "release_ready": {
+            "const": false
+          },
+          "required_hooks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.v1$"
+            }
+          },
+          "tier": {
+            "enum": [
+              "component",
+              "intermediate",
+              "complete",
+              "consumable"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "equipment",
+              "normal",
+              "special"
+            ]
+          },
+          "price": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "components": {
+            "type": "array",
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            }
+          },
+          "combine_fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "AD": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "AP": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "attack_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "crit_chance": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "cooldown_reduction": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "max_hp": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "defense": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "move_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "lifesteal": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "tenacity": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "penetration": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "hp_regen": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "passive": {
+            "type": "string"
+          },
+          "recovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mode",
+              "amount",
+              "allowed_phases",
+              "overheal",
+              "refresh_cooldowns"
+            ],
+            "properties": {
+              "mode": {
+                "const": "instant_max_hp_fraction"
+              },
+              "amount": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "allowed_phases": {
+                "const": [
+                  "safe"
+                ]
+              },
+              "overheal": {
+                "const": "discard"
+              },
+              "refresh_cooldowns": {
+                "const": false
+              }
+            }
+          },
+          "mutex_group": {
+            "const": "health_potion"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "provenance",
+          "source_ref",
+          "design_notice",
+          "unresolved",
+          "release_ready",
+          "required_hooks",
+          "tier",
+          "kind",
+          "price",
+          "components",
+          "combine_fee",
+          "stats",
+          "passive"
+        ]
+      }
+    },
+    "hexes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "prototype_initial",
+              "unsupported"
+            ]
+          },
+          "provenance": {
+            "const": "new_tunable_initial"
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "design_notice": {
+            "const": "新增可调初值，非历史确认定值"
+          },
+          "unresolved": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "release_ready": {
+            "const": false
+          },
+          "required_hooks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.v1$"
+            }
+          },
+          "hero": {
+            "enum": [
+              "",
+              "fengli"
+            ]
+          },
+          "requires": {
+            "enum": [
+              "",
+              "P",
+              "Q",
+              "E",
+              "R",
+              "P1",
+              "P2",
+              "P3",
+              "Q1",
+              "Q2",
+              "Q3",
+              "E1",
+              "E2",
+              "E3",
+              "R1",
+              "R2"
+            ]
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "effect_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "AD": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "AP": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "attack_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "crit_chance": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "cooldown_reduction": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "max_hp": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "defense": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "move_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "lifesteal": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "tenacity": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "penetration": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "hp_regen": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "provenance",
+          "source_ref",
+          "design_notice",
+          "unresolved",
+          "release_ready",
+          "required_hooks",
+          "hero",
+          "requires",
+          "weight",
+          "effect_key",
+          "stats"
+        ]
+      }
+    },
+    "passives": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "prototype_initial",
+              "unsupported"
+            ]
+          },
+          "provenance": {
+            "const": "new_tunable_initial"
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "design_notice": {
+            "const": "新增可调初值，非历史确认定值"
+          },
+          "unresolved": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "release_ready": {
+            "const": false
+          },
+          "required_hooks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.v1$"
+            }
+          },
+          "effect_key": {
+            "type": "string"
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "AD": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "AP": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "attack_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "crit_chance": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "cooldown_reduction": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "max_hp": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "defense": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "move_speed": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "lifesteal": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "tenacity": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "penetration": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "hp_regen": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "provenance",
+          "source_ref",
+          "design_notice",
+          "unresolved",
+          "release_ready",
+          "required_hooks",
+          "effect_key",
+          "stats",
+          "description"
+        ]
+      }
+    },
+    "policies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sale_rounding",
+        "recipe_purchase",
+        "duplicate_passive",
+        "hex_seen_weight",
+        "hex_unlearned_weight_multiplier",
+        "body_distinct_choices",
+        "body_pending",
+        "special_inventory",
+        "special_reset",
+        "healing_phase"
+      ],
+      "properties": {
+        "sale_rounding": {
+          "const": "floor_integer_gold"
+        },
+        "recipe_purchase": {
+          "const": "explicit_owned_components"
+        },
+        "duplicate_passive": {
+          "const": "unique_effect_key"
+        },
+        "hex_seen_weight": {
+          "const": "base/(1+seen)"
+        },
+        "hex_unlearned_weight_multiplier": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "body_distinct_choices": {
+          "const": true
+        },
+        "body_pending": {
+          "const": "block_next_purchase_keep_until_selected"
+        },
+        "special_inventory": {
+          "const": "round1_consumed_unit_not_refilling_container"
+        },
+        "special_reset": {
+          "const": "new_stable_combat_level_id_only"
+        },
+        "healing_phase": {
+          "const": "safe_only_trial"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "prototype_initial",
+            "unsupported"
+          ]
+        },
+        "provenance": {
+          "const": "new_tunable_initial"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "design_notice": {
+          "const": "新增可调初值，非历史确认定值"
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "release_ready": {
+          "const": false
+        },
+        "required_hooks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.v1$"
+          }
+        },
+        "mode": {
+          "const": "choose_three"
+        },
+        "cost": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "outcomes": {
+          "type": "object",
+          "minProperties": 3,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "prototype_initial",
+                  "unsupported"
+                ]
+              },
+              "provenance": {
+                "const": "new_tunable_initial"
+              },
+              "source_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "design_notice": {
+                "const": "新增可调初值，非历史确认定值"
+              },
+              "unresolved": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "release_ready": {
+                "const": false
+              },
+              "required_hooks": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.v1$"
+                }
+              },
+              "stats": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "AD": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "AP": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "attack_speed": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "crit_chance": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "cooldown_reduction": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "max_hp": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "defense": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "move_speed": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "lifesteal": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "tenacity": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "penetration": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "hp_regen": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "minProperties": 1,
+                "maxProperties": 1
+              },
+              "weight": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "name",
+              "status",
+              "provenance",
+              "source_ref",
+              "design_notice",
+              "unresolved",
+              "release_ready",
+              "required_hooks",
+              "stats",
+              "weight"
+            ]
+          }
+        }
+      },
+      "required": [
+        "name",
+        "status",
+        "provenance",
+        "source_ref",
+        "design_notice",
+        "unresolved",
+        "release_ready",
+        "required_hooks",
+        "mode",
+        "cost",
+        "outcomes"
+      ]
+    },
+    "stat_units": {
+      "const": {
+        "AD": "flat",
+        "AP": "flat",
+        "attack_speed": "base_fraction",
+        "crit_chance": "fraction",
+        "cooldown_reduction": "fraction",
+        "max_hp": "flat",
+        "defense": "flat",
+        "move_speed": "base_fraction",
+        "lifesteal": "fraction",
+        "tenacity": "fraction",
+        "penetration": "flat",
+        "hp_regen": "hp_per_combat_second"
+      }
+    }
+  }
+}

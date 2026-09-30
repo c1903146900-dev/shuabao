@@ -1,0 +1,1797 @@
+{
+  "version": "progression-prototype-v2",
+  "provenance": "new_tunable_initial",
+  "source_ref": "User source extraction 2026-09-30",
+  "candidates": {
+    "P": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "Q": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "E": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "R": [
+      "R1",
+      "R2"
+    ]
+  },
+  "r_gates": [
+    6,
+    null,
+    null
+  ],
+  "profile": "playable_prototype",
+  "design_notice": "新增可调初值，非历史确认定值",
+  "schema_version": 2,
+  "xp_per_level": [
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300,
+    325,
+    350,
+    375,
+    400,
+    425,
+    450,
+    475,
+    500
+  ],
+  "potion_policy": {
+    "normal_stack": true,
+    "mutex": "holding",
+    "provenance": "experimental_not_final",
+    "source_ref": "round1 explicit prototype policy"
+  },
+  "items": {
+    "iron_blade": {
+      "name": "铁刃",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "AD": 8
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1"
+      ]
+    },
+    "secret_tome": {
+      "name": "秘典",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "AP": 12
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AP.v1"
+      ]
+    },
+    "mainspring": {
+      "name": "机簧",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "attack_speed": 0.12
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1"
+      ]
+    },
+    "sharp_lens": {
+      "name": "锐镜",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "crit_chance": 0.08
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.crit_chance.v1"
+      ]
+    },
+    "cooling_core": {
+      "name": "冷凝核心",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 550,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "cooldown_reduction": 0.06
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.cooldown_reduction.v1"
+      ]
+    },
+    "blood_crystal": {
+      "name": "血晶",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "max_hp": 100
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1"
+      ]
+    },
+    "alloy_plate": {
+      "name": "合金甲片",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "defense": 10
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.defense.v1"
+      ]
+    },
+    "wind_boots": {
+      "name": "风靴组件",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "move_speed": 0.05
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1"
+      ]
+    },
+    "blood_pouch": {
+      "name": "血囊",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 600,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "lifesteal": 0.04
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.lifesteal.v1"
+      ]
+    },
+    "steady_ring": {
+      "name": "定心环",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 400,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "tenacity": 0.1
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.tenacity.v1"
+      ]
+    },
+    "drill_core": {
+      "name": "钻芯",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 550,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "penetration": 8
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.penetration.v1"
+      ]
+    },
+    "living_tissue": {
+      "name": "活性组织",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T94 component name/stat mapping; amount/price NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "component",
+      "kind": "equipment",
+      "price": 400,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {
+        "hp_regen": 2
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.hp_regen.v1"
+      ]
+    },
+    "piercing_core": {
+      "name": "穿锋组件",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "intermediate",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "iron_blade",
+        "drill_core"
+      ],
+      "combine_fee": 100,
+      "stats": {
+        "AD": 12,
+        "penetration": 10
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1",
+        "stat.penetration.v1"
+      ]
+    },
+    "quick_frame": {
+      "name": "疾动组件",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "intermediate",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "mainspring",
+        "wind_boots"
+      ],
+      "combine_fee": 150,
+      "stats": {
+        "attack_speed": 0.18,
+        "move_speed": 0.06
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1",
+        "stat.move_speed.v1"
+      ]
+    },
+    "guard_frame": {
+      "name": "护持组件",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "intermediate",
+      "kind": "equipment",
+      "price": 1150,
+      "components": [
+        "blood_crystal",
+        "alloy_plate"
+      ],
+      "combine_fee": 150,
+      "stats": {
+        "max_hp": 150,
+        "defense": 14
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1",
+        "stat.defense.v1"
+      ]
+    },
+    "duelist_edge": {
+      "name": "决斗锋刃",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2400,
+      "components": [
+        "iron_blade",
+        "sharp_lens"
+      ],
+      "combine_fee": 1450,
+      "stats": {
+        "AD": 32,
+        "crit_chance": 0.18
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1",
+        "stat.crit_chance.v1"
+      ]
+    },
+    "thrust_spike": {
+      "name": "突刺尖锋",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2600,
+      "components": [
+        "piercing_core",
+        "cooling_core"
+      ],
+      "combine_fee": 950,
+      "stats": {
+        "AD": 28,
+        "penetration": 18,
+        "cooldown_reduction": 0.08
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1",
+        "stat.penetration.v1",
+        "stat.cooldown_reduction.v1"
+      ]
+    },
+    "rapid_blade": {
+      "name": "疾攻薄刃",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2500,
+      "components": [
+        "quick_frame",
+        "iron_blade"
+      ],
+      "combine_fee": 950,
+      "stats": {
+        "AD": 18,
+        "attack_speed": 0.32,
+        "move_speed": 0.06
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1",
+        "stat.attack_speed.v1",
+        "stat.move_speed.v1"
+      ]
+    },
+    "bastion_shell": {
+      "name": "坚壁战壳",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2700,
+      "components": [
+        "guard_frame",
+        "steady_ring"
+      ],
+      "combine_fee": 1150,
+      "stats": {
+        "max_hp": 360,
+        "defense": 30,
+        "tenacity": 0.2
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1",
+        "stat.defense.v1",
+        "stat.tenacity.v1"
+      ]
+    },
+    "sanguine_edge": {
+      "name": "续战血锋",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2800,
+      "components": [
+        "iron_blade",
+        "blood_pouch"
+      ],
+      "combine_fee": 1750,
+      "stats": {
+        "AD": 24,
+        "lifesteal": 0.12
+      },
+      "passive": "sustain_tissue",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1",
+        "stat.lifesteal.v1"
+      ]
+    },
+    "living_shell": {
+      "name": "活性护壳",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2600,
+      "components": [
+        "guard_frame",
+        "living_tissue"
+      ],
+      "combine_fee": 1050,
+      "stats": {
+        "max_hp": 280,
+        "defense": 18
+      },
+      "passive": "sustain_tissue",
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1",
+        "stat.defense.v1"
+      ]
+    },
+    "focused_tome": {
+      "name": "凝思法典",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2400,
+      "components": [
+        "secret_tome",
+        "cooling_core"
+      ],
+      "combine_fee": 1400,
+      "stats": {
+        "AP": 48,
+        "cooldown_reduction": 0.16
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.AP.v1",
+        "stat.cooldown_reduction.v1"
+      ]
+    },
+    "steady_stride": {
+      "name": "稳步护具",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "complete",
+      "kind": "equipment",
+      "price": 2500,
+      "components": [
+        "wind_boots",
+        "steady_ring",
+        "blood_crystal"
+      ],
+      "combine_fee": 1150,
+      "stats": {
+        "move_speed": 0.12,
+        "tenacity": 0.25,
+        "max_hp": 220
+      },
+      "passive": "",
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1",
+        "stat.tenacity.v1",
+        "stat.max_hp.v1"
+      ]
+    },
+    "normal_tonic": {
+      "name": "普通血瓶·原型",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "confirmed categories and limits; values NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "consumable",
+      "kind": "normal",
+      "price": 75,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {},
+      "passive": "",
+      "required_hooks": [
+        "recovery.v1"
+      ],
+      "recovery": {
+        "mode": "instant_max_hp_fraction",
+        "amount": 0.18,
+        "allowed_phases": [
+          "safe"
+        ],
+        "overheal": "discard",
+        "refresh_cooldowns": false
+      },
+      "mutex_group": "health_potion"
+    },
+    "special_tonic": {
+      "name": "特殊补血药·原型",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "confirmed categories and limits; values NEW",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "tier": "consumable",
+      "kind": "special",
+      "price": 140,
+      "components": [],
+      "combine_fee": 0,
+      "stats": {},
+      "passive": "",
+      "required_hooks": [
+        "recovery.v1"
+      ],
+      "recovery": {
+        "mode": "instant_max_hp_fraction",
+        "amount": 0.3,
+        "allowed_phases": [
+          "safe"
+        ],
+        "overheal": "discard",
+        "refresh_cooldowns": false
+      },
+      "mutex_group": "health_potion"
+    }
+  },
+  "hexes": {
+    "public_sharpen": {
+      "name": "锋锐训练",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_sharpen",
+      "stats": {
+        "AD": 10
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_study": {
+      "name": "秘法研习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_study",
+      "stats": {
+        "AP": 16
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.AP.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_tempo": {
+      "name": "迅捷节拍",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_tempo",
+      "stats": {
+        "attack_speed": 0.15
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_precision": {
+      "name": "精准视线",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_precision",
+      "stats": {
+        "crit_chance": 0.1
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.crit_chance.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_focus": {
+      "name": "凝神呼吸",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_focus",
+      "stats": {
+        "cooldown_reduction": 0.08
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.cooldown_reduction.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_vitality": {
+      "name": "厚实根基",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_vitality",
+      "stats": {
+        "max_hp": 150
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_guard": {
+      "name": "合金意志",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_guard",
+      "stats": {
+        "defense": 15
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.defense.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_stride": {
+      "name": "轻步远行",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_stride",
+      "stats": {
+        "move_speed": 0.07
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_sustain": {
+      "name": "血脉回流",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_sustain",
+      "stats": {
+        "lifesteal": 0.05
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.lifesteal.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_poise": {
+      "name": "安定意志",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_poise",
+      "stats": {
+        "tenacity": 0.15
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.tenacity.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_pierce": {
+      "name": "破障钻研",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_pierce",
+      "stats": {
+        "penetration": 12
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.penetration.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "public_renew": {
+      "name": "活性脉搏",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "public_renew",
+      "stats": {
+        "hp_regen": 3
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.hp_regen.v1"
+      ],
+      "description": "纯属性原型项；不是同名机制草案的替代实现"
+    },
+    "fengli_sword_drill": {
+      "name": "风厉·剑锋练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_sword_drill",
+      "stats": {
+        "AD": 12
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_footwork": {
+      "name": "风厉·步法练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_footwork",
+      "stats": {
+        "move_speed": 0.09
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_quick_draw": {
+      "name": "风厉·快剑练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_quick_draw",
+      "stats": {
+        "attack_speed": 0.18
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_weakpoint": {
+      "name": "风厉·破隙练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_weakpoint",
+      "stats": {
+        "penetration": 14
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.penetration.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_poise": {
+      "name": "风厉·定心练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_poise",
+      "stats": {
+        "tenacity": 0.18
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.tenacity.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_endurance": {
+      "name": "风厉·持剑耐力",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_endurance",
+      "stats": {
+        "max_hp": 180
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_keen_eye": {
+      "name": "风厉·剑眼练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_keen_eye",
+      "stats": {
+        "crit_chance": 0.12
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.crit_chance.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_breath": {
+      "name": "风厉·回息练习",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "fengli_breath",
+      "stats": {
+        "hp_regen": 4
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.hp_regen.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_q1_training": {
+      "name": "风厉·突刺基础训练",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "effect_key": "fengli_q1_training",
+      "stats": {
+        "AD": 16
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_q2_training": {
+      "name": "风厉·突袭基础训练",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q2",
+      "weight": 100,
+      "effect_key": "fengli_q2_training",
+      "stats": {
+        "attack_speed": 0.22
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_e2_training": {
+      "name": "风厉·旋步基础训练",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "E2",
+      "weight": 100,
+      "effect_key": "fengli_e2_training",
+      "stats": {
+        "move_speed": 0.11
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "fengli_e3_training": {
+      "name": "风厉·超载基础训练",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "E3",
+      "weight": 100,
+      "effect_key": "fengli_e3_training",
+      "stats": {
+        "lifesteal": 0.07
+      },
+      "required_hooks": [
+        "stats.v1",
+        "stat.lifesteal.v1"
+      ],
+      "description": "学习对应技能后提供通用属性；不改技能机制；无依赖时英雄通用"
+    },
+    "draft_public_dash_haste": {
+      "name": "疾驰",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_dash_haste",
+      "stats": {},
+      "required_hooks": [
+        "dash_cooldown.v1"
+      ],
+      "description": "冲刺冷却减少25%；与通用CDR组合未闭合"
+    },
+    "draft_public_hunt": {
+      "name": "狩猎",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_hunt",
+      "stats": {},
+      "required_hooks": [
+        "kill_buff.v1"
+      ],
+      "description": "击杀后3秒提高移速；增幅/叠加/归因待定"
+    },
+    "draft_public_combo": {
+      "name": "连击",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_combo",
+      "stats": {},
+      "required_hooks": [
+        "same_target_attack.v1"
+      ],
+      "description": "连续普攻同目标逐渐增伤；层数/保留待定"
+    },
+    "draft_public_aftershock": {
+      "name": "余震",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_aftershock",
+      "stats": {},
+      "required_hooks": [
+        "dash_end_damage.v1"
+      ],
+      "description": "冲刺结束范围伤害；伤害/半径待定"
+    },
+    "draft_public_double_cast": {
+      "name": "双重施法",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_double_cast",
+      "stats": {},
+      "required_hooks": [
+        "repeat_cast.v1"
+      ],
+      "description": "周期性下一次Q额外释放；重施适配待定"
+    },
+    "draft_public_hunt_time": {
+      "name": "猎杀时刻",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_hunt_time",
+      "stats": {},
+      "required_hooks": [
+        "target_hp_cooldown.v1"
+      ],
+      "description": "精英/Boss低血时加快技能冷却；关联/阈值待定"
+    },
+    "draft_public_unlimited": {
+      "name": "无限火力",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_unlimited",
+      "stats": {},
+      "required_hooks": [
+        "skill_damage_cooldown.v1"
+      ],
+      "description": "降低技能伤害并缩短冷却；量值待定"
+    },
+    "draft_public_glass": {
+      "name": "玻璃大炮",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_glass",
+      "stats": {},
+      "required_hooks": [
+        "final_damage.v1"
+      ],
+      "description": "降低最大生命并提高伤害；量值待定"
+    },
+    "draft_public_magazine": {
+      "name": "第二套弹匣",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_magazine",
+      "stats": {},
+      "required_hooks": [
+        "ability_charges.v1"
+      ],
+      "description": "合法充能技能最大充能+1；风厉无已确认合格基础技能"
+    },
+    "draft_public_ultimate_fever": {
+      "name": "终极狂热",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_ultimate_fever",
+      "stats": {},
+      "required_hooks": [
+        "r_spent_points_buff.v1"
+      ],
+      "description": "R花点越多释放后Q/E强化越强；按实际1/2/2成本；参数待定"
+    },
+    "draft_public_blood_debt": {
+      "name": "血债",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_blood_debt",
+      "stats": {},
+      "required_hooks": [
+        "low_hp_lifesteal.v1"
+      ],
+      "description": "低血提高吸血；曲线待定"
+    },
+    "draft_public_overclock": {
+      "name": "超频",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_overclock",
+      "stats": {},
+      "required_hooks": [
+        "cast_sequence.v1"
+      ],
+      "description": "连续三技能返还Q/E冷却；窗口/计数待定"
+    },
+    "draft_public_alchemy": {
+      "name": "炼金术",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T54/T76 retained mechanism draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_public_alchemy",
+      "stats": {},
+      "required_hooks": [
+        "potion_buff.v1"
+      ],
+      "description": "降低血瓶治疗并短时提高AD/AP；特殊药范围待定"
+    },
+    "draft_fengli_blood_sharpen": {
+      "name": "饮血磨锋",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "effect_key": "draft_fengli_blood_sharpen",
+      "stats": {},
+      "required_hooks": [
+        "q1_kill_growth.v1"
+      ],
+      "description": "Q1击杀提高本局Q1基础伤害；幅度待定"
+    },
+    "draft_fengli_killing_intent": {
+      "name": "杀意未歇",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q",
+      "weight": 100,
+      "effect_key": "draft_fengli_killing_intent",
+      "stats": {},
+      "required_hooks": [
+        "q_hit_kill_buff.v1"
+      ],
+      "description": "Q命中/击杀短时攻速；幅度/持续待定"
+    },
+    "draft_fengli_half_stacks": {
+      "name": "一步十杀",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q1",
+      "weight": 100,
+      "effect_key": "draft_fengli_half_stacks",
+      "stats": {},
+      "required_hooks": [
+        "q1_stack_retention.v1"
+      ],
+      "aliases": [
+        "剑走偏锋"
+      ],
+      "description": "Q1四层未杀掉至两层；之后未杀行为待定；别名剑走偏锋同一效果"
+    },
+    "draft_fengli_no_escape": {
+      "name": "无处可逃",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "Q2",
+      "weight": 100,
+      "effect_key": "draft_fengli_no_escape",
+      "stats": {},
+      "required_hooks": [
+        "q2_repeat_target.v1"
+      ],
+      "description": "Q2同目标更多突袭且伤害递减；次数/递减待定"
+    },
+    "draft_fengli_afterimage": {
+      "name": "留影",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "E2",
+      "weight": 100,
+      "effect_key": "draft_fengli_afterimage",
+      "stats": {},
+      "required_hooks": [
+        "e2_return.v1"
+      ],
+      "description": "E2留影后再次E返回；时间/代价待定"
+    },
+    "draft_fengli_battle_frenzy": {
+      "name": "越战越狂",
+      "status": "unsupported",
+      "provenance": "new_tunable_initial",
+      "source_ref": "T76 retained Fengli draft",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [
+        "combat_hook",
+        "trigger_semantics",
+        "balance_parameters"
+      ],
+      "release_ready": false,
+      "hero": "fengli",
+      "requires": "",
+      "weight": 100,
+      "effect_key": "draft_fengli_battle_frenzy",
+      "stats": {},
+      "required_hooks": [
+        "kill_stack_buff.v1"
+      ],
+      "description": "击杀短暂提高移速/攻速可少量叠层；幅度/归因待定"
+    }
+  },
+  "passives": {
+    "sustain_tissue": {
+      "name": "活性循环",
+      "status": "prototype_initial",
+      "provenance": "new_tunable_initial",
+      "source_ref": "new prototype design",
+      "design_notice": "新增可调初值，非历史确认定值",
+      "unresolved": [],
+      "release_ready": false,
+      "effect_key": "sustain_tissue",
+      "stats": {
+        "hp_regen": 3
+      },
+      "description": "战斗中基础生命恢复+3/秒；不同装备共享唯一组，仅一次",
+      "required_hooks": [
+        "stats.v1",
+        "stat.hp_regen.v1"
+      ]
+    }
+  },
+  "policies": {
+    "sale_rounding": "floor_integer_gold",
+    "recipe_purchase": "explicit_owned_components",
+    "duplicate_passive": "unique_effect_key",
+    "hex_seen_weight": "base/(1+seen)",
+    "hex_unlearned_weight_multiplier": 0.5,
+    "body_distinct_choices": true,
+    "body_pending": "block_next_purchase_keep_until_selected",
+    "special_inventory": "round1_consumed_unit_not_refilling_container",
+    "special_reset": "new_stable_combat_level_id_only",
+    "healing_phase": "safe_only_trial"
+  },
+  "body": {
+    "name": "锻体·三选一",
+    "status": "prototype_initial",
+    "provenance": "new_tunable_initial",
+    "source_ref": "T58/T94 confirmed protocol; pool/values/price NEW",
+    "design_notice": "新增可调初值，非历史确认定值",
+    "unresolved": [],
+    "release_ready": false,
+    "mode": "choose_three",
+    "cost": 900,
+    "required_hooks": [
+      "stats.v1"
+    ],
+    "outcomes": {
+      "sharp": {
+        "name": "锋锐",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "AD": 8
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.AD.v1"
+        ]
+      },
+      "swift": {
+        "name": "迅捷",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "attack_speed": 0.1
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.attack_speed.v1"
+        ]
+      },
+      "iron": {
+        "name": "铁躯",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "max_hp": 100
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.max_hp.v1"
+        ]
+      },
+      "pierce": {
+        "name": "破军",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "penetration": 8
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.penetration.v1"
+        ]
+      },
+      "firm": {
+        "name": "坚韧",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "defense": 10
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.defense.v1"
+        ]
+      },
+      "arcane": {
+        "name": "秘研",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "AP": 12
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.AP.v1"
+        ]
+      },
+      "precise": {
+        "name": "精瞄",
+        "status": "prototype_initial",
+        "provenance": "new_tunable_initial",
+        "source_ref": "T58/T94 corresponding stat; amount NEW",
+        "design_notice": "新增可调初值，非历史确认定值",
+        "unresolved": [],
+        "release_ready": false,
+        "stats": {
+          "crit_chance": 0.07
+        },
+        "weight": 100,
+        "required_hooks": [
+          "stats.v1",
+          "stat.crit_chance.v1"
+        ]
+      }
+    }
+  },
+  "stat_units": {
+    "AD": "flat",
+    "AP": "flat",
+    "attack_speed": "base_fraction",
+    "crit_chance": "fraction",
+    "cooldown_reduction": "fraction",
+    "max_hp": "flat",
+    "defense": "flat",
+    "move_speed": "base_fraction",
+    "lifesteal": "fraction",
+    "tenacity": "fraction",
+    "penetration": "flat",
+    "hp_regen": "hp_per_combat_second"
+  }
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/catalog_review.tscn",
+      "root_type": "Node",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/catalog_review.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "add_node",
+    "arguments": {
+      "type": "Label",
+      "name": "Readout",
+      "properties": {
+        "offset_left": "20",
+        "offset_top": "14",
+        "offset_right": "1260",
+        "offset_bottom": "715",
+        "theme_override_font_sizes/font_size": "16"
+      }
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/progression/catalog_demo.gd"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/main.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/progression/catalog_review.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_scene_tree",
+    "arguments": {},
+    "expect_text": [
+      "Readout"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect().suite.passed and inspect().catalog_errors.is_empty()"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "probe_locked_buy()"
+    },
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "show_page(1)"
+    },
+    "expect_text": [
+      "1"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "show_page(2)"
+    },
+    "expect_text": [
+      "2"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "show_page(3)"
+    },
+    "expect_text": [
+      "3"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]
