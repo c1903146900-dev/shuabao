@@ -16,6 +16,8 @@ var phase: String = "combat"
 var combat_level_id: String = "training-01"
 var enemies: Array = []
 var pending: Array = []
+var encounter_generation: int = 0
+var active_r1_cast: int = -1
 var event_log: Array = []
 var sequence: int = 0
 var cast_serial: int = 0
@@ -115,7 +117,8 @@ func _request_action(action: String, aim: Vector3) -> Dictionary:
   if direction.length_squared() > 0.001: hero.facing = direction.normalized()
  cast_serial += 1
  var context: Dictionary = {"cast_id":cast_serial,"action":action,"origin":hero.position,"direction":hero.facing,
- "hits":[],"kills":[],"due":clock.world_time,"kind":action}
+ "hits":[],"kills":[],"due":clock.world_time,"kind":action,
+ "encounter_id":combat_level_id,"encounter_generation":encounter_generation,"simulation_instance":get_instance_id()}
  match action:
   "shift":
    hero.dash_direction = hero.move_intent.normalized() if hero.move_intent.length_squared() > 0.01 else hero.facing
@@ -156,6 +159,7 @@ func _request_action(action: String, aim: Vector3) -> Dictionary:
    r1_active = true
    clock.enter(hero.actor_id, T.INITIAL.r1_show_duration)
    context.damage = hero.ad() * T.ranked("r1_ad",hero.ranks.r)
+   active_r1_cast = context.cast_id
    context.kind = "r1_damage"
    context.due += 0.06
    pending.append(context)
@@ -326,6 +330,12 @@ func _fixed_step(real_delta: float) -> void:
  _check_victory()
 
 func _resolve_pending(event: Dictionary) -> void:
+ # A detached due-list/callback must still belong to this live simulation and room.
+ if phase != "combat" or event.get("simulation_instance",-1) != get_instance_id(): return
+ if event.get("encounter_id","") != combat_level_id or event.get("encounter_generation",-1) != encounter_generation: return
+ if event.kind == "r1_damage":
+  if active_r1_cast < 0 or event.cast_id != active_r1_cast: return
+  active_r1_cast = -1 # Commit before effects, so repeated/reentrant callbacks cannot hit twice.
  match event.kind:
   "attack_hit":
    var hit: bool = false
@@ -416,6 +426,10 @@ func _check_victory() -> void:
 func end_encounter(result: String) -> void:
  if phase != "combat": return
  phase = result
+ # R1 presentation ends here; its delayed impact is cancelled, never resumed.
+ # Other retained buffs and same-room grace state keep their existing freeze policy.
+ active_r1_cast = -1
+ pending = pending.filter(func(event): return event.kind != "r1_damage")
  real_accumulator = 0.0
  clock.clear()
  extensions.on_encounter_end()
@@ -470,8 +484,12 @@ func configure_test_loadout(preset: Dictionary) -> Dictionary:
  return {"ok":true}
 
 func begin_encounter(next_id: String, roster: Array) -> Dictionary:
+ if transaction_active: return {"accepted":false,"reason":"transaction_in_progress"}
  if phase == "combat" or hero.dead: return {"accepted":false,"reason":"invalid_phase"}
  if next_id.is_empty() or next_id == combat_level_id: return {"accepted":false,"reason":"new_level_id_required"}
+ encounter_generation += 1
+ pending.clear() # Room-targeted callbacks cannot refer to the replacement enemy collection.
+ active_r1_cast = -1
  combat_level_id = next_id
  enemies.clear()
  phase = "combat"
