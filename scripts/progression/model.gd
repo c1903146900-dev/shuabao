@@ -63,6 +63,7 @@ func command(id: String, action: String, args: Dictionary = {}) -> Dictionary:
 	return result
 
 func _apply(action: String, a: Dictionary) -> String:
+	if config.get("profile", "") == "playable_prototype" and not _supports_catalog_profile(): return "catalog_adapter_required"
 	match action:
 		"context":
 			if not a.get("phase", "") in ["safe", "combat"]: return "invalid_phase"
@@ -340,3 +341,7 @@ func _canonical(value: Variant) -> Variant:
 		return result
 	if value is float and value == floor(value): return int(value)
 	return value
+
+# Fail closed if the opt-in prototype catalog is passed to the legacy model.
+func _supports_catalog_profile() -> bool:
+	return false
