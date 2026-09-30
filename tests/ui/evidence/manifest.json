@@ -1,0 +1,422 @@
+{
+  "base_commit": "abb91cf",
+  "validation": "29 UI fixture checks at each of 1920x1080 and 960x540; real MCP; no combat/progression integration",
+  "files": [
+    {
+      "path": "scripts/ui/combat_hud.gd",
+      "sha256": "547e7e539355f374dfc3331140a672304fac5dbce70b113607d64acf271b25aa"
+    },
+    {
+      "path": "scripts/ui/combat_hud.gd.uid",
+      "sha256": "d337bcaad50a4ec66a02b45d74be623ec2a3feb09763bfd7b878233402df7a80"
+    },
+    {
+      "path": "scripts/ui/hud_adapter.gd",
+      "sha256": "51fe449fdf135c06f7bc9e0aadf04261cd31628da3596f3abc1aca3319ec7752"
+    },
+    {
+      "path": "scripts/ui/hud_adapter.gd.uid",
+      "sha256": "eb19b694d7e377a15f295599f06fbd2405a8ec535275f459ea16a611331b51be"
+    },
+    {
+      "path": "scripts/ui/hud_demo.gd",
+      "sha256": "d0851db51c0ae2ede00880c8d579ac0930bdb75dd9240e86431f46f6a1d6bcf7"
+    },
+    {
+      "path": "scripts/ui/hud_demo.gd.uid",
+      "sha256": "5f6b691a150a1f2c7f64546a8b75e0241c23b8fd0becb3b6e8f7d0d0d591b768"
+    },
+    {
+      "path": "scenes/ui/combat_hud.tscn",
+      "sha256": "67a0d795ec83bfd2658c8e6d52104d99d5ff1ff369a70c1776577d416839d23a"
+    },
+    {
+      "path": "scenes/ui/hud_demo.tscn",
+      "sha256": "67249d2f41aa0bf5b6fb551b423eb3a8c0ef675be38ee23f9b35b29497b9e3c3"
+    },
+    {
+      "path": "assets/ui/FONT_LICENSE.txt",
+      "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
+    },
+    {
+      "path": "assets/ui/NotoSansCJKsc-Regular.otf",
+      "sha256": "f2cac2db5b5304a895930b9076f27a3f38da20c0d8f804ce6fa44e60efba94db"
+    },
+    {
+      "path": "tests/ui/build_workflow.json",
+      "sha256": "53d0743c4e7c98ad5efb524120c402e095892627fae6175202625b05884b671f"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-addon-status-known-upstream-issue.json",
+      "sha256": "88446c5fafb5ff6950b33af21dc2a9fd5118f5d35030cf757cddd14dada88207"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-gui.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-initialize.json",
+      "sha256": "61d797180e1cb4ac4401f6603bc0344369752a3628168f01677fb54ef67f2383"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-mcp.log",
+      "sha256": "33d6f03db1a402d865ee78a2957b6ad6b73fc1fa85f573f13e197d2710ffdb51"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-ready-1.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-scene.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/blender-tools.json",
+      "sha256": "d589155429272eaba590faf64b8cca4a69a8043d88a784ced51046cb3486c8d0"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/desktop.png",
+      "sha256": "1eb35f31506ece07ac217be33ff3b9ff3f973f9755d44b5372a7f9ee60bce284"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-editor.log",
+      "sha256": "3be8d8c0a4b956fa15a3985c6b0f5a1cdff124c818f24f96a35f71ebc49126bc"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-initialize.json",
+      "sha256": "eebac67d3883944010bcfab14db7ba6cbcb52b344ef8146b1b7ce1e68070e515"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-mcp.log",
+      "sha256": "b2a0592215fae0bcd7492942cef5ba276ae30d71172754506974fd70ce20238b"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-1.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-2.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-3.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-4.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-5.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-6.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-7.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-ready-8.json",
+      "sha256": "54759181332702be759e82c670f4c1b7f6b0cc0da1ee5576ec8d4a470a085e1a"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/godot-tools.json",
+      "sha256": "5e4c6cfd264d3831938496e0aa58a2900905b1ddd0a2826c0838d9ce3823d6ff"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/screenshots.json",
+      "sha256": "2678857d51e82faf681cab25bce7c11448bd7b706bb8fd0d301e994325f4a0de"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-00-open_scene.json",
+      "sha256": "4888e1d774d55746d3ce5a8ba170a086c5cee31fdb9c5d9e01fdea67a594bf9d"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-01-play_scene.json",
+      "sha256": "d92be10d14c40f2048efa1e383dda297558381ec5f85d68a870eeab946239734"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-02-execute_game_script.json",
+      "sha256": "a4d0c1af414edd08456fd735c3e2fa81e51f518796f1558ec0165a0108e6ece7"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-03-execute_game_script.json",
+      "sha256": "92287da1ce6daef3eade2fb95121420e7068345633c3b03a510c971a59758517"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-04-execute_game_script.json",
+      "sha256": "6f79dcd4bd872fc2146aeaf230514c2ba58e4675cb734c3e2abd5998c4630883"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-05-execute_game_script.json",
+      "sha256": "0d03a10b9560f8df8b124ce6b584e44b0e9a02e812e5b9817d7ec3254ad2cea2"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-06-execute_game_script.json",
+      "sha256": "a4d0c1af414edd08456fd735c3e2fa81e51f518796f1558ec0165a0108e6ece7"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-07-get_game_screenshot-0.png",
+      "sha256": "59f81e672fbbf07d1aff1a87673c2c3eff43008ab880da58b2d7e5dd32daac8b"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-07-get_game_screenshot.json",
+      "sha256": "c916da81ed7fa5d1a25315eccee919e1cbba2218cb570e991caede39abce0e0b"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-08-execute_game_script.json",
+      "sha256": "6f7396ff014b9dee9672fc5cf9a0cf0567a4b70a7eb61b2766944f86e20abe28"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-09-get_game_screenshot-0.png",
+      "sha256": "c5f9dd30eca1c0970fc08e458390067031b92bea3edf03245e26d5817a62a810"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-09-get_game_screenshot.json",
+      "sha256": "577a40e6196fa329d2bf0b72adde850448ade3d4d698e97bf1764d7d02022452"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-10-execute_game_script.json",
+      "sha256": "4dd41e7c0dd3f096a60d85a37472e6ebf435253eadfd93017ac13db4330234ab"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-11-get_game_screenshot-0.png",
+      "sha256": "bc97fe22434b263e9846528a99d21b7a8f303b2bbbd8c18c02389ae0ff4a1db6"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-11-get_game_screenshot.json",
+      "sha256": "099764104b0be3d34c2fa431099ceaf872f6958de0954f09677212776828c9b9"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-12-execute_game_script.json",
+      "sha256": "0d91f105b4a113fbe4c285cf6c35b79c0052c2a613efc21a9d03483b5596a528"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-13-execute_game_script.json",
+      "sha256": "92287da1ce6daef3eade2fb95121420e7068345633c3b03a510c971a59758517"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-14-execute_game_script.json",
+      "sha256": "4bb003836f83cac3c89e05c86fb2606a2335eba642d0d823b7e35f70db541a03"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-15-execute_game_script.json",
+      "sha256": "0d03a10b9560f8df8b124ce6b584e44b0e9a02e812e5b9817d7ec3254ad2cea2"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-16-execute_game_script.json",
+      "sha256": "0d91f105b4a113fbe4c285cf6c35b79c0052c2a613efc21a9d03483b5596a528"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-17-get_game_screenshot-0.png",
+      "sha256": "d86d01dec08d7acd9462e59ee24fc700efb52c92635020a1f5bc4ebb7e4c44f7"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-17-get_game_screenshot.json",
+      "sha256": "ef2207639cff4b4600c763c0b002f4180ac7e500cf5fc2dea427319e778da3e5"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-18-execute_game_script.json",
+      "sha256": "5df7e24fd9c46f41b4094ad6eb2295b1b3a13cef6784982006b37b6f6c4c700f"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-19-get_game_screenshot-0.png",
+      "sha256": "583abe4d0662ca021b36061a9703718c1e67f09684cdc73ff587791ce862964f"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-19-get_game_screenshot.json",
+      "sha256": "8d1d1d8b5157e741ce529187f82edb804e7060928f07815607f04de414d0266f"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-20-execute_game_script.json",
+      "sha256": "2dbe8202f88859b57d9acc869a1fa90d4d21ca2bb4999396187328ea35c0b896"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-21-get_game_screenshot-0.png",
+      "sha256": "5e4c20eecdd1658c48511eee05906d3a2917f703040d43396a08e12ae0767fae"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-21-get_game_screenshot.json",
+      "sha256": "7eba04207a2df49271811987be37ec970ea05fcf2451504312b617440950ba45"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-22-get_editor_errors.json",
+      "sha256": "b4bb504b0c04907d4f86af660b2e8d9ec79932fb8a1e355b9219627fa3b5b9b4"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/step-23-stop_scene.json",
+      "sha256": "4a21f1c487300c4e1a24b794637709f96573f326b20ea97fba52cf0fdf8a84d7"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/test_report.json",
+      "sha256": "b8c61ab55ad98002d1d74fdbb3aabcdcb779cabc97727e54081ac95eee3da5db"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/xorg-server.log.gz",
+      "sha256": "affc0523da53455e18bce16f92f067a7dd13e786b57b903093de8c7282ad7c68"
+    },
+    {
+      "path": "tests/ui/evidence/acceptance/xorg.log.gz",
+      "sha256": "776fb8e2578a9481f1f92cc9699a34c6da7ab1df932a0d4031965441ade12718"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-addon-status-known-upstream-issue.json",
+      "sha256": "88446c5fafb5ff6950b33af21dc2a9fd5118f5d35030cf757cddd14dada88207"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-gui.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-initialize.json",
+      "sha256": "61d797180e1cb4ac4401f6603bc0344369752a3628168f01677fb54ef67f2383"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-mcp.log",
+      "sha256": "7295c5869331ff8832678dc20a639105d817f708b1035aaeb119d1d494a80827"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-ready-1.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-scene.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/blender-tools.json",
+      "sha256": "d589155429272eaba590faf64b8cca4a69a8043d88a784ced51046cb3486c8d0"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/desktop.png",
+      "sha256": "444132125ce41e320ae63842668c3576fbf0ff7b3e57da5303c26563b89cefc4"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-editor.log",
+      "sha256": "9ba4624ef7025e42364c4ce09be9ce629fc382e419ec1c86f91c395393ca7a93"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-initialize.json",
+      "sha256": "eebac67d3883944010bcfab14db7ba6cbcb52b344ef8146b1b7ce1e68070e515"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-mcp.log",
+      "sha256": "b2a0592215fae0bcd7492942cef5ba276ae30d71172754506974fd70ce20238b"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-1.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-2.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-3.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-4.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-5.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-6.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-7.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-ready-8.json",
+      "sha256": "54759181332702be759e82c670f4c1b7f6b0cc0da1ee5576ec8d4a470a085e1a"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/godot-tools.json",
+      "sha256": "5e4c6cfd264d3831938496e0aa58a2900905b1ddd0a2826c0838d9ce3823d6ff"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-00-create_scene.json",
+      "sha256": "bf1bd327ccf9bff43b897ae0501394fd8d13f739c4f7d4d043dcb1836f68a756"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-01-attach_script.json",
+      "sha256": "33e1bc5b5a73996ca3d207206a892b105164ccf3742bbfd788b927bed4df2706"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-02-save_scene.json",
+      "sha256": "112e145cd6bdf2d9186b8864580979d429462e0eddb1c801df27132a80f469cf"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-03-create_scene.json",
+      "sha256": "72ee8785397694221b78e4e6d2c43dffd7fe2c8537bda982aaa90899e7741d75"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-04-attach_script.json",
+      "sha256": "f81e03386462e56f29e4eece4438bbadbdaa887dce463b1e4c3d126564f75b9a"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-05-save_scene.json",
+      "sha256": "3ec95c921181f168f8d48ae5ce3be7d1a98c76d9f6a4383fa0b36c8427c96764"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-06-play_scene.json",
+      "sha256": "d92be10d14c40f2048efa1e383dda297558381ec5f85d68a870eeab946239734"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-07-get_game_screenshot-0.png",
+      "sha256": "4ff5f89a9df7c82ea1fa584ff23114201b435bc663077893756d45b3a870c014"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-07-get_game_screenshot.json",
+      "sha256": "fb1bb18f3e39a470a386648a9a052838e74a6947935976aa6a3ca60ead2287db"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-08-get_editor_errors.json",
+      "sha256": "b4bb504b0c04907d4f86af660b2e8d9ec79932fb8a1e355b9219627fa3b5b9b4"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/step-09-stop_scene.json",
+      "sha256": "4a21f1c487300c4e1a24b794637709f96573f326b20ea97fba52cf0fdf8a84d7"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/xorg-server.log.gz",
+      "sha256": "e53359e152722c1ce85d70486ecd58f37c2727ed11da0512f4b5057fe21fee3b"
+    },
+    {
+      "path": "tests/ui/evidence/build-fixed/xorg.log.gz",
+      "sha256": "4b24270e250e1d34883151473ba6dc77f1e81cd50ab30c52813f16020b6c70f4"
+    },
+    {
+      "path": "tests/ui/evidence/standalone.log.gz",
+      "sha256": "517801cf8e481102b53a6ac405cc87fd5a6b18a016679d496dbc46e8dee9c939"
+    },
+    {
+      "path": "tests/ui/prepare_fixture.py",
+      "sha256": "991bd0fee0ed3c6b785faab68742e6df6ff8fff2279cd861923cb62bb1021d4a"
+    },
+    {
+      "path": "tests/ui/ui_contract_test.gd",
+      "sha256": "336717a60fef00e0c6f93092e4b76a009adbb9fdb650a78bbe6b59fac2c9d21f"
+    },
+    {
+      "path": "tests/ui/ui_contract_test.gd.uid",
+      "sha256": "d8b57f02757328d7b0bbd27fb8cc71164a4a76f87a758481c217940053ec7093"
+    },
+    {
+      "path": "tests/ui/verify_workflow.json",
+      "sha256": "e38ff8f02a713c43acc145687fcb0e3af6a60ad5083282d77f6982545b34ce3a"
+    },
+    {
+      "path": "tests/ui/evidence/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

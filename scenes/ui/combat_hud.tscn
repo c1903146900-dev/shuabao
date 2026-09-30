@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bqxp27dxhb0me"]
+
+[ext_resource type="Script" uid="uid://bu43totax50ev" path="res://scripts/ui/combat_hud.gd" id="1_ru1xk"]
+
+[node name="combat_hud" type="Control" unique_id=576502715]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ru1xk")

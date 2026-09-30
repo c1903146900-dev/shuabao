@@ -1,0 +1,206 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/hud_demo.tscn"
+    },
+    "wait_after": 1,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 10,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "run_contract_tests()"
+    },
+    "wait_after": 20,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"ui_test_report\")"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"ui_test_report\").get(\"failures\") == 0"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"allocation\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"result\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "run_contract_tests()"
+    },
+    "wait_after": 20,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"ui_test_report\")"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"ui_test_report\").get(\"failures\") == 0"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"allocation\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"result\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  }
+]
