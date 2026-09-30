@@ -1,0 +1,7819 @@
+{
+  "attempted_commands": 14799,
+  "baseline": "607bf6385f5f668155aa76f5df6eb184e5685cea",
+  "cases": 96,
+  "coverage": {
+    "buy:blade accepted": 28,
+    "buy:blade rejected": 852,
+    "buy:blade replay accepted": 10,
+    "buy:blade replay rejected": 44,
+    "buy:component accepted": 201,
+    "buy:component rejected": 698,
+    "buy:component replay accepted": 31,
+    "buy:component replay rejected": 32,
+    "buy:normal accepted": 330,
+    "buy:normal rejected": 669,
+    "buy:normal replay accepted": 14,
+    "buy:normal replay rejected": 35,
+    "buy:special accepted": 341,
+    "buy:special rejected": 680,
+    "buy:special replay accepted": 20,
+    "buy:special replay rejected": 39,
+    "buy_body accepted": 487,
+    "buy_body rejected": 1340,
+    "buy_body replay accepted": 53,
+    "buy_body replay rejected": 71,
+    "context accepted": 1914,
+    "context replay accepted": 116,
+    "enter_level accepted": 527,
+    "enter_level rejected": 329,
+    "enter_level replay accepted": 62,
+    "enter_level replay rejected": 7,
+    "reward_minion rejected": 904,
+    "reward_minion replay rejected": 73,
+    "sell accepted": 464,
+    "sell rejected": 1400,
+    "sell replay accepted": 37,
+    "sell replay rejected": 80,
+    "undo_shop accepted": 382,
+    "undo_shop rejected": 1463,
+    "undo_shop replay accepted": 21,
+    "undo_shop replay rejected": 84,
+    "use_item accepted": 219,
+    "use_item rejected": 680,
+    "use_item replay accepted": 19,
+    "use_item replay rejected": 43
+  },
+  "violations": [
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-1",
+        "definition_version": "progression-fixture-v1",
+        "gold": -21,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "normal",
+            "invested": 10,
+            "uid": 4
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 5
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 7
+          }
+        ],
+        "level": 1,
+        "next_item": 8,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "",
+        "revision": 26,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 4
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 5
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-1"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 4,
+      "stacking": false,
+      "step": 29,
+      "sunk": 11,
+      "trace": [
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-0",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-2",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-4",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-6",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-7",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-8",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-9",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-10",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-11",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-13",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-15",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-17",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-19",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-21",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-24",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 5
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-26",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-27",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-28",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-29",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-1",
+        "definition_version": "progression-fixture-v1",
+        "gold": -10,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "normal",
+            "invested": 10,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 2
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 3
+          }
+        ],
+        "level": 1,
+        "next_item": 4,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "",
+        "revision": 27,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 1
+              }
+            ]
+          },
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 2
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-0",
+          "room-3",
+          "room-2",
+          "room-1"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 11,
+      "stacking": false,
+      "step": 61,
+      "sunk": 0,
+      "trace": [
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-2",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-4",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-6",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-7",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-8",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-9",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-10",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-11",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-12",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-13",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-14",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-15",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-18",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-19",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-20",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-21",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-23",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-24",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-25",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-26",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-27",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-28",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-29",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-30",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-32",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-34",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-35",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-36",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-37",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-38",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-39",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-40",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-41",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-42",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-43",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-44",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-45",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-46",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-47",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-27",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-49",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-50",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-51",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-52",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-53",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-54",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-55",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-58",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-59",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-60",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-61",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-3",
+        "definition_version": "progression-fixture-v1",
+        "gold": -90,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 10
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 12
+          },
+          {
+            "count": 1,
+            "id": "special",
+            "invested": 20,
+            "uid": 13
+          }
+        ],
+        "level": 1,
+        "next_item": 14,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "normal",
+        "revision": 58,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": []
+          },
+          {
+            "gold_delta": 10,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              }
+            ]
+          },
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 11
+              }
+            ]
+          },
+          {
+            "gold_delta": -9,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 11
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 12
+              }
+            ]
+          },
+          {
+            "gold_delta": 20,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 12
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-2",
+          "room-1",
+          "room-0",
+          "room-3"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 19,
+      "stacking": false,
+      "step": 150,
+      "sunk": 70,
+      "trace": [
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-2",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-4",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-5",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-6",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-7",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-8",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-9",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-10",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-11",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-15",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 1
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-17",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-19",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-21",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-24",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-26",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-27",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-28",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-29",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-30",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 5
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-32",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-33",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-10",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-35",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-36",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-37",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-38",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-39",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-40",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-41",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-42",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-43",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-44",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-45",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-46",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-47",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-48",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-49",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-50",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-51",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-52",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-53",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-54",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-55",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-56",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-59",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-60",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-61",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-62",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-63",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-64",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-65",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-66",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-67",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-68",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-69",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-71",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-72",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-73",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-74",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-75",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-76",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-77",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-78",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-79",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-80",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-81",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-82",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-83",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-84",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-85",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-86",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-87",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-88",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-89",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-90",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-91",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-92",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-94",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-95",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-96",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-97",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-36",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-99",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-100",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-101",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-102",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-103",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-104",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-106",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-107",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-108",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-109",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-110",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-111",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-112",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-113",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-114",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-115",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-116",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-117",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-118",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-119",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-120",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-121",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-122",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-123",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-125",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-126",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-127",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-128",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-129",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-130",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 12
+          },
+          "id": "random-131",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-132",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-133",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-134",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-135",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-136",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-87",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-43",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-139",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 11
+          },
+          "id": "random-140",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-141",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-142",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-143",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-144",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 12
+          },
+          "id": "random-145",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-146",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-147",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-148",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-149",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-150",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-1",
+        "definition_version": "progression-fixture-v1",
+        "gold": -21,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "normal",
+            "invested": 10,
+            "uid": 3
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 4
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 5
+          }
+        ],
+        "level": 1,
+        "next_item": 6,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "",
+        "revision": 28,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 3
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 4
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-1"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 4,
+      "stacking": true,
+      "step": 34,
+      "sunk": 11,
+      "trace": [
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-0",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-2",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-4",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-6",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-7",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-8",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-9",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-10",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-11",
+          "reason": "missing_component"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-15",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-17",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-18",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-19",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-21",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-24",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-26",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-27",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-28",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-29",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-30",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-32",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-34",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-1",
+        "definition_version": "progression-fixture-v1",
+        "gold": -10,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "normal",
+            "invested": 10,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 2
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 3
+          }
+        ],
+        "level": 1,
+        "next_item": 4,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "",
+        "revision": 27,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 1
+              }
+            ]
+          },
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 2
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-0",
+          "room-3",
+          "room-2",
+          "room-1"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 11,
+      "stacking": true,
+      "step": 61,
+      "sunk": 0,
+      "trace": [
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-2",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-4",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-6",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-7",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-8",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-9",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-10",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-11",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-12",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-13",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-14",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-15",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-18",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-19",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-20",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-21",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-23",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-24",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-25",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-26",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-27",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-28",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-29",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-30",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-32",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-34",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-35",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-36",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-37",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-38",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-39",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-40",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-41",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-42",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-43",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-44",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-45",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-46",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-47",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-27",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-49",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-50",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-51",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-52",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-53",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-54",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-55",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-58",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-59",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-60",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-61",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-3",
+        "definition_version": "progression-fixture-v1",
+        "gold": -90,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 10
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 12
+          },
+          {
+            "count": 1,
+            "id": "special",
+            "invested": 20,
+            "uid": 13
+          }
+        ],
+        "level": 1,
+        "next_item": 14,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "normal",
+        "revision": 58,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 100,
+            "inventory": []
+          },
+          {
+            "gold_delta": 10,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              }
+            ]
+          },
+          {
+            "gold_delta": 100,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 11
+              }
+            ]
+          },
+          {
+            "gold_delta": -9,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "normal",
+                "invested": 10,
+                "uid": 11
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 12
+              }
+            ]
+          },
+          {
+            "gold_delta": 20,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 10
+              },
+              {
+                "count": 1,
+                "id": "component",
+                "invested": 100,
+                "uid": 12
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-2",
+          "room-1",
+          "room-0",
+          "room-3"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "holding",
+      "seed": 19,
+      "stacking": true,
+      "step": 150,
+      "sunk": 70,
+      "trace": [
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-2",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-4",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-5",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-6",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-7",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-8",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-9",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-10",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-11",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-15",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 1
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-17",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-19",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-21",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-24",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-26",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-27",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-28",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-29",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-30",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 5
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-32",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-33",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-10",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-35",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-36",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-37",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-38",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-39",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-40",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-41",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-42",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-43",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-44",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-45",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-46",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-47",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-48",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-49",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-50",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-51",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-52",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-53",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-54",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-55",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-56",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-0",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-59",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-60",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-61",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-62",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-63",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-64",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-65",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-66",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-67",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-68",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-69",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-71",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-3"
+          },
+          "id": "random-72",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-73",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-74",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-75",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-76",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-77",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-78",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-79",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-80",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-81",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-82",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-83",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-84",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-85",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-86",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-87",
+          "reason": "training_required"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-88",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-89",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-90",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-91",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-92",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-94",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-95",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-96",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-97",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-36",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-99",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-100",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-101",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-102",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-103",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-104",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-106",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-107",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-108",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-109",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-110",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-111",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-112",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-113",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-114",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-115",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-116",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-117",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-118",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-119",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-120",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-121",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-122",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-123",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-125",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-126",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-127",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-128",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-129",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-130",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 12
+          },
+          "id": "random-131",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-132",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-133",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-134",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-135",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-136",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-87",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-43",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-139",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 11
+          },
+          "id": "random-140",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-141",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-142",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-143",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-144",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 12
+          },
+          "id": "random-145",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-146",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-147",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-148",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-149",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-150",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-2",
+        "definition_version": "progression-fixture-v1",
+        "gold": -43,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 9
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 13
+          }
+        ],
+        "level": 1,
+        "next_item": 15,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "",
+        "revision": 54,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-1",
+          "room-0",
+          "room-2"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "per_level_use",
+      "seed": 4,
+      "stacking": false,
+      "step": 114,
+      "sunk": 43,
+      "trace": [
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-0",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-2",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-4",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-6",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-7",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-8",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-9",
+          "reason": "missing_component"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-10",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-11",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-15",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-16",
+          "reason": "missing_component"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-17",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-18",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-19",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-21",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-24",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-26",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-7",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-28",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-29",
+          "reason": "inventory_full"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-30",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-32",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-34",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-35",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-36",
+          "reason": "inventory_full"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-37",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-28",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 11
+          },
+          "id": "random-39",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 6
+          },
+          "id": "random-40",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-41",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-42",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-43",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-44",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-45",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-46",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-47",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-48",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-49",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-50",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-51",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-52",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-53",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-54",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-55",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-56",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-57",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-58",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-59",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-60",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-61",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-62",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-63",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-65",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-66",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-67",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-68",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-69",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-70",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-71",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-72",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-73",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-74",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-75",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-76",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-77",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-78",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-79",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-80",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-81",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-82",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-83",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-84",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-85",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-86",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-87",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-88",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-89",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-90",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-91",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-92",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-93",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-94",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-95",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-96",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-97",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-98",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-99",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-100",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-101",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-88",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-103",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-104",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-105",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-92",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-107",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-108",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-54",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-110",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-111",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-112",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 13
+          },
+          "id": "random-113",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-114",
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "after": {
+        "actor_id": "local",
+        "allocations": [],
+        "body": [
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          },
+          {
+            "cost": 50,
+            "definition_version": "progression-fixture-v1"
+          }
+        ],
+        "combat_level_id": "room-2",
+        "definition_version": "progression-fixture-v1",
+        "gold": -42,
+        "granted_level_ids": [
+          1
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+
+        },
+        "inventory": [
+          {
+            "count": 5,
+            "id": "normal",
+            "invested": 50,
+            "uid": 2
+          },
+          {
+            "count": 1,
+            "id": "component",
+            "invested": 100,
+            "uid": 7
+          }
+        ],
+        "level": 1,
+        "next_item": 11,
+        "offers": {
+
+        },
+        "pending_milestones": [
+          1
+        ],
+        "phase": "safe",
+        "points": 1,
+        "recovery_mode": "special",
+        "revision": 57,
+        "reward_ids": [
+          "seed-death"
+        ],
+        "rng": 1,
+        "seen_hex": {
+
+        },
+        "selected_hex": [],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "",
+            "rank": 0
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 2,
+        "training": true,
+        "visited_levels": [
+          "start",
+          "room-1",
+          "room-0",
+          "room-2"
+        ],
+        "xp": 0
+      },
+      "kind": "KNOWN_QA001_negative_gold",
+      "policy": "per_level_use",
+      "seed": 4,
+      "stacking": true,
+      "step": 116,
+      "sunk": 92,
+      "trace": [
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-0",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-1",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-2",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-3",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-4",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-5",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-6",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-7",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-8",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-9",
+          "reason": "missing_component"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-10",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-11",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-12",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 3
+          },
+          "id": "random-13",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-14",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-15",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-16",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-17",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-18",
+          "reason": "missing_component"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-19",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-20",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-21",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-22",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-23",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-24",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-25",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-26",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-27",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-28",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": -1
+          },
+          "id": "random-0",
+          "reason": "missing_item"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-30",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-31",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 8
+          },
+          "id": "random-32",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-33",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-34",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-35",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-36",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-37",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-38",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-39",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-26",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 6
+          },
+          "id": "random-41",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-42",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-43",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-44",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-45",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-46",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-47",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-48",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-49",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-50",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-51",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-52",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-53",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-54",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-55",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-56",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 4
+          },
+          "id": "random-57",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-58",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-59",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-60",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-1"
+          },
+          "id": "random-61",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-62",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-63",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-64",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-2"
+          },
+          "id": "random-65",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 6
+          },
+          "id": "random-41",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-67",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-68",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-69",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-70",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-71",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-72",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-73",
+          "reason": "normal_cap"
+        },
+        {
+          "accepted": true,
+          "action": "use_item",
+          "args": {
+            "uid": 9
+          },
+          "id": "random-74",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-75",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-76",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-77",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-78",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-79",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-80",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-81",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-82",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-83",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-84",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-85",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-86",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-87",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-88",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-89",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-90",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-91",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "enter_level",
+          "args": {
+            "combat_level_id": "room-0"
+          },
+          "id": "random-92",
+          "reason": "old_level_id"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "blade"
+          },
+          "id": "random-93",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-94",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-95",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-96",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": false,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-97",
+          "reason": "training_required"
+        },
+        {
+          "accepted": false,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-98",
+          "reason": "unsafe_phase"
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "safe",
+            "training": true
+          },
+          "id": "random-99",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "component"
+          },
+          "id": "random-100",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-101",
+          "reason": "normal_cap"
+        },
+        {
+          "accepted": false,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-102",
+          "reason": "undo_boundary"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-103",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "context",
+          "args": {
+            "phase": "combat"
+          },
+          "id": "random-75",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "buy",
+          "args": {
+            "item": "normal"
+          },
+          "id": "random-105",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-106",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-107",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "buy",
+          "args": {
+            "item": "special"
+          },
+          "id": "random-34",
+          "reason": "insufficient_gold"
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-109",
+          "reason": "recovery_mutex"
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 2
+          },
+          "id": "random-110",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "reward_minion",
+          "args": {
+            "event_id": "seed-death",
+            "gold": 400,
+            "xp": 0
+          },
+          "id": "random-64",
+          "reason": "duplicate_reward"
+        },
+        {
+          "accepted": true,
+          "action": "buy_body",
+          "args": {
+
+          },
+          "id": "random-112",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "sell",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-113",
+          "reason": ""
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-114",
+          "reason": ""
+        },
+        {
+          "accepted": false,
+          "action": "use_item",
+          "args": {
+            "uid": 7
+          },
+          "id": "random-115",
+          "reason": "not_consumable"
+        },
+        {
+          "accepted": true,
+          "action": "undo_shop",
+          "args": {
+
+          },
+          "id": "random-116",
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "violations_by_kind": {
+    "KNOWN_QA001_negative_gold": 8
+  }
+}
