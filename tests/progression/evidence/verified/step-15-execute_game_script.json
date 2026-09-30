@@ -1,0 +1,14 @@
+{
+  "meta": null,
+  "content": [
+    {
+      "type": "text",
+      "text": "\"{ \\\"suite\\\": { \\\"checks\\\": 274, \\\"failures\\\": [], \\\"passed\\\": true }, \\\"snapshot\\\": { \\\"actor_id\\\": \\\"demo_fengli\\\", \\\"hero_id\\\": \\\"fengli\\\", \\\"revision\\\": 9, \\\"level\\\": 6, \\\"xp\\\": 0, \\\"gold\\\": 750, \\\"granted_level_ids\\\": [1, 2, 3, 4, 5, 6], \\\"points\\\": 5, \\\"skills\\\": { \\\"P\\\": { \\\"candidate\\\": \\\"\\\", \\\"rank\\\": 0 }, \\\"Q\\\": { \\\"candidate\\\": \\\"Q1\\\", \\\"rank\\\": 1 }, \\\"E\\\": { \\\"candidate\\\": \\\"\\\", \\\"rank\\\": 0 }, \\\"R\\\": { \\\"candidate\\\": \\\"\\\", \\\"rank\\\": 0 } }, \\\"allocations\\\": [{ \\\"slot\\\": \\\"Q\\\", \\\"before\\\": { \\\"candidate\\\": \\\"\\\", \\\"rank\\\": 0 }, \\\"cost\\\": 1 }], \\\"inventory\\\": [{ \\\"uid\\\": 2, \\\"id\\\": \\\"blade\\\", \\\"count\\\": 1, \\\"invested\\\": 250 }], \\\"next_item\\\": 3, \\\"shop_undo\\\": [{ \\\"inventory\\\": [], \\\"gold_delta\\\": 100 }, { \\\"inventory\\\": [{ \\\"uid\\\": 1, \\\"id\\\": \\\"component\\\", \\\"count\\\": 1, \\\"invested\\\": 100 }], \\\"gold_delta\\\": 150 }], \\\"body\\\": [], \\\"phase\\\": \\\"safe\\\", \\\"training\\\": false, \\\"combat_level_id\\\": \\\"demo_level_1\\\", \\\"visited_levels\\\": [\\\"demo_level_1\\\"], \\\"special_uses\\\": 0, \\\"recovery_mode\\\": \\\"\\\", \\\"offers\\\": { \\\"1\\\": { \\\"slots\\\": [\\\"fixture_hex_07\\\", \\\"fixture_hex_15\\\", \\\"fixture_hex_10\\\", \\\"fixture_hex_09\\\"], \\\"refresh_used\\\": [false, false, false, true], \\\"selected\\\": \\\"fixture_hex_09\\\", \\\"excluded\\\": [\\\"fixture_hex_14\\\"] } }, \\\"selected_hex\\\": [\\\"fixture_hex_09\\\"], \\\"seen_hex\\\": { \\\"fixture_hex_14\\\": 1, \\\"fixture_hex_07\\\": 1, \\\"fixture_hex_15\\\": 1, \\\"fixture_hex_10\\\": 1, \\\"fixture_hex_09\\\": 1 }, \\\"rng\\\": 887213142, \\\"reward_ids\\\": [\\\"demo_start\\\"], \\\"definition_version\\\": \\\"progression-fixture-v1\\\", \\\"hex_status\\\": { \\\"fixture_hex_09\\\": \\\"active\\\" }, \\\"pending_milestones\\\": [4] }, \\\"shop_open\\\": true, \\\"last_result\\\": \\\"hex_select: accepted\\\", \\\"effects\\\": { \\\"stats\\\": { \\\"AD\\\": 3 }, \\\"passives\\\": [\\\"fixture_edge\\\"] } }\"",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structuredContent": null,
+  "isError": false,
+  "application_error": false
+}
