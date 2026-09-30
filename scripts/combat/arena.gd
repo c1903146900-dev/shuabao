@@ -3,6 +3,11 @@ const Sim = preload("res://scripts/combat/combat_sim.gd")
 const View = preload("res://scripts/actors/actor_view.gd")
 const HUD = preload("res://scripts/combat/debug_hud.gd")
 const T = preload("res://data/combat/tuning.gd")
+@export var hero_visual: PackedScene
+@export var minion_visual: PackedScene
+@export var elite_visual: PackedScene
+@export var boss_visual: PackedScene
+signal actor_view_created(actor_id: String, view: Node3D)
 var simulation: Node
 var camera: Camera3D
 var hud: Control
@@ -14,6 +19,14 @@ var manual_step: bool = false
 var elapsed: float = 0.0
 var demonstration: bool = false
 var demo_stage: int = 0
+var preset_index: int = 0
+const TEST_PRESETS = [
+ {"q":"q1","e":"e3","r":"r1","passive":"p3"},
+ {"q":"q2","e":"e1","r":"r2","passive":"p1"},
+ {"q":"q3","e":"e2","r":"r1","passive":"p2"}
+]
+var dagger_visual: MeshInstance3D
+var mark_visual: MeshInstance3D
 
 func _ready() -> void:
  _build_arena()
@@ -93,11 +106,12 @@ func new_run() -> void:
  simulation.name = "CombatSimulation"
  add_child(simulation)
  simulation.combat_event.connect(_on_combat_event)
- for pos in [Vector3(-2,0,1),Vector3(2,0,-1),Vector3(-5,0,-3),Vector3(5,0,-4),Vector3(-7,0,2),Vector3(7,0,1)]:
+ for pos in T.TEST_MINION_POSITIONS:
   simulation.spawn_enemy("minion",pos)
  simulation.spawn_enemy("elite",Vector3(-5,0,-7))
  simulation.spawn_enemy("elite",Vector3(5,0,-8))
  simulation.spawn_enemy("boss",Vector3(0,0,-10))
+ simulation.configure_test_loadout(TEST_PRESETS[preset_index])
  elapsed = 0
  demo_stage = 0
  _sync_views(0)
@@ -114,14 +128,18 @@ func _unhandled_input(event: InputEvent) -> void:
    KEY_R: simulation.request_action("r",_aim_point())
    KEY_SHIFT: simulation.request_action("shift",_aim_point())
    KEY_F5: new_run()
+   KEY_F6:
+    preset_index = (preset_index+1)%TEST_PRESETS.size()
+    new_run()
    KEY_H: hud.visible = not hud.visible
    KEY_SPACE: simulation.self_rescue()
  if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+  mouse_at = event.position
   simulation.request_action("attack",_aim_point())
 
 func _physics_process(dt: float) -> void:
  if not is_instance_valid(simulation): return
- if not manual_step:
+ if not manual_step and simulation.phase == "combat":
   simulation.hero.move_intent = Vector3(float(held_keys.get(KEY_D,false))-float(held_keys.get(KEY_A,false)),0,float(held_keys.get(KEY_S,false))-float(held_keys.get(KEY_W,false))).limit_length(1)
   var aim: Vector3 = _aim_point()
   if not demonstration and not simulation.r1_active and simulation.hero.lock_time <= 0:
@@ -130,8 +148,8 @@ func _physics_process(dt: float) -> void:
   if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): simulation.request_action("attack",aim)
   if demonstration: _demo(dt)
   simulation.step(dt)
- _sync_views(dt)
- _step_effects(dt)
+ _sync_views(0.0 if manual_step else dt)
+ if not manual_step: _step_effects(dt)
 
 func _aim_point() -> Vector3:
  var origin: Vector3 = camera.project_ray_origin(mouse_at)
@@ -141,12 +159,20 @@ func _aim_point() -> Vector3:
 
 func _sync_views(dt: float) -> void:
  var state: Dictionary = simulation.snapshot()
+ var present: Array = ["fengli"]
+ for enemy in state.enemies: present.append(enemy.actor_id)
+ for id in views.keys():
+  if not id in present:
+   views[id].queue_free()
+   views.erase(id)
  if not views.has("fengli"):
   var view = View.new()
   view.name = "Fengli"
   add_child(view)
   view.setup("hero")
+  if hero_visual: view.set_visual_scene(hero_visual)
   views.fengli = view
+  actor_view_created.emit("fengli",view)
  views.fengli.sync(state.hero,dt)
  for enemy in state.enemies:
   if not views.has(enemy.actor_id):
@@ -154,15 +180,19 @@ func _sync_views(dt: float) -> void:
    view.name = enemy.actor_id
    add_child(view)
    view.setup(enemy.kind)
+   var art: PackedScene = {"minion":minion_visual,"elite":elite_visual,"boss":boss_visual}[enemy.kind]
+   if art: view.set_visual_scene(art)
    views[enemy.actor_id] = view
+   actor_view_created.emit(enemy.actor_id,view)
   views[enemy.actor_id].sync(enemy,dt)
  hud.update_snapshot(state)
+ _sync_skill_markers(state)
 
 func _on_combat_event(event: Dictionary) -> void:
- var target: String = event.get("target","fengli")
+ var target: String = event.get("target","fengli") if event.kind in ["damage","kill"] else "fengli"
  if views.has(target): views[target].play_event(event)
  match event.kind:
-  "q1":
+  "q1", "q3_wave", "r2_throw":
    var box = BoxMesh.new()
    box.size = Vector3(event.width,0.06,event.length)
    var n = View.mesh_node(box,View.make_material(Color(0.2,1,0.86,0.65),true),self)
@@ -181,7 +211,7 @@ func _on_combat_event(event: Dictionary) -> void:
    add_child(label)
    label.position = event.position + Vector3(randf_range(-0.3,0.3),2.0,0)
    effects.append({"node":label,"life":0.65,"total":0.65,"type":"number"})
-  "ultimate_started", "ultimate_impact":
+  "ultimate_started", "ultimate_impact", "e2_spin":
    var ring = TorusMesh.new()
    ring.inner_radius = event.radius-0.12
    ring.outer_radius = event.radius+0.12
@@ -199,7 +229,7 @@ func _on_combat_event(event: Dictionary) -> void:
      n2.position = event.position + Vector3(sin(angle),0,cos(angle))*randf_range(1,8)+Vector3(0,0.8,0)
      n2.rotation.y = angle + 0.6
      effects.append({"node":n2,"life":0.5,"total":0.5,"type":"slash"})
-  "dash":
+  "dash", "q2_hit", "e2_blink", "e1_pierce":
    var circle = CylinderMesh.new()
    circle.top_radius = 0.5
    circle.bottom_radius = 0.5
@@ -228,6 +258,7 @@ func set_demo(enabled: bool) -> void:
  demo_stage = 0
 
 func _demo(dt: float) -> void:
+ if simulation.phase != "combat": return
  elapsed += dt
  var targets: Array = simulation.living()
  if targets.is_empty(): return
@@ -238,5 +269,31 @@ func _demo(dt: float) -> void:
  simulation.request_action("attack",point)
  if elapsed>1.0: simulation.request_action("e",point)
  if elapsed>2.0: simulation.request_action("q",point)
- if elapsed>6.0 and elapsed<6.4: simulation.request_action("shift",point)
- if elapsed>10.0: simulation.request_action("r",point)
+ if elapsed>4.0 and elapsed<4.4: simulation.request_action("shift",point)
+ if elapsed>6.0: simulation.request_action("r",point)
+
+func _sync_skill_markers(state: Dictionary) -> void:
+ if not is_instance_valid(dagger_visual):
+  var mesh = SphereMesh.new()
+  mesh.radius = 0.16
+  mesh.height = 0.32
+  dagger_visual = View.mesh_node(mesh,View.make_material(Color("feeb99"),true),self)
+  var ring = TorusMesh.new()
+  ring.inner_radius = 0.8
+  ring.outer_radius = 0.9
+  mark_visual = View.mesh_node(ring,View.make_material(Color("ffdf67"),true),self)
+ dagger_visual.visible = false
+ mark_visual.visible = false
+ if state.hero.cast_state.has("e1"):
+  var skill: Dictionary = state.hero.cast_state.e1
+  if skill.stage == "flying":
+   dagger_visual.visible = true
+   dagger_visual.position = skill.position + Vector3(0,0.9,0)
+  elif skill.stage == "marked":
+   var target: Dictionary = simulation.enemy_by_id(skill.target)
+   if not target.is_empty() and not target.dead:
+    mark_visual.visible = true
+    mark_visual.position = target.position + Vector3(0,0.12,0)
+
+func _notification(what: int) -> void:
+ if what == NOTIFICATION_APPLICATION_FOCUS_OUT: held_keys.clear()

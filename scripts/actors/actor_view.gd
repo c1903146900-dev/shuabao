@@ -11,6 +11,8 @@ var flash_left: float = 0.0
 var swing_left: float = 0.0
 var body_color: Color
 var dead_seen: bool = false
+var imported_art: bool = false
+var previous_position: Vector3 = Vector3.ZERO
 var warning: MeshInstance3D
 
 func setup(kind: String) -> void:
@@ -64,21 +66,31 @@ func setup(kind: String) -> void:
  add_child(warning)
 
 func sync(state: Dictionary, dt: float) -> void:
+ var moving: bool = previous_position.distance_squared_to(state.position) > 0.00001
  position = state.position
+ previous_position = position
  var facing: Vector3 = state.get("facing", state.get("aim", Vector3.FORWARD))
  if facing.length_squared() > 0.001: rotation.y = atan2(-facing.x, -facing.z)
  flash_left = maxf(0.0, flash_left - dt)
  swing_left = maxf(0.0, swing_left - dt)
  material.albedo_color = Color.WHITE if flash_left > 0 else body_color
  var dead: bool = state.get("dead", false)
- visual.rotation.z = lerpf(visual.rotation.z, 1.5 if dead else 0.0, minf(1.0, dt * 12.0))
- visual.position.y = -0.2 if dead else sin(Time.get_ticks_msec() * 0.004) * 0.025
- blade.rotation.y = sin(swing_left * 20.0) * 1.3 if swing_left > 0 else 0.0
+ if not imported_art:
+  visual.rotation.z = lerpf(visual.rotation.z, 1.5 if dead else 0.0, minf(1.0, dt * 12.0))
+  visual.position.y = -0.2 if dead else sin(Time.get_ticks_msec() * 0.004) * 0.025
+ if is_instance_valid(blade): blade.rotation.y = sin(swing_left * 20.0) * 1.3 if swing_left > 0 else 0.0
  ring.visible = not dead
  health_label.visible = not dead
  var role: String = {"hero":"风厉","minion":"","elite":"精英","boss":"试炼守卫"}[actor_kind]
  health_label.text = "%s  %d / %d" % [role, ceili(state.hp), ceili(state.max_hp)]
  health_label.modulate = Color("8ffff0") if actor_kind == "hero" else Color("ffcc9b")
+ if is_instance_valid(animation_player):
+  if dead and not dead_seen and animation_player.has_animation("death"): animation_player.play("death")
+  if not dead and dead_seen and animation_player.has_animation("idle"): animation_player.play("idle")
+  if not dead and (not animation_player.is_playing() or animation_player.current_animation in ["idle","run"]):
+   var locomotion: String = "run" if moving else "idle"
+   if animation_player.has_animation(locomotion) and animation_player.current_animation != locomotion: animation_player.play(locomotion)
+ dead_seen = dead
  if actor_kind != "hero": _sync_warning(state)
  elif state.get("overload_left",0) > 0:
   ring.scale = Vector3.ONE * (1.3 + sin(Time.get_ticks_msec() * 0.01) * 0.1)
@@ -116,8 +128,11 @@ func _sync_warning(state: Dictionary) -> void:
 func play_event(event: Dictionary) -> void:
  if event.kind in ["damage","hero_damaged"]: flash_left = 0.12
  if event.kind == "attack_started": swing_left = 0.28
- var animation: String = {"attack_started":"attack","dash":"dash","q1":"q1","overload_started":"e3","ultimate_started":"r1","hero_damaged":"hit","kill":"death"}.get(event.kind, "")
- if not animation.is_empty() and animation_player.has_animation(animation): animation_player.play(animation)
+ var animation: String = {"attack_started":"attack","dash":"dash","q1":"thrust","q2_hit":"thrust","q3_wave":"attack","e2_spin":"attack","r2_throw":"ultimate","overload_started":"overload","ultimate_started":"ultimate","hero_damaged":"hit","kill":"death"}.get(event.kind, "")
+ if not animation.is_empty() and is_instance_valid(animation_player) and animation_player.has_animation(animation):
+  var duration: float = {"attack_started":0.28,"dash":0.16,"q1":0.20,"ultimate_started":1.1}.get(event.kind,0.0)
+  var speed: float = animation_player.get_animation(animation).length / duration if duration > 0 else 1.0
+  animation_player.play(animation,-1,speed)
 
 static func make_material(color: Color, unshaded: bool = false) -> StandardMaterial3D:
  var result = StandardMaterial3D.new()
@@ -135,3 +150,26 @@ static func mesh_node(mesh: Mesh, mat: Material, parent: Node3D) -> MeshInstance
  result.material_override = mat
  parent.add_child(result)
  return result
+
+func set_visual_scene(scene: PackedScene) -> void:
+ # Optional integration boundary: art owns scene/rig, this adapter owns playback only.
+ imported_art = true
+ visual.rotation = Vector3.ZERO
+ visual.position = Vector3.ZERO
+ for child in visual.get_children():
+  visual.remove_child(child)
+  child.queue_free()
+ var instance: Node = scene.instantiate()
+ visual.add_child(instance)
+ animation_player = _find_animation_player(instance)
+ blade = null
+ if animation_player:
+  for clip in ["idle","run"]:
+   if animation_player.has_animation(clip): animation_player.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+
+func _find_animation_player(node: Node) -> AnimationPlayer:
+ if node is AnimationPlayer: return node
+ for child in node.get_children():
+  var result: AnimationPlayer = _find_animation_player(child)
+  if result: return result
+ return null

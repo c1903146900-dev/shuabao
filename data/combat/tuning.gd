@@ -58,3 +58,6 @@ static func control_duration(seconds: float, tenacity: float) -> float:
 static func countdown(value: float, delta: float) -> float:
  var left: float = value - delta
  return 0.0 if left < 0.00000001 else left
+
+# Whitebox encounter fixture only, no production spawning or rewards policy.
+const TEST_MINION_POSITIONS = [Vector3(-2,0,1),Vector3(2,0,-1),Vector3(-5,0,-3),Vector3(5,0,-4),Vector3(-7,0,2),Vector3(7,0,1),Vector3(-9,0,-6),Vector3(9,0,-6)]

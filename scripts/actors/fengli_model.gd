@@ -39,7 +39,7 @@ func tenacity() -> float:
  return minf(1.0, stats.tenacity + (T.ranked("e3_bonus",ranks.e) if overload_left > 0 else 0.0))
 func snapshot() -> Dictionary:
  return {"actor_id":actor_id,"hp":hp,"max_hp":stats.max_hp,"position":position,"facing":facing,
- "ad":ad(),"attack_speed":attack_speed(),"move_speed":speed(),"tenacity":tenacity(),
+ "move_intent":move_intent,"ad":ad(),"attack_speed":attack_speed(),"move_speed":speed(),"tenacity":tenacity(),
  "cooldowns":cooldowns.duplicate(true),"loadout":loadout.duplicate(true),"ranks":ranks.duplicate(true),
  "q1_stacks":q1_stacks,"overload_left":overload_left,"kill_progress":kill_progress,"permanent_ad":permanent_ad,
  "dead":dead,"death_state":death_state,"self_rescue_used":self_rescue_used,"xp_progress":xp_progress,

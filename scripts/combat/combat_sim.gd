@@ -6,7 +6,11 @@ signal state_changed(snapshot: Dictionary)
 const T = preload("res://data/combat/tuning.gd")
 const Hero = preload("res://scripts/actors/fengli_model.gd")
 const Clock = preload("res://scripts/combat/world_clock.gd")
+const Ledger = preload("res://scripts/combat/loadout_fixture.gd")
+const Extensions = preload("res://scripts/combat/ability_extensions.gd")
 var hero = Hero.new()
+var progression = Ledger.new()
+var extensions = Extensions.new(self)
 var clock = Clock.new()
 var phase: String = "combat"
 var combat_level_id: String = "training-01"
@@ -25,10 +29,15 @@ var r1_active: bool = false
 var r1_world_remaining: float = 0.0
 var frozen_snapshot: Dictionary = {}
 var real_accumulator: float = 0.0
+var transaction_active: bool = false
 const FIXED_TICK: float = 0.005
 
 func _init() -> void:
  rng.seed = 20260930
+ # Explicit level-6 test fixture, not a normal new-run progression grant.
+ progression.set_level(6)
+ for item in [["Q","Q1"],["E","E3"],["R","R1"],["P","P3"]]: progression.invest(item[0],item[1])
+ progression.begin_encounter()
 
 func emit_event(kind: String, data: Dictionary = {}) -> void:
  sequence += 1
@@ -39,9 +48,11 @@ func emit_event(kind: String, data: Dictionary = {}) -> void:
  combat_event.emit(event.duplicate(true))
 
 func snapshot() -> Dictionary:
+ var hero_state: Dictionary = hero.snapshot()
+ hero_state.invulnerable = hero_state.invulnerable or r1_active or extensions.is_immune()
  return {"definition_version":T.VERSION,"phase":phase,"combat_level_id":combat_level_id,
  "world_time":clock.world_time,"world_scale":clock.scale_factor(),"revision":revision,
- "hero":hero.snapshot(),"enemies":enemies.duplicate(true),"pending":pending.duplicate(true),"event_sequence":sequence}
+ "hero":hero_state,"enemies":enemies.duplicate(true),"pending":pending.duplicate(true),"event_sequence":sequence,"progression":progression.snapshot()}
 
 func spawn_enemy(kind: String, at: Vector3, hp_override: float = -1.0) -> Dictionary:
  assert(kind in ["minion","elite","boss"])
@@ -65,19 +76,38 @@ func living() -> Array:
  return enemies.filter(func(e): return not e.dead)
 
 func request_action(action: String, aim: Vector3 = Vector3.INF, command_id: String = "") -> Dictionary:
+ if transaction_active: return {"accepted":false,"reason":"transaction_in_progress"}
  if not command_id.is_empty() and seen_commands.has(command_id): return seen_commands[command_id].duplicate(true)
+ var prior_aim: Vector3 = hero.aim_point
+ var prior_facing: Vector3 = hero.facing
+ var prior_serial: int = cast_serial
+ transaction_active = true
  var result: Dictionary = _request_action(action, aim)
+ transaction_active = false
+ if not result.accepted:
+  hero.aim_point = prior_aim
+  hero.facing = prior_facing
+  cast_serial = prior_serial
  if not command_id.is_empty(): seen_commands[command_id] = result.duplicate(true)
  return result
 
 func _request_action(action: String, aim: Vector3) -> Dictionary:
  if phase != "combat": return {"accepted":false,"reason":"encounter_frozen"}
  if hero.dead: return {"accepted":false,"reason":"not_alive"}
- if not action in hero.cooldowns: return {"accepted":false,"reason":"unknown_action"}
+ if not action in ["attack","shift","q","e","r"]: return {"accepted":false,"reason":"unknown_action"}
  if hero.cooldowns[action] > 0: return {"accepted":false,"reason":"cooldown"}
- if hero.lock_time > 0 or hero.dash_left > 0 or hero.stun_left > 0 or r1_active:
+ if hero.lock_time > 0 or hero.dash_left > 0 or hero.stun_left > 0 or r1_active or extensions.blocks_actions():
   return {"accepted":false,"reason":"action_locked"}
  if action in ["q","e","r"] and hero.ranks[action] == 0: return {"accepted":false,"reason":"unlearned"}
+ # Conservative adapter policy: a retained old-slot effect must finish before
+ # a newly selected candidate can begin; respec never grants concurrent E/R states.
+ var retained: String = ""
+ if action == "e":
+  if hero.overload_left > 0: retained = "e3"
+  elif hero.cast_state.has("e1"): retained = "e1"
+  elif hero.cast_state.has("e2"): retained = "e2"
+ elif action == "r" and hero.cast_state.has("r2"): retained = "r2"
+ if retained != "" and hero.loadout[action] != retained: return {"accepted":false,"reason":"previous_candidate_active"}
  if aim.is_finite():
   hero.aim_point = aim
   var direction: Vector3 = aim - hero.position
@@ -103,7 +133,7 @@ func _request_action(action: String, aim: Vector3) -> Dictionary:
    pending.append(context)
    emit_event("attack_started", {"cast_id":cast_serial,"position":hero.position,"direction":hero.facing})
   "q":
-   if hero.loadout.q != "q1": return {"accepted":false,"reason":"candidate_not_implemented"}
+   if hero.loadout.q != "q1": return extensions.request(action,context)
    context.kind = "q1_resolve"
    context.due += T.INITIAL.kill_grace
    var factor: float = 1.0 + hero.q1_stacks * T.CONFIRMED.q1_stack_gain
@@ -117,15 +147,14 @@ func _request_action(action: String, aim: Vector3) -> Dictionary:
    hero.lock_time = T.INITIAL.kill_grace
    emit_event("q1", {"cast_id":cast_serial,"position":hero.position,"direction":hero.facing,"length":T.INITIAL.q1_length * factor,"width":T.INITIAL.q1_width})
   "e":
-   if hero.loadout.e != "e3": return {"accepted":false,"reason":"candidate_not_implemented"}
+   if hero.loadout.e != "e3": return extensions.request(action,context)
    if hero.overload_left > 0: return {"accepted":false,"reason":"already_active"}
    hero.overload_left = T.ranked("e3_duration",hero.ranks.e)
    emit_event("overload_started")
   "r":
-   if hero.loadout.r != "r1": return {"accepted":false,"reason":"candidate_not_implemented"}
+   if hero.loadout.r != "r1": return extensions.request(action,context)
    r1_active = true
    clock.enter(hero.actor_id, T.INITIAL.r1_show_duration)
-   hero.invulnerable_left = T.INITIAL.r1_show_duration # released by presentation end, not this world timer
    context.damage = hero.ad() * T.ranked("r1_ad",hero.ranks.r)
    context.kind = "r1_damage"
    context.due += 0.06
@@ -176,7 +205,7 @@ func damage_enemy(enemy: Dictionary, amount: float, source: String, cast_id: int
  return false
 
 func damage_hero(amount: float, direction: Vector3 = Vector3.ZERO, control: float = 0.0) -> void:
- if phase != "combat" or hero.dead or hero.invulnerable_left > 0 or r1_active: return
+ if phase != "combat" or hero.dead or hero.invulnerable_left > 0 or r1_active or extensions.is_immune(): return
  var old_hp: float = hero.hp
  hero.hp = maxf(0, hero.hp - T.damage(amount, hero.stats.defence, 0.0))
  hero.stun_left = maxf(hero.stun_left, T.control_duration(control, hero.tenacity()))
@@ -221,6 +250,7 @@ func self_rescue() -> bool:
  hero.dead = false
  hero.hp = hero.stats.max_hp * 0.35
  phase = "combat"
+ if not progression.snapshot().in_combat: progression.begin_encounter()
  hero.invulnerable_left = 1.0
  emit_event("self_rescue", {"provenance":"test_initial"})
  return true
@@ -244,7 +274,9 @@ func step(real_delta: float) -> void:
  real_accumulator += maxf(0.0, real_delta)
  while real_accumulator + 0.00000001 >= FIXED_TICK and phase == "combat":
   real_accumulator = maxf(0.0, real_accumulator - FIXED_TICK)
+  transaction_active = true
   _fixed_step(FIXED_TICK)
+  transaction_active = false
  state_changed.emit(snapshot())
 
 func _fixed_step(real_delta: float) -> void:
@@ -254,12 +286,11 @@ func _fixed_step(real_delta: float) -> void:
   hero.cooldowns[key] = T.countdown(hero.cooldowns[key],dt)
  if r1_active and not clock.presenters.has(hero.actor_id):
   r1_active = false
-  hero.invulnerable_left = 0.0
   start_skill_cooldown("r",T.ranked("r1_cd",hero.ranks.r))
   emit_event("ultimate_finished")
  hero.lock_time = T.countdown(hero.lock_time,dt)
  hero.stun_left = maxf(0.0, hero.stun_left - dt)
- if not r1_active: hero.invulnerable_left = maxf(0.0, hero.invulnerable_left - dt)
+ hero.invulnerable_left = T.countdown(hero.invulnerable_left,dt)
  hero.slow_left = maxf(0.0, hero.slow_left - dt)
  if hero.overload_left > 0:
   var before: float = hero.overload_left
@@ -274,7 +305,7 @@ func _fixed_step(real_delta: float) -> void:
   var dash_dt: float = minf(dt, hero.dash_left)
   hero.position += hero.dash_direction * T.INITIAL.dash_distance / T.INITIAL.dash_duration * dash_dt
   hero.dash_left = T.countdown(hero.dash_left,dt)
- elif hero.lock_time <= 0 and hero.stun_left <= 0 and not r1_active:
+ elif hero.lock_time <= 0 and hero.stun_left <= 0 and not r1_active and not extensions.blocks_movement():
   velocity = hero.move_intent.limit_length(1.0) * hero.speed()
  hero.position = clamp_position(hero.position + (velocity + hero.knockback) * dt, T.INITIAL.player_radius)
  hero.knockback = hero.knockback.move_toward(Vector3.ZERO, dt * 18.0)
@@ -284,6 +315,9 @@ func _fixed_step(real_delta: float) -> void:
   _resolve_pending(event)
   _check_victory()
   if phase != "combat": return
+ extensions.step(dt)
+ _check_victory()
+ if phase != "combat": return
  if ai_enabled:
   for enemy in enemies:
    _step_enemy(enemy, dt)
@@ -300,6 +334,7 @@ func _resolve_pending(event: Dictionary) -> void:
     damage_enemy(target, event.damage, "attack", event.cast_id, false, event.critical)
     if hero.overload_left > 0: damage_enemy(target, event.damage * T.ranked("e3_true",hero.ranks.e), "attack", event.cast_id, true)
     knock_enemy(target, event.direction, 2.2)
+   extensions.on_basic_attack_completed({"cast_id":event.cast_id,"hit":hit})
    emit_event("attack_completed", {"cast_id":event.cast_id,"hit":hit})
   "q1_resolve":
    if not event.kills.is_empty():
@@ -381,12 +416,66 @@ func _check_victory() -> void:
 func end_encounter(result: String) -> void:
  if phase != "combat": return
  phase = result
+ real_accumulator = 0.0
  clock.clear()
+ extensions.on_encounter_end()
+ if result != "downed" and progression.snapshot().in_combat: progression.end_encounter()
  # Presentation is not persisted; all actual HP/CD/buff/charge/stack states stay frozen.
  if r1_active:
   r1_active = false
-  hero.invulnerable_left = 0.0
   start_skill_cooldown("r",T.ranked("r1_cd",hero.ranks.r))
  emit_event("encounter_finished", {"result":result})
  frozen_snapshot = snapshot()
  encounter_finished.emit(frozen_snapshot.duplicate(true))
+
+func learn_ability(slot: String, candidate: String) -> Dictionary:
+ var result: Dictionary = progression.invest(slot,candidate)
+ if result.ok:
+  _sync_loadout_from_ledger()
+  revision += 1
+  emit_event("skill_invested", {"slot":slot,"candidate":candidate})
+ return result
+
+func undo_new_investment() -> Dictionary:
+ var result: Dictionary = progression.undo_last_investment()
+ if result.ok:
+  _sync_loadout_from_ledger()
+  revision += 1
+ return result
+
+func reset_at_training() -> Dictionary:
+ # Keep HP, slot cooldowns, active effects and passive progress intact.
+ var result: Dictionary = progression.reset_at_training()
+ if result.ok:
+  _sync_loadout_from_ledger()
+  revision += 1
+ return result
+
+func _sync_loadout_from_ledger() -> void:
+ var slots: Dictionary = progression.snapshot().slots
+ for pair in [["Q","q"],["E","e"],["R","r"],["P","passive"]]:
+  hero.loadout[pair[1]] = slots[pair[0]].skill.to_lower()
+  hero.ranks[pair[1]] = slots[pair[0]].rank
+
+func configure_test_loadout(preset: Dictionary) -> Dictionary:
+ # Only for a completely new arena fixture, never used as a combat respec operation.
+ if clock.world_time > 0 or sequence > enemies.size(): return {"ok":false,"reason":"not_new_fixture"}
+ progression.end_encounter()
+ progression.set_training_node(true)
+ progression.reset_at_training()
+ for pair in [["Q","q"],["E","e"],["R","r"],["P","passive"]]:
+  if preset.has(pair[1]) and preset[pair[1]] != "": progression.invest(pair[0],preset[pair[1]].to_upper())
+ progression.begin_encounter()
+ _sync_loadout_from_ledger()
+ return {"ok":true}
+
+func begin_encounter(next_id: String, roster: Array) -> Dictionary:
+ if phase == "combat" or hero.dead: return {"accepted":false,"reason":"invalid_phase"}
+ if next_id.is_empty() or next_id == combat_level_id: return {"accepted":false,"reason":"new_level_id_required"}
+ combat_level_id = next_id
+ enemies.clear()
+ phase = "combat"
+ progression.begin_encounter()
+ for entry in roster: spawn_enemy(entry.kind,entry.position,entry.get("hp",-1.0))
+ emit_event("encounter_started")
+ return {"accepted":true,"reason":"ok"}

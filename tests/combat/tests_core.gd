@@ -30,6 +30,10 @@ func run() -> Dictionary:
  _test_input_movement()
  _test_clock()
  _test_death()
+ _test_passives()
+ _test_progression_integration()
+ _test_transaction_boundaries()
+ _test_independent_slots()
  return {"suite":"fengli-core","checks":checks,"passed":checks-failures.size(),"failures":failures.duplicate(),"cases":cases.duplicate(),"definition_version":T.VERSION}
 func _test_q1() -> void:
  cases.append("Q1 geometry/refund/lethal attribution/stacks/grace")
@@ -270,3 +274,220 @@ func _test_death() -> void:
  near(s.hero.xp_progress,70,"duplicate death no extra penalty")
  check(not s.self_rescue(),"no second rescue")
  s.free()
+
+func _test_passives() -> void:
+ cases.append("P1 attack-only leech/P2 nonlethal threshold/reset active states")
+ var s=fixture()
+ s.hero.loadout.passive="p1"
+ s.hero.hp=100
+ var e=s.spawn_enemy("minion",Vector3(0,0,-2),1000)
+ s.request_action("attack")
+ s.step(0.1)
+ near(s.hero.hp,100+32*0.02*0.4,"P1 basic area lifesteal only")
+ var old:float=s.hero.hp
+ s.request_action("q")
+ near(s.hero.hp,old,"P1 does not leech skill damage")
+ s.free()
+ for rank in [1,2,3]:
+  s=fixture()
+  s.hero.loadout.passive="p2"
+  s.hero.ranks.passive=rank
+  s.hero.hp=24
+  s.hero.cooldowns.q=4
+  s.hero.cooldowns.e=10
+  s.damage_hero(1)
+  near(s.hero.hp,23+240*T.ranked("p2_heal",rank),"P2 threshold heal rank%d"%rank)
+  near(s.hero.cooldowns.q,0,"P2 resets Q")
+  near(s.hero.cooldowns.e,0,"P2 resets E")
+  near(s.hero.cooldowns.passive,T.ranked("p2_cd",rank),"P2 new test CD table")
+  s.hero.hp=24
+  s.damage_hero(1)
+  near(s.hero.hp,23,"P2 cannot retrigger on cooldown")
+  s.free()
+ s=fixture()
+ s.hero.loadout.passive="p2"
+ s.hero.hp=25
+ s.damage_hero(1)
+ near(s.hero.hp,24,"P2 exactly10% excluded")
+ near(s.hero.cooldowns.passive,0,"P2 exactly10% no cooldown")
+ s.hero.hp=20
+ s.damage_hero(1)
+ near(s.hero.hp,19,"P2 below-to-below excluded")
+ s.hero.hp=24
+ s.damage_hero(100)
+ near(s.hero.hp,0,"P2 lethal cannot save")
+ near(s.hero.cooldowns.passive,0,"P2 lethal cannot trigger")
+ s.free()
+ s=fixture()
+ s.hero.loadout.passive="p2"
+ s.request_action("e")
+ s.hero.hp=24
+ s.damage_hero(1)
+ near(s.hero.overload_left,7,"P2 does not restart/duplicate E3")
+ check(not s.request_action("e").accepted,"P2 no two simultaneous E3 states")
+ s.step(7)
+ near(s.hero.cooldowns.e,0,"P2 active E3 finishes then skips one cooldown")
+ check(s.request_action("e").accepted,"P2 E ready after natural finish")
+ s.step(7)
+ near(s.hero.cooldowns.e,32,"P2 reset credit consumed only once")
+ s.free()
+ s=fixture()
+ s.hero.loadout.passive="p2"
+ s.hero.loadout.q="q2"
+ s.spawn_enemy("minion",Vector3(0,0,-2),1000)
+ s.request_action("q",Vector3(0,0,-2))
+ s.hero.hp=24
+ s.damage_hero(1)
+ near(s.hero.hp,24,"Q2 immune damage cannot trigger P2")
+ s.free()
+
+func _test_progression_integration() -> void:
+ cases.append("ledger integration preserves HP/CD/time; no mechanic branches")
+ var s=fixture()
+ s.hero.hp=123
+ s.hero.cooldowns.q=3
+ s.hero.cooldowns.e=8
+ var old_time:float=s.clock.world_time
+ check(s.learn_ability("Q","Q1").ok,"learn numeric upgrade during combat")
+ near(s.hero.ranks.q,2,"ledger rank applied to runtime")
+ near(s.hero.hp,123,"upgrade no heal")
+ near(s.hero.cooldowns.q,3,"upgrade no cooldown refresh")
+ near(s.clock.world_time,old_time,"upgrade does not pause/change time")
+ s.step(0.1)
+ check(s.clock.world_time>old_time,"combat keeps advancing after investment")
+ s.end_encounter("victory")
+ old_time=s.clock.world_time
+ var cd:float=s.hero.cooldowns.q
+ check(s.undo_new_investment().ok,"new combat investment undo between rooms")
+ near(s.hero.ranks.q,1,"undo only new rank")
+ near(s.hero.hp,123,"undo no heal")
+ near(s.hero.cooldowns.q,cd,"undo no cooldown refresh")
+ check(not s.undo_new_investment().ok,"committed old ranks not undoable")
+ check(not s.reset_at_training().ok,"old loadout reset outside training refused")
+ s.progression.set_training_node(true)
+ check(s.reset_at_training().ok,"training reset allowed")
+ near(s.hero.ranks.q,0,"unlearned slot represented")
+ near(s.hero.cooldowns.q,cd,"training reset preserves old slot CD")
+ near(s.hero.hp,123,"training reset preserves HP")
+ near(s.clock.world_time,old_time,"training reset frozen time")
+ near(s.progression.snapshot().available,6,"reset returns actual costs no new points")
+ s.free()
+
+func _test_transaction_boundaries() -> void:
+ cases.append("room frame budget/no phantom actions/R2 event order/reentrancy")
+ var s=fixture()
+ var before:Dictionary=s.snapshot()
+ check(not s.request_action("passive").accepted,"passive is not an action")
+ check(s.snapshot()==before,"unknown action no mutation")
+ s.hero.loadout.q="q2"
+ before=s.snapshot()
+ var serial:int=s.cast_serial
+ check(not s.request_action("q",Vector3.RIGHT*5).accepted,"Q2 no target refused")
+ check(s.snapshot()==before and serial==s.cast_serial,"failed targeting restores aim/facing/serial")
+ s.free()
+ s=fixture()
+ s.auto_finish=true
+ s.spawn_enemy("minion",Vector3(0,0,-2),1)
+ s.request_action("attack")
+ s.step(1)
+ check(s.phase=="victory","coarse frame last kill victory")
+ near(s.real_accumulator,0,"room end discards old real frame tail")
+ var old_time:float=s.clock.world_time
+ s.hero.cooldowns.q=5
+ check(s.begin_encounter("training-02",[{"kind":"minion","position":Vector3(0,0,-5)}]).accepted,"next room API accepted")
+ s.step(0)
+ near(s.clock.world_time,old_time,"next room cannot consume prior frame")
+ near(s.hero.cooldowns.q,5,"next room preserves cooldown")
+ s.step(0.1)
+ near(s.hero.cooldowns.q,4.9,"next room resumes only new world time")
+ s.free()
+ s=fixture()
+ s.hero.loadout.r="r2"
+ s.request_action("r")
+ s.step(0.25)
+ var observations:Array=[]
+ s.combat_event.connect(func(ev):
+  if ev.kind=="attack_completed":
+   observations.append({"count":s.hero.cast_state.r2.attacks,"reentrant":s.request_action("r")})
+ )
+ s.request_action("attack")
+ s.step(0.1)
+ check(observations.size()==1,"attack completion emitted exactly once")
+ check(observations[0].count==1,"R2 count visible atomically at completion event")
+ check(not observations[0].reentrant.accepted and observations[0].reentrant.reason=="transaction_in_progress","signal cannot reenter incomplete damage transaction")
+ check(s.request_action("r").accepted,"next input can cast after transaction")
+ near(s.hero.cast_state.r2.last_nails,2,"next R2 uses completed attack count")
+ s.free()
+
+ s=fixture()
+ s.hero.invulnerable_left=1.0
+ s.request_action("r")
+ s.step(1.1)
+ near(s.hero.invulnerable_left,0.78,"R1 preserves overlapping E2/rescue immunity in world time")
+ check(s.snapshot().hero.invulnerable,"snapshot unions independent immunity sources")
+ s.free()
+
+ s=fixture()
+ s.hero.loadout.e="e1"
+ var marked=s.spawn_enemy("minion",Vector3(0,0,-2),1000)
+ s.request_action("e",marked.position)
+ s.step(0.2)
+ s.damage_enemy(marked,2000,"test",777)
+ before=s.snapshot()
+ check(not s.request_action("e",Vector3.RIGHT).accepted,"dead E1 mark refuses second stage")
+ check(s.snapshot()==before,"failed E1 does not mutate existing cast or CD")
+ s.step(0.005)
+ near(s.hero.cooldowns.e,18,"next authoritative tick finalizes lost mark")
+ s.free()
+
+func _test_independent_slots() -> void:
+ cases.append("all11 candidates independently learned/empty other slots; R2 window bounds")
+ for slot in ["q","e","r","passive"]:
+  var candidates:Array = {"q":["q1","q2","q3"],"e":["e1","e2","e3"],"r":["r1","r2"],"passive":["p1","p2","p3"]}[slot]
+  for candidate in candidates:
+   var s=fixture()
+   check(s.configure_test_loadout({slot:candidate}).ok,"independent fixture "+candidate)
+   for other in ["q","e","r","passive"]:
+    if other!=slot: check(s.hero.ranks[other]==0,"empty other slot "+candidate+"/"+other)
+   var target=s.spawn_enemy("elite",Vector3(0,0,-2),1000)
+   if slot!="passive":
+    check(s.request_action(slot,target.position).accepted,"standalone action "+candidate)
+   elif candidate=="p1":
+    s.hero.hp=100
+    s.request_action("attack",target.position)
+    s.step(0.1)
+    check(s.hero.hp>100,"P1 independent lifesteal")
+   elif candidate=="p2":
+    s.hero.hp=24
+    s.damage_hero(1)
+    check(s.hero.hp>24,"P2 independent low health trigger")
+   else:
+    for i in 10:
+     var victim=s.spawn_enemy("minion",Vector3(8,0,8),1)
+     s.damage_enemy(victim,100,"test",i)
+    near(s.hero.permanent_ad,1,"P3 independent permanent run growth")
+   s.free()
+ for offset in [-0.001,0.0,0.001]:
+  var s=fixture()
+  s.hero.loadout.r="r2"
+  s.request_action("r")
+  s.step(0.25)
+  s.clock.world_time=s.hero.cast_state.r2.expires+offset
+  var before:Dictionary=s.snapshot()
+  var result:Dictionary=s.request_action("r")
+  check(result.accepted==(offset<0),"R2 exclusive world window boundary "+str(offset))
+  if offset>=0: check(s.snapshot()==before,"late R2 rejection leaves settlement to tick")
+  s.free()
+
+ for pair in [["e3","e1","E","e"],["r2","r1","R","r"]]:
+  var s=fixture()
+  s.hero.loadout[pair[3]]=pair[0]
+  s.request_action(pair[3])
+  s.end_encounter("victory")
+  s.progression.set_training_node(true)
+  s.reset_at_training()
+  s.learn_ability(pair[2],pair[1].to_upper())
+  s.begin_encounter("after-training",[{"kind":"elite","position":Vector3(0,0,-2),"hp":1000}])
+  var refused:Dictionary=s.request_action(pair[3],Vector3(0,0,-2))
+  check(not refused.accepted and refused.reason=="previous_candidate_active","retained "+pair[0]+" blocks free parallel "+pair[1])
+  s.free()

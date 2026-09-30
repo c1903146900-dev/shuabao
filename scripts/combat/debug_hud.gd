@@ -24,12 +24,13 @@ func _draw() -> void:
  text(Vector2(w*0.45,32),"生命  %d / %d" % [ceili(h.hp),ceili(h.max_hp)],17)
  draw_rect(Rect2(w*0.45,43,240,8),Color("263736"))
  draw_rect(Rect2(w*0.45,43,240*maxf(0,h.hp/h.max_hp),8),Color("4adeac"))
- text(Vector2(w*0.45,75),"AD %d   攻速 %.2f   击杀成长 %d/10" % [h.ad,h.attack_speed,h.kill_progress],15,Color("8ab5b1"))
+ text(Vector2(w*0.45,75),"AD %d   攻速 %.2f   %s %d阶" % [h.ad,h.attack_speed,{"p1":"吸血","p2":"反打","p3":"击杀成长","":"无被动"}[h.loadout.passive],h.ranks.passive],15,Color("8ab5b1"))
  var alive: int = state.enemies.filter(func(e): return not e.dead).size()
  text(Vector2(w-238,36),"存活敌人  %02d" % alive,20,Color("f5be86"))
- text(Vector2(w-238,65),"世界时间 %.1f  /  ×%.2f" % [state.world_time,state.world_scale],15,Color("879f9e"))
+ text(Vector2(w-238,65),"Lv.%d  余%d点  世界×%.2f" % [state.progression.level,state.progression.available,state.world_scale],15,Color("879f9e"))
  draw_rect(Rect2(0,bottom,w,105),Color(0.025,0.045,0.058,0.95))
- var cards: Array = [["LMB","长剑","attack"],["SHIFT","冲刺","shift"],["Q","突刺 · %d层" % h.q1_stacks,"q"],["E","超载","e"],["R","乱剑斩杀","r"]]
+ var skill_names: Dictionary = {"q1":"突刺·%d层"%h.q1_stacks,"q2":"连锁突袭","q3":"剑气","e1":"追踪穿刺","e2":"旋斩瞬移","e3":"超载","r1":"乱剑斩杀","r2":"骨钉","":"未学习"}
+ var cards: Array = [["LMB","长剑","attack"],["SHIFT","冲刺","shift"],["Q",skill_names[h.loadout.q],"q"],["E",skill_names[h.loadout.e],"e"],["R",skill_names[h.loadout.r],"r"]]
  var start: float = w*0.5 - 290
  for index in cards.size():
   var x: float = start+index*118
@@ -42,9 +43,14 @@ func _draw() -> void:
   if entry[2] == "e" and h.overload_left > 0: text(Vector2(x+54,bottom+33),"%.1f" % h.overload_left,15,Color("ffd284"))
  text(Vector2(24,bottom+32),"WASD 移动",16)
  text(Vector2(24,bottom+55),"鼠标瞄准",16)
- text(Vector2(w-225,bottom+31),"F5 新测试局",15,Color("8baba8"))
- text(Vector2(w-225,bottom+55),"H 隐藏调试面板",15,Color("8baba8"))
- text(Vector2(start,bottom+95),hint,14,Color("87aaa6"))
+ text(Vector2(w-225,bottom+31),"F5 新局 / F6 换测试组合",15,Color("8baba8"))
+ text(Vector2(w-225,bottom+55),"H 隐藏面板 · 切组合重开",15,Color("8baba8"))
+ var status_hint: String = hint
+ if h.cast_state.has("e1"):
+  status_hint = "E1：匕首飞行中" if h.cast_state.e1.stage == "flying" else "E1标记：再次按E，朝指针位置穿刺 · %.1fs" % maxf(0,h.cast_state.e1.expires-state.world_time)
+ if h.cast_state.has("r2"):
+  status_hint = "骨钉 %d/3投 · 已累计%d次普攻 · 下一轮%d根 · %.1fs" % [h.cast_state.r2.round,h.cast_state.r2.attacks,1+h.cast_state.r2.attacks,maxf(0,h.cast_state.r2.expires-state.world_time)]
+ text(Vector2(start,bottom+95),status_hint,14,Color("87aaa6"))
  if state.phase != "combat":
   var rect = Rect2(w*0.5-270,size.y*0.45-55,540,125)
   draw_rect(rect,Color(0.025,0.055,0.065,0.96))
