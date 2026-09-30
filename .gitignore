@@ -13,3 +13,7 @@ dist/
 *.tmp
 .DS_Store
 Thumbs.db
+
+# Python MCP client bytecode.
+__pycache__/
+*.py[cod]

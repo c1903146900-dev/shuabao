@@ -1,0 +1,217 @@
+[
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nprint({'blender_version': bpy.app.version_string, 'scene': bpy.context.scene.name})",
+      "user_prompt": "Read live Blender version through MCP before the animation probe."
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/main.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "add_node",
+    "arguments": {
+      "type": "AnimationPlayer",
+      "name": "ProbeAnimation",
+      "parent_path": "."
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "create_animation",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "name": "probe",
+      "length": 2
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "add_animation_track",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "animation": "probe",
+      "track_type": "value",
+      "property_path": "World/HeroPlaceholder:position"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "set_animation_keyframe",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "animation": "probe",
+      "track": 0,
+      "time": 0,
+      "value": "Vector3(-2, 0.9, 0)"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "set_animation_keyframe",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "animation": "probe",
+      "track": 0,
+      "time": 1,
+      "value": "Vector3(2, 0.9, 0)"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "set_animation_keyframe",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "animation": "probe",
+      "track": 0,
+      "time": 2,
+      "value": "Vector3(-2, 0.9, 0)"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "execute_editor_script",
+    "arguments": {
+      "code": "get_node(\"ProbeAnimation\").get_animation(\"probe\").set(\"loop_mode\", 1)"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "update_property",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "property": "autoplay",
+      "value": "probe"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://probe_empty.tscn",
+      "root_type": "Node3D",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/main.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "get_animation_info",
+    "arguments": {
+      "node_path": "ProbeAnimation",
+      "animation": "probe"
+    },
+    "expect_text": [
+      "\"keys\": 3",
+      "\"length\": 2"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_editor_script",
+    "arguments": {
+      "code": "[get_node(\"ProbeAnimation\").get_animation(\"probe\").track_get_key_time(0, 1), get_node(\"ProbeAnimation\").get_animation(\"probe\").track_get_key_value(0, 1)]"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 15
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_node_properties",
+    "arguments": {
+      "node_path": "World/HeroPlaceholder"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_node_properties",
+    "arguments": {
+      "node_path": "World/HeroPlaceholder"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nobj = bpy.data.objects.get(\"MCP_AnimationProbe\")\nif obj is None:\n    bpy.ops.mesh.primitive_cube_add(size=2, location=(0,0,0))\n    obj = bpy.context.object\n    obj.name = \"MCP_AnimationProbe\"\nobj.animation_data_clear()\nfor frame, x in [(1,0.0),(12,3.0),(24,0.0)]:\n    obj.location.x = x\n    obj.keyframe_insert(data_path=\"location\", frame=frame)\nbpy.context.scene.frame_end=24\nbpy.context.scene.frame_set(12)\nbpy.ops.wm.save_as_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/animation_probe.blend')\nprint(\"MCP_BLEND_SAVED\")",
+      "user_prompt": "Create only a temporary cube animation for MCP roundtrip acceptance."
+    }
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/animation_probe.blend')\nprint('MCP_BLEND_REOPENED')"
+    },
+    "wait_after": 3
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nobj=bpy.data.objects[\"MCP_AnimationProbe\"]\naction=obj.animation_data.action\nkeys=[[(p.co.x,p.co.y) for p in f.keyframe_points] for f in action.fcurves if f.data_path==\"location\" and f.array_index==0]\nbpy.context.scene.frame_set(12)\nassert keys == [[(1.0,0.0),(12.0,3.0),(24.0,0.0)]], keys\nassert abs(obj.location.x-3.0)<0.001\nprint({\"MCP_ANIMATION_ROUNDTRIP_OK\":True,\"keyframes_x\":keys,\"frame12_x\":obj.location.x})"
+    },
+    "expect_text": [
+      "MCP_ANIMATION_ROUNDTRIP_OK",
+      "'frame12_x': 3.0"
+    ]
+  },
+  {
+    "server": "blender",
+    "tool": "get_scene_info",
+    "arguments": {
+      "user_prompt": "Confirm MCP animation probe object survived save and reopen."
+    }
+  },
+  {
+    "server": "blender",
+    "tool": "get_viewport_screenshot",
+    "arguments": {
+      "max_size": 1000,
+      "user_prompt": "Observe the temporary animated probe at frame 12."
+    }
+  }
+]
