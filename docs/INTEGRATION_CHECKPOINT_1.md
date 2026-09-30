@@ -23,3 +23,5 @@
 - 成长P1撤销套利既有修复为 `1fcdb28f63a5e1de30f95da821bfa038e096162e`，本轮未改成长源；最终模型验收等待成长任务与独立QA对该SHA复核。
 
 证据目录：`docs/validation/integration-checkpoint-1/`。Windows/Linux既有烟雾导出不等于这个新入口已打包；本checkpoint提交时不提供未经重建的包，不发布Release、不部署服务器。
+
+后续进展：QA-002修复与成长目录已合并，重新实际导出并回归；以 [构建与交接](CHECKPOINT_1_DELIVERY.md) 为最新包状态。Library失败，尚无下载ID。

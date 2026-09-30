@@ -45,3 +45,5 @@ Library ID：`libfile_137d44c0b4c08191bc25116c300fc08b`；服务返回 file ID `
 ## 首个单房间整合 checkpoint
 
 默认入口已切换为 `scenes/integration/room.tscn`。实际1级1点技能选择、GLB敌人/风厉、真实HP/CD HUD与战斗接线完成；9项MCP输入链路检查通过，实测8击杀后倒地，非胜利通关。独立QA窗口输入、完整成长目录/控制器和新入口导出仍待完成。见 [checkpoint说明](INTEGRATION_CHECKPOINT_1.md)。较早的“只有骨架/未战斗”记录仅描述当时版本。
+
+QA-002修复已推送，成长目录v2已合并但能力全关；Windows/Linux已从085aaa0实际重建，Linux独立无头启动通过，Windows执行未运行。包内容审计通过；Library连接网络失败，无新ID。详见 [checkpoint构建交接](CHECKPOINT_1_DELIVERY.md)。
