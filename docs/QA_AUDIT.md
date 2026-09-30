@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-结论：**发现已复现的商店撤销负钱包缺陷；不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
+当前结论（第三轮更新）：**QA-001已在指定修复及catalog源码提交独立复测通过；QA-002待修复SHA；不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -121,3 +121,52 @@ MCP 工具链安装使用原 checkout `/workspace/shuabao` 的 `scripts/mcp/chec
 - 本轮没有新增窗口测试；上一轮XTest输入→MCP状态/截图证据仍只代表那条阶段战斗路径。没有忙等或擅测未提供的最终整合SHA。
 
 运行第二轮：沿用 `tests/qa/run.sh` 中的项目XDG环境后，分别 `godot --headless --path . --script tests/qa/round2_economy.gd` 和 `... --script tests/qa/round2_combat.gd`。经济脚本以JSON分类记录已知问题；战斗脚本有失败则退出1，需检查具体结果而非只看总计数。
+
+## 第三轮：QA-001修复复测与catalog能力门禁审查
+
+新增固定只读工作树：
+
+- `/workspace/shuabao-progression-fix`：`e022b456007287b40828d45f3363634c749f3e42`
+- `/workspace/shuabao-catalog`：`fdd18ea34003b6b44794651fe8963cc0e04cf43d`
+
+### QA-001状态：指定源码修复已独立验证，最终整合仍待测
+
+修复先读取 `shop_undo.back()`，在 `state.gold + undo.gold_delta < 0` 时返回 insufficient_gold，再由原事务框架完整回滚，足额时才弹记录。两份上述提交均执行独立场景：
+
+1. 原最小复现现在拒绝，金币40、空背包、锻体1条、买/卖撤销记录2条完整保留，整个快照相同。
+2. 补50金后重放原失败command ID，仍返回原失败且不动状态；新command ID恰好足額撤销出售，金币0、零件恢复、锻体保留。
+3. 重放成功ID不再次撤销；继续以新ID撤销原购买，金币100、空背包，锻体仍保留。没有用退款锻体解决负钱包。
+
+证据：[round3_qa001.json](../tests/qa/round3_qa001.json)、[脚本](../tests/qa/round3_qa001.gd)、[日志](../tests/qa/round3_qa001.log)。结果分别引用真实模型，未应用作者补丁到测试复制逻辑。
+
+上一轮相同96个固定种子、相同动作选择器在两个新提交分别复跑，均完成15356次操作、没有金币非负/守恒/失败原子性/请求重放/物品及额度不变量失败。此前14799次是8条轨迹遇到已知失败提前停止；本轮无提前失败，但少数首步随机选到尚无历史回执的重放被跳过，所以不等于96×160。证据：[修复提交报告](../tests/qa/round3_economy_fix.json)、[catalog提交兼容模型报告](../tests/qa/round3_economy_catalog_legacy.json)。**这两次使用原fixture及legacy model，验证修复和后续提交兼容性，不冒称对新catalog全部经济内容做了随机覆盖。**
+
+`round2_economy.gd`只新增环境参数指定源码根、基线SHA、报告位置，以及失败退出码；动作生成器和不变量未为了通过而修改。旧round2报告保留。
+
+### Catalog审查：未发现把能力标志当实战实现的生产调用
+
+静态读取核对了12组件/3中级/8成装/2药品、24个prototype_initial数值海克斯与19个unsupported机制草案；所有启用属性定义包含对应 `stat.<属性>.v1` 门禁，无缺项。此处“启用”是可被能力声明开放的数据项，**不是默认可购买/已实现战斗效果**。
+
+指定分支 `scripts/` 中没有调用 `.set_supported_hooks(...)` 的位置；`catalog_demo.gd`的现场模型默认空能力，另建隔离测试模型才声明hook。自动套件的通过结果不会给现场审阅模型开能力。静态证据：[round3_catalog_static.json](../tests/qa/round3_catalog_static.json)。没有读取未提供SHA的最终宿主，结论仅限fdd18ea。
+
+独立动态门禁验证：[round3_catalog.gd](../tests/qa/round3_catalog.gd)、[完整结果](../tests/qa/round3_catalog.json)、[日志](../tests/qa/round3_catalog.log)：
+
+- 默认空hook：全部目录物品购买、锻体、海克斯抽池均原子拒绝，不改变金钱/随机状态/快照。
+- 只提供 `stats.v1`：不能买铁刃；提供其他全部声明但移除AP和recovery：AP物品、两类药仍拒绝。
+- 即使把19项草案要求的所有hook名称都声明，unsupported状态仍使其不可用；五轮实际数据抽选无草案混入。
+- 已购买数值物品在能力移除后停止投影并给出warning；新模型恢复存档保持空能力，已有物品效果不激活，也不能继续购买。
+- legacy Model接收playable_prototype目录时返回catalog_adapter_required，不能绕过适配器门禁。
+- 在**新catalog模型**用950金买450金铁刃→卖405→买900金锻体后剩5，撤销出售被原子拒绝；已付费三选结果、RNG、账本及余额保持，确认新锻体路径也保留QA-001修复。
+
+重要边界：`catalog_model.gd:13-14` 的 `set_supported_hooks()`接受可信宿主声明，没有能力运行验证器；`:17-21` 的availability由声明与status算出。独立测试也证明声明AD后即可通过数据购买/投影，**这本身不表示存在任何真实战斗消费者**。当前代码/文档明确说明了这点，默认也关闭，故不把这个可信接口本身列为新缺陷。最终宿主若无条件复制测试的全量hook列表，则将是新的集成问题：应逐个核对基础属性重算、实际伤害消费（尤其AP）、HP/CD保持、战斗regen、治疗预检/扣药/去重恢复事务，再开放能力。24项数值海克斯也不能冒充19项未实现机制草案。
+
+QA-002仍OPEN：收到战斗/集成修复SHA后复跑真实跨房事件复现；本轮未修改功能代码，也未把缺少最终整合SHA当作等待理由。
+
+### 第三轮复现
+
+在QA工作树设置 `XDG_CACHE_HOME=/tmp/qa-cache XDG_CONFIG_HOME=/tmp/qa-config XDG_DATA_HOME=/tmp/qa-data`：
+
+- `godot --headless --path /workspace/shuabao-qa --script tests/qa/round3_qa001.gd`
+- `QA_MODEL_ROOT=/workspace/shuabao-progression-fix QA_BASELINE=e022b456007287b40828d45f3363634c749f3e42 QA_ECONOMY_REPORT=/workspace/shuabao-qa/tests/qa/round3_economy_fix.json godot --headless --path /workspace/shuabao-qa --script tests/qa/round2_economy.gd`
+- 第二次经济复跑将根目录换成 `/workspace/shuabao-catalog`，基线与报告文件名相应替换，保留历史结果。
+- `godot --headless --path /workspace/shuabao-catalog --script /workspace/shuabao-qa/tests/qa/round3_catalog.gd`（资源根必须指向catalog提交；脚本和产物仍在QA目录。）

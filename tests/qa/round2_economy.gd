@@ -1,6 +1,7 @@
 extends SceneTree
-var Model=load('/workspace/shuabao-progression/scripts/progression/model.gd')
-var base=JSON.parse_string(FileAccess.get_file_as_string('/workspace/shuabao-progression/data/progression/fixture.json'))
+var source_root=OS.get_environment('QA_MODEL_ROOT') if not OS.get_environment('QA_MODEL_ROOT').is_empty() else '/workspace/shuabao-progression'
+var Model=load(source_root+'/scripts/progression/model.gd')
+var base=JSON.parse_string(FileAccess.get_file_as_string(source_root+'/data/progression/fixture.json'))
 var total=0
 var coverage={}
 var violations=[]
@@ -74,7 +75,7 @@ func _initialize():
    for seed_value in range(1,25):run_case(seed_value,policy,stacking)
  var counts={}
  for v in violations:counts[v.kind]=counts.get(v.kind,0)+1
- var report={'baseline':'607bf6385f5f668155aa76f5df6eb184e5685cea','attempted_commands':total,'cases':96,'coverage':coverage,'violations_by_kind':counts,'violations':violations}
- var f=FileAccess.open('res://tests/qa/round2_economy.json',FileAccess.WRITE);f.store_string(JSON.stringify(report,'  '));f.close()
+ var report={'baseline':OS.get_environment('QA_BASELINE') if not OS.get_environment('QA_BASELINE').is_empty() else '607bf6385f5f668155aa76f5df6eb184e5685cea','attempted_commands':total,'cases':96,'coverage':coverage,'violations_by_kind':counts,'violations':violations}
+ var f=FileAccess.open(OS.get_environment('QA_ECONOMY_REPORT') if not OS.get_environment('QA_ECONOMY_REPORT').is_empty() else 'res://tests/qa/round2_economy.json',FileAccess.WRITE);f.store_string(JSON.stringify(report,'  '));f.close()
  print(JSON.stringify({'attempted_commands':total,'cases':96,'coverage':coverage,'violations_by_kind':counts}))
- quit()
+ quit(0 if violations.is_empty() else 1)
