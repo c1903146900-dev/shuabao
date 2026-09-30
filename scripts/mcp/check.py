@@ -91,7 +91,7 @@ async def run(args):
         print(label, 'isError=', getattr(result, 'isError', False), flush=True)
         return data
     try:
-        x = start('xorg', ['Xorg', ':97', '-config', '/etc/X11/xorg.conf', '-nolisten', 'tcp', '-auth', str(auth), '-logfile', str(out/'xorg-server.log')])
+        x = start('xorg', ['Xorg', ':97', '-config', str(ROOT/'scripts/mcp/xorg-dummy.conf'), '-nolisten', 'tcp', '-auth', str(auth), '-logfile', str(out/'xorg-server.log')])
         for _ in range(40):
             if x.poll() is not None:
                 raise RuntimeError('Xorg failed; inspect log')
@@ -137,6 +137,12 @@ async def run(args):
             record_result('blender-scene', await sessions['blender'].call_tool('get_scene_info', {'user_prompt': 'Verify Shuabao MCP connection; inspect current scene only.'}))
             if args.workflow:
                 workflow = json.loads((ROOT / args.workflow).read_text())
+                def expand(value):
+                    if isinstance(value, str): return value.replace('{{ROOT}}', str(ROOT))
+                    if isinstance(value, list): return [expand(v) for v in value]
+                    if isinstance(value, dict): return {k: expand(v) for k, v in value.items()}
+                    return value
+                workflow = expand(workflow)
                 for i, step in enumerate(workflow):
                     result = await sessions[step['server']].call_tool(step['tool'], step.get('arguments', {}))
                     data = record_result(f"step-{i:02}-{step['tool']}", result)

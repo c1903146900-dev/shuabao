@@ -176,7 +176,7 @@
     "server": "blender",
     "tool": "execute_blender_code",
     "arguments": {
-      "code": "import bpy\nobj = bpy.data.objects.get(\"MCP_AnimationProbe\")\nif obj is None:\n    bpy.ops.mesh.primitive_cube_add(size=2, location=(0,0,0))\n    obj = bpy.context.object\n    obj.name = \"MCP_AnimationProbe\"\nobj.animation_data_clear()\nfor frame, x in [(1,0.0),(12,3.0),(24,0.0)]:\n    obj.location.x = x\n    obj.keyframe_insert(data_path=\"location\", frame=frame)\nbpy.context.scene.frame_end=24\nbpy.context.scene.frame_set(12)\nbpy.ops.wm.save_as_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/animation_probe.blend')\nprint(\"MCP_BLEND_SAVED\")",
+      "code": "import bpy\nobj = bpy.data.objects.get(\"MCP_AnimationProbe\")\nif obj is None:\n    bpy.ops.mesh.primitive_cube_add(size=2, location=(0,0,0))\n    obj = bpy.context.object\n    obj.name = \"MCP_AnimationProbe\"\nobj.animation_data_clear()\nfor frame, x in [(1,0.0),(12,3.0),(24,0.0)]:\n    obj.location.x = x\n    obj.keyframe_insert(data_path=\"location\", frame=frame)\nbpy.context.scene.frame_end=24\nbpy.context.scene.frame_set(12)\nbpy.ops.wm.save_as_mainfile(filepath='{{ROOT}}/.local/mcp-fixture/animation_probe.blend')\nprint(\"MCP_BLEND_SAVED\")",
       "user_prompt": "Create only a temporary cube animation for MCP roundtrip acceptance."
     }
   },
@@ -184,7 +184,7 @@
     "server": "blender",
     "tool": "execute_blender_code",
     "arguments": {
-      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/animation_probe.blend')\nprint('MCP_BLEND_REOPENED')"
+      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='{{ROOT}}/.local/mcp-fixture/animation_probe.blend')\nprint('MCP_BLEND_REOPENED')"
     },
     "wait_after": 3
   },

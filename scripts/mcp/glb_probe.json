@@ -1,0 +1,151 @@
+[
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy, math, os\nfrom pathlib import Path\nbpy.ops.object.select_all(action='SELECT')\nbpy.ops.object.delete(use_global=False)\nbpy.ops.object.armature_add(enter_editmode=True, location=(0,0,0))\nrig=bpy.context.object\nrig.name='ProbeRig'\nbone=rig.data.edit_bones[0]\nbone.name='ProbeBone'\nbone.head=(0,0,0)\nbone.tail=(0,0,2)\nbpy.ops.object.mode_set(mode='OBJECT')\nbpy.ops.mesh.primitive_cube_add(size=1, location=(0,0,1))\nmesh=bpy.context.object\nmesh.name='WeightedProbe'\nmesh.scale=(0.3,0.3,2.0)\nbpy.ops.object.transform_apply(location=False, rotation=False, scale=True)\nmesh.parent=rig\nweights=mesh.vertex_groups.new(name='ProbeBone')\nweights.add(list(range(len(mesh.data.vertices))),1.0,'REPLACE')\nmodifier=mesh.modifiers.new(name='ProbeSkin',type='ARMATURE')\nmodifier.object=rig\npose=rig.pose.bones['ProbeBone']\npose.rotation_mode='XYZ'\nfor frame,angle in [(1,-0.7),(13,0.7),(25,-0.7)]:\n    pose.rotation_euler=(angle,0,0)\n    pose.keyframe_insert(data_path='rotation_euler',frame=frame)\nrig.animation_data.action.name='ProbeSwing'\nbpy.context.scene.frame_start=1\nbpy.context.scene.frame_end=25\nbpy.context.scene.render.fps=24\nbpy.context.scene.frame_set(13)\nbpy.ops.object.select_all(action='DESELECT')\nmesh.select_set(True)\nrig.select_set(True)\nbpy.context.view_layer.objects.active=rig\nfolder=Path('{{ROOT}}/.local/mcp-fixture')\nsource_folder=Path('{{ROOT}}/.local/blender-sources')\nsource_folder.mkdir(exist_ok=True)\nbpy.ops.wm.save_as_mainfile(filepath=str(source_folder/'probe_swing.blend'))\nprops=bpy.ops.export_scene.gltf.get_rna_type().properties\nassert all(n in props for n in ['filepath','export_format','use_selection','export_animations'])\nresult=bpy.ops.export_scene.gltf(filepath=str(folder/'probe_swing.glb'),export_format='GLB',use_selection=True,export_animations=True,export_frame_range=True,export_force_sampling=True)\nassert 'FINISHED' in result\nprint({'GLB_EXPORT_OK':True,'bytes':(folder/'probe_swing.glb').stat().st_size,'bones':len(rig.data.bones),'action':rig.animation_data.action.name})\n",
+      "user_prompt": "Create one isolated skinned animation probe and export GLB for Godot interoperability verification."
+    },
+    "expect_text": [
+      "GLB_EXPORT_OK"
+    ]
+  },
+  {
+    "server": "blender",
+    "tool": "get_scene_info",
+    "arguments": {
+      "user_prompt": "Verify one armature and one weighted mesh exist."
+    }
+  },
+  {
+    "server": "blender",
+    "tool": "get_viewport_screenshot",
+    "arguments": {
+      "max_size": 1000
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/main.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://glb_verifier.gd",
+      "content": "@tool\nextends Node\n\nfunc rescan() -> String:\n\tEditorInterface.get_resource_filesystem().scan()\n\tcall_deferred(\"_import_glb\")\n\treturn \"IMPORT_SCAN_REQUESTED\"\n\nfunc _import_glb() -> void:\n\tEditorInterface.get_resource_filesystem().update_file(\"res://probe_swing.glb\")\n\tEditorInterface.get_resource_filesystem().reimport_files(PackedStringArray([\"res://probe_swing.glb\"]))\n\nfunc rig_info() -> Dictionary:\n\tvar rig := get_parent().get_node(\"World/ImportedProbe\")\n\tvar players := rig.find_children(\"*\", \"AnimationPlayer\", true, false)\n\tvar skeletons := rig.find_children(\"*\", \"Skeleton3D\", true, false)\n\tif players.is_empty() or skeletons.is_empty():\n\t\treturn {\"error\": \"GLB missing player or skeleton\"}\n\tvar player: AnimationPlayer = players[0]\n\tvar skeleton: Skeleton3D = skeletons[0]\n\treturn {\"animations\": player.get_animation_list(), \"bones\": skeleton.get_bone_count(), \"bone_name\": skeleton.get_bone_name(0)}\n\nfunc start_probe() -> Dictionary:\n\tvar rig := get_parent().get_node(\"World/ImportedProbe\")\n\tvar player: AnimationPlayer = rig.find_children(\"*\", \"AnimationPlayer\", true, false)[0]\n\tfor name in player.get_animation_list():\n\t\tif name != \"RESET\":\n\t\t\tvar animation := player.get_animation(name)\n\t\t\tanimation.loop_mode = Animation.LOOP_LINEAR\n\t\t\tplayer.play(name)\n\t\t\treturn {\"GLB_PLAYING\": true, \"animation\": name, \"tracks\": animation.get_track_count(), \"length\": animation.length}\n\treturn {\"error\": \"No imported animation\"}\n\nfunc snapshot() -> Dictionary:\n\tvar rig := get_parent().get_node(\"World/ImportedProbe\")\n\tvar player: AnimationPlayer = rig.find_children(\"*\", \"AnimationPlayer\", true, false)[0]\n\tvar skeleton: Skeleton3D = rig.find_children(\"*\", \"Skeleton3D\", true, false)[0]\n\treturn {\"playing\": player.is_playing(), \"position\": player.current_animation_position, \"rotation\": str(skeleton.get_bone_pose_rotation(0))}\n\nfunc _ready() -> void:\n\tif not Engine.is_editor_hint():\n\t\tprint(start_probe())\n",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "add_node",
+    "arguments": {
+      "type": "Node",
+      "name": "Verifier",
+      "parent_path": "."
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": "Verifier",
+      "script_path": "res://glb_verifier.gd"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_editor_script",
+    "arguments": {
+      "code": "get_node(\"Verifier\").rescan()"
+    },
+    "wait_after": 10,
+    "expect_text": [
+      "IMPORT_SCAN_REQUESTED"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "add_scene_instance",
+    "arguments": {
+      "scene_path": "res://probe_swing.glb",
+      "parent_path": "World",
+      "name": "ImportedProbe"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "update_property",
+    "arguments": {
+      "node_path": "World/HeroPlaceholder",
+      "property": "visible",
+      "value": "false"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "execute_editor_script",
+    "arguments": {
+      "code": "get_node(\"Verifier\").rig_info()"
+    },
+    "expect_text": [
+      "ProbeBone"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 18
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_node(\"Verifier\").start_probe()"
+    },
+    "wait_after": 0.15,
+    "expect_text": [
+      "GLB_PLAYING"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_node(\"Verifier\").snapshot()"
+    },
+    "wait_after": 0.35
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_node(\"Verifier\").snapshot()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]
