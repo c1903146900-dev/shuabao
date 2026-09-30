@@ -1,0 +1,88 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/progression_hud.tscn",
+      "root_type": "Control",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/ui/progression_hud.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/progression_demo.tscn",
+      "root_type": "Node3D",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scripts/ui/progression_demo.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 10
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1280, 720, \"shop\")"
+    },
+    "wait_after": 2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "evidence_state()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]
