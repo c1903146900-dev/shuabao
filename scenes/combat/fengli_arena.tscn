@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bm1hbc6j8qrwl"]
+
+[ext_resource type="Script" uid="uid://bspf7who8qsob" path="res://scripts/combat/arena.gd" id="1_h2ji0"]
+
+[node name="fengli_arena" type="Node3D" unique_id=660162992]
+script = ExtResource("1_h2ji0")
