@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chnj3y8nuf112"]
+
+[ext_resource type="Script" uid="uid://cmybdbgi8bqw8" path="res://tests/combat/harness.gd" id="1_ac1dt"]
+
+[node name="acceptance" type="Node3D" unique_id=2131735101]
+script = ExtResource("1_ac1dt")
