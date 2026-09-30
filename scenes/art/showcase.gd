@@ -20,8 +20,8 @@ func _ready() -> void:
  sun.rotation_degrees = Vector3(-55,-25,0)
  sun.light_energy = 0.65
  sun.shadow_enabled = true
- sun.shadow_bias = 0.1
- sun.shadow_normal_bias = 1.0
+ sun.shadow_bias = 0.02
+ sun.shadow_normal_bias = 0.1
  sun.directional_shadow_max_distance = 25.0
  add_child(sun)
  var camera := Camera3D.new()
@@ -37,6 +37,8 @@ func _ready() -> void:
    var tile: Node3D = load("res://assets/arena/training_tile.glb").instantiate()
    add_child(tile)
    tile.position = Vector3(x*4,0,z*4)
+   for mesh in tile.find_children("*","MeshInstance3D",true,false):
+    mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
  var hero: Node3D = load("res://assets/fengli/fengli.glb").instantiate()
  hero.name = "FengliVisual"
  add_child(hero)
@@ -108,4 +110,15 @@ func pose_evidence() -> Dictionary:
  var result := {"clip":ap.current_animation,"time":ap.current_animation_position,"playing":ap.is_playing(),"bones":{}}
  for bone in ["chest","upper1","fore1","thigh1","shin1","weapon"]:
   result.bones[bone] = str(skeleton.get_bone_pose_rotation(skeleton.find_bone(bone)))
+ return result
+
+func foot_mesh_evidence() -> Dictionary:
+ var result := {}
+ for mesh in models[0].find_children("*","MeshInstance3D",true,false):
+  if "Toe" in mesh.name:
+   var baked: ArrayMesh = mesh.bake_mesh_from_current_skeleton_pose()
+   var bounds := baked.get_aabb()
+   var low := 100.0
+   for i in range(8): low = minf(low,(mesh.global_transform * bounds.get_endpoint(i)).y)
+   result[mesh.name] = low
  return result

@@ -1,0 +1,16 @@
+{
+  "meta": null,
+  "content": [
+    {
+      "type": "text",
+      "text": "Error executing code: Communication error with Blender: {\"exception_type\": \"AttributeError\", \"message\": \"'Context' object has no attribute 'object'\", \"traceback\": \"Traceback (most recent call last):\\n  File \\\"/workspace/shuabao/.local/blender-mcp-src/addon.py\\\", line 2248, in execute_code\\n    exec(code, namespace)\\n    ~~~~^^^^^^^^^^^^^^^^^\\n  File \\\"<string>\\\", line 11, in <module>\\nAttributeError: 'Context' object has no attribute 'object'\\n\"}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structuredContent": {
+    "result": "Error executing code: Communication error with Blender: {\"exception_type\": \"AttributeError\", \"message\": \"'Context' object has no attribute 'object'\", \"traceback\": \"Traceback (most recent call last):\\n  File \\\"/workspace/shuabao/.local/blender-mcp-src/addon.py\\\", line 2248, in execute_code\\n    exec(code, namespace)\\n    ~~~~^^^^^^^^^^^^^^^^^\\n  File \\\"<string>\\\", line 11, in <module>\\nAttributeError: 'Context' object has no attribute 'object'\\n\"}"
+  },
+  "isError": false,
+  "application_error": true
+}

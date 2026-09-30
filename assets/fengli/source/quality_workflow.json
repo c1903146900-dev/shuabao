@@ -1,0 +1,792 @@
+[
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='/workspace/shuabao/.local/fengli-quality/before.blend')"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "# Executed by Blender MCP; samples evaluated meshes, not just Action names.\nimport bpy,json,math\nfrom pathlib import Path\nfrom mathutils.bvhtree import BVHTree\nr=bpy.data.objects['Fengli'];sc=bpy.context.scene\nlabel='after' if bpy.data.objects.get('Elbow gusset1') else 'before'\nfoots=[o for o in bpy.data.objects if o.name.startswith('Toe boot')]\nbody=[bpy.data.objects[n] for n in ['Tailored torso','Breastplate','Waist wrap','Angular face']]\nbody += [o for o in bpy.data.objects if o.name.startswith(('Split coat','Scarf tail','Swept silver','Temple swept'))]\nweapons=[bpy.data.objects['Long diamond blade']]\nforearms=[o for o in bpy.data.objects if o.name.startswith(('Bracer','Glove'))]\ndef vertices(o):\n ob=o.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ob.to_mesh();vs=[ob.matrix_world@v.co for v in me.vertices];faces=[list(p.vertices) for p in me.polygons];ob.to_mesh_clear();return vs,faces\ndef bvh(o):\n v,f=vertices(o);return BVHTree.FromPolygons(v,f)\nreport={'label':label,'clips':{},'method':'every half frame (60 Hz); evaluated mesh surface intersections; feet minimum vertex Z; virtual forward travel 2 m/s for run'}\nfor name,end in [('idle',60),('run',24),('attack',24),('dash',18),('thrust',27),('overload',45),('ultimate',60),('hit',18)]:\n r.animation_data.action=bpy.data.actions[name]\n hits=[];arms=[];ground=[];stance=[];rot=[]\n for sample_index in range(end*2+1):\n  f=sample_index/2\n  sc.frame_set(int(f),subframe=f%1);bpy.context.view_layer.update()\n  ground.append([f]+[min(v.z for v in vertices(o)[0]) for o in foots])\n  trees=[bvh(o) for o in body]\n  if any(bvh(o).overlap(t) for o in weapons for t in trees):hits.append(f)\n  if any(bvh(o).overlap(t) for o in forearms for t in trees):arms.append(f)\n  if name=='run' and f<=12:\n   p=r.pose.bones['foot1'].head.copy();p.y+=2*f/30;stance.append(list(p))\n  rot.append(list(r.pose.bones['fore1'].rotation_euler)+list(r.pose.bones['thigh1'].rotation_euler))\n clip={'blade_body_intersection_frames':hits,'forearm_body_intersection_frames':arms,'foot_heights':ground,'limb_pose_variation':max(max(v[k] for v in rot)-min(v[k] for v in rot) for k in range(6))}\n if stance:clip['run_stance_virtual_world_drift_m']=max((sum((a-b)**2 for a,b in zip(p,stance[0])))**.5 for p in stance)\n report['clips'][name]=clip\nPath('/workspace/shuabao/.local/fengli-quality/'+label+'-metrics.json').write_text(json.dumps(report,indent=2))\nprint('QUALITY_METRICS',label,{n:{k:v for k,v in d.items() if k!='foot_heights'} for n,d in report['clips'].items()})\n"
+    }
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "import bpy\nbpy.ops.wm.open_mainfile(filepath='/workspace/shuabao/.local/mcp-fixture/assets/fengli/source/fengli.blend')"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "blender",
+    "tool": "execute_blender_code",
+    "arguments": {
+      "code": "# Executed by Blender MCP; samples evaluated meshes, not just Action names.\nimport bpy,json,math\nfrom pathlib import Path\nfrom mathutils.bvhtree import BVHTree\nr=bpy.data.objects['Fengli'];sc=bpy.context.scene\nlabel='after' if bpy.data.objects.get('Elbow gusset1') else 'before'\nfoots=[o for o in bpy.data.objects if o.name.startswith('Toe boot')]\nbody=[bpy.data.objects[n] for n in ['Tailored torso','Breastplate','Waist wrap','Angular face']]\nbody += [o for o in bpy.data.objects if o.name.startswith(('Split coat','Scarf tail','Swept silver','Temple swept'))]\nweapons=[bpy.data.objects['Long diamond blade']]\nforearms=[o for o in bpy.data.objects if o.name.startswith(('Bracer','Glove'))]\ndef vertices(o):\n ob=o.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ob.to_mesh();vs=[ob.matrix_world@v.co for v in me.vertices];faces=[list(p.vertices) for p in me.polygons];ob.to_mesh_clear();return vs,faces\ndef bvh(o):\n v,f=vertices(o);return BVHTree.FromPolygons(v,f)\nreport={'label':label,'clips':{},'method':'every half frame (60 Hz); evaluated mesh surface intersections; feet minimum vertex Z; virtual forward travel 2 m/s for run'}\nfor name,end in [('idle',60),('run',24),('attack',24),('dash',18),('thrust',27),('overload',45),('ultimate',60),('hit',18)]:\n r.animation_data.action=bpy.data.actions[name]\n hits=[];arms=[];ground=[];stance=[];rot=[]\n for sample_index in range(end*2+1):\n  f=sample_index/2\n  sc.frame_set(int(f),subframe=f%1);bpy.context.view_layer.update()\n  ground.append([f]+[min(v.z for v in vertices(o)[0]) for o in foots])\n  trees=[bvh(o) for o in body]\n  if any(bvh(o).overlap(t) for o in weapons for t in trees):hits.append(f)\n  if any(bvh(o).overlap(t) for o in forearms for t in trees):arms.append(f)\n  if name=='run' and f<=12:\n   p=r.pose.bones['foot1'].head.copy();p.y+=2*f/30;stance.append(list(p))\n  rot.append(list(r.pose.bones['fore1'].rotation_euler)+list(r.pose.bones['thigh1'].rotation_euler))\n clip={'blade_body_intersection_frames':hits,'forearm_body_intersection_frames':arms,'foot_heights':ground,'limb_pose_variation':max(max(v[k] for v in rot)-min(v[k] for v in rot) for k in range(6))}\n if stance:clip['run_stance_virtual_world_drift_m']=max((sum((a-b)**2 for a,b in zip(p,stance[0])))**.5 for p in stance)\n report['clips'][name]=clip\nPath('/workspace/shuabao/.local/fengli-quality/'+label+'-metrics.json').write_text(json.dumps(report,indent=2))\nprint('QUALITY_METRICS',label,{n:{k:v for k,v in d.items() if k!='foot_heights'} for n,d in report['clips'].items()})\n"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/quality_review.gd",
+      "content": "extends Node3D\n## Side-by-side visual regression scene. V1 is retained deliberately as a reference.\nvar players: Array[AnimationPlayer] = []\nvar figures: Array[Node3D] = []\nvar current_clip := \"idle\"\nfunc _ready() -> void:\n var env := WorldEnvironment.new()\n var e := Environment.new()\n e.background_mode = Environment.BG_COLOR\n e.background_color = Color(.09,.13,.16)\n e.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR\n e.ambient_light_color = Color(.8,.86,.9)\n e.ambient_light_energy = .4\n env.environment = e\n add_child(env)\n var light := DirectionalLight3D.new()\n light.rotation_degrees = Vector3(-50,-25,0)\n light.light_energy = .7\n light.shadow_enabled = true\n light.shadow_bias = .02\n light.shadow_normal_bias = .1\n add_child(light)\n for x in range(-1,2):\n  for z in range(-1,2):\n   var tile: Node3D = load(\"res://assets/arena/training_tile.glb\").instantiate()\n   add_child(tile)\n   tile.position = Vector3(x*4,0,z*4)\n   for mesh in tile.find_children(\"*\",\"MeshInstance3D\",true,false):\n    mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n var camera := Camera3D.new()\n camera.name = \"ReviewCamera\"\n camera.projection = Camera3D.PROJECTION_ORTHOGONAL\n camera.size = 7.3\n camera.position = Vector3(1,7,-8)\n add_child(camera)\n camera.look_at(Vector3(0,.65,0))\n camera.current = true\n for i in range(2):\n  var path := \"res://assets/fengli/reference/fengli_v1.glb\" if i==0 else \"res://assets/fengli/fengli.glb\"\n  var model: Node3D = load(path).instantiate()\n  model.name = \"Before\" if i==0 else \"After\"\n  add_child(model)\n  model.position = Vector3(1.65 if i==0 else -1.65,0,0)\n  figures.append(model)\n  var ap := model.find_child(\"AnimationPlayer\",true,false) as AnimationPlayer\n  players.append(ap)\n  for clip in [\"idle\",\"run\"]:ap.get_animation(clip).loop_mode = Animation.LOOP_LINEAR\n  var label := Label3D.new()\n  label.text = \"V1 / BEFORE\" if i==0 else \"V2 / AFTER\"\n  label.font_size = 40\n  label.pixel_size = .008\n  label.position = Vector3(model.position.x,2.35,0)\n  label.billboard = BaseMaterial3D.BILLBOARD_ENABLED\n  add_child(label)\n sample(\"idle\",0)\nfunc sample(clip: String,t: float,travel: bool=false) -> String:\n current_clip = clip\n for i in range(2):\n  var ap := players[i]\n  ap.play(clip)\n  ap.seek(t,true)\n  ap.pause()\n  figures[i].position.z = -2.0*t if travel and clip==\"run\" else 0.0\n return clip+\" @ \"+str(t)+\" travel=\"+str(travel)\nfunc side_view() -> void:\n var camera := get_node(\"ReviewCamera\") as Camera3D\n camera.position = Vector3(5,3,-7)\n camera.look_at(Vector3(0,.8,0))\nfunc inspect_pose() -> Dictionary:\n var result := {}\n for i in range(2):\n  var sk := figures[i].find_child(\"Skeleton3D\",true,false) as Skeleton3D\n  var bone := sk.find_bone(\"foot1\")\n  result[str(i)] = {\"foot_world\":str(sk.global_transform * sk.get_bone_global_pose(bone).origin),\"clip\":players[i].assigned_animation,\"position\":players[i].current_animation_position}\n return result\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "validate_script",
+    "arguments": {
+      "script_path": "res://scenes/art/quality_review.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "create_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/quality_review.tscn",
+      "root_type": "Node3D",
+      "overwrite": true
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://scenes/art/quality_review.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"idle\",0)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"idle\",1)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.2)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.4)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.23333333333333334)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.3333333333333333)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"thrust\",0.36666666666666664)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"dash\",0.26666666666666666)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"hit\",0.1)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"overload\",0.5666666666666667)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"ultimate\",0.8666666666666667)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_pose()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.1,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_pose()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.2,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_pose()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.3,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_pose()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"run\",0.4,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_pose()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.0)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.03333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.06666666666666667)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.1)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.13333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.16666666666666666)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.2)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.23333333333333334)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.26666666666666666)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.3)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.3333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.36666666666666664)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.4)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.43333333333333335)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.4666666666666667)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.5)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.5333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.5666666666666667)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.6)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.6333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.6666666666666666)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.7)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.7333333333333333)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.7666666666666667)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample(\"attack\",0.8)"
+    },
+    "wait_after": 0.05
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_output_log",
+    "arguments": {
+      "max_lines": 40
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/showcase.gd",
+      "content": "extends Node3D\n## Art-only review harness. No combat, UI, or autoload dependencies.\nvar models: Array[Node] = []\nvar players: Array[AnimationPlayer] = []\nvar names: Array[String] = [\"idle\", \"run\", \"attack\", \"dash\", \"thrust\", \"overload\", \"ultimate\", \"hit\", \"death\"]\nvar elapsed := 0.0\nvar current_clip := \"idle\"\nfunc _ready() -> void:\n var env := WorldEnvironment.new()\n var e := Environment.new()\n e.background_mode = Environment.BG_COLOR\n e.background_color = Color(0.12,0.17,0.20)\n e.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR\n e.ambient_light_color = Color(0.76,0.86,0.92)\n e.ambient_light_energy = 0.35\n e.tonemap_mode = Environment.TONE_MAPPER_LINEAR\n env.environment = e\n add_child(env)\n var sun := DirectionalLight3D.new()\n sun.rotation_degrees = Vector3(-55,-25,0)\n sun.light_energy = 0.65\n sun.shadow_enabled = true\n sun.shadow_bias = 0.02\n sun.shadow_normal_bias = 0.1\n sun.directional_shadow_max_distance = 25.0\n add_child(sun)\n var camera := Camera3D.new()\n camera.name = \"ReviewCamera\"\n camera.projection = Camera3D.PROJECTION_ORTHOGONAL\n camera.size = 11.8\n camera.position = Vector3(6,9,-9)\n add_child(camera)\n camera.look_at(Vector3(0,0.4,0))\n camera.current = true\n for x in range(-1,2):\n  for z in range(-1,2):\n   var tile: Node3D = load(\"res://assets/arena/training_tile.glb\").instantiate()\n   add_child(tile)\n   tile.position = Vector3(x*4,0,z*4)\n   for mesh in tile.find_children(\"*\",\"MeshInstance3D\",true,false):\n    mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n var hero: Node3D = load(\"res://assets/fengli/fengli.glb\").instantiate()\n hero.name = \"FengliVisual\"\n add_child(hero)\n hero.position = Vector3(-1,0,0)\n models.append(hero)\n var ap := hero.find_child(\"AnimationPlayer\",true,false) as AnimationPlayer\n if ap:\n  players.append(ap)\n  print(\"ART_IMPORT_OK clips=\",ap.get_animation_list())\n  for clip in names:\n   assert(ap.has_animation(clip),\"Missing imported animation: \"+clip)\n   print(\"ART_CLIP \",clip,\" length=\",ap.get_animation(clip).length,\" tracks=\",ap.get_animation(clip).get_track_count())\n  ap.get_animation(\"idle\").loop_mode = Animation.LOOP_LINEAR\n  ap.get_animation(\"run\").loop_mode = Animation.LOOP_LINEAR\n  play_clip(\"idle\")\n for i in range(2):\n  var enemy: Node3D = load(\"res://assets/arena/\"+(\"enemy_regular\" if i==0 else \"enemy_elite\")+\".glb\").instantiate()\n  add_child(enemy)\n  enemy.position = Vector3(2.1,0,(-1.5 if i==0 else 1.2))\n  enemy.rotation.y = -0.5\n # restrained telegraph sample remains visible around the elite\n var ring := MeshInstance3D.new()\n var torus := TorusMesh.new()\n torus.inner_radius = .88\n torus.outer_radius = .94\n torus.rings = 48\n torus.ring_segments = 6\n ring.mesh = torus\n var ink := StandardMaterial3D.new()\n ink.albedo_color = Color(.9,.29,.08)\n ink.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED\n ring.material_override = ink\n ring.position = Vector3(2.1,.045,1.2)\n ring.scale.y = .2\n add_child(ring)\nfunc play_clip(clip: String) -> String:\n current_clip = clip\n for ap in players:\n  ap.play(clip)\n return current_clip\nfunc sample_clip(clip: String, t: float) -> String:\n for ap in players:\n  ap.play(clip)\n  ap.seek(t,true)\n  ap.pause()\n return clip+\" @ \"+str(t)\nfunc inspect_art() -> Dictionary:\n var result := {}\n for ap in players:\n  for clip in names:\n   result[clip] = {\"duration\":ap.get_animation(clip).length,\"tracks\":ap.get_animation(clip).get_track_count()}\n return result\nfunc _process(delta: float) -> void:\n elapsed += delta\n # Review reel: independent clips with reset between actions.\n var index := int(elapsed / 3.0) % names.size()\n if current_clip != names[index]: play_clip(names[index])\n for ap in players:\n  if not ap.is_playing() and current_clip in [\"idle\",\"run\"]: ap.play(current_clip)\n\nfunc closeup() -> void:\n var camera := get_node(\"ReviewCamera\") as Camera3D\n camera.size = 4.8\n camera.position = Vector3(3,3.0,-5)\n camera.look_at(Vector3(-1,.9,0))\nfunc pose_evidence() -> Dictionary:\n var ap := players[0]\n var skeleton := models[0].find_child(\"Skeleton3D\",true,false) as Skeleton3D\n var result := {\"clip\":ap.current_animation,\"time\":ap.current_animation_position,\"playing\":ap.is_playing(),\"bones\":{}}\n for bone in [\"chest\",\"upper1\",\"fore1\",\"thigh1\",\"shin1\",\"weapon\"]:\n  result.bones[bone] = str(skeleton.get_bone_pose_rotation(skeleton.find_bone(bone)))\n return result\n\nfunc foot_mesh_evidence() -> Dictionary:\n var result := {}\n for mesh in models[0].find_children(\"*\",\"MeshInstance3D\",true,false):\n  if \"Toe\" in mesh.name:\n   var baked: ArrayMesh = mesh.bake_mesh_from_current_skeleton_pose()\n   var bounds := baked.get_aabb()\n   var low := 100.0\n   for i in range(8): low = minf(low,(mesh.global_transform * bounds.get_endpoint(i)).y)\n   result[mesh.name] = low\n return result\n",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/showcase.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[set_process(false),sample_clip(\"idle\",0)]"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "closeup()"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "inspect_art()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]

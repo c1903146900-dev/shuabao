@@ -1,0 +1,56 @@
+{
+  "revision": 2,
+  "asset": "res://assets/fengli/fengli.glb",
+  "meters_per_unit": 1,
+  "up_axis": "+Y",
+  "forward_axis": "-Z",
+  "origin": "ground at feet center",
+  "root_motion": false,
+  "run_reference_speed_mps": 2.0,
+  "run_speed_scale_rule": "horizontal_speed_mps / 2.0; switch to idle at rest",
+  "bone_attachments": {
+    "right_hand": "hand1",
+    "left_hand": "hand-1",
+    "weapon": "weapon",
+    "blade_tip": "socket_blade_tip",
+    "back": "socket_back"
+  },
+  "clips": {
+    "idle": {
+      "duration_s": 2.0,
+      "loop_recommended": true
+    },
+    "run": {
+      "duration_s": 0.8,
+      "loop_recommended": true
+    },
+    "attack": {
+      "duration_s": 0.8,
+      "loop_recommended": false
+    },
+    "dash": {
+      "duration_s": 0.6,
+      "loop_recommended": false
+    },
+    "thrust": {
+      "duration_s": 0.9,
+      "loop_recommended": false
+    },
+    "overload": {
+      "duration_s": 1.5,
+      "loop_recommended": false
+    },
+    "ultimate": {
+      "duration_s": 2.0,
+      "loop_recommended": false
+    },
+    "hit": {
+      "duration_s": 0.6,
+      "loop_recommended": false
+    },
+    "death": {
+      "duration_s": 1.6,
+      "loop_recommended": false
+    }
+  }
+}
