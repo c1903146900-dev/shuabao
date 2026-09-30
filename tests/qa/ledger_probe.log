@@ -1,0 +1,9 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+{"action":"reward_minion","body":[],"gold":100,"inventory":[],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{"event_id":"fixture-gold","gold":100,"xp":0},"type":"reward_minion"}],"reason":"","state_revision":1}}
+{"action":"context","body":[],"gold":100,"inventory":[],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{"phase":"safe","training":true},"type":"context"}],"reason":"","state_revision":2}}
+{"action":"buy","body":[],"gold":0,"inventory":[{"count":1,"id":"component","invested":100,"uid":1}],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{"item":"component"},"type":"buy"}],"reason":"","state_revision":3}}
+{"action":"sell","body":[],"gold":90,"inventory":[],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{"uid":1},"type":"sell"}],"reason":"","state_revision":4}}
+{"action":"buy_body","body":[{"cost":50,"definition_version":"progression-fixture-v1"}],"gold":40,"inventory":[],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{},"type":"buy_body"}],"reason":"","state_revision":5}}
+{"action":"undo_shop","body":[{"cost":50,"definition_version":"progression-fixture-v1"}],"gold":-50,"inventory":[{"count":1,"id":"component","invested":100,"uid":1}],"receipt":{"accepted":true,"events":[{"actor_id":"local","definition_version":"progression-fixture-v1","parameters":{},"type":"undo_shop"}],"reason":"","state_revision":6}}
+NEGATIVE_WALLET_REPRO=true

@@ -1,0 +1,68 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/combat/acceptance.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 14
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_prepare_attack()"
+    },
+    "wait_after": 10
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_read()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "begin_input_probe(\"w\")"
+    },
+    "wait_after": 5
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_read()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]

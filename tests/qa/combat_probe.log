@@ -1,0 +1,13 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+{"check":"Q1 five kills are one stack","data":{"kills":5,"stack":1},"passed":true}
+{"check":"dead target cannot repeat kill","data":{},"passed":true}
+{"check":"Q2 immune throughout first 0.795s","data":{},"passed":true}
+{"check":"Q2 ends at four unique hits","data":{},"passed":true}
+{"check":"E3 state freezes during 60s safe wait","data":{},"passed":true}
+{"check":"E3 resumes remaining 5s then starts CD","data":{"e_cd":32.0},"passed":true}
+{"check":"P2 direct lethal cannot rescue","data":{},"passed":true}
+{"check":"R1 room end restores speed and freezes CD","data":{},"passed":true}
+{"check":"R2 cumulative attacks survive second throw","data":{"nails":[1,3,4]},"passed":true}
+{"check":"third R2 presentation restores speed then starts CD","data":{},"passed":true}
+INDEPENDENT_FAILURES=[]
