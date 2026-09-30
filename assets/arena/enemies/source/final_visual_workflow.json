@@ -1,0 +1,161 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/foot_contact.gd",
+      "content": "extends Node3D\n## Optional art-only contact pass for a known flat floor. No gameplay state or damage writes.\nvar target: Node3D\nvar skeleton: Skeleton3D\nvar ankle_height := .17\nvar floor_y := .01\nvar patches: Array[MeshInstance3D] = []\nvar indices: Array[int] = []\nfunc setup(model: Node3D, ankle: float=.17, radius: float=.18, ground_y: float=.01) -> void:\n target=model\n ankle_height=ankle\n floor_y=ground_y\n skeleton=model.find_child(\"Skeleton3D\",true,false) as Skeleton3D\n if skeleton==null:return\n var shader := Shader.new()\n shader.code=\"shader_type spatial; render_mode unshaded, cull_disabled, depth_draw_never; uniform float opacity=0.3; void fragment(){float r=length((UV-vec2(0.5))*2.0); ALBEDO=vec3(0.025,0.032,0.036); ALPHA=opacity*(1.0-smoothstep(0.35,1.0,r));}\"\n for bone in [\"foot1\",\"foot-1\"]:\n  var index:=skeleton.find_bone(bone)\n  if index<0:continue\n  indices.append(index)\n  var patch:=MeshInstance3D.new()\n  var plane:=PlaneMesh.new()\n  plane.size=Vector2(radius*2,radius*3.0)\n  patch.mesh=plane\n  var material:=ShaderMaterial.new()\n  material.shader=shader\n  patch.material_override=material\n  patch.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n  add_child(patch)\n  patches.append(patch)\n _process(0)\nfunc _process(_dt: float) -> void:\n if skeleton==null or not is_instance_valid(target):return\n for i in range(patches.size()):\n  var pose:=skeleton.global_transform*skeleton.get_bone_global_pose(indices[i])\n  var center:=pose.origin+pose.basis.y*.06\n  patches[i].global_position=Vector3(center.x,floor_y+.006,center.z)\n  var rise:=maxf(0.0,pose.origin.y-ankle_height)\n  var alpha:=.65*(1.0-smoothstep(.015,.18,rise))\n  patches[i].visible=target.is_visible_in_tree() and alpha>.001\n  patches[i].material_override.set_shader_parameter(\"opacity\",alpha)\n",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/showcase.gd",
+      "content": "extends Node3D\n## Art-only review harness. No combat, UI, or autoload dependencies.\nvar models: Array[Node] = []\nvar players: Array[AnimationPlayer] = []\nvar names: Array[String] = [\"idle\", \"run\", \"attack\", \"dash\", \"thrust\", \"overload\", \"ultimate\", \"hit\", \"death\"]\nvar elapsed := 0.0\nvar current_clip := \"idle\"\nfunc _ready() -> void:\n var env := WorldEnvironment.new()\n var e := Environment.new()\n e.background_mode = Environment.BG_COLOR\n e.background_color = Color(0.12,0.17,0.20)\n e.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR\n e.ambient_light_color = Color(0.76,0.86,0.92)\n e.ambient_light_energy = 0.35\n e.tonemap_mode = Environment.TONE_MAPPER_LINEAR\n env.environment = e\n add_child(env)\n var sun := DirectionalLight3D.new()\n sun.rotation_degrees = Vector3(-55,-25,0)\n sun.light_energy = 0.65\n sun.name = \"ArtSun\"\n sun.shadow_blur = .2\n sun.shadow_enabled = true\n sun.shadow_bias = 0.005\n sun.shadow_normal_bias = 0.01\n sun.directional_shadow_max_distance = 25.0\n add_child(sun)\n var camera := Camera3D.new()\n camera.name = \"ReviewCamera\"\n camera.projection = Camera3D.PROJECTION_ORTHOGONAL\n camera.size = 11.8\n camera.position = Vector3(6,9,-9)\n add_child(camera)\n camera.look_at(Vector3(0,0.4,0))\n camera.current = true\n for x in range(-1,2):\n  for z in range(-1,2):\n   var tile: Node3D = load(\"res://assets/arena/training_tile.glb\").instantiate()\n   add_child(tile)\n   tile.position = Vector3(x*4,0,z*4)\n   for mesh in tile.find_children(\"*\",\"MeshInstance3D\",true,false):\n    mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n var hero: Node3D = load(\"res://assets/fengli/fengli.glb\").instantiate()\n hero.name = \"FengliVisual\"\n add_child(hero)\n hero.position = Vector3(-1,0,0)\n models.append(hero)\n var contact := preload(\"res://scenes/art/foot_contact.gd\").new()\n contact.name = \"FootContact\"\n add_child(contact)\n contact.setup(hero)\n var ap := hero.find_child(\"AnimationPlayer\",true,false) as AnimationPlayer\n if ap:\n  players.append(ap)\n  print(\"ART_IMPORT_OK clips=\",ap.get_animation_list())\n  for clip in names:\n   assert(ap.has_animation(clip),\"Missing imported animation: \"+clip)\n   print(\"ART_CLIP \",clip,\" length=\",ap.get_animation(clip).length,\" tracks=\",ap.get_animation(clip).get_track_count())\n  ap.get_animation(\"idle\").loop_mode = Animation.LOOP_LINEAR\n  ap.get_animation(\"run\").loop_mode = Animation.LOOP_LINEAR\n  play_clip(\"idle\")\n for i in range(2):\n  var enemy: Node3D = load(\"res://assets/arena/\"+(\"enemy_regular\" if i==0 else \"enemy_elite\")+\".glb\").instantiate()\n  add_child(enemy)\n  enemy.position = Vector3(2.1,0,(-1.5 if i==0 else 1.2))\n  enemy.rotation.y = -0.5\n # restrained telegraph sample remains visible around the elite\n var ring := MeshInstance3D.new()\n var torus := TorusMesh.new()\n torus.inner_radius = .88\n torus.outer_radius = .94\n torus.rings = 48\n torus.ring_segments = 6\n ring.mesh = torus\n var ink := StandardMaterial3D.new()\n ink.albedo_color = Color(.9,.29,.08)\n ink.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED\n ring.material_override = ink\n ring.position = Vector3(2.1,.045,1.2)\n ring.scale.y = .2\n add_child(ring)\nfunc play_clip(clip: String) -> String:\n current_clip = clip\n for ap in players:\n  ap.play(clip)\n return current_clip\nfunc sample_clip(clip: String, t: float) -> String:\n for ap in players:\n  ap.play(clip)\n  ap.seek(t,true)\n  ap.pause()\n return clip+\" @ \"+str(t)\nfunc inspect_art() -> Dictionary:\n var result := {}\n for ap in players:\n  for clip in names:\n   result[clip] = {\"duration\":ap.get_animation(clip).length,\"tracks\":ap.get_animation(clip).get_track_count()}\n return result\nfunc _process(delta: float) -> void:\n elapsed += delta\n # Review reel: independent clips with reset between actions.\n var index := int(elapsed / 3.0) % names.size()\n if current_clip != names[index]: play_clip(names[index])\n for ap in players:\n  if not ap.is_playing() and current_clip in [\"idle\",\"run\"]: ap.play(current_clip)\n\nfunc closeup() -> void:\n var camera := get_node(\"ReviewCamera\") as Camera3D\n camera.size = 4.8\n camera.position = Vector3(3,3.0,-5)\n camera.look_at(Vector3(-1,.9,0))\nfunc pose_evidence() -> Dictionary:\n var ap := players[0]\n var skeleton := models[0].find_child(\"Skeleton3D\",true,false) as Skeleton3D\n var result := {\"clip\":ap.current_animation,\"time\":ap.current_animation_position,\"playing\":ap.is_playing(),\"bones\":{}}\n for bone in [\"chest\",\"upper1\",\"fore1\",\"thigh1\",\"shin1\",\"weapon\"]:\n  result.bones[bone] = str(skeleton.get_bone_pose_rotation(skeleton.find_bone(bone)))\n return result\n\nfunc foot_mesh_evidence() -> Dictionary:\n var result := {}\n for mesh in models[0].find_children(\"*\",\"MeshInstance3D\",true,false):\n  if \"Toe\" in mesh.name:\n   var baked: ArrayMesh = mesh.bake_mesh_from_current_skeleton_pose()\n   var bounds := baked.get_aabb()\n   var low := 100.0\n   for i in range(8): low = minf(low,(mesh.global_transform * bounds.get_endpoint(i)).y)\n   result[mesh.name] = low\n return result\n",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://scenes/art/enemy_review.gd",
+      "content": "extends Node3D\n## Test-asset review only; warning geometry mirrors combat test dimensions, never applies damage.\nvar kinds := [\"minion\",\"elite\",\"boss\"]\nvar warnings := [.85,1.0,1.35]\nvar recovery := [1.1,1.1,1.6]\nvar models: Array[Node3D] = []\nvar players: Array[AnimationPlayer] = []\nvar labels: Array[Label3D] = []\nvar marks: Array[MeshInstance3D] = []\nvar hero: Node3D\nfunc _ready() -> void:\n var env := WorldEnvironment.new()\n var e := Environment.new()\n e.background_mode = Environment.BG_COLOR\n e.background_color = Color(.10,.14,.17)\n e.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR\n e.ambient_light_color = Color(.80,.86,.90)\n e.ambient_light_energy = .4\n env.environment = e\n add_child(env)\n var light := DirectionalLight3D.new()\n light.rotation_degrees = Vector3(-55,-25,0)\n light.light_energy = .7\n light.name = \"ArtSun\"\n light.shadow_blur = .2\n light.shadow_enabled = true\n light.shadow_bias = .005\n light.shadow_normal_bias = .01\n add_child(light)\n for x in range(-2,3):\n  for z in range(-1,2):\n   var tile: Node3D = load(\"res://assets/arena/training_tile.glb\").instantiate()\n   add_child(tile)\n   tile.position = Vector3(x*4,0,z*4)\n   for mesh in tile.find_children(\"*\",\"MeshInstance3D\",true,false):mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n var camera := Camera3D.new()\n camera.name = \"ReviewCamera\"\n camera.projection = Camera3D.PROJECTION_ORTHOGONAL\n camera.size = 12.5\n camera.position = Vector3(1,11,-9)\n add_child(camera)\n camera.look_at(Vector3(0,.65,0))\n camera.current = true\n for i in range(3):\n  var model: Node3D = load(\"res://assets/arena/enemies/\"+kinds[i]+\".glb\").instantiate()\n  model.name = kinds[i]\n  add_child(model)\n  model.position.x = 4.0-i*4.0\n  models.append(model)\n  var contact := preload(\"res://scenes/art/foot_contact.gd\").new()\n  add_child(contact)\n  contact.setup(model,[.15,.18,.22][i],[.12,.15,.20][i])\n  var ap := model.find_child(\"AnimationPlayer\",true,false) as AnimationPlayer\n  assert(ap!=null)\n  players.append(ap)\n  for clip in [\"idle\",\"walk\",\"attack\",\"windup\",\"release\",\"hit\",\"death\"]:assert(ap.has_animation(clip),kinds[i]+\" missing \"+clip)\n  assert(absf(ap.get_animation(\"attack\").length-warnings[i]-recovery[i])<.001)\n  ap.get_animation(\"idle\").loop_mode = Animation.LOOP_LINEAR\n  ap.get_animation(\"walk\").loop_mode = Animation.LOOP_LINEAR\n  var label := Label3D.new()\n  label.text = [\"MINION / HOOK\",\"ELITE / SHIELD\",\"TEST BOSS / MAUL\"][i]\n  label.billboard = BaseMaterial3D.BILLBOARD_ENABLED\n  label.font_size = 32\n  label.pixel_size = .009\n  label.position = model.position+Vector3(0,3.4,0)\n  add_child(label)\n  labels.append(label)\n  marks.append(make_warning(i))\n hero = load(\"res://assets/fengli/fengli.glb\").instantiate()\n hero.name = \"ScaleReferenceFengli\"\n add_child(hero)\n hero.position = Vector3(0,0,-2.2)\n var hero_ap := hero.find_child(\"AnimationPlayer\",true,false) as AnimationPlayer\n hero_ap.play(\"idle\")\n hero_ap.seek(0,true)\n hero_ap.pause()\n hero.visible = false\n var hero_contact := preload(\"res://scenes/art/foot_contact.gd\").new()\n add_child(hero_contact)\n hero_contact.setup(hero)\n play_all(\"idle\")\n print(\"ENEMY_IMPORT_OK \",inspect_assets())\nfunc make_warning(i: int) -> MeshInstance3D:\n var node := MeshInstance3D.new()\n var material := StandardMaterial3D.new()\n material.albedo_color = Color(1,.25,.065,.26)\n material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA\n material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED\n material.cull_mode = BaseMaterial3D.CULL_DISABLED\n if i==2:\n  var mesh := ImmediateMesh.new()\n  mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)\n  for j in range(36):\n   var a := -acos(.45)+2*acos(.45)*j/36.0\n   var b := -acos(.45)+2*acos(.45)*(j+1)/36.0\n   mesh.surface_add_vertex(Vector3.ZERO)\n   mesh.surface_add_vertex(Vector3.FORWARD.rotated(Vector3.UP,a)*4.2)\n   mesh.surface_add_vertex(Vector3.FORWARD.rotated(Vector3.UP,b)*4.2)\n  mesh.surface_end()\n  node.mesh = mesh\n  node.position = models[i].position+Vector3(0,.04,0)\n else:\n  var mesh := CylinderMesh.new()\n  mesh.top_radius = [1.8,2.8][i]*.65\n  mesh.bottom_radius = mesh.top_radius\n  mesh.height = .016\n  node.mesh = mesh\n  node.position = models[i].position+Vector3(0,.04,-1.1)\n node.material_override = material\n node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF\n add_child(node)\n return node\nfunc play_all(clip: String) -> void:\n for ap in players:ap.play(clip)\nfunc sample_phase(progress: float) -> Dictionary:\n for i in range(3):\n  players[i].play(\"attack\")\n  players[i].seek(warnings[i]*progress,true)\n  players[i].pause()\n  marks[i].visible = progress<1.0 and models[i].visible\n return pose_status()\nfunc sample_clip(clip: String,t: float) -> Dictionary:\n for ap in players:\n  ap.play(clip)\n  ap.seek(minf(t,ap.get_animation(clip).length),true)\n  ap.pause()\n for mark in marks:mark.visible=false\n return pose_status()\nfunc pose_status() -> Dictionary:\n var result := {}\n for i in range(3):\n  var sk := models[i].find_child(\"Skeleton3D\",true,false) as Skeleton3D\n  result[kinds[i]] = {\"time\":players[i].current_animation_position,\"playing\":players[i].is_playing(),\"forearm\":str(sk.get_bone_pose_rotation(sk.find_bone(\"fore1\"))),\"chest\":str(sk.get_bone_pose_rotation(sk.find_bone(\"chest\")))}\n return result\nfunc inspect_assets() -> Dictionary:\n var result := {}\n for i in range(3):\n  var clips := {}\n  for clip in players[i].get_animation_list():clips[clip]=players[i].get_animation(clip).length\n  result[kinds[i]]=clips\n return result\nfunc occlusion_test(behind: bool=false) -> void:\n for i in range(2):\n  models[i].visible=false\n  labels[i].visible=false\n  marks[i].visible=false\n models[2].position=Vector3.ZERO\n labels[2].visible=false\n marks[2].position=Vector3(0,.04,0)\n hero.visible=true\n hero.position=Vector3(-.7,0,1.9 if behind else -1.9)\n var camera := get_node(\"ReviewCamera\") as Camera3D\n camera.size=7.5\n camera.position=Vector3(1,11,-9)\n camera.look_at(Vector3(0,.65,0))\n\nfunc combat_camera() -> void:\n for i in range(3):\n  models[i].visible=true\n  models[i].position=Vector3(4-i*4,0,0)\n  models[i].rotation.y=PI\n  labels[i].visible=false\n  marks[i].position=models[i].position+Vector3(0,.04,0 if i==2 else 1.1)\n  marks[i].rotation.y=PI\n hero.visible=true\n hero.position=Vector3(-4.7,0,2)\n var camera:=get_node(\"ReviewCamera\") as Camera3D\n camera.size=27.0\n camera.position=Vector3(0,27,20)\n camera.look_at(Vector3.ZERO)\n\nfunc contact_status() -> Dictionary:\n var out := {}\n for node in get_children():\n  if node.get_script()==preload(\"res://scenes/art/foot_contact.gd\"):\n   var values:=[]\n   if node.skeleton!=null:\n    for index in node.indices:\n     values.append(str(node.skeleton.global_transform*node.skeleton.get_bone_global_pose(index)))\n   out[str(node.target.name)]={\"skeleton\":str(node.skeleton),\"feet\":values,\"patches\":node.patches.size()}\n return out\n",
+      "overwrite": true
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/showcase.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[set_process(false),sample_clip(\"idle\",0),closeup()]"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.333333)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/enemy_review.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"idle\",0)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(0.85)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[occlusion_test(false),sample_phase(0.85)]"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[combat_camera(),sample_phase(0.85)]"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "contact_status()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_output_log",
+    "arguments": {
+      "max_lines": 30
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]

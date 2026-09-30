@@ -1,0 +1,75 @@
+{
+  "status": "test_assets_not_final_monster_design",
+  "combat_reference": "07dd35e96c9a9ebb36a82ca09a1dc6de3b8a1df3",
+  "meters_per_unit": 1,
+  "up_axis": "+Y",
+  "forward_axis": "-Z",
+  "origin": "feet center on floor",
+  "root_motion": false,
+  "authoritative_damage": "enemy_impact event; never animation keyframes",
+  "walk_reference_speed_mps": 1.15,
+  "attachments": {
+    "right_hand": "hand1",
+    "left_hand": "hand-1",
+    "weapon": "weapon",
+    "weapon_tip": "socket_weapon_tip",
+    "warning_origin": "socket_warning"
+  },
+  "enemies": {
+    "minion": {
+      "asset": "res://assets/arena/enemies/minion.glb",
+      "nominal_model_height_m": 1.68,
+      "simulation_radius_m": 0.5,
+      "simulation_speed_mps": 2.35,
+      "warning_s": 0.85,
+      "impact_frame_60fps": 51,
+      "recover_s": 1.1,
+      "attack_duration_s": 1.9500000000000002,
+      "windup_duration_s": 0.85,
+      "release_duration_s": 1.1,
+      "hit_duration_s": 0.55,
+      "death_duration_s": 1.7,
+      "walk_speed_scale_at_test_speed": 2.0434782608695654,
+      "shapes": [
+        "circle"
+      ]
+    },
+    "elite": {
+      "asset": "res://assets/arena/enemies/elite.glb",
+      "nominal_model_height_m": 2.12,
+      "simulation_radius_m": 0.75,
+      "simulation_speed_mps": 1.95,
+      "warning_s": 1.0,
+      "impact_frame_60fps": 60,
+      "recover_s": 1.1,
+      "attack_duration_s": 2.1,
+      "windup_duration_s": 1.0,
+      "release_duration_s": 1.1,
+      "hit_duration_s": 0.55,
+      "death_duration_s": 1.7,
+      "walk_speed_scale_at_test_speed": 1.6956521739130437,
+      "shapes": [
+        "circle"
+      ]
+    },
+    "boss": {
+      "asset": "res://assets/arena/enemies/boss.glb",
+      "nominal_model_height_m": 2.78,
+      "simulation_radius_m": 1.15,
+      "simulation_speed_mps": 1.5,
+      "warning_s": 1.35,
+      "impact_frame_60fps": 81,
+      "recover_s": 1.6,
+      "attack_duration_s": 2.95,
+      "windup_duration_s": 1.35,
+      "release_duration_s": 1.6,
+      "hit_duration_s": 0.55,
+      "death_duration_s": 2.1,
+      "walk_speed_scale_at_test_speed": 1.3043478260869565,
+      "shapes": [
+        "circle",
+        "cone"
+      ]
+    }
+  }
+}
