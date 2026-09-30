@@ -38,12 +38,12 @@ async def run(args):
         fixture.rename(fixture.with_name('mcp-fixture-previous-' + str(time.time_ns())))
     if not fixture.exists():
         fixture.mkdir()
-        for name in ('project.godot', 'scenes', 'scripts', 'assets'):
+        for name in ('project.godot', 'scenes', 'scripts', 'assets', 'data', 'tests'):
             src = ROOT / name
             if not src.exists():
                 continue
             if src.is_dir():
-                shutil.copytree(src, fixture / name, ignore=shutil.ignore_patterns('mcp', 'preview', 'source', '__pycache__'))
+                shutil.copytree(src, fixture / name, ignore=shutil.ignore_patterns('mcp', 'preview', 'source', 'evidence', '__pycache__'))
             else:
                 shutil.copy2(src, fixture / name)
         shutil.copytree(ROOT / '.local/godot-mcp-src/addons', fixture / 'addons')

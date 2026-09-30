@@ -1,0 +1,232 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/input_acceptance.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 40
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"initial\")"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(75,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(75,false)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "click_target(\"learn_q\",true)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "click_target(\"learn_q\",false)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"learned\")"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(4194305,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(4194305,false)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "click_target(\"start\",true)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "click_target(\"start\",false)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"started\")"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "move_mouse(640,300)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(68,true)"
+    },
+    "wait_after": 0.3
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(68,false)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"moved\")"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "mouse_event(640,300,true)"
+    },
+    "wait_after": 3
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(81,true)"
+    },
+    "wait_after": 0.1
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "key_event(81,false)"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"attacking\")"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "mouse_event(640,300,false)"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"settled\")"
+    },
+    "wait_after": 3
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "capture(\"frozen\")"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "report()"
+    },
+    "wait_after": 0.15
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]

@@ -14,5 +14,9 @@ if grep -Eq 'SCRIPT ERROR:|ERROR:' .local/checks/import.log; then exit 1; fi
 "$engine" --headless --path . --quit-after 10 > .local/checks/boot.log 2>&1
 cat .local/checks/boot.log
 if grep -Eq 'SCRIPT ERROR:|ERROR:' .local/checks/boot.log; then exit 1; fi
-grep -q '^SHUABAO_BOOT_OK$' .local/checks/boot.log
+if grep -q 'run/main_scene="res://scenes/integration/room.tscn"' project.godot; then
+  grep -q '^SHUABAO_INTEGRATION_READY checkpoint=1$' .local/checks/boot.log
+else
+  grep -q '^SHUABAO_BOOT_OK$' .local/checks/boot.log
+fi
 printf '%s\n' 'PASS: Godot import and headless boot (not visual/MCP/export validation).'

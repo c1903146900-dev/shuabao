@@ -41,3 +41,7 @@ Library ID：`libfile_137d44c0b4c08191bc25116c300fc08b`；服务返回 file ID `
 3. 独立交接风厉单人战斗白盒；确认输入和招式，约定一个训练目标验收。暂不展开第一幕全流程与六英雄。
 
 初始提交与远端 main 的最终 SHA 在任务交付消息中记录，避免文档自引用提交哈希。后续可用 `git rev-parse HEAD` 与 `git ls-remote origin refs/heads/main` 对照。
+
+## 首个单房间整合 checkpoint
+
+默认入口已切换为 `scenes/integration/room.tscn`。实际1级1点技能选择、GLB敌人/风厉、真实HP/CD HUD与战斗接线完成；9项MCP输入链路检查通过，实测8击杀后倒地，非胜利通关。独立QA窗口输入、完整成长目录/控制器和新入口导出仍待完成。见 [checkpoint说明](INTEGRATION_CHECKPOINT_1.md)。较早的“只有骨架/未战斗”记录仅描述当时版本。
