@@ -1,0 +1,1675 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+ERROR: Required extension VK_KHR_surface not found.
+   at: _initialize_instance_extensions (drivers/vulkan/rendering_context_driver_vulkan.cpp:487)
+ERROR: Condition "err != OK" is true. Returning: err
+   at: initialize (drivers/vulkan/rendering_context_driver_vulkan.cpp:928)
+[Godot MCP] Plugin started
+[Godot MCP] Registered 173 commands
+[Godot MCP] Connected to MCP server (ws://127.0.0.1:6505)
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6379
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6461
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6528
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6582
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6649
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6730
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6803
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6872
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 6951
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7009
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7090
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7167
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7250
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7317
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7388
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7465
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7546
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7623
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7704
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7777
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7868
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 7945
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8026
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8090
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8177
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8252
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8325
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8402
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8483
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8560
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8639
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8710
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8843
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8887
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 8947
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9007
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9071
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9137
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9207
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9275
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9339
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9411
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9477
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9537
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9607
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9671
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9743
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9809
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9869
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 9933
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10009
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10069
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10133
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10209
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10281
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10341
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10405
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10469
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10535
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10595
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10659
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10719
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10779
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10847
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10917
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 10981
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11043
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11107
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11175
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11239
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11309
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11373
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11437
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11505
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11565
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11633
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11711
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11775
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11843
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11911
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 11981
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12037
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12101
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12163
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12217
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12271
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12337
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12391
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12451
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12511
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12581
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12659
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12725
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5728:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
+ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN
+   at: init_output_device (drivers/alsa/audio_driver_alsa.cpp:90)
+WARNING: All audio drivers failed, falling back to the dummy driver.
+     at: initialize (servers/audio/audio_server.cpp:247)
+
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12785
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ART_IMPORT_OK clips=["attack", "dash", "death", "hit", "idle", "overload", "run", "thrust", "ultimate"]
+ART_CLIP idle length=2.0 tracks=13
+ART_CLIP run length=0.80000001192093 tracks=13
+ART_CLIP attack length=0.80000001192093 tracks=13
+ART_CLIP dash length=0.60000002384186 tracks=13
+ART_CLIP thrust length=0.89999997615814 tracks=13
+ART_CLIP overload length=1.5 tracks=13
+ART_CLIP ultimate length=2.0 tracks=13
+ART_CLIP hit length=0.60000002384186 tracks=13
+ART_CLIP death length=1.60000002384186 tracks=13
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12887
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12941
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 12993
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13047
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13075
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13103
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13131
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13185
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13213
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13241
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13269
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13305
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13337
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13389
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13443
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13471
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13499
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13527
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13581
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13609
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13637
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13665
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13719
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13747
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13775
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13829
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13857
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13885
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13913
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13967
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 13995
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14023
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14077
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14105
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14133
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14161
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14189
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14217
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14245
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14273
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14301
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14341
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14395
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14423
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14451
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14491
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14545
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14573
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14601
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14637
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14677
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14721
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14775
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14803
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14831
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14859
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14887
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14915
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14943
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14971
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 14999
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15027
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15055
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15109
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15137
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15165
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15193
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15221
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15275
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15303
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15331
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15359
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15387
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15415
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15443
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15471
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15499
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15527
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15571
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15611
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15639
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15667
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15695
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15723
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15751
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15791
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15845
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15873
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15901
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15929
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15957
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 15985
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16013
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16041
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16069
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16097
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16125
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16153
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16209
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16237
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16265
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16293
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16321
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16357
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16397
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16437
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16465
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16493
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16521
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16549
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16577
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16605
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16633
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16661
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16689
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16717
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16745
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16773
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16801
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16829
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16857
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16885
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16913
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16941
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16969
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 16997
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17025
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17053
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17081
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17109
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17137
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17165
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17193
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17221
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17249
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17277
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17305
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17333
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17361
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17389
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17417
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17445
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17473
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17501
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17529
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17583
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17611
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17639
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17667
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17695
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17723
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17751
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17779
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17807
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17835
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17863
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17891
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17919
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 17973
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18001
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18029
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18057
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18085
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18113
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18141
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18169
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18197
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18225
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18253
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18285
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18313
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18341
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18369
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18397
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18425
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18453
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18481
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18509
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18537
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18565
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18597
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18625
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18653
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18681
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18709
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18763
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18791
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18819
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18847
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18875
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18903
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18957
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 18985
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19013
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19041
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19081
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19113
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19141
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19169
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19197
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19225
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19261
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19293
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19321
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19349
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19377
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19405
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19449
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19503
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19531
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19559
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19587
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19615
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19643
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19671
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19699
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19727
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19771
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19825
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19853
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19881
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19909
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19937
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 19991
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20019
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20047
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20075
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20103
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20131
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20159
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20187
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20215
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+ERROR: Unhandled XServer error: BadWindow (invalid Window parameter)
+   Major opcode of failed request: 20
+   Serial number of failed request: 0
+   Current serial number in output stream: 20243
+   at: default_window_error_handler (platform/linuxbsd/x11/display_server_x11.cpp:1310)
+[Godot MCP] Disconnected from MCP server

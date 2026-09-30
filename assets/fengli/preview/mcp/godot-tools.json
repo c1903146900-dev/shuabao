@@ -1,0 +1,4518 @@
+{
+  "meta": null,
+  "nextCursor": null,
+  "tools": [
+    {
+      "name": "get_project_info",
+      "title": null,
+      "description": "Project metadata, version, viewport, autoloads",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_filesystem_tree",
+      "title": null,
+      "description": "Recursive file tree with filtering",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string"
+          },
+          "max_depth": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "search_files",
+      "title": null,
+      "description": "Fuzzy/glob file search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string"
+          },
+          "directory": {
+            "type": "string"
+          },
+          "recursive": {
+            "type": "boolean"
+          },
+          "max_results": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_project_settings",
+      "title": null,
+      "description": "Read project.godot settings",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_project_setting",
+      "title": null,
+      "description": "Set project settings via editor API",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "uid_to_project_path",
+      "title": null,
+      "description": "UID to res:// conversion",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uid"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "project_path_to_uid",
+      "title": null,
+      "description": "res:// to UID conversion",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_scene_tree",
+      "title": null,
+      "description": "Live scene tree with hierarchy",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_scene_file_content",
+      "title": null,
+      "description": "Raw .tscn file content",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_scene",
+      "title": null,
+      "description": "Create new scene files",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          },
+          "root_type": {
+            "type": "string"
+          },
+          "overwrite": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "scene_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "open_scene",
+      "title": null,
+      "description": "Open scene in editor",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "delete_scene",
+      "title": null,
+      "description": "Delete scene file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_scene_instance",
+      "title": null,
+      "description": "Instance scene as child node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          },
+          "parent_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "play_scene",
+      "title": null,
+      "description": "Run scene (main/current/custom)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "current",
+              "main",
+              "custom"
+            ]
+          },
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "stop_scene",
+      "title": null,
+      "description": "Stop running scene",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "save_scene",
+      "title": null,
+      "description": "Save current scene to disk",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_scene_exports",
+      "title": null,
+      "description": "List @export variables in a scene",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_node",
+      "title": null,
+      "description": "Add node with type and properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parent_path": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "delete_node",
+      "title": null,
+      "description": "Delete node (with undo support)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "duplicate_node",
+      "title": null,
+      "description": "Duplicate node and children",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "move_node",
+      "title": null,
+      "description": "Move/reparent node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "new_parent_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "new_parent_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "update_property",
+      "title": null,
+      "description": "Set any property (auto type parsing)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "property",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_node_properties",
+      "title": null,
+      "description": "Get all node properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_resource",
+      "title": null,
+      "description": "Add Shape/Material/etc to node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "resource_type"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_anchor_preset",
+      "title": null,
+      "description": "Set Control anchor preset",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "preset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "rename_node",
+      "title": null,
+      "description": "Rename a node in the scene",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "new_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "new_name"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "connect_signal",
+      "title": null,
+      "description": "Connect signal between nodes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "from_path": {
+            "type": "string"
+          },
+          "signal": {
+            "type": "string"
+          },
+          "to_path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_path",
+          "signal",
+          "to_path",
+          "method"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "disconnect_signal",
+      "title": null,
+      "description": "Disconnect signal connection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "from_path": {
+            "type": "string"
+          },
+          "signal": {
+            "type": "string"
+          },
+          "to_path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_path",
+          "signal",
+          "to_path",
+          "method"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_node_groups",
+      "title": null,
+      "description": "Get groups a node belongs to",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_node_groups",
+      "title": null,
+      "description": "Set node group membership",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "node_path",
+          "groups"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_nodes_in_group",
+      "title": null,
+      "description": "Find all nodes in a group",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "group"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "list_scripts",
+      "title": null,
+      "description": "List all scripts with class info",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "read_script",
+      "title": null,
+      "description": "Read script content",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_script",
+      "title": null,
+      "description": "Create new script with template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "overwrite": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "edit_script",
+      "title": null,
+      "description": "Search/replace or full edit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "search": {
+            "type": "string"
+          },
+          "replace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "attach_script",
+      "title": null,
+      "description": "Attach script to node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "script_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_open_scripts",
+      "title": null,
+      "description": "List scripts open in editor",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "validate_script",
+      "title": null,
+      "description": "Validate GDScript syntax",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "search_in_files",
+      "title": null,
+      "description": "Search content in project files",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "directory": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_editor_errors",
+      "title": null,
+      "description": "Get errors and stack traces",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_editor_screenshot",
+      "title": null,
+      "description": "Capture editor viewport",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_game_screenshot",
+      "title": null,
+      "description": "Capture running game",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "execute_editor_script",
+      "title": null,
+      "description": "Run arbitrary GDScript in editor",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "clear_output",
+      "title": null,
+      "description": "Clear output panel",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_signals",
+      "title": null,
+      "description": "Get all signals of a node with connections",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "reload_plugin",
+      "title": null,
+      "description": "Reload the MCP plugin",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "reload_project",
+      "title": null,
+      "description": "Rescan filesystem and reload scripts",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_output_log",
+      "title": null,
+      "description": "Get output panel content",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "max_lines": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_editor_camera",
+      "title": null,
+      "description": "Get 3D editor viewport camera transform",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_editor_camera",
+      "title": null,
+      "description": "Set 3D editor viewport camera transform",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "viewport_index": {
+            "type": "number"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          },
+          "rotation_x": {
+            "type": "number"
+          },
+          "rotation_y": {
+            "type": "number"
+          },
+          "rotation_z": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_auto_dismiss",
+      "title": null,
+      "description": "Auto-dismiss editor dialog popups",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "compare_screenshots",
+      "title": null,
+      "description": "Compare two screenshot images",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path_a": {
+            "type": "string"
+          },
+          "path_b": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path_a",
+          "path_b"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "simulate_key",
+      "title": null,
+      "description": "Simulate keyboard key press/release",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keycode": {
+            "type": "number"
+          },
+          "pressed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "simulate_mouse_click",
+      "title": null,
+      "description": "Simulate mouse click at position",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "button": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "simulate_mouse_move",
+      "title": null,
+      "description": "Simulate mouse movement",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "simulate_action",
+      "title": null,
+      "description": "Simulate Godot Input Action",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "pressed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "simulate_sequence",
+      "title": null,
+      "description": "Sequence of input events",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "events"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_input_actions",
+      "title": null,
+      "description": "List all input actions",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_input_action",
+      "title": null,
+      "description": "Create/modify input action",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "keycode": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_game_scene_tree",
+      "title": null,
+      "description": "Scene tree of running game",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_game_node_properties",
+      "title": null,
+      "description": "Node properties in running game",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_game_node_property",
+      "title": null,
+      "description": "Set node property in running game",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "property",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "execute_game_script",
+      "title": null,
+      "description": "Run GDScript in game context",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "capture_frames",
+      "title": null,
+      "description": "Multi-frame screenshot capture",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "monitor_properties",
+      "title": null,
+      "description": "Record property values over time",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "node_path": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "start_recording",
+      "title": null,
+      "description": "Start input recording",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "stop_recording",
+      "title": null,
+      "description": "Stop input recording",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "replay_recording",
+      "title": null,
+      "description": "Replay recorded input",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_nodes_by_script",
+      "title": null,
+      "description": "Find game nodes by script",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_autoload",
+      "title": null,
+      "description": "Get autoload node properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "batch_get_properties",
+      "title": null,
+      "description": "Batch get multiple node properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_ui_elements",
+      "title": null,
+      "description": "Find UI elements in game",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "click_button_by_text",
+      "title": null,
+      "description": "Click button by text content",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "wait_for_node",
+      "title": null,
+      "description": "Wait for node to appear",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "timeout": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_nearby_nodes",
+      "title": null,
+      "description": "Find nodes near position",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "radius": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "navigate_to",
+      "title": null,
+      "description": "Navigate to target position",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent_path": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "move_to",
+      "title": null,
+      "description": "Walk character to target",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent_path": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "watch_signals",
+      "title": null,
+      "description": "Watch signal emissions during gameplay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_paths": {
+            "type": "array"
+          },
+          "duration_ms": {
+            "type": "number"
+          },
+          "signal_filter": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "node_paths"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "list_animations",
+      "title": null,
+      "description": "List all animations in AnimationPlayer",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_animation",
+      "title": null,
+      "description": "Create new animation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "length": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_animation_track",
+      "title": null,
+      "description": "Add animation track",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "animation": {
+            "type": "string"
+          },
+          "track_type": {
+            "type": "string"
+          },
+          "property_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "animation"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_animation_keyframe",
+      "title": null,
+      "description": "Insert keyframe into track",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "animation": {
+            "type": "string"
+          },
+          "track": {
+            "type": "number"
+          },
+          "time": {
+            "type": "number"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "animation"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_animation_info",
+      "title": null,
+      "description": "Detailed animation info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "animation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "animation"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "remove_animation",
+      "title": null,
+      "description": "Remove an animation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "animation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "animation"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_set_cell",
+      "title": null,
+      "description": "Set a single tile cell",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "source": {
+            "type": "number"
+          },
+          "atlas_x": {
+            "type": "number"
+          },
+          "atlas_y": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_fill_rect",
+      "title": null,
+      "description": "Fill rectangular region with tiles",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_get_cell",
+      "title": null,
+      "description": "Get tile data at cell",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_clear",
+      "title": null,
+      "description": "Clear all cells",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_get_info",
+      "title": null,
+      "description": "TileMapLayer info and tile set sources",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "tilemap_get_used_cells",
+      "title": null,
+      "description": "List of used cells",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_theme",
+      "title": null,
+      "description": "Create Theme resource file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "theme_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_theme_color",
+      "title": null,
+      "description": "Set theme color override",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_theme_constant",
+      "title": null,
+      "description": "Set theme constant override",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_theme_font_size",
+      "title": null,
+      "description": "Set theme font size override",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_theme_stylebox",
+      "title": null,
+      "description": "Set StyleBoxFlat override",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_theme_info",
+      "title": null,
+      "description": "Get theme overrides info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_control",
+      "title": null,
+      "description": "Configure Control anchors, size flags and offsets",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "anchor_preset": {
+            "type": "string"
+          },
+          "size_flags_horizontal": {
+            "type": "number"
+          },
+          "size_flags_vertical": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_performance_monitors",
+      "title": null,
+      "description": "All performance monitors",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_editor_performance",
+      "title": null,
+      "description": "Quick performance summary",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_nodes_by_type",
+      "title": null,
+      "description": "Find all nodes of a type",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_signal_connections",
+      "title": null,
+      "description": "Find all signal connections in scene",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "batch_set_property",
+      "title": null,
+      "description": "Set property on all nodes of a type",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "property",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_node_references",
+      "title": null,
+      "description": "Search project files for pattern",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pattern"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_scene_dependencies",
+      "title": null,
+      "description": "Get resource dependencies",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "cross_scene_set_property",
+      "title": null,
+      "description": "Set property across all scenes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "property",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_script_references",
+      "title": null,
+      "description": "Find where script/resource is used",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "script_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "detect_circular_dependencies",
+      "title": null,
+      "description": "Find circular scene dependencies",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "batch_add_nodes",
+      "title": null,
+      "description": "Add multiple nodes in one operation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_shader",
+      "title": null,
+      "description": "Create shader with template",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "shader_path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "read_shader",
+      "title": null,
+      "description": "Read shader file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "shader_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "shader_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "edit_shader",
+      "title": null,
+      "description": "Edit shader",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "shader_path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "search": {
+            "type": "string"
+          },
+          "replace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "shader_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "assign_shader_material",
+      "title": null,
+      "description": "Assign ShaderMaterial to node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "shader_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "shader_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_shader_param",
+      "title": null,
+      "description": "Set shader parameter",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "param": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "param",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_shader_params",
+      "title": null,
+      "description": "Get all shader parameters",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "list_export_presets",
+      "title": null,
+      "description": "List export presets",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "export_project",
+      "title": null,
+      "description": "Get export command for preset",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "preset": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "preset",
+          "path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_export_info",
+      "title": null,
+      "description": "Export-related project info",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "read_resource",
+      "title": null,
+      "description": "Read .tres resource properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "resource_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "edit_resource",
+      "title": null,
+      "description": "Edit resource properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "resource_path": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "resource_path",
+          "properties"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_resource",
+      "title": null,
+      "description": "Create new .tres resource",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "resource_path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_resource_preview",
+      "title": null,
+      "description": "Get resource thumbnail",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "resource_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_autoload",
+      "title": null,
+      "description": "Register autoload singleton",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "script_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "script_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "remove_autoload",
+      "title": null,
+      "description": "Remove autoload singleton",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_physics_body",
+      "title": null,
+      "description": "Configure physics body properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "gravity_scale": {
+            "type": "number"
+          },
+          "mass": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_collision",
+      "title": null,
+      "description": "Add collision shapes to nodes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "shape_type": {
+            "type": "string"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_physics_layers",
+      "title": null,
+      "description": "Set collision layer/mask",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "layer": {
+            "type": "number"
+          },
+          "mask": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_physics_layers",
+      "title": null,
+      "description": "Get collision layer/mask info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_collision_info",
+      "title": null,
+      "description": "Get collision shape details",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_raycast",
+      "title": null,
+      "description": "Add RayCast2D/3D node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "is_3d": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_mesh_instance",
+      "title": null,
+      "description": "Add MeshInstance3D with primitive mesh",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "primitive": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_camera_3d",
+      "title": null,
+      "description": "Configure Camera3D properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "fov": {
+            "type": "number"
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_lighting",
+      "title": null,
+      "description": "Add/configure light nodes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "energy": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_environment",
+      "title": null,
+      "description": "Configure WorldEnvironment",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "background_color": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_gridmap",
+      "title": null,
+      "description": "Set up GridMap node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "mesh_library": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_material_3d",
+      "title": null,
+      "description": "Set StandardMaterial3D properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_particles",
+      "title": null,
+      "description": "Create GPUParticles2D/3D",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "is_3d": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_particle_material",
+      "title": null,
+      "description": "Configure ParticleProcessMaterial",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "spread": {
+            "type": "number"
+          },
+          "velocity_min": {
+            "type": "number"
+          },
+          "velocity_max": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_particle_color_gradient",
+      "title": null,
+      "description": "Set color gradient for particles",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "start_color": {
+            "type": "string"
+          },
+          "end_color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "apply_particle_preset",
+      "title": null,
+      "description": "Apply preset (fire, smoke, sparks)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "preset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_particle_info",
+      "title": null,
+      "description": "Get particle system details",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_navigation_region",
+      "title": null,
+      "description": "Configure NavigationRegion",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "is_3d": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "setup_navigation_agent",
+      "title": null,
+      "description": "Configure NavigationAgent",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "is_3d": {
+            "type": "boolean"
+          },
+          "max_speed": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "bake_navigation_mesh",
+      "title": null,
+      "description": "Bake navigation mesh",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_navigation_layers",
+      "title": null,
+      "description": "Set navigation layers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "layers": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_navigation_info",
+      "title": null,
+      "description": "Get navigation setup info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_navigation_path",
+      "title": null,
+      "description": "Compute path between two points",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "from_x": {
+            "type": "number"
+          },
+          "from_y": {
+            "type": "number"
+          },
+          "to_x": {
+            "type": "number"
+          },
+          "to_y": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_audio_player",
+      "title": null,
+      "description": "Add AudioStreamPlayer node",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "stream_path": {
+            "type": "string"
+          },
+          "is_3d": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_audio_bus",
+      "title": null,
+      "description": "Add audio bus",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_audio_bus_effect",
+      "title": null,
+      "description": "Add effect to audio bus",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "bus": {
+            "type": "string"
+          },
+          "effect_type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_audio_bus",
+      "title": null,
+      "description": "Configure audio bus properties",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "bus": {
+            "type": "string"
+          },
+          "volume_db": {
+            "type": "number"
+          },
+          "mute": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_audio_bus_layout",
+      "title": null,
+      "description": "Get audio bus layout info",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_audio_info",
+      "title": null,
+      "description": "Get audio-related node info",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "create_animation_tree",
+      "title": null,
+      "description": "Create AnimationTree",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent_path": {
+            "type": "string"
+          },
+          "anim_player_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_animation_tree_structure",
+      "title": null,
+      "description": "Get tree structure",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_tree_parameter",
+      "title": null,
+      "description": "Set AnimationTree parameter",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "parameter": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "parameter",
+          "value"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_state_machine_state",
+      "title": null,
+      "description": "Add state to state machine",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "state_name": {
+            "type": "string"
+          },
+          "animation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "state_name"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "remove_state_machine_state",
+      "title": null,
+      "description": "Remove state from state machine",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "state_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "state_name"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "add_state_machine_transition",
+      "title": null,
+      "description": "Add transition between states",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "from",
+          "to"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "remove_state_machine_transition",
+      "title": null,
+      "description": "Remove state transition",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "from",
+          "to"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "set_blend_tree_node",
+      "title": null,
+      "description": "Configure blend tree nodes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "analyze_scene_complexity",
+      "title": null,
+      "description": "Analyze scene performance",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "analyze_signal_flow",
+      "title": null,
+      "description": "Map signal connections",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "find_unused_resources",
+      "title": null,
+      "description": "Find unreferenced resources",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "directory": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_project_statistics",
+      "title": null,
+      "description": "Get project-wide statistics",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "run_test_scenario",
+      "title": null,
+      "description": "Run automated test scenario",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "steps"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "assert_node_state",
+      "title": null,
+      "description": "Assert node property values",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_path": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_path",
+          "property",
+          "expected"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "assert_screen_text",
+      "title": null,
+      "description": "Check for text on screen",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "run_stress_test",
+      "title": null,
+      "description": "Run performance stress test",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_test_report",
+      "title": null,
+      "description": "Get test results report",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "list_android_devices",
+      "title": null,
+      "description": "List connected Android devices via adb",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "deploy_to_android",
+      "title": null,
+      "description": "Export and deploy APK to device",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "preset": {
+            "type": "string"
+          },
+          "apk_path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_android_build_info",
+      "title": null,
+      "description": "Get Android export settings",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "get_android_preset_info",
+      "title": null,
+      "description": "Get detailed Android export preset options",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "preset": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    }
+  ]
+}

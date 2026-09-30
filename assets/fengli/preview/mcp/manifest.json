@@ -1,0 +1,490 @@
+{
+  "status": "70 workflow calls completed; known addon diagnostic and earlier timeout retained",
+  "files": [
+    {
+      "path": "assets/fengli/preview/mcp/arena-build.json",
+      "sha256": "878d4ea343a5843570a7fca08a6b07371bbae98058358b76e1db6943297f9278"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-addon-status-known-upstream-issue.json",
+      "sha256": "88446c5fafb5ff6950b33af21dc2a9fd5118f5d35030cf757cddd14dada88207"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-build.json",
+      "sha256": "c30cb729db35d34ccd7791f4ec8d33b0bc159cf8fb976e3c28cb65729c5abaf0"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-gui.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-initialize.json",
+      "sha256": "61d797180e1cb4ac4401f6603bc0344369752a3628168f01677fb54ef67f2383"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-ready-1.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-scene.json",
+      "sha256": "bce9641b7b95e41cd8c3adcdea678821040bb38d4dcbb0c1586084763900b8a6"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/blender-tools.json",
+      "sha256": "d589155429272eaba590faf64b8cca4a69a8043d88a784ced51046cb3486c8d0"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/earlier-import-timeout.json",
+      "sha256": "b4bd77f19d0828dfef4124c4bd2d6f1fb0cc60cceeee8a8f550955491d3b3c45"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-editor.log",
+      "sha256": "a350c98332dc7675a6466a701d1f25ed0197edf5b3dd54ab672829fb984f3cf2"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-initialize.json",
+      "sha256": "eebac67d3883944010bcfab14db7ba6cbcb52b344ef8146b1b7ce1e68070e515"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-1.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-2.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-3.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-4.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-5.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-6.json",
+      "sha256": "cd8b19f036f23138d93059ac4f33403f163575808603dcbbe304ba132d0975fb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-ready-7.json",
+      "sha256": "d5a7c1d027408511bfebf16bffb93f5ad8f60af55220fb6e0992eabb362e7cd1"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/godot-tools.json",
+      "sha256": "5e4c6cfd264d3831938496e0aa58a2900905b1ddd0a2826c0838d9ce3823d6ff"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-00-execute_blender_code.json",
+      "sha256": "e82c3131a886a45fb60ee118162eee6280a06a1bcea4bebdf2dbab2756abd598"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-01-execute_blender_code.json",
+      "sha256": "20a68bb5fae4fa2284613307bdcd74b9a9877390b605ecbec3acf71f2e50f35f"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-02-get_viewport_screenshot-0.png",
+      "sha256": "0b7f965872df595e1de8a448b69338806c2b7e3785253335e93214af89a43dcc"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-02-get_viewport_screenshot.json",
+      "sha256": "16b72374369923201635fe61399dcaebe84e13187245a6b3665dd58f2acf33df"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-03-create_script.json",
+      "sha256": "4e6288a20f39b5e10959a01bf6cb91350660efe7f66c3b8276a70468fbb27d1f"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-04-validate_script.json",
+      "sha256": "f9eb8c7412ccd1d7f82e046fde2661a40d768bf69160af5c2f875e1d560ec848"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-05-open_scene.json",
+      "sha256": "2f2d29b09b8450f62f45f3a5ebdbeb66105405c4444a97a25242c84ad62357c4"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-06-play_scene.json",
+      "sha256": "d92be10d14c40f2048efa1e383dda297558381ec5f85d68a870eeab946239734"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-07-execute_game_script.json",
+      "sha256": "d3a44376b9c3308a23a70774236789d148d5d3b3e532351c5b532d00e528a691"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-08-execute_game_script.json",
+      "sha256": "4c47936f1f48ec7ae5e90d111681c9784b06a0adfe59cebfced953999804bb93"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-09-execute_game_script.json",
+      "sha256": "643f1ccf44cc467613f418c0e43c8addee7e8a5e571c9d4e29178d9d46c67c01"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-10-execute_game_script.json",
+      "sha256": "f2076521e473b7171b9675cec616919efa904f252b22e9ee902dabb7d6d029e5"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-11-get_game_screenshot-0.png",
+      "sha256": "8957e803bfc0815e2109be6f4a26c53bc07e7822a1768f402eedc25894f95ea7"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-11-get_game_screenshot.json",
+      "sha256": "dcc8bf241449c69cb11ed62c9062bf4d57f8b636f9d9665eecdf4e1b58294baa"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-12-execute_game_script.json",
+      "sha256": "627cea5cf5300bd3281cd874a41f1747bbab948801cf8fc22ebc57a07c429dc9"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-13-execute_game_script.json",
+      "sha256": "88db69866eef46c635f687ebe4acd69a4aad60808737c820539df044f8260c60"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-14-get_game_screenshot-0.png",
+      "sha256": "8ff72925f59eea2711980636b486d36766a0e0fb944a5c1f9c4049ac3a81a405"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-14-get_game_screenshot.json",
+      "sha256": "d2b48c8bd0fa1e91d5dae992e4ec8c9e350384cb97ad513e485b0a02400c0a38"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-15-execute_game_script.json",
+      "sha256": "63aa300fc8c9ceaea75d821b4f918f31f7908985bb3014347636f3ac9afa4f91"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-16-get_game_screenshot-0.png",
+      "sha256": "4ac97519b08792f640ebef438fb7b074b3e84407332faec5c5886e9731e77419"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-16-get_game_screenshot.json",
+      "sha256": "982ae526e1ce9d5f63d853667d4c9257d89725906ac37f9d475d1c6d24bb4f7b"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-17-execute_game_script.json",
+      "sha256": "6ccf99041cb48aa83e76f5e0a3f3027e444721fb181b4eef31e25f4f67e6efa6"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-18-get_game_screenshot-0.png",
+      "sha256": "ef0324b10fbeef93109c5e33b9cff1888afea92d5fd21ce4b6a99f62922ae3d5"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-18-get_game_screenshot.json",
+      "sha256": "f47683ddb5745faafccd20b999365af8682e026b989d9df5dc9266fa40439712"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-19-execute_game_script.json",
+      "sha256": "7f0c838d88c0750c66f981de4efa1c8d2f5362d522c26792ae71881ed5118fb3"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-20-get_game_screenshot-0.png",
+      "sha256": "eac06bf51be262b7bed0df15b18b74ba13589143e682568700e9dcd6247e7bce"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-20-get_game_screenshot.json",
+      "sha256": "90edb97d3830a5c95d1576af4e04466a777b12e44ce13c4faf727977c4824b1e"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-21-execute_game_script.json",
+      "sha256": "ae4d9fb168124b914ca189621ccfc87fc681fc9f1bd1e1ff60d5a851cc1ee410"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-22-get_game_screenshot-0.png",
+      "sha256": "13ab93bf0e0020e9aad9539906f9317831983ab73cf16e0961582a3612393f09"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-22-get_game_screenshot.json",
+      "sha256": "280203a092493dd90360c0ed81b448118b8d806e07d26fa079d3538c413fca84"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-23-execute_game_script.json",
+      "sha256": "de94df22bc24a63393429327e140ec7b2ae677d41802728104e603c06298c33e"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-24-get_game_screenshot-0.png",
+      "sha256": "967e6baf06271246db13447af06dcb8764e9db2c07d964ac0f00a0b0c3d03418"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-24-get_game_screenshot.json",
+      "sha256": "762cebadc51baf9f609a9f6376e5e78579c3f564d5734e16d8b6012073321e8b"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-25-execute_game_script.json",
+      "sha256": "1d485f89448059b9f717321589942bb60f9e022b27c2505a9723cb06576cbc23"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-26-get_game_screenshot-0.png",
+      "sha256": "1b41acdb2019a3cb0b4fd5fd1da86ca0f4d65ff00cb4520a92843c8dcba575c0"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-26-get_game_screenshot.json",
+      "sha256": "82cc1fc782ad8e59a411c190e332598249e77eaf95d6d33ab29595a029213141"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-27-execute_game_script.json",
+      "sha256": "ded5103b256f81f7c27950c9ea1e454e1fa839ee6c1ae7506e2f598322a38139"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-28-get_game_screenshot-0.png",
+      "sha256": "6de84739be7b03e92a8b8799e7afb6bb4a09369a8d9273578f94282ba8f6f50c"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-28-get_game_screenshot.json",
+      "sha256": "b5f4513a2cf0c38364f2fea150c7e0d62eb36eaf4dcf56fde54911e97d63b03d"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-29-execute_game_script.json",
+      "sha256": "967347d8cdccc0f2454ba427b3c465dfc48cbf042c7818437a774fa0bbdee2be"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-30-get_game_screenshot-0.png",
+      "sha256": "c8f71f618061225ba670a053192a9731fa15f3d855f7b2a5efc9130428852c78"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-30-get_game_screenshot.json",
+      "sha256": "a61f23564c03b0e99b822c19f5938bfb62a49f34ecd2045d51703d8fdf683d10"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-31-execute_game_script.json",
+      "sha256": "328a29608bb0c9c65ed56fe2b37e67da7a14a7cda2626acb73676f74e93beee1"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-32-get_game_screenshot-0.png",
+      "sha256": "397478bdc93d9627729604f6f159155e4a96a82659238aa2ca1c6c1267d4a10c"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-32-get_game_screenshot.json",
+      "sha256": "4fa5f63d517df54f5d056ddf184a4f41cf2c769d3ac61fc32eea67fbbfbfa6eb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-33-execute_game_script.json",
+      "sha256": "76bd62b9908e23ad3a78a3e7a7c82addac1522c4029e287feb93708fc8364585"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-34-get_game_screenshot-0.png",
+      "sha256": "c314c7454db5974183174e3af2b44e17d3b6a3a4cab068bf0a2218c04dcff828"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-34-get_game_screenshot.json",
+      "sha256": "763cb685c47aecadc8e0c7f5efa89b5df70726bbce1054913bc22c88fb7ea0c4"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-35-execute_game_script.json",
+      "sha256": "77011c5896810eb8d19098f01954122acef3ac689a100e770ea807d19b501b79"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-36-get_game_screenshot-0.png",
+      "sha256": "60e995fcfb7e602a930342e5d4196f44222effad875a3c793cc114ef24b15b09"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-36-get_game_screenshot.json",
+      "sha256": "7ebdfaa25679ce76b81bcf9b05023b6c96d931b8be219262f2404fb94fea0005"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-37-execute_game_script.json",
+      "sha256": "8ad3532d5fa4a634ebecd0faa95ef46efc0d0ab45c439c497980205449c25b26"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-38-get_game_screenshot-0.png",
+      "sha256": "48b1208711768b1d040c7038686a7d28ea7511685b24f55ffee1bf0f844bf8c3"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-38-get_game_screenshot.json",
+      "sha256": "aa58a6c3bd7021ee6392535972b556c1128772cc2b9e7a990186ae447d749fd6"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-39-execute_game_script.json",
+      "sha256": "97331c0f7f6365c135270142e34376109b8565b06d3afc4d2d6a6c804716dca2"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-40-get_game_screenshot-0.png",
+      "sha256": "ec95df435e4ee5c4ebf0b3e52ff246f7f13ecf239d69033ff0d51ca1808a2b77"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-40-get_game_screenshot.json",
+      "sha256": "3c2755373c6e2b509ee2b5cc005286ed3bf53d3adc61525fcc56ffef60b47c39"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-41-execute_game_script.json",
+      "sha256": "f6deca7f6af9a517c18c187f71d84f503f9d1b1f16491047705ad96c9b5835ca"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-42-get_game_screenshot-0.png",
+      "sha256": "ef6b9b788f54051d22034b33feba387e63289d51e7cc100c27aac5d281902645"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-42-get_game_screenshot.json",
+      "sha256": "da1072cf2fe6c5e176ea4c3030ed9961a788826d77cafcf3a875eea587dcf444"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-43-execute_game_script.json",
+      "sha256": "4b0004d03eaff9d371385c31e092b05d7f80fbd837b0c4b2a34efc2b179244d5"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-44-get_game_screenshot-0.png",
+      "sha256": "9553bda6b753a2269cec57efec6b571a5c3726e00eca73a6a9248a7848bc4195"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-44-get_game_screenshot.json",
+      "sha256": "e346a60517298612451b7f6e53493f34de6a2b7f716bc824d57a1ff998be4f64"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-45-execute_game_script.json",
+      "sha256": "56e915ac83456018d0c474a3c5a7e216535f82b22bb1862c8969ae85e199d4c9"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-46-get_game_screenshot-0.png",
+      "sha256": "4a387f9c2b443699d5dbde0c8ab828b983e33d11debe46b959b69bfec26a733f"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-46-get_game_screenshot.json",
+      "sha256": "c4f5e971b309c4b21c7fa27a2c6033d94512be952471f103929070f8085e60b1"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-47-execute_game_script.json",
+      "sha256": "051bb0c27ed2183614f4d8e6f3e5c8cee2a23390fc9fc22acfcddc670dec9a32"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-48-get_game_screenshot-0.png",
+      "sha256": "92ec98787afd81bf3e1ecbbef56bb08f7bea0f43dd4493147bfbc64a00a14387"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-48-get_game_screenshot.json",
+      "sha256": "2e067160e4ca48f1f8e0cd8af6ddbfe8910a61fac102bfe71111782ea466fc9e"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-49-execute_game_script.json",
+      "sha256": "9cd19be590eb1bd1a252b7b0610989bab6b476293062ecb07887d22fa254f6a7"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-50-get_game_screenshot-0.png",
+      "sha256": "0975c0eab337e7b666786372b0832a037ba6b4c6335baad4bce9938bdea84450"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-50-get_game_screenshot.json",
+      "sha256": "ad7c775b7229eb1062c468c35c872bc1f3eb3f471161c439dad390a5e608fd27"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-51-execute_game_script.json",
+      "sha256": "066e6f470eee74e2789130195934511680366df3ff594e7d0aea11dec5b4cd27"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-52-get_game_screenshot-0.png",
+      "sha256": "395193b68f6e24c35fed0245f603a1f87c3a9b4e87f24b2178b502955ffbf063"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-52-get_game_screenshot.json",
+      "sha256": "dcd1f5496d6c027bedabbe1f5804f14c7d87f4c988508f48cde81f52afb684b3"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-53-execute_game_script.json",
+      "sha256": "86388ecc9333e70b1b9302bf98d9024978f4eaf6b0d8e9fa1816212e550ca325"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-54-get_game_screenshot-0.png",
+      "sha256": "320c92f36ba0afaa56318321e5d1f9a69e89472a93611bc53148f3af21f49c29"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-54-get_game_screenshot.json",
+      "sha256": "a0d6aaa122d3ea74a8207fd6dc678cd253f62e8d4b7267987d1617a346e3deb4"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-55-execute_game_script.json",
+      "sha256": "2e569cf54fd7d25d2e8db68f3ff6e6571fa7b079ce38cc8a11f22df239e73b51"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-56-get_game_screenshot-0.png",
+      "sha256": "74997060b3bfcb430a2b60876b070171f163dcd55e0b9a18e0616d2815236028"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-56-get_game_screenshot.json",
+      "sha256": "1e7201fcafd02630c117eb5d1ddec395c5616b16b346a63e358571c73b904e8a"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-57-execute_game_script.json",
+      "sha256": "aee8eacbf2171b017f26c3fe4568a119bb9309082c2d7faed29b2e10df01189f"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-58-get_game_screenshot-0.png",
+      "sha256": "22bcf9beb423b788959a66b208b0a21d6fd693c94d7e58e007a6bcafa1a4ef18"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-58-get_game_screenshot.json",
+      "sha256": "d102a4bb78841aa32e5a0f6a784acff6a67abc6be7bd1f342ded4e350390f36b"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-59-execute_game_script.json",
+      "sha256": "efd7dfbfbb768b8dbf379859bdfc441ecf28b6d4eb8bc692a45e1ed112639a8f"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-60-get_game_screenshot-0.png",
+      "sha256": "d0f10a74a4d571049e617335a1828a1ddaf7ee6142c59ebc710fefcde1a169ef"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-60-get_game_screenshot.json",
+      "sha256": "9c4c149d6df344ac8c9b5591bc83985fc1662f7b298b909d01dc4d85842d226c"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-61-execute_game_script.json",
+      "sha256": "8e15ad5f09a3d7bd1ab30ce4ca25739e684d5ecba85a49aafe0d6a0dc848533a"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-62-get_game_screenshot-0.png",
+      "sha256": "80fefab8dca05188e42f0a003b2bf68f4a372b348be08313564eb2ab8c990038"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-62-get_game_screenshot.json",
+      "sha256": "c8450eaad7b1983ca0a5bc83e8072930cf320e7303d50709150036a5179a0bcb"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-63-execute_game_script.json",
+      "sha256": "357b1e2221ef341b30258997ee67ac6e82bb2eb4b3a7d1d01f932957eae1d0d4"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-64-get_game_screenshot-0.png",
+      "sha256": "fb2da7a946a77076215aeac0d4b7f9fcfbcb57ca948bf740be1f1bd5cb731d16"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-64-get_game_screenshot.json",
+      "sha256": "ce20c4240e860cf3c78c12488feab721fc9a8fce95c31efb03fda5b69ba64664"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-65-execute_game_script.json",
+      "sha256": "f777bf94c18da0e47093a292b36d9786ff0618444b636c2274a69e74206f2ea8"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-66-get_game_screenshot-0.png",
+      "sha256": "c314c7454db5974183174e3af2b44e17d3b6a3a4cab068bf0a2218c04dcff828"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-66-get_game_screenshot.json",
+      "sha256": "3fb707b25cb55b7338b595860dfc2c0a183de204d427e7ba679c728c00945034"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-67-execute_game_script.json",
+      "sha256": "8970069644d68aa157e03b1e4d146290b4c462d0eac78783d434b1b10c902732"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-68-get_output_log.json",
+      "sha256": "0efa6724082805f2efcaaa7f2e86758693127a1d906f7fb0907d86921b94292d"
+    },
+    {
+      "path": "assets/fengli/preview/mcp/step-69-stop_scene.json",
+      "sha256": "4a21f1c487300c4e1a24b794637709f96573f326b20ea97fba52cf0fdf8a84d7"
+    }
+  ],
+  "delivered_assets": {
+    "assets/fengli/fengli.glb": "64e79e3aa4a167275e90ea9abf711ca1b947465225f0b809f0f8a20f460a1643",
+    "assets/fengli/preview/attack.mp4": "1f0f5f05b0a2f4a40b5203f290d682bdc80f1578b73a23d876656e3a257372d2",
+    "assets/fengli/source/fengli.blend": "0be497f3b902edeef90e76db276d32849b0db0798da11ce78c92baad82d43147",
+    "assets/arena/enemy_elite.glb": "af9a5402916eef7d255f2f93bf9992cc1d751558d4a1fdb715734d3ac9f6a71a",
+    "assets/arena/training_tile.glb": "6f965581d42e152469036b40b17f4a4cc835d52d6badaf15faa657b96c69d109",
+    "assets/arena/enemy_regular.glb": "a8dff72fe70fdcbde04848c89567a2a20acc1ada6ebdadcf4b7c5a040778569a",
+    "assets/arena/source/enemy_regular.blend": "de5fcf494f442006bde79693e863110df03326d2b0e2a8e36fb60cf5fe88a900",
+    "assets/arena/source/enemy_elite.blend": "2cf42de29b6076e8c58655538b6fac8e0c841a3a0d9f126d15498865f355f284",
+    "assets/arena/source/training_tile.blend": "8ef70b1f9a3397b51c142d9a376386e47df897df38dbc9542d7e7cc9765fcbda",
+    "scenes/art/showcase.tscn": "5fff3fb0d27c501faf2ec8743a37e84fd1f8ceb6dc1f51b7b6b2463ba986e9b5",
+    "scenes/art/showcase.gd": "7fa838a3a8a2a80e1d56cc86214b36fcced2b0b436f3df7abea8ed2126f2c19a"
+  }
+}
