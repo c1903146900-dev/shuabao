@@ -1,0 +1,274 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/ui/progression_demo.tscn"
+    },
+    "wait_after": 1,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 10,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "run_growth_tests()"
+    },
+    "wait_after": 30,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"growth_ui_report\")"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"growth_ui_report\").get(\"failures\") == 0"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "evidence_state()"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "controller.present_combat({})"
+    },
+    "wait_after": 1,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"allocation\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"shop\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"inventory\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(1920, 1080, \"hex\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"hud\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "run_growth_tests()"
+    },
+    "wait_after": 30,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"growth_ui_report\")"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "get_meta(\"growth_ui_report\").get(\"failures\") == 0"
+    },
+    "wait_after": 0,
+    "expect_text": [
+      "true"
+    ]
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "evidence_state()"
+    },
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "controller.present_combat({})"
+    },
+    "wait_after": 1,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"allocation\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"shop\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"inventory\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "configure_capture(960, 540, \"hex\")"
+    },
+    "wait_after": 2,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 0,
+    "expect_text": []
+  }
+]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgbtw6ignekud"]
+
+[ext_resource type="Script" uid="uid://bk4xnp264rd0f" path="res://scripts/ui/progression_hud.gd" id="1_ybf18"]
+
+[node name="progression_hud" type="Control" unique_id=1118448257]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ybf18")
