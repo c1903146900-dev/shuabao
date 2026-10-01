@@ -24,4 +24,4 @@ func _initialize():
   s=Sim.new();s.hero.position=Vector3.ZERO;s.ai_enabled=false;s.auto_finish=false;s.spawn_enemy('minion',Vector3(0,0,-2),1000);s.request_action('r',Vector3(0,0,-2));s.step(boundary)
   var old_hp=s.enemies[0].hp;s.end_encounter('victory');s.begin_encounter('boundary-next',[{'kind':'minion','position':Vector3(0,0,-2),'hp':1000}]);s.step(.1)
   check(s.enemies[0].hp==1000 and s.clock.scale_factor()==1,'R1 impact boundary real seconds '+str(boundary),{'previous_enemy_hp':old_hp,'next_hp':s.enemies[0].hp});s.free()
- var f=FileAccess.open('/workspace/shuabao-qa/tests/qa/round4_models.json',FileAccess.WRITE);f.store_string(JSON.stringify(results,'  '));f.close();print(JSON.stringify(results));quit(1 if results.any(func(x):return not x.passed) else 0)
+ var f=FileAccess.open(OS.get_environment('QA_MODEL_REPORT') if not OS.get_environment('QA_MODEL_REPORT').is_empty() else '/workspace/shuabao-qa/tests/qa/round4_models.json',FileAccess.WRITE);f.store_string(JSON.stringify(results,'  '));f.close();print(JSON.stringify(results));quit(1 if results.any(func(x):return not x.passed) else 0)

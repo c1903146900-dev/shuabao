@@ -53,8 +53,10 @@ for tag,index in stages.items():
   button(1);time.sleep(.15);button(0)
  elif tag in ['e3','e2','r2','e1']:
   move(controls['aim']);tap(ord(tag[0]))
- elif tag=='death':
-  time.sleep(2);tap(0xff1b);time.sleep(.25);tap(0x20)
+ elif tag in ['death','death_hold']:
+  time.sleep(2);tap(0xff1b);time.sleep(.25)
+  if tag=='death':tap(0x20)
+  else:key(0x20,1);time.sleep(.85);key(0x20,0)
  elif tag=='victory':
   move(controls['aim']);button(1);time.sleep(1.4);button(0)
  elif tag=='restart':

@@ -1,0 +1,184 @@
+{
+  "checkpoint": "15e694e2e260953076d37cc81cf0c23eaa658487",
+  "input": "OS XTest with real MCP readback",
+  "hover": {
+    "physical_hold_missing_held_w": 0,
+    "end_position": "(0.0, 0.0, -9.000015)"
+  },
+  "panels": {
+    "opens": 20,
+    "attack_latch_while_open": 0,
+    "attack_start_events": [
+      {
+        "cast_id": 1,
+        "combat_level_id": "integration-room-1",
+        "direction": "(-0.000002, 0.0, -1.0)",
+        "kind": "attack_started",
+        "position": "(0.0, 0.0, 0.0)",
+        "sequence": 13,
+        "world_time": 0.165
+      },
+      {
+        "cast_id": 2,
+        "combat_level_id": "integration-room-1",
+        "direction": "(-0.000002, 0.0, -1.0)",
+        "kind": "attack_started",
+        "position": "(0.0, 0.0, 0.0)",
+        "sequence": 16,
+        "world_time": 9.70000000000012
+      }
+    ]
+  },
+  "rescue": {
+    "short_space": {
+      "self_rescue_events": [
+        {
+          "combat_level_id": "integration-room-1",
+          "kind": "self_rescue",
+          "provenance": "test_initial",
+          "sequence": 16,
+          "world_time": 0.855000000000001
+        }
+      ],
+      "space_inputs": [
+        {
+          "echo": false,
+          "key": 32,
+          "pressed": true,
+          "time": 2.46666666666666
+        },
+        {
+          "echo": false,
+          "key": 32,
+          "pressed": false,
+          "time": 2.46666666666666
+        }
+      ],
+      "unexpected_panel_after_rescue": false,
+      "final_panel": false,
+      "final_phase": "combat"
+    },
+    "held_space": {
+      "self_rescue_events": [
+        {
+          "combat_level_id": "integration-room-1",
+          "kind": "self_rescue",
+          "provenance": "test_initial",
+          "sequence": 16,
+          "world_time": 0.855000000000001
+        }
+      ],
+      "space_inputs": [
+        {
+          "echo": false,
+          "key": 32,
+          "pressed": true,
+          "time": 2.58333333333333
+        },
+        {
+          "echo": true,
+          "key": 32,
+          "pressed": true,
+          "time": 3.26666666666666
+        },
+        {
+          "echo": true,
+          "key": 32,
+          "pressed": true,
+          "time": 3.29999999999999
+        },
+        {
+          "echo": true,
+          "key": 32,
+          "pressed": true,
+          "time": 3.33333333333333
+        },
+        {
+          "echo": true,
+          "key": 32,
+          "pressed": true,
+          "time": 3.38333333333333
+        },
+        {
+          "echo": true,
+          "key": 32,
+          "pressed": true,
+          "time": 3.41666666666666
+        },
+        {
+          "echo": false,
+          "key": 32,
+          "pressed": false,
+          "time": 3.44999999999999
+        }
+      ],
+      "unexpected_panel_after_rescue": false,
+      "final_panel": false,
+      "final_phase": "combat"
+    }
+  },
+  "freeze": {
+    "same_hero": true,
+    "same_clock": true,
+    "phase": "victory",
+    "wall_seconds": 61.461867809295654
+  },
+  "restart": {
+    "phase": "preparation",
+    "enemies": 0
+  },
+  "growth_after_win": {
+    "actor_id": "fengli",
+    "allocations": [],
+    "body": [],
+    "combat_level_id": "integration-room-1",
+    "definition_version": "confirmed-rules-v1",
+    "gold": 0,
+    "granted_level_ids": [
+      1
+    ],
+    "hero_id": "fengli",
+    "hex_status": {},
+    "inventory": [],
+    "level": 1,
+    "next_item": 1,
+    "offers": {},
+    "pending_milestones": [
+      1
+    ],
+    "phase": "safe",
+    "points": 1,
+    "recovery_mode": "",
+    "revision": 3,
+    "reward_ids": [],
+    "rng": 1,
+    "seen_hex": {},
+    "selected_hex": [],
+    "shop_undo": [],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "special_uses": 0,
+    "training": false,
+    "visited_levels": [
+      "integration-room-1"
+    ],
+    "xp": 0
+  },
+  "passed": true
+}

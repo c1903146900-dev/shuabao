@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-当前结论（第四轮，2026-10-01）：**固定main a3dd6b47上QA-001/QA-002独立复测通过；新增QA-003至QA-007为窗口/运行期已复现问题；不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
+当前结论（第五轮，2026-10-01）：**固定main 15e694e2上QA-001/002模型回归、QA-003/004真实窗口回归通过；QA-005至007仍待对应修复；奖励/成长两房循环未验收，不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -251,3 +251,25 @@ OS输入E2/R2确实生成技能事件、状态和伤害。QA每0.05秒在原supe
 依赖目录用项目内symlink复用前轮安装的固定上游源码/SDK；checkpoint标准 `scripts/mcp/check.py` 自带data/tests复制支持。依次运行QA目录的 `round4_build.json` → 独立重启跑 `round4_window.json`，并行启动 `round4_input.py <新证据目录>`。补测同理使用 `round4_followup_build.json` → `round4_followup_window.json`，输入驱动第二参数传 `round4_followup_stages.json`。每次证据目录必须全新，不能误读旧step作为准备完成信号。脚本不直连插件socket。
 
 新controller/集成SHA到达前不关闭QA-003至007，不将本固定checkpoint结果套用于正在修改的主集成。没有发布或部署。
+
+## 第五轮：15e694e2独立窗口回归（2026-10-01）
+
+唯一基线：`15e694e2e260953076d37cc81cf0c23eaa658487`，工作树 `/workspace/shuabao-checkpoint2`。与第四轮a3dd固定证据分目录保留；没有切到正在开发的奖励/两房循环版本。未修改任何功能源，checkpoint2 git状态干净。
+
+### 本轮可关闭的缺陷与通过的范围
+
+- **QA-001/002在实际main再次PASS**：同一独立模型脚本执行负钱包原序列、E1自然封房、旧R1回调、邻接真实时间边界与下一房敌人HP检查；P2/E3/Q2等第二轮邻接机制也重新加载本main，无失败。证据：[round5_models.json](../tests/qa/round5_models.json)、[round5_combat_boundaries.json](../tests/qa/round5_combat_boundaries.json)。仅新增输出路径参数，未改断言来适配修复。
+- **QA-004真实窗口PASS**：同样按住W→移入修习按钮→移出空场，物理W按住但held W丢失的采样帧为0；全程继续移动至z=-9.000015，对照a3dd停在z=-1.799999。没有用直接修改move_intent替代输入。
+- **QA-003真实窗口PASS**：真实敌人造成downed，Esc关闭结算后一次Space短按，只产生一次self_rescue，之后所有combat帧无意外修习面板。另一次新fixture重复同焦点序列、Space按住0.85秒，实际收到5次echo自动重复及最终release，仍只有一次self_rescue、无意外面板。两张 [短按截图](../tests/qa/evidence/round5-window/step-10-get_game_screenshot-0.png) / [长按截图](../tests/qa/evidence/round5-window/step-13-get_game_screenshot-0.png) 已亲自查看。生命继续被敌人正常攻击减少不作为失败；本次修复的是误开UI，不是给予额外无敌。
+- **20次面板压力PASS（该路径）**：沿用同一XTest脚本20次K/Esc开关，首次攻击按住跨面板、面板内释放，关闭后新按键再次攻击；面板内attacking为false，没有额外attack_started或释放补发。没有用此结果替代UI学习/交易扣款去重测试。
+- **胜利冻结/重开PASS（该路径）**：窗口左键完成64HP目标击杀，胜利后实际墙钟61.4619秒，hero完整状态及world_time不变；Esc/F5回preparation且无敌人。
+
+完整复核：[round5_window_report.json](../tests/qa/round5_window_report.json)、[独立验证脚本](../tests/qa/round5_verify.py)、[OS输入日志](../tests/qa/evidence/round5-window/os-input.json)。MCP build与运行步骤均无application_error；独立重启后验证，GUI与服务已清理。默认复用第四轮观测器；长按用相同death准备函数，仅改变真实窗口Space按住时长，没有改变被测功能或初始场景条件。
+
+### 仍不能通过的内容
+
+`4dd32d412fa8a6be01efea2a7b3ba082b2ca6afb` controller文件已合入，但本main入口 `integration/room.gd` 仍使用原CombatHUD及ledger_bridge，不是新成长demo/controller。父任务也明确当前hooks关闭、完整循环待接。UI源码入仓、demo自测、能力flag不能算真实奖励/成长/药品/装备/海克斯战斗消费者完成。
+
+QA-005技能阶段回显、QA-006 E2/R2动画覆盖、QA-007 GLB闪白仍OPEN：本提交diff没有这些修复；本轮未重复宣称全部视觉问题已修。Windows执行、Linux导出包、双分辨率、自然全局获奖升级、完整两房循环均不在本轮通过范围。第四轮fixture与窗口输入的区分继续适用。
+
+复現：`round5_build.json`经checkpoint2标准MCP客户端创建隔离观测器；独立重启跑 `round5_window.json`，同时运行 `round4_input.py <新证据目录> round5_stages.json`。模型脚本使用 `QA_MODEL_REPORT` / `QA_COMBAT_REPORT` 指向本轮QA报告文件。所有产物仅QA分支，未发布部署。
