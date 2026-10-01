@@ -1,0 +1,37 @@
+{
+  "red": {
+    "checks": {
+      "hud_hover_preserves_held_move": false,
+      "result_closed_focus_on_allocation": true,
+      "space_full_cycle_rescues_without_opening_panel": false
+    },
+    "failures": [
+      "hud_hover_preserves_held_move",
+      "space_full_cycle_rescues_without_opening_panel"
+    ],
+    "input": "native Godot InputEvent via MCP, not OS input"
+  },
+  "red-readback": {
+    "checks": {
+      "hud_hover_preserves_held_move": false,
+      "result_closed_focus_on_allocation": true,
+      "space_full_cycle_rescues_without_opening_panel": false
+    },
+    "failures": [
+      "hud_hover_preserves_held_move",
+      "space_full_cycle_rescues_without_opening_panel"
+    ],
+    "input": "native Godot InputEvent via MCP, not OS input"
+  },
+  "green": {
+    "checks": {
+      "hud_hover_preserves_held_move": true,
+      "modal_blocks_move_without_pausing_clock": true,
+      "release_inside_modal_does_not_resume_movement": true,
+      "result_closed_focus_on_allocation": true,
+      "space_full_cycle_rescues_without_opening_panel": true
+    },
+    "failures": [],
+    "input": "native Godot InputEvent via MCP, not OS input"
+  }
+}

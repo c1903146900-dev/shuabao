@@ -43,3 +43,6 @@ func report() -> String:
  for name in checks:
   if not checks[name]: failures.append(name)
  return JSON.stringify({"checks":checks,"failures":failures,"input_source":"Godot Input.parse_input_event via MCP; not physical OS input"})
+
+func start_boundary_checks() -> String:
+ return preload("res://tests/integration/input_boundaries.gd").new().start(self)

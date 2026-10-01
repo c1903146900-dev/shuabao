@@ -7,6 +7,7 @@ var live_hud: Control
 var start_button: Button
 var help_text: Label
 var attacking := false
+var rescue_space_latched := false
 var phase_seen := ""
 var motion := {}
 var hero_clip := {}
@@ -49,6 +50,7 @@ func new_run() -> void:
  effects.clear()
  held_keys.clear()
  attacking = false
+ rescue_space_latched = false
  motion.clear()
  hero_clip.clear()
  run_serial += 1
@@ -82,6 +84,17 @@ func start_room() -> void:
  _present()
 
 func _input(event: InputEvent) -> void:
+ # Own the complete rescue key cycle before a focused Button can consume ui_accept.
+ if event is InputEventKey and event.keycode == KEY_SPACE:
+  if not event.pressed and rescue_space_latched:
+   rescue_space_latched = false
+   get_viewport().set_input_as_handled()
+   return
+  if event.pressed and not event.echo and simulation.phase == "downed" and not live_hud.shade.visible:
+   rescue_space_latched = true
+   if simulation.self_rescue(): live_hud.close_panels()
+   get_viewport().set_input_as_handled()
+   return
  # Releases must clear the latch even when a Control consumes the event later.
  if event is InputEventKey and not event.pressed:
   held_keys.erase(event.physical_keycode if event.physical_keycode else event.keycode)
@@ -90,7 +103,7 @@ func _input(event: InputEvent) -> void:
  if event is InputEventMouseMotion: mouse_at = event.position
 
 func _unhandled_input(event: InputEvent) -> void:
- if is_instance_valid(live_hud) and live_hud.blocks_gameplay_input(): return
+ if is_instance_valid(live_hud) and live_hud.shade.visible: return
  if event is InputEventKey:
   var key: int = event.physical_keycode if event.physical_keycode else event.keycode
   if not event.pressed or event.echo: return
@@ -102,20 +115,22 @@ func _unhandled_input(event: InputEvent) -> void:
    held_keys[key] = true
    var action: String = {KEY_Q:"q",KEY_E:"e",KEY_R:"r",KEY_SHIFT:"shift"}.get(key,"")
    if not action.is_empty(): simulation.request_action(action,_aim_point())
- if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and simulation.phase == "combat":
+ if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and simulation.phase == "combat" and not live_hud.blocks_gameplay_input():
   mouse_at = event.position
   attacking = true
   simulation.request_action("attack",_aim_point())
 
 func _notification(what: int) -> void:
  if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+  rescue_space_latched = false
   held_keys.clear()
   attacking = false
 
 func _physics_process(dt: float) -> void:
  if not is_instance_valid(simulation) or not is_instance_valid(live_hud): return
- if live_hud.blocks_gameplay_input():
+ if live_hud.shade.visible:
   held_keys.clear()
+ if live_hud.blocks_gameplay_input():
   attacking = false
  if simulation.phase == "combat":
   simulation.hero.move_intent = Vector3(float(held_keys.get(KEY_D,false))-float(held_keys.get(KEY_A,false)),0,float(held_keys.get(KEY_S,false))-float(held_keys.get(KEY_W,false))).limit_length(1)
