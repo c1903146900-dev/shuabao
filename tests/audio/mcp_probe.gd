@@ -64,3 +64,11 @@ func report() -> Dictionary:
 	for item in results:
 		ok = ok and item.passed
 	return {"passed": ok, "checks": results.size(), "driver": AudioServer.get_driver_name(), "listening_test": false, "results": results}
+
+func start_lifecycle() -> String:
+	set_process(false)
+	sfx.free()
+	var suite = load("res://tests/audio/lifecycle_suite.gd").new()
+	suite.name = "AudioLifecycleSuite"
+	get_tree().root.add_child(suite)
+	return suite.start()

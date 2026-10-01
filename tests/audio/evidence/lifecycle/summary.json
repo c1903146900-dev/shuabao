@@ -1,0 +1,132 @@
+{
+  "behavior": {
+    "audio_driver": "Dummy",
+    "checks": 142,
+    "failures": [],
+    "listening_test": false,
+    "passed": true
+  },
+  "shutdown_drain": {
+    "elapsed_ms": 88,
+    "passed": true,
+    "pending_at_start": 35,
+    "remaining": 0,
+    "tracked": 38
+  },
+  "native_drained": {
+    "playback_alive": false,
+    "stream_alive": false
+  },
+  "lifecycle": {
+    "component_cycles": 220,
+    "done": true,
+    "driver": "Dummy",
+    "failures": [],
+    "max_active": 8,
+    "passed": true,
+    "rss_delta_kb": 0,
+    "samples": [
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      },
+      {
+        "buses": 1,
+        "nodes": 2,
+        "objects": 1486,
+        "orphans": 0,
+        "resources": 4,
+        "rss_kb": 59676,
+        "static_bytes": 21874678
+      }
+    ],
+    "scene_round_trips": 20,
+    "static_delta": 0
+  }
+}
