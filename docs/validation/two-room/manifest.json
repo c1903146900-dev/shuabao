@@ -1,0 +1,22 @@
+{
+  "base_commit": "15e694e2e260953076d37cc81cf0c23eaa658487",
+  "input_source": "Godot InputEvent via real MCP; not OS input",
+  "tool_counts": {
+    "godot": 173,
+    "blender": 36
+  },
+  "source_sha256": {
+    "scripts/integration/room.gd": "779af91a67594597726a5063572757c3639948a5c41a676cd0ac55323ddd6f69",
+    "scripts/integration/ledger_bridge.gd": "370121418e63acdbca1c1a500719b004e8cbf85688ead48227b119195bd1e5c3",
+    "scripts/integration/run_model.gd": "eebea80b8ffa49dfb87a2e8f3a56686f42a2d4fb16003ca3d3887f98fe15a669",
+    "scripts/ui/combat_hud.gd": "7011b661437d83337ca007db7d4b3a82ed193108d89a781301de05fa68e07f48",
+    "scripts/ui/progression_hud.gd": "56ddd39816835ae8864ab333de4d5759e3cbe719baff115dfe4d46d353a18450",
+    "scripts/ui/progression_controller.gd": "e030e41f43c21c185e29b8d9a23a4b0e9894c10f4502a5174eb427a7c4ce76fe",
+    "tests/integration/two_room_input.gd": "bbafe6e21944971a2d214dd34acaadcbd8f83431193cbe9ae93865b902571ab4",
+    "tests/integration/run_authority.gd": "0274d2c758d929921f419bdffb887eb11ed5a2e358d4f4115d0a8262c8e60d1e"
+  },
+  "notes": [
+    "The first image viewer display appeared blank. Reopening the same PNG showed the full settlement image; pixel inspection confirmed nonblank content. No evidence of a Godot capture failure.",
+    "Two-room input and boundary regressions passed; pure model tests are a separate validation layer."
+  ]
+}

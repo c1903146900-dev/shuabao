@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tvxd6ts1y7un"]
+
+[ext_resource type="Script" uid="uid://div48882lkoi3" path="res://tests/integration/two_room_input.gd" id="1_k3h61"]
+
+[node name="two_room_acceptance" type="Node3D" unique_id=1368433196]
+script = ExtResource("1_k3h61")

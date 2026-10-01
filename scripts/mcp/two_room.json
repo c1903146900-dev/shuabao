@@ -1,0 +1,80 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/two_room_acceptance.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 20
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "start_checks()"
+    },
+    "wait_after": 45
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "report()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "start_death_checks()"
+    },
+    "wait_after": 45
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "report()"
+    },
+    "wait_after": 45
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "report()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]

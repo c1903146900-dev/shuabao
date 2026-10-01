@@ -241,7 +241,7 @@ func render(snapshot: Dictionary) -> void:
 		var cd := float(skill.get("cooldown", 0.0))
 		var status := str(skill.get("reason", "就绪"))
 		if cd > 0:
-			status = "冷却 %.1fs" % cd
+			status = (status + "\n" if status != "就绪" else "") + "冷却 %.1fs" % cd
 		var rank_text := "固定" if slot == "Shift" else "Lv.%d" % skill.get("rank", 0)
 		slots[slot].text = "%s   %s\n%s\n%s" % [slot if slot != "P" else "被动", rank_text, skill.get("name", "未学习"), status]
 		slots[slot].tooltip_text = str(skill.get("description", status))

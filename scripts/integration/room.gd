@@ -1,7 +1,16 @@
 extends "res://scripts/combat/arena.gd"
-## First playable checkpoint. Combat tuning is experimental; rewards remain unresolved.
+## Two repeating room layouts with authoritative rewards. All reward values are prototype initials.
 const Bridge = preload("res://scripts/integration/ledger_bridge.gd")
-const CombatHUD = preload("res://scripts/ui/combat_hud.gd")
+const CombatHUD = preload("res://scripts/ui/progression_hud.gd")
+const Controller = preload("res://scripts/ui/progression_controller.gd")
+var controller: RefCounted
+var room_number := 0
+var run_id := ""
+var last_action_receipt := {}
+var action_serial := 0
+var terminal_seen := {}
+var reward_errors := []
+const REWARD = {"gold":150,"xp":60} # Tunable prototype reward per minion; not a historical design fact.
 var ledger: RefCounted
 var live_hud: Control
 var start_button: Button
@@ -25,25 +34,29 @@ func _ready() -> void:
  add_child(layer)
  live_hud = CombatHUD.new()
  layer.add_child(live_hud)
- live_hud.adapter.request_emitted.connect(_request)
+ controller = Controller.new()
+ controller.bind(ledger.model,live_hud,ledger.definitions,{"hex_enabled":false,"source_label":"实战成长 · 原型初值","content_label":"仅AD装备已接通；药品/锻体/海克斯尚未开放"})
+ controller.combat_request.connect(_request)
+ controller.command_completed.connect(_growth_completed)
  start_button = Button.new()
- start_button.text = "进入试炼 [Enter]"
+ start_button.text = "进入第1房"
  start_button.position = Vector2(510,24)
  start_button.size = Vector2(240,42)
  live_hud.add_child(start_button)
  start_button.pressed.connect(start_room)
  help_text = Label.new()
- help_text.text = "WASD 移动 · 左键攻击 · Q/E/R 技能 · Shift 冲刺 · K 修习\n战前选 1 点技能；战斗参数为测试初值，奖励尚未接入"
+ help_text.text = "WASD 移动 · 左键攻击 · Q/E/R 技能 · Shift 冲刺 · K 修习\n每敌150金/60经验 · P商店仅开放AD装备 · 两种房间循环"
  help_text.position = Vector2(350,78)
  help_text.add_theme_font_size_override("font_size",14)
  live_hud.add_child(help_text)
  _present()
- print("SHUABAO_INTEGRATION_READY checkpoint=1")
+ print("SHUABAO_INTEGRATION_READY checkpoint=2")
 
 func new_run() -> void:
+ # F5 is now an explicit same-room retry, never a fresh ledger.
  if is_instance_valid(simulation):
-  remove_child(simulation)
-  simulation.queue_free()
+  retry_room()
+  return
  for view in views.values(): view.queue_free()
  views.clear()
  for effect in effects: effect.node.queue_free()
@@ -55,6 +68,8 @@ func new_run() -> void:
  hero_clip.clear()
  run_serial += 1
  ledger = Bridge.new()
+ run_id = "run-%d" % Time.get_ticks_usec()
+ room_number = 0
  simulation = Sim.new()
  simulation.progression = ledger
  simulation.hero.xp_progress = 0.0
@@ -63,6 +78,7 @@ func new_run() -> void:
  simulation.name = "CombatSimulation"
  add_child(simulation)
  simulation.combat_event.connect(_on_combat_event)
+ simulation.encounter_finished.connect(_encounter_finished)
  phase_seen = "preparation"
  _sync_views(0)
  if is_instance_valid(live_hud):
@@ -70,18 +86,47 @@ func new_run() -> void:
   _present()
 
 func start_room() -> void:
- if simulation.phase != "preparation": return
- ledger.command("enter_level",{"combat_level_id":"integration-room-1"})
- ledger.begin_encounter()
- simulation.phase = "combat"
- simulation.combat_level_id = "integration-room-1"
- for pos in T.TEST_MINION_POSITIONS: simulation.spawn_enemy("minion",pos)
- simulation.spawn_enemy("elite",Vector3(-5,0,-7))
- simulation.spawn_enemy("elite",Vector3(5,0,-8))
- simulation.spawn_enemy("boss",Vector3(0,0,-10))
+ if simulation.phase not in ["preparation","victory"]: return
+ room_number += 1
+ var id := "%s/room-%d" % [run_id,room_number]
+ var entered: Dictionary = ledger.command("enter_level",{"combat_level_id":id})
+ if not entered.ok:
+  room_number -= 1
+  return
+ var roster: Array = []
+ var positions: Array = [Vector3(-1,0,2),Vector3(1,0,1),Vector3(0,0,-1)] if room_number%2 else [Vector3(-2,0,1),Vector3(2,0,1),Vector3(0,0,-2)]
+ for pos in positions: roster.append({"kind":"minion","position":pos})
+ simulation.hero.position = Vector3(0,0,5)
+ simulation.hero.move_intent = Vector3.ZERO
+ var result: Dictionary = simulation.begin_encounter(id,roster)
+ assert(result.accepted)
  held_keys.clear()
  attacking = false
+ phase_seen = "combat"
  _present()
+
+func retry_room() -> void:
+ if simulation.phase != "true_dead": return
+ # Explicit prototype retry: same surviving enemies/reward IDs, 35% HP; keep CD/ledger.
+ ledger.command("life_state",{"dead":false})
+ ledger.begin_encounter()
+ simulation.hero.dead = false
+ simulation.hero.death_state = "alive"
+ simulation.hero.hp = simulation.hero.stats.max_hp*0.35
+ simulation.hero.position = Vector3(0,0,5)
+ simulation.hero.move_intent = Vector3.ZERO
+ simulation.phase = "combat"
+ held_keys.clear()
+ attacking = false
+ phase_seen = "combat"
+ live_hud.close_panels()
+ _present()
+
+func _rescue() -> void:
+ if simulation.self_rescue():
+  ledger.command("life_state",{"dead":false})
+  live_hud.close_panels()
+  _present()
 
 func _input(event: InputEvent) -> void:
  # Own the complete rescue key cycle before a focused Button can consume ui_accept.
@@ -92,7 +137,7 @@ func _input(event: InputEvent) -> void:
    return
   if event.pressed and not event.echo and simulation.phase == "downed" and not live_hud.shade.visible:
    rescue_space_latched = true
-   if simulation.self_rescue(): live_hud.close_panels()
+   _rescue()
    get_viewport().set_input_as_handled()
    return
  # Releases must clear the latch even when a Control consumes the event later.
@@ -110,15 +155,15 @@ func _unhandled_input(event: InputEvent) -> void:
   if key == KEY_ENTER: start_room()
   elif key == KEY_F5: new_run()
   elif key == KEY_SPACE and simulation.phase == "downed":
-   if simulation.self_rescue(): live_hud.close_panels()
+   _rescue()
   elif simulation.phase == "combat":
    held_keys[key] = true
    var action: String = {KEY_Q:"q",KEY_E:"e",KEY_R:"r",KEY_SHIFT:"shift"}.get(key,"")
-   if not action.is_empty(): simulation.request_action(action,_aim_point())
+   if not action.is_empty(): _perform_action(action)
  if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and simulation.phase == "combat" and not live_hud.blocks_gameplay_input():
   mouse_at = event.position
   attacking = true
-  simulation.request_action("attack",_aim_point())
+  _perform_action("attack")
 
 func _notification(what: int) -> void:
  if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
@@ -138,34 +183,83 @@ func _physics_process(dt: float) -> void:
   if not simulation.r1_active and simulation.hero.lock_time <= 0:
    var direction: Vector3 = aim - simulation.hero.position
    if direction.length_squared() > 0.01: simulation.hero.facing = direction.normalized()
-  if attacking: simulation.request_action("attack",aim)
+  if attacking: _perform_action("attack","",false)
   simulation.step(dt)
  _sync_views(dt)
  _animate(dt)
  _step_effects(dt)
  _present()
- if phase_seen != simulation.phase:
-  phase_seen = simulation.phase
-  if phase_seen in ["victory","downed","true_dead"]:
-   attacking = false
-   held_keys.clear()
-   live_hud.show_result({"title":{"victory":"试炼完成","downed":"倒地 · 关闭后按空格自救一次","true_dead":"本次试炼结束"}[phase_seen],"kills":_kills(),"gold":0,"xp":0,"source_label":"HP/CD 已冻结 · 奖励待接入 · 关闭后 F5 新开一局"})
+ _sync_growth_to_combat()
 
 func _request(request: Dictionary) -> void:
+ # UI callbacks never reenter a combat transaction.
+ call_deferred("_execute_ui_request",request.duplicate(true))
+
+func _execute_ui_request(request: Dictionary) -> void:
+ var result := {"accepted":false,"reason":"stage_not_available"}
  if request.action == "ability":
-  var action: String = str(request.slot_id).to_lower()
-  simulation.request_action(action,_aim_point(),request.command_id)
-  return
- if request.action != "learn":
-  live_hud.adapter.feedback({"text":"本 checkpoint 尚未接入此操作"})
-  return
- if simulation.phase not in ["preparation","combat"]:
-  live_hud.adapter.feedback({"text":"战斗已结束，状态保持冻结"})
-  return
- var result: Dictionary = ledger.model.command(request.command_id,"learn",{"slot":request.slot_id,"candidate":request.candidate_id,"expected_rank":request.expected_rank})
- if result.accepted: simulation._sync_loadout_from_ledger()
- live_hud.adapter.feedback({"text":"修习成功" if result.accepted else "无法修习："+str(result.reason)})
+  result = _perform_action(str(request.slot_id).to_lower(),request.command_id,false)
  _present()
+ controller.complete_combat_request(request,result)
+
+func _perform_action(action: String, command_id := "", notify := true) -> Dictionary:
+ action_serial += 1
+ var id: String = command_id
+ if id.is_empty() and notify: id = "%s/input-%d" % [run_id,action_serial]
+ var result: Dictionary = simulation.request_action(action,_aim_point(),id)
+ # Held attack polls do not allocate an idempotency record every physics frame.
+ if notify or result.accepted or not id.is_empty():
+  last_action_receipt = {"action":action,"result":result.duplicate(true),"command_id":id}
+ if notify and not result.accepted and is_instance_valid(controller):
+  live_hud.adapter.feedback({"text":controller.reason_text(result.reason)})
+ return result
+
+func _growth_completed(_request: Dictionary, result: Dictionary) -> void:
+ if result.accepted:
+  _sync_growth_to_combat()
+  _present()
+
+func _sync_growth_to_combat() -> void:
+ simulation._sync_loadout_from_ledger()
+ # Recompute from immutable base, never stack on the previous projection or refill HP/CD.
+ simulation.hero.stats.ad = T.INITIAL.hero_ad + ledger.model.aggregate_effects().stats.get("AD",0.0)
+ simulation.hero.xp_progress = ledger.model.snapshot().xp
+ simulation.hero.gold = ledger.model.snapshot().gold
+
+func _credit_kill(event: Dictionary) -> Dictionary:
+ if event.get("combat_level_id","") != simulation.combat_level_id: return {"accepted":false,"reason":"wrong_room"}
+ var enemy: Dictionary = simulation.enemy_by_id(event.get("target",""))
+ if enemy.is_empty() or not enemy.dead: return {"accepted":false,"reason":"not_dead"}
+ var id: String = "%s/%s" % [simulation.combat_level_id,enemy.actor_id]
+ return ledger.model.command("reward:"+id,"reward_minion",{"event_id":id,"room":simulation.combat_level_id,"gold":REWARD.gold,"xp":REWARD.xp})
+
+func _room_rewards() -> Dictionary:
+ var total := {"gold":0,"xp":0}
+ for reward in ledger.model.snapshot().get("credited_rewards",{}).values():
+  if reward.room == simulation.combat_level_id:
+   total.gold += reward.gold
+   total.xp += reward.xp
+ return total
+
+func _encounter_finished(state: Dictionary) -> void:
+ var identity: String = "%s/%s/%s" % [state.combat_level_id,state.phase,state.event_sequence]
+ if terminal_seen.has(identity): return
+ terminal_seen[identity] = true
+ attacking = false
+ held_keys.clear()
+ if state.phase in ["downed","true_dead"]:
+  ledger.command("life_state",{"dead":true})
+  ledger.command("context",{"phase":"combat"})
+ if state.phase == "true_dead":
+  ledger.model.command("death:"+identity,"death_penalty",{"event_id":identity})
+ _sync_growth_to_combat()
+ var earnings := _room_rewards()
+ # Defer UI work until the lethal combat transaction has committed.
+ call_deferred("_show_settlement",state.phase,earnings)
+
+func _show_settlement(phase: String, earnings: Dictionary) -> void:
+ _present()
+ live_hud.show_result({"title":{"victory":"房间完成 · 关闭后可购物或进入下一房","downed":"倒地 · 关闭后空格自救一次","true_dead":"真死亡 · 已扣本级经验30%"}.get(phase,phase),"kills":_kills(),"gold":earnings.gold,"xp":earnings.xp,"source_label":"奖励已按唯一击杀入账，不在结算时重发。F5仅真死亡后续战，保留账本/CD。"})
 
 func _kills() -> int:
  var n := 0
@@ -173,22 +267,35 @@ func _kills() -> int:
   if enemy.dead: n += 1
  return n
 
+func _action_status(action: String) -> String:
+ var h = simulation.hero
+ if simulation.phase != "combat": return "准备中" if simulation.phase == "preparation" else "战后冻结"
+ if h.dead: return "无法行动"
+ if action == "passive": return "被动生效"
+ if action == "e" and h.overload_left > 0: return "持续中 %.1fs" % h.overload_left
+ if action == "q" and h.cast_state.has("q2"): return "突袭持续中"
+ if action == "e" and h.cast_state.has("e2"): return "旋斩持续中"
+ if h.lock_time > 0 or h.dash_left > 0 or h.stun_left > 0 or simulation.r1_active or simulation.extensions.blocks_actions(): return "动作锁定"
+ if action == "e" and h.cast_state.has("e1"): return "可重施" if h.cast_state.e1.stage == "marked" else "匕首飞行中"
+ if action == "r" and h.cast_state.has("r2"): return "可重施 · 第%d投" % (h.cast_state.r2.round+1)
+ return "就绪"
+
 func _present() -> void:
- if not is_instance_valid(live_hud): return
- var s: Dictionary = ledger.model.snapshot()
+ if not is_instance_valid(controller): return
  var h: Dictionary = simulation.hero.snapshot()
  var skills := {}
- for pair in [["Q","q"],["E","e"],["R","r"],["P","passive"]]:
-  var skill: Dictionary = s.skills[pair[0]]
-  var index: int = maxi(0,int(str(skill.candidate).right(1))-1)
-  skills[pair[0]] = {"name":CombatHUD.CANDIDATES[pair[0]][index] if skill.rank else "未学习","candidate_index":index,"rank":skill.rank,"cooldown":h.cooldowns[pair[1]],"reason":"就绪" if skill.rank else "未学习"}
- skills.Shift = {"name":"冲刺","rank":1,"cooldown":h.cooldowns.shift}
- live_hud.adapter.present({"actor_id":"fengli","revision":s.revision,"level":s.level,"points":s.points,"hp":h.hp,"hp_max":h.max_hp,"xp":s.xp,"xp_next":0,"gold":s.gold,"room":"击败 %d / 11" % _kills(),"wave":"1","source_label":"真实战斗状态 · 奖励未接入","skills":skills,"equipment":[],"can_undo":false})
- start_button.visible = simulation.phase == "preparation" and not live_hud.shade.visible
- help_text.visible = simulation.phase == "preparation" and not live_hud.shade.visible
+ for pair in [["Q","q"],["E","e"],["R","r"],["P","passive"],["Shift","shift"]]:
+  skills[pair[0]] = {"cooldown":h.cooldowns[pair[1]],"reason":_action_status(pair[1])}
+ controller.present_combat({"hp":h.hp,"hp_max":h.max_hp,"room":"第%d房 · %d/%d" % [room_number,_kills(),simulation.enemies.size()],"wave":"%d" % (1+(maxi(1,room_number)-1)%2),"skills":skills})
+ start_button.text = "进入第%d房" % (room_number+1)
+ start_button.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
+ help_text.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
 
 func _on_combat_event(event: Dictionary) -> void:
  super._on_combat_event(event)
+ if event.kind == "kill":
+  var receipt: Dictionary = _credit_kill(event)
+  if not receipt.accepted: reward_errors.append(receipt)
  var clip: String = {"attack_started":"attack","dash":"dash","q1":"thrust","q2_hit":"thrust","q3_wave":"attack","overload_started":"overload","ultimate_started":"ultimate","hero_damaged":"hit"}.get(event.kind,"")
  if not clip.is_empty():
   hero_clip = {"clip":clip,"start":simulation.clock.world_time,"duration":{"attack_started":0.28,"dash":0.16,"q1":0.2,"hero_damaged":0.25}.get(event.kind,0.6)}
@@ -245,7 +352,7 @@ func _animate(dt: float) -> void:
   motion[id] = m
 
 func integration_snapshot() -> Dictionary:
- return {"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"1_rewards_unresolved"}
+ return {"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"2_two_room_rewards","room_number":room_number,"reward_errors":reward_errors.duplicate(),"last_action_receipt":last_action_receipt.duplicate(true)}
 
 func integration_report() -> String:
  return JSON.stringify(integration_snapshot())

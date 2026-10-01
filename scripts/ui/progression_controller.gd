@@ -5,6 +5,7 @@ signal combat_request(request: Dictionary)
 signal gameplay_block_changed(blocked: bool)
 const HUD_SOURCE = preload("res://scripts/ui/combat_hud.gd")
 const ERRORS := {
+	"stage_not_available":"本阶段尚未开放", "unsupported_effect":"效果尚未接入", "no_target":"没有可用目标", "already_active":"效果仍在持续", "projectile_in_flight":"匕首飞行中", "mark_target_dead":"标记目标已死亡", "mark_expired":"标记已过期", "recast_window_expired":"重施窗口已结束", "all_rounds_used":"投掷次数已用完",
 	"unsafe_phase": "仅安全阶段可操作", "training_required": "需要训练节点",
 	"insufficient_gold": "金币不足", "insufficient_points": "技能点不足",
 	"unresolved_r_gate": "R后两阶等级门槛待定", "level_gate": "尚未达到所需等级",
@@ -161,7 +162,7 @@ func refresh() -> void:
 		var components: Array = []
 		for component in entry.get("components", []):
 			components.append(item_name(component))
-		items.append({"id": id, "name": item_name(id), "price": entry.price, "components": "、".join(components), "kind": entry.get("kind", "equipment")})
+		items.append({"id": id, "name": item_name(id), "price": entry.price, "components": "、".join(components), "kind": entry.get("kind", "equipment"), "available":entry.get("availability",{}).get("supported",true)})
 	var inventory: Array = []
 	for entry in s.inventory:
 		inventory.append({"uid": entry.uid, "name": item_name(entry.id), "count": entry.count, "resale": int(floor(entry.invested * 0.9)), "kind": definitions.items[entry.id].get("kind", "equipment")})
@@ -169,6 +170,7 @@ func refresh() -> void:
 	for key in s.offers:
 		if not int(key) in milestones:
 			milestones.append(int(key))
+	if not display.get("hex_enabled",true): milestones.clear()
 	milestones.sort()
 	if active_milestone == 0 and not milestones.is_empty():
 		active_milestone = milestones[0]

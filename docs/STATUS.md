@@ -1,5 +1,7 @@
 # 初始化状态与交接
 
+最新进展：默认入口升级为[两房真实奖励成长 checkpoint 2](INTEGRATION_CHECKPOINT_2.md)。本轮MCP引擎输入通过与独立窗口QA待验明确分开；以下历史checkpoint1及导出包结果不代表本版已导出。
+
 > 最新集成状态：骨骼 GLB 经 MCP 导入 Godot 播放、干净 clone 复用、Windows/Linux 实际导出通过；Linux 独立无头启动通过，Windows 启动未运行。见 [集成验收](INTEGRATION_VALIDATION.md)。下文为历史阶段记录。
 
 > 最新接入结果：标准 MCP SDK 客户端已完成两服务握手、工具调用和动画往返，见 [可复用 MCP 客户端](MCP_CLIENT.md)。下文保留此前阶段记录。

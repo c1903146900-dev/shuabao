@@ -192,8 +192,8 @@ func present_progression(view: Dictionary) -> void:
 		var item_column: VBoxContainer = shop_buttons[entry.id].get_parent()
 		item_column.get_child(0).text = entry.name
 		item_column.get_child(1).text = "总价 %d 金币%s" % [entry.price, " · 需" + entry.components if not entry.components.is_empty() else ""]
-		shop_buttons[entry.id].disabled = not safe
-		shop_buttons[entry.id].tooltip_text = "由模型计算实际扣费" if safe else "仅安全阶段可交易"
+		shop_buttons[entry.id].disabled = not safe or not entry.get("available",true)
+		shop_buttons[entry.id].tooltip_text = "效果尚未接入" if not entry.get("available",true) else ("由模型计算实际扣费" if safe else "仅安全阶段可交易")
 	undo_shop.disabled = not view.can_undo_shop
 	for i in range(6):
 		var sell := sell_buttons[i]

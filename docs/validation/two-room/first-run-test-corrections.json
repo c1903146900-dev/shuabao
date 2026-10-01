@@ -1,0 +1,23 @@
+[
+  {
+    "checks": {
+      "duplicate_settlement_no_reward": true,
+      "earned_point_upgrade": true,
+      "hp_cd_clock_frozen": true,
+      "real_AD_attack_damage": false,
+      "real_AD_hook": true,
+      "room1_atomic_rewards": true,
+      "room1_victory": true,
+      "room2_rewards_separate_identity": true,
+      "room2_victory": true,
+      "room_transition_preserves_ledger": false,
+      "ui_learn_true_model": true
+    },
+    "failures": [
+      "room_transition_preserves_ledger",
+      "real_AD_attack_damage"
+    ],
+    "input": "Godot InputEvent via MCP, not OS input",
+    "stage": "victory2"
+  }
+]

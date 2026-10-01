@@ -13,7 +13,7 @@ file build/windows/shuabao-smoke.exe build/linux/shuabao-headless.x86_64 > .loca
 # the dedicated_server feature in the Linux export must select headless itself.
 app_path="$PWD/build/linux/shuabao-headless.x86_64"
 (cd /tmp && env -u DISPLAY -u WAYLAND_DISPLAY "$app_path" --quit-after 10) > .local/export-evidence/linux-boot.log 2>&1
-grep -q 'SHUABAO_INTEGRATION_READY checkpoint=1' .local/export-evidence/linux-boot.log
+grep -q 'SHUABAO_INTEGRATION_READY checkpoint=2' .local/export-evidence/linux-boot.log
 if grep -Eq 'SCRIPT ERROR:|ERROR:' .local/export-evidence/linux-boot.log; then cat .local/export-evidence/linux-boot.log; exit 1; fi
 sha256sum build/windows/shuabao-smoke.exe build/windows/shuabao-smoke.pck build/linux/shuabao-headless.x86_64 build/linux/shuabao-headless.pck > .local/export-evidence/SHA256SUMS
 python3 scripts/export/audit.py
