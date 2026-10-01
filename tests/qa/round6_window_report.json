@@ -1,0 +1,388 @@
+{
+  "sha": "a294d0420f5b5a23027d94755a9f78509b6929b4",
+  "input": "OS XTest; observation through standard MCP",
+  "checks": [
+    {
+      "check": "OS learn spends initial point",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "first room natural kills award correct unique rewards and level",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "actual wall-clock freeze room1_victory",
+      "passed": true,
+      "detail": {
+        "seconds": 62.416,
+        "cooldowns": {
+          "attack": 0.338235294117647,
+          "e": 0.0,
+          "passive": 0.0,
+          "q": 0.0,
+          "r": 0.0,
+          "shift": 0.0
+        }
+      }
+    },
+    {
+      "check": "actual wall-clock freeze true_dead",
+      "passed": true,
+      "detail": {
+        "seconds": 62.603,
+        "cooldowns": {
+          "attack": 0.0,
+          "e": 0.0,
+          "passive": 0.0,
+          "q": 0.0,
+          "r": 0.0,
+          "shift": 0.0
+        }
+      }
+    },
+    {
+      "check": "OS spends earned point upgrading Q",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "OS purchases iron blade with earned gold; AD hook projects 40",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "UI upgrade and equipment purchase preserve frozen HP/CD",
+      "passed": true,
+      "detail": {
+        "hp_was_full": true
+      }
+    },
+    {
+      "check": "next room uses same inventory skills and credited reward ledger",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "next room CD follows elapsed battle time",
+      "passed": true,
+      "detail": {
+        "elapsed_world": 0.44999999999998996
+      }
+    },
+    {
+      "check": "second room rewards keep separate unique IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "second room real OS attack delivers equipment AD damage",
+      "passed": true,
+      "detail": {
+        "attack_amounts": [
+          40.0,
+          40.0,
+          40.0,
+          24.0,
+          24.0,
+          24.0
+        ]
+      }
+    },
+    {
+      "check": "real enemies caused damage during second room",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "first down keeps earned XP and gold",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "OS Space rescues once without unwanted panel",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "true death deducts current XP only",
+      "passed": true,
+      "detail": {
+        "before": 105,
+        "after": 73,
+        "level": 4,
+        "gold": 750
+      }
+    },
+    {
+      "check": "OS F5 retains same-room ledger retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F5 does not respawn paid corpses retry",
+      "passed": true,
+      "detail": [
+        "enemy_7",
+        "enemy_8"
+      ]
+    },
+    {
+      "check": "F5 keeps cooldown state retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "OS F5 retains same-room ledger retry_repeated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F5 does not respawn paid corpses retry_repeated",
+      "passed": true,
+      "detail": [
+        "enemy_7",
+        "enemy_8"
+      ]
+    },
+    {
+      "check": "F5 keeps cooldown state retry_repeated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at initial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at initial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at initial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at learned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at learned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at learned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at room1_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at room1_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at room1_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at room1_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at room1_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at room1_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at upgraded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at upgraded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at upgraded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at purchased",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at purchased",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at purchased",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at room2_start",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at room2_start",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at room2_start",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at room2_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at room2_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at room2_victory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at room3_paid_kill",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at room3_paid_kill",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at room3_paid_kill",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at downed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at downed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at downed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at rescued",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at rescued",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at rescued",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at true_dead",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at true_dead",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at true_dead",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at dead_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at dead_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at dead_frozen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "point conservation at retry_repeated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no duplicate reward identity at retry_repeated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "HUD ledger agreement at retry_repeated",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failures": [],
+  "limits": [
+    "Linux editor embedded viewport only, not exported package or Windows",
+    "OS growth covers observed levels only; level18 requires separate fixture",
+    "Equipment bought at full HP on OS route; injured HP tested separately in integration fixture",
+    "Repeat callback tests are separate headless integration fixture, not natural player inputs",
+    "Enter entry route failed separately as QA-008"
+  ]
+}

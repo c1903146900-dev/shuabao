@@ -1,0 +1,1026 @@
+[
+  {
+    "time": 1790831757.854152,
+    "input": "observe initial phase=preparation room=0 kills=0 source=step-02-execute_game_script.json"
+  },
+  {
+    "time": 1790831757.857184,
+    "input": "sample initial"
+  },
+  {
+    "time": 1790831757.8671083,
+    "input": "key 107 1"
+  },
+  {
+    "time": 1790831757.9074378,
+    "input": "key 107 0"
+  },
+  {
+    "time": 1790831758.8943207,
+    "input": "observe learn phase=preparation room=0 kills=0 source=step-04-execute_game_script.json"
+  },
+  {
+    "time": 1790831758.8945053,
+    "input": "motion [1038.5, 293.0] screen 1064,462"
+  },
+  {
+    "time": 1790831758.895233,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831758.9457316,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831759.8015864,
+    "input": "observe learned phase=preparation room=0 kills=0 source=step-05-execute_game_script.json"
+  },
+  {
+    "time": 1790831759.8025682,
+    "input": "sample learned"
+  },
+  {
+    "time": 1790831759.8028848,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831759.8432646,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831760.1372626,
+    "input": "motion [630.0, 45.0] screen 672,224"
+  },
+  {
+    "time": 1790831760.1377378,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831760.1885118,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831760.6359568,
+    "input": "observe room1 phase=combat room=1 kills=0 source=step-06-execute_game_script.json"
+  },
+  {
+    "time": 1790831760.6361704,
+    "input": "motion [621.260131835938, 421.965270996094] screen 664,585"
+  },
+  {
+    "time": 1790831760.6367874,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831760.6372755,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790831760.679155,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790831761.4974449,
+    "input": "observe room1 phase=combat room=1 kills=2 source=step-07-execute_game_script.json"
+  },
+  {
+    "time": 1790831761.4976728,
+    "input": "motion [638.330688476562, 397.389190673828] screen 680,562"
+  },
+  {
+    "time": 1790831761.4982123,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790831761.5413451,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790831762.360943,
+    "input": "observe room1 phase=victory room=1 kills=3 source=step-08-execute_game_script.json"
+  },
+  {
+    "time": 1790831762.362258,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831762.3649893,
+    "input": "sample room1_victory"
+  },
+  {
+    "time": 1790831763.178039,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-09-execute_game_script.json"
+  },
+  {
+    "time": 1790831764.0749414,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-10-execute_game_script.json"
+  },
+  {
+    "time": 1790831764.8836393,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-11-execute_game_script.json"
+  },
+  {
+    "time": 1790831765.7744522,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-12-execute_game_script.json"
+  },
+  {
+    "time": 1790831766.6647804,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-13-execute_game_script.json"
+  },
+  {
+    "time": 1790831767.477154,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-14-execute_game_script.json"
+  },
+  {
+    "time": 1790831768.3672605,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-15-execute_game_script.json"
+  },
+  {
+    "time": 1790831769.1760397,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-16-execute_game_script.json"
+  },
+  {
+    "time": 1790831770.0670602,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-17-execute_game_script.json"
+  },
+  {
+    "time": 1790831770.9566538,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-18-execute_game_script.json"
+  },
+  {
+    "time": 1790831771.7658994,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-19-execute_game_script.json"
+  },
+  {
+    "time": 1790831772.658114,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-20-execute_game_script.json"
+  },
+  {
+    "time": 1790831773.4735792,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-21-execute_game_script.json"
+  },
+  {
+    "time": 1790831774.3660736,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-22-execute_game_script.json"
+  },
+  {
+    "time": 1790831775.260676,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-23-execute_game_script.json"
+  },
+  {
+    "time": 1790831776.2317107,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-25-execute_game_script.json"
+  },
+  {
+    "time": 1790831777.1240144,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-26-execute_game_script.json"
+  },
+  {
+    "time": 1790831777.941045,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-27-execute_game_script.json"
+  },
+  {
+    "time": 1790831778.8379061,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-28-execute_game_script.json"
+  },
+  {
+    "time": 1790831779.6522367,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-29-execute_game_script.json"
+  },
+  {
+    "time": 1790831780.545417,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-30-execute_game_script.json"
+  },
+  {
+    "time": 1790831781.365525,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-31-execute_game_script.json"
+  },
+  {
+    "time": 1790831782.2584946,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-32-execute_game_script.json"
+  },
+  {
+    "time": 1790831783.0699353,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-33-execute_game_script.json"
+  },
+  {
+    "time": 1790831783.9735234,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-34-execute_game_script.json"
+  },
+  {
+    "time": 1790831784.790406,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-35-execute_game_script.json"
+  },
+  {
+    "time": 1790831785.7657173,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-36-execute_game_script.json"
+  },
+  {
+    "time": 1790831786.5803604,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-37-execute_game_script.json"
+  },
+  {
+    "time": 1790831787.4757552,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-38-execute_game_script.json"
+  },
+  {
+    "time": 1790831788.2879179,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-39-execute_game_script.json"
+  },
+  {
+    "time": 1790831789.176558,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-40-execute_game_script.json"
+  },
+  {
+    "time": 1790831789.9939592,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-41-execute_game_script.json"
+  },
+  {
+    "time": 1790831790.8920743,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-42-execute_game_script.json"
+  },
+  {
+    "time": 1790831791.706012,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-43-execute_game_script.json"
+  },
+  {
+    "time": 1790831792.5980175,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-44-execute_game_script.json"
+  },
+  {
+    "time": 1790831793.655749,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-46-execute_game_script.json"
+  },
+  {
+    "time": 1790831794.470281,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-47-execute_game_script.json"
+  },
+  {
+    "time": 1790831795.3654177,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-48-execute_game_script.json"
+  },
+  {
+    "time": 1790831796.1805441,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-49-execute_game_script.json"
+  },
+  {
+    "time": 1790831797.082319,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-50-execute_game_script.json"
+  },
+  {
+    "time": 1790831797.8981616,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-51-execute_game_script.json"
+  },
+  {
+    "time": 1790831798.7945054,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-52-execute_game_script.json"
+  },
+  {
+    "time": 1790831799.6135209,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-53-execute_game_script.json"
+  },
+  {
+    "time": 1790831800.5106025,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-54-execute_game_script.json"
+  },
+  {
+    "time": 1790831801.3229485,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-55-execute_game_script.json"
+  },
+  {
+    "time": 1790831802.2253814,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-56-execute_game_script.json"
+  },
+  {
+    "time": 1790831803.0391605,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-57-execute_game_script.json"
+  },
+  {
+    "time": 1790831803.9399204,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-58-execute_game_script.json"
+  },
+  {
+    "time": 1790831804.7556672,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-59-execute_game_script.json"
+  },
+  {
+    "time": 1790831805.6518028,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-60-execute_game_script.json"
+  },
+  {
+    "time": 1790831806.465454,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-61-execute_game_script.json"
+  },
+  {
+    "time": 1790831807.3672333,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-62-execute_game_script.json"
+  },
+  {
+    "time": 1790831808.1874723,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-63-execute_game_script.json"
+  },
+  {
+    "time": 1790831809.004655,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-64-execute_game_script.json"
+  },
+  {
+    "time": 1790831809.9044654,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-65-execute_game_script.json"
+  },
+  {
+    "time": 1790831810.9684083,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-67-execute_game_script.json"
+  },
+  {
+    "time": 1790831811.7899184,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-68-execute_game_script.json"
+  },
+  {
+    "time": 1790831812.6889749,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-69-execute_game_script.json"
+  },
+  {
+    "time": 1790831813.507618,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-70-execute_game_script.json"
+  },
+  {
+    "time": 1790831814.4098177,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-71-execute_game_script.json"
+  },
+  {
+    "time": 1790831815.2339072,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-72-execute_game_script.json"
+  },
+  {
+    "time": 1790831816.0539944,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-73-execute_game_script.json"
+  },
+  {
+    "time": 1790831816.9589822,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-74-execute_game_script.json"
+  },
+  {
+    "time": 1790831817.782104,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-75-execute_game_script.json"
+  },
+  {
+    "time": 1790831818.6782174,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-76-execute_game_script.json"
+  },
+  {
+    "time": 1790831819.4987667,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-77-execute_game_script.json"
+  },
+  {
+    "time": 1790831820.4013,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-78-execute_game_script.json"
+  },
+  {
+    "time": 1790831821.215549,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-79-execute_game_script.json"
+  },
+  {
+    "time": 1790831822.1197429,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-80-execute_game_script.json"
+  },
+  {
+    "time": 1790831822.9460456,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-81-execute_game_script.json"
+  },
+  {
+    "time": 1790831823.7661264,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-82-execute_game_script.json"
+  },
+  {
+    "time": 1790831824.6669805,
+    "input": "observe freeze1 phase=victory room=1 kills=3 source=step-83-execute_game_script.json"
+  },
+  {
+    "time": 1790831824.6697612,
+    "input": "sample room1_frozen"
+  },
+  {
+    "time": 1790831824.6702483,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831824.7116833,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831824.802285,
+    "input": "key 107 1"
+  },
+  {
+    "time": 1790831824.8429167,
+    "input": "key 107 0"
+  },
+  {
+    "time": 1790831825.5117373,
+    "input": "observe upgrade phase=victory room=1 kills=3 source=step-84-execute_game_script.json"
+  },
+  {
+    "time": 1790831825.5123587,
+    "input": "motion [1038.5, 293.0] screen 1064,462"
+  },
+  {
+    "time": 1790831825.5128324,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831825.5652268,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831826.3369555,
+    "input": "observe upgraded phase=victory room=1 kills=3 source=step-85-execute_game_script.json"
+  },
+  {
+    "time": 1790831826.3404295,
+    "input": "sample upgraded"
+  },
+  {
+    "time": 1790831826.3409219,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831826.381535,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831826.4724946,
+    "input": "key 112 1"
+  },
+  {
+    "time": 1790831826.5133927,
+    "input": "key 112 0"
+  },
+  {
+    "time": 1790831827.261408,
+    "input": "observe shop phase=victory room=1 kills=3 source=step-86-execute_game_script.json"
+  },
+  {
+    "time": 1790831827.2619472,
+    "input": "motion [408.0, 325.0] screen 459,492"
+  },
+  {
+    "time": 1790831827.2624354,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831827.313027,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831828.3375888,
+    "input": "observe bought phase=victory room=1 kills=3 source=step-88-execute_game_script.json"
+  },
+  {
+    "time": 1790831828.3430805,
+    "input": "sample purchased"
+  },
+  {
+    "time": 1790831828.3441994,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831828.385342,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831828.677155,
+    "input": "motion [630.0, 45.0] screen 672,224"
+  },
+  {
+    "time": 1790831828.6778436,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831828.7286408,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831829.178773,
+    "input": "observe room2start phase=combat room=2 kills=0 source=step-89-execute_game_script.json"
+  },
+  {
+    "time": 1790831829.184081,
+    "input": "sample room2_start"
+  },
+  {
+    "time": 1790831829.9990804,
+    "input": "observe room2 phase=combat room=2 kills=0 source=step-90-execute_game_script.json"
+  },
+  {
+    "time": 1790831829.9998486,
+    "input": "motion [662.505493164062, 430.972106933594] screen 703,594"
+  },
+  {
+    "time": 1790831830.0004902,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831830.900691,
+    "input": "observe room2 phase=combat room=2 kills=0 source=step-91-execute_game_script.json"
+  },
+  {
+    "time": 1790831830.9026003,
+    "input": "motion [664.867980957031, 426.95849609375] screen 705,590"
+  },
+  {
+    "time": 1790831831.726207,
+    "input": "observe room2 phase=victory room=2 kills=3 source=step-92-execute_game_script.json"
+  },
+  {
+    "time": 1790831831.72716,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831831.7345276,
+    "input": "sample room2_victory"
+  },
+  {
+    "time": 1790831831.7351558,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831831.7762642,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831832.0676599,
+    "input": "motion [630.0, 45.0] screen 672,224"
+  },
+  {
+    "time": 1790831832.0684521,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831832.1221278,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831832.5813878,
+    "input": "observe room3_one phase=combat room=3 kills=0 source=step-93-execute_game_script.json"
+  },
+  {
+    "time": 1790831832.5820224,
+    "input": "motion [620.863830566406, 421.009826660156] screen 663,585"
+  },
+  {
+    "time": 1790831832.5825593,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790831833.4886267,
+    "input": "observe room3_one phase=combat room=3 kills=2 source=step-94-execute_game_script.json"
+  },
+  {
+    "time": 1790831833.4893625,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790831833.5017662,
+    "input": "sample room3_paid_kill"
+  },
+  {
+    "time": 1790831834.3214638,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-95-execute_game_script.json"
+  },
+  {
+    "time": 1790831835.1394873,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-96-execute_game_script.json"
+  },
+  {
+    "time": 1790831836.0429466,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-97-execute_game_script.json"
+  },
+  {
+    "time": 1790831836.8658175,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-98-execute_game_script.json"
+  },
+  {
+    "time": 1790831837.7739666,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-99-execute_game_script.json"
+  },
+  {
+    "time": 1790831838.5997155,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-100-execute_game_script.json"
+  },
+  {
+    "time": 1790831839.4213243,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-101-execute_game_script.json"
+  },
+  {
+    "time": 1790831840.3207154,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-102-execute_game_script.json"
+  },
+  {
+    "time": 1790831841.1387095,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-103-execute_game_script.json"
+  },
+  {
+    "time": 1790831842.0486374,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-104-execute_game_script.json"
+  },
+  {
+    "time": 1790831842.879233,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-105-execute_game_script.json"
+  },
+  {
+    "time": 1790831843.7823553,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-106-execute_game_script.json"
+  },
+  {
+    "time": 1790831844.6050436,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-107-execute_game_script.json"
+  },
+  {
+    "time": 1790831845.6640985,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-109-execute_game_script.json"
+  },
+  {
+    "time": 1790831846.4901977,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-110-execute_game_script.json"
+  },
+  {
+    "time": 1790831847.3948922,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-111-execute_game_script.json"
+  },
+  {
+    "time": 1790831848.213082,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-112-execute_game_script.json"
+  },
+  {
+    "time": 1790831849.1173213,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-113-execute_game_script.json"
+  },
+  {
+    "time": 1790831849.9403217,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-114-execute_game_script.json"
+  },
+  {
+    "time": 1790831850.855468,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-115-execute_game_script.json"
+  },
+  {
+    "time": 1790831851.6737323,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-116-execute_game_script.json"
+  },
+  {
+    "time": 1790831852.5735314,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-117-execute_game_script.json"
+  },
+  {
+    "time": 1790831853.4747272,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-118-execute_game_script.json"
+  },
+  {
+    "time": 1790831854.2955556,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-119-execute_game_script.json"
+  },
+  {
+    "time": 1790831855.1939113,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-120-execute_game_script.json"
+  },
+  {
+    "time": 1790831856.0164075,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-121-execute_game_script.json"
+  },
+  {
+    "time": 1790831856.9194524,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-122-execute_game_script.json"
+  },
+  {
+    "time": 1790831857.740058,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-123-execute_game_script.json"
+  },
+  {
+    "time": 1790831858.646029,
+    "input": "observe wait_down phase=combat room=3 kills=2 source=step-124-execute_game_script.json"
+  },
+  {
+    "time": 1790831859.5446017,
+    "input": "observe wait_down phase=downed room=3 kills=2 source=step-125-execute_game_script.json"
+  },
+  {
+    "time": 1790831859.5551863,
+    "input": "sample downed"
+  },
+  {
+    "time": 1790831859.5564914,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790831859.5976489,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790831859.6884599,
+    "input": "key 32 1"
+  },
+  {
+    "time": 1790831859.7298236,
+    "input": "key 32 0"
+  },
+  {
+    "time": 1790831860.3979418,
+    "input": "observe rescued phase=combat room=3 kills=2 source=step-126-execute_game_script.json"
+  },
+  {
+    "time": 1790831860.4100773,
+    "input": "sample rescued"
+  },
+  {
+    "time": 1790831861.234151,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-127-execute_game_script.json"
+  },
+  {
+    "time": 1790831862.1363978,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-128-execute_game_script.json"
+  },
+  {
+    "time": 1790831863.1342669,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-130-execute_game_script.json"
+  },
+  {
+    "time": 1790831863.9622443,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-131-execute_game_script.json"
+  },
+  {
+    "time": 1790831864.8673863,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-132-execute_game_script.json"
+  },
+  {
+    "time": 1790831865.687725,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-133-execute_game_script.json"
+  },
+  {
+    "time": 1790831866.594171,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-134-execute_game_script.json"
+  },
+  {
+    "time": 1790831867.50089,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-135-execute_game_script.json"
+  },
+  {
+    "time": 1790831868.3219008,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-136-execute_game_script.json"
+  },
+  {
+    "time": 1790831869.2331786,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-137-execute_game_script.json"
+  },
+  {
+    "time": 1790831870.051316,
+    "input": "observe wait_dead phase=combat room=3 kills=2 source=step-138-execute_game_script.json"
+  },
+  {
+    "time": 1790831870.9489853,
+    "input": "observe wait_dead phase=true_dead room=3 kills=2 source=step-139-execute_game_script.json"
+  },
+  {
+    "time": 1790831870.9587498,
+    "input": "sample true_dead"
+  },
+  {
+    "time": 1790831871.8620815,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-140-execute_game_script.json"
+  },
+  {
+    "time": 1790831872.685661,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-141-execute_game_script.json"
+  },
+  {
+    "time": 1790831873.5216837,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-142-execute_game_script.json"
+  },
+  {
+    "time": 1790831874.4374998,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-143-execute_game_script.json"
+  },
+  {
+    "time": 1790831875.2665138,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-144-execute_game_script.json"
+  },
+  {
+    "time": 1790831876.1701465,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-145-execute_game_script.json"
+  },
+  {
+    "time": 1790831877.078296,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-146-execute_game_script.json"
+  },
+  {
+    "time": 1790831877.99006,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-147-execute_game_script.json"
+  },
+  {
+    "time": 1790831878.8163252,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-148-execute_game_script.json"
+  },
+  {
+    "time": 1790831879.6492844,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-149-execute_game_script.json"
+  },
+  {
+    "time": 1790831880.7279112,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-151-execute_game_script.json"
+  },
+  {
+    "time": 1790831881.642315,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-152-execute_game_script.json"
+  },
+  {
+    "time": 1790831882.5562606,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-153-execute_game_script.json"
+  },
+  {
+    "time": 1790831883.3833115,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-154-execute_game_script.json"
+  },
+  {
+    "time": 1790831884.2956295,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-155-execute_game_script.json"
+  },
+  {
+    "time": 1790831885.209976,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-156-execute_game_script.json"
+  },
+  {
+    "time": 1790831886.0320919,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-157-execute_game_script.json"
+  },
+  {
+    "time": 1790831886.9416397,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-158-execute_game_script.json"
+  },
+  {
+    "time": 1790831887.7729807,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-159-execute_game_script.json"
+  },
+  {
+    "time": 1790831888.6019285,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-160-execute_game_script.json"
+  },
+  {
+    "time": 1790831889.513176,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-161-execute_game_script.json"
+  },
+  {
+    "time": 1790831890.4179552,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-162-execute_game_script.json"
+  },
+  {
+    "time": 1790831891.325328,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-163-execute_game_script.json"
+  },
+  {
+    "time": 1790831892.1481678,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-164-execute_game_script.json"
+  },
+  {
+    "time": 1790831893.0631988,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-165-execute_game_script.json"
+  },
+  {
+    "time": 1790831893.9062164,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-166-execute_game_script.json"
+  },
+  {
+    "time": 1790831894.7357922,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-167-execute_game_script.json"
+  },
+  {
+    "time": 1790831895.647237,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-168-execute_game_script.json"
+  },
+  {
+    "time": 1790831896.4771094,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-169-execute_game_script.json"
+  },
+  {
+    "time": 1790831897.383981,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-170-execute_game_script.json"
+  },
+  {
+    "time": 1790831898.5370667,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-172-execute_game_script.json"
+  },
+  {
+    "time": 1790831899.455076,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-173-execute_game_script.json"
+  },
+  {
+    "time": 1790831900.2880158,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-174-execute_game_script.json"
+  },
+  {
+    "time": 1790831901.115066,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-175-execute_game_script.json"
+  },
+  {
+    "time": 1790831902.0308511,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-176-execute_game_script.json"
+  },
+  {
+    "time": 1790831902.8620868,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-177-execute_game_script.json"
+  },
+  {
+    "time": 1790831903.7703996,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-178-execute_game_script.json"
+  },
+  {
+    "time": 1790831904.5980053,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-179-execute_game_script.json"
+  },
+  {
+    "time": 1790831905.5094585,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-180-execute_game_script.json"
+  },
+  {
+    "time": 1790831906.3371716,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-181-execute_game_script.json"
+  },
+  {
+    "time": 1790831907.166753,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-182-execute_game_script.json"
+  },
+  {
+    "time": 1790831908.0819974,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-183-execute_game_script.json"
+  },
+  {
+    "time": 1790831908.9071653,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-184-execute_game_script.json"
+  },
+  {
+    "time": 1790831909.7334194,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-185-execute_game_script.json"
+  },
+  {
+    "time": 1790831910.6378775,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-186-execute_game_script.json"
+  },
+  {
+    "time": 1790831911.4659383,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-187-execute_game_script.json"
+  },
+  {
+    "time": 1790831912.2927814,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-188-execute_game_script.json"
+  },
+  {
+    "time": 1790831913.2141323,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-189-execute_game_script.json"
+  },
+  {
+    "time": 1790831914.1218061,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-190-execute_game_script.json"
+  },
+  {
+    "time": 1790831915.0323868,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-191-execute_game_script.json"
+  },
+  {
+    "time": 1790831916.1117067,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-193-execute_game_script.json"
+  },
+  {
+    "time": 1790831916.9398508,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-194-execute_game_script.json"
+  },
+  {
+    "time": 1790831917.8512769,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-195-execute_game_script.json"
+  },
+  {
+    "time": 1790831918.6776521,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-196-execute_game_script.json"
+  },
+  {
+    "time": 1790831919.5894203,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-197-execute_game_script.json"
+  },
+  {
+    "time": 1790831920.4949942,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-198-execute_game_script.json"
+  },
+  {
+    "time": 1790831921.404979,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-199-execute_game_script.json"
+  },
+  {
+    "time": 1790831922.23597,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-200-execute_game_script.json"
+  },
+  {
+    "time": 1790831923.1445458,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-201-execute_game_script.json"
+  },
+  {
+    "time": 1790831923.9732146,
+    "input": "observe dead_freeze phase=true_dead room=3 kills=2 source=step-202-execute_game_script.json"
+  }
+]

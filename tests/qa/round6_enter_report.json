@@ -1,0 +1,71 @@
+{
+  "id": "QA-008",
+  "severity": "P2",
+  "sha": "a294d0420f5b5a23027d94755a9f78509b6929b4",
+  "input": "Linux XTest actual window",
+  "repro": [
+    "K",
+    "click Q1 learn",
+    "Esc",
+    "Enter"
+  ],
+  "before": {
+    "phase": "preparation",
+    "Q": {
+      "candidate": "Q1",
+      "rank": 1
+    }
+  },
+  "after_one_enter": {
+    "phase": "combat",
+    "panel_open": true,
+    "room": 1,
+    "keys": [
+      {
+        "echo": false,
+        "key": 75,
+        "pressed": false,
+        "wall": 12395
+      },
+      {
+        "button": 1,
+        "pressed": true,
+        "wall": 13238
+      },
+      {
+        "button": 1,
+        "pressed": false,
+        "wall": 13314
+      },
+      {
+        "echo": false,
+        "key": 4194305,
+        "pressed": false,
+        "wall": 14128
+      },
+      {
+        "echo": false,
+        "key": 4194309,
+        "pressed": true,
+        "wall": 14205
+      },
+      {
+        "echo": false,
+        "key": 4194309,
+        "pressed": false,
+        "wall": 14264
+      }
+    ]
+  },
+  "impact": {
+    "end_phase": "downed",
+    "kills": 0,
+    "actions": []
+  },
+  "expected": "One Enter cycle must not both begin combat and unexpectedly reopen allocation UI. Existing UI focus policy may choose UI accept or global start, with exclusive ownership.",
+  "files": [
+    "scripts/integration/room.gd:155",
+    "scripts/ui/combat_hud.gd:308",
+    "scripts/ui/combat_hud.gd:87"
+  ]
+}

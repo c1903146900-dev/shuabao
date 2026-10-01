@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-当前结论（第五轮，2026-10-01）：**固定main 15e694e2上QA-001/002模型回归、QA-003/004真实窗口回归通过；QA-005至007仍待对应修复；奖励/成长两房循环未验收，不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
+当前结论（第六轮，2026-10-01）：**固定main a294d042的自然两房奖励、UI升级/铁刃AD购买、同账本续房、自然死亡处罚及F5防刷、超过60秒HP/CD冻结已完成Linux OS窗口独立验证；新增QA-008：Enter进房同时意外重开修习面板。不能签署最终完整集成可玩通过。** 本轮与旧QA001/002、旧目录和旧窗口结果分开记录。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -273,3 +273,46 @@ OS输入E2/R2确实生成技能事件、状态和伤害。QA每0.05秒在原supe
 QA-005技能阶段回显、QA-006 E2/R2动画覆盖、QA-007 GLB闪白仍OPEN：本提交diff没有这些修复；本轮未重复宣称全部视觉问题已修。Windows执行、Linux导出包、双分辨率、自然全局获奖升级、完整两房循环均不在本轮通过范围。第四轮fixture与窗口输入的区分继续适用。
 
 复現：`round5_build.json`经checkpoint2标准MCP客户端创建隔离观测器；独立重启跑 `round5_window.json`，同时运行 `round4_input.py <新证据目录> round5_stages.json`。模型脚本使用 `QA_MODEL_REPORT` / `QA_COMBAT_REPORT` 指向本轮QA报告文件。所有产物仅QA分支，未发布部署。
+
+## 第六轮：a294d042真实两房整合（2026-10-01）
+
+唯一基线 `a294d0420f5b5a23027d94755a9f78509b6929b4`，实际工作树 `/workspace/shuabao-checkpoint3`；已打印SHA、确认无功能改动、默认入口 `res://scenes/integration/room.tscn` 使用 `scripts/integration/room.gd`。本轮不以旧QA001/002、成长目录或作者输入回归代替验收。观测器 `round6_observer.gd` 不改生命、敌人、技能、AI、账本或时钟；键鼠来自Linux XTest真实窗口，标准MCP负责构建隔离副本、读回及截图。
+
+### QA-008：Enter进房同时重新打开修习面板（P2，窗口复现）
+
+最小路径：默认新局→K→鼠标学习Q1→Esc关闭→Enter。预期一个按键按既定输入策略处理，不能在开始战斗的同时意外弹出面板。实际进入第1房且 `phase=combat`，但 `panel_open=true`；后续Q/左键无法施放，敌人继续攻击直至倒地。本轮没有设置低血或直接调用开房/战斗方法。
+
+定位：`scripts/integration/room.gd:155` 将Enter交给start_room，但没有完整键周期归属；`scripts/ui/combat_hud.gd:308-315` 关闭时把焦点恢复至allocation，`:87` 的Button pressed又打开修习。符合先前Space类输入双重消费形态，但Enter是尚未覆盖的入口；不重复重报已修Space问题。
+
+证据：`evidence/round6-window/os-input.json`记录完整OS键周期；`step-05-execute_game_script.json`已学Q、面板打开；`step-06-execute_game_script.json`记录Esc/Enter之后combat+面板打开；到`step-18`真实敌人造成downed且无attack_started/q1事件。`os-samples.json`保留initial/learned/unexpected_terminal_room1，`step-24-get_game_screenshot-0.png`倒地截图已亲自查看。该首轮在缺陷成立后主动中断MCP客户端（exit130），不称整套完成；另起干净会话用鼠标进房继续独立两房路径。
+
+### 测试自身异常的隔离
+
+首个完整两房会话 `evidence/round6-two-room` 已取得自然两房、自救、真死亡样本，但第203步发生 `Runtime request timed out`，未走到F5。期间QA错误地在同一MCP fixture并行启动了无头集成类测试，后者加载同一运行插件；这可能干扰运行连接，不把此次超时定性为游戏逻辑缺陷。已保留整个失败会话，并以 `round6-two-room-final` 独占GUI/MCP重新执行全部窗口路径。
+
+补充集成夹具首版在直接伤害后未推进胜利检查、也未等待自救免伤结束，导致购买仍处战斗期及第二次伤害无效。保留 `round6_boundaries_fixture_error.json/.log`；修正为推进真实simulation.step、明确断言victory/true_dead前置，再作交易及处罚判断。不是修改功能或把失败断言删掉。最初从未导入资源的checkout无头启动还遇到GLB预加载失败；最终使用由标准客户端完整导入的隔离副本，其关键功能源SHA256与a294检出逐一相同，见`round6_baseline.json`。无头测试与OS会话最终顺序执行，不再争用MCP运行连接。
+
+### 本轮亲自完成的OS窗口路径
+
+以独占会话 `evidence/round6-two-room-final` 为最终证据，`os-finish.json` 达到done。没有引擎内Input.parse_input_event，没有直接授XP、修改血量、关AI、造敌人或调用战斗方法来完成这些路径：
+
+- K→鼠标学习Q1→Esc→鼠标点击进房，左键及Q实际清完第一房；3个不同击杀身份到账450金币、180总经验，Lv2/本级80，升级获得1点。
+- 战后实测 **62.416秒**，完整hero快照和world_time相同；普攻CD **0.338235秒**确实被冻结，不是只验证全零CD。再用窗口升级Q到2级、P打开商店、点击铁刃，450金币全部支付，实际AD32→40，HP及CD保持冻结值。
+- 鼠标进入第二种布阵，同一账本保留技能、装备与奖励ID；读回时已走0.45战斗秒，CD按经过时间继续而不是场外补走。第二房仅左键，命中记录为40/40/40/24/24/24，末击24是目标剩余生命，不是AD失效；真实敌人造成伤害，结束HP204.1925。累计6个唯一奖励，金币450，Lv3/本级135。
+- 第三房继续真实普攻；OS观察间隔内已击杀2个，随后放开鼠标，不把预想的“杀1个”写成实际结果。累计8条奖励，金币750，Lv4/本级105、可用2点。自然倒地未扣经验；Esc后Space自救一次，无意外面板；下一次自然致死仅扣本级经验 **105→73**，Lv4、金币750、技能、装备与点数保持。
+- 真死亡后实测 **62.603秒**，hero及world_time不变。Esc/F5窗口续战，仍是同一第3房，enemy_7/8保持死亡，未重新生成或再给钱；8条奖励和死亡处罚ID保留。活着时再按两次F5也不加钱、不改经验。读回HP84.4325及84.8575包括续战后的正常自然恢复，不把35%初值84与稍后读回差异误报为回血缺陷。
+- 每个具名快照核对HUD的钱、经验、等级、点数与账本一致；观察到的等级内，剩余点+已投入成本=授予等级数，死亡不降级或回收技能。没有以这些低等级窗口样本冒充自然玩到18级。
+
+[窗口独立验证](../tests/qa/round6_window_report.json)、[完整具名样本](../tests/qa/evidence/round6-two-room-final/os-samples.json)、[OS输入时间线](../tests/qa/evidence/round6-two-room-final/os-input.json)。亲自查看了真实MCP [第一房结算图](../tests/qa/evidence/round6-two-room-final/step-45-get_game_screenshot-0.png)，以及X窗口即时抓取的 [F5续战图](../tests/qa/evidence/round6-two-room-final/os-retry.png)；后者的抓取方法与时间另在os-retry-capture.json。另已查看前个会话的战斗/真死亡MCP图。截图为编辑器嵌入窗口1228×690（OS抓取窗口约1228×691），不是1280×720/1920×1080双尺寸验收。
+
+### 与窗口路径分开标记的边界夹具
+
+`round6_boundaries.gd`实例化a294真实integration/room及其真实模型，暂停自动physics后显式调用原模拟接口，不复制奖励/交易算法。纯夹具伤害用于：活目标不得领奖；胜利后重复击杀/结算回调保持完整账本；下一房拒绝旧房奖励；同一死亡敌人重复致命伤害不再给钱；倒地、自救免伤结束后的真死亡、重复终止与重试防刷。
+
+OS购买时英雄满血，不能证明缺血不补满；因此另设 **HP71、Q CD4** 夹具，原购买接口+原成长完成回调+反复投影，确认HP71、Q CD4、AD40不变；换房继续保留。该结论不混写为自然窗口缺血购物。
+
+目前新增确认缺陷为 **QA-008 Enter输入归属**，见 [结构化最小复现](../tests/qa/round6_enter_report.json)。药品、锻体、海克斯仍按本checkpoint明确关闭；本轮只验铁刃AD消费者，不把stats flag扩张为所有装备或机制已实现。技能全部候选阶段、全套新HUD组合、20次面板压力、Windows及新导出包仍未在a294本轮完整重跑。QA-005本版有映射改动，不能沿用旧结论称全部仍失败，也不能仅凭源码将全部阶段关闭；QA-006/007仍按checkpoint公开说明未修。
+
+补充的a294级别上限夹具独立执行固定种子分批XP奖励直至18级；每笔唯一奖励与不同command重复同reward身份交错，始终授点数=等级且不超过18，最终18点；携带额外points字段的奖励原子拒绝。证据 [边界结果](../tests/qa/round6_boundaries.json)，明确不是OS玩到18级。最终无头边界与OS验证的failures均为空，但不因此关闭QA-008或未测平台/技能组合。
+
+最终标准MCP工作流正常到 `MCP_CHECK_COMPLETE`，338条预设步骤完成，所有workflow业务回执无application_error；这里只说明工作流结束，不以工具数量代替质量。具名retry样本之后游戏仍在继续，后续空闲再次死亡属于另一个时刻，不能用后续截图冒充第一次F5状态。显示、应用和当次Xauthority均已清理。复现时先运行 `round6_build.json`（fresh fixture），独立重启后运行 `round6_window.json`，同时执行 `round6_input.py <全新证据目录>`；查看OS样本并运行 `round6_verify.py`（默认final目录）。无头 `round6_boundaries.gd` 必须在GUI/MCP会话完全结束后运行。

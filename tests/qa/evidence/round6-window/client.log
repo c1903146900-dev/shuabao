@@ -1,0 +1,170 @@
+godot initialized godot-mcp tools 173
+blender initialized MCP for Blender tools 36
+godot-ready-1 isError= True
+godot-ready-2 isError= True
+godot-ready-3 isError= True
+godot-ready-4 isError= True
+godot-ready-5 isError= True
+godot-ready-6 isError= True
+godot-ready-7 isError= True
+godot-ready-8 isError= False
+godot APPLICATION_QUERY_OK
+blender-ready-1 isError= False
+blender APPLICATION_QUERY_OK
+blender-addon-status-known-upstream-issue isError= False
+blender-scene isError= False
+step-00-open_scene isError= False
+step-01-play_scene isError= False
+step-02-execute_game_script isError= False
+step-03-get_game_screenshot isError= False
+step-04-execute_game_script isError= False
+step-05-execute_game_script isError= False
+step-06-execute_game_script isError= False
+step-07-execute_game_script isError= False
+step-08-execute_game_script isError= False
+step-09-execute_game_script isError= False
+step-10-execute_game_script isError= False
+step-11-execute_game_script isError= False
+step-12-execute_game_script isError= False
+step-13-execute_game_script isError= False
+step-14-execute_game_script isError= False
+step-15-execute_game_script isError= False
+step-16-execute_game_script isError= False
+step-17-execute_game_script isError= False
+step-18-execute_game_script isError= False
+step-19-execute_game_script isError= False
+step-20-execute_game_script isError= False
+step-21-execute_game_script isError= False
+step-22-execute_game_script isError= False
+step-23-execute_game_script isError= False
+step-24-get_game_screenshot isError= False
+step-25-execute_game_script isError= False
+step-26-execute_game_script isError= False
+step-27-execute_game_script isError= False
+step-28-execute_game_script isError= False
+step-29-execute_game_script isError= False
+step-30-execute_game_script isError= False
+step-31-execute_game_script isError= False
+step-32-execute_game_script isError= False
+step-33-execute_game_script isError= False
+step-34-execute_game_script isError= False
+step-35-execute_game_script isError= False
+step-36-execute_game_script isError= False
+step-37-execute_game_script isError= False
+step-38-execute_game_script isError= False
+step-39-execute_game_script isError= False
+step-40-execute_game_script isError= False
+step-41-execute_game_script isError= False
+step-42-execute_game_script isError= False
+step-43-execute_game_script isError= False
+step-44-execute_game_script isError= False
+step-45-get_game_screenshot isError= False
+step-46-execute_game_script isError= False
+step-47-execute_game_script isError= False
+step-48-execute_game_script isError= False
+step-49-execute_game_script isError= False
+step-50-execute_game_script isError= False
+step-51-execute_game_script isError= False
+step-52-execute_game_script isError= False
+step-53-execute_game_script isError= False
+step-54-execute_game_script isError= False
+step-55-execute_game_script isError= False
+step-56-execute_game_script isError= False
+step-57-execute_game_script isError= False
+step-58-execute_game_script isError= False
+step-59-execute_game_script isError= False
+step-60-execute_game_script isError= False
+step-61-execute_game_script isError= False
+step-62-execute_game_script isError= False
+step-63-execute_game_script isError= False
+step-64-execute_game_script isError= False
+step-65-execute_game_script isError= False
+step-66-get_game_screenshot isError= False
+step-67-execute_game_script isError= False
+step-68-execute_game_script isError= False
+step-69-execute_game_script isError= False
+step-70-execute_game_script isError= False
+step-71-execute_game_script isError= False
+step-72-execute_game_script isError= False
+step-73-execute_game_script isError= False
+step-74-execute_game_script isError= False
+step-75-execute_game_script isError= False
+step-76-execute_game_script isError= False
+step-77-execute_game_script isError= False
+step-78-execute_game_script isError= False
+step-79-execute_game_script isError= False
+step-80-execute_game_script isError= False
+step-81-execute_game_script isError= False
+step-82-execute_game_script isError= False
+step-83-execute_game_script isError= False
+step-84-execute_game_script isError= False
+step-85-execute_game_script isError= False
+step-86-execute_game_script isError= False
+step-87-get_game_screenshot isError= False
+step-88-execute_game_script isError= False
+Traceback (most recent call last):
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 118, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 113, in receive_nowait
+    raise WouldBlock
+anyio._core._exceptions.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/shuabao-checkpoint3/scripts/mcp/check.py", line 105, in run
+    async with AsyncExitStack() as stack:
+               ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 754, in __aexit__
+    raise exc_details[1]
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 737, in __aexit__
+    cb_suppress = await cb(*exc_details)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/mcp/shared/session.py", line 238, in __aexit__
+    return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 851, in __aexit__
+    raise exc_val
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 737, in __aexit__
+    cb_suppress = await cb(*exc_details)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/mcp/shared/session.py", line 238, in __aexit__
+    return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 851, in __aexit__
+    raise exc_val
+  File "/workspace/shuabao-checkpoint3/scripts/mcp/check.py", line 149, in run
+    result = await sessions[step['server']].call_tool(step['tool'], step.get('arguments', {}))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/mcp/client/session.py", line 401, in call_tool
+    result = await self.send_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/mcp/shared/session.py", line 292, in send_request
+    response_or_error = await response_stream_reader.receive()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/streams/memory.py", line 126, in receive
+    await receive_event.wait()
+  File "/workspace/shuabao/.local/blender-mcp-venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1936, in wait
+    await self._event.wait()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/locks.py", line 212, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/shuabao-checkpoint3/scripts/mcp/check.py", line 181, in <module>
+    asyncio.run(run(parser.parse_args()))
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/shuabao-qa/tests/qa/round6_input.py", line 59, in <module>
+    win=locate();view=v['viewport'];controls=v['controls'];x.XSetInputFocus(d,win[0],1,0);flush()
+                      ~^^^^^^^^^^^^
+KeyError: 'viewport'

@@ -1,0 +1,35 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://tests/qa/round6_observer.gd",
+      "content": "extends \"res://scripts/integration/room.gd\"\n## Read-only observer. No fixture HP, enemy, skill, ledger, AI or clock changes.\nvar qa_inputs := []\nfunc _ready():\n super._ready()\n get_window().title = 'QA_CHECKPOINT_WINDOW'\nfunc _input(event):\n super._input(event)\n if event is InputEventKey:qa_inputs.append({'wall':Time.get_ticks_msec(),'key':event.keycode,'pressed':event.pressed,'echo':event.echo})\n if event is InputEventMouseButton:qa_inputs.append({'wall':Time.get_ticks_msec(),'button':event.button_index,'pressed':event.pressed})\nfunc qa_read():\n var controls := {}\n for pair in [['allocation',live_hud.allocation],['close',live_hud.close_button],['start',start_button],['learn_q',live_hud.rows.Q.buy],['supply_close',live_hud.supply_close],['iron_blade',live_hud.shop_buttons.iron_blade]]:\n  var p=pair[1].get_global_rect().get_center();controls[pair[0]]=[p.x,p.y]\n var targets := []\n for enemy in simulation.enemies:\n  if not enemy.dead:\n   var p=camera.unproject_position(enemy.position)\n   targets.append({'id':enemy.actor_id,'screen':[p.x,p.y],'distance':enemy.position.distance_to(simulation.hero.position)})\n return JSON.stringify({'state':integration_snapshot(),'AD':simulation.hero.stats.ad,'controls':controls,'targets':targets,'viewport':[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],'events':simulation.event_log,'inputs':qa_inputs,'wall':Time.get_ticks_msec()})\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/room.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round6_observer.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]
