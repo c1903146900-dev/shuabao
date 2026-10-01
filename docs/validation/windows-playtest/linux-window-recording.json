@@ -1,0 +1,646 @@
+{
+  "source_commit": "50f6bf3c8df264da80edc5b4f1262e7a49942ab1",
+  "mode": "standalone Linux desktop export",
+  "executable": "/workspace/shuabao/build/linux-window/shuabao-client.x86_64",
+  "executable_sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0",
+  "input": "X11 XTest OS events; programmatic, not a human playtest",
+  "recording": "one continuous ffmpeg x11grab stream, no montage, no audio track",
+  "video_sha256": "b8e878bf0d64a92a759033a81e7350b686c36776a64edb40110d666de8483d1d",
+  "video_bytes": 554523,
+  "duration_seconds": "32.066667",
+  "actions": [
+    {
+      "at": 1.134,
+      "kind": "key",
+      "key": "k",
+      "down": true
+    },
+    {
+      "at": 1.234,
+      "kind": "key",
+      "key": "k",
+      "down": false
+    },
+    {
+      "at": 1.485,
+      "kind": "key",
+      "key": "Tab",
+      "down": true
+    },
+    {
+      "at": 1.585,
+      "kind": "key",
+      "key": "Tab",
+      "down": false
+    },
+    {
+      "at": 1.835,
+      "kind": "key",
+      "key": "Tab",
+      "down": true
+    },
+    {
+      "at": 1.936,
+      "kind": "key",
+      "key": "Tab",
+      "down": false
+    },
+    {
+      "at": 2.186,
+      "kind": "key",
+      "key": "Return",
+      "down": true
+    },
+    {
+      "at": 2.286,
+      "kind": "key",
+      "key": "Return",
+      "down": false
+    },
+    {
+      "at": 3.361,
+      "kind": "key",
+      "key": "Escape",
+      "down": true
+    },
+    {
+      "at": 3.461,
+      "kind": "key",
+      "key": "Escape",
+      "down": false
+    },
+    {
+      "at": 3.712,
+      "kind": "key",
+      "key": "Return",
+      "down": true
+    },
+    {
+      "at": 3.812,
+      "kind": "key",
+      "key": "Return",
+      "down": false
+    },
+    {
+      "at": 4.064,
+      "kind": "key",
+      "key": "w",
+      "down": true
+    },
+    {
+      "at": 4.414,
+      "kind": "key",
+      "key": "w",
+      "down": false
+    },
+    {
+      "at": 4.414,
+      "kind": "pointer",
+      "x": 640,
+      "y": 370
+    },
+    {
+      "at": 4.414,
+      "kind": "left_button",
+      "down": true
+    },
+    {
+      "at": 4.414,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 4.414,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 4.514,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 5.265,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 5.265,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 5.365,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 6.116,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 6.116,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 6.216,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 6.968,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 6.968,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 7.068,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 7.818,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 7.818,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 7.919,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 8.669,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 8.669,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 8.769,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 9.522,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 9.522,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 9.622,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 10.373,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 10.373,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 10.473,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 11.224,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 11.224,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 11.324,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 12.078,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 12.078,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 12.178,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 12.929,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 12.929,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 13.029,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 13.779,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 13.779,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 13.88,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 14.63,
+      "kind": "left_button",
+      "down": false
+    },
+    {
+      "at": 15.794,
+      "kind": "key",
+      "key": "Escape",
+      "down": true
+    },
+    {
+      "at": 15.894,
+      "kind": "key",
+      "key": "Escape",
+      "down": false
+    },
+    {
+      "at": 16.145,
+      "kind": "key",
+      "key": "k",
+      "down": true
+    },
+    {
+      "at": 16.25,
+      "kind": "key",
+      "key": "k",
+      "down": false
+    },
+    {
+      "at": 16.5,
+      "kind": "key",
+      "key": "Tab",
+      "down": true
+    },
+    {
+      "at": 16.601,
+      "kind": "key",
+      "key": "Tab",
+      "down": false
+    },
+    {
+      "at": 16.851,
+      "kind": "key",
+      "key": "Return",
+      "down": true
+    },
+    {
+      "at": 16.951,
+      "kind": "key",
+      "key": "Return",
+      "down": false
+    },
+    {
+      "at": 17.201,
+      "kind": "key",
+      "key": "Escape",
+      "down": true
+    },
+    {
+      "at": 17.301,
+      "kind": "key",
+      "key": "Escape",
+      "down": false
+    },
+    {
+      "at": 17.552,
+      "kind": "key",
+      "key": "Return",
+      "down": true
+    },
+    {
+      "at": 17.652,
+      "kind": "key",
+      "key": "Return",
+      "down": false
+    },
+    {
+      "at": 17.903,
+      "kind": "pointer",
+      "x": 640,
+      "y": 370
+    },
+    {
+      "at": 17.903,
+      "kind": "left_button",
+      "down": true
+    },
+    {
+      "at": 17.903,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 17.903,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 18.007,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 18.757,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 18.757,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 18.858,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 19.609,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 19.609,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 19.709,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 20.46,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 20.46,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 20.56,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 21.31,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 21.31,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 21.412,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 22.171,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 22.171,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 22.271,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 23.025,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 23.025,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 23.125,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 23.875,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 23.875,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 23.977,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 24.727,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 24.727,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 24.827,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 25.578,
+      "kind": "pointer",
+      "x": 640,
+      "y": 390
+    },
+    {
+      "at": 25.578,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 25.678,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 26.43,
+      "kind": "pointer",
+      "x": 610,
+      "y": 390
+    },
+    {
+      "at": 26.43,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 26.53,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 27.282,
+      "kind": "pointer",
+      "x": 670,
+      "y": 390
+    },
+    {
+      "at": 27.282,
+      "kind": "key",
+      "key": "q",
+      "down": true
+    },
+    {
+      "at": 27.382,
+      "kind": "key",
+      "key": "q",
+      "down": false
+    },
+    {
+      "at": 28.133,
+      "kind": "left_button",
+      "down": false
+    },
+    {
+      "at": 29.266,
+      "kind": "key",
+      "key": "Escape",
+      "down": true
+    },
+    {
+      "at": 29.367,
+      "kind": "key",
+      "key": "Escape",
+      "down": false
+    }
+  ],
+  "game_exit": "normal Godot --quit-after 750 with --max-fps 15; exit 0, no errors or ObjectDB/resource residue; window-close button NOT verified"
+}

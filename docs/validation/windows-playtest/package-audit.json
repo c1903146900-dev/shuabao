@@ -1,0 +1,1496 @@
+{
+  "source_commit": "50f6bf3c8df264da80edc5b4f1262e7a49942ab1",
+  "tracked_files_scanned": 2911,
+  "credential_findings": [],
+  "scope": "Tracked file bytes and distribution bytes; signature scan is not a proof of absence of all secrets. No environment or user credentials read.",
+  "packages": [
+    {
+      "platform": "windows",
+      "bytes": 120657572,
+      "files": [
+        {
+          "name": "shuabao-smoke.exe",
+          "bytes": 104659456,
+          "sha256": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6"
+        },
+        {
+          "name": "shuabao-smoke.pck",
+          "bytes": 15998116,
+          "sha256": "5d9f06891e87b5a8f03c4537ef10a27a8c0f0be76c5727d408cc02fac37d1a13",
+          "pck": {
+            "format": 3,
+            "engine": [
+              4,
+              6,
+              3
+            ],
+            "entries": [
+              {
+                "path": ".godot/exported/133200997/export-b0cb000bfe07f9efbd61ebf1eec8dc64-room.scn",
+                "bytes": 689,
+                "sha256": "654a1bd8be991ae4d115b6fcfadc0ddfb504320e02aa3a0b5b1e0bc91912e53a"
+              },
+              {
+                "path": ".godot/global_script_class_cache.cfg",
+                "bytes": 353,
+                "sha256": "4614083b735b3fd155ef78792a3c3cb256472381a71124a7634148b0df91c3a1"
+              },
+              {
+                "path": ".godot/imported/NotoSansCJKsc-Regular.otf-ffed665f475823ec8d8910f3a362173a.fontdata",
+                "bytes": 14445617,
+                "sha256": "a75640a465fe8913b152aa4400b52e9b3e482721db82abc4c6cb5ca7ef9d3407"
+              },
+              {
+                "path": ".godot/imported/boss.glb-08ac7b1c55273dd2cdf701b21d8075d8.scn",
+                "bytes": 266464,
+                "sha256": "2fc921a5af3ff77adf7ca4b64301613d7fc739fa4f6785adbf144492767eac3f"
+              },
+              {
+                "path": ".godot/imported/dash.wav-c732fa599cfe157dd4267b88c75a825a.sample",
+                "bytes": 16383,
+                "sha256": "8d76e9882e79daa7ce8a8b3addba8f97f82faca7455e5fc0401deb86d8117f3e"
+              },
+              {
+                "path": ".godot/imported/e_overload.wav-f743de43848a308dc23445c63d51f94a.sample",
+                "bytes": 36223,
+                "sha256": "cec8c09be487f2206e6db0842bebd55c460dc8b897a36a876bbac40da70d1157"
+              },
+              {
+                "path": ".godot/imported/elite.glb-c618cc70dedb25275f92f736f2c3c52a.scn",
+                "bytes": 213430,
+                "sha256": "d3c14ef0c6dce92bbdb9bc7a9d5fad35e908edea012e1553aa0014974ff38105"
+              },
+              {
+                "path": ".godot/imported/enemy_die.wav-bb67bc7c3e7faf91eadd6e556c425596.sample",
+                "bytes": 27263,
+                "sha256": "e93aef02e480d2b38673c214d337683a039fb07809d9109c6028600ef2b9bd81"
+              },
+              {
+                "path": ".godot/imported/fengli.glb-29e1c7c82a360f5aaeacd2c82fed3659.scn",
+                "bytes": 286523,
+                "sha256": "ea723be191aaf8f07303b29426001c6b63cd9c85dc34667301dbc3296503bf8d"
+              },
+              {
+                "path": ".godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample",
+                "bytes": 11263,
+                "sha256": "6ce746b88b2ccb86285736233a3815d26a7a09506926aa075b5a67a8dd43e609"
+              },
+              {
+                "path": ".godot/imported/hit_heavy.wav-4d32be43ae7b394c92bb36a4a24072c9.sample",
+                "bytes": 19583,
+                "sha256": "5811c0ef0353d2e0efceac14a974d0248bfe3a637843b73940e5119b9541e158"
+              },
+              {
+                "path": ".godot/imported/hurt.wav-e638edfaf88190ba3ffee0adc26b7375.sample",
+                "bytes": 17023,
+                "sha256": "c0858340163e1abaeb8c7f2616398f56d12d59e64178e6c0a9270afebe10712b"
+              },
+              {
+                "path": ".godot/imported/level_up.wav-8c90c04fb618cb40d1c51d7c501b3cd7.sample",
+                "bytes": 43263,
+                "sha256": "c6c4fdf7e9fdecd68af96e4f09761eacc5b661c57b3a8a597109aaf523fd3e37"
+              },
+              {
+                "path": ".godot/imported/minion.glb-d48bb50f17e050a25477f1c992820fdd.scn",
+                "bytes": 190456,
+                "sha256": "59971c5f27e98e9b32ebef6f759057ca9d3a95593388efaf54d6f8e6235e69e1"
+              },
+              {
+                "path": ".godot/imported/q_thrust.wav-0d20dacf63f3d7de5369369f1fd592da.sample",
+                "bytes": 15743,
+                "sha256": "26ba47bbf31e73aa7a6bdc9ecbde357121b7f888b3374f07f107f73576da9350"
+              },
+              {
+                "path": ".godot/imported/r_slam.wav-b92d166f9233fd94c6f49e4e50aac395.sample",
+                "bytes": 40063,
+                "sha256": "7d084101557fd23702f570754bc61c780d37f1e90776ca73c17c1f37ccae8fd4"
+              },
+              {
+                "path": ".godot/imported/settlement.wav-bbf702882a8c8c3ba2d3e30b1d1c5b5c.sample",
+                "bytes": 62143,
+                "sha256": "2cf0e0feef723e446f329f53540b0bad3eceab4a7dbd692b3900d9a6b6d370d0"
+              },
+              {
+                "path": ".godot/imported/sword_1.wav-6f43bd9916a444a9daa9aabce11cee6d.sample",
+                "bytes": 11903,
+                "sha256": "2808906e446dd7b550fa710fb2269629c4feb9148a897128ab49a5525fe28ddf"
+              },
+              {
+                "path": ".godot/imported/sword_2.wav-385e5dd9d9ca418f531a16f631d8eed1.sample",
+                "bytes": 12863,
+                "sha256": "3241fdda0a938e56c3ebe427e97d5073f06728a737c9ae23757e0cc5ffd045a7"
+              },
+              {
+                "path": ".godot/imported/sword_3.wav-0da18bf253ce1d168f08266aaa966aa3.sample",
+                "bytes": 13823,
+                "sha256": "edc60a8233ea1b91cc75c11e22a20655eacb7faee7f65c8e892938eb9baff97d"
+              },
+              {
+                "path": ".godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample",
+                "bytes": 11583,
+                "sha256": "b00f81dc194748ad3906dd1585fb17de7f7e3c0069066384c9782d3879bbbc67"
+              },
+              {
+                "path": ".godot/imported/ui_reject.wav-c12cc3889adfc1fb1a961c904b0f9afa.sample",
+                "bytes": 14143,
+                "sha256": "b0e8e7910f01396ef28cc5db89ec12decb8b391a26293928f9ded8e37e32bd32"
+              },
+              {
+                "path": ".godot/uid_cache.bin",
+                "bytes": 7002,
+                "sha256": "c205a71fd541557599fccdf3a081e4aa18784953698e0796ef91126a0f66d1f5"
+              },
+              {
+                "path": "assets/arena/enemies/boss.glb.import",
+                "bytes": 165,
+                "sha256": "605bfd17cdb0f898d8c0d026e8a2ac07a2e64aae01ad5fb7d391e8ac320b5ff0"
+              },
+              {
+                "path": "assets/arena/enemies/elite.glb.import",
+                "bytes": 167,
+                "sha256": "d262f71731973f7df1e5d2d3347c528ac4c09f819826faeeb565dbb1b9e9ffe9"
+              },
+              {
+                "path": "assets/arena/enemies/minion.glb.import",
+                "bytes": 168,
+                "sha256": "6958e01e65c705fd354b9e1fcbc2ce72940f3f0f5db31a61d00275082146910f"
+              },
+              {
+                "path": "assets/audio/dash.wav.import",
+                "bytes": 151,
+                "sha256": "ad748b6a6b13e6ab90585454d770bfb6d6fc26d75b9754fa911d86eca2513d58"
+              },
+              {
+                "path": "assets/audio/e_overload.wav.import",
+                "bytes": 157,
+                "sha256": "28190d3180ad643a7ca1d9222baefea0fde23e12a2f3a24ff01f0b26b6ab68ec"
+              },
+              {
+                "path": "assets/audio/enemy_die.wav.import",
+                "bytes": 156,
+                "sha256": "814c2172d8ecb5e96eeb3bfc12b1c7d156a1e0195d646d6523a1ecc2ff90480e"
+              },
+              {
+                "path": "assets/audio/hit.wav.import",
+                "bytes": 150,
+                "sha256": "ee56900baba2ee031f3263871746c60b6a61d456bbecca2689bffb725d3a2e0c"
+              },
+              {
+                "path": "assets/audio/hit_heavy.wav.import",
+                "bytes": 156,
+                "sha256": "202331d4f0b1bdbc623048a3ddece145dbd08ca5d2394ad8fa72faa6ef0f1297"
+              },
+              {
+                "path": "assets/audio/hurt.wav.import",
+                "bytes": 151,
+                "sha256": "c06707f44a7e7121df874f2bfbe69d7df595215a776d99d5cde9e7036698fdd8"
+              },
+              {
+                "path": "assets/audio/level_up.wav.import",
+                "bytes": 155,
+                "sha256": "a70ca444e739f366f1743fcc77d892e552da125569ef3c7e63bc4b5813a1e353"
+              },
+              {
+                "path": "assets/audio/q_thrust.wav.import",
+                "bytes": 155,
+                "sha256": "b1106b06a773733ff3d6a303392f41b18e6ff27fd593783db3dfc968a1d3c57d"
+              },
+              {
+                "path": "assets/audio/r_slam.wav.import",
+                "bytes": 152,
+                "sha256": "621b4520f1995be314fdf08b06db8ef5e53108cdc431d5b7916ee34f4e85076f"
+              },
+              {
+                "path": "assets/audio/settlement.wav.import",
+                "bytes": 157,
+                "sha256": "bc548a2fb8decb0921e4df42bc3bdcaa8d32329b9df4033558207acfa1d689b4"
+              },
+              {
+                "path": "assets/audio/sword_1.wav.import",
+                "bytes": 154,
+                "sha256": "427c69cdbe32c632d27f83d23f1b56c2a74858db42a8766aa139dfe467d24c25"
+              },
+              {
+                "path": "assets/audio/sword_2.wav.import",
+                "bytes": 154,
+                "sha256": "7dc2b746cb2b34584a3261e79e78080dec97e8092a5f06ca78f92a6f71de6a2c"
+              },
+              {
+                "path": "assets/audio/sword_3.wav.import",
+                "bytes": 153,
+                "sha256": "0c5811e181fec33edf8943415bee6bd089ebea556e397cce862a1d41e17c9377"
+              },
+              {
+                "path": "assets/audio/ui_confirm.wav.import",
+                "bytes": 157,
+                "sha256": "841007de43da68341f50836bfd36fc1f82a2b7552757134e52fffdbb64c2681d"
+              },
+              {
+                "path": "assets/audio/ui_reject.wav.import",
+                "bytes": 156,
+                "sha256": "bfc364380fd9713f890ee4d2892ccf26e237185db7aa30766c4aa82121594ca1"
+              },
+              {
+                "path": "assets/fengli/fengli.glb.import",
+                "bytes": 168,
+                "sha256": "a86c58ceada24ee171208314818d21c1c40d42cba8d728c1c210b57037081c80"
+              },
+              {
+                "path": "assets/ui/FONT_LICENSE.txt",
+                "bytes": 14712,
+                "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
+              },
+              {
+                "path": "assets/ui/NotoSansCJKsc-Regular.otf.import",
+                "bytes": 177,
+                "sha256": "6bf5dfe7e02432c11f1ce9b65ed734ffe5c8a8e5b354485e3f7118bcda8b9b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gd.remap",
+                "bytes": 53,
+                "sha256": "13492b4b403406b7945fb246b9b2498e1616505136efba3ca1b567162bc58b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gdc",
+                "bytes": 1381,
+                "sha256": "e0d1279cb14f11e6c8a24b3a6cc926990077c4f4e477b250b62d5cd7576778fd"
+              },
+              {
+                "path": "data/combat/tuning.gd.remap",
+                "bytes": 45,
+                "sha256": "2fbd6ea195e9aaf11c31611af5c66f02139f0bbdc86e1fb6e3546eb41903a403"
+              },
+              {
+                "path": "data/combat/tuning.gdc",
+                "bytes": 3446,
+                "sha256": "07cb57b9fb01f6fc2eb9c21e5fbd2a9b692d228b84cdfacb2d7f6afe4cc81d1f"
+              },
+              {
+                "path": "data/progression/confirmed_rules.json",
+                "bytes": 410,
+                "sha256": "6bbf8e53b3cb0b59319ba7f4abf7b6b214fc3422a72eea55bf93a5da9f65687b"
+              },
+              {
+                "path": "data/progression/prototype/catalog.json",
+                "bytes": 51478,
+                "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28"
+              },
+              {
+                "path": "project.binary",
+                "bytes": 595,
+                "sha256": "b5c8b8e997f6bb002d07c0027e6b0ae8d382d09334f4875427e849f8f47cc942"
+              },
+              {
+                "path": "scenes/integration/room.tscn.remap",
+                "bytes": 97,
+                "sha256": "10315e5d981fd4cb6679101aee89f639a1090c5e9d0239a6f237f2d9cfe12d5c"
+              },
+              {
+                "path": "scripts/actors/actor_view.gd.remap",
+                "bytes": 52,
+                "sha256": "4c617228316e37ee3ab067e4dd5a2dee8b771e039e6a7c37f7ba69f4580082c2"
+              },
+              {
+                "path": "scripts/actors/actor_view.gdc",
+                "bytes": 7542,
+                "sha256": "dd23d70358ddb40b0e4b41991b95e7e0b0786a5aa712356ac0d306f76bb045c3"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gd.remap",
+                "bytes": 54,
+                "sha256": "0927ecf23084f91bb2f26bd02b26a3adb990124b93392c249bb83d406e4247e9"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gdc",
+                "bytes": 2221,
+                "sha256": "103fe938f48c743561472f4316c69d9cf8e94abccd484cdf99addfa17b8b35f9"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gd.remap",
+                "bytes": 53,
+                "sha256": "1a6b67a1dac46902b3aa5982c87895b97cf54d89b12d8e757c2d35d55d626825"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gdc",
+                "bytes": 3783,
+                "sha256": "04294cfd2fb7b599f760257e71bacd43d09687c4510a888d8dc43445801765bb"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gd.remap",
+                "bytes": 60,
+                "sha256": "b2d06ff1684d81b910275ba0110656742ad72ea5b78cf4adf623451102bc4c17"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gdc",
+                "bytes": 10274,
+                "sha256": "d99ed96ea95c2adbd4b5330981704a62599d10fb69ae733f45a74371e4c6687f"
+              },
+              {
+                "path": "scripts/combat/arena.gd.remap",
+                "bytes": 47,
+                "sha256": "69fd273368e2f3ba9dd66a8f4a03938044a11328af07bb975a89f0f098c6307b"
+              },
+              {
+                "path": "scripts/combat/arena.gdc",
+                "bytes": 11146,
+                "sha256": "f18198bce7b5698bd2fc467a3c739ef35b62aa999a0a469d5df4522ed55c78e3"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gd.remap",
+                "bytes": 52,
+                "sha256": "4966fefb31982624379d48e3909b34abe2d615feda570e8893fcbbe37cdd9c30"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gdc",
+                "bytes": 18705,
+                "sha256": "3eb24160a255736e7f279026cd41e17b98ad168223fdca3094bfc252549a353f"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gd.remap",
+                "bytes": 51,
+                "sha256": "c7062a6d1fb80c8c5ac30927cc223571551e3f2c1bd4031a70d04e1ac0c58379"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gdc",
+                "bytes": 4377,
+                "sha256": "c5ed592d5fd38e6bf05dc75f80e5ad42a4300b7977005d5a7bca0ef9883fa023"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gd.remap",
+                "bytes": 57,
+                "sha256": "45051f10fcd777e20c5d3e589b8f127a120439a9a6504b6d28b27cbeb6989013"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gdc",
+                "bytes": 3092,
+                "sha256": "0cfb45776a8f33cd422c255751d3021da5de8ece33fb9be678a24f042a21abff"
+              },
+              {
+                "path": "scripts/combat/world_clock.gd.remap",
+                "bytes": 53,
+                "sha256": "20a32e503845a5434b5f1ab2b2cde0b75a1fe606526fc0f5d5941cd3bb93ac38"
+              },
+              {
+                "path": "scripts/combat/world_clock.gdc",
+                "bytes": 975,
+                "sha256": "375ab5132e2285f9949079d040e89ed8c84d56a13f19c368bd49c9d23e3d4589"
+              },
+              {
+                "path": "scripts/integration/audio_router.gd.remap",
+                "bytes": 59,
+                "sha256": "0fc02767ec461c219722f76d3593126768b4672d4417471bfecc21175b6e7c65"
+              },
+              {
+                "path": "scripts/integration/audio_router.gdc",
+                "bytes": 2037,
+                "sha256": "e1253085aef0d1b9386fe380388e90783bdf3453e44dcf038464e7d2e10a0869"
+              },
+              {
+                "path": "scripts/integration/consumers.gd.remap",
+                "bytes": 56,
+                "sha256": "135976c917c0734f0aa374ca2a6aa670f9fc3ad1371f24e9b4e43707613d5ec2"
+              },
+              {
+                "path": "scripts/integration/consumers.gdc",
+                "bytes": 2198,
+                "sha256": "3197ddfcc21083107bc1f316a7c44f9e6effca2c6641d81a60d47397c1a8d1aa"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gd.remap",
+                "bytes": 60,
+                "sha256": "4500c2a6676a4ce47e40918ced48fcd31135d9f8345ca9be9b5c0da190e4178b"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gdc",
+                "bytes": 1652,
+                "sha256": "e79ad425bae08f556a8dd1654d98fa884dfcc21f3842e4a94a1b4aa38b5c92de"
+              },
+              {
+                "path": "scripts/integration/room.gd.remap",
+                "bytes": 51,
+                "sha256": "a1da4dd58927b0601550e5f98ef2fb232ed60510946f0003ccc284a811f0964f"
+              },
+              {
+                "path": "scripts/integration/room.gdc",
+                "bytes": 16399,
+                "sha256": "429f5ee8d44ae046e52ad482509dd67f08891fed2de2aafa73fc9857eee61beb"
+              },
+              {
+                "path": "scripts/integration/run_model.gd.remap",
+                "bytes": 56,
+                "sha256": "d645627e2aee9a4a1c495dc3ee6520fde5ba78563b2113363cc1e6f0dcf37920"
+              },
+              {
+                "path": "scripts/integration/run_model.gdc",
+                "bytes": 2145,
+                "sha256": "90a20ceff6b9910eb28269811eb9c077185563887b3423f59844695d3daaa7b6"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gd.remap",
+                "bytes": 60,
+                "sha256": "84c1cae3ce3de72a65ca227e3c9b015a753991a2a37045714818582fdf74033d"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gdc",
+                "bytes": 7076,
+                "sha256": "5a0f1cfc8885f117f9610ccfcc4eeec24a197138112d1c35356cfedf5a9e657f"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gd.remap",
+                "bytes": 65,
+                "sha256": "2e9f63f2f367f7654bbebd3dcd646978975e8a1d0f246d0f0651d982846769d6"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gdc",
+                "bytes": 5908,
+                "sha256": "aed32e761eac445589be1a31e56a6f3e76160621f2f87fa840ec2847bd4c2442"
+              },
+              {
+                "path": "scripts/progression/model.gd.remap",
+                "bytes": 52,
+                "sha256": "0fe3eba18555ce685823487c63eca60ea4004554a29a4432c8eefeace0f2df0d"
+              },
+              {
+                "path": "scripts/progression/model.gdc",
+                "bytes": 11928,
+                "sha256": "e2fc89ad92e7fab33a04ffaba022118f516e5f8d29ec452ecd60f4df519c7ce8"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gd.remap",
+                "bytes": 48,
+                "sha256": "80b2d952d82c960c76b909978feaf2d7a6867e130e9adc29a311643c6e99e859"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gdc",
+                "bytes": 13217,
+                "sha256": "c477e0e85150e20a97ebcde6a3d059dbfdc3fa2af199798d2d8ce83f9740465e"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gd.remap",
+                "bytes": 49,
+                "sha256": "e49bb199b921cfd02fc905884b138ceba8277fa2f988807c17ee9fd9b9e54a47"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gdc",
+                "bytes": 933,
+                "sha256": "f82797b26ff05912e22925dc115cfb27100123e7f1e851d2cad674cfe8db5c3d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gd.remap",
+                "bytes": 60,
+                "sha256": "99e046ad9d930d6eae04e0a148fc975b0b80c0d11117e602d05f3d8aca95a60d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gdc",
+                "bytes": 11373,
+                "sha256": "b5e620f088901d584bd3b8566e19e97b571c5633b9360e668c84b0dd737164fc"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gd.remap",
+                "bytes": 53,
+                "sha256": "17c2fba53fac4c8cb4bbedc9af0538ae8403867f334f51a1f4c0f80886139df1"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gdc",
+                "bytes": 12270,
+                "sha256": "1779ff5e8bdd4525a0797fc1e100bfcc0b1160d5ce568c82eca8eb2cdeb952b1"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "platform": "linux",
+      "bytes": 87074028,
+      "files": [
+        {
+          "name": "shuabao-headless.pck",
+          "bytes": 15998164,
+          "sha256": "d46f82313008fa5250caf792340764073082ce1e8cd436d16e034ddbf74a80d6",
+          "pck": {
+            "format": 3,
+            "engine": [
+              4,
+              6,
+              3
+            ],
+            "entries": [
+              {
+                "path": ".godot/exported/133200997/export-b0cb000bfe07f9efbd61ebf1eec8dc64-room.scn",
+                "bytes": 689,
+                "sha256": "654a1bd8be991ae4d115b6fcfadc0ddfb504320e02aa3a0b5b1e0bc91912e53a"
+              },
+              {
+                "path": ".godot/global_script_class_cache.cfg",
+                "bytes": 353,
+                "sha256": "4614083b735b3fd155ef78792a3c3cb256472381a71124a7634148b0df91c3a1"
+              },
+              {
+                "path": ".godot/imported/NotoSansCJKsc-Regular.otf-ffed665f475823ec8d8910f3a362173a.fontdata",
+                "bytes": 14445617,
+                "sha256": "a75640a465fe8913b152aa4400b52e9b3e482721db82abc4c6cb5ca7ef9d3407"
+              },
+              {
+                "path": ".godot/imported/boss.glb-08ac7b1c55273dd2cdf701b21d8075d8.scn",
+                "bytes": 266464,
+                "sha256": "2fc921a5af3ff77adf7ca4b64301613d7fc739fa4f6785adbf144492767eac3f"
+              },
+              {
+                "path": ".godot/imported/dash.wav-c732fa599cfe157dd4267b88c75a825a.sample",
+                "bytes": 16383,
+                "sha256": "8d76e9882e79daa7ce8a8b3addba8f97f82faca7455e5fc0401deb86d8117f3e"
+              },
+              {
+                "path": ".godot/imported/e_overload.wav-f743de43848a308dc23445c63d51f94a.sample",
+                "bytes": 36223,
+                "sha256": "cec8c09be487f2206e6db0842bebd55c460dc8b897a36a876bbac40da70d1157"
+              },
+              {
+                "path": ".godot/imported/elite.glb-c618cc70dedb25275f92f736f2c3c52a.scn",
+                "bytes": 213430,
+                "sha256": "d3c14ef0c6dce92bbdb9bc7a9d5fad35e908edea012e1553aa0014974ff38105"
+              },
+              {
+                "path": ".godot/imported/enemy_die.wav-bb67bc7c3e7faf91eadd6e556c425596.sample",
+                "bytes": 27263,
+                "sha256": "e93aef02e480d2b38673c214d337683a039fb07809d9109c6028600ef2b9bd81"
+              },
+              {
+                "path": ".godot/imported/fengli.glb-29e1c7c82a360f5aaeacd2c82fed3659.scn",
+                "bytes": 286523,
+                "sha256": "ea723be191aaf8f07303b29426001c6b63cd9c85dc34667301dbc3296503bf8d"
+              },
+              {
+                "path": ".godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample",
+                "bytes": 11263,
+                "sha256": "6ce746b88b2ccb86285736233a3815d26a7a09506926aa075b5a67a8dd43e609"
+              },
+              {
+                "path": ".godot/imported/hit_heavy.wav-4d32be43ae7b394c92bb36a4a24072c9.sample",
+                "bytes": 19583,
+                "sha256": "5811c0ef0353d2e0efceac14a974d0248bfe3a637843b73940e5119b9541e158"
+              },
+              {
+                "path": ".godot/imported/hurt.wav-e638edfaf88190ba3ffee0adc26b7375.sample",
+                "bytes": 17023,
+                "sha256": "c0858340163e1abaeb8c7f2616398f56d12d59e64178e6c0a9270afebe10712b"
+              },
+              {
+                "path": ".godot/imported/level_up.wav-8c90c04fb618cb40d1c51d7c501b3cd7.sample",
+                "bytes": 43263,
+                "sha256": "c6c4fdf7e9fdecd68af96e4f09761eacc5b661c57b3a8a597109aaf523fd3e37"
+              },
+              {
+                "path": ".godot/imported/minion.glb-d48bb50f17e050a25477f1c992820fdd.scn",
+                "bytes": 190456,
+                "sha256": "59971c5f27e98e9b32ebef6f759057ca9d3a95593388efaf54d6f8e6235e69e1"
+              },
+              {
+                "path": ".godot/imported/q_thrust.wav-0d20dacf63f3d7de5369369f1fd592da.sample",
+                "bytes": 15743,
+                "sha256": "26ba47bbf31e73aa7a6bdc9ecbde357121b7f888b3374f07f107f73576da9350"
+              },
+              {
+                "path": ".godot/imported/r_slam.wav-b92d166f9233fd94c6f49e4e50aac395.sample",
+                "bytes": 40063,
+                "sha256": "7d084101557fd23702f570754bc61c780d37f1e90776ca73c17c1f37ccae8fd4"
+              },
+              {
+                "path": ".godot/imported/settlement.wav-bbf702882a8c8c3ba2d3e30b1d1c5b5c.sample",
+                "bytes": 62143,
+                "sha256": "2cf0e0feef723e446f329f53540b0bad3eceab4a7dbd692b3900d9a6b6d370d0"
+              },
+              {
+                "path": ".godot/imported/sword_1.wav-6f43bd9916a444a9daa9aabce11cee6d.sample",
+                "bytes": 11903,
+                "sha256": "2808906e446dd7b550fa710fb2269629c4feb9148a897128ab49a5525fe28ddf"
+              },
+              {
+                "path": ".godot/imported/sword_2.wav-385e5dd9d9ca418f531a16f631d8eed1.sample",
+                "bytes": 12863,
+                "sha256": "3241fdda0a938e56c3ebe427e97d5073f06728a737c9ae23757e0cc5ffd045a7"
+              },
+              {
+                "path": ".godot/imported/sword_3.wav-0da18bf253ce1d168f08266aaa966aa3.sample",
+                "bytes": 13823,
+                "sha256": "edc60a8233ea1b91cc75c11e22a20655eacb7faee7f65c8e892938eb9baff97d"
+              },
+              {
+                "path": ".godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample",
+                "bytes": 11583,
+                "sha256": "b00f81dc194748ad3906dd1585fb17de7f7e3c0069066384c9782d3879bbbc67"
+              },
+              {
+                "path": ".godot/imported/ui_reject.wav-c12cc3889adfc1fb1a961c904b0f9afa.sample",
+                "bytes": 14143,
+                "sha256": "b0e8e7910f01396ef28cc5db89ec12decb8b391a26293928f9ded8e37e32bd32"
+              },
+              {
+                "path": ".godot/uid_cache.bin",
+                "bytes": 7002,
+                "sha256": "c205a71fd541557599fccdf3a081e4aa18784953698e0796ef91126a0f66d1f5"
+              },
+              {
+                "path": "assets/arena/enemies/boss.glb.import",
+                "bytes": 165,
+                "sha256": "605bfd17cdb0f898d8c0d026e8a2ac07a2e64aae01ad5fb7d391e8ac320b5ff0"
+              },
+              {
+                "path": "assets/arena/enemies/elite.glb.import",
+                "bytes": 167,
+                "sha256": "d262f71731973f7df1e5d2d3347c528ac4c09f819826faeeb565dbb1b9e9ffe9"
+              },
+              {
+                "path": "assets/arena/enemies/minion.glb.import",
+                "bytes": 168,
+                "sha256": "6958e01e65c705fd354b9e1fcbc2ce72940f3f0f5db31a61d00275082146910f"
+              },
+              {
+                "path": "assets/audio/dash.wav.import",
+                "bytes": 151,
+                "sha256": "ad748b6a6b13e6ab90585454d770bfb6d6fc26d75b9754fa911d86eca2513d58"
+              },
+              {
+                "path": "assets/audio/e_overload.wav.import",
+                "bytes": 157,
+                "sha256": "28190d3180ad643a7ca1d9222baefea0fde23e12a2f3a24ff01f0b26b6ab68ec"
+              },
+              {
+                "path": "assets/audio/enemy_die.wav.import",
+                "bytes": 156,
+                "sha256": "814c2172d8ecb5e96eeb3bfc12b1c7d156a1e0195d646d6523a1ecc2ff90480e"
+              },
+              {
+                "path": "assets/audio/hit.wav.import",
+                "bytes": 150,
+                "sha256": "ee56900baba2ee031f3263871746c60b6a61d456bbecca2689bffb725d3a2e0c"
+              },
+              {
+                "path": "assets/audio/hit_heavy.wav.import",
+                "bytes": 156,
+                "sha256": "202331d4f0b1bdbc623048a3ddece145dbd08ca5d2394ad8fa72faa6ef0f1297"
+              },
+              {
+                "path": "assets/audio/hurt.wav.import",
+                "bytes": 151,
+                "sha256": "c06707f44a7e7121df874f2bfbe69d7df595215a776d99d5cde9e7036698fdd8"
+              },
+              {
+                "path": "assets/audio/level_up.wav.import",
+                "bytes": 155,
+                "sha256": "a70ca444e739f366f1743fcc77d892e552da125569ef3c7e63bc4b5813a1e353"
+              },
+              {
+                "path": "assets/audio/q_thrust.wav.import",
+                "bytes": 155,
+                "sha256": "b1106b06a773733ff3d6a303392f41b18e6ff27fd593783db3dfc968a1d3c57d"
+              },
+              {
+                "path": "assets/audio/r_slam.wav.import",
+                "bytes": 152,
+                "sha256": "621b4520f1995be314fdf08b06db8ef5e53108cdc431d5b7916ee34f4e85076f"
+              },
+              {
+                "path": "assets/audio/settlement.wav.import",
+                "bytes": 157,
+                "sha256": "bc548a2fb8decb0921e4df42bc3bdcaa8d32329b9df4033558207acfa1d689b4"
+              },
+              {
+                "path": "assets/audio/sword_1.wav.import",
+                "bytes": 154,
+                "sha256": "427c69cdbe32c632d27f83d23f1b56c2a74858db42a8766aa139dfe467d24c25"
+              },
+              {
+                "path": "assets/audio/sword_2.wav.import",
+                "bytes": 154,
+                "sha256": "7dc2b746cb2b34584a3261e79e78080dec97e8092a5f06ca78f92a6f71de6a2c"
+              },
+              {
+                "path": "assets/audio/sword_3.wav.import",
+                "bytes": 153,
+                "sha256": "0c5811e181fec33edf8943415bee6bd089ebea556e397cce862a1d41e17c9377"
+              },
+              {
+                "path": "assets/audio/ui_confirm.wav.import",
+                "bytes": 157,
+                "sha256": "841007de43da68341f50836bfd36fc1f82a2b7552757134e52fffdbb64c2681d"
+              },
+              {
+                "path": "assets/audio/ui_reject.wav.import",
+                "bytes": 156,
+                "sha256": "bfc364380fd9713f890ee4d2892ccf26e237185db7aa30766c4aa82121594ca1"
+              },
+              {
+                "path": "assets/fengli/fengli.glb.import",
+                "bytes": 168,
+                "sha256": "a86c58ceada24ee171208314818d21c1c40d42cba8d728c1c210b57037081c80"
+              },
+              {
+                "path": "assets/ui/FONT_LICENSE.txt",
+                "bytes": 14712,
+                "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
+              },
+              {
+                "path": "assets/ui/NotoSansCJKsc-Regular.otf.import",
+                "bytes": 177,
+                "sha256": "6bf5dfe7e02432c11f1ce9b65ed734ffe5c8a8e5b354485e3f7118bcda8b9b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gd.remap",
+                "bytes": 53,
+                "sha256": "13492b4b403406b7945fb246b9b2498e1616505136efba3ca1b567162bc58b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gdc",
+                "bytes": 1381,
+                "sha256": "e0d1279cb14f11e6c8a24b3a6cc926990077c4f4e477b250b62d5cd7576778fd"
+              },
+              {
+                "path": "data/combat/tuning.gd.remap",
+                "bytes": 45,
+                "sha256": "2fbd6ea195e9aaf11c31611af5c66f02139f0bbdc86e1fb6e3546eb41903a403"
+              },
+              {
+                "path": "data/combat/tuning.gdc",
+                "bytes": 3446,
+                "sha256": "07cb57b9fb01f6fc2eb9c21e5fbd2a9b692d228b84cdfacb2d7f6afe4cc81d1f"
+              },
+              {
+                "path": "data/progression/confirmed_rules.json",
+                "bytes": 410,
+                "sha256": "6bbf8e53b3cb0b59319ba7f4abf7b6b214fc3422a72eea55bf93a5da9f65687b"
+              },
+              {
+                "path": "data/progression/prototype/catalog.json",
+                "bytes": 51478,
+                "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28"
+              },
+              {
+                "path": "project.binary",
+                "bytes": 643,
+                "sha256": "c092a0f5b1d77decc35baf917392d729fa8d33a3c6d56b22769f87579e7ae21b"
+              },
+              {
+                "path": "scenes/integration/room.tscn.remap",
+                "bytes": 97,
+                "sha256": "10315e5d981fd4cb6679101aee89f639a1090c5e9d0239a6f237f2d9cfe12d5c"
+              },
+              {
+                "path": "scripts/actors/actor_view.gd.remap",
+                "bytes": 52,
+                "sha256": "4c617228316e37ee3ab067e4dd5a2dee8b771e039e6a7c37f7ba69f4580082c2"
+              },
+              {
+                "path": "scripts/actors/actor_view.gdc",
+                "bytes": 7542,
+                "sha256": "dd23d70358ddb40b0e4b41991b95e7e0b0786a5aa712356ac0d306f76bb045c3"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gd.remap",
+                "bytes": 54,
+                "sha256": "0927ecf23084f91bb2f26bd02b26a3adb990124b93392c249bb83d406e4247e9"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gdc",
+                "bytes": 2221,
+                "sha256": "103fe938f48c743561472f4316c69d9cf8e94abccd484cdf99addfa17b8b35f9"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gd.remap",
+                "bytes": 53,
+                "sha256": "1a6b67a1dac46902b3aa5982c87895b97cf54d89b12d8e757c2d35d55d626825"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gdc",
+                "bytes": 3783,
+                "sha256": "04294cfd2fb7b599f760257e71bacd43d09687c4510a888d8dc43445801765bb"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gd.remap",
+                "bytes": 60,
+                "sha256": "b2d06ff1684d81b910275ba0110656742ad72ea5b78cf4adf623451102bc4c17"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gdc",
+                "bytes": 10274,
+                "sha256": "d99ed96ea95c2adbd4b5330981704a62599d10fb69ae733f45a74371e4c6687f"
+              },
+              {
+                "path": "scripts/combat/arena.gd.remap",
+                "bytes": 47,
+                "sha256": "69fd273368e2f3ba9dd66a8f4a03938044a11328af07bb975a89f0f098c6307b"
+              },
+              {
+                "path": "scripts/combat/arena.gdc",
+                "bytes": 11146,
+                "sha256": "f18198bce7b5698bd2fc467a3c739ef35b62aa999a0a469d5df4522ed55c78e3"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gd.remap",
+                "bytes": 52,
+                "sha256": "4966fefb31982624379d48e3909b34abe2d615feda570e8893fcbbe37cdd9c30"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gdc",
+                "bytes": 18705,
+                "sha256": "3eb24160a255736e7f279026cd41e17b98ad168223fdca3094bfc252549a353f"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gd.remap",
+                "bytes": 51,
+                "sha256": "c7062a6d1fb80c8c5ac30927cc223571551e3f2c1bd4031a70d04e1ac0c58379"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gdc",
+                "bytes": 4377,
+                "sha256": "c5ed592d5fd38e6bf05dc75f80e5ad42a4300b7977005d5a7bca0ef9883fa023"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gd.remap",
+                "bytes": 57,
+                "sha256": "45051f10fcd777e20c5d3e589b8f127a120439a9a6504b6d28b27cbeb6989013"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gdc",
+                "bytes": 3092,
+                "sha256": "0cfb45776a8f33cd422c255751d3021da5de8ece33fb9be678a24f042a21abff"
+              },
+              {
+                "path": "scripts/combat/world_clock.gd.remap",
+                "bytes": 53,
+                "sha256": "20a32e503845a5434b5f1ab2b2cde0b75a1fe606526fc0f5d5941cd3bb93ac38"
+              },
+              {
+                "path": "scripts/combat/world_clock.gdc",
+                "bytes": 975,
+                "sha256": "375ab5132e2285f9949079d040e89ed8c84d56a13f19c368bd49c9d23e3d4589"
+              },
+              {
+                "path": "scripts/integration/audio_router.gd.remap",
+                "bytes": 59,
+                "sha256": "0fc02767ec461c219722f76d3593126768b4672d4417471bfecc21175b6e7c65"
+              },
+              {
+                "path": "scripts/integration/audio_router.gdc",
+                "bytes": 2037,
+                "sha256": "e1253085aef0d1b9386fe380388e90783bdf3453e44dcf038464e7d2e10a0869"
+              },
+              {
+                "path": "scripts/integration/consumers.gd.remap",
+                "bytes": 56,
+                "sha256": "135976c917c0734f0aa374ca2a6aa670f9fc3ad1371f24e9b4e43707613d5ec2"
+              },
+              {
+                "path": "scripts/integration/consumers.gdc",
+                "bytes": 2198,
+                "sha256": "3197ddfcc21083107bc1f316a7c44f9e6effca2c6641d81a60d47397c1a8d1aa"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gd.remap",
+                "bytes": 60,
+                "sha256": "4500c2a6676a4ce47e40918ced48fcd31135d9f8345ca9be9b5c0da190e4178b"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gdc",
+                "bytes": 1652,
+                "sha256": "e79ad425bae08f556a8dd1654d98fa884dfcc21f3842e4a94a1b4aa38b5c92de"
+              },
+              {
+                "path": "scripts/integration/room.gd.remap",
+                "bytes": 51,
+                "sha256": "a1da4dd58927b0601550e5f98ef2fb232ed60510946f0003ccc284a811f0964f"
+              },
+              {
+                "path": "scripts/integration/room.gdc",
+                "bytes": 16399,
+                "sha256": "429f5ee8d44ae046e52ad482509dd67f08891fed2de2aafa73fc9857eee61beb"
+              },
+              {
+                "path": "scripts/integration/run_model.gd.remap",
+                "bytes": 56,
+                "sha256": "d645627e2aee9a4a1c495dc3ee6520fde5ba78563b2113363cc1e6f0dcf37920"
+              },
+              {
+                "path": "scripts/integration/run_model.gdc",
+                "bytes": 2145,
+                "sha256": "90a20ceff6b9910eb28269811eb9c077185563887b3423f59844695d3daaa7b6"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gd.remap",
+                "bytes": 60,
+                "sha256": "84c1cae3ce3de72a65ca227e3c9b015a753991a2a37045714818582fdf74033d"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gdc",
+                "bytes": 7076,
+                "sha256": "5a0f1cfc8885f117f9610ccfcc4eeec24a197138112d1c35356cfedf5a9e657f"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gd.remap",
+                "bytes": 65,
+                "sha256": "2e9f63f2f367f7654bbebd3dcd646978975e8a1d0f246d0f0651d982846769d6"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gdc",
+                "bytes": 5908,
+                "sha256": "aed32e761eac445589be1a31e56a6f3e76160621f2f87fa840ec2847bd4c2442"
+              },
+              {
+                "path": "scripts/progression/model.gd.remap",
+                "bytes": 52,
+                "sha256": "0fe3eba18555ce685823487c63eca60ea4004554a29a4432c8eefeace0f2df0d"
+              },
+              {
+                "path": "scripts/progression/model.gdc",
+                "bytes": 11928,
+                "sha256": "e2fc89ad92e7fab33a04ffaba022118f516e5f8d29ec452ecd60f4df519c7ce8"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gd.remap",
+                "bytes": 48,
+                "sha256": "80b2d952d82c960c76b909978feaf2d7a6867e130e9adc29a311643c6e99e859"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gdc",
+                "bytes": 13217,
+                "sha256": "c477e0e85150e20a97ebcde6a3d059dbfdc3fa2af199798d2d8ce83f9740465e"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gd.remap",
+                "bytes": 49,
+                "sha256": "e49bb199b921cfd02fc905884b138ceba8277fa2f988807c17ee9fd9b9e54a47"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gdc",
+                "bytes": 933,
+                "sha256": "f82797b26ff05912e22925dc115cfb27100123e7f1e851d2cad674cfe8db5c3d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gd.remap",
+                "bytes": 60,
+                "sha256": "99e046ad9d930d6eae04e0a148fc975b0b80c0d11117e602d05f3d8aca95a60d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gdc",
+                "bytes": 11373,
+                "sha256": "b5e620f088901d584bd3b8566e19e97b571c5633b9360e668c84b0dd737164fc"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gd.remap",
+                "bytes": 53,
+                "sha256": "17c2fba53fac4c8cb4bbedc9af0538ae8403867f334f51a1f4c0f80886139df1"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gdc",
+                "bytes": 12270,
+                "sha256": "1779ff5e8bdd4525a0797fc1e100bfcc0b1160d5ce568c82eca8eb2cdeb952b1"
+              }
+            ]
+          }
+        },
+        {
+          "name": "shuabao-headless.x86_64",
+          "bytes": 71075864,
+          "sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+        }
+      ]
+    },
+    {
+      "platform": "linux-window",
+      "bytes": 87073980,
+      "files": [
+        {
+          "name": "shuabao-client.pck",
+          "bytes": 15998116,
+          "sha256": "5d9f06891e87b5a8f03c4537ef10a27a8c0f0be76c5727d408cc02fac37d1a13",
+          "pck": {
+            "format": 3,
+            "engine": [
+              4,
+              6,
+              3
+            ],
+            "entries": [
+              {
+                "path": ".godot/exported/133200997/export-b0cb000bfe07f9efbd61ebf1eec8dc64-room.scn",
+                "bytes": 689,
+                "sha256": "654a1bd8be991ae4d115b6fcfadc0ddfb504320e02aa3a0b5b1e0bc91912e53a"
+              },
+              {
+                "path": ".godot/global_script_class_cache.cfg",
+                "bytes": 353,
+                "sha256": "4614083b735b3fd155ef78792a3c3cb256472381a71124a7634148b0df91c3a1"
+              },
+              {
+                "path": ".godot/imported/NotoSansCJKsc-Regular.otf-ffed665f475823ec8d8910f3a362173a.fontdata",
+                "bytes": 14445617,
+                "sha256": "a75640a465fe8913b152aa4400b52e9b3e482721db82abc4c6cb5ca7ef9d3407"
+              },
+              {
+                "path": ".godot/imported/boss.glb-08ac7b1c55273dd2cdf701b21d8075d8.scn",
+                "bytes": 266464,
+                "sha256": "2fc921a5af3ff77adf7ca4b64301613d7fc739fa4f6785adbf144492767eac3f"
+              },
+              {
+                "path": ".godot/imported/dash.wav-c732fa599cfe157dd4267b88c75a825a.sample",
+                "bytes": 16383,
+                "sha256": "8d76e9882e79daa7ce8a8b3addba8f97f82faca7455e5fc0401deb86d8117f3e"
+              },
+              {
+                "path": ".godot/imported/e_overload.wav-f743de43848a308dc23445c63d51f94a.sample",
+                "bytes": 36223,
+                "sha256": "cec8c09be487f2206e6db0842bebd55c460dc8b897a36a876bbac40da70d1157"
+              },
+              {
+                "path": ".godot/imported/elite.glb-c618cc70dedb25275f92f736f2c3c52a.scn",
+                "bytes": 213430,
+                "sha256": "d3c14ef0c6dce92bbdb9bc7a9d5fad35e908edea012e1553aa0014974ff38105"
+              },
+              {
+                "path": ".godot/imported/enemy_die.wav-bb67bc7c3e7faf91eadd6e556c425596.sample",
+                "bytes": 27263,
+                "sha256": "e93aef02e480d2b38673c214d337683a039fb07809d9109c6028600ef2b9bd81"
+              },
+              {
+                "path": ".godot/imported/fengli.glb-29e1c7c82a360f5aaeacd2c82fed3659.scn",
+                "bytes": 286523,
+                "sha256": "ea723be191aaf8f07303b29426001c6b63cd9c85dc34667301dbc3296503bf8d"
+              },
+              {
+                "path": ".godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample",
+                "bytes": 11263,
+                "sha256": "6ce746b88b2ccb86285736233a3815d26a7a09506926aa075b5a67a8dd43e609"
+              },
+              {
+                "path": ".godot/imported/hit_heavy.wav-4d32be43ae7b394c92bb36a4a24072c9.sample",
+                "bytes": 19583,
+                "sha256": "5811c0ef0353d2e0efceac14a974d0248bfe3a637843b73940e5119b9541e158"
+              },
+              {
+                "path": ".godot/imported/hurt.wav-e638edfaf88190ba3ffee0adc26b7375.sample",
+                "bytes": 17023,
+                "sha256": "c0858340163e1abaeb8c7f2616398f56d12d59e64178e6c0a9270afebe10712b"
+              },
+              {
+                "path": ".godot/imported/level_up.wav-8c90c04fb618cb40d1c51d7c501b3cd7.sample",
+                "bytes": 43263,
+                "sha256": "c6c4fdf7e9fdecd68af96e4f09761eacc5b661c57b3a8a597109aaf523fd3e37"
+              },
+              {
+                "path": ".godot/imported/minion.glb-d48bb50f17e050a25477f1c992820fdd.scn",
+                "bytes": 190456,
+                "sha256": "59971c5f27e98e9b32ebef6f759057ca9d3a95593388efaf54d6f8e6235e69e1"
+              },
+              {
+                "path": ".godot/imported/q_thrust.wav-0d20dacf63f3d7de5369369f1fd592da.sample",
+                "bytes": 15743,
+                "sha256": "26ba47bbf31e73aa7a6bdc9ecbde357121b7f888b3374f07f107f73576da9350"
+              },
+              {
+                "path": ".godot/imported/r_slam.wav-b92d166f9233fd94c6f49e4e50aac395.sample",
+                "bytes": 40063,
+                "sha256": "7d084101557fd23702f570754bc61c780d37f1e90776ca73c17c1f37ccae8fd4"
+              },
+              {
+                "path": ".godot/imported/settlement.wav-bbf702882a8c8c3ba2d3e30b1d1c5b5c.sample",
+                "bytes": 62143,
+                "sha256": "2cf0e0feef723e446f329f53540b0bad3eceab4a7dbd692b3900d9a6b6d370d0"
+              },
+              {
+                "path": ".godot/imported/sword_1.wav-6f43bd9916a444a9daa9aabce11cee6d.sample",
+                "bytes": 11903,
+                "sha256": "2808906e446dd7b550fa710fb2269629c4feb9148a897128ab49a5525fe28ddf"
+              },
+              {
+                "path": ".godot/imported/sword_2.wav-385e5dd9d9ca418f531a16f631d8eed1.sample",
+                "bytes": 12863,
+                "sha256": "3241fdda0a938e56c3ebe427e97d5073f06728a737c9ae23757e0cc5ffd045a7"
+              },
+              {
+                "path": ".godot/imported/sword_3.wav-0da18bf253ce1d168f08266aaa966aa3.sample",
+                "bytes": 13823,
+                "sha256": "edc60a8233ea1b91cc75c11e22a20655eacb7faee7f65c8e892938eb9baff97d"
+              },
+              {
+                "path": ".godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample",
+                "bytes": 11583,
+                "sha256": "b00f81dc194748ad3906dd1585fb17de7f7e3c0069066384c9782d3879bbbc67"
+              },
+              {
+                "path": ".godot/imported/ui_reject.wav-c12cc3889adfc1fb1a961c904b0f9afa.sample",
+                "bytes": 14143,
+                "sha256": "b0e8e7910f01396ef28cc5db89ec12decb8b391a26293928f9ded8e37e32bd32"
+              },
+              {
+                "path": ".godot/uid_cache.bin",
+                "bytes": 7002,
+                "sha256": "c205a71fd541557599fccdf3a081e4aa18784953698e0796ef91126a0f66d1f5"
+              },
+              {
+                "path": "assets/arena/enemies/boss.glb.import",
+                "bytes": 165,
+                "sha256": "605bfd17cdb0f898d8c0d026e8a2ac07a2e64aae01ad5fb7d391e8ac320b5ff0"
+              },
+              {
+                "path": "assets/arena/enemies/elite.glb.import",
+                "bytes": 167,
+                "sha256": "d262f71731973f7df1e5d2d3347c528ac4c09f819826faeeb565dbb1b9e9ffe9"
+              },
+              {
+                "path": "assets/arena/enemies/minion.glb.import",
+                "bytes": 168,
+                "sha256": "6958e01e65c705fd354b9e1fcbc2ce72940f3f0f5db31a61d00275082146910f"
+              },
+              {
+                "path": "assets/audio/dash.wav.import",
+                "bytes": 151,
+                "sha256": "ad748b6a6b13e6ab90585454d770bfb6d6fc26d75b9754fa911d86eca2513d58"
+              },
+              {
+                "path": "assets/audio/e_overload.wav.import",
+                "bytes": 157,
+                "sha256": "28190d3180ad643a7ca1d9222baefea0fde23e12a2f3a24ff01f0b26b6ab68ec"
+              },
+              {
+                "path": "assets/audio/enemy_die.wav.import",
+                "bytes": 156,
+                "sha256": "814c2172d8ecb5e96eeb3bfc12b1c7d156a1e0195d646d6523a1ecc2ff90480e"
+              },
+              {
+                "path": "assets/audio/hit.wav.import",
+                "bytes": 150,
+                "sha256": "ee56900baba2ee031f3263871746c60b6a61d456bbecca2689bffb725d3a2e0c"
+              },
+              {
+                "path": "assets/audio/hit_heavy.wav.import",
+                "bytes": 156,
+                "sha256": "202331d4f0b1bdbc623048a3ddece145dbd08ca5d2394ad8fa72faa6ef0f1297"
+              },
+              {
+                "path": "assets/audio/hurt.wav.import",
+                "bytes": 151,
+                "sha256": "c06707f44a7e7121df874f2bfbe69d7df595215a776d99d5cde9e7036698fdd8"
+              },
+              {
+                "path": "assets/audio/level_up.wav.import",
+                "bytes": 155,
+                "sha256": "a70ca444e739f366f1743fcc77d892e552da125569ef3c7e63bc4b5813a1e353"
+              },
+              {
+                "path": "assets/audio/q_thrust.wav.import",
+                "bytes": 155,
+                "sha256": "b1106b06a773733ff3d6a303392f41b18e6ff27fd593783db3dfc968a1d3c57d"
+              },
+              {
+                "path": "assets/audio/r_slam.wav.import",
+                "bytes": 152,
+                "sha256": "621b4520f1995be314fdf08b06db8ef5e53108cdc431d5b7916ee34f4e85076f"
+              },
+              {
+                "path": "assets/audio/settlement.wav.import",
+                "bytes": 157,
+                "sha256": "bc548a2fb8decb0921e4df42bc3bdcaa8d32329b9df4033558207acfa1d689b4"
+              },
+              {
+                "path": "assets/audio/sword_1.wav.import",
+                "bytes": 154,
+                "sha256": "427c69cdbe32c632d27f83d23f1b56c2a74858db42a8766aa139dfe467d24c25"
+              },
+              {
+                "path": "assets/audio/sword_2.wav.import",
+                "bytes": 154,
+                "sha256": "7dc2b746cb2b34584a3261e79e78080dec97e8092a5f06ca78f92a6f71de6a2c"
+              },
+              {
+                "path": "assets/audio/sword_3.wav.import",
+                "bytes": 153,
+                "sha256": "0c5811e181fec33edf8943415bee6bd089ebea556e397cce862a1d41e17c9377"
+              },
+              {
+                "path": "assets/audio/ui_confirm.wav.import",
+                "bytes": 157,
+                "sha256": "841007de43da68341f50836bfd36fc1f82a2b7552757134e52fffdbb64c2681d"
+              },
+              {
+                "path": "assets/audio/ui_reject.wav.import",
+                "bytes": 156,
+                "sha256": "bfc364380fd9713f890ee4d2892ccf26e237185db7aa30766c4aa82121594ca1"
+              },
+              {
+                "path": "assets/fengli/fengli.glb.import",
+                "bytes": 168,
+                "sha256": "a86c58ceada24ee171208314818d21c1c40d42cba8d728c1c210b57037081c80"
+              },
+              {
+                "path": "assets/ui/FONT_LICENSE.txt",
+                "bytes": 14712,
+                "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
+              },
+              {
+                "path": "assets/ui/NotoSansCJKsc-Regular.otf.import",
+                "bytes": 177,
+                "sha256": "6bf5dfe7e02432c11f1ce9b65ed734ffe5c8a8e5b354485e3f7118bcda8b9b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gd.remap",
+                "bytes": 53,
+                "sha256": "13492b4b403406b7945fb246b9b2498e1616505136efba3ca1b567162bc58b49"
+              },
+              {
+                "path": "data/combat/ability_tuning.gdc",
+                "bytes": 1381,
+                "sha256": "e0d1279cb14f11e6c8a24b3a6cc926990077c4f4e477b250b62d5cd7576778fd"
+              },
+              {
+                "path": "data/combat/tuning.gd.remap",
+                "bytes": 45,
+                "sha256": "2fbd6ea195e9aaf11c31611af5c66f02139f0bbdc86e1fb6e3546eb41903a403"
+              },
+              {
+                "path": "data/combat/tuning.gdc",
+                "bytes": 3446,
+                "sha256": "07cb57b9fb01f6fc2eb9c21e5fbd2a9b692d228b84cdfacb2d7f6afe4cc81d1f"
+              },
+              {
+                "path": "data/progression/confirmed_rules.json",
+                "bytes": 410,
+                "sha256": "6bbf8e53b3cb0b59319ba7f4abf7b6b214fc3422a72eea55bf93a5da9f65687b"
+              },
+              {
+                "path": "data/progression/prototype/catalog.json",
+                "bytes": 51478,
+                "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28"
+              },
+              {
+                "path": "project.binary",
+                "bytes": 595,
+                "sha256": "b5c8b8e997f6bb002d07c0027e6b0ae8d382d09334f4875427e849f8f47cc942"
+              },
+              {
+                "path": "scenes/integration/room.tscn.remap",
+                "bytes": 97,
+                "sha256": "10315e5d981fd4cb6679101aee89f639a1090c5e9d0239a6f237f2d9cfe12d5c"
+              },
+              {
+                "path": "scripts/actors/actor_view.gd.remap",
+                "bytes": 52,
+                "sha256": "4c617228316e37ee3ab067e4dd5a2dee8b771e039e6a7c37f7ba69f4580082c2"
+              },
+              {
+                "path": "scripts/actors/actor_view.gdc",
+                "bytes": 7542,
+                "sha256": "dd23d70358ddb40b0e4b41991b95e7e0b0786a5aa712356ac0d306f76bb045c3"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gd.remap",
+                "bytes": 54,
+                "sha256": "0927ecf23084f91bb2f26bd02b26a3adb990124b93392c249bb83d406e4247e9"
+              },
+              {
+                "path": "scripts/actors/fengli_model.gdc",
+                "bytes": 2221,
+                "sha256": "103fe938f48c743561472f4316c69d9cf8e94abccd484cdf99addfa17b8b35f9"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gd.remap",
+                "bytes": 53,
+                "sha256": "1a6b67a1dac46902b3aa5982c87895b97cf54d89b12d8e757c2d35d55d626825"
+              },
+              {
+                "path": "scripts/audio/combat_audio.gdc",
+                "bytes": 3783,
+                "sha256": "04294cfd2fb7b599f760257e71bacd43d09687c4510a888d8dc43445801765bb"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gd.remap",
+                "bytes": 60,
+                "sha256": "b2d06ff1684d81b910275ba0110656742ad72ea5b78cf4adf623451102bc4c17"
+              },
+              {
+                "path": "scripts/combat/ability_extensions.gdc",
+                "bytes": 10274,
+                "sha256": "d99ed96ea95c2adbd4b5330981704a62599d10fb69ae733f45a74371e4c6687f"
+              },
+              {
+                "path": "scripts/combat/arena.gd.remap",
+                "bytes": 47,
+                "sha256": "69fd273368e2f3ba9dd66a8f4a03938044a11328af07bb975a89f0f098c6307b"
+              },
+              {
+                "path": "scripts/combat/arena.gdc",
+                "bytes": 11146,
+                "sha256": "f18198bce7b5698bd2fc467a3c739ef35b62aa999a0a469d5df4522ed55c78e3"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gd.remap",
+                "bytes": 52,
+                "sha256": "4966fefb31982624379d48e3909b34abe2d615feda570e8893fcbbe37cdd9c30"
+              },
+              {
+                "path": "scripts/combat/combat_sim.gdc",
+                "bytes": 18705,
+                "sha256": "3eb24160a255736e7f279026cd41e17b98ad168223fdca3094bfc252549a353f"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gd.remap",
+                "bytes": 51,
+                "sha256": "c7062a6d1fb80c8c5ac30927cc223571551e3f2c1bd4031a70d04e1ac0c58379"
+              },
+              {
+                "path": "scripts/combat/debug_hud.gdc",
+                "bytes": 4377,
+                "sha256": "c5ed592d5fd38e6bf05dc75f80e5ad42a4300b7977005d5a7bca0ef9883fa023"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gd.remap",
+                "bytes": 57,
+                "sha256": "45051f10fcd777e20c5d3e589b8f127a120439a9a6504b6d28b27cbeb6989013"
+              },
+              {
+                "path": "scripts/combat/loadout_fixture.gdc",
+                "bytes": 3092,
+                "sha256": "0cfb45776a8f33cd422c255751d3021da5de8ece33fb9be678a24f042a21abff"
+              },
+              {
+                "path": "scripts/combat/world_clock.gd.remap",
+                "bytes": 53,
+                "sha256": "20a32e503845a5434b5f1ab2b2cde0b75a1fe606526fc0f5d5941cd3bb93ac38"
+              },
+              {
+                "path": "scripts/combat/world_clock.gdc",
+                "bytes": 975,
+                "sha256": "375ab5132e2285f9949079d040e89ed8c84d56a13f19c368bd49c9d23e3d4589"
+              },
+              {
+                "path": "scripts/integration/audio_router.gd.remap",
+                "bytes": 59,
+                "sha256": "0fc02767ec461c219722f76d3593126768b4672d4417471bfecc21175b6e7c65"
+              },
+              {
+                "path": "scripts/integration/audio_router.gdc",
+                "bytes": 2037,
+                "sha256": "e1253085aef0d1b9386fe380388e90783bdf3453e44dcf038464e7d2e10a0869"
+              },
+              {
+                "path": "scripts/integration/consumers.gd.remap",
+                "bytes": 56,
+                "sha256": "135976c917c0734f0aa374ca2a6aa670f9fc3ad1371f24e9b4e43707613d5ec2"
+              },
+              {
+                "path": "scripts/integration/consumers.gdc",
+                "bytes": 2198,
+                "sha256": "3197ddfcc21083107bc1f316a7c44f9e6effca2c6641d81a60d47397c1a8d1aa"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gd.remap",
+                "bytes": 60,
+                "sha256": "4500c2a6676a4ce47e40918ced48fcd31135d9f8345ca9be9b5c0da190e4178b"
+              },
+              {
+                "path": "scripts/integration/ledger_bridge.gdc",
+                "bytes": 1652,
+                "sha256": "e79ad425bae08f556a8dd1654d98fa884dfcc21f3842e4a94a1b4aa38b5c92de"
+              },
+              {
+                "path": "scripts/integration/room.gd.remap",
+                "bytes": 51,
+                "sha256": "a1da4dd58927b0601550e5f98ef2fb232ed60510946f0003ccc284a811f0964f"
+              },
+              {
+                "path": "scripts/integration/room.gdc",
+                "bytes": 16399,
+                "sha256": "429f5ee8d44ae046e52ad482509dd67f08891fed2de2aafa73fc9857eee61beb"
+              },
+              {
+                "path": "scripts/integration/run_model.gd.remap",
+                "bytes": 56,
+                "sha256": "d645627e2aee9a4a1c495dc3ee6520fde5ba78563b2113363cc1e6f0dcf37920"
+              },
+              {
+                "path": "scripts/integration/run_model.gdc",
+                "bytes": 2145,
+                "sha256": "90a20ceff6b9910eb28269811eb9c077185563887b3423f59844695d3daaa7b6"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gd.remap",
+                "bytes": 60,
+                "sha256": "84c1cae3ce3de72a65ca227e3c9b015a753991a2a37045714818582fdf74033d"
+              },
+              {
+                "path": "scripts/progression/catalog_model.gdc",
+                "bytes": 7076,
+                "sha256": "5a0f1cfc8885f117f9610ccfcc4eeec24a197138112d1c35356cfedf5a9e657f"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gd.remap",
+                "bytes": 65,
+                "sha256": "2e9f63f2f367f7654bbebd3dcd646978975e8a1d0f246d0f0651d982846769d6"
+              },
+              {
+                "path": "scripts/progression/catalog_validation.gdc",
+                "bytes": 5908,
+                "sha256": "aed32e761eac445589be1a31e56a6f3e76160621f2f87fa840ec2847bd4c2442"
+              },
+              {
+                "path": "scripts/progression/model.gd.remap",
+                "bytes": 52,
+                "sha256": "0fe3eba18555ce685823487c63eca60ea4004554a29a4432c8eefeace0f2df0d"
+              },
+              {
+                "path": "scripts/progression/model.gdc",
+                "bytes": 11928,
+                "sha256": "e2fc89ad92e7fab33a04ffaba022118f516e5f8d29ec452ecd60f4df519c7ce8"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gd.remap",
+                "bytes": 48,
+                "sha256": "80b2d952d82c960c76b909978feaf2d7a6867e130e9adc29a311643c6e99e859"
+              },
+              {
+                "path": "scripts/ui/combat_hud.gdc",
+                "bytes": 13217,
+                "sha256": "c477e0e85150e20a97ebcde6a3d059dbfdc3fa2af199798d2d8ce83f9740465e"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gd.remap",
+                "bytes": 49,
+                "sha256": "e49bb199b921cfd02fc905884b138ceba8277fa2f988807c17ee9fd9b9e54a47"
+              },
+              {
+                "path": "scripts/ui/hud_adapter.gdc",
+                "bytes": 933,
+                "sha256": "f82797b26ff05912e22925dc115cfb27100123e7f1e851d2cad674cfe8db5c3d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gd.remap",
+                "bytes": 60,
+                "sha256": "99e046ad9d930d6eae04e0a148fc975b0b80c0d11117e602d05f3d8aca95a60d"
+              },
+              {
+                "path": "scripts/ui/progression_controller.gdc",
+                "bytes": 11373,
+                "sha256": "b5e620f088901d584bd3b8566e19e97b571c5633b9360e668c84b0dd737164fc"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gd.remap",
+                "bytes": 53,
+                "sha256": "17c2fba53fac4c8cb4bbedc9af0538ae8403867f334f51a1f4c0f80886139df1"
+              },
+              {
+                "path": "scripts/ui/progression_hud.gdc",
+                "bytes": 12270,
+                "sha256": "1779ff5e8bdd4525a0797fc1e100bfcc0b1160d5ce568c82eca8eb2cdeb952b1"
+              }
+            ]
+          }
+        },
+        {
+          "name": "shuabao-client.x86_64",
+          "bytes": 71075864,
+          "sha256": "2c78919325d7f29fa7607287c7c1eeac367ea4c94e7b8b6f5f4c6b20492f73d0"
+        }
+      ]
+    }
+  ]
+}

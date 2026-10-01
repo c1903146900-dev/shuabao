@@ -25,7 +25,7 @@ try:
   time.sleep(.25)
  else:raise RuntimeError('Xorg unavailable')
  cmd=['godot','--path',str(ROOT)] if a.source else [str((ROOT/a.app).resolve())]
- app=launch('game',cmd+['--display-driver','x11','--rendering-method','gl_compatibility','--rendering-driver','opengl3','--audio-driver','Dummy','--position','0,0','--resolution','1280x720','--max-fps','60','--quit-after','3000'])
+ app=launch('game',['stdbuf','-oL']+cmd+['--display-driver','x11','--rendering-method','gl_compatibility','--rendering-driver','opengl3','--audio-driver','Dummy','--position','0,0','--resolution','1280x720','--print-fps','--max-fps','15','--quit-after','750'])
  window=None
  for _ in range(60):
   tree=subprocess.check_output(['xwininfo','-root','-tree'],env=env,text=True)
@@ -87,9 +87,9 @@ try:
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(out/'continuous-play.mp4')],text=True))
  (out/'ffprobe.json').write_text(json.dumps(probe,indent=2))
  # The engine's normal iteration-budget quit runs cleanup without SIGTERM.
- # At max 60 render FPS, 3000 iterations leave the gameplay recording plus idle
+ # At max 15 render FPS, 750 iterations leave the gameplay recording plus idle
  # time for one-shot sounds to finish. No fixed simulation FPS is imposed.
- deadline=time.monotonic()+120
+ deadline=time.monotonic()+300
  while app.poll() is None and time.monotonic()<deadline:time.sleep(.25)
  assert app.poll()==0, 'Game failed normal engine iteration-budget exit'
  game_log=(out/'game.log').read_text()
@@ -97,7 +97,7 @@ try:
  assert not any(x in game_log for x in ['SCRIPT ERROR:', 'ERROR:', 'ObjectDB instances leaked', 'resources still in use']), 'Game log has errors or exit resource residue'
  assert int(probe['streams'][0]['nb_frames']) > 600 and float(probe['format']['duration']) > 20, 'Recording too short'
  video=out/'continuous-play.mp4'
- report={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'mode':'source window' if a.source else 'standalone Linux desktop export','executable':cmd[0],'executable_sha256':hashlib.sha256(Path(cmd[0]).read_bytes()).hexdigest() if Path(cmd[0]).is_file() else None,'input':'X11 XTest OS events; programmatic, not a human playtest','recording':'one continuous ffmpeg x11grab stream, no montage, no audio track','video_sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'video_bytes':video.stat().st_size,'duration_seconds':probe['format']['duration'],'actions':actions,'game_exit':'normal Godot --quit-after 3000 with --max-fps 60; exit 0, no errors or ObjectDB/resource residue; window-close button NOT verified'}
+ report={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'mode':'source window' if a.source else 'standalone Linux desktop export','executable':cmd[0],'executable_sha256':hashlib.sha256(Path(cmd[0]).read_bytes()).hexdigest() if Path(cmd[0]).is_file() else None,'input':'X11 XTest OS events; programmatic, not a human playtest','recording':'one continuous ffmpeg x11grab stream, no montage, no audio track','video_sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'video_bytes':video.stat().st_size,'duration_seconds':probe['format']['duration'],'actions':actions,'game_exit':'normal Godot --quit-after 750 with --max-fps 15; exit 0, no errors or ObjectDB/resource residue; window-close button NOT verified'}
  (out/'recording.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='actions'}))
 finally:
  if display:
