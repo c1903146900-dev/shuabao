@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://drj56tterfgar"]
+
+[ext_resource type="Script" uid="uid://cxd10krjkpqpd" path="res://scripts/audio/audio_demo.gd" id="1"]
+
+[node name="AudioDemo" type="Control" unique_id=1398395349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")

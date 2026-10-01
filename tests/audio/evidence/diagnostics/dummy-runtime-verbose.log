@@ -1,0 +1,109 @@
+WorkerThreadPool: 5 threads, 1 max low-priority.
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Unrecognized output string "misc2" in mapping:
+030000008a2e0000dd10000011010000,Hand Held Legend GC Ultimate,a:b0,b:b2,back:b17,dpdown:b5,dpleft:b6,dpright:b7,dpup:b4,guide:b18,leftshoulder:b10,leftstick:b8,lefttrigger:a3,leftx:a0,lefty:a1,misc1:b19,misc2:b24,paddle1:b13,paddle2:b12,rightshoulder:b11,rightstick:b9,righttrigger:a4,rightx:a2,righty:a5,start:b16,x:b1,y:b3,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+030000000d0f0000ab01000011010000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:a5,leftx:a0,lefty:a1,misc2:b2,paddle1:b19,paddle2:b18,paddle3:b15,paddle4:b5,rightshoulder:b7,rightstick:b14,righttrigger:a4,rightx:a2,righty:a3,start:b11,x:b3,y:b4,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+050000000d0f00009601000091000000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:a5,leftx:a0,lefty:a1,misc2:b2,paddle1:b19,paddle2:b18,paddle3:b15,paddle4:b5,rightshoulder:b7,rightstick:b14,righttrigger:a4,rightx:a2,righty:a3,start:b11,x:b3,y:b4,platform:Linux,
+Unrecognized output string "misc2" in mapping:
+030000007e0500006920000011010000,Nintendo Switch 2 Pro Controller,a:b0,b:b1,back:b14,dpdown:b8,dpleft:b10,dpright:b9,dpup:b11,guide:b16,leftshoulder:b12,leftstick:b15,lefttrigger:b13,leftx:a0,lefty:a1~,misc1:b17,misc2:b20,paddle1:b18,paddle2:b19,rightshoulder:b4,rightstick:b7,righttrigger:b5,rightx:a2,righty:a3~,start:b6,x:b2,y:b3,platform:Linux,
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 2475187701
+EDITOR API HASH: 3867286884
+Loading resource: res://tests/audio/runner.gd
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://assets/audio/sword_1.wav
+Loading resource: res://.godot/imported/sword_1.wav-6f43bd9916a444a9daa9aabce11cee6d.sample
+Loading resource: res://assets/audio/sword_2.wav
+Loading resource: res://.godot/imported/sword_2.wav-385e5dd9d9ca418f531a16f631d8eed1.sample
+Loading resource: res://assets/audio/sword_3.wav
+Loading resource: res://.godot/imported/sword_3.wav-0da18bf253ce1d168f08266aaa966aa3.sample
+Loading resource: res://assets/audio/hit.wav
+Loading resource: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample
+Loading resource: res://assets/audio/hit_heavy.wav
+Loading resource: res://.godot/imported/hit_heavy.wav-4d32be43ae7b394c92bb36a4a24072c9.sample
+Loading resource: res://assets/audio/dash.wav
+Loading resource: res://.godot/imported/dash.wav-c732fa599cfe157dd4267b88c75a825a.sample
+Loading resource: res://assets/audio/hurt.wav
+Loading resource: res://.godot/imported/hurt.wav-e638edfaf88190ba3ffee0adc26b7375.sample
+Loading resource: res://assets/audio/enemy_die.wav
+Loading resource: res://.godot/imported/enemy_die.wav-bb67bc7c3e7faf91eadd6e556c425596.sample
+Loading resource: res://assets/audio/q_thrust.wav
+Loading resource: res://.godot/imported/q_thrust.wav-0d20dacf63f3d7de5369369f1fd592da.sample
+Loading resource: res://assets/audio/e_overload.wav
+Loading resource: res://.godot/imported/e_overload.wav-f743de43848a308dc23445c63d51f94a.sample
+Loading resource: res://assets/audio/r_slam.wav
+Loading resource: res://.godot/imported/r_slam.wav-b92d166f9233fd94c6f49e4e50aac395.sample
+Loading resource: res://assets/audio/ui_confirm.wav
+Loading resource: res://.godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample
+Loading resource: res://assets/audio/ui_reject.wav
+Loading resource: res://.godot/imported/ui_reject.wav-c12cc3889adfc1fb1a961c904b0f9afa.sample
+Loading resource: res://assets/audio/level_up.wav
+Loading resource: res://.godot/imported/level_up.wav-8c90c04fb618cb40d1c51d7c501b3cd7.sample
+Loading resource: res://assets/audio/settlement.wav
+Loading resource: res://.godot/imported/settlement.wav-bbf702882a8c8c3ba2d3e30b1d1c5b5c.sample
+AUDIO_TEST_RESULT {"audio_driver":"Dummy","checks":142,"failures":[],"listening_test":false,"passed":true}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 12 resources still in use at exit.
+   at: clear (core/io/resource.cpp:805)
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
+Leaked instance: AudioStreamWAV:9223372063278892469 - Reference count: 6
+Leaked instance: AudioStreamWAV:9223372063413110198 - Reference count: 2
+Leaked instance: AudioStreamWAV:9223372063547327927 - Reference count: 4
+Leaked instance: AudioStreamWAV:9223372063681545656 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372063815763385 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372063949981114 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372064084198843 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372064218416572 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372064486852030 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372064621069759 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372065023722946 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372065157940675 - Reference count: 3
+Leaked instance: AudioStreamPlaybackWAV:9223372066131019218 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066181350867 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066231682517 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066248459734 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066265236953 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066282014170 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066298791387 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066315568604 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066332345821 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066349123038 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066365900255 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066936325600 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066953102817 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066969880034 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372066986657251 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067003434468 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067020211685 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067036988902 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067053766119 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067070543336 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067087320553 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067104097770 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372067120874987 - Reference count: 1
+Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
+Resource still in use: res://assets/audio/sword_1.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/sword_2.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/sword_3.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/hit.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/hit_heavy.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/dash.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/hurt.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/enemy_die.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/e_overload.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/r_slam.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/level_up.wav (AudioStreamWAV)
+Resource still in use: res://assets/audio/settlement.wav (AudioStreamWAV)
+Orphan StringName: CombatSFX_26306676144 (static: 0, total: 25)
+StringName: 1 unclaimed string names at exit.
