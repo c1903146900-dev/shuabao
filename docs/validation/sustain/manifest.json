@@ -1,0 +1,17 @@
+{
+  "base_commit": "a294d0420f5b5a23027d94755a9f78509b6929b4",
+  "source_sha256": {
+    "scripts/integration/consumers.gd": "121f50cd6150acb7b2e3a6496e1a8f48d0cf8deb7ae982682d1e7a2cd5dc8b8e",
+    "scripts/integration/run_model.gd": "c8c64089efd058c4a9ca2f71381485600b74f309f6aea1bc81c5480b59b20b18",
+    "scripts/integration/ledger_bridge.gd": "6dfdc5db654dff2d6e475147c3b18b4b4d28316f4c99b413c88c70ad4ab68017",
+    "scripts/integration/room.gd": "3decba2e5be92854956a105a7904b310a65fee4b1c7535bc89be291609d44a84",
+    "scripts/ui/progression_hud.gd": "fe05f257f6d76942355d905bed2e888e014a85e27ca35883bc9eff2cbd9208db",
+    "scripts/ui/progression_controller.gd": "8f560140e25ca4f7578484d8242dad23715bfe92fb084e73a6bf6b8a729f471d",
+    "tests/integration/sustain_input.gd": "2b20d2a7c7c6ec74b7f184929361e528e9e4c508645ebac1b197476d71d2afb2",
+    "tests/integration/consumer_tests.gd": "b9b999366e8ebc0d43bde91150c23be911fd35e0abe5d367e64bd341bc9f7280",
+    "tests/integration/enter_boundary.gd": "20dea0bd0fff696fdfc4f240db20c93b73b7016386d968fab83cdbf96d4a508d",
+    "tests/integration/input_harness.gd": "0908c671f3c27532b99fdb0f36a0b0b06c1246a8222dc57e1bd169ef0b1e8bf6"
+  },
+  "input_scope": "Natural combat via Godot InputEvent through MCP; separate controlled combat fixtures explicitly labeled.",
+  "final_source_validation": "candidate: 12 existing natural loop, 11 sustain natural input, 103 controlled consumer, 10 Enter boundary checks passed"
+}

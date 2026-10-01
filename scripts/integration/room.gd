@@ -3,6 +3,7 @@ extends "res://scripts/combat/arena.gd"
 const Bridge = preload("res://scripts/integration/ledger_bridge.gd")
 const CombatHUD = preload("res://scripts/ui/progression_hud.gd")
 const Controller = preload("res://scripts/ui/progression_controller.gd")
+var consumers = preload("res://scripts/integration/consumers.gd").new()
 var controller: RefCounted
 var room_number := 0
 var run_id := ""
@@ -17,6 +18,7 @@ var start_button: Button
 var help_text: Label
 var attacking := false
 var rescue_space_latched := false
+var enter_start_keys := {}
 var phase_seen := ""
 var motion := {}
 var hero_clip := {}
@@ -35,7 +37,7 @@ func _ready() -> void:
  live_hud = CombatHUD.new()
  layer.add_child(live_hud)
  controller = Controller.new()
- controller.bind(ledger.model,live_hud,ledger.definitions,{"hex_enabled":false,"source_label":"实战成长 · 原型初值","content_label":"仅AD装备已接通；药品/锻体/海克斯尚未开放"})
+ controller.bind(ledger.model,live_hud,ledger.definitions,{"hex_enabled":true,"source_label":"实战成长 · 原型初值","content_label":"原型：AD/攻速/生命上限/冷却缩减；仅数值海克斯；锻体未开放"})
  controller.combat_request.connect(_request)
  controller.command_completed.connect(_growth_completed)
  start_button = Button.new()
@@ -44,13 +46,14 @@ func _ready() -> void:
  start_button.size = Vector2(240,42)
  live_hud.add_child(start_button)
  start_button.pressed.connect(start_room)
+ live_hud.modal_changed.connect(_modal_boundary)
  help_text = Label.new()
- help_text.text = "WASD 移动 · 左键攻击 · Q/E/R 技能 · Shift 冲刺 · K 修习\n每敌150金/60经验 · P商店仅开放AD装备 · 两种房间循环"
+ help_text.text = "WASD 移动 · 左键攻击 · Q/E/R 技能 · Shift 冲刺 · K 修习\n每敌150金/60经验 · P补给：药品/四属性装备/数值海克斯 · 两种房间循环"
  help_text.position = Vector2(350,78)
  help_text.add_theme_font_size_override("font_size",14)
  live_hud.add_child(help_text)
  _present()
- print("SHUABAO_INTEGRATION_READY checkpoint=2")
+ print("SHUABAO_INTEGRATION_READY checkpoint=3")
 
 func new_run() -> void:
  # F5 is now an explicit same-room retry, never a fresh ledger.
@@ -128,7 +131,25 @@ func _rescue() -> void:
   live_hud.close_panels()
   _present()
 
+func _modal_boundary(blocked: bool) -> void:
+ # Returning to a safe room focuses its primary action; Tab can still select any HUD button.
+ if not blocked and simulation.phase in ["preparation","victory"]:
+  _present()
+  start_button.grab_focus()
+
 func _input(event: InputEvent) -> void:
+ if event is InputEventKey and event.keycode in [KEY_ENTER,KEY_KP_ENTER]:
+  var code: int = event.keycode
+  if enter_start_keys.has(code):
+   if not event.pressed: enter_start_keys.erase(code)
+   get_viewport().set_input_as_handled()
+   return
+  var focused: Control = get_viewport().gui_get_focus_owner()
+  if event.pressed and not event.echo and not live_hud.shade.visible and simulation.phase in ["preparation","victory"] and (focused == null or focused == start_button):
+   enter_start_keys[code] = true
+   start_room()
+   get_viewport().set_input_as_handled()
+   return
  # Own the complete rescue key cycle before a focused Button can consume ui_accept.
  if event is InputEventKey and event.keycode == KEY_SPACE:
   if not event.pressed and rescue_space_latched:
@@ -152,12 +173,12 @@ func _unhandled_input(event: InputEvent) -> void:
  if event is InputEventKey:
   var key: int = event.physical_keycode if event.physical_keycode else event.keycode
   if not event.pressed or event.echo: return
-  if key == KEY_ENTER: start_room()
+  if key in [KEY_ENTER,KEY_KP_ENTER]: return # GUI-owned activation never falls through into the shortcut.
   elif key == KEY_F5: new_run()
   elif key == KEY_SPACE and simulation.phase == "downed":
    _rescue()
-  elif simulation.phase == "combat":
-   held_keys[key] = true
+  else:
+   if simulation.phase == "combat": held_keys[key] = true
    var action: String = {KEY_Q:"q",KEY_E:"e",KEY_R:"r",KEY_SHIFT:"shift"}.get(key,"")
    if not action.is_empty(): _perform_action(action)
  if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and simulation.phase == "combat" and not live_hud.blocks_gameplay_input():
@@ -167,6 +188,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _notification(what: int) -> void:
  if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+  enter_start_keys.clear()
   rescue_space_latched = false
   held_keys.clear()
   attacking = false
@@ -199,6 +221,8 @@ func _execute_ui_request(request: Dictionary) -> void:
  var result := {"accepted":false,"reason":"stage_not_available"}
  if request.action == "ability":
   result = _perform_action(str(request.slot_id).to_lower(),request.command_id,false)
+ elif request.action == "use_item":
+  result = consumers.use_recovery(simulation,ledger.model,request.command_id,int(request.get("uid",-1)))
  _present()
  controller.complete_combat_request(request,result)
 
@@ -222,7 +246,7 @@ func _growth_completed(_request: Dictionary, result: Dictionary) -> void:
 func _sync_growth_to_combat() -> void:
  simulation._sync_loadout_from_ledger()
  # Recompute from immutable base, never stack on the previous projection or refill HP/CD.
- simulation.hero.stats.ad = T.INITIAL.hero_ad + ledger.model.aggregate_effects().stats.get("AD",0.0)
+ consumers.sync_stats(simulation,ledger.model)
  simulation.hero.xp_progress = ledger.model.snapshot().xp
  simulation.hero.gold = ledger.model.snapshot().gold
 
@@ -290,6 +314,16 @@ func _present() -> void:
  start_button.text = "进入第%d房" % (room_number+1)
  start_button.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
  help_text.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
+ if not live_hud.shade.visible:
+  var controls: Array[Control] = [live_hud.allocation,live_hud.supply_button]
+  if start_button.visible: controls.push_front(start_button)
+  for button in live_hud.slots.values(): controls.append(button)
+  for button in live_hud.equipment: controls.append(button)
+  live_hud._cycle_focus(controls)
+  var focused: Control = get_viewport().gui_get_focus_owner()
+  if focused == null or not focused.is_visible_in_tree():
+   if start_button.visible: start_button.grab_focus()
+   else: live_hud.allocation.grab_focus()
 
 func _on_combat_event(event: Dictionary) -> void:
  super._on_combat_event(event)
@@ -352,7 +386,7 @@ func _animate(dt: float) -> void:
   motion[id] = m
 
 func integration_snapshot() -> Dictionary:
- return {"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"2_two_room_rewards","room_number":room_number,"reward_errors":reward_errors.duplicate(),"last_action_receipt":last_action_receipt.duplicate(true)}
+ return {"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"3_recovery_stats","room_number":room_number,"reward_errors":reward_errors.duplicate(),"last_action_receipt":last_action_receipt.duplicate(true)}
 
 func integration_report() -> String:
  return JSON.stringify(integration_snapshot())

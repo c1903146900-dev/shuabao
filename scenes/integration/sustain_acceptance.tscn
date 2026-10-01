@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8syfcf74kl6g"]
+
+[ext_resource type="Script" uid="uid://dte6abs62r7ee" path="res://tests/integration/sustain_input.gd" id="1_282ue"]
+
+[node name="sustain_acceptance" type="Node3D" unique_id=864790818]
+script = ExtResource("1_282ue")

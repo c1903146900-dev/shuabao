@@ -1,0 +1,4608 @@
+{
+  "reports": {
+    "TWO_ROOM_REPORT": {
+      "checks": {
+        "duplicate_settlement_no_reward": true,
+        "earned_point_upgrade": true,
+        "hp_cd_clock_frozen": true,
+        "real_AD_attack_damage": true,
+        "real_AD_hook": true,
+        "room1_atomic_rewards": true,
+        "room1_victory": true,
+        "room2_rewards_separate_identity": true,
+        "room2_victory": true,
+        "room_transition_CD_not_reset": true,
+        "room_transition_preserves_ledger": true,
+        "ui_learn_true_model": true
+      },
+      "failures": [],
+      "input": "Godot InputEvent via MCP, not OS input",
+      "stage": "victory2"
+    },
+    "SUSTAIN_REPORT": {
+      "checks": {
+        "AS_consumer": true,
+        "CDR_actual_new_dash": true,
+        "CDR_consumer": true,
+        "HP_max_without_healing": true,
+        "actual_normal_heal": true,
+        "duplicate_use_no_second_heal": true,
+        "frozen_actual_receipt": true,
+        "full_health_no_consume": true,
+        "normal_stack_one_of_six_slots": true,
+        "numeric_hex_consumed": true,
+        "unlearned_actual_receipt": true
+      },
+      "failures": [],
+      "source": "real GUI InputEvents; gold/XP only earned by kills"
+    },
+    "CONSUMER_REPORT": {
+      "checks": {
+        "CDR_new_dash_actual": true,
+        "CDR_preserves_existing_CD": true,
+        "E3_active_not_ready": true,
+        "E3_cast_actual": true,
+        "E3_recast_actual_rejection": true,
+        "HP_buy_no_heal": true,
+        "HP_sell_undo_no_heal_CD": true,
+        "R2_cast_actual": true,
+        "R2_presentation_locked": true,
+        "R2_recast_not_ready": true,
+        "actual_AS_cap_2_5": true,
+        "actual_CDR_cap_65percent": true,
+        "actual_attack_interval_at_cap": true,
+        "cap_applies_new_dash": true,
+        "consume_clears_undo": true,
+        "dead_no_use": true,
+        "duplicate_no_heal_consume": true,
+        "frozen_actual_return_and_label": true,
+        "hex_no_free_HP_CD": true,
+        "hex_projection_has_real_consumer": true,
+        "hex_select_once": true,
+        "holding_mutex": true,
+        "new_room_reset_two_uses": true,
+        "normal_18percent_actual_HP": true,
+        "normal_5_in_one_slot": true,
+        "normal_6_rejected": true,
+        "normal_buy_0": true,
+        "normal_buy_1": true,
+        "normal_buy_2": true,
+        "normal_buy_3": true,
+        "normal_buy_4": true,
+        "offered_only_supported_numeric_hooks": true,
+        "rebound_coordinator_no_heal": true,
+        "sell_switch_cannot_bypass_mutex": true,
+        "six_slots_block_potion": true,
+        "small_pool_hero_slot_seed_1": true,
+        "small_pool_hero_slot_seed_10": true,
+        "small_pool_hero_slot_seed_11": true,
+        "small_pool_hero_slot_seed_12": true,
+        "small_pool_hero_slot_seed_13": true,
+        "small_pool_hero_slot_seed_14": true,
+        "small_pool_hero_slot_seed_15": true,
+        "small_pool_hero_slot_seed_16": true,
+        "small_pool_hero_slot_seed_17": true,
+        "small_pool_hero_slot_seed_18": true,
+        "small_pool_hero_slot_seed_19": true,
+        "small_pool_hero_slot_seed_2": true,
+        "small_pool_hero_slot_seed_20": true,
+        "small_pool_hero_slot_seed_21": true,
+        "small_pool_hero_slot_seed_22": true,
+        "small_pool_hero_slot_seed_23": true,
+        "small_pool_hero_slot_seed_24": true,
+        "small_pool_hero_slot_seed_25": true,
+        "small_pool_hero_slot_seed_26": true,
+        "small_pool_hero_slot_seed_27": true,
+        "small_pool_hero_slot_seed_28": true,
+        "small_pool_hero_slot_seed_29": true,
+        "small_pool_hero_slot_seed_3": true,
+        "small_pool_hero_slot_seed_30": true,
+        "small_pool_hero_slot_seed_31": true,
+        "small_pool_hero_slot_seed_32": true,
+        "small_pool_hero_slot_seed_33": true,
+        "small_pool_hero_slot_seed_34": true,
+        "small_pool_hero_slot_seed_35": true,
+        "small_pool_hero_slot_seed_36": true,
+        "small_pool_hero_slot_seed_37": true,
+        "small_pool_hero_slot_seed_38": true,
+        "small_pool_hero_slot_seed_39": true,
+        "small_pool_hero_slot_seed_4": true,
+        "small_pool_hero_slot_seed_40": true,
+        "small_pool_hero_slot_seed_41": true,
+        "small_pool_hero_slot_seed_42": true,
+        "small_pool_hero_slot_seed_43": true,
+        "small_pool_hero_slot_seed_44": true,
+        "small_pool_hero_slot_seed_45": true,
+        "small_pool_hero_slot_seed_46": true,
+        "small_pool_hero_slot_seed_47": true,
+        "small_pool_hero_slot_seed_48": true,
+        "small_pool_hero_slot_seed_49": true,
+        "small_pool_hero_slot_seed_5": true,
+        "small_pool_hero_slot_seed_50": true,
+        "small_pool_hero_slot_seed_51": true,
+        "small_pool_hero_slot_seed_52": true,
+        "small_pool_hero_slot_seed_53": true,
+        "small_pool_hero_slot_seed_54": true,
+        "small_pool_hero_slot_seed_55": true,
+        "small_pool_hero_slot_seed_56": true,
+        "small_pool_hero_slot_seed_57": true,
+        "small_pool_hero_slot_seed_58": true,
+        "small_pool_hero_slot_seed_59": true,
+        "small_pool_hero_slot_seed_6": true,
+        "small_pool_hero_slot_seed_60": true,
+        "small_pool_hero_slot_seed_61": true,
+        "small_pool_hero_slot_seed_62": true,
+        "small_pool_hero_slot_seed_63": true,
+        "small_pool_hero_slot_seed_64": true,
+        "small_pool_hero_slot_seed_7": true,
+        "small_pool_hero_slot_seed_8": true,
+        "small_pool_hero_slot_seed_9": true,
+        "special_first": true,
+        "special_second": true,
+        "special_third_atomic_reject": true,
+        "unsafe_consume_atomic": true
+      },
+      "failures": [],
+      "scope": "controlled model/combat fixtures, not natural playthrough"
+    }
+  },
+  "samples": {
+    "HP_equipped": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.228571431977403,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-3",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_7",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.315274, 0.0, 4.055555)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.145000000000006,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_8",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.347813, 0.0, 3.489613)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.265000000000009,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_9",
+            "aim": "(0.020191, 0.0, 0.999796)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.050158, 0.0, 2.516315)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, 5.0)",
+            "timer": 0.64,
+            "warning_progress": 0.247058823529412
+          }
+        ],
+        "event_sequence": 73,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.7,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.488235294117647,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(-0.02019, 0.0, -0.999796)",
+          "hp": 223.184999999999,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 165.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 2,
+          "earned": 4,
+          "in_combat": false,
+          "level": 4,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 1139,
+        "world_scale": 1.0,
+        "world_time": 5.6499999999999
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-3",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 400,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          }
+        ],
+        "level": 4,
+        "next_item": 3,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4
+        ],
+        "phase": "safe",
+        "points": 2,
+        "recovery_mode": "",
+        "revision": 24,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 500,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3"
+        ],
+        "xp": 165
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          }
+        ],
+        "gold": 400,
+        "hp": 223.184999999999,
+        "hp_max": 340.0,
+        "level": 4,
+        "points": 2,
+        "revision": 24,
+        "room": "第3房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习",
+            "upgrade_reason": "需要6级"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 165,
+        "xp_next": 175.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "run-9653934/input-327",
+        "result": {
+          "accepted": false,
+          "reason": "cooldown"
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 3,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.7,
+        "cdr": 0.0,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "purchased_potions": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.228571431977403,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-3",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_7",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.315274, 0.0, 4.055555)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.145000000000006,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_8",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.347813, 0.0, 3.489613)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.265000000000009,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_9",
+            "aim": "(0.020191, 0.0, 0.999796)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.050158, 0.0, 2.516315)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, 5.0)",
+            "timer": 0.64,
+            "warning_progress": 0.247058823529412
+          }
+        ],
+        "event_sequence": 73,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.7,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.488235294117647,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(-0.02019, 0.0, -0.999796)",
+          "hp": 223.184999999999,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 165.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 2,
+          "earned": 4,
+          "in_combat": false,
+          "level": 4,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 1139,
+        "world_scale": 1.0,
+        "world_time": 5.6499999999999
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-3",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 100,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 4,
+            "id": "normal_tonic",
+            "invested": 300,
+            "uid": 3
+          }
+        ],
+        "level": 4,
+        "next_item": 4,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4
+        ],
+        "phase": "safe",
+        "points": 2,
+        "recovery_mode": "",
+        "revision": 32,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 500,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              }
+            ]
+          },
+          {
+            "gold_delta": 75,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              }
+            ]
+          },
+          {
+            "gold_delta": 75,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              },
+              {
+                "count": 1,
+                "id": "normal_tonic",
+                "invested": 75,
+                "uid": 3
+              }
+            ]
+          },
+          {
+            "gold_delta": 75,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              },
+              {
+                "count": 2,
+                "id": "normal_tonic",
+                "invested": 150,
+                "uid": 3
+              }
+            ]
+          },
+          {
+            "gold_delta": 75,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              },
+              {
+                "count": 3,
+                "id": "normal_tonic",
+                "invested": 225,
+                "uid": 3
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3"
+        ],
+        "xp": 165
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×4",
+            "name": "普通",
+            "uid": 3
+          }
+        ],
+        "gold": 100,
+        "hp": 223.184999999999,
+        "hp_max": 340.0,
+        "level": 4,
+        "points": 2,
+        "revision": 32,
+        "room": "第3房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习",
+            "upgrade_reason": "需要6级"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 165,
+        "xp_next": 175.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "run-9653934/input-327",
+        "result": {
+          "accepted": false,
+          "reason": "cooldown"
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 3,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.7,
+        "cdr": 0.0,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "first_heal": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.228571431977403,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-3",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_7",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.315274, 0.0, 4.055555)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.145000000000006,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_8",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.347813, 0.0, 3.489613)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.265000000000009,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_9",
+            "aim": "(0.020191, 0.0, 0.999796)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.050158, 0.0, 2.516315)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, 5.0)",
+            "timer": 0.64,
+            "warning_progress": 0.247058823529412
+          }
+        ],
+        "event_sequence": 73,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.7,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.488235294117647,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(-0.02019, 0.0, -0.999796)",
+          "hp": 284.384999999999,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 165.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 2,
+          "earned": 4,
+          "in_combat": false,
+          "level": 4,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 1139,
+        "world_scale": 1.0,
+        "world_time": 5.6499999999999
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-3",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 100,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 3,
+            "id": "normal_tonic",
+            "invested": 225,
+            "uid": 3
+          }
+        ],
+        "level": 4,
+        "next_item": 4,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4
+        ],
+        "phase": "safe",
+        "points": 2,
+        "recovery_mode": "normal",
+        "revision": 33,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3"
+        ],
+        "xp": 165
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×3",
+            "name": "普通",
+            "uid": 3
+          }
+        ],
+        "gold": 100,
+        "hp": 284.384999999999,
+        "hp_max": 340.0,
+        "level": 4,
+        "points": 2,
+        "revision": 33,
+        "room": "第3房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习",
+            "upgrade_reason": "需要6级"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 165,
+        "xp_next": 175.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "run-9653934/input-327",
+        "result": {
+          "accepted": false,
+          "reason": "cooldown"
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 3,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.7,
+        "cdr": 0.0,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "full_heal": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.228571431977403,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-3",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_7",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.315274, 0.0, 4.055555)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.145000000000006,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_8",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.347813, 0.0, 3.489613)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.265000000000009,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_9",
+            "aim": "(0.020191, 0.0, 0.999796)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.050158, 0.0, 2.516315)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, 5.0)",
+            "timer": 0.64,
+            "warning_progress": 0.247058823529412
+          }
+        ],
+        "event_sequence": 73,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.7,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.488235294117647,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(-0.02019, 0.0, -0.999796)",
+          "hp": 340.0,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 165.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 2,
+          "earned": 4,
+          "in_combat": false,
+          "level": 4,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 1139,
+        "world_scale": 1.0,
+        "world_time": 5.6499999999999
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-3",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 100,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 2,
+            "id": "normal_tonic",
+            "invested": 150,
+            "uid": 3
+          }
+        ],
+        "level": 4,
+        "next_item": 4,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4
+        ],
+        "phase": "safe",
+        "points": 2,
+        "recovery_mode": "normal",
+        "revision": 34,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3"
+        ],
+        "xp": 165
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×2",
+            "name": "普通",
+            "uid": 3
+          }
+        ],
+        "gold": 100,
+        "hp": 340.0,
+        "hp_max": 340.0,
+        "level": 4,
+        "points": 2,
+        "revision": 34,
+        "room": "第3房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习",
+            "upgrade_reason": "需要6级"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 165,
+        "xp_next": 175.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "run-9653934/input-327",
+        "result": {
+          "accepted": false,
+          "reason": "cooldown"
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 3,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.7,
+        "cdr": 0.0,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "AS_equipped": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_10": {
+          "clip": "death",
+          "death": 6.84999999999988,
+          "position": "(-0.836778, 0.0, 3.326443)",
+          "time": 1.70000004768372,
+          "walk": 2.20047193498391
+        },
+        "enemy_11": {
+          "clip": "death",
+          "death": 7.44999999999986,
+          "position": "(0.442672, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742630156486
+        },
+        "enemy_12": {
+          "clip": "death",
+          "death": 8.04999999999986,
+          "position": "(0.084911, 0.0, 2.408824)",
+          "time": 1.70000004768372,
+          "walk": 3.82029022859491
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.228571431977416,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-4",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_10",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.836778, 0.0, 3.326443)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-2.0, 0.0, 1.0)",
+            "timer": 0.505000000000014,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_11",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.442672, 0.0, 4.114655)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(2.0, 0.0, 1.0)",
+            "timer": 0.0250000000000165,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_12",
+            "aim": "(-0.032333, 0.0, 0.999477)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.084911, 0.0, 2.408824)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, 5.0)",
+            "timer": 0.415,
+            "warning_progress": 0.511764705882353
+          }
+        ],
+        "event_sequence": 96,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.904,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.488235294117647,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(0.032751, 0.0, -0.999464)",
+          "hp": 340.0,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 170.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 3,
+          "earned": 5,
+          "in_combat": false,
+          "level": 5,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 1622,
+        "world_scale": 1.0,
+        "world_time": 8.04999999999986
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-4",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_10": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_11": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_12": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 50,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 2,
+            "id": "normal_tonic",
+            "invested": 150,
+            "uid": 3
+          },
+          {
+            "count": 1,
+            "id": "mainspring",
+            "invested": 500,
+            "uid": 4
+          }
+        ],
+        "level": 5,
+        "next_item": 5,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4
+        ],
+        "phase": "safe",
+        "points": 3,
+        "recovery_mode": "",
+        "revision": 42,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9",
+          "run-9653934/room-4/enemy_10",
+          "run-9653934/room-4/enemy_11",
+          "run-9653934/room-4/enemy_12"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 500,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              },
+              {
+                "count": 2,
+                "id": "normal_tonic",
+                "invested": 150,
+                "uid": 3
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3",
+          "run-9653934/room-4"
+        ],
+        "xp": 170
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×2",
+            "name": "普通",
+            "uid": 3
+          },
+          {
+            "description": "机簧 ×1",
+            "name": "机簧",
+            "uid": 4
+          }
+        ],
+        "gold": 50,
+        "hp": 340.0,
+        "hp_max": 340.0,
+        "level": 5,
+        "points": 3,
+        "revision": 42,
+        "room": "第4房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习",
+            "upgrade_reason": "需要6级"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "2",
+        "xp": 170,
+        "xp_next": 200.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "",
+        "result": {
+          "accepted": true,
+          "cast_id": 16,
+          "reason": "ok",
+          "state_revision": 1603
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 4,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.904,
+        "cdr": 0.0,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "CDR_equipped": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_10": {
+          "clip": "death",
+          "death": 6.84999999999988,
+          "position": "(-0.836778, 0.0, 3.326443)",
+          "time": 1.70000004768372,
+          "walk": 2.20047193498391
+        },
+        "enemy_11": {
+          "clip": "death",
+          "death": 7.44999999999986,
+          "position": "(0.442672, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742630156486
+        },
+        "enemy_12": {
+          "clip": "death",
+          "death": 8.04999999999986,
+          "position": "(0.084911, 0.0, 2.408824)",
+          "time": 1.70000004768372,
+          "walk": 3.82029022859491
+        },
+        "enemy_13": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_14": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(0.355258, 0.0, 3.35579)",
+          "time": 1.70000004768372,
+          "walk": 2.1057477771588
+        },
+        "enemy_15": {
+          "clip": "death",
+          "death": 9.71500000000012,
+          "position": "(-0.04407, 0.0, 2.704236)",
+          "time": 1.26666666666667,
+          "walk": 3.18448477303205
+        },
+        "enemy_16": {
+          "clip": "death",
+          "death": 10.7800000000003,
+          "position": "(-0.978657, 0.0, 3.042687)",
+          "time": 1.70000004768372,
+          "walk": 1.93482048364113
+        },
+        "enemy_17": {
+          "clip": "death",
+          "death": 11.3150000000004,
+          "position": "(0.442673, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742625783319
+        },
+        "enemy_18": {
+          "clip": "death",
+          "death": 11.8450000000005,
+          "position": "(0.061599, 0.0, 2.808014)",
+          "time": 1.70000004768372,
+          "walk": 4.1533396150107
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "time": 0.242857146476034,
+          "walk": 0.0
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-6",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_16",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.978657, 0.0, 3.042687)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-2.0, 0.0, 1.0)",
+            "timer": 1.36000000000002,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_17",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.442673, 0.0, 4.114655)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(2.0, 0.0, 1.0)",
+            "timer": 0.945000000000033,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_18",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.061599, 0.0, 2.808014)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, -2.0)",
+            "timer": 0.535000000000035,
+            "warning_progress": 0.0
+          }
+        ],
+        "event_sequence": 138,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.904,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.425210084033613,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.0
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(0.02809, 0.0, -0.999605)",
+          "hp": 340.0,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 5.0)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 105.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 5,
+          "earned": 7,
+          "in_combat": false,
+          "level": 7,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 2386,
+        "world_scale": 1.0,
+        "world_time": 11.8450000000005
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-6",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_10": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_11": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_12": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_13": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_14": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_15": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_16": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_17": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_18": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 400,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 2,
+            "id": "normal_tonic",
+            "invested": 150,
+            "uid": 3
+          },
+          {
+            "count": 1,
+            "id": "mainspring",
+            "invested": 500,
+            "uid": 4
+          },
+          {
+            "count": 1,
+            "id": "cooling_core",
+            "invested": 550,
+            "uid": 5
+          }
+        ],
+        "level": 7,
+        "next_item": 6,
+        "offers": {},
+        "pending_milestones": [
+          1,
+          4,
+          7
+        ],
+        "phase": "safe",
+        "points": 5,
+        "recovery_mode": "",
+        "revision": 56,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9",
+          "run-9653934/room-4/enemy_10",
+          "run-9653934/room-4/enemy_11",
+          "run-9653934/room-4/enemy_12",
+          "run-9653934/room-5/enemy_13",
+          "run-9653934/room-5/enemy_14",
+          "run-9653934/room-5/enemy_15",
+          "run-9653934/room-6/enemy_16",
+          "run-9653934/room-6/enemy_17",
+          "run-9653934/room-6/enemy_18"
+        ],
+        "rng": 1,
+        "seen_hex": {},
+        "selected_hex": [],
+        "shop_undo": [
+          {
+            "gold_delta": 550,
+            "inventory": [
+              {
+                "count": 1,
+                "id": "iron_blade",
+                "invested": 450,
+                "uid": 1
+              },
+              {
+                "count": 1,
+                "id": "blood_crystal",
+                "invested": 500,
+                "uid": 2
+              },
+              {
+                "count": 2,
+                "id": "normal_tonic",
+                "invested": 150,
+                "uid": 3
+              },
+              {
+                "count": 1,
+                "id": "mainspring",
+                "invested": 500,
+                "uid": 4
+              }
+            ]
+          }
+        ],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3",
+          "run-9653934/room-4",
+          "run-9653934/room-5",
+          "run-9653934/room-6"
+        ],
+        "xp": 105
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×2",
+            "name": "普通",
+            "uid": 3
+          },
+          {
+            "description": "机簧 ×1",
+            "name": "机簧",
+            "uid": 4
+          },
+          {
+            "description": "冷凝核心 ×1",
+            "name": "冷凝",
+            "uid": 5
+          }
+        ],
+        "gold": 400,
+        "hp": 340.0,
+        "hp_max": 340.0,
+        "level": 7,
+        "points": 5,
+        "revision": 56,
+        "room": "第6房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Shift": {
+            "cooldown": 0.0,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "2",
+        "xp": 105,
+        "xp_next": 250.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "run-9653934/input-687",
+        "result": {
+          "accepted": true,
+          "cast_id": 23,
+          "reason": "ok",
+          "state_revision": 2367
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 6,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.904,
+        "cdr": 0.06,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "hex_offer": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_10": {
+          "clip": "death",
+          "death": 6.84999999999988,
+          "position": "(-0.836778, 0.0, 3.326443)",
+          "time": 1.70000004768372,
+          "walk": 2.20047193498391
+        },
+        "enemy_11": {
+          "clip": "death",
+          "death": 7.44999999999986,
+          "position": "(0.442672, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742630156486
+        },
+        "enemy_12": {
+          "clip": "death",
+          "death": 8.04999999999986,
+          "position": "(0.084911, 0.0, 2.408824)",
+          "time": 1.70000004768372,
+          "walk": 3.82029022859491
+        },
+        "enemy_13": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_14": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(0.355258, 0.0, 3.35579)",
+          "time": 1.70000004768372,
+          "walk": 2.1057477771588
+        },
+        "enemy_15": {
+          "clip": "death",
+          "death": 9.71500000000012,
+          "position": "(-0.04407, 0.0, 2.704236)",
+          "time": 1.26666666666667,
+          "walk": 3.18448477303205
+        },
+        "enemy_16": {
+          "clip": "death",
+          "death": 10.7800000000003,
+          "position": "(-0.978657, 0.0, 3.042687)",
+          "time": 1.70000004768372,
+          "walk": 1.93482048364113
+        },
+        "enemy_17": {
+          "clip": "death",
+          "death": 11.3150000000004,
+          "position": "(0.442673, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742625783319
+        },
+        "enemy_18": {
+          "clip": "death",
+          "death": 11.8450000000005,
+          "position": "(0.061599, 0.0, 2.808014)",
+          "time": 1.70000004768372,
+          "walk": 4.1533396150107
+        },
+        "enemy_19": {
+          "clip": "death",
+          "death": 14.3100000000008,
+          "position": "(-0.436159, 0.0, 1.697667)",
+          "time": 1.68333333333333,
+          "walk": 1.20076791023957
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_20": {
+          "clip": "death",
+          "death": 14.3100000000008,
+          "position": "(0.588759, 0.0, 1.605334)",
+          "time": 1.68333333333333,
+          "walk": 0.756837013278804
+        },
+        "enemy_21": {
+          "clip": "death",
+          "death": 13.7750000000008,
+          "position": "(0.0, 0.0, -0.196701)",
+          "time": 1.70000004768372,
+          "walk": 0.709956197634987
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 0.800002)",
+          "time": 0.242857146476034,
+          "walk": 0.131250023841858
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-7",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_19",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.436159, 0.0, 1.697667)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.320000000000037,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_20",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.588759, 0.0, 1.605334)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.44000000000004,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_21",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.0, 0.0, -0.196701)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, -1.0)",
+            "timer": 1.09500000000004,
+            "warning_progress": 0.0
+          }
+        ],
+        "event_sequence": 161,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 1.904,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.425210084033613,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.693000000000042
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(0.590177, 0.0, 0.807274)",
+          "hp": 340.0,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 0.800002)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 35.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 6,
+          "earned": 8,
+          "in_combat": false,
+          "level": 8,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 2883,
+        "world_scale": 1.0,
+        "world_time": 14.3100000000008
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-7",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_10": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_11": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_12": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_13": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_14": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_15": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_16": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_17": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_18": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_19": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_20": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_21": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 850,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "hero_id": "fengli",
+        "hex_status": {},
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 2,
+            "id": "normal_tonic",
+            "invested": 150,
+            "uid": 3
+          },
+          {
+            "count": 1,
+            "id": "mainspring",
+            "invested": 500,
+            "uid": 4
+          },
+          {
+            "count": 1,
+            "id": "cooling_core",
+            "invested": 550,
+            "uid": 5
+          }
+        ],
+        "level": 8,
+        "next_item": 6,
+        "offers": {
+          "1": {
+            "excluded": [],
+            "refresh_used": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "selected": "",
+            "slots": [
+              "fengli_quick_draw",
+              "public_vitality",
+              "public_focus",
+              "fengli_endurance"
+            ]
+          }
+        },
+        "pending_milestones": [
+          1,
+          4,
+          7
+        ],
+        "phase": "safe",
+        "points": 6,
+        "recovery_mode": "",
+        "revision": 65,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9",
+          "run-9653934/room-4/enemy_10",
+          "run-9653934/room-4/enemy_11",
+          "run-9653934/room-4/enemy_12",
+          "run-9653934/room-5/enemy_13",
+          "run-9653934/room-5/enemy_14",
+          "run-9653934/room-5/enemy_15",
+          "run-9653934/room-6/enemy_16",
+          "run-9653934/room-6/enemy_17",
+          "run-9653934/room-6/enemy_18",
+          "run-9653934/room-7/enemy_21",
+          "run-9653934/room-7/enemy_19",
+          "run-9653934/room-7/enemy_20"
+        ],
+        "rng": 1914720637,
+        "seen_hex": {
+          "fengli_endurance": 1,
+          "fengli_quick_draw": 1,
+          "public_focus": 1,
+          "public_vitality": 1
+        },
+        "selected_hex": [],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3",
+          "run-9653934/room-4",
+          "run-9653934/room-5",
+          "run-9653934/room-6",
+          "run-9653934/room-7"
+        ],
+        "xp": 35
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×2",
+            "name": "普通",
+            "uid": 3
+          },
+          {
+            "description": "机簧 ×1",
+            "name": "机簧",
+            "uid": 4
+          },
+          {
+            "description": "冷凝核心 ×1",
+            "name": "冷凝",
+            "uid": 5
+          }
+        ],
+        "gold": 850,
+        "hp": 340.0,
+        "hp_max": 340.0,
+        "level": 8,
+        "points": 6,
+        "revision": 65,
+        "room": "第7房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Shift": {
+            "cooldown": 0.693000000000042,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 35,
+        "xp_next": 275.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "",
+        "result": {
+          "accepted": true,
+          "cast_id": 28,
+          "reason": "ok",
+          "state_revision": 2864
+        }
+      },
+      "panel_open": true,
+      "reward_errors": [],
+      "room_number": 7,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 1.904,
+        "cdr": 0.06,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    },
+    "hex_selected": {
+      "animations": {
+        "enemy_1": {
+          "clip": "death",
+          "death": 0.43,
+          "position": "(-0.756645, 0.0, 2.730059)",
+          "time": 1.70000004768372,
+          "walk": 0.638521693484938
+        },
+        "enemy_10": {
+          "clip": "death",
+          "death": 6.84999999999988,
+          "position": "(-0.836778, 0.0, 3.326443)",
+          "time": 1.70000004768372,
+          "walk": 2.20047193498391
+        },
+        "enemy_11": {
+          "clip": "death",
+          "death": 7.44999999999986,
+          "position": "(0.442672, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742630156486
+        },
+        "enemy_12": {
+          "clip": "death",
+          "death": 8.04999999999986,
+          "position": "(0.084911, 0.0, 2.408824)",
+          "time": 1.70000004768372,
+          "walk": 3.82029022859491
+        },
+        "enemy_13": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_14": {
+          "clip": "death",
+          "death": 9.18000000000004,
+          "position": "(0.355258, 0.0, 3.35579)",
+          "time": 1.70000004768372,
+          "walk": 2.1057477771588
+        },
+        "enemy_15": {
+          "clip": "death",
+          "death": 9.71500000000012,
+          "position": "(-0.04407, 0.0, 2.704236)",
+          "time": 1.26666666666667,
+          "walk": 3.18448477303205
+        },
+        "enemy_16": {
+          "clip": "death",
+          "death": 10.7800000000003,
+          "position": "(-0.978657, 0.0, 3.042687)",
+          "time": 1.70000004768372,
+          "walk": 1.93482048364113
+        },
+        "enemy_17": {
+          "clip": "death",
+          "death": 11.3150000000004,
+          "position": "(0.442673, 0.0, 4.114655)",
+          "time": 1.70000004768372,
+          "walk": 2.99742625783319
+        },
+        "enemy_18": {
+          "clip": "death",
+          "death": 11.8450000000005,
+          "position": "(0.061599, 0.0, 2.808014)",
+          "time": 1.70000004768372,
+          "walk": 4.1533396150107
+        },
+        "enemy_19": {
+          "clip": "death",
+          "death": 14.3100000000008,
+          "position": "(-0.436159, 0.0, 1.697667)",
+          "time": 1.70000004768372,
+          "walk": 1.20076791023957
+        },
+        "enemy_2": {
+          "clip": "death",
+          "death": 1.03,
+          "position": "(0.630968, 0.0, 2.476124)",
+          "time": 1.70000004768372,
+          "walk": 1.46109023171922
+        },
+        "enemy_20": {
+          "clip": "death",
+          "death": 14.3100000000008,
+          "position": "(0.588759, 0.0, 1.605334)",
+          "time": 1.70000004768372,
+          "walk": 0.756837013278804
+        },
+        "enemy_21": {
+          "clip": "death",
+          "death": 13.7750000000008,
+          "position": "(0.0, 0.0, -0.196701)",
+          "time": 1.70000004768372,
+          "walk": 0.709956197634987
+        },
+        "enemy_3": {
+          "clip": "death",
+          "death": 1.44999999999999,
+          "position": "(0.0, 0.0, 2.395747)",
+          "time": 1.70000004768372,
+          "walk": 2.89151917333189
+        },
+        "enemy_4": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(-1.067987, 0.0, 2.864026)",
+          "time": 1.01666666666667,
+          "walk": 1.76112521237329
+        },
+        "enemy_5": {
+          "clip": "death",
+          "death": 3.24999999999995,
+          "position": "(0.936619, 0.0, 3.126763)",
+          "time": 1.61666666666667,
+          "walk": 2.2171678620836
+        },
+        "enemy_6": {
+          "clip": "death",
+          "death": 3.84999999999994,
+          "position": "(0.094068, 0.0, 2.632068)",
+          "time": 1.01666666666667,
+          "walk": 4.02173584246118
+        },
+        "enemy_7": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(-0.315274, 0.0, 4.055555)",
+          "time": 1.70000004768372,
+          "walk": 1.85334962225803
+        },
+        "enemy_8": {
+          "clip": "death",
+          "death": 5.04999999999991,
+          "position": "(0.347813, 0.0, 3.489613)",
+          "time": 1.70000004768372,
+          "walk": 2.21515329311723
+        },
+        "enemy_9": {
+          "clip": "death",
+          "death": 5.6499999999999,
+          "position": "(-0.050158, 0.0, 2.516315)",
+          "time": 1.70000004768372,
+          "walk": 3.04138873987224
+        },
+        "fengli": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 0.800002)",
+          "time": 0.242857146476034,
+          "walk": 0.131250023841858
+        }
+      },
+      "attacking": false,
+      "checkpoint": "3_recovery_stats",
+      "combat": {
+        "combat_level_id": "run-9653934/room-7",
+        "definition_version": "fengli-whitebox-0.1",
+        "enemies": [
+          {
+            "actor_id": "enemy_19",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(-0.436159, 0.0, 1.697667)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(-1.0, 0.0, 2.0)",
+            "timer": 0.320000000000037,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_20",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.588759, 0.0, 1.605334)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(1.0, 0.0, 1.0)",
+            "timer": 0.44000000000004,
+            "warning_progress": 0.0
+          },
+          {
+            "actor_id": "enemy_21",
+            "aim": "(0.0, 0.0, -1.0)",
+            "attack_index": 0,
+            "attack_shape": "circle",
+            "dead": true,
+            "defence": 0.0,
+            "hp": 0.0,
+            "kind": "minion",
+            "knockback": "(0.0, 0.0, 0.0)",
+            "max_hp": 64.0,
+            "position": "(0.0, 0.0, -0.196701)",
+            "radius": 0.5,
+            "slow_amount": 0.0,
+            "slow_left": 0.0,
+            "stagger": 0.0,
+            "state": "dead",
+            "stun_left": 0.0,
+            "target_point": "(0.0, 0.0, -1.0)",
+            "timer": 1.09500000000004,
+            "warning_progress": 0.0
+          }
+        ],
+        "event_sequence": 161,
+        "hero": {
+          "actor_id": "fengli",
+          "ad": 40.0,
+          "attack_speed": 2.21,
+          "cast_state": {},
+          "cooldowns": {
+            "attack": 0.425210084033613,
+            "e": 0.0,
+            "passive": 0.0,
+            "q": 0.0,
+            "r": 0.0,
+            "shift": 0.693000000000042
+          },
+          "dead": false,
+          "death_state": "alive",
+          "facing": "(0.590177, 0.0, 0.807274)",
+          "hp": 340.0,
+          "invulnerable": false,
+          "kill_progress": 0,
+          "loadout": {
+            "e": "",
+            "passive": "",
+            "q": "q1",
+            "r": ""
+          },
+          "max_hp": 340.0,
+          "move_intent": "(0.0, 0.0, 0.0)",
+          "move_speed": 6.0,
+          "overload_left": 0.0,
+          "permanent_ad": 0.0,
+          "position": "(0.0, 0.0, 0.800002)",
+          "q1_stacks": 2,
+          "ranks": {
+            "e": 0,
+            "passive": 0,
+            "q": 2,
+            "r": 0
+          },
+          "self_rescue_used": false,
+          "tenacity": 0.0,
+          "untargetable": false,
+          "xp_progress": 35.0
+        },
+        "pending": [],
+        "phase": "victory",
+        "progression": {
+          "at_training_node": false,
+          "authority": "integration/run_model.gd",
+          "available": 6,
+          "earned": 8,
+          "in_combat": false,
+          "level": 8,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 0,
+              "skill": ""
+            },
+            "Q": {
+              "rank": 2,
+              "skill": "Q1"
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          }
+        },
+        "revision": 2883,
+        "world_scale": 1.0,
+        "world_time": 14.3100000000008
+      },
+      "growth": {
+        "actor_id": "fengli",
+        "allocations": [],
+        "body": [],
+        "body_pending": {},
+        "catalog_errors": [],
+        "combat_level_id": "run-9653934/room-7",
+        "content_profile": "playable_prototype",
+        "content_warnings": [],
+        "credited_rewards": {
+          "run-9653934/room-1/enemy_1": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_2": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-1/enemy_3": {
+            "gold": 150,
+            "room": "run-9653934/room-1",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_4": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_5": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-2/enemy_6": {
+            "gold": 150,
+            "room": "run-9653934/room-2",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_7": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_8": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-3/enemy_9": {
+            "gold": 150,
+            "room": "run-9653934/room-3",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_10": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_11": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-4/enemy_12": {
+            "gold": 150,
+            "room": "run-9653934/room-4",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_13": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_14": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-5/enemy_15": {
+            "gold": 150,
+            "room": "run-9653934/room-5",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_16": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_17": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-6/enemy_18": {
+            "gold": 150,
+            "room": "run-9653934/room-6",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_19": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_20": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          },
+          "run-9653934/room-7/enemy_21": {
+            "gold": 150,
+            "room": "run-9653934/room-7",
+            "xp": 60
+          }
+        },
+        "definition_version": "progression-prototype-v2",
+        "gold": 850,
+        "granted_level_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "hero_id": "fengli",
+        "hex_status": {
+          "fengli_quick_draw": "active"
+        },
+        "inventory": [
+          {
+            "count": 1,
+            "id": "iron_blade",
+            "invested": 450,
+            "uid": 1
+          },
+          {
+            "count": 1,
+            "id": "blood_crystal",
+            "invested": 500,
+            "uid": 2
+          },
+          {
+            "count": 2,
+            "id": "normal_tonic",
+            "invested": 150,
+            "uid": 3
+          },
+          {
+            "count": 1,
+            "id": "mainspring",
+            "invested": 500,
+            "uid": 4
+          },
+          {
+            "count": 1,
+            "id": "cooling_core",
+            "invested": 550,
+            "uid": 5
+          }
+        ],
+        "level": 8,
+        "next_item": 6,
+        "offers": {
+          "1": {
+            "excluded": [],
+            "refresh_used": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "selected": "fengli_quick_draw",
+            "slots": [
+              "fengli_quick_draw",
+              "public_vitality",
+              "public_focus",
+              "fengli_endurance"
+            ]
+          }
+        },
+        "pending_milestones": [
+          4,
+          7
+        ],
+        "phase": "safe",
+        "points": 6,
+        "recovery_mode": "",
+        "revision": 66,
+        "reward_ids": [
+          "run-9653934/room-1/enemy_1",
+          "run-9653934/room-1/enemy_2",
+          "run-9653934/room-1/enemy_3",
+          "run-9653934/room-2/enemy_5",
+          "run-9653934/room-2/enemy_4",
+          "run-9653934/room-2/enemy_6",
+          "run-9653934/room-3/enemy_7",
+          "run-9653934/room-3/enemy_8",
+          "run-9653934/room-3/enemy_9",
+          "run-9653934/room-4/enemy_10",
+          "run-9653934/room-4/enemy_11",
+          "run-9653934/room-4/enemy_12",
+          "run-9653934/room-5/enemy_13",
+          "run-9653934/room-5/enemy_14",
+          "run-9653934/room-5/enemy_15",
+          "run-9653934/room-6/enemy_16",
+          "run-9653934/room-6/enemy_17",
+          "run-9653934/room-6/enemy_18",
+          "run-9653934/room-7/enemy_21",
+          "run-9653934/room-7/enemy_19",
+          "run-9653934/room-7/enemy_20"
+        ],
+        "rng": 1914720637,
+        "seen_hex": {
+          "fengli_endurance": 1,
+          "fengli_quick_draw": 1,
+          "public_focus": 1,
+          "public_vitality": 1
+        },
+        "selected_hex": [
+          "fengli_quick_draw"
+        ],
+        "shop_undo": [],
+        "skills": {
+          "E": {
+            "candidate": "",
+            "rank": 0
+          },
+          "P": {
+            "candidate": "",
+            "rank": 0
+          },
+          "Q": {
+            "candidate": "Q1",
+            "rank": 2
+          },
+          "R": {
+            "candidate": "",
+            "rank": 0
+          }
+        },
+        "special_uses": 0,
+        "training": false,
+        "visited_levels": [
+          "run-9653934/room-1",
+          "run-9653934/room-2",
+          "run-9653934/room-3",
+          "run-9653934/room-4",
+          "run-9653934/room-5",
+          "run-9653934/room-6",
+          "run-9653934/room-7"
+        ],
+        "xp": 35
+      },
+      "hud": {
+        "actor_id": "fengli",
+        "can_respec": false,
+        "can_undo": false,
+        "combat_available": true,
+        "equipment": [
+          {
+            "description": "铁刃 ×1",
+            "name": "铁刃",
+            "uid": 1
+          },
+          {
+            "description": "血晶 ×1",
+            "name": "血晶",
+            "uid": 2
+          },
+          {
+            "description": "普通血瓶·原型 ×2",
+            "name": "普通",
+            "uid": 3
+          },
+          {
+            "description": "机簧 ×1",
+            "name": "机簧",
+            "uid": 4
+          },
+          {
+            "description": "冷凝核心 ×1",
+            "name": "冷凝",
+            "uid": 5
+          }
+        ],
+        "gold": 850,
+        "hp": 340.0,
+        "hp_max": 340.0,
+        "level": 8,
+        "points": 6,
+        "revision": 66,
+        "room": "第7房 · 3/3",
+        "skills": {
+          "E": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "P": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Q": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "短矩形突刺",
+            "rank": 2,
+            "reason": "战后冻结"
+          },
+          "R": {
+            "candidate_index": 0,
+            "cooldown": 0.0,
+            "name": "未学习",
+            "rank": 0,
+            "reason": "尚未学习"
+          },
+          "Shift": {
+            "cooldown": 0.693000000000042,
+            "name": "冲刺",
+            "rank": 1,
+            "reason": "战后冻结"
+          }
+        },
+        "source_label": "实战成长 · 原型初值",
+        "wave": "1",
+        "xp": 35,
+        "xp_next": 275.0
+      },
+      "kills": 3,
+      "last_action_receipt": {
+        "action": "attack",
+        "command_id": "",
+        "result": {
+          "accepted": true,
+          "cast_id": 28,
+          "reason": "ok",
+          "state_revision": 2864
+        }
+      },
+      "panel_open": false,
+      "reward_errors": [],
+      "room_number": 7,
+      "stats": {
+        "ad": 40.0,
+        "ap": 0.0,
+        "attack_speed": 2.21,
+        "cdr": 0.06,
+        "crit_chance": 0.0,
+        "defence": 0.0,
+        "lifesteal": 0.0,
+        "max_hp": 340.0,
+        "move_speed": 6.0,
+        "penetration": 0.0,
+        "regen": 0.5,
+        "tenacity": 0.0
+      }
+    }
+  }
+}

@@ -10,6 +10,8 @@ var receipt: Label
 var content_note: Label
 var respec_button: Button
 var shop_grid: GridContainer
+var use_buttons: Array[Button] = []
+var use_status: Label
 var shop_buttons: Dictionary = {}
 var sell_buttons: Array[Button] = []
 var inventory_labels: Array[Label] = []
@@ -87,6 +89,9 @@ func _ready() -> void:
 		var item_label := label(line, "空槽", 16)
 		item_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		inventory_labels.append(item_label)
+		var use := _button(line, "使用", "")
+		use.pressed.connect(func(): adapter.request("use_item", {"uid": use.get_meta("uid",-1)}))
+		use_buttons.append(use)
 		var sell := _button(line, "出售", "")
 		sell.custom_minimum_size.x = 145
 		for kind in ["normal", "hover", "pressed", "focus", "disabled"]:
@@ -100,7 +105,7 @@ func _ready() -> void:
 	bag.add_child(body_row)
 	body_button = _button(body_row, "锻体", "buy_body")
 	body_label = label(body_row, "", 14, MUTED)
-	label(bag, "药品仅查看：恢复量与合法时机须由战斗协调层确认。", 14, MUTED)
+	use_status = label(bag, "恢复尚未接入", 13, MUTED)
 	var hex_page := VBoxContainer.new()
 	hex_page.name = "海克斯"
 	tabs.add_child(hex_page)
@@ -197,17 +202,22 @@ func present_progression(view: Dictionary) -> void:
 	undo_shop.disabled = not view.can_undo_shop
 	for i in range(6):
 		var sell := sell_buttons[i]
+		var use := use_buttons[i]
+		use.disabled = true
 		if i < view.inventory.size():
 			var entry: Dictionary = view.inventory[i]
 			inventory_labels[i].text = "%02d   %s  ×%d" % [i + 1, entry.name, entry.count]
 			sell.text = "出售 +%d" % entry.resale
 			sell.set_meta("uid", entry.uid)
+			use.set_meta("uid",entry.uid)
+			use.disabled = not safe or entry.kind not in ["normal","special"]
 			sell.disabled = not safe
 		else:
 			inventory_labels[i].text = "%02d   空槽" % [i + 1]
 			sell.text = "未装备"
 			sell.set_meta("uid", -1)
 			sell.disabled = true
+	use_status.text = view.get("recovery_notice","恢复尚未接入")
 	body_button.text = "锻体 · %d金币" % view.body_cost
 	body_button.disabled = not view.training or view.body_cost <= 0
 	body_label.text = "已购买%d次 · 不可撤销，洗点不退款" % view.body_count

@@ -5,8 +5,8 @@ var definitions: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("r
 var model = Model.new(definitions,"fengli")
 var serial := 0
 func _init() -> void:
- # Only AD has a verified consumer in this stage. Never restore capabilities from saves.
- model.set_supported_hooks(["stats.v1","stat.AD.v1"])
+ # Capabilities have concrete consumers; never restore them from saves.
+ model.set_supported_hooks(preload("res://scripts/integration/consumers.gd").HOOKS)
 func command(action: String, args: Dictionary = {}) -> Dictionary:
  serial += 1
  var r: Dictionary = model.command("integration-context-%d" % serial, action, args)

@@ -1,5 +1,8 @@
 # 初始化状态与交接
 
+最新阶段：[药品与最小数值构筑 checkpoint 3](INTEGRATION_CHECKPOINT_3.md)，已验证MCP自然输入与受控机制检查，独立窗口QA及新发行包仍待完成。下列checkpoint2及更早包为历史记录。
+
+
 最新进展：默认入口升级为[两房真实奖励成长 checkpoint 2](INTEGRATION_CHECKPOINT_2.md)。本轮MCP引擎输入通过与独立窗口QA待验明确分开；以下历史checkpoint1及导出包结果不代表本版已导出。
 
 > 最新集成状态：骨骼 GLB 经 MCP 导入 Godot 播放、干净 clone 复用、Windows/Linux 实际导出通过；Linux 独立无头启动通过，Windows 启动未运行。见 [集成验收](INTEGRATION_VALIDATION.md)。下文为历史阶段记录。

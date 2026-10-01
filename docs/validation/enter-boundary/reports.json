@@ -1,0 +1,83 @@
+{
+  "red": {
+    "checks": {
+      "enter_full_cycle_only_starts_room": false,
+      "escape_preparation_focus_is_start": false,
+      "escape_victory_focus_is_start": false,
+      "keyboard_activation_opens_menu_without_new_room": true,
+      "keyboard_close_does_not_start_or_attack": true,
+      "keyboard_supply_does_not_start_room": false,
+      "keypad_enter_one_new_room_no_modal": false,
+      "tab_reaches_allocation": true,
+      "tab_reaches_supply": true
+    },
+    "failures": [
+      "escape_preparation_focus_is_start",
+      "enter_full_cycle_only_starts_room",
+      "escape_victory_focus_is_start",
+      "keyboard_supply_does_not_start_room",
+      "keypad_enter_one_new_room_no_modal"
+    ],
+    "scope": "GUI InputEvents; AI disabled and terminal state prepared only for input boundaries"
+  },
+  "partial": {
+    "checks": {
+      "enter_full_cycle_only_starts_room": true,
+      "escape_preparation_focus_is_start": true,
+      "escape_victory_focus_is_start": true,
+      "keyboard_activation_opens_menu_without_new_room": false,
+      "keyboard_close_does_not_start_or_attack": true,
+      "keyboard_supply_does_not_start_room": true,
+      "keypad_enter_one_new_room_no_modal": true,
+      "tab_reaches_allocation": false,
+      "tab_reaches_supply": true
+    },
+    "failures": [
+      "tab_reaches_allocation",
+      "keyboard_activation_opens_menu_without_new_room"
+    ],
+    "scope": "GUI InputEvents; AI disabled and terminal state prepared only for input boundaries"
+  },
+  "green_before_initial_focus_check": {
+    "checks": {
+      "enter_full_cycle_only_starts_room": true,
+      "escape_preparation_focus_is_start": true,
+      "escape_victory_focus_is_start": true,
+      "keyboard_activation_opens_menu_without_new_room": true,
+      "keyboard_close_does_not_start_or_attack": true,
+      "keyboard_supply_does_not_start_room": true,
+      "keypad_enter_one_new_room_no_modal": true,
+      "tab_reaches_allocation": true,
+      "tab_reaches_supply": true
+    },
+    "failures": [],
+    "scope": "GUI InputEvents; AI disabled and terminal state prepared only for input boundaries"
+  },
+  "legacy_boundaries": {
+    "checks": {
+      "hud_hover_preserves_held_move": true,
+      "modal_blocks_move_without_pausing_clock": true,
+      "release_inside_modal_does_not_resume_movement": true,
+      "result_closed_focus_on_allocation": true,
+      "space_full_cycle_rescues_without_opening_panel": true
+    },
+    "failures": [],
+    "input": "native Godot InputEvent via MCP, not OS input"
+  },
+  "final_candidate": {
+    "checks": {
+      "enter_full_cycle_only_starts_room": true,
+      "escape_preparation_focus_is_start": true,
+      "escape_victory_focus_is_start": true,
+      "initial_primary_focus": true,
+      "keyboard_activation_opens_menu_without_new_room": true,
+      "keyboard_close_does_not_start_or_attack": true,
+      "keyboard_supply_does_not_start_room": true,
+      "keypad_enter_one_new_room_no_modal": true,
+      "tab_reaches_allocation": true,
+      "tab_reaches_supply": true
+    },
+    "failures": [],
+    "scope": "GUI InputEvents; AI disabled and terminal state prepared only for input boundaries"
+  }
+}

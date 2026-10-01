@@ -5,6 +5,8 @@ signal combat_request(request: Dictionary)
 signal gameplay_block_changed(blocked: bool)
 const HUD_SOURCE = preload("res://scripts/ui/combat_hud.gd")
 const ERRORS := {
+ "candidate_not_implemented":"此候选尚未接入",
+ "full_health":"生命已满，未消耗药品", "already_consumed":"此用药请求已处理", "command_id_conflict":"请求身份冲突", "unknown_action":"该栏不是主动技能",
 	"stage_not_available":"本阶段尚未开放", "unsupported_effect":"效果尚未接入", "no_target":"没有可用目标", "already_active":"效果仍在持续", "projectile_in_flight":"匕首飞行中", "mark_target_dead":"标记目标已死亡", "mark_expired":"标记已过期", "recast_window_expired":"重施窗口已结束", "all_rounds_used":"投掷次数已用完",
 	"unsafe_phase": "仅安全阶段可操作", "training_required": "需要训练节点",
 	"insufficient_gold": "金币不足", "insufficient_points": "技能点不足",
@@ -179,12 +181,13 @@ func refresh() -> void:
 	for i in range(offer.get("slots", []).size()):
 		var id: String = offer.slots[i]
 		var definition: Dictionary = definitions.get("hexes", {}).get(id, {})
-		choices.append({"id": id, "name": display.get("hexes", {}).get(id, id), "hero_only": i == 3,
+		choices.append({"id": id, "name": display.get("hexes", {}).get(id, definition.get("name",id)), "hero_only": i == 3,
 			"requires": definition.get("requires", ""), "refreshed": offer.refresh_used[i], "selected": offer.get("selected", "") == id})
 	var selected_text: Array = []
 	for id in s.selected_hex:
 		selected_text.append("%s · %s" % [display.get("hexes", {}).get(id, id), "生效" if s.hex_status[id] == "active" else "休眠"])
 	hud.present_progression({"phase": s.phase, "training": s.training, "gold": s.gold, "catalog": items, "inventory": inventory,
+		"recovery_notice": "实验规则：普通5瓶堆1槽；持有互斥且本房使用互斥；仅胜利补给用药\n普通18%% / 特殊30%%最大生命；本房特殊已用 %d/2；满血不消耗" % s.special_uses,
 		"can_undo_shop": s.phase == "safe" and not s.shop_undo.is_empty(), "body_cost": definitions.get("body", {}).get("cost", 0), "body_count": s.body.size(),
 		"milestones": milestones, "active_milestone": active_milestone, "choices": choices, "offer_selected": not offer.get("selected", "").is_empty(),
 		"selected_text": "  /  ".join(selected_text), "content_label": display.get("content_label", "定义版本：" + str(s.definition_version))})

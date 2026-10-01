@@ -46,3 +46,6 @@ func report() -> String:
 
 func start_boundary_checks() -> String:
  return preload("res://tests/integration/input_boundaries.gd").new().start(self)
+
+func start_enter_checks() -> String:
+ return preload("res://tests/integration/enter_boundary.gd").new().start(self)
