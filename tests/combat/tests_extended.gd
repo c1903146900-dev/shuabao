@@ -130,13 +130,13 @@ func run() -> Dictionary:
  check(s.hero.hp==240,"R2 presentation damage immune")
  check(not s.request_action("r").accepted,"R2 cannot cast during presentation")
  s.step(0.25)
- for id in [100,101]: s.extensions.on_basic_attack_completed({"cast_id":id,"hit":false})
- s.extensions.on_basic_attack_completed({"cast_id":100,"hit":false})
+ for id in [100,101]: s.extensions.on_basic_attack_completed(attack_receipt(s,id,false))
+ s.extensions.on_basic_attack_completed(attack_receipt(s,100,false))
  check(s.hero.cast_state.r2.attacks==2,"R2 miss completion counts; duplicate events do not")
  check(s.request_action("r",boss.position).accepted,"R2 second throw")
  check(s.hero.cast_state.r2.last_nails==3 and near(boss.hp,9836),"R2 second has 1+2 nails")
  s.step(0.25)
- s.extensions.on_basic_attack_completed({"cast_id":102,"hit":true})
+ s.extensions.on_basic_attack_completed(attack_receipt(s,102,true))
  check(s.request_action("r",boss.position).accepted,"R2 third throw")
  check(s.hero.cast_state.r2.last_nails==4 and near(boss.hp,9672),"R2 cumulative not reset: third 1+3 nails")
  check(s.hero.cooldowns.r==0,"R2 CD waits for third presentation")
@@ -148,7 +148,7 @@ func run() -> Dictionary:
  s.hero.loadout.r="r2"
  s.request_action("r")
  s.step(0.25)
- for id in range(200): s.extensions.on_basic_attack_completed({"cast_id":id})
+ for id in range(200): s.extensions.on_basic_attack_completed(attack_receipt(s,id))
  s.request_action("r")
  check(s.hero.cast_state.r2.last_nails==201,"R2 no arbitrary nail cap")
  s.step(0.25)
@@ -170,7 +170,7 @@ func run() -> Dictionary:
  s.request_action("r",target.position)
  check(near(target.slow_amount,0.3) and near(target.slow_left,3),"R2 ordinary enemy 30 percent slow for 3 seconds")
  s.step(0.25)
- s.extensions.on_basic_attack_completed({"cast_id":500})
+ s.extensions.on_basic_attack_completed(attack_receipt(s,500))
  s.request_action("r",target.position)
  check(near(target.slow_amount,0.3) and near(target.slow_left,3),"R2 multiple nails refresh duration without stacking slow")
  s.free()
@@ -216,7 +216,7 @@ func run() -> Dictionary:
  s.end_encounter("training_stop")
  var q_frozen: Dictionary=s.hero.cast_state.duplicate(true)
  s.step(10)
- check(s.hero.cast_state==q_frozen and not s.hero.untargetable,"Q2 room end freezes chain but clears selection presentation")
+ check(s.hero.cast_state==q_frozen and not s.hero.cast_state.has("q2") and s.hero.cooldowns.q>0 and not s.hero.untargetable,"Q2 room end cancels chain, commits CD and freezes resulting state")
  s.free()
  s=fresh()
  s.hero.loadout.q="q2"
@@ -252,3 +252,6 @@ func run() -> Dictionary:
  check(s.frozen_snapshot==s.snapshot(),"R2 lethal terminal snapshot is authoritative")
  s.free()
  return {"suite":"extended_abilities","passed":failures.is_empty(),"checks":checks,"failures":failures.duplicate()}
+
+func attack_receipt(s, id: int, hit: bool = false) -> Dictionary:
+ return {"cast_id":id,"hit":hit,"encounter_id":s.combat_level_id,"encounter_generation":s.encounter_generation,"simulation_instance":s.get_instance_id()}

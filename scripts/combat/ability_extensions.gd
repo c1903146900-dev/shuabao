@@ -12,6 +12,15 @@ var _counted_attacks: Dictionary = {}
 func _init(sim: Node) -> void:
  s = sim
 
+func _bind_room(state: Dictionary, context: Dictionary) -> void:
+ for key in ["encounter_id","encounter_generation","simulation_instance"]: state[key] = context[key]
+
+func _same_room(state: Dictionary) -> bool:
+ return state.get("encounter_id","") == s.combat_level_id and state.get("encounter_generation",-1) == s.encounter_generation and state.get("simulation_instance",-1) == s.get_instance_id()
+
+func _q2_current(state: Dictionary) -> bool:
+ return s.phase == "combat" and not s.hero.dead and _same_room(state) and s.hero.cast_state.has("q2") and s.hero.cast_state.q2.cast_id == state.cast_id
+
 func _power(slot: String) -> float:
  return TEST_RANK_DAMAGE[slot][clampi(int(s.hero.ranks[slot])-1,0,TEST_RANK_DAMAGE[slot].size()-1)]
 
@@ -50,6 +59,7 @@ func request(action: String, context: Dictionary) -> Dictionary:
    var target: Dictionary = _pick(s.hero.position, INITIAL.q2_initial_range, [], s.hero.aim_point)
    if target.is_empty(): return _no("no_target")
    s.hero.cast_state.q2 = {"cast_id":context.cast_id,"damage":s.hero.ad()*1.5*_power("q"),"visited":[],"next":s.clock.world_time+INITIAL.q2_interval,"target":target.actor_id,"search_center":s.hero.position,"search_range":INITIAL.q2_initial_range,"last_position":s.hero.position,"landing":s.hero.position}
+   _bind_room(s.hero.cast_state.q2,context)
    s.hero.untargetable = true
    s.emit_event("q2_started", {"cast_id":context.cast_id,"target":target.actor_id})
   "q3":
@@ -61,6 +71,9 @@ func request(action: String, context: Dictionary) -> Dictionary:
    s.emit_event("q3_wave", {"cast_id":context.cast_id,"position":context.origin,"direction":context.direction,"length":INITIAL.q3_length,"width":INITIAL.q3_width})
   "e1":
    if s.hero.cast_state.has("e1"):
+    if not _same_room(s.hero.cast_state.e1):
+     _finish_e1()
+     return _no("mark_target_dead")
     if s.hero.cast_state.e1.stage != "marked": return _no("projectile_in_flight")
     if s.clock.world_time >= s.hero.cast_state.e1.expires: return _no("mark_expired")
     var target: Dictionary = s.enemy_by_id(s.hero.cast_state.e1.target)
@@ -81,6 +94,7 @@ func request(action: String, context: Dictionary) -> Dictionary:
     var target: Dictionary = _pick(s.hero.position,INITIAL.e1_range,[],s.hero.aim_point)
     if target.is_empty(): return _no("no_target")
     s.hero.cast_state.e1 = {"stage":"flying","target":target.actor_id,"position":s.hero.position,"deadline":s.clock.world_time+INITIAL.e1_timeout,"damage":s.hero.ad()*1.5*_power("e"),"cast_id":context.cast_id}
+    _bind_room(s.hero.cast_state.e1,context)
     s.emit_event("e1_projectile", {"cast_id":context.cast_id,"target":target.actor_id})
   "e2":
    var damage: float = s.hero.ad()*0.7*_power("e")
@@ -140,7 +154,11 @@ func step(dt: float) -> void:
   if s.hero.cast_state.has("r2") and s.clock.world_time+0.000001>=state.expires: _finish_r2()
 
 func _step_q2() -> void:
+ if s.phase != "combat" or s.hero.dead or not s.hero.cast_state.has("q2"): return
  var state: Dictionary=s.hero.cast_state.q2
+ if not _same_room(state):
+  _finish_q2(false)
+  return
  if s.clock.world_time+0.000001<state.next: return
  var target: Dictionary=s.enemy_by_id(state.target)
  if target.is_empty() or target.dead or target.position.distance_to(state.search_center)>state.search_range:
@@ -155,7 +173,9 @@ func _step_q2() -> void:
  state.landing=s.clamp_position(target.position-behind.normalized()*INITIAL.q2_behind,T.INITIAL.player_radius)
  s.hero.position=state.landing
  s.damage_enemy(target,state.damage,"q2",state.cast_id)
+ if not _q2_current(state): return
  s.emit_event("q2_hit",{"cast_id":state.cast_id,"target":target.actor_id,"position":s.hero.position,"strike":state.visited.size()})
+ if not _q2_current(state): return
  var next: Dictionary=_pick(state.last_position,INITIAL.q2_chain_range,state.visited,state.last_position)
  if state.visited.size()>=4 or next.is_empty():
   _finish_q2()
@@ -165,17 +185,21 @@ func _step_q2() -> void:
   state.search_range=INITIAL.q2_chain_range
   state.next+=INITIAL.q2_interval
 
-func _finish_q2() -> void:
+func _finish_q2(restore_landing: bool = true) -> void:
  if not s.hero.cast_state.has("q2"): return
  var state: Dictionary=s.hero.cast_state.q2
- s.hero.position=state.landing
+ if restore_landing: s.hero.position=state.landing
  s.hero.cast_state.erase("q2")
  s.hero.untargetable=false
  s.start_skill_cooldown("q",12.0)
  s.emit_event("q2_finished",{"hits":state.visited.size(),"position":s.hero.position})
 
 func _step_e1(dt: float) -> void:
+ if s.phase != "combat" or s.hero.dead or not s.hero.cast_state.has("e1"): return
  var state: Dictionary=s.hero.cast_state.e1
+ if not _same_room(state):
+  _finish_e1()
+  return
  var target: Dictionary=s.enemy_by_id(state.target)
  if target.is_empty() or target.dead:
   _finish_e1()
@@ -189,6 +213,7 @@ func _step_e1(dt: float) -> void:
  state.position=state.position.move_toward(target.position,INITIAL.e1_speed*dt)
  if state.position.distance_to(target.position)<=target.radius:
   s.damage_enemy(target,state.damage,"e1_dagger",state.cast_id)
+  if s.phase != "combat" or not _same_room(state) or not s.hero.cast_state.has("e1") or s.hero.cast_state.e1.cast_id != state.cast_id: return
   if target.dead:
    _finish_e1()
   else:
@@ -231,7 +256,7 @@ func _throw_r2(context: Dictionary) -> void:
  s.emit_event("r2_throw",{"cast_id":context.cast_id,"round":state.round,"nails":count,"attacks":state.attacks,"position":context.origin,"direction":context.direction,"length":INITIAL.r2_length,"width":INITIAL.r2_width})
 
 func on_basic_attack_completed(event: Dictionary) -> void:
- if s.phase!="combat" or not s.hero.cast_state.has("r2"): return
+ if s.phase!="combat" or not _same_room(event) or not s.hero.cast_state.has("r2"): return
  var state: Dictionary=s.hero.cast_state.r2
  if state.round>=3 or s.clock.world_time>=state.expires: return
  var id: int=int(event.get("cast_id",-1))
@@ -249,7 +274,13 @@ func _finish_r2() -> void:
 func on_encounter_end() -> void:
  # Called before the host captures terminal snapshot. No timer advancement here.
  s.clock.leave(_key())
- if s.hero.cast_state.has("q2"): s.hero.untargetable=false
+ if s.hero.cast_state.has("q2"): _finish_q2()
  if s.hero.cast_state.has("r2"):
   s.hero.cast_state.r2.presenting=false
   if s.hero.cast_state.r2.round>=3: _finish_r2()
+
+func on_room_change() -> void:
+ # Targeted chains/projectiles cannot select from the replacement enemy roster.
+ # E2 blink, E3 buff and R2 unused throws keep their established freeze policy.
+ if s.hero.cast_state.has("q2"): _finish_q2(false)
+ if s.hero.cast_state.has("e1"): _finish_e1()

@@ -13,6 +13,6 @@ const POLICIES = {"q2_targets":"closest_to_pointer_then_nearest_unvisited_actor_
  "r2_count":"attack_completed including misses since first throw; cumulative; no cap",
  "r2_geometry":"every nail shares one long rectangle and can hit every target once",
  "r2_window":"3 world seconds from each throw, boundary exclusive; third show end starts CD",
- "post_room":"freeze ability states; remove presentation flags; completed third throw commits CD"}
+ "post_room":"finish Q2 on closure; cancel E1 old target on room replacement; freeze E2/E3/R2 states; completed third throw commits CD"}
 # Numeric-only test growth. Rank 1 preserves confirmed coefficients. No extra mechanics.
 const TEST_RANK_DAMAGE = {"q":[1.0,1.1,1.2,1.3,1.4],"e":[1.0,1.1,1.2,1.3,1.4],"r":[1.0,1.1,1.2]}

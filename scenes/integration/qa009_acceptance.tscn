@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgjb8407y7wg0"]
+
+[ext_resource type="Script" uid="uid://cnprfvo5wpw8l" path="res://tests/combat/qa009_harness.gd" id="1_jbumo"]
+
+[node name="qa009_acceptance" type="Node" unique_id=967061134]
+script = ExtResource("1_jbumo")

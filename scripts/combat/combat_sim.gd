@@ -344,7 +344,9 @@ func _resolve_pending(event: Dictionary) -> void:
     damage_enemy(target, event.damage, "attack", event.cast_id, false, event.critical)
     if hero.overload_left > 0: damage_enemy(target, event.damage * T.ranked("e3_true",hero.ranks.e), "attack", event.cast_id, true)
     knock_enemy(target, event.direction, 2.2)
-   extensions.on_basic_attack_completed({"cast_id":event.cast_id,"hit":hit})
+   var completed: Dictionary = event.duplicate()
+   completed["hit"] = hit
+   extensions.on_basic_attack_completed(completed)
    emit_event("attack_completed", {"cast_id":event.cast_id,"hit":hit})
   "q1_resolve":
    if not event.kills.is_empty():
@@ -487,6 +489,7 @@ func begin_encounter(next_id: String, roster: Array) -> Dictionary:
  if transaction_active: return {"accepted":false,"reason":"transaction_in_progress"}
  if phase == "combat" or hero.dead: return {"accepted":false,"reason":"invalid_phase"}
  if next_id.is_empty() or next_id == combat_level_id: return {"accepted":false,"reason":"new_level_id_required"}
+ extensions.on_room_change()
  encounter_generation += 1
  pending.clear() # Room-targeted callbacks cannot refer to the replacement enemy collection.
  active_r1_cast = -1
