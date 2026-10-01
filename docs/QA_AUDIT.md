@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-当前结论（第七轮，2026-10-01）：**固定main c1b20bc8的QA-008 Enter/小键盘完整键周期已获OS窗口回归通过；自然药品治疗/满血拒绝/两次上限与跨房重置、HP/AS/CDR消费者及一个纯数值海克斯已独立验证。未发现新的已确认玩法缺陷。** 长MCP会话超时未归因，较短构筑会话正常完成；测试基础设施异常与每项证据边界见第七轮。Windows/导出包、完整技能与视觉仍非最终放行范围。没有修改 main 或任何功能文件；内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档，没有发布部署或接触用户电脑/阿里服务器。
+当前结论（第八轮，2026-10-01）：**固定main c1b20bc8的54种rank1候选装配已完成simulation组合回归；新增QA-009：E1杀死末敌封房时，未结束的Q2在下一房零输入自动命中。** 其他有限数值/动作恢复/慢动作终止门槛未见新增失败；Q2免伤、E1二段、E1目标死亡、P2×E3信用的四条高风险OS自然路径已取得独立证据。矩阵夹具与窗口范围分开，不能签署完整放行。ae673及新发行包不在本报告基线。内容只在QA分支`tests/qa`与本文档，未修改功能、发布部署或访问用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -367,3 +367,50 @@ K→鼠标学Q→Esc→Enter短按：只开始第1房，没有重开修习。小
 构筑OS脚本已写入`completed=true`、捕获done后，退出清理阶段发生一次脚本自身别名冲突（步骤简写C覆盖ctypes别名，XCloseDisplay参数声明失败）。保留实际执行的`round7_build_input_executed.py`和`os-driver.log`；复跑脚本改名capture_step，未改已执行操作或证据。该非零退出不抹掉已完成输入与读回，也不称脚本全程零错误。标准MCP后续正常到MCP_CHECK_COMPLETE并清理当次应用/显示/Xauthority。
 
 复跑：先用本SHA标准客户端运行`round7_build.json`建立只读观测器，独立重启执行`round7_window.json`与`round7_input.py`；药品自然受伤会变化，不能假定固定份数必定留药，应据实际读回调整OS步骤，本次接续脚本为`round7_resume.py`。构筑用`round7_build2.json`→独立重启`round7_build_window.json`，并行OS驱动`round7_build_input.py`。全部GUI结束后再顺序运行`round7_boundaries.gd`，不并行开启加载同一MCP插件的Godot进程。`round7_verify.py`使用本次具名结果目录；原长会话超时保持原始失败记录，不改写成完整通过。
+
+## 第八轮：固定c1b20bc8候选组合边界（2026-10-01）
+
+本轮仍只测 `c1b20bc8da414452c113936b26ce9a4874bb733d`，没有切入后续表现提交ae673。54组合指Q三个候选×E三个×R两个×P三个，**每项rank1**；不是所有阶数笛卡尔积，更不假定R后两阶门槛定稿。装备与海克斯不额外开hook。
+
+### QA-009：E1自然封房时，未命中的Q2链重选下一房敌人（P2）
+
+本轮“房间结束无延迟跨房伤害”门槛失败。最初夹具：英雄原点、最后一个1HP小怪在(0,0,-1)，启动E1后启动Q2；E1先致命，真实_check_victory封房，而Q2的cast_id2/target enemy_1/next=.2仍留在hero.cast_state。进入下一房放1000HP目标(0,0,-2)，不发任何新输入，旧Q2命中，新目标HP1000→952。
+
+定位：`ability_extensions.gd:145-147`对不存在的旧目标直接在当前living列表重选，cast_state.q2没有房间身份；`:157`继续沿用旧cast_id伤害。`combat_sim.gd:486-497`虽清pending并换新敌人集合，但不处理这个链；`ability_extensions.gd:on_encounter_end`仅撤不可选中展示标记，没有给Q2执行本轮无后续目标结束。不能靠只清pending修复此路径。
+
+现有`ability_tuning.gd:16`声明freeze ability states；`COMBAT_PROGRESS.md`列明E1/E2/E3/R2保留策略，却没有明确允许旧Q2链在无旧房合法目标时跨房重新选敌。本报告不要求清除全部Buff/重施，也不把未定数值当bug；报告的是与本轮明确“无延迟跨房伤害”门槛相冲突的实际路径。若设计拟允许跨房续链，需明确修改该门槛/策略，不能把本次零输入新房命中当作已通过。
+
+[初始最小证据](../tests/qa/round8_probe_initial.json)。此条目前是实际simulation夹具，不是OS复现。矩阵里Q2+E1与两种R/三种P形成6条失败行，均归这一根因，不堆成6个缺陷。
+
+### 54组合夹具范围
+
+`round8_matrix.gd`直接调用固定SHA真实simulation与configure_test_loadout夹具。每组合交错请求E/Q/R/普攻/Shift，记录各主动槽确实接受过施放；HP和CD全程有限且非负；停止输入后给足真实模拟时间，动作锁、Q2/E2、E3持续及演出最终结束。额外用真实伤害事件触达被动低血/击杀计数路径，不宣称自然玩家触发。
+
+每组合两种施法顺序(E→Q→R、E→R→Q)让最后目标被实际伤害杀死、自然封房，再换房不输入检查敌人HP及旧状态后续能否结束。另分开“演出中受到致命伤仍免伤”“外部强制终止生命周期清慢动作”“演出结束后的真实致死与死亡冻结”，不把强制终止冒充被免伤期间自然杀死。
+
+所有27个含R2的组合另走投1→完成普攻→投2→完成普攻→投3，实际nails为1/2/3、attacks为0/1/2，第三投结束提交CD；这验证累计不清零而不是只调用三次R、期间没有普攻。完整[矩阵结果](../tests/qa/round8_matrix.json)逐组合保留边界快照和事件。
+
+### QA-009进一步最小化：无需1HP目标
+
+后来单独顺序执行[当前最小脚本](../tests/qa/round8_probe.gd)：默认64HP小怪→真实普攻32→推进攻击命中→E1→Q2。E1实际杀死剩余32HP，自然victory；旧Q2 cast_id3留到下一房，不输入即对新1000HP目标造成48伤害。[当前结果](../tests/qa/round8_probe.json)保留完整事件，初始1HP版本另存未覆盖。只是一条根因的更贴近常规战斗复现，不新增缺陷编号。
+
+### 四条高风险自然OS路径
+
+窗口基线同为c1b20，候选均通过真实修习菜单选择，点数来自自然击杀升级；观测器只记录，不设置生命、敌人、技能、经验、AI或时钟。无装备或海克斯额外开hook。
+
+1. **Q2免伤/不可选中**：初始点经菜单选Q2。在真实敌人预警末段用OS Q启动链。事件sequence8/9、world_time1.47/1.59，两次`enemy_impact.hit=true`，同时Q2 state存在、immune=true、untargetable=true，HP均240；不是因为敌人根本没打中而推断免伤。链结束后状态/不可选中解除、Q转CD，随后左键清完第一房。
+2. **E1标记二段**：第一房自然升级后用新点学E1；下一房OS E投出匕首，实际标记enemy_4，第二次E穿刺造成击杀，并发e1_finished/e1_pierce及实际CD。没有直接调用重施方法。
+3. **E1标记目标死亡**：第三房初次尝试未等待上一房保留的E1 CD，脚本等待标记而角色自然倒地，保留失败前置样本，不称游戏挂死。使用真实Esc/Space自救，再用WASD移动等待仍在战斗计时的CD结束，E标记enemy_8，左键实际击杀该目标；E1自动失效并转CD，继续清完第三房。重复E的冷却拒绝也有原始回执。没有清CD或改血来让流程通过。
+4. **P2×活动E3**：另起自然新局，前两房学Q1/获两点，再经选项菜单学E3和P2；第三房用普攻清至只剩一个敌人，让其真实攻击。HP52.5075时OS开启E3并向空处Q，后续真实受击越过10%阈值触发P2；读回HP35.3575、E3余2.9秒、`e_reset_credit=true`、Q CD0。通过实际WASD绕场保持存活：第一次E3结束E CD0且信用删除；再按E实际启动第二轮，结束E CD31.7秒，信用不能无限使用。最终HP40.74，仍在combat，无死亡/自救夹具介入该P2路径。
+
+[独立OS验证](../tests/qa/round8_window_report.json)；[Q2/E1具名样本](../tests/qa/evidence/round8-q2-e1-final/os-samples.json)及[输入日志](../tests/qa/evidence/round8-q2-e1-final/os-input.json)；[P2/E3样本](../tests/qa/evidence/round8-p2-e3/os-samples.json)及[输入日志](../tests/qa/evidence/round8-p2-e3/os-input.json)。已亲自查看Q2/E1 [第三房战斗图](../tests/qa/evidence/round8-q2-e1-final/step-44-get_game_screenshot-0.png)、[目标死亡后仍在CD图](../tests/qa/evidence/round8-q2-e1-final/step-249-get_game_screenshot-0.png)，及P2/E3 [第二轮结束E CD30.5、P2 CD108.1图](../tests/qa/evidence/round8-p2-e3/step-126-get_game_screenshot-0.png)。截图只证明对应时刻，免伤/P2信用全过程以原始事件与状态为证据，不用一张静态图代替。
+
+R2累计不清零目前只有矩阵内真实simulation接口证据，未声称自然OS升到6级再操作R2。54组合不是54套真人游玩。Windows、导出包、所有技能阶数和后续ae673表现均不在本轮通过范围。
+
+### MCP异常与测试前置失误
+
+首轮OS用Home/Down/Enter操作候选菜单，实际仍学到Q1，脚本却等Q2结束；读回揭示候选不对，未将其计入Q2通过。随后改为读取PopupMenu实际屏幕位置/尺寸，直接OS鼠标点击选项，并在施法前检查账本候选；没有调用OptionButton.select或模型学习来代替输入。第一轮原始回执与日志保留在`round8-q2-e1`。
+
+该首轮第94步`execute_game_script(qa_read())`返回Runtime request timed out。`process-monitor.json`每2秒记录时刻、PID、状态、CPU、RSS；`observed-tool-errors.json`记录确切调用及错误回执。超时回执距监控起点约54.63秒，距离上次成功读回约5.7秒；监控最终记录到58.6秒清理。原第一版进程过滤仅匹配小写godot，确认记录的是编辑器/Blender/Xorg，**不能据此断言游戏子进程超时时仍存活**；后续监控改为大小写无关并包含游戏名。类似超时已跨轮出现，但次数/时长不固定，根因未定位，未擅改网络/端口。
+
+后续把观测历史缩小至20事件/12帧并把读回间隔从0.12改为0.35秒。Q2/E1完整标准MCP会话正常完成；P2/E3所有要求的OS步骤及验证完成后，主动中断未使用的尾部只读观察（exit130，非超时）。两个后续会话没有已完成调用的application_error。不能据此宣布MCP故障已修复。所有应用/显示由客户端finally清理，未留下Xauthority；观察时使用原标准SDK客户端，未直接连接插件端口。

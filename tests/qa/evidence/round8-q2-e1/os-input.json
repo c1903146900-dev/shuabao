@@ -1,0 +1,446 @@
+[
+  {
+    "time": 1790835095.8140175,
+    "input": "step 0 ('capture', 'initial') phase=preparation source=step-02-execute_game_script.json"
+  },
+  {
+    "time": 1790835095.8151639,
+    "input": "sample initial"
+  },
+  {
+    "time": 1790835096.3141882,
+    "input": "step 1 ('key', 107) phase=preparation source=step-04-execute_game_script.json"
+  },
+  {
+    "time": 1790835096.3157465,
+    "input": "key 107 1"
+  },
+  {
+    "time": 1790835096.3560817,
+    "input": "key 107 0"
+  },
+  {
+    "time": 1790835096.5162501,
+    "input": "step 2 ('select', 'Q', 1) phase=preparation source=step-05-execute_game_script.json"
+  },
+  {
+    "time": 1790835096.5164227,
+    "input": "motion [817.0, 293.0] screen 851,462"
+  },
+  {
+    "time": 1790835096.5171862,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790835096.557649,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790835096.6481276,
+    "input": "key 65360 1"
+  },
+  {
+    "time": 1790835096.688524,
+    "input": "key 65360 0"
+  },
+  {
+    "time": 1790835096.7789667,
+    "input": "key 65364 1"
+  },
+  {
+    "time": 1790835096.8194845,
+    "input": "key 65364 0"
+  },
+  {
+    "time": 1790835096.91277,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790835096.953358,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790835097.050658,
+    "input": "step 3 ('click', 'learn_Q') phase=preparation source=step-07-execute_game_script.json"
+  },
+  {
+    "time": 1790835097.050923,
+    "input": "motion [1038.5, 293.0] screen 1064,462"
+  },
+  {
+    "time": 1790835097.0512795,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790835097.0917962,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790835097.1907914,
+    "input": "step 4 ('key', 65307) phase=preparation source=step-08-execute_game_script.json"
+  },
+  {
+    "time": 1790835097.1910255,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790835097.2323174,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790835097.3285758,
+    "input": "step 5 ('key', 65293) phase=preparation source=step-09-execute_game_script.json"
+  },
+  {
+    "time": 1790835097.328796,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790835097.3695948,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790835097.496783,
+    "input": "step 6 ('q2_window',) phase=combat source=step-10-execute_game_script.json"
+  },
+  {
+    "time": 1790835097.6859355,
+    "input": "step 6 ('q2_window',) phase=combat source=step-11-execute_game_script.json"
+  },
+  {
+    "time": 1790835097.8717895,
+    "input": "step 6 ('q2_window',) phase=combat source=step-12-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.0307326,
+    "input": "step 6 ('q2_window',) phase=combat source=step-13-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.2215223,
+    "input": "step 6 ('q2_window',) phase=combat source=step-14-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.408397,
+    "input": "step 6 ('q2_window',) phase=combat source=step-15-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.5666227,
+    "input": "step 6 ('q2_window',) phase=combat source=step-16-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.7524073,
+    "input": "step 6 ('q2_window',) phase=combat source=step-17-execute_game_script.json"
+  },
+  {
+    "time": 1790835098.7546115,
+    "input": "sample before_q2"
+  },
+  {
+    "time": 1790835098.7548487,
+    "input": "motion [625.520812988281, 432.236267089844] screen 668,595"
+  },
+  {
+    "time": 1790835098.7553387,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790835098.7958035,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790835098.924669,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-18-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.1191883,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-19-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.2767687,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-20-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.4660335,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-21-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.6535256,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-22-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.8402314,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-23-execute_game_script.json"
+  },
+  {
+    "time": 1790835099.996643,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-24-execute_game_script.json"
+  },
+  {
+    "time": 1790835100.190692,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-25-execute_game_script.json"
+  },
+  {
+    "time": 1790835100.3821843,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-26-execute_game_script.json"
+  },
+  {
+    "time": 1790835100.5414605,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-27-execute_game_script.json"
+  },
+  {
+    "time": 1790835100.735126,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-28-execute_game_script.json"
+  },
+  {
+    "time": 1790835100.9236891,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-29-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.0894132,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-30-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.2787287,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-31-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.4379,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-32-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.6393938,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-33-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.797979,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-34-execute_game_script.json"
+  },
+  {
+    "time": 1790835101.990238,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-35-execute_game_script.json"
+  },
+  {
+    "time": 1790835102.1860025,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-36-execute_game_script.json"
+  },
+  {
+    "time": 1790835102.3452206,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-37-execute_game_script.json"
+  },
+  {
+    "time": 1790835102.5415394,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-38-execute_game_script.json"
+  },
+  {
+    "time": 1790835102.7025275,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-39-execute_game_script.json"
+  },
+  {
+    "time": 1790835102.8964198,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-40-execute_game_script.json"
+  },
+  {
+    "time": 1790835103.0619822,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-41-execute_game_script.json"
+  },
+  {
+    "time": 1790835103.2566497,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-42-execute_game_script.json"
+  },
+  {
+    "time": 1790835103.4249291,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-43-execute_game_script.json"
+  },
+  {
+    "time": 1790835103.7809553,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-45-execute_game_script.json"
+  },
+  {
+    "time": 1790835103.9411848,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-46-execute_game_script.json"
+  },
+  {
+    "time": 1790835104.1321797,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-47-execute_game_script.json"
+  },
+  {
+    "time": 1790835104.3221092,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-48-execute_game_script.json"
+  },
+  {
+    "time": 1790835104.4860027,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-49-execute_game_script.json"
+  },
+  {
+    "time": 1790835104.6781137,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-50-execute_game_script.json"
+  },
+  {
+    "time": 1790835104.8737724,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-51-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.0328379,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-52-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.2275627,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-53-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.3885224,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-54-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.5818357,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-55-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.754164,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-56-execute_game_script.json"
+  },
+  {
+    "time": 1790835105.9476733,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-57-execute_game_script.json"
+  },
+  {
+    "time": 1790835106.1137362,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-58-execute_game_script.json"
+  },
+  {
+    "time": 1790835106.3382638,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-59-execute_game_script.json"
+  },
+  {
+    "time": 1790835106.5314121,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-60-execute_game_script.json"
+  },
+  {
+    "time": 1790835106.6927888,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-61-execute_game_script.json"
+  },
+  {
+    "time": 1790835106.8880534,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-62-execute_game_script.json"
+  },
+  {
+    "time": 1790835107.04647,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-63-execute_game_script.json"
+  },
+  {
+    "time": 1790835107.2359397,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-64-execute_game_script.json"
+  },
+  {
+    "time": 1790835107.4271727,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-65-execute_game_script.json"
+  },
+  {
+    "time": 1790835107.5869322,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-66-execute_game_script.json"
+  },
+  {
+    "time": 1790835107.8409455,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-67-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.0036976,
+    "input": "step 7 ('wait_q2',) phase=combat source=step-68-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.1766808,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-69-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.3500223,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-70-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.5480747,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-71-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.7110069,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-72-execute_game_script.json"
+  },
+  {
+    "time": 1790835108.9353428,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-73-execute_game_script.json"
+  },
+  {
+    "time": 1790835109.1280322,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-74-execute_game_script.json"
+  },
+  {
+    "time": 1790835109.3208072,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-75-execute_game_script.json"
+  },
+  {
+    "time": 1790835109.4854918,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-76-execute_game_script.json"
+  },
+  {
+    "time": 1790835109.6814415,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-77-execute_game_script.json"
+  },
+  {
+    "time": 1790835109.9101405,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-78-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.1026256,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-79-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.2709656,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-80-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.4641807,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-81-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.6291573,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-82-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.791081,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-83-execute_game_script.json"
+  },
+  {
+    "time": 1790835110.9843473,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-84-execute_game_script.json"
+  },
+  {
+    "time": 1790835111.401845,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-86-execute_game_script.json"
+  },
+  {
+    "time": 1790835111.593975,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-87-execute_game_script.json"
+  },
+  {
+    "time": 1790835111.7580948,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-88-execute_game_script.json"
+  },
+  {
+    "time": 1790835111.9515562,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-89-execute_game_script.json"
+  },
+  {
+    "time": 1790835112.1158512,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-90-execute_game_script.json"
+  },
+  {
+    "time": 1790835112.311024,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-91-execute_game_script.json"
+  },
+  {
+    "time": 1790835112.4725215,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-92-execute_game_script.json"
+  },
+  {
+    "time": 1790835112.6645572,
+    "input": "step 7 ('wait_q2',) phase=downed source=step-93-execute_game_script.json"
+  }
+]

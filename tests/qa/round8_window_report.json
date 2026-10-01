@@ -1,0 +1,177 @@
+{
+  "sha": "c1b20bc8da414452c113936b26ce9a4874bb733d",
+  "input": "OS XTest with read-only MCP; no enemy/HP/skill/XP/AI fixture edits",
+  "checks": [
+    {
+      "check": "Q2 actually learned through UI",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS Q2 immune to actual enemy impacts that geometrically hit",
+      "passed": true,
+      "data": [
+        {
+          "event": {
+            "actor_id": "enemy_1",
+            "combat_level_id": "run-9655224/room-1",
+            "hit": true,
+            "kind": "enemy_impact",
+            "sequence": 8,
+            "world_time": 1.46999999999999
+          },
+          "hero": {
+            "cd": {
+              "attack": 0.0,
+              "e": 0.0,
+              "passive": 0.0,
+              "q": 0.0,
+              "r": 0.0,
+              "shift": 0.0
+            },
+            "e3": 0.0,
+            "hp": 240.0,
+            "immune": true,
+            "state": {
+              "q2": {
+                "cast_id": 1,
+                "damage": 48.0,
+                "landing": "(0.0, 0.0, 5.0)",
+                "last_position": "(0.0, 0.0, 5.0)",
+                "next": 1.61499999999999,
+                "search_center": "(0.0, 0.0, 5.0)",
+                "search_range": 8.0,
+                "target": "enemy_1",
+                "visited": []
+              }
+            },
+            "untargetable": true
+          },
+          "scale": 1.0
+        },
+        {
+          "event": {
+            "actor_id": "enemy_2",
+            "combat_level_id": "run-9655224/room-1",
+            "hit": true,
+            "kind": "enemy_impact",
+            "sequence": 9,
+            "world_time": 1.58999999999999
+          },
+          "hero": {
+            "cd": {
+              "attack": 0.0,
+              "e": 0.0,
+              "passive": 0.0,
+              "q": 0.0,
+              "r": 0.0,
+              "shift": 0.0
+            },
+            "e3": 0.0,
+            "hp": 240.0,
+            "immune": true,
+            "state": {
+              "q2": {
+                "cast_id": 1,
+                "damage": 48.0,
+                "landing": "(0.0, 0.0, 5.0)",
+                "last_position": "(0.0, 0.0, 5.0)",
+                "next": 1.61499999999999,
+                "search_center": "(0.0, 0.0, 5.0)",
+                "search_range": 8.0,
+                "target": "enemy_1",
+                "visited": []
+              }
+            },
+            "untargetable": true
+          },
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "check": "OS Q2 ends chain and starts CD",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS E1 marked target recast performs pierce then CD",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS basic attack kills marked target; E1 invalidates and starts CD",
+      "passed": true,
+      "data": {
+        "target": "enemy_8"
+      }
+    },
+    {
+      "check": "OS Q2/E1 three-room route finishes after natural rescue and cooldown wait",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS true low-health P2 triggers while E3 remains active",
+      "passed": true,
+      "data": [
+        {
+          "event": {
+            "combat_level_id": "run-9713404/room-3",
+            "kind": "low_health_passive",
+            "policy": "active_cast_finishes_then_skips_next_cooldown",
+            "sequence": 106,
+            "world_time": 30.5899999999982
+          },
+          "hero": {
+            "cd": {
+              "attack": 0.0,
+              "e": 0.0,
+              "passive": 120.0,
+              "q": 0.0,
+              "r": 0.0,
+              "shift": 0.0
+            },
+            "e3": 3.22500000000008,
+            "hp": 35.1949999999887,
+            "immune": false,
+            "state": {
+              "e_reset_credit": true
+            },
+            "untargetable": false
+          },
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "check": "OS first E3 end spends exactly one reset credit",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS next E3 end returns normal cooldown; credit not infinite",
+      "passed": true,
+      "data": {
+        "second_E_CD": 31.7000000000001
+      }
+    },
+    {
+      "check": "OS player stayed alive by actual movement during P2/E3 end checks",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "failures": [],
+  "paths": [
+    "Q2 real overlapping enemy impacts",
+    "E1 marked recast",
+    "E1 marked-target killed by attack",
+    "P2 while E3 active and one-shot reset credit"
+  ],
+  "not_claimed": [
+    "QA009 cross-room damage is simulation fixture only",
+    "R2 cumulative 1/2/3 is simulation fixture, not OS level6 play",
+    "all 54 combos are rank1 fixture coverage, not natural complete play"
+  ]
+}

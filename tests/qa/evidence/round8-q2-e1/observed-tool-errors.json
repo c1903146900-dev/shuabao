@@ -1,0 +1,30 @@
+{
+  "observed_at": 1790835122.3720832,
+  "since_monitor_start": 58.62276244163513,
+  "errors": [
+    {
+      "call": "step-94-execute_game_script.json",
+      "mtime": 1790835118.3837247,
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"error\": \"Runtime request timed out\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "application_error": true
+      }
+    }
+  ],
+  "processes": {
+    "epoch": 1790835122.3447998,
+    "elapsed": 58.595479249954224,
+    "xauthority": false,
+    "processes": []
+  }
+}

@@ -1,0 +1,209 @@
+[
+  {
+    "event": {
+      "combat_level_id": "run-9713404/room-3",
+      "kind": "low_health_passive",
+      "policy": "active_cast_finishes_then_skips_next_cooldown",
+      "sequence": 106,
+      "world_time": 30.5899999999982
+    },
+    "hero": {
+      "cd": {
+        "attack": 0.0,
+        "e": 0.0,
+        "passive": 120.0,
+        "q": 0.0,
+        "r": 0.0,
+        "shift": 0.0
+      },
+      "e3": 3.22500000000008,
+      "hp": 35.1949999999887,
+      "immune": false,
+      "state": {
+        "e_reset_credit": true
+      },
+      "untargetable": false
+    },
+    "scale": 1.0
+  },
+  {
+    "time": 1790835596.6745465,
+    "input": "sample P2_during_E3"
+  },
+  {
+    "time": 1790835597.0611947,
+    "input": "step 23 ('first_end',) phase=combat source=step-99-execute_game_script.json"
+  },
+  {
+    "time": 1790835597.061404,
+    "input": "key 97 1"
+  },
+  {
+    "time": 1790835597.0618927,
+    "input": "key 119 1"
+  },
+  {
+    "time": 1790835597.5379725,
+    "input": "step 23 ('first_end',) phase=combat source=step-100-execute_game_script.json"
+  },
+  {
+    "time": 1790835597.9797611,
+    "input": "step 23 ('first_end',) phase=combat source=step-101-execute_game_script.json"
+  },
+  {
+    "time": 1790835598.4183736,
+    "input": "step 23 ('first_end',) phase=combat source=step-102-execute_game_script.json"
+  },
+  {
+    "time": 1790835598.8275096,
+    "input": "step 23 ('first_end',) phase=combat source=step-103-execute_game_script.json"
+  },
+  {
+    "time": 1790835598.8277628,
+    "input": "key 97 0"
+  },
+  {
+    "time": 1790835599.243364,
+    "input": "step 23 ('first_end',) phase=combat source=step-104-execute_game_script.json"
+  },
+  {
+    "time": 1790835599.6542091,
+    "input": "step 23 ('first_end',) phase=combat source=step-105-execute_game_script.json"
+  },
+  {
+    "time": 1790835599.6748188,
+    "input": "sample credited_E3_end"
+  },
+  {
+    "time": 1790835599.675101,
+    "input": "key 101 1"
+  },
+  {
+    "time": 1790835599.7205088,
+    "input": "key 101 0"
+  },
+  {
+    "time": 1790835600.0383632,
+    "input": "step 24 ('second_started',) phase=combat source=step-106-execute_game_script.json"
+  },
+  {
+    "time": 1790835600.03883,
+    "input": "key 119 0"
+  },
+  {
+    "time": 1790835600.0395868,
+    "input": "key 100 1"
+  },
+  {
+    "time": 1790835600.0537918,
+    "input": "sample second_E3_started"
+  },
+  {
+    "time": 1790835600.4711838,
+    "input": "step 25 ('second_end',) phase=combat source=step-107-execute_game_script.json"
+  },
+  {
+    "time": 1790835600.8551958,
+    "input": "step 25 ('second_end',) phase=combat source=step-108-execute_game_script.json"
+  },
+  {
+    "time": 1790835601.2763028,
+    "input": "step 25 ('second_end',) phase=combat source=step-109-execute_game_script.json"
+  },
+  {
+    "time": 1790835601.6998997,
+    "input": "step 25 ('second_end',) phase=combat source=step-110-execute_game_script.json"
+  },
+  {
+    "time": 1790835602.086192,
+    "input": "step 25 ('second_end',) phase=combat source=step-111-execute_game_script.json"
+  },
+  {
+    "time": 1790835602.5012183,
+    "input": "step 25 ('second_end',) phase=combat source=step-112-execute_game_script.json"
+  },
+  {
+    "time": 1790835602.5017314,
+    "input": "key 100 0"
+  },
+  {
+    "time": 1790835602.5020494,
+    "input": "key 115 1"
+  },
+  {
+    "time": 1790835602.887232,
+    "input": "step 25 ('second_end',) phase=combat source=step-113-execute_game_script.json"
+  },
+  {
+    "time": 1790835603.2983384,
+    "input": "step 25 ('second_end',) phase=combat source=step-114-execute_game_script.json"
+  },
+  {
+    "time": 1790835603.714002,
+    "input": "step 25 ('second_end',) phase=combat source=step-115-execute_game_script.json"
+  },
+  {
+    "time": 1790835604.1362314,
+    "input": "step 25 ('second_end',) phase=combat source=step-116-execute_game_script.json"
+  },
+  {
+    "time": 1790835604.5569348,
+    "input": "step 25 ('second_end',) phase=combat source=step-117-execute_game_script.json"
+  },
+  {
+    "time": 1790835604.9427423,
+    "input": "step 25 ('second_end',) phase=combat source=step-118-execute_game_script.json"
+  },
+  {
+    "time": 1790835605.3564022,
+    "input": "step 25 ('second_end',) phase=combat source=step-119-execute_game_script.json"
+  },
+  {
+    "time": 1790835605.3566864,
+    "input": "key 115 0"
+  },
+  {
+    "time": 1790835605.3572342,
+    "input": "key 119 1"
+  },
+  {
+    "time": 1790835605.7714736,
+    "input": "step 25 ('second_end',) phase=combat source=step-120-execute_game_script.json"
+  },
+  {
+    "time": 1790835605.7720203,
+    "input": "key 119 0"
+  },
+  {
+    "time": 1790835605.7725,
+    "input": "key 97 1"
+  },
+  {
+    "time": 1790835606.188032,
+    "input": "step 25 ('second_end',) phase=combat source=step-121-execute_game_script.json"
+  },
+  {
+    "time": 1790835606.6025805,
+    "input": "step 25 ('second_end',) phase=combat source=step-122-execute_game_script.json"
+  },
+  {
+    "time": 1790835606.9975207,
+    "input": "step 25 ('second_end',) phase=combat source=step-123-execute_game_script.json"
+  },
+  {
+    "time": 1790835607.0137196,
+    "input": "sample second_E3_end"
+  },
+  {
+    "time": 1790835607.4068363,
+    "input": "step 26 ('capture', 'done') phase=combat source=step-124-execute_game_script.json"
+  },
+  {
+    "time": 1790835607.4264472,
+    "input": "sample done"
+  },
+  {
+    "time": 1790835607.4267592,
+    "input": "key 97 0"
+  }
+]

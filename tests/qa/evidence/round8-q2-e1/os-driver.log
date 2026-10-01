@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/shuabao-qa/tests/qa/round8_q2_e1_input.py", line 63, in <module>
+    if 'viewport' not in v:raise RuntimeError(str(v))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: {'error': 'Runtime request timed out'}
