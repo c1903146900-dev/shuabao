@@ -1,0 +1,61 @@
+{
+  "fengli": {
+    "motion_identical": true,
+    "rest_bones_identical": true,
+    "hierarchy_identical": true,
+    "clips": [
+      "attack",
+      "dash",
+      "death",
+      "hit",
+      "idle",
+      "overload",
+      "run",
+      "thrust",
+      "ultimate"
+    ]
+  },
+  "minion": {
+    "motion_identical": true,
+    "rest_bones_identical": true,
+    "hierarchy_identical": true,
+    "clips": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ]
+  },
+  "elite": {
+    "motion_identical": true,
+    "rest_bones_identical": true,
+    "hierarchy_identical": true,
+    "clips": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ]
+  },
+  "boss": {
+    "motion_identical": true,
+    "rest_bones_identical": true,
+    "hierarchy_identical": true,
+    "clips": [
+      "attack",
+      "death",
+      "heavy_attack",
+      "hit",
+      "idle",
+      "release",
+      "walk",
+      "windup"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "minion",
+  "sample_fps": 30,
+  "frames": {
+    "idle": {
+      "intersections": [],
+      "min_foot_z": 0.009998306632041931
+    },
+    "walk": {
+      "intersections": [],
+      "min_foot_z": 0.009997844696044922
+    },
+    "attack": {
+      "intersections": [],
+      "min_foot_z": 0.009997859597206116
+    },
+    "hit": {
+      "intersections": [],
+      "min_foot_z": 0.009998306632041931
+    }
+  },
+  "scope": "All weapon-group meshes versus chest/hips/head-group meshes, including new armor; intentional armor/joint overlaps not tested."
+}

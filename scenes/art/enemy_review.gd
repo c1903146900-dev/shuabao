@@ -19,13 +19,15 @@ func _ready() -> void:
  env.environment = e
  add_child(env)
  var light := DirectionalLight3D.new()
- light.rotation_degrees = Vector3(-55,-25,0)
+ light.rotation_degrees = Vector3(-72,-25,0)
  light.light_energy = .7
  light.name = "ArtSun"
  light.shadow_blur = .2
  light.shadow_enabled = true
- light.shadow_bias = .005
- light.shadow_normal_bias = .01
+ light.shadow_bias = 0.0
+ light.shadow_normal_bias = 0.0
+ light.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
+ light.directional_shadow_max_distance = 30.0
  add_child(light)
  for x in range(-2,3):
   for z in range(-1,2):
@@ -33,6 +35,15 @@ func _ready() -> void:
    add_child(tile)
    tile.position = Vector3(x*4,0,z*4)
    for mesh in tile.find_children("*","MeshInstance3D",true,false):mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+ for x in [-9.2,9.2]:
+  for z in [-5.2,5.2]:
+   var pier: Node3D = load("res://assets/arena/ruin_pier.glb").instantiate()
+   add_child(pier)
+   pier.position = Vector3(x,.01,z)
+ for x in [-6.0,0.0,6.0]:
+  var marker: Node3D = load("res://assets/arena/ruin_marker.glb").instantiate()
+  add_child(marker)
+  marker.position=Vector3(x,.01,5.4)
  var camera := Camera3D.new()
  camera.name = "ReviewCamera"
  camera.projection = Camera3D.PROJECTION_ORTHOGONAL
