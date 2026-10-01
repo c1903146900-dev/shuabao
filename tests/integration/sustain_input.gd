@@ -1,4 +1,4 @@
-extends "res://tests/integration/two_room_input.gd"
+extends "res://tests/integration/presentation_input.gd"
 var sustain_checks := {}
 var sustain_samples := {}
 func sustain_capture(label: String) -> void:

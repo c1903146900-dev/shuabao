@@ -69,7 +69,7 @@ def main():
         if path.is_file():
             for pattern in signatures(path.read_bytes()): findings.append({'path':name,'rule':pattern})
     packages=[]
-    for platform, executable in [('windows','shuabao-smoke.exe'),('linux','shuabao-headless.x86_64')]:
+    for platform, executable in [('windows','shuabao-smoke.exe'),('linux','shuabao-headless.x86_64'),('linux-window','shuabao-client.x86_64')]:
         folder=ROOT/'build'/platform
         pck=Path(executable).with_suffix('.pck').name
         expected={executable,pck}
@@ -82,6 +82,7 @@ def main():
             if name.endswith('.pck'):
                 item['pck']=unpack(path)
                 paths={entry['path'].removeprefix('res://') for entry in item['pck']['entries']}
+                assert all('assets/audio/'+p.name+'.import' in paths or 'assets/audio/'+p.name in paths for p in (ROOT/'assets/audio').glob('*.wav')), 'Missing dynamic audio resources'
                 assert 'assets/ui/FONT_LICENSE.txt' in paths, 'Missing bundled font license'
                 assert 'data/progression/confirmed_rules.json' in paths, 'Missing authoritative point rules'
                 assert any(path in paths for path in ('scenes/integration/room.tscn','scenes/integration/room.scn','scenes/integration/room.tscn.remap')), 'Missing playable entry scene'
