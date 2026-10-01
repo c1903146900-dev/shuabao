@@ -1,0 +1,267 @@
+{
+  "hitbindings": [
+    {
+      "bindings_at_hit": [
+        {
+          "flash_color": "(0.2078, 0.8745, 0.7922, 1.0)",
+          "flash_left": 0.12,
+          "flash_material_bindings": 0,
+          "id": "fengli",
+          "imported": true,
+          "visible_meshes": 41
+        },
+        {
+          "flash_color": "(0.9373, 0.5765, 0.3608, 1.0)",
+          "flash_left": 0.0,
+          "flash_material_bindings": 0,
+          "id": "enemy_12",
+          "imported": true,
+          "visible_meshes": 29
+        }
+      ],
+      "event": {
+        "amount": 18.0,
+        "combat_level_id": "integration-room-1",
+        "kind": "hero_damaged",
+        "position": "(0.0, 0.0, 0.0)",
+        "sequence": 14,
+        "world_time": 0.855000000000001
+      }
+    },
+    {
+      "bindings_at_hit": [
+        {
+          "flash_color": "(0.2078, 0.8745, 0.7922, 1.0)",
+          "flash_left": 0.12,
+          "flash_material_bindings": 0,
+          "id": "fengli",
+          "imported": true,
+          "visible_meshes": 41
+        },
+        {
+          "flash_color": "(0.9373, 0.5765, 0.3608, 1.0)",
+          "flash_left": 0.0,
+          "flash_material_bindings": 0,
+          "id": "enemy_12",
+          "imported": true,
+          "visible_meshes": 29
+        }
+      ],
+      "event": {
+        "amount": 18.0,
+        "combat_level_id": "integration-room-1",
+        "kind": "hero_damaged",
+        "position": "(0.0, 0.0, 0.25755)",
+        "sequence": 17,
+        "world_time": 2.81499999999996
+      }
+    }
+  ],
+  "marked_hud": [
+    {
+      "attacking": false,
+      "clip": "idle",
+      "e3": 0.0,
+      "held": {},
+      "hero_clip": {},
+      "hp": 240.0,
+      "hud_e": "E   Lv.1\n追踪匕首\n就绪",
+      "hud_r": "R   Lv.0\n未学习\n未学习",
+      "panel": false,
+      "phase": "combat",
+      "physical_w": false,
+      "position": "(0.0, 0.0, 0.0)",
+      "q": {
+        "e1": {
+          "cast_id": 1,
+          "damage": 48.0,
+          "deadline": 2.13,
+          "expires": 5.215,
+          "position": "(0.0, 0.0, -1.53)",
+          "stage": "marked",
+          "target": "enemy_12"
+        }
+      },
+      "t": 0.25
+    },
+    {
+      "attacking": false,
+      "clip": "idle",
+      "e3": 0.0,
+      "held": {},
+      "hero_clip": {},
+      "hp": 240.0,
+      "hud_e": "E   Lv.1\n追踪匕首\n就绪",
+      "hud_r": "R   Lv.0\n未学习\n未学习",
+      "panel": false,
+      "phase": "combat",
+      "physical_w": false,
+      "position": "(0.0, 0.0, 0.0)",
+      "q": {
+        "e1": {
+          "cast_id": 1,
+          "damage": 48.0,
+          "deadline": 2.13,
+          "expires": 5.215,
+          "position": "(0.0, 0.0, -1.53)",
+          "stage": "marked",
+          "target": "enemy_12"
+        }
+      },
+      "t": 0.3
+    }
+  ],
+  "9": {
+    "phase": "true_dead",
+    "hp": 0.0,
+    "self_rescue_used": true,
+    "events": [
+      {
+        "actor_id": "enemy_1",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 1,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_2",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 2,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_3",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 3,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_4",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 4,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_5",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 5,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_6",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 6,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_7",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 7,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_8",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 8,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_9",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "elite",
+        "kind": "enemy_spawned",
+        "sequence": 9,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_10",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "elite",
+        "kind": "enemy_spawned",
+        "sequence": 10,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_11",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "boss",
+        "kind": "enemy_spawned",
+        "sequence": 11,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_12",
+        "combat_level_id": "integration-room-1",
+        "enemy_kind": "minion",
+        "kind": "enemy_spawned",
+        "sequence": 12,
+        "world_time": 0.0
+      },
+      {
+        "actor_id": "enemy_12",
+        "combat_level_id": "integration-room-1",
+        "duration": 0.85,
+        "kind": "enemy_warning",
+        "sequence": 13,
+        "world_time": 0.005
+      },
+      {
+        "amount": 1.0,
+        "combat_level_id": "integration-room-1",
+        "kind": "hero_damaged",
+        "position": "(0.0, 0.0, 0.0)",
+        "sequence": 14,
+        "world_time": 0.855000000000001
+      },
+      {
+        "combat_level_id": "integration-room-1",
+        "kind": "encounter_finished",
+        "result": "true_dead",
+        "sequence": 15,
+        "world_time": 0.855000000000001
+      }
+    ],
+    "input": []
+  },
+  "12": {
+    "phase": "preparation",
+    "hp": 240.0,
+    "self_rescue_used": false,
+    "events": [],
+    "input": [
+      {
+        "echo": false,
+        "key": 4194305,
+        "pressed": false,
+        "time": 3.49999999999999
+      },
+      {
+        "echo": false,
+        "key": 4194336,
+        "pressed": true,
+        "time": 3.59999999999999
+      },
+      {
+        "echo": false,
+        "key": 4194336,
+        "pressed": false,
+        "time": 3.64999999999999
+      }
+    ]
+  }
+}

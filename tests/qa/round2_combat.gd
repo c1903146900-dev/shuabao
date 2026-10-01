@@ -50,5 +50,5 @@ func _initialize():
  var actual=s.enemies[0].hp
  record('Ended R1 cannot strike next room without input',actual==1000,{'ended':ended,'next_room_hp':actual,'events':s.event_log})
  s.free()
- var f=FileAccess.open('res://tests/qa/round2_combat.json',FileAccess.WRITE);f.store_string(JSON.stringify(results,'  '));f.close()
+ var f=FileAccess.open(OS.get_environment('QA_COMBAT_REPORT') if not OS.get_environment('QA_COMBAT_REPORT').is_empty() else 'res://tests/qa/round2_combat.json',FileAccess.WRITE);f.store_string(JSON.stringify(results,'  '));f.close()
  quit(1 if results.any(func(r):return not r.passed) else 0)

@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-当前结论（第三轮更新）：**QA-001已在指定修复及catalog源码提交独立复测通过；QA-002待修复SHA；不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
+当前结论（第四轮，2026-10-01）：**固定main a3dd6b47上QA-001/QA-002独立复测通过；新增QA-003至QA-007为窗口/运行期已复现问题；不能签署最终集成可玩通过。** 未收到父任务的最终整合包 SHA，以下只针对指定阶段源码。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -170,3 +170,84 @@ QA-002仍OPEN：收到战斗/集成修复SHA后复跑真实跨房事件复现；
 - `QA_MODEL_ROOT=/workspace/shuabao-progression-fix QA_BASELINE=e022b456007287b40828d45f3363634c749f3e42 QA_ECONOMY_REPORT=/workspace/shuabao-qa/tests/qa/round3_economy_fix.json godot --headless --path /workspace/shuabao-qa --script tests/qa/round2_economy.gd`
 - 第二次经济复跑将根目录换成 `/workspace/shuabao-catalog`，基线与报告文件名相应替换，保留历史结果。
 - `godot --headless --path /workspace/shuabao-catalog --script /workspace/shuabao-qa/tests/qa/round3_catalog.gd`（资源根必须指向catalog提交；脚本和产物仍在QA目录。）
+
+## 第四轮：固定main checkpoint真实窗口验收（2026-10-01）
+
+**唯一被测主线：`a3dd6b47af52b652d293ccc74197060628a6a316`**，包含QA002修复 `5168f6c3a76dd5126f9bd2022a258e1c7c4a150c`。独立只读工作树 `/workspace/shuabao-checkpoint`；没有使用主集成尚在制作的新controller或其他未提供SHA。
+
+执行环境恢复成功，preflight核对Godot4.6.3、Blender4.3.2及显示依赖。复用项目本地固定MCP源码和SDK，未扩权。实际完成标准ClientSession→stdio initialize/tools/list/tools/call→Godot/Blender GUI链路。全部工作流step无工具/应用错误，Godot编辑器日志无Script/Parse Error；启动前几次未连接ready、既有Blender status缺config仍单独记录。标准客户端完成后清理当次GUI/服务。
+
+QA源码仅在本QA分支 `tests/qa`，报告仅本文件；checkpoint工作树git状态干净。MCP隔离fixture内将主场景挂到一个继承原 `scripts/integration/room.gd` 的QA观测脚本，不改变被测room/HUD/战斗/材质逻辑。
+
+### 已知缺陷在实际main的复测
+
+- **QA-001 PASS（源码层）**：直接加载main的 `scripts/progression/model.gd`，原100→买→卖→锻体→撤销序列返回insufficient_gold，仍40金、空背包、锻体1条、撤销账本2条，完整快照不变。这是实际main模型，不是feature分支或复制算法。main还没有实际商店窗口接线，不能称窗口购物通过。
+- **QA-002 PASS（源码层）**：原E1先杀最后目标→自然封房→下一房无输入的重现已消失；原旧cast回放也无效。额外检查E1自然结束周边0.135/0.139/0.140/0.141/0.145真实秒，以及无E1的R1 impact周边0.295/0.299/0.300/0.301/0.305真实秒。impact前旧目标1000、impact后旧目标952符合时机，但所有下一房目标均保持1000、世界倍率1。相同房间impact重复回调也未重伤。
+- 第二轮Q2目标丢失、P2活动E3一次性重置信用、E3跨房冻结续行、R1/R2正常结束/生命周期终止/演出后真死亡边界，同脚本改为加载main后无失败；仅新增报告路径参数，未改期望或复制逻辑。
+
+证据：[round4_models.json](../tests/qa/round4_models.json)、[脚本](../tests/qa/round4_models.gd)、[第二轮边界在main的结果](../tests/qa/round4_combat_boundaries.json)。手动生命周期结束与真实伤害死亡分列，没有把大招免疫期间的致命请求当成实际死亡。
+
+### QA-003：一次Space同时自救并打开修习面板（P2，真实窗口复现）
+
+位置：`scripts/integration/room.gd:99-100` 处理自救后调用close_panels，`scripts/ui/combat_hud.gd:308-315`恢复/设置allocation按钮焦点；同一Space的ui_accept按钮释放行为没有被隔离。
+
+重现：敌人真实攻击令玩家downed→鼠标在空场→Esc关闭结算→Space一次按下/松开。实际事件只有一次self_rescue，但在同次输入之后 `phase=combat`、`self_rescue_used=true`、修习面板重新打开。连续观测里生命由自救84继续受敌攻击降至48；用户没有按K/点击修习。预期Space完成一次自救，不再触发UI按钮。
+
+证据：[汇总space字段](../tests/qa/round4_window_report.json)、[原始step18 MCP回执](../tests/qa/evidence/round4-window/step-18-execute_game_script.json)、[已亲自查看的截图](../tests/qa/evidence/round4-window/step-19-get_game_screenshot-0.png)、[XTest输入日志](../tests/qa/evidence/round4-window/os-input.json)。这不是“复活两次”，而是一次输入触发两个不同动作。等待新controller后复跑同焦点顺序。
+
+### QA-004：按住W仅经过HUD即永久丢失当前移动输入（P2，真实窗口复现）
+
+位置：`room.gd:117-118`在 `live_hud.blocks_gameplay_input()` 时清held_keys；该函数在 `combat_hud.gd:342-343` 对任何HUD悬停Control都返回true，不限模态面板。
+
+重现：按住W移动→鼠标移入修习按钮→仍按住W移回空场。实际物理键状态仍true，held_keys已空；离开UI后连续采样位置固定 `z=-1.799999`，直到松键重新按下才可能恢复。预期即便悬停期间按约定阻断，移出后应能恢复持续按键，不能丢掉用户尚未松开的输入。
+
+证据：[hover_latch_loss_frames](../tests/qa/round4_window_report.json)、[step03回执](../tests/qa/evidence/round4-window/step-03-execute_game_script.json)。没有把焦点外松键的旧测试结果泛化为HUD悬停正常。
+
+### QA-005：活动/可重施/冻结状态错误显示就绪（P2，运行期复现）
+
+位置：`room.gd:169-171`只提交rank/cooldown，所有已学技能reason硬编码就绪，没有活动阶段、重施窗口或战斗phase；`combat_hud.gd:240-246`仅用CD覆盖文字。
+
+- OS E触发E3后，实际overload_left=6.98、E CD0，HUD仍“超载 / 就绪”，并非技能已结束可以再次开启。
+- E2 cast_state.e2仍存在、旋斩未结束，HUD已“就绪”。
+- R2 presenting=true或轮次1续施窗口中，HUD始终“就绪”，没有演出/续投区别。
+- 补测E1实际marked、expires约5.215时，HUD仍“追踪匕首 / 就绪”，没有标记二段提示。
+- victory冻结后Shift仍“就绪”。模拟实际上拒绝冻结动作；这里是UI事实与可用性回显问题，不是证明技能能突破冻结。
+
+证据：[active_ui字段](../tests/qa/round4_window_report.json)、[E1 marked回执摘录](../tests/qa/round4_followup_report.json)、[胜利冻结截图](../tests/qa/evidence/round4-window/step-22-get_game_screenshot-0.png)。未对仍未定的数值作缺陷判断。
+
+### QA-006：E2/R2动作被集成逐帧idle覆盖（P2，运行期复现）
+
+位置：`scripts/actors/actor_view.gd:128-136`将e2_spin/r2_throw映射为attack/ultimate，但集成 `room.gd:177`的hero_clip事件表漏掉两者；`:198-224`逐帧从idle开始重选并play/seek，覆盖视图刚收到的动作。
+
+OS输入E2/R2确实生成技能事件、状态和伤害。QA每0.05秒在原super._physics_process及_animate之后采样实际AnimationPlayer：E2 cast_state存在期间全为idle；R2 presenting=true期间也全为idle。E3对照能采到overload，说明并非所有采样都只能看到idle。期望当前已存在的attack/ultimate动作能在对应技能段播放，不被另一所有者立刻覆盖。没有提出新的美术动作设计要求。
+
+证据：[animation与active_ui字段](../tests/qa/round4_window_report.json)、原始 [E2回执](../tests/qa/evidence/round4-window/step-12-execute_game_script.json) / [R2回执](../tests/qa/evidence/round4-window/step-15-execute_game_script.json)。这些是实际游戏帧动画状态，不以施法结束后的单张静态截图证明动画全过程。
+
+### QA-007：导入GLB没有绑定现有受击闪白材质（P3，受击当帧实证）
+
+位置：`actor_view.gd:27,76`初始化/更新白盒material；`:154-165`替换为GLB时移除原网格，却没有把此闪白通道绑定到新网格。受击事件`:130`仍只设置flash_left。
+
+补测使用真实敌人攻击，命中事件amount18/world_time0.855发生当帧，英雄flash_left=0.12；遍历该实例41个可见GLB MeshInstance3D的material_override及active surface material，匹配闪白material的绑定数为0。敌人实例29网格也为0。因此该受击计时/材质更新不会作用于导入外观。期望保留已存在的可见受击闪白效果或等价绑定；**不是声称所有受击反馈都不存在**，HP、伤害标签与其他动作另有渠道。
+
+证据：[hitbindings](../tests/qa/round4_followup_report.json)、[受击当帧记录的原始MCP回执](../tests/qa/evidence/round4-followup-window/step-03-execute_game_script.json)。这条记录发生在实际hero_damaged之后，不是仅静态猜测或空场截图。
+
+### 窗口正例与验收边界
+
+本轮使用Linux XTest将输入送到真实窗口，MCP只负责准备fixture/读回/截图；没有引擎内Input.parse_input_event冒充OS输入。准备明确简化：敌人数量/HP、AI开关、初始英雄HP、自救是否已用、技能装配点数为测试夹具；随后普攻/技能、击杀、受伤、倒地、自救、真死亡及F5由窗口输入/真实模拟推进。**不声称自然完成整局、通过UI学全技能、拿奖励升级或真人手感**。
+
+- 普攻胜利：OS左键触发两次32伤害，64HP靶子死亡、一次kill并胜利；已查看结算截图。
+- 倒地：准备低血后真实敌人攻击→downed；Space自救事件真实发生，但QA-003失败。
+- 真死亡：单列自救已使用fixture，真实敌人致命攻击→true_dead；[死亡截图](../tests/qa/evidence/round4-followup-window/step-10-get_game_screenshot-0.png)已查看。没有把该fixture当成玩家自然耗尽整局自救次数。
+- 胜利后及真死亡后分别通过Esc/F5真实按键进入preparation，无敌人；F5是已公开的全新局，不是保留旧局成长的retry验收。
+- 面板20次K/Esc开关实测panel_opens=20；第一次先按住攻击再开面板并在面板内松开。面板打开帧attacking均false；只出现开始前和全部关闭后新按键产生的两次attack_started，没有松开补发/面板穿透。点数仍1；本用例未点击学习，故不推断重复扣点/成长订阅全部通过。
+- 战后墙钟 **61.4976秒**，完整hero快照（含CD）及world_time相同。不是直接调用step(60)的模型检查；截图/界面可以继续显示，不驱动战斗时钟。
+- main明确显示奖励未接入，实际金钱/经验仍0、等级1。正式杀敌奖励、成长hook/装备海克斯战斗消费者、恢复事务、30%正式经验死亡罚款均不能因本轮通过而标完成。
+- 截图实际1228×690（嵌入窗口），不是1280×720/1920×1080双分辨率验收。Windows没有执行环境，**NOT_RUN**；本轮是Linux编辑器运行，不是Linux导出包复测。
+
+完整窗口汇总：[round4_window_report.json](../tests/qa/round4_window_report.json)、[补测汇总](../tests/qa/round4_followup_report.json)。输入：[round4_input.py](../tests/qa/round4_input.py)；观测器：[round4_window_harness.gd](../tests/qa/round4_window_harness.gd)。两个build工作流分别保留该轮当时传入的观测脚本，不依赖热重载成功，均独立重启后运行窗口测试。
+
+### 第四轮复现入口
+
+依赖目录用项目内symlink复用前轮安装的固定上游源码/SDK；checkpoint标准 `scripts/mcp/check.py` 自带data/tests复制支持。依次运行QA目录的 `round4_build.json` → 独立重启跑 `round4_window.json`，并行启动 `round4_input.py <新证据目录>`。补测同理使用 `round4_followup_build.json` → `round4_followup_window.json`，输入驱动第二参数传 `round4_followup_stages.json`。每次证据目录必须全新，不能误读旧step作为准备完成信号。脚本不直连插件socket。
+
+新controller/集成SHA到达前不关闭QA-003至007，不将本固定checkpoint结果套用于正在修改的主集成。没有发布或部署。

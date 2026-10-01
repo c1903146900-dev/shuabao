@@ -1,0 +1,15 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+{"check":"Q2 lost initial target replacement=false","data":{"cd":11.99,"hits":[]},"passed":true}
+{"check":"Q2 lost initial target replacement=true","data":{"cd":11.99,"hits":[{"cast_id":1,"combat_level_id":"training-01","kind":"q2_hit","position":"(1.0, 0.0, -0.7)","sequence":7,"strike":1,"target":"enemy_2","world_time":0.2}]},"passed":true}
+{"check":"Q2 next target dies after first hit","data":{},"passed":true}
+{"check":"P2 active E3 gives reset credit without restarting duration","data":{"recast":{"accepted":false,"reason":"already_active"},"remaining":5.00000000000004},"passed":true}
+{"check":"P2 E3 credit survives freeze and skips one end cooldown","data":{},"passed":true}
+{"check":"P2 E3 credit cannot be spent twice","data":{},"passed":true}
+{"check":"r1 enemy lethal during presentation is blocked","data":{},"passed":true}
+{"check":"r1 lifecycle termination clears slow tokens","data":{},"passed":true}
+{"check":"r1 actual lethal after presentation restores terminal clock","data":{},"passed":true}
+{"check":"r2 enemy lethal during presentation is blocked","data":{},"passed":true}
+{"check":"r2 lifecycle termination clears slow tokens","data":{},"passed":true}
+{"check":"r2 actual lethal after presentation restores terminal clock","data":{},"passed":true}
+{"check":"Ended R1 cannot strike next room without input","data":{"ended":{"pending":[],"phase":"victory","r1_active":false,"r_cd":130.0,"scale":1.0,"world_time":0.028},"events":[{"actor_id":"enemy_1","combat_level_id":"training-01","enemy_kind":"minion","kind":"enemy_spawned","sequence":1,"world_time":0.0},{"cast_id":1,"combat_level_id":"training-01","kind":"e1_projectile","sequence":2,"target":"enemy_1","world_time":0.0},{"combat_level_id":"training-01","duration":1.1,"kind":"ultimate_started","position":"(0.0, 0.0, 0.0)","radius":10.0,"sequence":3,"world_time":0.0},{"amount":1.0,"cast_id":1,"combat_level_id":"training-01","critical":false,"damage_type":"ordinary","kind":"damage","position":"(0.0, 0.0, -1.0)","sequence":4,"source":"e1_dagger","target":"enemy_1","world_time":0.028},{"cast_id":1,"combat_level_id":"training-01","credit":"solo_lethal","kind":"kill","position":"(0.0, 0.0, -1.0)","sequence":5,"source":"e1_dagger","target":"enemy_1","world_time":0.028},{"combat_level_id":"training-01","kind":"e1_finished","sequence":6,"world_time":0.028},{"combat_level_id":"training-01","kind":"encounter_finished","result":"victory","sequence":7,"world_time":0.028},{"actor_id":"enemy_2","combat_level_id":"after-natural-victory","enemy_kind":"minion","kind":"enemy_spawned","sequence":8,"world_time":0.028},{"combat_level_id":"after-natural-victory","kind":"encounter_started","sequence":9,"world_time":0.028}],"next_room_hp":1000.0},"passed":true}
