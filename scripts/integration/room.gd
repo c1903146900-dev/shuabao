@@ -23,8 +23,13 @@ var phase_seen := ""
 var motion := {}
 var hero_clip := {}
 var run_serial := 0
+var audio_router: Node
+var mute_button: Button
 
 func _ready() -> void:
+ audio_router = preload("res://scripts/integration/audio_router.gd").new()
+ add_child(audio_router)
+ actor_view_created.connect(_own_animation)
  hero_visual = preload("res://assets/fengli/fengli.glb")
  minion_visual = preload("res://assets/arena/enemies/minion.glb")
  elite_visual = preload("res://assets/arena/enemies/elite.glb")
@@ -52,8 +57,23 @@ func _ready() -> void:
  help_text.position = Vector2(350,78)
  help_text.add_theme_font_size_override("font_size",14)
  live_hud.add_child(help_text)
+ mute_button = Button.new()
+ mute_button.text = "音效：开"
+ mute_button.position = Vector2(1100,174)
+ mute_button.size = Vector2(130,36)
+ live_hud.add_child(mute_button)
+ mute_button.pressed.connect(_toggle_audio)
  _present()
  print("SHUABAO_INTEGRATION_READY checkpoint=3")
+
+func _own_animation(_id: String, view: Node3D) -> void:
+ view.external_animation = true
+ if view.animation_player:
+  view.animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
+
+func _toggle_audio() -> void:
+ audio_router.sfx.set_muted(not audio_router.sfx.muted)
+ mute_button.text = "音效：关" if audio_router.sfx.muted else "音效：开"
 
 func new_run() -> void:
  # F5 is now an explicit same-room retry, never a fresh ledger.
@@ -236,9 +256,11 @@ func _perform_action(action: String, command_id := "", notify := true) -> Dictio
   last_action_receipt = {"action":action,"result":result.duplicate(true),"command_id":id}
  if notify and not result.accepted and is_instance_valid(controller):
   live_hud.adapter.feedback({"text":controller.reason_text(result.reason)})
+  audio_router.ui({"command_id":id},result)
  return result
 
 func _growth_completed(_request: Dictionary, result: Dictionary) -> void:
+ audio_router.ui(_request,result)
  if result.accepted:
   _sync_growth_to_combat()
   _present()
@@ -269,6 +291,7 @@ func _encounter_finished(state: Dictionary) -> void:
  var identity: String = "%s/%s/%s" % [state.combat_level_id,state.phase,state.event_sequence]
  if terminal_seen.has(identity): return
  terminal_seen[identity] = true
+ audio_router.cue("settlement","terminal:"+identity)
  attacking = false
  held_keys.clear()
  if state.phase in ["downed","true_dead"]:
@@ -313,12 +336,14 @@ func _present() -> void:
  controller.present_combat({"hp":h.hp,"hp_max":h.max_hp,"room":"第%d房 · %d/%d" % [room_number,_kills(),simulation.enemies.size()],"wave":"%d" % (1+(maxi(1,room_number)-1)%2),"skills":skills})
  start_button.text = "进入第%d房" % (room_number+1)
  start_button.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
+ mute_button.visible = not live_hud.shade.visible
  help_text.visible = simulation.phase in ["preparation","victory"] and not live_hud.shade.visible
  if not live_hud.shade.visible:
   var controls: Array[Control] = [live_hud.allocation,live_hud.supply_button]
   if start_button.visible: controls.push_front(start_button)
   for button in live_hud.slots.values(): controls.append(button)
   for button in live_hud.equipment: controls.append(button)
+  controls.append(mute_button)
   live_hud._cycle_focus(controls)
   var focused: Control = get_viewport().gui_get_focus_owner()
   if focused == null or not focused.is_visible_in_tree():
@@ -327,14 +352,23 @@ func _present() -> void:
 
 func _on_combat_event(event: Dictionary) -> void:
  super._on_combat_event(event)
+ audio_router.combat(event)
  if event.kind == "kill":
+  var previous_level: int = ledger.model.snapshot().level
   var receipt: Dictionary = _credit_kill(event)
+  if receipt.accepted and ledger.model.snapshot().level > previous_level:
+   audio_router.cue("level_up","reward:"+str(event.sequence))
   if not receipt.accepted: reward_errors.append(receipt)
- var clip: String = {"attack_started":"attack","dash":"dash","q1":"thrust","q2_hit":"thrust","q3_wave":"attack","overload_started":"overload","ultimate_started":"ultimate","hero_damaged":"hit"}.get(event.kind,"")
+ var clip: String = {"attack_started":"attack","dash":"dash","q1":"thrust","q2_hit":"thrust","q3_wave":"attack","e2_spin":"attack","r2_throw":"ultimate","overload_started":"overload","ultimate_started":"ultimate","hero_damaged":"hit"}.get(event.kind,"")
  if not clip.is_empty():
-  hero_clip = {"clip":clip,"start":simulation.clock.world_time,"duration":{"attack_started":0.28,"dash":0.16,"q1":0.2,"hero_damaged":0.25}.get(event.kind,0.6)}
+  hero_clip = {"clip":clip,"start":simulation.clock.world_time,"duration":{"attack_started":0.28,"dash":0.16,"q1":0.2,"hero_damaged":0.25,"e2_spin":0.25,"r2_throw":0.45,"ultimate_started":T.INITIAL.r1_show_duration}.get(event.kind,0.6),"r1":event.kind == "ultimate_started"}
 
 func _animate(dt: float) -> void:
+ var age := 0.0
+ if not hero_clip.is_empty():
+  age = simulation.clock.world_time - hero_clip.start
+  if hero_clip.get("r1",false):
+   age = hero_clip.duration - float(simulation.clock.presenters.get("fengli",0.0))
  var s: Dictionary = simulation.snapshot()
  var actors: Array = s.enemies.duplicate()
  var hero: Dictionary = s.hero.duplicate()
@@ -364,9 +398,9 @@ func _animate(dt: float) -> void:
   elif actor.kind != "hero" and actor.state == "recover":
    clip = "release"
    t = (1.6 if actor.kind == "boss" else 1.1) - actor.timer
-  elif actor.kind == "hero" and not hero_clip.is_empty() and s.world_time-hero_clip.start < hero_clip.duration:
+  elif actor.kind == "hero" and not hero_clip.is_empty() and age < hero_clip.duration:
    clip = hero_clip.clip
-   t = (s.world_time-hero_clip.start)/hero_clip.duration*player.get_animation(clip).length
+   t = age/hero_clip.duration*player.get_animation(clip).length
   elif distance > 0.00001:
    clip = "run" if actor.kind == "hero" else "walk"
    m.walk += distance / (2.0 if actor.kind == "hero" else 1.15)
@@ -386,7 +420,7 @@ func _animate(dt: float) -> void:
   motion[id] = m
 
 func integration_snapshot() -> Dictionary:
- return {"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"3_recovery_stats","room_number":room_number,"reward_errors":reward_errors.duplicate(),"last_action_receipt":last_action_receipt.duplicate(true)}
+ return {"audio":audio_router.snapshot(),"combat":simulation.snapshot(),"growth":ledger.model.snapshot(),"hud":live_hud.adapter.state,"kills":_kills(),"panel_open":live_hud.shade.visible,"attacking":attacking,"animations":motion.duplicate(true),"checkpoint":"3_recovery_stats","room_number":room_number,"reward_errors":reward_errors.duplicate(),"last_action_receipt":last_action_receipt.duplicate(true)}
 
 func integration_report() -> String:
  return JSON.stringify(integration_snapshot())

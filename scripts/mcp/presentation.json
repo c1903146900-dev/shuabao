@@ -1,0 +1,47 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/presentation_acceptance.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 20
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "start_presentation()"
+    },
+    "wait_after": 15
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "presentation_report()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "get_editor_errors",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]

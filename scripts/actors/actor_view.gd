@@ -12,6 +12,10 @@ var swing_left: float = 0.0
 var body_color: Color
 var dead_seen: bool = false
 var imported_art: bool = false
+var external_animation: bool = false
+var flash_meshes: Array[MeshInstance3D] = []
+var original_overlays: Array = []
+var flash_material: StandardMaterial3D
 var previous_position: Vector3 = Vector3.ZERO
 var warning: MeshInstance3D
 
@@ -74,6 +78,7 @@ func sync(state: Dictionary, dt: float) -> void:
  flash_left = maxf(0.0, flash_left - dt)
  swing_left = maxf(0.0, swing_left - dt)
  material.albedo_color = Color.WHITE if flash_left > 0 else body_color
+ _apply_flash()
  var dead: bool = state.get("dead", false)
  if not imported_art:
   visual.rotation.z = lerpf(visual.rotation.z, 1.5 if dead else 0.0, minf(1.0, dt * 12.0))
@@ -84,7 +89,7 @@ func sync(state: Dictionary, dt: float) -> void:
  var role: String = {"hero":"风厉","minion":"","elite":"精英","boss":"试炼守卫"}[actor_kind]
  health_label.text = "%s  %d / %d" % [role, ceili(state.hp), ceili(state.max_hp)]
  health_label.modulate = Color("8ffff0") if actor_kind == "hero" else Color("ffcc9b")
- if is_instance_valid(animation_player):
+ if not external_animation and is_instance_valid(animation_player):
   if dead and not dead_seen and animation_player.has_animation("death"): animation_player.play("death")
   if not dead and dead_seen and animation_player.has_animation("idle"): animation_player.play("idle")
   if not dead and (not animation_player.is_playing() or animation_player.current_animation in ["idle","run"]):
@@ -126,8 +131,11 @@ func _sync_warning(state: Dictionary) -> void:
   warning.global_position = state.target_point + Vector3(0,0.045,0)
 
 func play_event(event: Dictionary) -> void:
- if event.kind in ["damage","hero_damaged"]: flash_left = 0.12
+ if event.kind in ["damage","hero_damaged"] and event.get("amount",0) > 0:
+  flash_left = 0.12
+  _apply_flash()
  if event.kind == "attack_started": swing_left = 0.28
+ if external_animation: return
  var animation: String = {"attack_started":"attack","dash":"dash","q1":"thrust","q2_hit":"thrust","q3_wave":"attack","e2_spin":"attack","r2_throw":"ultimate","overload_started":"overload","ultimate_started":"ultimate","hero_damaged":"hit","kill":"death"}.get(event.kind, "")
  if not animation.is_empty() and is_instance_valid(animation_player) and animation_player.has_animation(animation):
   var duration: float = {"attack_started":0.28,"dash":0.16,"q1":0.20,"ultimate_started":1.1}.get(event.kind,0.0)
@@ -154,6 +162,9 @@ static func mesh_node(mesh: Mesh, mat: Material, parent: Node3D) -> MeshInstance
 func set_visual_scene(scene: PackedScene) -> void:
  # Optional integration boundary: art owns scene/rig, this adapter owns playback only.
  imported_art = true
+ flash_meshes.clear()
+ original_overlays.clear()
+ flash_material = make_material(Color(1,1,1,0.8),true)
  visual.rotation = Vector3.ZERO
  visual.position = Vector3.ZERO
  for child in visual.get_children():
@@ -161,6 +172,7 @@ func set_visual_scene(scene: PackedScene) -> void:
   child.queue_free()
  var instance: Node = scene.instantiate()
  visual.add_child(instance)
+ _bind_flash(instance)
  animation_player = _find_animation_player(instance)
  blade = null
  if animation_player:
@@ -173,3 +185,14 @@ func _find_animation_player(node: Node) -> AnimationPlayer:
   var result: AnimationPlayer = _find_animation_player(child)
   if result: return result
  return null
+
+func _bind_flash(node: Node) -> void:
+ if node is MeshInstance3D:
+  flash_meshes.append(node)
+  original_overlays.append(node.material_overlay)
+ for child in node.get_children(): _bind_flash(child)
+
+func _apply_flash() -> void:
+ for i in flash_meshes.size():
+  if is_instance_valid(flash_meshes[i]):
+   flash_meshes[i].material_overlay = flash_material if flash_left > 0 else original_overlays[i]

@@ -57,6 +57,9 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	stop_all()
+	for player in _players:
+		player.stream = null
+	_streams.clear()
 	var index := AudioServer.get_bus_index(_bus_name)
 	if index > 0:
 		AudioServer.remove_bus(index)
