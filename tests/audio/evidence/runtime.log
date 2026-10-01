@@ -1,7 +1,4 @@
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
 AUDIO_TEST_RESULT {"audio_driver":"Dummy","checks":142,"failures":[],"listening_test":false,"passed":true}
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-   at: cleanup (core/object/object.cpp:2663)
-ERROR: 12 resources still in use at exit (run with --verbose for details).
-   at: clear (core/io/resource.cpp:810)
+AUDIO_DRAIN_RESULT {"elapsed_ms":88,"passed":true,"pending_at_start":35,"remaining":0,"tracked":38}

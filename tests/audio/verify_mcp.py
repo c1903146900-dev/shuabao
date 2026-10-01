@@ -28,8 +28,16 @@ def verify(folder):
     assert step(20)['active']==0
     native=step(22);assert native['passed'] and native['key']==69 and native['state']['voices'][0]['id']=='e_overload'
     report=step(23);assert report['passed'] and report['checks']==16 and all(r['passed'] for r in report['results'])
+    lifecycle_path = folder/'step-26-execute_game_script.json'
+    if lifecycle_path.exists():
+        lifecycle = payload(lifecycle_path)
+        assert lifecycle['done'] and lifecycle['passed'] and not lifecycle['failures']
+        assert lifecycle['component_cycles']==220 and lifecycle['scene_round_trips']==20 and lifecycle['max_active']==8
+        (folder/'lifecycle-summary.json').write_text(json.dumps(lifecycle,indent=2)+'\n')
     log=(folder/'godot-editor.log').read_text()
     assert 'SCRIPT ERROR' not in log and 'Parse Error' not in log
+    if lifecycle_path.exists():
+        assert 'instances leaked' not in log and 'resources still in use' not in log
     summary={'passed':True,'imported_files':15,'runtime_groups':16,'clock_advanced_to':advance['voices'][0]['position'],
         'driver':report['driver'],'listening_test':False,'script_errors':0}
     (folder/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')

@@ -14,8 +14,8 @@ def editor(expr,wait=0):return call('execute_editor_script',{'code':expr},wait)
 def game(expr,wait=0):return call('execute_game_script',{'code':expr},wait)
 
 def build():
-    steps=[]
-    for p in ['scripts/audio/combat_audio.gd','scripts/audio/audio_demo.gd','tests/audio/editor_probe.gd','tests/audio/mcp_probe.gd']:
+    steps=[call("get_project_info",wait=35)]
+    for p in ['scripts/audio/combat_audio.gd','scripts/audio/audio_demo.gd','tests/audio/editor_probe.gd','tests/audio/mcp_probe.gd','tests/audio/playback_drain.gd','tests/audio/lifecycle_suite.gd']:
         steps.append(call('create_script',{'script_path':'res://'+p,'content':(ROOT/p).read_text(),'overwrite':True}))
     steps += [call('create_scene',{'scene_path':'res://scenes/audio/editor_probe.tscn','root_type':'Node','overwrite':True}),
         call('open_scene',{'scene_path':'res://scenes/audio/editor_probe.tscn'},1),
@@ -39,5 +39,8 @@ def verify():
     return steps
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('mode',choices=['build','verify']);p.add_argument('--out',required=True);a=p.parse_args()
-    Path(a.out).write_text(json.dumps(build() if a.mode=='build' else verify(),indent=2))
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['build','verify','lifecycle']);p.add_argument('--out',required=True);a=p.parse_args()
+    workflow=build() if a.mode=='build' else verify()
+    if a.mode=='lifecycle':
+        workflow=workflow[:-1]+[game('start_lifecycle()',35),game('get_node("/root/AudioLifecycleSuite").report()'),call('stop_scene')]
+    Path(a.out).write_text(json.dumps(workflow,indent=2))

@@ -1,0 +1,28 @@
+{
+  "listening_test": false,
+  "method": "PCM16 sample checks, 10ms RMS envelope, FFmpeg loudnorm oversampled true peak. LUFS of very short transients can be -inf; RMS is primary basic level comparison, not perceptual loudness approval.",
+  "total_bytes": 348180,
+  "worst_coherent_8_voice_peak_dbfs": -2.94
+}
+dash -9.0 -25.4 0.34375 5.90625
+e_overload -9.0 -20.06 0.34375 16.25
+enemy_die -9.0 -22.61 0.28125 10.1875
+hit -9.0 -22.7 0.3125 15.21875
+hit_heavy -7.0 -21.26 0.3125 19.8125
+hurt -9.0 -20.78 0.28125 3.75
+level_up -9.0 -20.48 0.28125 12.21875
+q_thrust -9.0 -24.43 0.3125 11.65625
+r_slam -7.0 -21.8 0.34375 10.25
+settlement -9.0 -21.2 0.3125 15.1875
+sword_1 -9.0 -24.91 0.34375 4.4375
+sword_2 -9.0 -25.74 0.3125 5.5
+sword_3 -9.0 -25.41 0.3125 5.71875
+ui_confirm -10.0 -21.47 0.25 8.0
+ui_reject -10.0 -21.9 0.3125 9.84375
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+AUDIO_TEST_RESULT {"audio_driver":"Dummy","checks":142,"failures":[],"listening_test":false,"passed":true}
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 12 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

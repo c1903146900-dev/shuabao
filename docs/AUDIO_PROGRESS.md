@@ -53,7 +53,7 @@ bash tests/audio/run.sh
 
 数值结果：零削波样本、零首尾样本；峰值 −10 至 −7 dBFS、整段 RMS −25.74 至 −20.06 dBFS；−60 dB 门限起音 0.25–0.344 ms，尾段 3.75–19.813 ms。无初始长静音、削平峰顶或长静音尾巴。上述是基础信号检查，不能替代听感、扬声器/耳机兼容和游戏内遮蔽测试。
 
-本地独立 Godot 测试 142 项断言覆盖全部 ID 导入/播放/结束回收、播放时钟、单 ID 双声上限、八声上限、静音与恢复、增益钳制、实例总线隔离/清理和剑挥不连续重复。见 `tests/audio/evidence/runtime.log`。Dummy 快速 stop/free 的退出日志存在 AudioStreamPlaybackWAV 资源残留诊断，断言通过不代表退出零诊断；不隐去此限制。首次未设置 XDG 路径的启动失败已改用仓库 `.local` 隔离路径。
+本地独立 Godot 测试 142 项断言覆盖全部 ID 导入/播放/结束回收、播放时钟、单 ID 双声上限、八声上限、静音与恢复、增益钳制、实例总线隔离/清理和剑挥不连续重复。见 `tests/audio/evidence/runtime.log`。首轮 Dummy 快速 stop/free 退出日志存在 AudioStreamPlaybackWAV 残留诊断；此历史限制已在文末专项定位并修复测试退出时序，原始诊断仍保留。首次未设置 XDG 路径的启动失败已改用仓库 `.local` 隔离路径。
 
 真实 MCP 复现：先按 `docs/CLOUD_REPRO.md` 运行 preflight/setup；以下两会话顺序执行，禁止抢占已有 :97/6505/9876。客户端 SDK initialize → tools/list → tools/call → GUI 插件，不直连应用端口。先写入脚本、创建并保存场景、设置 WAV 禁归一化/禁循环/PCM16/mono 并真实重导入，再完全重启编辑器复查资源和运行。中间脚本表达式/类型推导错误保留于诊断回执，不能据此声称第一次全通过。
 
@@ -69,3 +69,34 @@ python3 tests/audio/mcp_workflow.py verify --out .local/audio-verify.json
 真实 MCP 最终通过 23 次制作调用与 26 次独立重启验收调用：15 个资源导入、13 个事件逐一播放、并发/静音设置、播放位置推进至 0.188 秒后自然归零、原生 E 键输入，共 16 组运行检查。最终脚本解析/运行错误为零；图形环境 Vulkan/V-Sync/XServer 退出诊断及上游 Blender addon status 缺 config 仍保留。见 [`verified-summary.json`](../tests/audio/evidence/mcp-verify/verified-summary.json)、[`实际 demo 截图`](../tests/audio/evidence/mcp-verify/step-24-get_game_screenshot-0.png) 与 [`manifest`](../tests/audio/evidence/manifest.json)。校验：`python3 tests/audio/verify_mcp.py tests/audio/evidence/mcp-verify`。
 
 后续主集成须接实际事件并进行真人试听；本分支没有背景音乐、语音、3D 距离衰减、网络传声、性能/实机混音或平台导出验证。预览与证据只留既有仓库，没有上传 Library 或外部目的地。
+
+## 2026-10-01：退出残留专项修复（基于 main ae673bf）
+
+**结论：原来的“12 resources still in use”是测试在音频线程回收前关闭引擎，不是组件持续运行泄漏，也不是测试 snapshot 保留了 WAV 强引用。** 此次分支快进到 `ae673bf01b03ddf1e046730244ecb5ce9b8d9180` 后复现。main 已在 `_exit_tree` 显式 stop、清空 player.stream 和资源字典、移除总线；子播放器由 Node 销毁，不存在本组件连接的外部信号需要 disconnect。本次保留这些生产清理代码和事件 API，不改主集成。
+
+定位证据：Godot 4.6.3 的 [AudioStreamPlayerInternal::stop_basic](https://github.com/godotengine/godot/blob/4.6.3-stable/scene/audio/audio_stream_player_internal.cpp#L274) 清空播放器引用，但 [AudioServer::stop_playback_stream](https://github.com/godotengine/godot/blob/4.6.3-stable/servers/audio/audio_server.cpp#L1278) 把混音实例置为 `FADE_OUT_TO_DELETION`；混音线程稍后删除，主线程 update 再回收线程安全列表。原测试末尾“两次 process_frame”在高速 headless 下可能早于下一次混音。没有修改、补丁安装或替换引擎。
+
+`native_exit_probe.gd` 完全不使用 CombatAudio、自定义总线、信号或 snapshot。单个原生播放器 play → stop → stream=null → free → 两帧退出也复现 1 个 WAV 残留；同样流程等待弱引用失效后退出则零残留。因此不是靠修改音效资源或更多清理字典就能解决。原生立即退出的**预期失败对照日志保留**，没有屏蔽警告。
+
+修复 `runner.gd`：142 条原行为断言保持不变；`playback_drain.gd` 只保存 WeakRef，追踪 WAV 与 AudioStreamPlayback，销毁组件后按实际弱引用释放条件继续引擎循环，最长 2 秒。超时返回失败并报错，不用固定长 sleep 假通过。本次末尾 35 个 pending 引用（12 WAV + 23 playback）在约 68–88 ms 后归零，142 断言通过且退出没有 ObjectDB/resource 警告。
+
+新增生命周期验收：220 次创建/播放 8 声/拒绝第 9 声/轮换 stop、mute、直接 queue_free；20 次真正 `SceneTree.change_scene_to_packed` / `change_scene_to_file` 往返，带正在播放声音跨场景销毁。每轮核对播放器/资源弱引用最终为空、旧节点销毁、总线恢复。预热后 200 个循环采 11 组快照：对象 1486、资源 4、节点 2、孤儿节点 0、总线 1 均保持一致；预分配遥测记录后静态内存增量 **0 bytes**，RSS 增量 **0 KB**（最终复跑 RSS 为 59,676 KB）。最多 8 个活跃声音。有限循环验证不等于无限时长证明，RSS 也可能受分配器影响，所以主要门槛是弱引用回收和对象/资源/节点计数。
+
+```sh
+bash tests/audio/run_lifecycle.sh
+# 含原142行为、原生立即退出对照、原生回收退出与组件/场景循环。
+# 日志内容由 verify_lifecycle.py 检查，不能只看 Godot 的退出码。
+python3 tests/audio/mcp_workflow.py build --out .local/audio-lifecycle-build.json
+.local/blender-mcp-venv/bin/python scripts/mcp/check.py --fresh-fixture \
+  --workflow .local/audio-lifecycle-build.json --evidence .local/audio-lifecycle-build
+python3 tests/audio/mcp_workflow.py lifecycle --out .local/audio-lifecycle-verify.json
+.local/blender-mcp-venv/bin/python scripts/mcp/check.py \
+  --workflow .local/audio-lifecycle-verify.json --evidence .local/audio-lifecycle-verify
+```
+
+专项证据见 `tests/audio/evidence/lifecycle/summary.json`、`native-immediate.log`、`native-drained.log`、`cycles.log`；旧诊断没有删除。仍然未试听。立即硬退出且不给混音线程回收机会时，上游引擎仍可出现相同关闭诊断；此修复不宣称修改了引擎 shutdown，也不在生产组件里阻塞游戏主线程等待音频。正常组件销毁/停止/静音/场景切换在本轮循环中均无持续累积。
+
+
+本轮真实 MCP 制作完成 26 次调用，重启后 28 次验收调用通过：保持原 15 资源导入与 16 组运行检查，再在 GUI 运行相同 220 组件循环/20 场景往返。GUI 对象 1575、资源 10、节点 24、孤儿节点 0、总线 1 保持一致；静态内存增量 0，RSS 增量 1084 KB。RSS 包含渲染/驱动/分配器开销，仅凭本测试不能确定这部分变化的来源；没有把它隐去或称 GUI 总内存零变化。音频资源/播放实例弱引用归零，最终 GUI 日志无 SCRIPT ERROR、ObjectDB 泄漏或 resources-still-in-use；Vulkan/V-Sync/XServer 环境关闭诊断仍保留。
+
+最终证据：[`专项汇总`](../tests/audio/evidence/lifecycle/summary.json)、[`MCP 生命周期结果`](../tests/audio/evidence/lifecycle/mcp-verify/lifecycle-summary.json)。首次大项目冷导入期间发生编辑器重导入冲突，回执保存在 `lifecycle/diagnostics`；之后增加导入等待，重新制作并独立重启验收通过。当前无音频组件持续循环泄漏证据、无本项集成阻塞；仍未做真人试听或操作系统强制杀进程后的“干净关闭”保证。

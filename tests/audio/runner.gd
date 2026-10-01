@@ -1,5 +1,6 @@
 extends SceneTree
 const Component = preload("res://scripts/audio/combat_audio.gd")
+var drain = preload("res://tests/audio/playback_drain.gd").new()
 var checks := 0
 var failures: Array[String] = []
 
@@ -20,6 +21,7 @@ func run() -> void:
 	check(sfx.snapshot().loaded_ids == 13, "all 13 event banks loaded")
 	check(not sfx.play_event("unknown"), "unknown ID harmless")
 	for id in Component.IDS:
+		drain.watch(sfx)
 		sfx.stop_all()
 		check(sfx.play_event(id), id + " starts")
 		var state := sfx.snapshot()
@@ -37,11 +39,13 @@ func run() -> void:
 	await create_timer(.06).timeout
 	check(not sfx.play_event("settlement"), "third same event rejected")
 	check(sfx.snapshot().active == 2, "per-event cap remains two")
+	drain.watch(sfx)
 	sfx.stop_all()
 	for id in ["settlement", "level_up", "e_overload", "r_slam", "enemy_die", "hurt", "hit_heavy", "dash"]:
 		check(sfx.play_event(id), "fill pool " + id)
 	check(sfx.snapshot().active == 8, "global cap reached")
 	check(not sfx.play_event("q_thrust"), "ninth voice rejected")
+	drain.watch(sfx)
 	sfx.set_muted(true)
 	check(sfx.snapshot().active == 0, "mute stops voices")
 	check(not sfx.play_event("hit"), "muted event harmless")
@@ -58,6 +62,7 @@ func run() -> void:
 	check(other.snapshot().bus != sfx.snapshot().bus, "instances own separate buses")
 	check(not other.muted and other.volume_db == -3, "instance settings isolated")
 	other.free()
+	drain.watch(sfx)
 	sfx.stop_all()
 	var last := ""
 	for i in 12:
@@ -65,11 +70,15 @@ func run() -> void:
 		var path: String = sfx.snapshot().voices[0].stream
 		check(path != last, "no immediate sword variant repeat")
 		last = path
+		drain.watch(sfx)
 		sfx.stop_all()
+	drain.watch(sfx)
 	sfx.free()
 	check(AudioServer.bus_count == initial_buses, "buses removed on teardown")
 	var result := {"checks": checks, "failures": failures, "passed": failures.is_empty(), "audio_driver": AudioServer.get_driver_name(), "listening_test": false}
 	print("AUDIO_TEST_RESULT " + JSON.stringify(result))
-	await process_frame
-	await process_frame
-	quit.call_deferred(0 if failures.is_empty() else 1)
+	var released: Dictionary = await drain.wait_for_release(self)
+	print("AUDIO_DRAIN_RESULT " + JSON.stringify(released))
+	if not released.passed:
+		push_error("Audio playback references did not drain before deadline")
+	quit.call_deferred(0 if failures.is_empty() and released.passed else 1)
