@@ -17,14 +17,15 @@ func _ready() -> void:
  env.environment = e
  add_child(env)
  var sun := DirectionalLight3D.new()
- sun.rotation_degrees = Vector3(-55,-25,0)
+ sun.rotation_degrees = Vector3(-72,-25,0)
  sun.light_energy = 0.65
  sun.name = "ArtSun"
  sun.shadow_blur = .2
  sun.shadow_enabled = true
- sun.shadow_bias = 0.005
- sun.shadow_normal_bias = 0.01
+ sun.shadow_bias = 0.0
+ sun.shadow_normal_bias = 0.0
  sun.directional_shadow_max_distance = 25.0
+ sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
  add_child(sun)
  var camera := Camera3D.new()
  camera.name = "ReviewCamera"
@@ -61,10 +62,26 @@ func _ready() -> void:
   ap.get_animation("run").loop_mode = Animation.LOOP_LINEAR
   play_clip("idle")
  for i in range(2):
-  var enemy: Node3D = load("res://assets/arena/"+("enemy_regular" if i==0 else "enemy_elite")+".glb").instantiate()
+  var enemy: Node3D = load("res://assets/arena/enemies/"+("minion" if i==0 else "elite")+".glb").instantiate()
   add_child(enemy)
   enemy.position = Vector3(2.1,0,(-1.5 if i==0 else 1.2))
   enemy.rotation.y = -0.5
+  var enemy_ap := enemy.find_child("AnimationPlayer",true,false) as AnimationPlayer
+  enemy_ap.play("idle")
+  enemy_ap.seek(0,true)
+  enemy_ap.pause()
+  var enemy_contact := preload("res://scenes/art/foot_contact.gd").new()
+  add_child(enemy_contact)
+  enemy_contact.setup(enemy,[.15,.18][i],[.13,.16][i])
+ for x in [-5.3,5.3]:
+  for z in [-5.3,5.3]:
+   var pier: Node3D = load("res://assets/arena/ruin_pier.glb").instantiate()
+   add_child(pier)
+   pier.position = Vector3(x,.01,z)
+ for x in [-3.5,3.5]:
+  var marker: Node3D = load("res://assets/arena/ruin_marker.glb").instantiate()
+  add_child(marker)
+  marker.position = Vector3(x,.01,5.4)
  # restrained telegraph sample remains visible around the elite
  var ring := MeshInstance3D.new()
  var torus := TorusMesh.new()
@@ -127,4 +144,16 @@ func foot_mesh_evidence() -> Dictionary:
    var low := 100.0
    for i in range(8): low = minf(low,(mesh.global_transform * bounds.get_endpoint(i)).y)
    result[mesh.name] = low
+ return result
+
+func runtime_sole_probe() -> Dictionary:
+ var result := {}
+ for node in models[0].find_children("*","MeshInstance3D",true,false):
+  if "boot" in node.name.to_lower() or "sabaton" in node.name.to_lower():
+   var baked: ArrayMesh = node.bake_mesh_from_current_skeleton_pose()
+   var low := 100.0
+   for surface in range(baked.get_surface_count()):
+    var vertices: PackedVector3Array = baked.surface_get_arrays(surface)[Mesh.ARRAY_VERTEX]
+    for vertex in vertices:low=minf(low,(node.global_transform*vertex).y)
+   result[str(node.name)]=low
  return result

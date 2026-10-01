@@ -1,0 +1,433 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/enemy_review.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"idle\",0)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(0.85)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_phase(1.0)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"walk\",0.2)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"hit\",0.2)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[occlusion_test(true),sample_phase(0.85)]"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[combat_camera(),sample_phase(0.85)]"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/art/showcase.tscn"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "[set_process(false),sample_clip(\"idle\",0)]"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "closeup()"
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"idle\",0)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"run\",0.2)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.333333)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"hit\",0.2)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.000)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.050)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.100)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.150)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.200)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.250)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.300)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.350)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.400)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.450)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.500)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.550)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.600)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.650)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.700)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.750)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "sample_clip(\"attack\",0.800)"
+    },
+    "wait_after": 0.2
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {}
+  },
+  {
+    "server": "godot",
+    "tool": "get_output_log",
+    "arguments": {
+      "max_lines": 30
+    }
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {}
+  }
+]
