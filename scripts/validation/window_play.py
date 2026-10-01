@@ -36,7 +36,7 @@ try:
  if window is None:raise RuntimeError('1280x720 game window not found')
  for _ in range(120):
   info=subprocess.run(['xwininfo','-id',hex(window)],env=env,capture_output=True,text=True)
-  if 'Map State: IsViewable' in info.stdout and 'SHUABAO_INTEGRATION_READY' in (out/'game.log').read_text():break
+  if 'Map State: IsViewable' in info.stdout:break # Release stdout can remain buffered until normal close.
   if app.poll() is not None:raise RuntimeError('Game exited during readiness')
   time.sleep(.25)
  else:raise RuntimeError('Game window did not become viewable and ready')
@@ -99,6 +99,7 @@ try:
  lib.XSendEvent(display,window,0,0,C.byref(event));lib.XFlush(display)
  assert app.wait(timeout=15)==0, 'Game failed normal window-close exit'
  game_log=(out/'game.log').read_text()
+ assert 'SHUABAO_INTEGRATION_READY checkpoint=3' in game_log, 'Missing startup marker after normal exit'
  assert not any(x in game_log for x in ['SCRIPT ERROR:', 'ERROR:', 'ObjectDB instances leaked', 'resources still in use']), 'Game log has errors or exit resource residue'
  assert int(probe['streams'][0]['nb_frames']) > 600 and float(probe['format']['duration']) > 20, 'Recording too short'
  video=out/'continuous-play.mp4'

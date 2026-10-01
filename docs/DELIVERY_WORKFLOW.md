@@ -38,7 +38,7 @@ Windows ZIP / Linux TAR.GZ、源码逐文件 SHA256、源码 tree ID、二进制
 
 默认输出 `build/window-play/continuous-play.mp4`、`recording.json`、`ffprobe.json`、OS 操作时间表及游戏日志。录制一次连续流，不以截图组成视频。PNG 仅用于人工检查。视频无音轨，不作为音质验收。脚本输入是自动化 OS 输入，不冒称真人手玩。
 
-`--source --output build/window-trial` 可以明确测试源码版，不能替代最终导出包录像。窗口必须已经映射并输出游戏启动标记后才接受输入；ffmpeg 按请求 SIGINT 正常收尾可以返回 255，仍需 ffprobe 验证时长/帧数和实际画面，不能仅看退出码。
+`--source --output build/window-trial` 可以明确测试源码版，不能替代最终导出包录像。窗口必须已经映射后才接受输入；发布版 stdout 可能缓冲，启动标记在正常关闭后核查，不将启动期未刷出日志误判为失败；ffmpeg 按请求 SIGINT 正常收尾可以返回 255，仍需 ffprobe 验证时长/帧数和实际画面，不能仅看退出码。
 
 ## 音频生命周期增量
 
