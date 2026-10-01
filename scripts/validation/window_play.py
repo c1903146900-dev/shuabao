@@ -86,9 +86,23 @@ try:
  assert rec.returncode in (0,255), "Unexpected recorder failure" # ffmpeg returns 255 on the requested SIGINT.
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(out/'continuous-play.mp4')],text=True))
  (out/'ffprobe.json').write_text(json.dumps(probe,indent=2))
+ # Request the normal window-close path only after >2 seconds with no new sound.
+ class MessageData(C.Union):_fields_=[('l',C.c_long*5),('b',C.c_char*20)]
+ class ClientMessage(C.Structure):
+  _fields_=[('type',C.c_int),('serial',C.c_ulong),('send_event',C.c_int),('display',C.c_void_p),('window',C.c_ulong),('message_type',C.c_ulong),('format',C.c_int),('data',MessageData)]
+ class Event(C.Union):_fields_=[('message',ClientMessage),('padding',C.c_long*24)]
+ lib.XInternAtom.argtypes=[C.c_void_p,C.c_char_p,C.c_int];lib.XInternAtom.restype=C.c_ulong
+ lib.XSendEvent.argtypes=[C.c_void_p,C.c_ulong,C.c_int,C.c_long,C.POINTER(Event)]
+ event=Event();event.message.type=33;event.message.send_event=1;event.message.display=display;event.message.window=window
+ event.message.message_type=lib.XInternAtom(display,b'WM_PROTOCOLS',0);event.message.format=32
+ event.message.data.l[0]=lib.XInternAtom(display,b'WM_DELETE_WINDOW',0)
+ lib.XSendEvent(display,window,0,0,C.byref(event));lib.XFlush(display)
+ assert app.wait(timeout=15)==0, 'Game failed normal window-close exit'
+ game_log=(out/'game.log').read_text()
+ assert not any(x in game_log for x in ['SCRIPT ERROR:', 'ERROR:', 'ObjectDB instances leaked', 'resources still in use']), 'Game log has errors or exit resource residue'
  assert int(probe['streams'][0]['nb_frames']) > 600 and float(probe['format']['duration']) > 20, 'Recording too short'
  video=out/'continuous-play.mp4'
- report={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'mode':'source window' if a.source else 'standalone Linux desktop export','executable':cmd[0],'input':'X11 XTest OS events; programmatic, not a human playtest','recording':'one continuous ffmpeg x11grab stream, no montage, no audio track','video_sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'video_bytes':video.stat().st_size,'duration_seconds':probe['format']['duration'],'actions':actions,'game_exit':'terminated after recording; startup and gameplay log inspected separately'}
+ report={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'mode':'source window' if a.source else 'standalone Linux desktop export','executable':cmd[0],'executable_sha256':hashlib.sha256(Path(cmd[0]).read_bytes()).hexdigest() if Path(cmd[0]).is_file() else None,'input':'X11 XTest OS events; programmatic, not a human playtest','recording':'one continuous ffmpeg x11grab stream, no montage, no audio track','video_sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'video_bytes':video.stat().st_size,'duration_seconds':probe['format']['duration'],'actions':actions,'game_exit':'normal WM_DELETE_WINDOW, exit 0; no errors or ObjectDB/resource residue in complete log'}
  (out/'recording.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='actions'}))
 finally:
  if display:

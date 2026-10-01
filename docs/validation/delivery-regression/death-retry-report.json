@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "dead_hp_cd_clock_frozen": true,
+    "death_duplicate_no_extra_penalty": true,
+    "duplicate_settlement_no_reward": true,
+    "earned_point_upgrade": true,
+    "hp_cd_clock_frozen": true,
+    "native_F5_same_room_ledger": true,
+    "native_space_rescue_once": true,
+    "natural_enemy_downing": true,
+    "real_AD_attack_damage": true,
+    "real_AD_hook": true,
+    "retry_preserves_enemies": true,
+    "room1_atomic_rewards": true,
+    "room1_victory": true,
+    "room2_rewards_separate_identity": true,
+    "room2_victory": true,
+    "room_transition_CD_not_reset": true,
+    "room_transition_preserves_ledger": true,
+    "true_death_model_penalty_once": true,
+    "ui_learn_true_model": true
+  },
+  "failures": [],
+  "input": "Godot InputEvent via MCP, not OS input",
+  "stage": "death_retry_done"
+}
