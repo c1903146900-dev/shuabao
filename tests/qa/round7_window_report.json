@@ -1,0 +1,208 @@
+{
+  "sha": "c1b20bc8da414452c113936b26ce9a4874bb733d",
+  "input": "OS XTest; MCP observes without game-state fixtures",
+  "checks": [
+    {
+      "check": "exclusive OS Enter cycle enter_short",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "exclusive OS Enter cycle kp_long",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "exclusive OS Enter cycle enter_long",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "exclusive OS Enter cycle kp_short",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "Tab selects GUI; Enter activates without starting combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "new Enter cycle in combat retains GUI keyboard activation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS auto-repeat was actually delivered 4194309",
+      "passed": true,
+      "data": {
+        "echoes": 5
+      }
+    },
+    {
+      "check": "OS auto-repeat was actually delivered 4194310",
+      "passed": true,
+      "data": {
+        "echoes": 5
+      }
+    },
+    {
+      "check": "OS HP purchase raises cap without healing injured HP or resetting CD",
+      "passed": true,
+      "data": {
+        "hp": 153.712499999997
+      }
+    },
+    {
+      "check": "OS holding-type purchase mutex is atomic",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS normal actual heal normal1",
+      "passed": true,
+      "data": {
+        "before": 153.712499999997,
+        "after": 214.912499999997
+      }
+    },
+    {
+      "check": "OS normal actual heal normal2",
+      "passed": true,
+      "data": {
+        "before": 214.912499999997,
+        "after": 276.112499999997
+      }
+    },
+    {
+      "check": "OS normal actual heal normal3",
+      "passed": true,
+      "data": {
+        "before": 276.112499999997,
+        "after": 337.312499999997
+      }
+    },
+    {
+      "check": "OS normal actual heal normal4_topoff",
+      "passed": true,
+      "data": {
+        "before": 337.312499999997,
+        "after": 340.0
+      }
+    },
+    {
+      "check": "OS full-health use does not consume or alter HP/CD",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS special actual heal and count special1",
+      "passed": true,
+      "data": {
+        "before": 75.2374999999952,
+        "after": 177.237499999995
+      }
+    },
+    {
+      "check": "OS special actual heal and count special2",
+      "passed": true,
+      "data": {
+        "before": 177.237499999995,
+        "after": 279.237499999995
+      }
+    },
+    {
+      "check": "OS third special rejected below full HP without mutation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS next room resets count without replenishing potions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS disabled combat use does not emit or consume",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS leftover special works in new room after victory",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS AS component changes consumer without resetting active cooldown",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS CDR component does not rewrite current cooldown",
+      "passed": true,
+      "data": null
+    },
+    {
+      "check": "OS numeric hex selection changes real stats without HP/CD refill",
+      "passed": true,
+      "data": {
+        "selected": [
+          "fengli_quick_draw"
+        ],
+        "before": {
+          "ad": 40.0,
+          "ap": 0.0,
+          "attack_speed": 1.904,
+          "cdr": 0.06,
+          "crit_chance": 0.0,
+          "defence": 0.0,
+          "lifesteal": 0.0,
+          "max_hp": 240.0,
+          "move_speed": 6.0,
+          "penetration": 0.0,
+          "regen": 0.5,
+          "tenacity": 0.0
+        },
+        "after": {
+          "ad": 40.0,
+          "ap": 0.0,
+          "attack_speed": 2.21,
+          "cdr": 0.06,
+          "crit_chance": 0.0,
+          "defence": 0.0,
+          "lifesteal": 0.0,
+          "max_hp": 240.0,
+          "move_speed": 6.0,
+          "penetration": 0.0,
+          "regen": 0.5,
+          "tenacity": 0.0
+        }
+      }
+    },
+    {
+      "check": "OS new dash uses actual CDR",
+      "passed": true,
+      "data": {
+        "expected_remaining": 2.577999999999931,
+        "actual": 2.57800000000001
+      }
+    },
+    {
+      "check": "OS real held-attack cadence consumes AS",
+      "passed": true,
+      "data": {
+        "AS": 2.21,
+        "intervals": [
+          0.46499999999999986
+        ]
+      }
+    }
+  ],
+  "failures": [],
+  "scope_notes": [
+    "Sustain samples completed through next-room special use before a later MCP timeout; no claim that the whole sustain workflow completed",
+    "Build stats and hexes are a separate fresh natural OS run",
+    "F5 potion-count retention, six-slot refusal, same-room sell-switch use mutex and HP trade/respec loops are separate headless fixtures",
+    "Skill-dependent hexes are intentionally closed; dormancy behavior is not claimed",
+    "Linux editor window only; no Windows/export package acceptance"
+  ]
+}

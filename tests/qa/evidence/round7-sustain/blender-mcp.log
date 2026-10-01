@@ -1,0 +1,37 @@
+2026-10-01 05:50:44,445 - BlenderMCPServer - INFO - BlenderMCP server starting up
+2026-10-01 05:50:44,446 - BlenderMCPServer - WARNING - MCP for Blender addon not found in any Blender addons folder. Run `uvx mcp-for-blender install-addon` to install it.
+2026-10-01 05:50:44,446 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 111] Connection refused
+2026-10-01 05:50:44,446 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-10-01 05:50:44,446 - BlenderMCPServer - WARNING - Could not connect to Blender on startup: Could not connect to Blender. Make sure the Blender addon is running.
+2026-10-01 05:50:44,446 - BlenderMCPServer - WARNING - Make sure the Blender addon is running before using Blender resources or tools
+2026-10-01 05:50:44,451 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-10-01 05:50:44,451 - BlenderMCPServer - INFO - MCP client mcp 0.1.0: extensions=[], apps=False, openai_forms=False
+2026-10-01 05:51:05,500 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-01 05:51:05,500 - BlenderMCPServer - INFO - Connected to Blender at 127.0.0.1:9876
+2026-10-01 05:51:05,500 - BlenderMCPServer - INFO - Created new persistent connection to Blender
+2026-10-01 05:51:05,500 - BlenderMCPServer - INFO - Sending command: get_addon_info with params: None
+2026-10-01 05:51:05,501 - BlenderMCPServer - INFO - Command sent, waiting for response...
+2026-10-01 05:51:05,511 - BlenderMCPServer - INFO - Received complete response (465 bytes)
+2026-10-01 05:51:05,511 - BlenderMCPServer - INFO - Received 465 bytes of data
+2026-10-01 05:51:05,511 - BlenderMCPServer - INFO - Response parsed, status: success
+2026-10-01 05:51:05,512 - BlenderMCPServer - INFO - Blender addon up to date (protocol 13, addon [1, 8], Blender 4.3.2)
+2026-10-01 05:51:05,512 - BlenderMCPServer - INFO - Sending command: get_scene_info with params: None
+2026-10-01 05:51:05,512 - BlenderMCPServer - INFO - Command sent, waiting for response...
+2026-10-01 05:51:05,563 - BlenderMCPServer - INFO - Received complete response (305 bytes)
+2026-10-01 05:51:05,563 - BlenderMCPServer - INFO - Received 305 bytes of data
+2026-10-01 05:51:05,563 - BlenderMCPServer - INFO - Response parsed, status: success
+2026-10-01 05:51:05,570 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-01 05:51:05,570 - BlenderMCPServer - INFO - Sending command: get_addon_info with params: None
+2026-10-01 05:51:05,570 - BlenderMCPServer - INFO - Command sent, waiting for response...
+2026-10-01 05:51:05,615 - BlenderMCPServer - INFO - Received complete response (465 bytes)
+2026-10-01 05:51:05,615 - BlenderMCPServer - INFO - Received 465 bytes of data
+2026-10-01 05:51:05,615 - BlenderMCPServer - INFO - Response parsed, status: success
+2026-10-01 05:51:05,615 - BlenderMCPServer - INFO - Blender addon up to date (protocol 13, addon [1, 8], Blender 4.3.2)
+2026-10-01 05:51:05,618 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-01 05:51:05,618 - BlenderMCPServer - INFO - Sending command: get_scene_info with params: None
+2026-10-01 05:51:05,618 - BlenderMCPServer - INFO - Command sent, waiting for response...
+2026-10-01 05:51:05,666 - BlenderMCPServer - INFO - Received complete response (305 bytes)
+2026-10-01 05:51:05,666 - BlenderMCPServer - INFO - Received 305 bytes of data
+2026-10-01 05:51:05,666 - BlenderMCPServer - INFO - Response parsed, status: success
+2026-10-01 05:53:49,305 - BlenderMCPServer - INFO - Disconnecting from Blender on shutdown
+2026-10-01 05:53:49,305 - BlenderMCPServer - INFO - BlenderMCP server shut down

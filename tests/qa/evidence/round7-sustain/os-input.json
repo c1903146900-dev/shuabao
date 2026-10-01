@@ -1,0 +1,1546 @@
+[
+  {
+    "time": 1790833877.8994646,
+    "input": "step 0 ('capture', 'initial') phase=preparation room=0 source=step-02-execute_game_script.json"
+  },
+  {
+    "time": 1790833877.9002967,
+    "input": "sample initial"
+  },
+  {
+    "time": 1790833878.6378207,
+    "input": "step 1 ('key', 107) phase=preparation room=0 source=step-04-execute_game_script.json"
+  },
+  {
+    "time": 1790833878.638459,
+    "input": "key 107 1"
+  },
+  {
+    "time": 1790833878.6793506,
+    "input": "key 107 0"
+  },
+  {
+    "time": 1790833879.2013156,
+    "input": "step 2 ('click', 'learn_q') phase=preparation room=0 source=step-05-execute_game_script.json"
+  },
+  {
+    "time": 1790833879.201478,
+    "input": "motion [1038.5, 293.0] screen 1064,462"
+  },
+  {
+    "time": 1790833879.2021098,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833879.2526605,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833879.7632306,
+    "input": "step 3 ('key', 65307) phase=preparation room=0 source=step-06-execute_game_script.json"
+  },
+  {
+    "time": 1790833879.7638888,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833879.8042345,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833880.3236032,
+    "input": "step 4 ('capture', 'closed_learning') phase=preparation room=0 source=step-07-execute_game_script.json"
+  },
+  {
+    "time": 1790833880.3253915,
+    "input": "sample closed_learning"
+  },
+  {
+    "time": 1790833880.874918,
+    "input": "step 5 ('key', 65289) phase=preparation room=0 source=step-08-execute_game_script.json"
+  },
+  {
+    "time": 1790833880.8751633,
+    "input": "key 65289 1"
+  },
+  {
+    "time": 1790833880.9157991,
+    "input": "key 65289 0"
+  },
+  {
+    "time": 1790833881.4390666,
+    "input": "step 6 ('capture', 'tab_focus') phase=preparation room=0 source=step-09-execute_game_script.json"
+  },
+  {
+    "time": 1790833881.4415348,
+    "input": "sample tab_focus"
+  },
+  {
+    "time": 1790833881.9962797,
+    "input": "step 7 ('key', 65293) phase=preparation room=0 source=step-10-execute_game_script.json"
+  },
+  {
+    "time": 1790833881.9964898,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790833882.037102,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790833882.553281,
+    "input": "step 8 ('capture', 'tab_enter_gui') phase=preparation room=0 source=step-11-execute_game_script.json"
+  },
+  {
+    "time": 1790833882.5585942,
+    "input": "sample tab_enter_gui"
+  },
+  {
+    "time": 1790833883.110528,
+    "input": "step 9 ('key', 65307) phase=preparation room=0 source=step-12-execute_game_script.json"
+  },
+  {
+    "time": 1790833883.111049,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833883.1514847,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833883.6748388,
+    "input": "step 10 ('key', 65293) phase=preparation room=0 source=step-13-execute_game_script.json"
+  },
+  {
+    "time": 1790833883.6751072,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790833883.7156513,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790833884.2365444,
+    "input": "step 11 ('capture', 'enter_short') phase=combat room=1 source=step-14-execute_game_script.json"
+  },
+  {
+    "time": 1790833884.241385,
+    "input": "sample enter_short"
+  },
+  {
+    "time": 1790833884.7914693,
+    "input": "step 12 ('fight', 'room1', True) phase=combat room=1 source=step-15-execute_game_script.json"
+  },
+  {
+    "time": 1790833884.7917302,
+    "input": "motion [625.520812988281, 432.236267089844] screen 668,595"
+  },
+  {
+    "time": 1790833884.7924283,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833884.7928455,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790833884.833389,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790833885.35064,
+    "input": "step 12 ('fight', 'room1', True) phase=combat room=1 source=step-16-execute_game_script.json"
+  },
+  {
+    "time": 1790833885.3509524,
+    "input": "motion [623.815734863281, 428.013061523438] screen 666,591"
+  },
+  {
+    "time": 1790833885.3513684,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790833885.3917449,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790833885.9102008,
+    "input": "step 12 ('fight', 'room1', True) phase=victory room=1 source=step-17-execute_game_script.json"
+  },
+  {
+    "time": 1790833885.910469,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833885.9224193,
+    "input": "sample room1_victory"
+  },
+  {
+    "time": 1790833886.4819348,
+    "input": "step 13 ('key', 65307) phase=victory room=1 source=step-18-execute_game_script.json"
+  },
+  {
+    "time": 1790833886.484145,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833886.5247009,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833887.0471613,
+    "input": "step 14 ('key', 112) phase=victory room=1 source=step-19-execute_game_script.json"
+  },
+  {
+    "time": 1790833887.0474567,
+    "input": "key 112 1"
+  },
+  {
+    "time": 1790833887.0894907,
+    "input": "key 112 0"
+  },
+  {
+    "time": 1790833887.5471532,
+    "input": "step 15 ('buy', 'iron_blade') phase=victory room=1 source=step-20-execute_game_script.json"
+  },
+  {
+    "time": 1790833887.5474713,
+    "input": "motion [408.0, 325.0] screen 459,492"
+  },
+  {
+    "time": 1790833887.548061,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833887.598626,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833888.108365,
+    "input": "step 16 ('capture', 'iron') phase=victory room=1 source=step-21-execute_game_script.json"
+  },
+  {
+    "time": 1790833888.1189399,
+    "input": "sample iron"
+  },
+  {
+    "time": 1790833888.6769567,
+    "input": "step 17 ('key', 65307) phase=victory room=1 source=step-22-execute_game_script.json"
+  },
+  {
+    "time": 1790833888.6774628,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833888.718243,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833889.2414746,
+    "input": "step 18 ('hold', 65421, 0.85) phase=victory room=1 source=step-23-execute_game_script.json"
+  },
+  {
+    "time": 1790833889.241889,
+    "input": "key 65421 1"
+  },
+  {
+    "time": 1790833890.0924678,
+    "input": "key 65421 0"
+  },
+  {
+    "time": 1790833890.0991292,
+    "input": "step 19 ('capture', 'kp_long') phase=combat room=2 source=step-24-execute_game_script.json"
+  },
+  {
+    "time": 1790833890.1082463,
+    "input": "sample kp_long"
+  },
+  {
+    "time": 1790833890.3589458,
+    "input": "step 20 ('fight', 'room2', False) phase=combat room=2 source=step-25-execute_game_script.json"
+  },
+  {
+    "time": 1790833890.3593547,
+    "input": "motion [663.486389160156, 429.395690917969] screen 704,593"
+  },
+  {
+    "time": 1790833890.3599346,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833890.9180262,
+    "input": "step 20 ('fight', 'room2', False) phase=combat room=2 source=step-26-execute_game_script.json"
+  },
+  {
+    "time": 1790833890.9186623,
+    "input": "motion [664.904541015625, 426.972564697266] screen 705,590"
+  },
+  {
+    "time": 1790833891.4736974,
+    "input": "step 20 ('fight', 'room2', False) phase=combat room=2 source=step-27-execute_game_script.json"
+  },
+  {
+    "time": 1790833891.4741704,
+    "input": "motion [642.344665527344, 411.434356689453] screen 684,575"
+  },
+  {
+    "time": 1790833892.2161381,
+    "input": "step 20 ('fight', 'room2', False) phase=victory room=2 source=step-29-execute_game_script.json"
+  },
+  {
+    "time": 1790833892.2165103,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833892.2256632,
+    "input": "sample room2_victory"
+  },
+  {
+    "time": 1790833892.77548,
+    "input": "step 21 ('key', 65307) phase=victory room=2 source=step-30-execute_game_script.json"
+  },
+  {
+    "time": 1790833892.7759202,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833892.8174233,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833893.337559,
+    "input": "step 22 ('hold', 65293, 0.85) phase=victory room=2 source=step-31-execute_game_script.json"
+  },
+  {
+    "time": 1790833893.338072,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790833894.1913834,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790833894.199854,
+    "input": "step 23 ('capture', 'enter_long') phase=combat room=3 source=step-32-execute_game_script.json"
+  },
+  {
+    "time": 1790833894.2104704,
+    "input": "sample enter_long"
+  },
+  {
+    "time": 1790833894.3986409,
+    "input": "step 24 ('key', 65293) phase=combat room=3 source=step-33-execute_game_script.json"
+  },
+  {
+    "time": 1790833894.3991308,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790833894.439623,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790833894.9591608,
+    "input": "step 25 ('capture', 'combat_enter_GUI') phase=combat room=3 source=step-34-execute_game_script.json"
+  },
+  {
+    "time": 1790833894.9729967,
+    "input": "sample combat_enter_GUI"
+  },
+  {
+    "time": 1790833895.529619,
+    "input": "step 26 ('key', 65307) phase=combat room=3 source=step-35-execute_game_script.json"
+  },
+  {
+    "time": 1790833895.5302002,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833895.5707343,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833896.0943422,
+    "input": "step 27 ('capture', 'combat_GUI_closed') phase=combat room=3 source=step-36-execute_game_script.json"
+  },
+  {
+    "time": 1790833896.1179123,
+    "input": "sample combat_GUI_closed"
+  },
+  {
+    "time": 1790833896.6780396,
+    "input": "step 28 ('fight', 'room3', False) phase=combat room=3 source=step-37-execute_game_script.json"
+  },
+  {
+    "time": 1790833896.6787918,
+    "input": "motion [650.92626953125, 447.707733154297] screen 692,610"
+  },
+  {
+    "time": 1790833896.6797123,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833897.2345357,
+    "input": "step 28 ('fight', 'room3', False) phase=combat room=3 source=step-38-execute_game_script.json"
+  },
+  {
+    "time": 1790833897.2351046,
+    "input": "motion [651.95751953125, 443.345855712891] screen 693,606"
+  },
+  {
+    "time": 1790833897.7911043,
+    "input": "step 28 ('fight', 'room3', False) phase=combat room=3 source=step-39-execute_game_script.json"
+  },
+  {
+    "time": 1790833897.7917497,
+    "input": "motion [640.686401367188, 435.717437744141] screen 682,599"
+  },
+  {
+    "time": 1790833898.3514113,
+    "input": "step 28 ('fight', 'room3', False) phase=victory room=3 source=step-40-execute_game_script.json"
+  },
+  {
+    "time": 1790833898.3530664,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833898.3770761,
+    "input": "sample room3_victory"
+  },
+  {
+    "time": 1790833898.9291048,
+    "input": "step 29 ('key', 65307) phase=victory room=3 source=step-41-execute_game_script.json"
+  },
+  {
+    "time": 1790833898.9299111,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833898.9705305,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833899.4919815,
+    "input": "step 30 ('key', 112) phase=victory room=3 source=step-42-execute_game_script.json"
+  },
+  {
+    "time": 1790833899.4924934,
+    "input": "key 112 1"
+  },
+  {
+    "time": 1790833899.5330875,
+    "input": "key 112 0"
+  },
+  {
+    "time": 1790833900.0578449,
+    "input": "step 31 ('capture', 'before_HP') phase=victory room=3 source=step-43-execute_game_script.json"
+  },
+  {
+    "time": 1790833900.0869813,
+    "input": "sample before_HP"
+  },
+  {
+    "time": 1790833900.5848842,
+    "input": "step 32 ('buy', 'blood_crystal') phase=victory room=3 source=step-44-execute_game_script.json"
+  },
+  {
+    "time": 1790833900.585508,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833900.5860407,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833901.1383822,
+    "input": "step 32 ('buy', 'blood_crystal') phase=victory room=3 source=step-45-execute_game_script.json"
+  },
+  {
+    "time": 1790833901.139035,
+    "input": "motion [828.0, 482.0] screen 862,643"
+  },
+  {
+    "time": 1790833901.1395626,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833901.1901762,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833901.7021906,
+    "input": "step 33 ('capture', 'HP_equipped') phase=victory room=3 source=step-46-execute_game_script.json"
+  },
+  {
+    "time": 1790833901.7195513,
+    "input": "sample HP_equipped"
+  },
+  {
+    "time": 1790833902.2780273,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-47-execute_game_script.json"
+  },
+  {
+    "time": 1790833902.2785645,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833902.279093,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833902.8323793,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-48-execute_game_script.json"
+  },
+  {
+    "time": 1790833902.8329744,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833902.833528,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833903.3946996,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-49-execute_game_script.json"
+  },
+  {
+    "time": 1790833903.3954327,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833903.3960757,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833904.0126896,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-50-execute_game_script.json"
+  },
+  {
+    "time": 1790833904.0135531,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833904.015131,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833904.5682526,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-51-execute_game_script.json"
+  },
+  {
+    "time": 1790833904.5690262,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833904.569776,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833905.1306806,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-52-execute_game_script.json"
+  },
+  {
+    "time": 1790833905.1315317,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833905.132842,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833905.9312434,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-54-execute_game_script.json"
+  },
+  {
+    "time": 1790833905.9319334,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833905.932509,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833906.486259,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-55-execute_game_script.json"
+  },
+  {
+    "time": 1790833906.4873748,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833906.4879317,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833907.0409393,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-56-execute_game_script.json"
+  },
+  {
+    "time": 1790833907.0421638,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833907.042715,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833907.6020315,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-57-execute_game_script.json"
+  },
+  {
+    "time": 1790833907.6026862,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833907.6032934,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833908.1588538,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-58-execute_game_script.json"
+  },
+  {
+    "time": 1790833908.1595347,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833908.1616132,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833908.722962,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-59-execute_game_script.json"
+  },
+  {
+    "time": 1790833908.7237282,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833908.7245402,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833909.2848332,
+    "input": "step 34 ('buy', 'normal_tonic') phase=victory room=3 source=step-60-execute_game_script.json"
+  },
+  {
+    "time": 1790833909.2858844,
+    "input": "motion [828.0, 401.0] screen 862,565"
+  },
+  {
+    "time": 1790833909.2864738,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833909.341225,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833909.7970376,
+    "input": "step 35 ('buy', 'normal_tonic') phase=victory room=3 source=step-61-execute_game_script.json"
+  },
+  {
+    "time": 1790833909.797798,
+    "input": "motion [828.0, 401.0] screen 862,565"
+  },
+  {
+    "time": 1790833909.7995112,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833909.8505197,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833910.3676562,
+    "input": "step 36 ('buy', 'normal_tonic') phase=victory room=3 source=step-62-execute_game_script.json"
+  },
+  {
+    "time": 1790833910.3683953,
+    "input": "motion [828.0, 401.0] screen 862,565"
+  },
+  {
+    "time": 1790833910.3699589,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833910.4208474,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833910.9334738,
+    "input": "step 37 ('buy', 'normal_tonic') phase=victory room=3 source=step-63-execute_game_script.json"
+  },
+  {
+    "time": 1790833910.9342666,
+    "input": "motion [828.0, 401.0] screen 862,565"
+  },
+  {
+    "time": 1790833910.9350095,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833910.9857795,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833911.4963882,
+    "input": "step 38 ('capture', 'normals_bought') phase=victory room=3 source=step-64-execute_game_script.json"
+  },
+  {
+    "time": 1790833911.531393,
+    "input": "sample normals_bought"
+  },
+  {
+    "time": 1790833912.097162,
+    "input": "step 39 ('buy', 'special_tonic') phase=victory room=3 source=step-65-execute_game_script.json"
+  },
+  {
+    "time": 1790833912.0979095,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790833912.0985365,
+    "input": "scroll True"
+  },
+  {
+    "time": 1790833912.6534956,
+    "input": "step 39 ('buy', 'special_tonic') phase=victory room=3 source=step-66-execute_game_script.json"
+  },
+  {
+    "time": 1790833912.6542447,
+    "input": "motion [408.0, 484.0] screen 459,645"
+  },
+  {
+    "time": 1790833912.6596797,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833912.7106423,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833913.166147,
+    "input": "step 40 ('capture', 'holding_mutex') phase=victory room=3 source=step-67-execute_game_script.json"
+  },
+  {
+    "time": 1790833913.199181,
+    "input": "sample holding_mutex"
+  },
+  {
+    "time": 1790833913.7539997,
+    "input": "step 41 ('click', 'tab_1') phase=victory room=3 source=step-68-execute_game_script.json"
+  },
+  {
+    "time": 1790833913.7573762,
+    "input": "motion [338.0, 192.0] screen 392,365"
+  },
+  {
+    "time": 1790833913.7580776,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833913.8088245,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833914.323016,
+    "input": "step 42 ('capture', 'before_normal') phase=victory room=3 source=step-69-execute_game_script.json"
+  },
+  {
+    "time": 1790833914.3603923,
+    "input": "sample before_normal"
+  },
+  {
+    "time": 1790833914.8619947,
+    "input": "step 43 ('use', 'normal_tonic') phase=victory room=3 source=step-70-execute_game_script.json"
+  },
+  {
+    "time": 1790833914.8634245,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790833914.86431,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833914.9171994,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833915.4402475,
+    "input": "step 44 ('capture', 'normal1') phase=victory room=3 source=step-71-execute_game_script.json"
+  },
+  {
+    "time": 1790833915.4740064,
+    "input": "sample normal1"
+  },
+  {
+    "time": 1790833915.9796119,
+    "input": "step 45 ('use', 'normal_tonic') phase=victory room=3 source=step-72-execute_game_script.json"
+  },
+  {
+    "time": 1790833915.9805808,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790833915.9821007,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833916.0330591,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833916.5487332,
+    "input": "step 46 ('capture', 'normal2') phase=victory room=3 source=step-73-execute_game_script.json"
+  },
+  {
+    "time": 1790833916.5948205,
+    "input": "sample normal2"
+  },
+  {
+    "time": 1790833917.089766,
+    "input": "step 47 ('use', 'normal_tonic') phase=victory room=3 source=step-74-execute_game_script.json"
+  },
+  {
+    "time": 1790833917.0906107,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790833917.0913358,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833917.1451697,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833917.6650167,
+    "input": "step 48 ('capture', 'normal3') phase=victory room=3 source=step-75-execute_game_script.json"
+  },
+  {
+    "time": 1790833917.7140672,
+    "input": "sample normal3"
+  },
+  {
+    "time": 1790833918.2762015,
+    "input": "step 49 ('use', 'normal_tonic') phase=victory room=3 source=step-76-execute_game_script.json"
+  },
+  {
+    "time": 1790833918.2770658,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790833918.2778113,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833918.333172,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833918.842774,
+    "input": "step 50 ('capture', 'normal_full_reject') phase=victory room=3 source=step-77-execute_game_script.json"
+  },
+  {
+    "time": 1790833918.878558,
+    "input": "sample normal_full_reject"
+  },
+  {
+    "time": 1790833919.6152,
+    "input": "step 51 ('sell', 'normal_tonic') phase=victory room=3 source=step-79-execute_game_script.json"
+  },
+  {
+    "time": 1790833919.6677253,
+    "input": "sample missing_item_51"
+  },
+  {
+    "time": 1790833985.1354847,
+    "input": "step 0 ('click', 'tab_0') phase=victory room=3 source=step-196-execute_game_script.json"
+  },
+  {
+    "time": 1790833985.136812,
+    "input": "motion [254.0, 192.0] screen 311,365"
+  },
+  {
+    "time": 1790833985.1375473,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833985.1917417,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833985.2791483,
+    "input": "step 1 ('buy', 'normal_tonic') phase=victory room=3 source=step-197-execute_game_script.json"
+  },
+  {
+    "time": 1790833985.279994,
+    "input": "motion [828.0, 353.0] screen 862,519"
+  },
+  {
+    "time": 1790833985.2807333,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833985.3315995,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833985.7286181,
+    "input": "step 2 ('capture', 'before_full_reject') phase=victory room=3 source=step-198-execute_game_script.json"
+  },
+  {
+    "time": 1790833985.7892206,
+    "input": "sample before_full_reject"
+  },
+  {
+    "time": 1790833986.3645725,
+    "input": "step 3 ('click', 'tab_1') phase=victory room=3 source=step-199-execute_game_script.json"
+  },
+  {
+    "time": 1790833986.3655334,
+    "input": "motion [338.0, 192.0] screen 392,365"
+  },
+  {
+    "time": 1790833986.3663435,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833986.4177523,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833986.9421263,
+    "input": "step 4 ('use', 'normal_tonic') phase=victory room=3 source=step-200-execute_game_script.json"
+  },
+  {
+    "time": 1790833986.9430618,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790833986.9447663,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833986.9957156,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833987.5186448,
+    "input": "step 5 ('capture', 'normal_full_reject') phase=victory room=3 source=step-201-execute_game_script.json"
+  },
+  {
+    "time": 1790833987.5621643,
+    "input": "sample normal_full_reject"
+  },
+  {
+    "time": 1790833988.060192,
+    "input": "step 6 ('sell', 'normal_tonic') phase=victory room=3 source=step-202-execute_game_script.json"
+  },
+  {
+    "time": 1790833988.0659342,
+    "input": "motion [1003.5, 347.0] screen 1030,514"
+  },
+  {
+    "time": 1790833988.066728,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790833988.1179106,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790833988.8280888,
+    "input": "step 7 ('key', 65307) phase=victory room=3 source=step-204-execute_game_script.json"
+  },
+  {
+    "time": 1790833988.829299,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790833988.870434,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790833989.3416364,
+    "input": "step 8 ('key', 65421) phase=victory room=3 source=step-205-execute_game_script.json"
+  },
+  {
+    "time": 1790833989.3427224,
+    "input": "key 65421 1"
+  },
+  {
+    "time": 1790833989.3843102,
+    "input": "key 65421 0"
+  },
+  {
+    "time": 1790833989.9167309,
+    "input": "step 9 ('capture', 'kp_short') phase=combat room=4 source=step-206-execute_game_script.json"
+  },
+  {
+    "time": 1790833989.9629424,
+    "input": "sample kp_short"
+  },
+  {
+    "time": 1790833990.472373,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-207-execute_game_script.json"
+  },
+  {
+    "time": 1790833991.0391388,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-208-execute_game_script.json"
+  },
+  {
+    "time": 1790833991.6085353,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-209-execute_game_script.json"
+  },
+  {
+    "time": 1790833992.1802049,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-210-execute_game_script.json"
+  },
+  {
+    "time": 1790833992.7482948,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-211-execute_game_script.json"
+  },
+  {
+    "time": 1790833993.2570908,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-212-execute_game_script.json"
+  },
+  {
+    "time": 1790833993.8340998,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-213-execute_game_script.json"
+  },
+  {
+    "time": 1790833994.400723,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-214-execute_game_script.json"
+  },
+  {
+    "time": 1790833994.9647422,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-215-execute_game_script.json"
+  },
+  {
+    "time": 1790833995.5297735,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-216-execute_game_script.json"
+  },
+  {
+    "time": 1790833996.0929477,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-217-execute_game_script.json"
+  },
+  {
+    "time": 1790833996.5993721,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-218-execute_game_script.json"
+  },
+  {
+    "time": 1790833997.1731496,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-219-execute_game_script.json"
+  },
+  {
+    "time": 1790833997.7421877,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-220-execute_game_script.json"
+  },
+  {
+    "time": 1790833998.322928,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-221-execute_game_script.json"
+  },
+  {
+    "time": 1790833998.8250456,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-222-execute_game_script.json"
+  },
+  {
+    "time": 1790833999.3937783,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-223-execute_game_script.json"
+  },
+  {
+    "time": 1790833999.961019,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-224-execute_game_script.json"
+  },
+  {
+    "time": 1790834000.5340319,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-225-execute_game_script.json"
+  },
+  {
+    "time": 1790834001.1177692,
+    "input": "step 10 ('hurt', 110) phase=combat room=4 source=step-226-execute_game_script.json"
+  },
+  {
+    "time": 1790834001.1628342,
+    "input": "sample hurt_before_room4_finish"
+  },
+  {
+    "time": 1790834001.6788292,
+    "input": "step 11 ('fight', 'room4', True) phase=combat room=4 source=step-227-execute_game_script.json"
+  },
+  {
+    "time": 1790834001.6817055,
+    "input": "motion [642.050476074219, 504.750854492188] screen 683,665"
+  },
+  {
+    "time": 1790834001.6827068,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834001.6847258,
+    "input": "key 113 1"
+  },
+  {
+    "time": 1790834001.7268052,
+    "input": "key 113 0"
+  },
+  {
+    "time": 1790834002.3906138,
+    "input": "step 11 ('fight', 'room4', True) phase=victory room=4 source=step-229-execute_game_script.json"
+  },
+  {
+    "time": 1790834002.3939004,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834002.4471326,
+    "input": "sample room4_victory"
+  },
+  {
+    "time": 1790834002.9493222,
+    "input": "step 12 ('key', 65307) phase=victory room=4 source=step-230-execute_game_script.json"
+  },
+  {
+    "time": 1790834002.950296,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790834002.9913561,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790834003.526826,
+    "input": "step 13 ('key', 112) phase=victory room=4 source=step-231-execute_game_script.json"
+  },
+  {
+    "time": 1790834003.5279982,
+    "input": "key 112 1"
+  },
+  {
+    "time": 1790834003.5697794,
+    "input": "key 112 0"
+  },
+  {
+    "time": 1790834004.1141465,
+    "input": "step 14 ('buy', 'special_tonic') phase=victory room=4 source=step-232-execute_game_script.json"
+  },
+  {
+    "time": 1790834004.1153119,
+    "input": "motion [408.0, 484.0] screen 459,645"
+  },
+  {
+    "time": 1790834004.1163015,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834004.1685858,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834004.6344469,
+    "input": "step 15 ('buy', 'special_tonic') phase=victory room=4 source=step-233-execute_game_script.json"
+  },
+  {
+    "time": 1790834004.6384473,
+    "input": "motion [408.0, 484.0] screen 459,645"
+  },
+  {
+    "time": 1790834004.639376,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834004.6903906,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834005.2113304,
+    "input": "step 16 ('buy', 'special_tonic') phase=victory room=4 source=step-234-execute_game_script.json"
+  },
+  {
+    "time": 1790834005.2123356,
+    "input": "motion [408.0, 484.0] screen 459,645"
+  },
+  {
+    "time": 1790834005.213281,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834005.2691727,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834005.7946632,
+    "input": "step 17 ('capture', 'three_specials') phase=victory room=4 source=step-235-execute_game_script.json"
+  },
+  {
+    "time": 1790834005.8521671,
+    "input": "sample three_specials"
+  },
+  {
+    "time": 1790834006.422466,
+    "input": "step 18 ('click', 'tab_1') phase=victory room=4 source=step-236-execute_game_script.json"
+  },
+  {
+    "time": 1790834006.423502,
+    "input": "motion [338.0, 192.0] screen 392,365"
+  },
+  {
+    "time": 1790834006.4244576,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834006.4769254,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834006.9419048,
+    "input": "step 19 ('capture', 'before_special') phase=victory room=4 source=step-237-execute_game_script.json"
+  },
+  {
+    "time": 1790834007.0207021,
+    "input": "sample before_special"
+  },
+  {
+    "time": 1790834007.5305877,
+    "input": "step 20 ('use', 'special_tonic') phase=victory room=4 source=step-238-execute_game_script.json"
+  },
+  {
+    "time": 1790834007.5317202,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790834007.5342581,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834007.5870752,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834008.0496082,
+    "input": "step 21 ('capture', 'special1') phase=victory room=4 source=step-239-execute_game_script.json"
+  },
+  {
+    "time": 1790834008.1298978,
+    "input": "sample special1"
+  },
+  {
+    "time": 1790834008.6362464,
+    "input": "step 22 ('use', 'special_tonic') phase=victory room=4 source=step-240-execute_game_script.json"
+  },
+  {
+    "time": 1790834008.6373546,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790834008.6383228,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834008.6893857,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834009.2115092,
+    "input": "step 23 ('capture', 'special2') phase=victory room=4 source=step-241-execute_game_script.json"
+  },
+  {
+    "time": 1790834009.2755532,
+    "input": "sample special2"
+  },
+  {
+    "time": 1790834009.7876651,
+    "input": "step 24 ('use', 'special_tonic') phase=victory room=4 source=step-242-execute_game_script.json"
+  },
+  {
+    "time": 1790834009.7887979,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790834009.789856,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834009.8419871,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834010.3041985,
+    "input": "step 25 ('capture', 'special3_rejected') phase=victory room=4 source=step-243-execute_game_script.json"
+  },
+  {
+    "time": 1790834010.3760853,
+    "input": "sample special3_rejected"
+  },
+  {
+    "time": 1790834010.8885448,
+    "input": "step 26 ('key', 65307) phase=victory room=4 source=step-244-execute_game_script.json"
+  },
+  {
+    "time": 1790834010.889754,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790834010.9323912,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790834011.4892871,
+    "input": "step 27 ('key', 65293) phase=victory room=4 source=step-245-execute_game_script.json"
+  },
+  {
+    "time": 1790834011.4912431,
+    "input": "key 65293 1"
+  },
+  {
+    "time": 1790834011.5331957,
+    "input": "key 65293 0"
+  },
+  {
+    "time": 1790834012.0096972,
+    "input": "step 28 ('capture', 'room5_reset') phase=combat room=5 source=step-246-execute_game_script.json"
+  },
+  {
+    "time": 1790834012.0731993,
+    "input": "sample room5_reset"
+  },
+  {
+    "time": 1790834012.5859385,
+    "input": "step 29 ('click', 'equip_2') phase=combat room=5 source=step-247-execute_game_script.json"
+  },
+  {
+    "time": 1790834012.587642,
+    "input": "motion [1206.0, 633.0] screen 1225,788"
+  },
+  {
+    "time": 1790834012.5901926,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834012.6414604,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834013.1708345,
+    "input": "step 30 ('capture', 'combat_bag') phase=combat room=5 source=step-248-execute_game_script.json"
+  },
+  {
+    "time": 1790834013.2665899,
+    "input": "sample combat_bag"
+  },
+  {
+    "time": 1790834013.7134497,
+    "input": "step 31 ('use', 'special_tonic') phase=combat room=5 source=step-249-execute_game_script.json"
+  },
+  {
+    "time": 1790834013.718424,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790834013.725624,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834013.7805939,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834014.2500045,
+    "input": "step 32 ('capture', 'combat_use_blocked') phase=combat room=5 source=step-250-execute_game_script.json"
+  },
+  {
+    "time": 1790834014.3781216,
+    "input": "sample combat_use_blocked"
+  },
+  {
+    "time": 1790834014.896815,
+    "input": "step 33 ('key', 65307) phase=combat room=5 source=step-251-execute_game_script.json"
+  },
+  {
+    "time": 1790834014.8981576,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790834014.9399264,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790834015.4861562,
+    "input": "step 34 ('fight', 'room5', False) phase=combat room=5 source=step-252-execute_game_script.json"
+  },
+  {
+    "time": 1790834015.4921997,
+    "input": "motion [650.92626953125, 447.707733154297] screen 692,610"
+  },
+  {
+    "time": 1790834015.4934428,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834016.3880816,
+    "input": "step 34 ('fight', 'room5', False) phase=victory room=5 source=step-254-execute_game_script.json"
+  },
+  {
+    "time": 1790834016.3913262,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834016.4744306,
+    "input": "sample room5_victory"
+  },
+  {
+    "time": 1790834016.9235976,
+    "input": "step 35 ('key', 65307) phase=victory room=5 source=step-255-execute_game_script.json"
+  },
+  {
+    "time": 1790834016.9250293,
+    "input": "key 65307 1"
+  },
+  {
+    "time": 1790834016.9665709,
+    "input": "key 65307 0"
+  },
+  {
+    "time": 1790834017.50249,
+    "input": "step 36 ('click', 'equip_2') phase=victory room=5 source=step-256-execute_game_script.json"
+  },
+  {
+    "time": 1790834017.5051863,
+    "input": "motion [1206.0, 633.0] screen 1225,788"
+  },
+  {
+    "time": 1790834017.5063155,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834017.557536,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834018.0264883,
+    "input": "step 37 ('use', 'special_tonic') phase=victory room=5 source=step-257-execute_game_script.json"
+  },
+  {
+    "time": 1790834018.0288265,
+    "input": "motion [899.0, 347.0] screen 930,514"
+  },
+  {
+    "time": 1790834018.0307863,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834018.0851948,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834018.6205535,
+    "input": "step 38 ('capture', 'special_new_room') phase=victory room=5 source=step-258-execute_game_script.json"
+  },
+  {
+    "time": 1790834018.7337127,
+    "input": "sample special_new_room"
+  },
+  {
+    "time": 1790834019.1895435,
+    "input": "step 39 ('click', 'tab_0') phase=victory room=5 source=step-259-execute_game_script.json"
+  },
+  {
+    "time": 1790834019.1907816,
+    "input": "motion [254.0, 192.0] screen 311,365"
+  },
+  {
+    "time": 1790834019.1932309,
+    "input": "mouse_left 1"
+  },
+  {
+    "time": 1790834019.2449467,
+    "input": "mouse_left 0"
+  },
+  {
+    "time": 1790834019.7109172,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-260-execute_game_script.json"
+  },
+  {
+    "time": 1790834019.7122004,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834019.7145612,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834020.2911093,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-261-execute_game_script.json"
+  },
+  {
+    "time": 1790834020.2928112,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834020.2941806,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834020.9403217,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-262-execute_game_script.json"
+  },
+  {
+    "time": 1790834020.9419935,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834020.944038,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834021.4588041,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-263-execute_game_script.json"
+  },
+  {
+    "time": 1790834021.4629402,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834021.464232,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834022.0328999,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-264-execute_game_script.json"
+  },
+  {
+    "time": 1790834022.0343127,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834022.0357397,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834022.6076224,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-265-execute_game_script.json"
+  },
+  {
+    "time": 1790834022.6089377,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834022.610175,
+    "input": "scroll False"
+  },
+  {
+    "time": 1790834023.241731,
+    "input": "step 40 ('buy', 'mainspring') phase=victory room=5 source=step-266-execute_game_script.json"
+  },
+  {
+    "time": 1790834023.2431161,
+    "input": "motion [640.0, 374.0] screen 682,539"
+  },
+  {
+    "time": 1790834023.2500396,
+    "input": "scroll False"
+  }
+]

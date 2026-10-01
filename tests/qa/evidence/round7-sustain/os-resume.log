@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/shuabao-qa/tests/qa/round7_resume.py", line 68, in <module>
+    if 'viewport' not in v:raise RuntimeError('MCP read failed: '+str(v))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MCP read failed: {'error': 'Runtime request timed out'}

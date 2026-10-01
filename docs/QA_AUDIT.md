@@ -1,6 +1,6 @@
 # 独立 QA 审查（2026-09-30）
 
-当前结论（第六轮，2026-10-01）：**固定main a294d042的自然两房奖励、UI升级/铁刃AD购买、同账本续房、自然死亡处罚及F5防刷、超过60秒HP/CD冻结已完成Linux OS窗口独立验证；新增QA-008：Enter进房同时意外重开修习面板。不能签署最终完整集成可玩通过。** 本轮与旧QA001/002、旧目录和旧窗口结果分开记录。没有修改 main 或任何功能文件；新增内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档。没有发布、部署或接触用户电脑/阿里服务器。
+当前结论（第七轮，2026-10-01）：**固定main c1b20bc8的QA-008 Enter/小键盘完整键周期已获OS窗口回归通过；自然药品治疗/满血拒绝/两次上限与跨房重置、HP/AS/CDR消费者及一个纯数值海克斯已独立验证。未发现新的已确认玩法缺陷。** 长MCP会话超时未归因，较短构筑会话正常完成；测试基础设施异常与每项证据边界见第七轮。Windows/导出包、完整技能与视觉仍非最终放行范围。没有修改 main 或任何功能文件；内容仅在 `qa/independent-audit` 的 `tests/qa` 与本文档，没有发布部署或接触用户电脑/阿里服务器。
 
 ## 精确基线与方法
 
@@ -316,3 +316,54 @@ OS购买时英雄满血，不能证明缺血不补满；因此另设 **HP71、Q 
 补充的a294级别上限夹具独立执行固定种子分批XP奖励直至18级；每笔唯一奖励与不同command重复同reward身份交错，始终授点数=等级且不超过18，最终18点；携带额外points字段的奖励原子拒绝。证据 [边界结果](../tests/qa/round6_boundaries.json)，明确不是OS玩到18级。最终无头边界与OS验证的failures均为空，但不因此关闭QA-008或未测平台/技能组合。
 
 最终标准MCP工作流正常到 `MCP_CHECK_COMPLETE`，338条预设步骤完成，所有workflow业务回执无application_error；这里只说明工作流结束，不以工具数量代替质量。具名retry样本之后游戏仍在继续，后续空闲再次死亡属于另一个时刻，不能用后续截图冒充第一次F5状态。显示、应用和当次Xauthority均已清理。复现时先运行 `round6_build.json`（fresh fixture），独立重启后运行 `round6_window.json`，同时执行 `round6_input.py <全新证据目录>`；查看OS样本并运行 `round6_verify.py`（默认final目录）。无头 `round6_boundaries.gd` 必须在GUI/MCP会话完全结束后运行。
+
+## 第七轮：c1b20bc8药品与数值构筑独立窗口QA（2026-10-01）
+
+唯一被测提交 **`c1b20bc8da414452c113936b26ce9a4874bb733d`**，实际工作树`/workspace/shuabao-checkpoint4`；已打印SHA、git状态干净、默认入口仍为`res://scenes/integration/room.tscn`。读取了`QA008_ENTER_BOUNDARY.md`、`INTEGRATION_CHECKPOINT_3.md`，关键原功能源与MCP副本SHA256一致，见[基线记录](../tests/qa/round7_baseline.json)。仅新增QA观测脚本与OS驱动，没有修改功能代码。
+
+### QA-008：本提交对应OS路径通过，可关闭该缺陷
+
+K→鼠标学Q→Esc→Enter短按：只开始第1房，没有重开修习。小键盘Enter长按、普通Enter长按各实际收到 **5次echo**，按下/重复/松开没有重复进房；小键盘Enter短按也通过。此前仅引擎InputEvent的修复现已获得独立OS窗口证据。
+
+初始安全焦点经Tab到修习，Enter只打开GUI而不开始战斗；Esc关面板后可以继续正确进房。**一个新Enter键周期在战斗中激活当前聚焦的修习按钮，是本版明确保留的GUI键盘用途，不是同一周期双重消费。** 首个驱动在长按结束后又发送两个新周期，把合法GUI打开误列为unexpected；保留`round7-window`和`round7_input_first.py`，纠正测试预期后在`round7-sustain`分别观测长按独占、后续GUI激活及Esc关闭，没有改游戏。
+
+### 自然药品OS路径：亲自跑到第5房
+
+全部金币来自窗口左键/Q实际击杀，未直接加钱/XP、改血、关AI或模拟点击游戏API。房号是两种布阵重复，不是新增地图。标准MCP只建隔离观测器、运行、读回、截图；真实按键、鼠标点击与商店滚轮由Linux XTest发送。
+
+- 前3房获奖后购买血晶：最大生命 **240→340**，当时受伤HP **153.7125保持不变**，已有CD不刷新。铁刃由第一房真实收入购买，不是预置装备。
+- 买4份普通药堆一槽；持有普通药时买特殊药返回`recovery_mutex`，金币/库存/次数账本原子不变。
+- 安全胜利阶段通过六槽“使用”按钮，HP **153.7125→214.9125→276.1125→337.3125→340**，前三次各+61.2，末次仅补剩余缺口；每次消耗1份，CD不变。实际自然损血高于驱动预估，四份全部用完，初段在尝试出售不存在余药时停止。未将该预估失败算游戏bug，也未篡改HP；在同一冻结账本接续OS操作，再买一份，满血使用返回`full_health`，HP/CD及完整库存账本不变，然后真实出售。
+- 第4房等待真实敌人攻击至HP92.58，再用普攻/Q清房，结束 **HP75.2375**；买3份特殊药各占一槽，使用前共5个装备/药品槽。
+- 特殊药第一次HP **177.2375**，第二次 **279.2375**，各+102；次数0→1→2。第三次仍未满血，明确返回`special_cap`，生命、CD、金币、库存、次数不变。
+- Enter进入第5房：次数重置0，剩余那1份库存没有补充或丢失。战斗中打开行装，“使用”按钮禁用，OS点击不产生新的消费回执，库存不变；HP随真实战斗自然恢复/受伤，不错误要求活战斗HP静止。
+- 第5房真实清完后，剩余特殊药成功使用，HP **227.5775→329.5775**，次数变1。证明跨房重置后真实治疗，不只是检查一个计数字段。
+
+证据：[OS具名样本](../tests/qa/evidence/round7-sustain/os-samples.json)、[连续输入日志](../tests/qa/evidence/round7-sustain/os-input.json)、[独立验证结果](../tests/qa/round7_window_report.json)。`round7_resume.py`在同一场景继续药品步骤，未重置账本；初段样本与结束状态分别保留`os-samples-first-segment.json`、`os-finish-first-segment.json`。亲自查看 [第5房真实战斗MCP图](../tests/qa/evidence/round7-sustain/step-253-get_game_screenshot-0.png)，可见实际受伤、40点伤害、铁刃/血晶/剩余特殊药。
+
+### 独立自然构筑OS路径：AS、CDR、纯数值海克斯
+
+另起新局`round7-build-window`，靠自然击杀与窗口购物完成，不接续失败会话或恢复fixture账本。实际完成5房：
+
+- 机簧让真实AS **1.7→1.904**，购买时HP223.35和已有CD不变。
+- 冷凝核心让真实CDR **0→0.06**，购买时HP224.4825与已有CD不变；新房窗口Shift实际冲刺，剩余CD与`3.2×0.94−已过战斗时间`一致。
+- 鼠标切海克斯页、选第一张真实候选，抽到`fengli_quick_draw`，AS **1.904→2.21**，HP与已有CD仍不回填。后续真实按住左键普攻的事件间隔按实际AS核对，不只看UI数字。
+- [构筑具名样本](../tests/qa/evidence/round7-build-window/os-samples.json)、[OS输入](../tests/qa/evidence/round7-build-window/os-input.json)。亲自查看 [最终房结算MCP图](../tests/qa/evidence/round7-build-window/step-78-get_game_screenshot-0.png)，可见铁刃、机簧、冷凝核心及冻结中的Shift冷却。
+
+### 补充边界的输入类型与范围
+
+`round7_boundaries.gd`使用c1b20真实Room/Consumer/Model，显式金币/HP/伤害夹具；**不是自然OS操作**。覆盖准备态/战斗态/战斗与模型阶段不一致拒绝、成功与失败请求重放、重建消费者不重复治疗、特殊药次数在同房真死亡重试保持而新房重置、普通5份一槽与第6份拒绝、六槽满后不能买药、出售余药换另一类不能绕过本房使用互斥。
+
+另在HP71、Q CD4条件下反复实际买血晶→卖→撤销出售→撤销买入，HP和CD不变；六件机簧把实际AS限制为2.5而不改已开始CD。仅7个无依赖数值海克斯可用；有技能依赖的条目由实际support拒绝。**本版没有开放依赖项休眠政策，不能将拒绝路径写成“休眠效果已实现/通过”。** 第三次特殊药、正常治疗、满血与跨房重置既有OS证据也有分开的夹具补充；没有用夹具替代前述玩家链路。
+
+### 本轮未完成与基础设施异常
+
+药品长会话在已完成第5房治疗、准备后续买机簧时，第267步标准MCP返回`Runtime request timed out`；此时没有并行Godot测试，原因未定位。保留原回执与应用日志，**不把后续构筑判通过，也不把超时定性为游戏缺陷**。因此另跑较短构筑会话，并把观测返回的输入/事件/回执历史限制为最近96/160/16条；原始逐步MCP回执持续保存，不修改游戏状态。该结果也说明第六轮对超时原因的并行干扰推测尚未证实，不能当根因结论。
+
+本轮窗口核心路径已覆盖，但Windows/导出包、1280×720与1920×1080双分辨率、全部7海克斯逐项数值、全部技能/属性组合未测；OS截图仍为Linux编辑器嵌入窗口。F5药品次数、六槽拒绝、买卖撤销/训练洗点防回血CD主要是明确标注的集成夹具。旧QA-006/007视觉问题不是本提交修复范围，不因本轮核心通过而关闭或宣布最终完整可玩放行。
+
+最终补充夹具还验证了已学习Q在真实训练洗点后变为未学，但HP71与正在转的Q CD4保持，结果见 [round7_boundaries.json](../tests/qa/round7_boundaries.json)。这与OS缺血买血晶不回血相互补充，不混称窗口洗点验收。所有本轮具名核心断言无失败；未对未开放依赖海克斯宣称休眠测试通过。
+
+构筑OS脚本已写入`completed=true`、捕获done后，退出清理阶段发生一次脚本自身别名冲突（步骤简写C覆盖ctypes别名，XCloseDisplay参数声明失败）。保留实际执行的`round7_build_input_executed.py`和`os-driver.log`；复跑脚本改名capture_step，未改已执行操作或证据。该非零退出不抹掉已完成输入与读回，也不称脚本全程零错误。标准MCP后续正常到MCP_CHECK_COMPLETE并清理当次应用/显示/Xauthority。
+
+复跑：先用本SHA标准客户端运行`round7_build.json`建立只读观测器，独立重启执行`round7_window.json`与`round7_input.py`；药品自然受伤会变化，不能假定固定份数必定留药，应据实际读回调整OS步骤，本次接续脚本为`round7_resume.py`。构筑用`round7_build2.json`→独立重启`round7_build_window.json`，并行OS驱动`round7_build_input.py`。全部GUI结束后再顺序运行`round7_boundaries.gd`，不并行开启加载同一MCP插件的Godot进程。`round7_verify.py`使用本次具名结果目录；原长会话超时保持原始失败记录，不改写成完整通过。
