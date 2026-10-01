@@ -1,0 +1,45 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://tests/qa/round9_probe.gd",
+      "content": "extends \"res://scripts/integration/room.gd\"\n# Explicit controlled fixture. Replaces simulation, never presented as natural play.\nvar rows=[]\nfunc qa_setup(preset):\n set_physics_process(false)\n simulation.free()\n for v in views.values():v.free()\n views.clear();motion.clear();hero_clip.clear()\n simulation=Sim.new();add_child(simulation)\n simulation.ai_enabled=false;simulation.auto_finish=false\n simulation.configure_test_loadout(preset)\n simulation.spawn_enemy('minion',Vector3(0,0,-1),10000)\n simulation.spawn_enemy('minion',Vector3(1,0,-1),10000)\n simulation.combat_event.connect(_on_combat_event)\n audio_router.last_sequence=-1;audio_router.hit_groups.clear();audio_router.sfx.stop_all()\n _sync_views(0);_animate(0)\nfunc pose():\n var p=views.fengli.animation_player\n return {'clip':p.current_animation,'position':p.current_animation_position,'length':p.current_animation_length,'motion':motion.fengli.duplicate(),'world':simulation.clock.world_time,'presenters':simulation.clock.presenters.duplicate()}\nfunc qa_animation():\n rows=[]\n for pair in [['e2','e','attack'],['r2','r','ultimate'],['r1','r','ultimate']]:\n  qa_setup({'e':pair[0] if pair[1]=='e' else 'e1','r':pair[0] if pair[1]=='r' else 'r1'})\n  var result=simulation.request_action(pair[1],Vector3.FORWARD)\n  var frames=[]\n  for i in 12:\n   simulation.step(.015);_sync_views(.015);_animate(.015)\n   var first=pose()\n   # Repeated view sync must not overwrite manual sampling.\n   _sync_views(0)\n   frames.append({'before':first,'after':pose()})\n  rows.append({'ability':pair[0],'request':result,'frames':frames})\n return JSON.stringify(rows)\nfunc overlays(v):\n var out=[]\n for i in v.flash_meshes.size():out.append({'mesh':str(v.flash_meshes[i].get_path()),'flash':v.flash_meshes[i].material_overlay==v.flash_material,'original':v.flash_meshes[i].material_overlay==v.original_overlays[i]})\n return out\nfunc qa_flash(stage):\n if stage=='start':\n  qa_setup({'e':'e2'});camera.size=12\n  simulation.damage_enemy(simulation.enemies[0],10,'qa_real_damage',901)\n elif stage=='second':\n  _sync_views(.08)\n  simulation.damage_enemy(simulation.enemies[1],10,'qa_real_damage',902)\n elif stage=='first_restore':_sync_views(.05)\n elif stage=='all_restore':_sync_views(.08)\n var result={}\n for id in views:result[id]=overlays(views[id])\n return JSON.stringify(result)\nfunc qa_audio():\n qa_setup({'e':'e3'});simulation.request_action('e',Vector3.FORWARD)\n var before=audio_router.counts.duplicate()\n # One actual attack sweeps two real targets with E3 supplementary packets.\n var result=simulation.request_action('attack',Vector3.FORWARD)\n simulation.step(.15);_sync_views(.15);_animate(.15)\n var after=audio_router.counts.duplicate();var log=simulation.event_log.duplicate(true)\n for event in log:audio_router.combat(event)\n var replay=audio_router.counts.duplicate()\n audio_router.sfx.stop_all()\n var accepted=[]\n for i in 100:accepted.append(audio_router.sfx.play_event('sword'))\n var burst=audio_router.sfx.snapshot()\n audio_router.sfx.set_muted(true)\n var muted=audio_router.sfx.snapshot();var denied=audio_router.sfx.play_event('hit')\n audio_router.sfx.set_muted(false)\n var unmuted=audio_router.sfx.play_event('hit')\n audio_router.sfx.stop_all()\n for id in audio_router.sfx.IDS:audio_router.sfx.play_event(id)\n var pool=audio_router.sfx.snapshot()\n audio_router.sfx.set_muted(true)\n return JSON.stringify({'request':result,'before':before,'after':after,'replay':replay,'events':log,'burst_accept':accepted,'burst':burst,'muted':muted,'muted_play':denied,'unmuted_play':unmuted,'pool':pool,'listened':false})\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://tests/qa/round9_observer.gd",
+      "content": "extends \"res://scripts/integration/room.gd\"\nvar qa_inputs=[]\nvar qa_events=[]\nvar qa_frames=[]\nvar qa_timer=0.0\nfunc _ready():\n super._ready();get_window().title='QA_CHECKPOINT_WINDOW'\nfunc _input(event):\n super._input(event)\n if event is InputEventKey:qa_inputs.append({'wall':Time.get_ticks_msec(),'key':event.keycode,'pressed':event.pressed,'echo':event.echo})\n if event is InputEventMouseButton:qa_inputs.append({'wall':Time.get_ticks_msec(),'button':event.button_index,'pressed':event.pressed})\nfunc _on_combat_event(event):\n super._on_combat_event(event)\n qa_events.append({'event':event.duplicate(true),'hero':{'hp':simulation.hero.hp,'state':simulation.hero.cast_state.duplicate(true),'e3':simulation.hero.overload_left,'cd':simulation.hero.cooldowns.duplicate(true),'untargetable':simulation.hero.untargetable,'immune':simulation.extensions.is_immune()},'scale':simulation.clock.scale_factor()})\n if qa_events.size()>20:qa_events.pop_front()\nfunc _physics_process(dt):\n super._physics_process(dt);qa_timer+=dt\n if qa_timer>=.025:\n  qa_timer=0\n  qa_frames.append({'time':simulation.clock.world_time,'phase':simulation.phase,'hp':simulation.hero.hp,'q2':simulation.hero.cast_state.has('q2'),'immune':simulation.extensions.is_immune(),'untargetable':simulation.hero.untargetable,'e3':simulation.hero.overload_left,'state':simulation.hero.cast_state.duplicate(true),'cooldowns':simulation.hero.cooldowns.duplicate(true)})\n  if qa_frames.size()>12:qa_frames.pop_front()\nfunc qa_read():\n var controls={};var buttons={'start':start_button,'allocation':live_hud.allocation,'mute':mute_button}\n for slot in ['Q','E','R','P']:\n  buttons['learn_'+slot]=live_hud.rows[slot].buy;buttons['options_'+slot]=live_hud.rows[slot].options\n for id in buttons:\n  var p=buttons[id].get_global_rect().get_center();controls[id]={'point':[p.x,p.y],'disabled':buttons[id].disabled}\n var choices={}\n for slot in ['Q','E','R','P']:\n  var opt=live_hud.rows[slot].options;var pop=opt.get_popup()\n  choices[slot]={'selected':opt.selected,'visible':pop.visible,'embedded':pop.is_embedded(),'position':[pop.position.x,pop.position.y],'size':[pop.size.x,pop.size.y],'count':pop.get_item_count()}\n var targets=[]\n for enemy in simulation.enemies:\n  if not enemy.dead:\n   var p=camera.unproject_position(enemy.position);targets.append({'id':enemy.actor_id,'screen':[p.x,p.y],'distance':enemy.position.distance_to(simulation.hero.position),'hp':enemy.hp,'timer':enemy.timer,'state':enemy.state})\n var aim=camera.unproject_position(Vector3(10,0,10))\n return JSON.stringify({'choices':choices,'state':integration_snapshot(),'controls':controls,'targets':targets,'empty_aim':[aim.x,aim.y],'viewport':[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y],'events':qa_events,'frames':qa_frames,'inputs':qa_inputs.slice(-60),'wall':Time.get_ticks_msec()})\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/room.tscn"
+    },
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round9_probe.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]

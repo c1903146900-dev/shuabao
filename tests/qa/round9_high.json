@@ -1,0 +1,70 @@
+[
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/room.tscn"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round9_probe.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_high_start()"
+    },
+    "wait_after": 25
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_high_report()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round9_observer.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]

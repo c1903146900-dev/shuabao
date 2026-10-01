@@ -1,0 +1,613 @@
+{
+  "baseline": "ae673bf01b03ddf1e046730244ecb5ce9b8d9180",
+  "controlled": {
+    "e2_sampling": {
+      "pass": true,
+      "last": {
+        "clip": "attack",
+        "length": 0.800000011920929,
+        "motion": {
+          "clip": "attack",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 0.0)",
+          "time": 0.576000008583069,
+          "walk": 0.0
+        },
+        "position": 0.576000008583069,
+        "presenters": {},
+        "world": 0.18
+      }
+    },
+    "r2_sampling": {
+      "pass": true,
+      "last": {
+        "clip": "ultimate",
+        "length": 2.0,
+        "motion": {
+          "clip": "ultimate",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 0.0)",
+          "time": 0.16,
+          "walk": 0.0
+        },
+        "position": 0.16,
+        "presenters": {
+          "fengli:r2": 0.0699999999999998
+        },
+        "world": 0.036
+      }
+    },
+    "r1_sampling": {
+      "pass": true,
+      "last": {
+        "clip": "ultimate",
+        "length": 2.0,
+        "motion": {
+          "clip": "ultimate",
+          "death": -1.0,
+          "position": "(0.0, 0.0, 0.0)",
+          "time": 1.63636363636363,
+          "walk": 0.0
+        },
+        "position": 1.63636363636363,
+        "presenters": {
+          "fengli": 0.200000000000002
+        },
+        "world": 0.18
+      }
+    },
+    "r1_time": {
+      "pass": true,
+      "world_time": 0.18
+    },
+    "first_hit": {
+      "pass": true,
+      "mesh_counts": {
+        "enemy_1": 55,
+        "enemy_2": 55,
+        "fengli": 72
+      }
+    },
+    "overlap": {
+      "pass": true,
+      "mesh_counts": {
+        "enemy_1": 55,
+        "enemy_2": 55,
+        "fengli": 72
+      }
+    },
+    "first_restored": {
+      "pass": true,
+      "mesh_counts": {
+        "enemy_1": 55,
+        "enemy_2": 55,
+        "fengli": 72
+      }
+    },
+    "all_restored": {
+      "pass": true,
+      "mesh_counts": {
+        "enemy_1": 55,
+        "enemy_2": 55,
+        "fengli": 72
+      }
+    },
+    "damage_group": {
+      "pass": true,
+      "packets": 4,
+      "hit_cues": 1
+    },
+    "duplicate_events": {
+      "pass": true
+    },
+    "audio_burst_mute": {
+      "pass": true
+    },
+    "sustained_high_attack": {
+      "pass": true,
+      "accepted_attacks": 10,
+      "attack_speed": 2.5,
+      "peak_players": 2,
+      "peak_same_sound": 1,
+      "counts_before": {
+        "e_overload": 1
+      },
+      "counts_after": {
+        "e_overload": 1,
+        "hit": 10,
+        "sword": 10
+      }
+    }
+  },
+  "natural": {
+    "completion": {
+      "pass": true,
+      "stages": [
+        "initial",
+        "enemy_warning",
+        "muted",
+        "room1_victory",
+        "unmuted",
+        "room2_started",
+        "natural_audio",
+        "room2_victory",
+        "done"
+      ]
+    },
+    "muted": {
+      "pass": true,
+      "player": {
+        "active": 0,
+        "bus": "CombatSFX_44862277075",
+        "limit": 8,
+        "loaded_ids": 13,
+        "muted": true,
+        "voices": [],
+        "volume_db": -3.0
+      }
+    },
+    "unmuted": {
+      "pass": true,
+      "player": {
+        "active": 0,
+        "bus": "CombatSFX_44862277075",
+        "limit": 8,
+        "loaded_ids": 13,
+        "muted": false,
+        "voices": [],
+        "volume_db": -3.0
+      }
+    },
+    "room1_victory": {
+      "pass": true,
+      "audio": {
+        "counts": {
+          "enemy_die": 3,
+          "hit": 2,
+          "hurt": 3,
+          "level_up": 1,
+          "q_thrust": 1,
+          "settlement": 1,
+          "sword": 1,
+          "ui_confirm": 1
+        },
+        "history": [
+          {
+            "id": "ui_confirm",
+            "played": true,
+            "source": "ui:ui-fengli-9795661-1"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-1:7"
+          },
+          {
+            "id": "q_thrust",
+            "played": true,
+            "source": "combat:run-9793125/room-1:10"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:12"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:14"
+          },
+          {
+            "id": "sword",
+            "played": false,
+            "source": "combat:run-9793125/room-1:18"
+          },
+          {
+            "id": "hurt",
+            "played": false,
+            "source": "combat:run-9793125/room-1:19"
+          },
+          {
+            "id": "hit",
+            "played": false,
+            "source": "combat:run-9793125/room-1:21"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:22"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:24"
+          },
+          {
+            "id": "level_up",
+            "played": false,
+            "source": "reward:24"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:26"
+          },
+          {
+            "id": "settlement",
+            "played": false,
+            "source": "terminal:run-9793125/room-1/victory/28"
+          }
+        ],
+        "last_sequence": 28,
+        "player": {
+          "active": 0,
+          "bus": "CombatSFX_44862277075",
+          "limit": 8,
+          "loaded_ids": 13,
+          "muted": true,
+          "voices": [],
+          "volume_db": -3.0
+        }
+      }
+    },
+    "room2_victory": {
+      "pass": true,
+      "audio": {
+        "counts": {
+          "enemy_die": 6,
+          "hit": 6,
+          "hurt": 4,
+          "level_up": 2,
+          "q_thrust": 1,
+          "settlement": 2,
+          "sword": 5,
+          "ui_confirm": 1
+        },
+        "history": [
+          {
+            "id": "ui_confirm",
+            "played": true,
+            "source": "ui:ui-fengli-9795661-1"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-1:7"
+          },
+          {
+            "id": "q_thrust",
+            "played": true,
+            "source": "combat:run-9793125/room-1:10"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:12"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:14"
+          },
+          {
+            "id": "sword",
+            "played": false,
+            "source": "combat:run-9793125/room-1:18"
+          },
+          {
+            "id": "hurt",
+            "played": false,
+            "source": "combat:run-9793125/room-1:19"
+          },
+          {
+            "id": "hit",
+            "played": false,
+            "source": "combat:run-9793125/room-1:21"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:22"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:24"
+          },
+          {
+            "id": "level_up",
+            "played": false,
+            "source": "reward:24"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:26"
+          },
+          {
+            "id": "settlement",
+            "played": false,
+            "source": "terminal:run-9793125/room-1/victory/28"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:33"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:35"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:38"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:39"
+          },
+          {
+            "id": "enemy_die",
+            "played": true,
+            "source": "combat:run-9793125/room-2:40"
+          },
+          {
+            "id": "level_up",
+            "played": true,
+            "source": "reward:40"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-2:43"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:45"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:47"
+          },
+          {
+            "id": "enemy_die",
+            "played": true,
+            "source": "combat:run-9793125/room-2:49"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:51"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:52"
+          },
+          {
+            "id": "enemy_die",
+            "played": true,
+            "source": "combat:run-9793125/room-2:53"
+          },
+          {
+            "id": "settlement",
+            "played": true,
+            "source": "terminal:run-9793125/room-2/victory/55"
+          }
+        ],
+        "last_sequence": 55,
+        "player": {
+          "active": 4,
+          "bus": "CombatSFX_44862277075",
+          "limit": 8,
+          "loaded_ids": 13,
+          "muted": false,
+          "voices": [
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "sword",
+              "pitch": 1.02165675163269,
+              "playing": true,
+              "position": 0.19200000166893,
+              "stream": "res://assets/audio/sword_2.wav",
+              "volume_db": -14.0
+            },
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "hit",
+              "pitch": 0.991725087165833,
+              "playing": true,
+              "position": 0.00400000018998981,
+              "stream": "res://assets/audio/hit.wav",
+              "volume_db": -14.0
+            },
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "enemy_die",
+              "pitch": 0.981761038303375,
+              "playing": true,
+              "position": 0.00400000018998981,
+              "stream": "res://assets/audio/enemy_die.wav",
+              "volume_db": -14.0
+            },
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "settlement",
+              "pitch": 1.0,
+              "playing": true,
+              "position": 0.00400000018998981,
+              "stream": "res://assets/audio/settlement.wav",
+              "volume_db": -14.0
+            }
+          ],
+          "volume_db": -3.0
+        }
+      }
+    },
+    "distinct_room_ids": {
+      "pass": true
+    },
+    "actual_players": {
+      "pass": true,
+      "snapshot": {
+        "counts": {
+          "enemy_die": 4,
+          "hit": 4,
+          "hurt": 4,
+          "level_up": 2,
+          "q_thrust": 1,
+          "settlement": 1,
+          "sword": 3,
+          "ui_confirm": 1
+        },
+        "history": [
+          {
+            "id": "ui_confirm",
+            "played": true,
+            "source": "ui:ui-fengli-9795661-1"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-1:7"
+          },
+          {
+            "id": "q_thrust",
+            "played": true,
+            "source": "combat:run-9793125/room-1:10"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:12"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-1:14"
+          },
+          {
+            "id": "sword",
+            "played": false,
+            "source": "combat:run-9793125/room-1:18"
+          },
+          {
+            "id": "hurt",
+            "played": false,
+            "source": "combat:run-9793125/room-1:19"
+          },
+          {
+            "id": "hit",
+            "played": false,
+            "source": "combat:run-9793125/room-1:21"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:22"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:24"
+          },
+          {
+            "id": "level_up",
+            "played": false,
+            "source": "reward:24"
+          },
+          {
+            "id": "enemy_die",
+            "played": false,
+            "source": "combat:run-9793125/room-1:26"
+          },
+          {
+            "id": "settlement",
+            "played": false,
+            "source": "terminal:run-9793125/room-1/victory/28"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:33"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:35"
+          },
+          {
+            "id": "sword",
+            "played": true,
+            "source": "combat:run-9793125/room-2:38"
+          },
+          {
+            "id": "hit",
+            "played": true,
+            "source": "combat:run-9793125/room-2:39"
+          },
+          {
+            "id": "enemy_die",
+            "played": true,
+            "source": "combat:run-9793125/room-2:40"
+          },
+          {
+            "id": "level_up",
+            "played": true,
+            "source": "reward:40"
+          },
+          {
+            "id": "hurt",
+            "played": true,
+            "source": "combat:run-9793125/room-2:43"
+          }
+        ],
+        "last_sequence": 44,
+        "player": {
+          "active": 3,
+          "bus": "CombatSFX_44862277075",
+          "limit": 8,
+          "loaded_ids": 13,
+          "muted": false,
+          "voices": [
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "enemy_die",
+              "pitch": 0.983711659908295,
+              "playing": true,
+              "position": 0.275999993085861,
+              "stream": "res://assets/audio/enemy_die.wav",
+              "volume_db": -14.0
+            },
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "level_up",
+              "pitch": 1.0,
+              "playing": true,
+              "position": 0.280000001192093,
+              "stream": "res://assets/audio/level_up.wav",
+              "volume_db": -14.0
+            },
+            {
+              "bus": "CombatSFX_44862277075",
+              "id": "hurt",
+              "pitch": 0.992032706737518,
+              "playing": true,
+              "position": 0.187999993562698,
+              "stream": "res://assets/audio/hurt.wav",
+              "volume_db": -14.0
+            }
+          ],
+          "volume_db": -3.0
+        }
+      }
+    }
+  },
+  "listened": false,
+  "failures": []
+}

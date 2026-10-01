@@ -1,0 +1,160 @@
+[
+  {
+    "server": "godot",
+    "tool": "create_script",
+    "arguments": {
+      "script_path": "res://tests/qa/round9_probe.gd",
+      "content": "extends \"res://scripts/integration/room.gd\"\n# Explicit controlled fixture. Replaces simulation, never presented as natural play.\nvar rows=[]\nfunc qa_setup(preset):\n set_physics_process(false)\n simulation.free()\n for v in views.values():v.free()\n views.clear();motion.clear();hero_clip.clear()\n simulation=Sim.new();add_child(simulation)\n simulation.ai_enabled=false;simulation.auto_finish=false\n simulation.configure_test_loadout(preset)\n simulation.hero.position=Vector3.ZERO\n simulation.spawn_enemy('minion',Vector3(0,0,-1),10000)\n simulation.spawn_enemy('minion',Vector3(1,0,-1),10000)\n simulation.combat_event.connect(_on_combat_event)\n audio_router.last_sequence=-1;audio_router.hit_groups.clear();audio_router.sfx.stop_all()\n _sync_views(0);_animate(0)\nfunc pose():\n var p=views.fengli.animation_player\n return {'clip':p.current_animation,'position':p.current_animation_position,'length':p.current_animation_length,'motion':motion.fengli.duplicate(),'world':simulation.clock.world_time,'presenters':simulation.clock.presenters.duplicate()}\nfunc qa_animation():\n rows=[]\n for pair in [['e2','e','attack'],['r2','r','ultimate'],['r1','r','ultimate']]:\n  qa_setup({'e':pair[0] if pair[1]=='e' else 'e1','r':pair[0] if pair[1]=='r' else 'r1'})\n  var result=simulation.request_action(pair[1],Vector3.FORWARD)\n  var frames=[]\n  for i in (60 if pair[0]=='r1' else 12):\n   simulation.step(.015);_sync_views(.015);_animate(.015)\n   var first=pose()\n   # Repeated view sync must not overwrite manual sampling.\n   _sync_views(0)\n   frames.append({'before':first,'after':pose()})\n  rows.append({'ability':pair[0],'request':result,'frames':frames})\n return JSON.stringify(rows)\nfunc overlays(v):\n var out=[]\n for i in v.flash_meshes.size():out.append({'mesh':str(v.flash_meshes[i].get_path()),'flash':v.flash_meshes[i].material_overlay==v.flash_material,'original':v.flash_meshes[i].material_overlay==v.original_overlays[i]})\n return out\nfunc qa_flash(stage):\n if stage=='start':\n  qa_setup({'e':'e2'});camera.size=12\n  simulation.damage_enemy(simulation.enemies[0],10,'qa_real_damage',901)\n elif stage=='second':\n  _sync_views(.08)\n  simulation.damage_enemy(simulation.enemies[1],10,'qa_real_damage',902)\n elif stage=='first_restore':_sync_views(.05)\n elif stage=='all_restore':_sync_views(.08)\n var result={}\n for id in views:result[id]=overlays(views[id])\n return JSON.stringify(result)\nfunc qa_audio():\n qa_setup({'e':'e3'});simulation.request_action('e',Vector3.FORWARD)\n var before=audio_router.counts.duplicate()\n # One actual attack sweeps two real targets with E3 supplementary packets.\n var result=simulation.request_action('attack',Vector3.FORWARD)\n simulation.step(.15);_sync_views(.15);_animate(.15)\n var after=audio_router.counts.duplicate();var log=simulation.event_log.duplicate(true)\n for event in log:audio_router.combat(event)\n var replay=audio_router.counts.duplicate()\n audio_router.sfx.stop_all()\n var accepted=[]\n for i in 100:accepted.append(audio_router.sfx.play_event('sword'))\n var burst=audio_router.sfx.snapshot()\n audio_router.sfx.set_muted(true)\n var muted=audio_router.sfx.snapshot();var denied=audio_router.sfx.play_event('hit')\n audio_router.sfx.set_muted(false)\n var unmuted=audio_router.sfx.play_event('hit')\n audio_router.sfx.stop_all()\n for id in audio_router.sfx.IDS:audio_router.sfx.play_event(id)\n var pool=audio_router.sfx.snapshot()\n audio_router.sfx.set_muted(true)\n return JSON.stringify({'request':result,'before':before,'after':after,'replay':replay,'events':log,'burst_accept':accepted,'burst':burst,'muted':muted,'muted_play':denied,'unmuted_play':unmuted,'pool':pool,'listened':false})\n\nfunc qa_high_start():\n call_deferred('qa_high_run')\n return 'started controlled high attack speed run'\nfunc qa_high_run():\n qa_setup({'e':'e3'})\n audio_router.sfx.set_muted(false)\n simulation.hero.stats.attack_speed=10.0\n simulation.request_action('e',Vector3.FORWARD)\n var counts_before=audio_router.counts.duplicate()\n var samples=[];var accepted=0\n for i in 240:\n  if simulation.request_action('attack',Vector3.FORWARD).accepted:accepted+=1\n  simulation.step(1.0/60);_sync_views(1.0/60);_animate(1.0/60)\n  samples.append(audio_router.sfx.snapshot())\n  await get_tree().create_timer(1.0/60).timeout\n set_meta('high_result',{'attack_speed':simulation.hero.attack_speed(),'accepted':accepted,'before':counts_before,'after':audio_router.counts.duplicate(),'events':simulation.event_log,'players':samples,'listened':false})\n audio_router.sfx.set_muted(true)\nfunc qa_high_report():return JSON.stringify(get_meta('high_result',{}))\n",
+      "overwrite": true
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/room.tscn"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round9_probe.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "open_scene",
+    "arguments": {
+      "scene_path": "res://scenes/integration/room.tscn"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "play_scene",
+    "arguments": {
+      "mode": "current"
+    },
+    "wait_after": 12
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_animation()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_flash(\"start\")"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_flash(\"second\")"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_flash(\"first_restore\")"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_flash(\"all_restore\")"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "get_game_screenshot",
+    "arguments": {},
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_audio()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_high_start()"
+    },
+    "wait_after": 8
+  },
+  {
+    "server": "godot",
+    "tool": "execute_game_script",
+    "arguments": {
+      "code": "qa_high_report()"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "stop_scene",
+    "arguments": {},
+    "wait_after": 1
+  },
+  {
+    "server": "godot",
+    "tool": "attach_script",
+    "arguments": {
+      "node_path": ".",
+      "script_path": "res://tests/qa/round9_observer.gd"
+    },
+    "wait_after": 0
+  },
+  {
+    "server": "godot",
+    "tool": "save_scene",
+    "arguments": {},
+    "wait_after": 0
+  }
+]
