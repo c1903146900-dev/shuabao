@@ -1,0 +1,281 @@
+{
+  "status": "public_non_runnable_text_snapshot",
+  "source_file_count": 19,
+  "source_files": [
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/adapter.gd",
+      "bytes": 7372,
+      "sha256": "6f8efd9dd268be2b0b93f49b837cb37b460486cbfb7240f80d6e49dd59c205eb",
+      "original_revision06_sha256": "6f8efd9dd268be2b0b93f49b837cb37b460486cbfb7240f80d6e49dd59c205eb",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/decision09.json",
+      "bytes": 876,
+      "sha256": "0dcf8988252f715c9899e9d8529b1106e56d9a1180bb888e7f7c62c5ed9e6462",
+      "original_revision06_sha256": "c79ea7d3394e290f7fe3a310cb1aae91b5722e7b01c66e46cb37f561a85d871e",
+      "public_changes": [
+        "Removed private conversation metadata and quotation; retained approved rules and technical H04 source."
+      ]
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/model.gd",
+      "bytes": 1904,
+      "sha256": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "original_revision06_sha256": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/passive10.gd",
+      "bytes": 2447,
+      "sha256": "2af87cc6b34ac767902e1fa44f376a221da4437db12dc12d268a77c24064f6c6",
+      "original_revision06_sha256": "2af87cc6b34ac767902e1fa44f376a221da4437db12dc12d268a77c24064f6c6",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/scripts/combat/hero_combat_core.gd",
+      "bytes": 50325,
+      "sha256": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "original_revision06_sha256": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "bytes": 21655,
+      "sha256": "0f669b66f0dd5a68b4baf2848a8f5bf7117e875b1ae6f3f2558be1b3c72ada68",
+      "original_revision06_sha256": "0f669b66f0dd5a68b4baf2848a8f5bf7117e875b1ae6f3f2558be1b3c72ada68",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "bytes": 25326,
+      "sha256": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762",
+      "original_revision06_sha256": "094a59aebf320078f3905a73602a8e345a01dcb3aa9839f1053c353d3180df1a",
+      "public_changes": [
+        "Replaced conversation identifier in a comment; executable code unchanged."
+      ]
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "bytes": 23118,
+      "sha256": "c1f33223444d40b49a95ca4373f9ce539992097a2f8daefef78e434ad5ca1cbe",
+      "original_revision06_sha256": "c1f33223444d40b49a95ca4373f9ce539992097a2f8daefef78e434ad5ca1cbe",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "bytes": 26743,
+      "sha256": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8",
+      "original_revision06_sha256": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "bytes": 37203,
+      "sha256": "80da2a5a16b5eb6d73c8cb1227a1a075ad85a7ddc5a8ce26e6aa7533a077d677",
+      "original_revision06_sha256": "80da2a5a16b5eb6d73c8cb1227a1a075ad85a7ddc5a8ce26e6aa7533a077d677",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "bytes": 25087,
+      "sha256": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7",
+      "original_revision06_sha256": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "bytes": 108217,
+      "sha256": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "original_revision06_sha256": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/bridge.gd",
+      "bytes": 4075,
+      "sha256": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+      "original_revision06_sha256": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/c02_source_transition.json",
+      "bytes": 2667,
+      "sha256": "6328d4eb0fca1eced19113b4326d585e378372f93361998293336701f215a497",
+      "original_revision06_sha256": "6328d4eb0fca1eced19113b4326d585e378372f93361998293336701f215a497",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/c02_visual_transition.json",
+      "bytes": 328,
+      "sha256": "e01d81d7ca8cb72d3de16916cbb106ae8b85e7d7230d35f97b49e3f5a225fc35",
+      "original_revision06_sha256": "e01d81d7ca8cb72d3de16916cbb106ae8b85e7d7230d35f97b49e3f5a225fc35",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/equipment48_plan.json",
+      "bytes": 3475,
+      "sha256": "7b8f53fa96accf5a220ab201128491cfdc5cc2ce01486f2a1f42d2fa50ba55bc",
+      "original_revision06_sha256": "7b8f53fa96accf5a220ab201128491cfdc5cc2ce01486f2a1f42d2fa50ba55bc",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 13345,
+      "sha256": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "original_revision06_sha256": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 322591,
+      "sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "original_revision06_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "public_changes": []
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/visual_binding.json",
+      "bytes": 9222,
+      "sha256": "e24ec5b3453024d9cf97aaf072974561f9277b7509e50024368274734af48347",
+      "original_revision06_sha256": "e24ec5b3453024d9cf97aaf072974561f9277b7509e50024368274734af48347",
+      "public_changes": []
+    }
+  ],
+  "validation": {
+    "gd_executable_lines_unchanged": true,
+    "all_other_source_bytes_unchanged_except_two_documented_files": true,
+    "secret_and_private_metadata_pattern_scan": "no matches in selected public payload; not an exhaustive security audit",
+    "root_import_or_export_tested": false
+  },
+  "files": [
+    {
+      "path": "development/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "development/shuabao/README.md",
+      "bytes": 1769,
+      "sha256": "a6f4ed45118d6f850856a5db040ecd87b072b3890d81563d7ca7969558e240ac"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/evidence/test_summary.json",
+      "bytes": 3427,
+      "sha256": "7a30ecdbff944f79084b7b1ea5d527eb9076a559f51aef9e9469f3c90b071c5b"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/provenance/recovery_sources.json",
+      "bytes": 1065,
+      "sha256": "d05111484822fd962b4364688dbc831b9bf88b7b6231ddd48def10eb96cb96d7"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/rules/confirmed_rules.json",
+      "bytes": 1262,
+      "sha256": "5f56f4d7415f3854532f93d192d2875d36f96f97a199ab54f49595ef2e0288fb"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/adapter.gd",
+      "bytes": 7372,
+      "sha256": "6f8efd9dd268be2b0b93f49b837cb37b460486cbfb7240f80d6e49dd59c205eb"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/decision09.json",
+      "bytes": 876,
+      "sha256": "0dcf8988252f715c9899e9d8529b1106e56d9a1180bb888e7f7c62c5ed9e6462"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/model.gd",
+      "bytes": 1904,
+      "sha256": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/equipment_prism_20261011/passive10.gd",
+      "bytes": 2447,
+      "sha256": "2af87cc6b34ac767902e1fa44f376a221da4437db12dc12d268a77c24064f6c6"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/scripts/combat/hero_combat_core.gd",
+      "bytes": 50325,
+      "sha256": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "bytes": 21655,
+      "sha256": "0f669b66f0dd5a68b4baf2848a8f5bf7117e875b1ae6f3f2558be1b3c72ada68"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "bytes": 25326,
+      "sha256": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "bytes": 23118,
+      "sha256": "c1f33223444d40b49a95ca4373f9ce539992097a2f8daefef78e434ad5ca1cbe"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "bytes": 26743,
+      "sha256": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "bytes": 37203,
+      "sha256": "80da2a5a16b5eb6d73c8cb1227a1a075ad85a7ddc5a8ce26e6aa7533a077d677"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "bytes": 25087,
+      "sha256": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "bytes": 108217,
+      "sha256": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/bridge.gd",
+      "bytes": 4075,
+      "sha256": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/c02_source_transition.json",
+      "bytes": 2667,
+      "sha256": "6328d4eb0fca1eced19113b4326d585e378372f93361998293336701f215a497"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/c02_visual_transition.json",
+      "bytes": 328,
+      "sha256": "e01d81d7ca8cb72d3de16916cbb106ae8b85e7d7230d35f97b49e3f5a225fc35"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/equipment48_plan.json",
+      "bytes": 3475,
+      "sha256": "7b8f53fa96accf5a220ab201128491cfdc5cc2ce01486f2a1f42d2fa50ba55bc"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 13345,
+      "sha256": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 322591,
+      "sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91"
+    },
+    {
+      "path": "development/shuabao/c02-revision06/source/visual_rework_20261009/binding/visual_binding.json",
+      "bytes": 9222,
+      "sha256": "e24ec5b3453024d9cf97aaf072974561f9277b7509e50024368274734af48347"
+    },
+    {
+      "path": "shaheyouxi/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "shaheyouxi/README.md",
+      "bytes": 358,
+      "sha256": "df7e8b751372b67acaf89f81b8b1393ca97cbb79e84a179cf6554aea614bcfa9"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "item_id": "final:C02",
+  "name": "双相棱镜",
+  "values": {
+    "price": 3200,
+    "AP": 80,
+    "CDR_percent": 15,
+    "move_speed_percent": 12,
+    "components": {
+      "intermediate:I05": 1200,
+      "intermediate:I09": 1250,
+      "base:B02": 450
+    },
+    "combine_fee": 300,
+    "passive": "passive:10",
+    "window_seconds": 3,
+    "final_bonus_percent": 18
+  },
+  "same_name_passive": "once",
+  "approved_rules": [
+    "成功放出技能就开始计时，空放也算，取消预览不算。",
+    "Q→E→Q可以连续触发；Q→Q→E则从最近一次Q重新计3秒。",
+    "加成覆盖该次技能的多段、持续伤害；Q2强化的普攻仍是普攻，不额外吃这18%。"
+  ],
+  "H04": {
+    "file": "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx",
+    "paragraph_numbering": "direct word/document.xml body/w:p zero-based index 71, distinct from historical paragraph 92",
+    "exact": "H04｜落日熔金　「大漠孤烟·长河落日」的落日形成伤害区域，持续[H04-1]秒；半径从[H04-2]米线性收缩至[H04-3]米。每隔[H04-4]秒对其中敌人造成[H04-5]+[H04-6]%AP普通伤害。"
+  },
+  "scope": "C02 confirmed rules only; not a replacement for the complete equipment catalogue."
+}

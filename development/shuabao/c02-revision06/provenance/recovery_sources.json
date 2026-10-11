@@ -1,0 +1,18 @@
+{
+  "snapshot": "C02 revision06 public derivative",
+  "baseline": "candidate38 recovery",
+  "candidate": "candidate40_rebuild",
+  "original_review_manifest_sha256": "befaf556d97b2685c61b80c0d291cfd47cc98da62e8d62e6cf20a24999a70956",
+  "original_candidate_source_binding_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+  "delta": "18 changed/new paths in original review manifest plus unchanged visual_binding.json reference; 19 source files total.",
+  "rule_source": {
+    "equipment": "docs/equipment_source_20261004/correction_0959/equipment_system_extracted.json",
+    "H04": "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx; direct body paragraph index 71 (zero-based)"
+  },
+  "recovery_limits": [
+    "candidate39 original runtime source was not recovered by this checkpoint.",
+    "Historic candidate39 841 checks are not reused.",
+    "This public text snapshot omits the complete candidate38 baseline and required runtime assets."
+  ],
+  "root_repository_baseline": "1de8ec97d294bbb2492e36bbdebd462b1a1abaa7"
+}

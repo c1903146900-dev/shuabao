@@ -1,0 +1,80 @@
+{
+  "candidate": "candidate40_rebuild",
+  "tested_artifact": "original complete runtime candidate, not this sanitized partial snapshot",
+  "total_checks": 745,
+  "runs": [
+    {
+      "run": "c02_initial_run01",
+      "passed": true,
+      "source_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "script_sha256": "0388e25e9339fb469d6f13a9d32aa1125325ab2a08f6eb2a3b13f9bfcae7d35b",
+      "business_sha256": "e60b79e2777c9577fae6cec85b64ee46747e3a02179bda50e2efe415a6affc16",
+      "checks": 165,
+      "raw_errors": [],
+      "first_initial_groups_only": true,
+      "real_release_verified": false,
+      "real_damage_verified": false
+    },
+    {
+      "run": "c02_q1_empty_e1_run02",
+      "passed": true,
+      "source_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "script_sha256": "d70932c0baaf97ee418589509c2031abee45ff64cb3df0df0b29861a228b3857",
+      "business_sha256": "e3fb0cda3816165c6e4d594d69f7047b9f460a47fff48fab41a5227d48811fa6",
+      "checks": 185,
+      "raw_errors": [],
+      "mode": "q1_empty_then_e1_base_damage",
+      "real_release_verified": true,
+      "real_damage_verified": true,
+      "E1_two_stage_verified": false
+    },
+    {
+      "run": "c02_q2_basic_run01",
+      "passed": true,
+      "source_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "script_sha256": "fb41a51a4209f7e3c29d6e3888e4e19a9af4aba5945d2ff816f86813535d3422",
+      "business_sha256": "066b81e90642a51a187b600dea25e6741e4af82aa96b72e976f727495a0803a0",
+      "checks": 180,
+      "raw_errors": [],
+      "mode": "q2_enhanced_basic_excluded",
+      "real_release_verified": true,
+      "real_damage_verified": true,
+      "Q2_skill_damage_verified": false,
+      "enhanced_basic_exclusion_verified": true
+    },
+    {
+      "run": "c02_e1_two_stage_run01",
+      "passed": true,
+      "source_sha256": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+      "script_sha256": "fc7cdf8b2e76ea47a160a8002575904bd6e077626ebe472fd82abf7156535cc6",
+      "business_sha256": "3e74c1cba19c746950e113637a3990de7c22417c1d70f5ff1ab8aff7eb7489d5",
+      "checks": 215,
+      "raw_errors": [],
+      "mode": "q1_empty_then_e1_two_stage",
+      "real_release_verified": true,
+      "real_damage_verified": true,
+      "E1_two_stage_verified": true
+    }
+  ],
+  "independent_review_status": "PASS: independent review confirmed the Q2 enhanced-basic exclusion and E1 two-stage result evidence.",
+  "excluded_history": [
+    {
+      "run": "c02_q1_empty_e1_run01",
+      "recorded_checks": 87,
+      "status": "business_failed",
+      "reason": "Compound fixture assertion failed; the 87 recorded checks are not 87 failed assertions and are excluded from the passing total."
+    },
+    {
+      "candidate": "candidate39",
+      "checks": 841,
+      "reason": "Historical results are not inherited by candidate40."
+    }
+  ],
+  "limits": [
+    "No claim of full C02 skill coverage.",
+    "No native input, visual acceptance, full-game acceptance or export acceptance claimed.",
+    "Q2 skill damage is not verified by enhanced-basic exclusion test.",
+    "Public snapshot was not run as a standalone Godot project.",
+    "Test fixtures used a 60000 wallet balance and technical lethal damage in the prior room to obtain SP through the original reward path; these are not natural-play or natural-clear evidence."
+  ]
+}
