@@ -1,0 +1,112 @@
+C02 41/42 reconstruction instructions captured 2026-10-12
+
+STATUS AND LIMITS
+This is a newly assembled technical reconstruction note, NOT recovered original files, NOT byte-for-byte restoration, and NOT a new validation result. The candidate41/42 original working files were unavailable when this note was recorded on 2026-10-12. No C02 engine run or production reconstruction is represented by this note.
+Historical candidate40 had 1968 limited combat checks; candidate42 had 59 shop GUI checks plus two independently viewed screenshots. These are historical evidence, not tests rerun today. Historical candidate39/841 checks were never inherited. Exact original bytes require an independently verified persisted baseline and SHA verification.
+
+FINAL FIVE FILES RELATIVE TO CANDIDATE40
+1. visual_rework_20261009/runtime_host.gd
+   after SHA256 7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b
+   before SHA256 67b2a70da3d0c78be60d85a9c1e274c1b8e96bf3d4bed9ef159f70ee84914385
+2. visual_rework_20261009/binding/c03_visual_source_successor.gd
+   after SHA256 8063377064271e4adf376f511440cf52aa8d5aa57bc43031e0e5f97e8a4104bf
+   before SHA256 eb19b3fc120c889fdf12c0bdebd474450c1a083381ae15656f93d3caaba9899f
+3. visual_rework_20261009/binding/c02_visual_source_transition.json (new)
+   SHA256 42e2443012c44891ad4587c82d92e14fda84e9375b14c9a9e9141fca1e780180
+4. visual_rework_20261009/binding/visual_binding.json
+   after SHA256 93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5
+   before SHA256 e24ec5b3453024d9cf97aaf072974561f9277b7509e50024368274734af48347
+5. visual_rework_20261009/binding/source_binding.json
+   final42 SHA256 1fb767867b7ad9e7d80493c27c31de945f75bed1ce7ff9ddfa9beb58dc151d4d
+   parent41 SHA256 0cd1b1df50461c67827e9861065e8413582a91534fc7b98267b9f5fee4242e5d
+   parent40 SHA256 f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91
+   restored38 SHA256 45f0a7080bd4bf671b2a165af8211d23f003c4983bb27e48b49a3e0a933f34c3
+
+41 EXACT FOUR-LINE INSERTION AS RETAINED
+Insert before the original if status.has("passive11") branch in runtime_host.gd. Preserve the rest of the original file. Each leading space below is intentional; nested lines have two spaces.
+
+ if status.has("passive10"):
+  var c02: Dictionary = status.passive10
+  var c02_text: String = "交替施法：Q后%s秒内释放E，或E后%s秒内释放Q，后一个技能最终伤害提高%s%%。成功空放也计时，取消预览不计；可连续交替，同技能重放从最近一次计时。加成覆盖该次技能的多段和持续伤害；Q2强化普攻不享受此加成。同名被动只生效一次。" % [str(c02.window),str(c02.window),str(c02.damage_bonus)]
+  if not shop_panel._detail.text.contains(c02_text): shop_panel._detail.text += "\n" + c02_text
+
+The original display rendered 3.0秒 and18.0%. Tests normalized only those two exact substrings and separately checked runtime window3/damage_bonus18. No gameplay change was made by41.
+41 binding operation: update only runtime_host's existing pin in visual_binding.runtime_map, then update only runtime_host and visual_binding pins in source_binding.runtime_map. Core1746/visual71/intersection7/ancestor20. Do not infer the full binding JSON from these notes; its original formatting and complete baseline are required to reproduce the hashes.
+
+42 PLAN GENERATION
+The original Q3 actor verifier calls C03VisualSource.expected_sha for its preserved old Q3 source map. Its existing helper chains C03 -> G01 -> G01_SYNC. Those stages must remain intact. Candidate41 GUI stopped at original startup HOLD because these three C02 source changes were not admitted by that separate chain:
+- scripts/combat/hero_combat_core.gd
+- tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd
+- tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd
+Do not skip HOLD or accept arbitrary hashes.
+
+Generate c02_visual_source_transition.json using Python json.dumps(value,ensure_ascii=False,indent=2)+'\n', encoded UTF-8. Preserve key insertion order below:
+{
+  "schema": "c02-three-source-visual-successor-1",
+  "predecessor_source": "45f0a7080bd4bf671b2a165af8211d23f003c4983bb27e48b49a3e0a933f34c3",
+  "combat_successor_source": "f6df5e7a66edcb315376554bcac83afa2fdd9e6c7bdf4891efe8108e3f431c91",
+  "changes": <three rows in the exact path order above; each row has before then after>
+}
+The rows originally came from candidate40 revision06 REVIEW_MANIFEST.json; before was independently checked against restored38 bytes, after against candidate41 bytes. All three before values must equal the old helper's exact chained output for the original Q3 map. Known retained values:
+- core before2431e9d682c1e6a1871a78cfb8feeae7552c021f7c6d6eecc49456cea731a69e
+- Q1 before3d5d328b62bc6520b90b010bcfaa2e293418dec1d5599fbaa2868df44ffa538f
+- core afterd1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285
+The other three row hashes are NOT retained in full in this note's available context. Retrieve and verify the authorized manifest/baseline; do not invent them. Plan must hash to42e2443012c44891ad4587c82d92e14fda84e9375b14c9a9e9141fca1e780180 to count as original-byte match.
+
+42 HELPER GENERATION
+Starting from the exact eb19b3fc... old helper, replace its single declaration:
+static func expected_sha(path:String,original:String)->String:
+with:
+static func _g01_sync_expected_sha(path:String,original:String)->String:
+Preserve every other existing byte. Append the following block, with one initial newline:
+
+## Only the three audited C02 source successors; preserve every previous stage.
+const C02_PLAN_PATH="res://visual_rework_20261009/binding/c02_visual_source_transition.json"
+const C02_PLAN_SHA="42e2443012c44891ad4587c82d92e14fda84e9375b14c9a9e9141fca1e780180"
+const C02_PATHS=["scripts/combat/hero_combat_core.gd","tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd","tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd"]
+static func expected_sha(path:String,original:String)->String:
+ var previous:String=_g01_sync_expected_sha(path,original)
+ if previous.is_empty() or path not in C02_PATHS:return previous
+ if FileAccess.get_sha256(C02_PLAN_PATH)!=C02_PLAN_SHA:return ""
+ var parsed:Variant=JSON.parse_string(FileAccess.get_file_as_string(C02_PLAN_PATH))
+ if not parsed is Dictionary or parsed.get("schema","")!="c02-three-source-visual-successor-1":return ""
+ var changes:Variant=parsed.get("changes")
+ if not changes is Dictionary or changes.size()!=C02_PATHS.size():return ""
+ for allowed:String in C02_PATHS:
+  if not changes.has(allowed):return ""
+ var row:Variant=changes[path]
+ if not row is Dictionary or row.size()!=2 or not row.has("before") or not row.has("after"):return ""
+ if typeof(row.before)!=TYPE_STRING or typeof(row.after)!=TYPE_STRING or row.before!=previous or row.after.length()!=64:return ""
+ return row.after
+
+42 BINDING GENERATION
+Only source_binding.runtime_map changes: update existing res://visual_rework_20261009/binding/c03_visual_source_successor.gd pin and append res://visual_rework_20261009/binding/c02_visual_source_transition.json pin. Serialize with Python json.dumps(ensure_ascii=False,indent=2)+'\n'. Keep all other source metadata and20 ancestor replacements exactly unchanged. The helper/plan belong only to core map, not visual71. Result1747core/71visual/7intersection/20ancestor, visual SHA remains93fd6f67... . Original visual asset-map sameness did not mean the independent ancestor source admission was satisfied.
+
+OTHER COMPLETE HISTORICAL SHA256 IDENTITIES
+40 revision06 manifest befaf556d97b2685c61b80c0d291cfd47cc98da62e8d62e6cf20a24999a70956
+41 revision01 manifest 0f87748334b307d1d67489cdcdda248c0c17304a41987f8bd674b5bd1664c1dc
+42 revision01 manifest c6f5ce474ac1a54808c482f535eb8220d989a3394f1cce8c73369de9a6fb8e12
+41 apply tool 2e926c070e4d878c527c5aafe6ec983d6b0372fde97d6f83d5be01279a63ab59
+42 apply tool cf8baa6d8083cfbfc6698d2840fb5a9153db310c484ce59922bfb32d6cfe8d4f
+41 apply receipt 344ef2fded15d5fb009af6b2c585e706fc4963313d9ebf9f29ab1a9a649f66d4
+41 GUI revision02 script b6eca2a86ba83e140b533f377949b0f1b819984411c803eba0ae7760eab96772
+41 GUI revision02 launcher 101abe51972a8074349b612c012b3bda11c39e609fcf4f4ec692616fd85e7c8d
+41 GUI HOLD receipt b1488d42f169090be0e6b1c7429d2b3268a97cee078b49959250fcb23cd4a67a
+41 GUI HOLD guard ab497e8357729fedd88f2cee42e00f7276a08e9544d60501c1b5ec00124263b7
+41 GUI HOLD report 4802143b4500a4252988d7291f4e6a201e4da47e1a87a67ce3b3ebcf8adb4da4
+42 GUI script 6de849c603b1ecd7429d4b644e05d649ca6067459f350c111f944fb8627dfcf5
+42 GUI launcher d5b22f302ae7093e324f5188a8576ea999bc9cad7e0dfdb735e06fd9aab5ee42
+42 GUI guard e5606e363e62b351d7371d8b73c1342e63cce1ad605eed7d0082cfeac77f040d
+42 GUI report 5deae5f96c29fea88f6f50c5dec86f99c1f329bd62d44f496965b5f5ef59c5d8
+42 catalog PNG 2896c03ab6bbdbf4a87e0d6e356563918cdfb2f760c644f6713efd373538eb9c
+42 owned PNG a97feadcb78e505624aa9ae31be5775baf315d68f2628f70a42a073a5d6280d2
+40 core closeout be28c32e1e86d99cae3cb7f3e4b7b189201963bebd2d8762f16e94939748073d
+Final limited summary after fixture disclosure dfa06181e71b334fa308cde35e1a9414ce68388f4d390170e5eb8a17b806d9c5
+Final five-file selection after summary reference update 32f0691ce2cfe04b176bc93e86b254fb30b791257e88fb5d73b94588a53aa401
+Selected11 test entrypoints 9d2acdbdb429c055f56b00843a70c8bc1f81d4222997e1e2b3352180f7425640
+
+HISTORICAL VERIFICATION LIMITS TO PRESERVE
+1968 checks belong to40;59 shop checks belong to42, not a rerun of40 combat.41's4-check startupHOLD red stays red. Two earlier40 reds87/219 also remain recorded.42 GUI raw had91 warnings (90 original UID fallback to text path,1 VSync unsupported), no script errors/leaks. GUI59 used original programmatic button/Host input, not native gameplay. Wallet60000 was explicit test fixture. Original r01a technical damage kills earned108XP and one additional real SP; not natural playthrough. No direct SP/HP/cooldown/position/inventory/selected-Hex injection. Pending dynamic coverage included nested producer reentry, preexisting Q1/Q2 basic-birth queue tail, other E2/H09 segments, and broad other-equipment/G01 regressions. Tests and launchers had local archive/engine dependencies; public selections must not be called clean-clone runnable. Public E2 comment/decision09 sanitization must be preserved, with a separate public-derived manifest rather than claiming original private binding identity.
+
+STOPPING CONDITION
+This note preserves known instructions and identities only. Obtain an authorized persisted baseline and verify exact bytes before any reconstruction. No new engine or reconstruction authority is implied.
