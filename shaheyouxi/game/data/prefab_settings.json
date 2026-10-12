@@ -1,0 +1,662 @@
+{
+  "schema_version": 1,
+  "project": "shaheyouxi_experiment_20261004",
+  "artifact_kind": "derived_authoritative_prefab_inputs",
+  "sources": {
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+  },
+  "generation_projection_sha256": "cd442a1605f1503a5e7f0aee188fa4bec4ae38b915ee48a9845cad7c2a8370a3",
+  "object_definitions": {
+    "dikuai_x03_wendai_linyuan_01": {
+      "content_id": "dikuai_x03_wendai_linyuan_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X9"
+      ]
+    },
+    "dikuai_x03_shidi_01": {
+      "content_id": "dikuai_x03_shidi_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X10"
+      ]
+    },
+    "dikuai_x03_limo_01": {
+      "content_id": "dikuai_x03_limo_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X11"
+      ]
+    },
+    "dikuai_x03_dongtu_01": {
+      "content_id": "dikuai_x03_dongtu_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X12"
+      ]
+    },
+    "dikuai_x03_genxi_tudong_01": {
+      "content_id": "dikuai_x03_genxi_tudong_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X13"
+      ]
+    },
+    "rock_x03_dx_genxi_tudong": {
+      "content_id": "rock_x03_dx_genxi_tudong",
+      "kind": "rock",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!Y13"
+      ]
+    },
+    "dikuai_x03_huiyan_dongqun_01": {
+      "content_id": "dikuai_x03_huiyan_dongqun_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X14"
+      ]
+    },
+    "rock_x03_dx_huiyan_dongqun": {
+      "content_id": "rock_x03_dx_huiyan_dongqun",
+      "kind": "rock",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!Y14"
+      ]
+    },
+    "dikuai_x03_hanshui_rongdong_01": {
+      "content_id": "dikuai_x03_hanshui_rongdong_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X15"
+      ]
+    },
+    "rock_x03_dx_hanshui_rongdong": {
+      "content_id": "rock_x03_dx_hanshui_rongdong",
+      "kind": "rock",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!Y15"
+      ]
+    },
+    "dikuai_x03_gaoya_shenyan_01": {
+      "content_id": "dikuai_x03_gaoya_shenyan_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X16"
+      ]
+    },
+    "rock_x03_sc_gaoya_shenyan": {
+      "content_id": "rock_x03_sc_gaoya_shenyan",
+      "kind": "rock",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!Y16"
+      ]
+    },
+    "dikuai_x03_relie_yanqu_01": {
+      "content_id": "dikuai_x03_relie_yanqu_01",
+      "kind": "ground",
+      "namespace": "ground_resource",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!X17"
+      ]
+    },
+    "rock_x03_sc_relie_yanqu": {
+      "content_id": "rock_x03_sc_relie_yanqu",
+      "kind": "rock",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "32_Biome总表!Y17"
+      ]
+    },
+    "kuang_chitie": {
+      "content_id": "kuang_chitie",
+      "kind": "resource",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "06_基础主材!F4"
+      ]
+    },
+    "kuang_tantie": {
+      "content_id": "kuang_tantie",
+      "kind": "resource",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "06_基础主材!F5"
+      ]
+    },
+    "heijingshi": {
+      "content_id": "heijingshi",
+      "kind": "resource",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "06_基础主材!F6"
+      ]
+    },
+    "kuang_citie": {
+      "content_id": "kuang_citie",
+      "kind": "resource",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "06_基础主材!F7"
+      ]
+    },
+    "tree_putong": {
+      "content_id": "tree_putong",
+      "kind": "tree",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "24_植物!A14"
+      ]
+    },
+    "boss_dimai_guanshou": {
+      "content_id": "boss_dimai_guanshou",
+      "kind": "boss",
+      "namespace": "content",
+      "is_liquid": false,
+      "source_cells": [
+        "86_Boss总表!B2"
+      ]
+    },
+    "tuozhi_tongyong_xiang": {
+      "content_id": "tuozhi_tongyong_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C2"
+      ]
+    },
+    "tuozhi_gongcheng_xiang": {
+      "content_id": "tuozhi_gongcheng_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C3"
+      ]
+    },
+    "tuozhi_yuemian_mifeng_xiang": {
+      "content_id": "tuozhi_yuemian_mifeng_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C4"
+      ]
+    },
+    "xiangbian_shuangtai_xiang": {
+      "content_id": "xiangbian_shuangtai_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C5"
+      ]
+    },
+    "xiangbian_gongye_xiang": {
+      "content_id": "xiangbian_gongye_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C6"
+      ]
+    },
+    "leizhu_nengyuan_xiang": {
+      "content_id": "leizhu_nengyuan_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C7"
+      ]
+    },
+    "leizhu_jingmi_xiang": {
+      "content_id": "leizhu_jingmi_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C8"
+      ]
+    },
+    "gaozhi_wuliu_xiang": {
+      "content_id": "gaozhi_wuliu_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C9"
+      ]
+    },
+    "gaozhi_naishi_xiang": {
+      "content_id": "gaozhi_naishi_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C10"
+      ]
+    },
+    "caiji_ziyuan_xiang": {
+      "content_id": "caiji_ziyuan_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C11"
+      ]
+    },
+    "caiji_shengti_xiang": {
+      "content_id": "caiji_shengti_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C12"
+      ]
+    },
+    "yiluo_shenghuo_xiang": {
+      "content_id": "yiluo_shenghuo_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C13"
+      ]
+    },
+    "yiluo_jiduan_xiang": {
+      "content_id": "yiluo_jiduan_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C14"
+      ]
+    },
+    "yiluo_baolei_xiang": {
+      "content_id": "yiluo_baolei_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C15"
+      ]
+    },
+    "feiqi_jianchuan_xiang": {
+      "content_id": "feiqi_jianchuan_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C16"
+      ]
+    },
+    "taikong_judian_jungong_xiang": {
+      "content_id": "taikong_judian_jungong_xiang",
+      "kind": "container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C17"
+      ]
+    },
+    "tuozhi_zawu_guan": {
+      "content_id": "tuozhi_zawu_guan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C18"
+      ]
+    },
+    "tuozhi_lingjian_he": {
+      "content_id": "tuozhi_lingjian_he",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C19"
+      ]
+    },
+    "tuozhi_buji_guan": {
+      "content_id": "tuozhi_buji_guan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C20"
+      ]
+    },
+    "yuemian_yangpin_guan": {
+      "content_id": "yuemian_yangpin_guan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C21"
+      ]
+    },
+    "xiangbian_lengfeng_guan": {
+      "content_id": "xiangbian_lengfeng_guan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C22"
+      ]
+    },
+    "xiangbian_naire_guan": {
+      "content_id": "xiangbian_naire_guan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C23"
+      ]
+    },
+    "leizhu_jueyuan_tong": {
+      "content_id": "leizhu_jueyuan_tong",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C24"
+      ]
+    },
+    "leizhu_xuneng_xiaoxia": {
+      "content_id": "leizhu_xuneng_xiaoxia",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C25"
+      ]
+    },
+    "leizhu_jingti_yangpin": {
+      "content_id": "leizhu_jingti_yangpin",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C26"
+      ]
+    },
+    "gaozhi_naishi_liaoguan": {
+      "content_id": "gaozhi_naishi_liaoguan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C27"
+      ]
+    },
+    "gaozhi_jingmi_yangpin": {
+      "content_id": "gaozhi_jingmi_yangpin",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C28"
+      ]
+    },
+    "caiji_qiti_yangpin": {
+      "content_id": "caiji_qiti_yangpin",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C29"
+      ]
+    },
+    "caiji_kuangyang_tong": {
+      "content_id": "caiji_kuangyang_tong",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C30"
+      ]
+    },
+    "shengti_caiyang_nang": {
+      "content_id": "shengti_caiyang_nang",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C31"
+      ]
+    },
+    "yiluo_shenghuo_chuguan": {
+      "content_id": "yiluo_shenghuo_chuguan",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C32"
+      ]
+    },
+    "yiluo_jihan_fengcun": {
+      "content_id": "yiluo_jihan_fengcun",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C33"
+      ]
+    },
+    "yiluo_naireo_fengcun": {
+      "content_id": "yiluo_naireo_fengcun",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C34"
+      ]
+    },
+    "yiluo_baolei_junxu": {
+      "content_id": "yiluo_baolei_junxu",
+      "kind": "breakable_container",
+      "namespace": "poi_container",
+      "is_liquid": false,
+      "source_cells": [
+        "40_POI容器母类!C35"
+      ]
+    }
+  },
+  "template_interfaces": {
+    "poi_x03_chusheng_anquan": {
+      "template_id": "poi_x03_chusheng_anquan",
+      "raw_layers": "地表",
+      "required": true,
+      "raw_size": "小",
+      "container_content_id": null,
+      "raw_container_count": "0",
+      "raw_tool_requirements": "必须可在地图工具直接测试出生/碰撞/照明",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A11",
+        "天体": "34_POI总表!C11",
+        "地图层": "34_POI总表!D11",
+        "关键保底": "34_POI总表!K11",
+        "规模": "34_POI总表!H11",
+        "箱子母类ID": "34_POI总表!S11",
+        "箱子数量/模板": "34_POI总表!T11",
+        "地图工具需求": "34_POI总表!P11"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_tuozhi_qianshao": {
+      "template_id": "poi_x03_tuozhi_qianshao",
+      "raw_layers": "地表",
+      "required": false,
+      "raw_size": "小/中",
+      "container_content_id": "tuozhi_tongyong_xiang",
+      "raw_container_count": "1–2",
+      "raw_tool_requirements": "模板允许旋转/部分损坏变体",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A12",
+        "天体": "34_POI总表!C12",
+        "地图层": "34_POI总表!D12",
+        "关键保底": "34_POI总表!K12",
+        "规模": "34_POI总表!H12",
+        "箱子母类ID": "34_POI总表!S12",
+        "箱子数量/模板": "34_POI总表!T12",
+        "地图工具需求": "34_POI总表!P12"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_ziyuan_guance": {
+      "template_id": "poi_x03_ziyuan_guance",
+      "raw_layers": "地表",
+      "required": false,
+      "raw_size": "小",
+      "container_content_id": "tuozhi_gongcheng_xiang",
+      "raw_container_count": "1",
+      "raw_tool_requirements": "需要地质标记点和Loot插槽；不设置地表矿物资源插槽",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A13",
+        "天体": "34_POI总表!C13",
+        "地图层": "34_POI总表!D13",
+        "关键保底": "34_POI总表!K13",
+        "规模": "34_POI总表!H13",
+        "箱子母类ID": "34_POI总表!S13",
+        "箱子数量/模板": "34_POI总表!T13",
+        "地图工具需求": "34_POI总表!P13"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_tianran_liexi": {
+      "template_id": "poi_x03_tianran_liexi",
+      "raw_layers": "地表",
+      "required": false,
+      "raw_size": "小/中",
+      "container_content_id": null,
+      "raw_container_count": "0",
+      "raw_tool_requirements": "需要地表/地下对应坐标连接标记",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A14",
+        "天体": "34_POI总表!C14",
+        "地图层": "34_POI总表!D14",
+        "关键保底": "34_POI总表!K14",
+        "规模": "34_POI总表!H14",
+        "箱子母类ID": "34_POI总表!S14",
+        "箱子数量/模板": "34_POI总表!T14",
+        "地图工具需求": "34_POI总表!P14"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_feiqi_kuangdao": {
+      "template_id": "poi_x03_feiqi_kuangdao",
+      "raw_layers": "地下1",
+      "required": false,
+      "raw_size": "中",
+      "container_content_id": "tuozhi_gongcheng_xiang",
+      "raw_container_count": "1–2",
+      "raw_tool_requirements": "需要入口/出口、Loot位、敌人区域",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A15",
+        "天体": "34_POI总表!C15",
+        "地图层": "34_POI总表!D15",
+        "关键保底": "34_POI总表!K15",
+        "规模": "34_POI总表!H15",
+        "箱子母类ID": "34_POI总表!S15",
+        "箱子数量/模板": "34_POI总表!T15",
+        "地图工具需求": "34_POI总表!P15"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_kuangmai_loutou": {
+      "template_id": "poi_x03_kuangmai_loutou",
+      "raw_layers": "地下1/地下2",
+      "required": false,
+      "raw_size": "小/中",
+      "container_content_id": null,
+      "raw_container_count": "0",
+      "raw_tool_requirements": "程序生成地下矿脉区+少量模板边缘",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A16",
+        "天体": "34_POI总表!C16",
+        "地图层": "34_POI总表!D16",
+        "关键保底": "34_POI总表!K16",
+        "规模": "34_POI总表!H16",
+        "箱子母类ID": "34_POI总表!S16",
+        "箱子数量/模板": "34_POI总表!T16",
+        "地图工具需求": "34_POI总表!P16"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_shenceng_hexin": {
+      "template_id": "poi_x03_shenceng_hexin",
+      "raw_layers": "地下2",
+      "required": true,
+      "raw_size": "大",
+      "container_content_id": "tuozhi_tongyong_xiang",
+      "raw_container_count": "1–2",
+      "raw_tool_requirements": "必须支持固定Boss房模板+外围随机连接",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A17",
+        "天体": "34_POI总表!C17",
+        "地图层": "34_POI总表!D17",
+        "关键保底": "34_POI总表!K17",
+        "规模": "34_POI总表!H17",
+        "箱子母类ID": "34_POI总表!S17",
+        "箱子数量/模板": "34_POI总表!T17",
+        "地图工具需求": "34_POI总表!P17"
+      },
+      "production_geometry_ready": false
+    },
+    "poi_x03_shidi_shuiwen": {
+      "template_id": "poi_x03_shidi_shuiwen",
+      "raw_layers": "地表",
+      "required": false,
+      "raw_size": "小",
+      "container_content_id": "tuozhi_gongcheng_xiang",
+      "raw_container_count": "1",
+      "raw_tool_requirements": "需适配水岸边界和少量栈道接口",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A18",
+        "天体": "34_POI总表!C18",
+        "地图层": "34_POI总表!D18",
+        "关键保底": "34_POI总表!K18",
+        "规模": "34_POI总表!H18",
+        "箱子母类ID": "34_POI总表!S18",
+        "箱子数量/模板": "34_POI总表!T18",
+        "地图工具需求": "34_POI总表!P18"
+      },
+      "production_geometry_ready": false
+    }
+  },
+  "formal_world_allowed": false
+}

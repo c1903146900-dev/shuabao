@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "technical_surface_approach_parameters",
+  "version": "surface-approach-field-v1",
+  "classification": "authorized_engineering_choice_not_original_algorithm",
+  "sources": {
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+  },
+  "parameter_table_path": "asset_sources/terrain/surface_approach_parameters011.csv",
+  "parameter_table_sha256": "baeb111e13a75915827e31088b909cf2e5eb8329a18741590a98e0eaa658cf7c",
+  "max_scope_cells": 4096,
+  "basis_point_denominator": 10000,
+  "permille_denominator": 1000,
+  "pi_numerator": 355,
+  "pi_denominator": 113,
+  "water_identity": {
+    "liquid_type": "普通水",
+    "status": "source_named_H0_liquid_without_terrain_resource_id",
+    "material_association": {
+      "item_id": "shui",
+      "relation": "extracted_material_not_terrain_identity",
+      "source_cells": [
+        "shuzhi.xlsx:sheet02!A615:I615",
+        "shuzhi.xlsx:sheet04!D100:I100",
+        "shuzhi.xlsx:sheet07!B72:F72,R72"
+      ]
+    }
+  },
+  "population_scope": {
+    "trees": "technical_disabled",
+    "natural_initial_animals": "technical_disabled",
+    "ordinary_poi": "technical_disabled"
+  },
+  "profiles": {
+    "x03_db_wendai_linyuan": {
+      "version": "surface-approach-field-v1",
+      "river_share_permille": 900,
+      "river_period_cells": 128,
+      "river_wave_cells": 96,
+      "river_meander_cells": 12,
+      "lake_width_cells": 64,
+      "lake_height_cells": 48,
+      "source_target_cell": "37_生态区液体!G2",
+      "source_shape_cell": "37_生态区液体!H2",
+      "classification": "authorized_engineering_parameters_not_original_values"
+    },
+    "x03_db_heliu_shidi": {
+      "version": "surface-approach-field-v1",
+      "river_share_permille": 600,
+      "river_period_cells": 96,
+      "river_wave_cells": 128,
+      "river_meander_cells": 18,
+      "lake_width_cells": 96,
+      "lake_height_cells": 64,
+      "source_target_cell": "37_生态区液体!G3",
+      "source_shape_cell": "37_生态区液体!H3",
+      "classification": "authorized_engineering_parameters_not_original_values"
+    },
+    "x03_db_ganhao_limo": {
+      "version": "surface-approach-field-v1",
+      "river_share_permille": 0,
+      "river_period_cells": 128,
+      "river_wave_cells": 96,
+      "river_meander_cells": 0,
+      "lake_width_cells": 32,
+      "lake_height_cells": 24,
+      "source_target_cell": "37_生态区液体!G4",
+      "source_shape_cell": "37_生态区液体!H4",
+      "classification": "authorized_engineering_parameters_not_original_values"
+    },
+    "x03_db_dongtu_bingyuan": {
+      "version": "surface-approach-field-v1",
+      "river_share_permille": 0,
+      "river_period_cells": 128,
+      "river_wave_cells": 96,
+      "river_meander_cells": 0,
+      "lake_width_cells": 32,
+      "lake_height_cells": 24,
+      "source_target_cell": "32_Biome总表!T12:V12",
+      "source_shape_cell": "32_Biome总表!T12:V12",
+      "classification": "source_prohibits_liquid_solid_ice"
+    }
+  },
+  "formal_world_allowed": false
+}

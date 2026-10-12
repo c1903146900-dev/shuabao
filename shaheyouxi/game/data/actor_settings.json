@@ -1,0 +1,1437 @@
+{
+  "schema_version": 1,
+  "project": "shaheyouxi_experiment_20261004",
+  "artifact_kind": "derived_authoritative_actor_inputs",
+  "reconstruction_status": "011_rebuilt_from_restored_010_originals_requires_fresh_verification",
+  "sources": {
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+  },
+  "parameters": {
+    "health_max": {
+      "id": "renwu_shengming_shangxian",
+      "name": "人物基础最大生命",
+      "value": 100,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 1.0,
+        "maximum": 10000.0,
+        "raw": "1~10000"
+      },
+      "notes": "未计入永久成长、防具、饰品、食物/药品等；新建人物当前生命等于此上限。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C2",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A2",
+        "参数名称": "62_人物基础!B2",
+        "当前值": "62_人物基础!C2",
+        "单位": "62_人物基础!D2",
+        "中文说明": "62_人物基础!F2",
+        "合法范围/可选值": "62_人物基础!E2"
+      },
+      "source_data_type": "n",
+      "source_value": 100
+    },
+    "defense_base": {
+      "id": "renwu_jichu_fangyu",
+      "name": "人物基础防御力",
+      "value": 0,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 10000.0,
+        "raw": "0~10000"
+      },
+      "notes": "未计入防具、饰品等。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C3",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A3",
+        "参数名称": "62_人物基础!B3",
+        "当前值": "62_人物基础!C3",
+        "单位": "62_人物基础!D3",
+        "中文说明": "62_人物基础!F3",
+        "合法范围/可选值": "62_人物基础!E3"
+      },
+      "source_data_type": "n",
+      "source_value": 0
+    },
+    "food_max": {
+      "id": "baoshidu_shangxian",
+      "name": "饱食度上限",
+      "value": 100,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 1.0,
+        "maximum": 1000.0,
+        "raw": "1~1000"
+      },
+      "notes": "人物饱食度最大值；新建人物当前饱食度等于此上限。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C4",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A4",
+        "参数名称": "62_人物基础!B4",
+        "当前值": "62_人物基础!C4",
+        "单位": "62_人物基础!D4",
+        "中文说明": "62_人物基础!F4",
+        "合法范围/可选值": "62_人物基础!E4"
+      },
+      "source_data_type": "n",
+      "source_value": 100
+    },
+    "food_decay_per_second": {
+      "id": "baoshidu_xiaohao_sudu",
+      "name": "饱食度自然消耗速度",
+      "value": 0.03,
+      "unit": "点/秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 10.0,
+        "raw": "0~10"
+      },
+      "notes": "可直接调。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C5",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A5",
+        "参数名称": "62_人物基础!B5",
+        "当前值": "62_人物基础!C5",
+        "单位": "62_人物基础!D5",
+        "中文说明": "62_人物基础!F5",
+        "合法范围/可选值": "62_人物基础!E5"
+      },
+      "source_data_type": "n",
+      "source_value": 0.03
+    },
+    "low_food_threshold": {
+      "id": "baoshidu_jiangsu_yuzhi",
+      "name": "饱食度减速阈值",
+      "value": 30,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 100.0,
+        "raw": "0~100"
+      },
+      "notes": "低于此值触发固定移动减速。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C6",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A6",
+        "参数名称": "62_人物基础!B6",
+        "当前值": "62_人物基础!C6",
+        "单位": "62_人物基础!D6",
+        "中文说明": "62_人物基础!F6",
+        "合法范围/可选值": "62_人物基础!E6"
+      },
+      "source_data_type": "n",
+      "source_value": 30
+    },
+    "low_food_movement_multiplier": {
+      "id": "baoshidu_jiangsu_beilv",
+      "name": "低饱食移动倍率",
+      "value": 0.7,
+      "unit": "倍",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "raw": "0~1"
+      },
+      "notes": "当前即-30%。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C7",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A7",
+        "参数名称": "62_人物基础!B7",
+        "当前值": "62_人物基础!C7",
+        "单位": "62_人物基础!D7",
+        "中文说明": "62_人物基础!F7",
+        "合法范围/可选值": "62_人物基础!E7"
+      },
+      "source_data_type": "n",
+      "source_value": 0.7
+    },
+    "starvation_health_loss_per_second": {
+      "id": "ji_e_shanghai_sudu",
+      "name": "饱食度为0时生命损失",
+      "value": 1,
+      "unit": "点/秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 100.0,
+        "raw": "0~100"
+      },
+      "notes": "饱食度为0后持续扣生命。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C8",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A8",
+        "参数名称": "62_人物基础!B8",
+        "当前值": "62_人物基础!C8",
+        "单位": "62_人物基础!D8",
+        "中文说明": "62_人物基础!F8",
+        "合法范围/可选值": "62_人物基础!E8"
+      },
+      "source_data_type": "n",
+      "source_value": 1
+    },
+    "energy_max": {
+      "id": "nengliang_shangxian",
+      "name": "人物基础能量上限",
+      "value": 100,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 1.0,
+        "maximum": 10000.0,
+        "raw": "1~10000"
+      },
+      "notes": "闪避及部分武器共享；新建人物当前人物能量等于此上限。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C9",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A9",
+        "参数名称": "62_人物基础!B9",
+        "当前值": "62_人物基础!C9",
+        "单位": "62_人物基础!D9",
+        "中文说明": "62_人物基础!F9",
+        "合法范围/可选值": "62_人物基础!E9"
+      },
+      "source_data_type": "n",
+      "source_value": 100
+    },
+    "bag_slots": {
+      "id": "beibao_jichu_gezi",
+      "name": "基础背包格数",
+      "value": 40,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 1.0,
+        "maximum": 200.0,
+        "raw": "1~200"
+      },
+      "notes": "人物背包40格；快捷栏另有10格，不占这40格。不存在常规背包成长路线；仅饰品35“扩展背囊扣”可使背包+10。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C10",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A10",
+        "参数名称": "62_人物基础!B10",
+        "当前值": "62_人物基础!C10",
+        "单位": "62_人物基础!D10",
+        "中文说明": "62_人物基础!F10",
+        "合法范围/可选值": "62_人物基础!E10"
+      },
+      "source_data_type": "n",
+      "source_value": 40
+    },
+    "place_throw_cooldown_seconds": {
+      "id": "fangzhi_lengque",
+      "name": "放置/丢出冷却",
+      "value": 0.6,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.2,
+        "maximum": 2.0,
+        "raw": "0.2~2"
+      },
+      "notes": "放置/丢出任意物品后，需要冷却一段时间，这段时间内不能从背包继续放置/丢出同名物品（消耗子弹不算）",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C11",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A11",
+        "参数名称": "62_人物基础!B11",
+        "当前值": "62_人物基础!C11",
+        "单位": "62_人物基础!D11",
+        "中文说明": "62_人物基础!F11",
+        "合法范围/可选值": "62_人物基础!E11"
+      },
+      "source_data_type": "n",
+      "source_value": 0.6
+    },
+    "hotbar_slots": {
+      "id": "kuaijielan_gezi",
+      "name": "快捷栏格数",
+      "value": 10,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 1.0,
+        "maximum": 50.0,
+        "raw": "1~50"
+      },
+      "notes": "快捷栏与人物背包分离；因此开局可直接携带40背包格+10快捷栏格。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C12",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A12",
+        "参数名称": "62_人物基础!B12",
+        "当前值": "62_人物基础!C12",
+        "单位": "62_人物基础!D12",
+        "中文说明": "62_人物基础!F12",
+        "合法范围/可选值": "62_人物基础!E12"
+      },
+      "source_data_type": "n",
+      "source_value": 10
+    },
+    "bag_standard_expansion_slots": {
+      "id": "beibao_changgui_kuorong",
+      "name": "常规背包扩容",
+      "value": 0,
+      "unit": "格",
+      "legal_range": {
+        "kind": "fixed",
+        "value": 0.0,
+        "raw": "固定0"
+      },
+      "notes": "不设计背包升级/扩容路线。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C13",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A13",
+        "参数名称": "62_人物基础!B13",
+        "当前值": "62_人物基础!C13",
+        "单位": "62_人物基础!D13",
+        "中文说明": "62_人物基础!F13",
+        "合法范围/可选值": "62_人物基础!E13"
+      },
+      "source_data_type": "n",
+      "source_value": 0
+    },
+    "bag_accessory35_bonus_slots": {
+      "id": "beibao_shipin35_jiacheng",
+      "name": "扩展背囊扣背包加成",
+      "value": 10,
+      "unit": "格",
+      "legal_range": {
+        "kind": "fixed",
+        "value": 10.0,
+        "raw": "固定10"
+      },
+      "notes": "仅饰品35生效；装备后人物背包由40变为50，快捷栏仍为10。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!C14",
+      "source_cells": {
+        "稳定ID": "62_人物基础!A14",
+        "参数名称": "62_人物基础!B14",
+        "当前值": "62_人物基础!C14",
+        "单位": "62_人物基础!D14",
+        "中文说明": "62_人物基础!F14",
+        "合法范围/可选值": "62_人物基础!E14"
+      },
+      "source_data_type": "n",
+      "source_value": 10
+    },
+    "movement_speed_cells_per_second": {
+      "id": "yidong_jichu_sudu",
+      "name": "基础移动速度",
+      "value": 4.5,
+      "unit": "格/秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 20.0,
+        "raw": "0.1~20"
+      },
+      "notes": "普通移动速度。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C2",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A2",
+        "参数名称": "63_移动能量!B2",
+        "当前值": "63_移动能量!C2",
+        "单位": "63_移动能量!D2",
+        "中文说明": "63_移动能量!F2",
+        "合法范围/可选值": "63_移动能量!E2"
+      },
+      "source_data_type": "n",
+      "source_value": 4.5
+    },
+    "energy_regeneration_per_second": {
+      "id": "nengliang_ziran_huifu",
+      "name": "能量自然恢复速度",
+      "value": 15,
+      "unit": "点/秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "raw": "0~1000"
+      },
+      "notes": "不处于恢复延迟时恢复。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C3",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A3",
+        "参数名称": "63_移动能量!B3",
+        "当前值": "63_移动能量!C3",
+        "单位": "63_移动能量!D3",
+        "中文说明": "63_移动能量!F3",
+        "合法范围/可选值": "63_移动能量!E3"
+      },
+      "source_data_type": "n",
+      "source_value": 15
+    },
+    "energy_regeneration_delay_seconds": {
+      "id": "nengliang_huifu_yanchi",
+      "name": "能量恢复延迟",
+      "value": 0.5,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 10.0,
+        "raw": "0~10"
+      },
+      "notes": "最近一次主动消耗能量后开始恢复前的等待。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C4",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A4",
+        "参数名称": "63_移动能量!B4",
+        "当前值": "63_移动能量!C4",
+        "单位": "63_移动能量!D4",
+        "中文说明": "63_移动能量!F4",
+        "合法范围/可选值": "63_移动能量!E4"
+      },
+      "source_data_type": "n",
+      "source_value": 0.5
+    },
+    "dodge_energy_cost": {
+      "id": "shanbi_nengliang_xiaohao",
+      "name": "单次闪避能量消耗",
+      "value": 25,
+      "unit": "点",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "raw": "0~1000"
+      },
+      "notes": "每次启动闪避消耗。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C5",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A5",
+        "参数名称": "63_移动能量!B5",
+        "当前值": "63_移动能量!C5",
+        "单位": "63_移动能量!D5",
+        "中文说明": "63_移动能量!F5",
+        "合法范围/可选值": "63_移动能量!E5"
+      },
+      "source_data_type": "n",
+      "source_value": 25
+    },
+    "dodge_distance_cells": {
+      "id": "shanbi_juli",
+      "name": "闪避位移距离",
+      "value": 2.4,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "raw": "0.1~10"
+      },
+      "notes": "闪避就是快速移动一段固定距离。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C6",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A6",
+        "参数名称": "63_移动能量!B6",
+        "当前值": "63_移动能量!C6",
+        "单位": "63_移动能量!D6",
+        "中文说明": "63_移动能量!F6",
+        "合法范围/可选值": "63_移动能量!E6"
+      },
+      "source_data_type": "n",
+      "source_value": 2.4
+    },
+    "dodge_duration_seconds": {
+      "id": "shanbi_zong_shijian",
+      "name": "闪避总时长",
+      "value": 0.28,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.05,
+        "maximum": 2.0,
+        "raw": "0.05~2"
+      },
+      "notes": "动作与位移完成总时长；基础闪避无敌覆盖整个0.28秒位移过程，不依赖饰品。来源：D-042用户裁决。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C7",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A7",
+        "参数名称": "63_移动能量!B7",
+        "当前值": "63_移动能量!C7",
+        "单位": "63_移动能量!D7",
+        "中文说明": "63_移动能量!F7",
+        "合法范围/可选值": "63_移动能量!E7"
+      },
+      "source_data_type": "n",
+      "source_value": 0.28
+    },
+    "dodge_invulnerability_seconds": {
+      "id": "shanbi_wudi_shijian",
+      "name": "闪避无敌时间",
+      "value": 0.28,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "relation",
+        "operator": ">=",
+        "parameter": "dodge_duration_seconds",
+        "raw": "基础值覆盖闪避总时长；饰品增加后的总无敌时长可长于位移"
+      },
+      "notes": "基础无敌覆盖整个0.28秒闪避位移过程，不依赖饰品；已有饰品自身效果保持。来源：D-042用户裁决。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C8",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A8",
+        "参数名称": "63_移动能量!B8",
+        "当前值": "63_移动能量!C8",
+        "单位": "63_移动能量!D8",
+        "中文说明": "63_移动能量!F8",
+        "合法范围/可选值": "63_移动能量!E8"
+      },
+      "source_data_type": "n",
+      "source_value": 0.28
+    },
+    "dodge_cooldown_seconds": {
+      "id": "shanbi_lengque",
+      "name": "闪避冷却时间",
+      "value": 3,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 30.0,
+        "raw": "0~30"
+      },
+      "notes": "基础冷却。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C9",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A9",
+        "参数名称": "63_移动能量!B9",
+        "当前值": "63_移动能量!C9",
+        "单位": "63_移动能量!D9",
+        "中文说明": "63_移动能量!F9",
+        "合法范围/可选值": "63_移动能量!E9"
+      },
+      "source_data_type": "n",
+      "source_value": 3
+    },
+    "actor_diameter_cells": {
+      "id": "renwu_pengzhuang_zhijing",
+      "name": "人物逻辑碰撞直径",
+      "value": 0.65,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.2,
+        "maximum": 1.2,
+        "raw": "0.2~1.2"
+      },
+      "notes": "不由Sprite透明像素决定。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C10",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A10",
+        "参数名称": "63_移动能量!B10",
+        "当前值": "63_移动能量!C10",
+        "单位": "63_移动能量!D10",
+        "中文说明": "63_移动能量!F10",
+        "合法范围/可选值": "63_移动能量!E10"
+      },
+      "source_data_type": "n",
+      "source_value": 0.65
+    },
+    "interaction_range_cells": {
+      "id": "jiaohu_zuidajuli",
+      "name": "F情境交互最大距离",
+      "value": 1.5,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "raw": "0.1~10"
+      },
+      "notes": "鼠标指向可交互对象时，目标交互点到人物逻辑位置允许触发F交互的最大距离；超出或未指向时无效。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C11",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A11",
+        "参数名称": "63_移动能量!B11",
+        "当前值": "63_移动能量!C11",
+        "单位": "63_移动能量!D11",
+        "中文说明": "63_移动能量!F11",
+        "合法范围/可选值": "63_移动能量!E11"
+      },
+      "source_data_type": "n",
+      "source_value": 1.5
+    },
+    "pickup_range_cells": {
+      "id": "shiqu_zidong_fanwei",
+      "name": "自动拾取范围",
+      "value": 3,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 20.0,
+        "raw": "0.1~20"
+      },
+      "notes": "服务器以人物逻辑位置为圆心，自动拾取该距离内的可拾取世界掉落；修改后经正式数据导入生效。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C12",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A12",
+        "参数名称": "63_移动能量!B12",
+        "当前值": "63_移动能量!C12",
+        "单位": "63_移动能量!D12",
+        "中文说明": "63_移动能量!F12",
+        "合法范围/可选值": "63_移动能量!E12"
+      },
+      "source_data_type": "n",
+      "source_value": 3
+    },
+    "gathering_range_cells": {
+      "id": "caiji_zuidajuli",
+      "name": "采集最大距离",
+      "value": 5,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 20.0,
+        "raw": "0.1~20"
+      },
+      "notes": "鼠标指向资源节点并持续按住鼠标左键时，资源采集点到人物逻辑位置允许服务器结算采集的最大距离；修改后经正式数据导入生效。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C13",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A13",
+        "参数名称": "63_移动能量!B13",
+        "当前值": "63_移动能量!C13",
+        "单位": "63_移动能量!D13",
+        "中文说明": "63_移动能量!F13",
+        "合法范围/可选值": "63_移动能量!E13"
+      },
+      "source_data_type": "n",
+      "source_value": 5
+    },
+    "base_pickup_delay_seconds": {
+      "id": "diaoluo_shiqu_yanchi",
+      "name": "掉落最短拾取延迟",
+      "value": 0.5,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 10.0,
+        "raw": "0~10"
+      },
+      "notes": "任意新生成世界掉落在该时间内只显示和运动结算，不允许进入任何玩家物品栏；修改后经正式数据导入生效。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C14",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A14",
+        "参数名称": "63_移动能量!B14",
+        "当前值": "63_移动能量!C14",
+        "单位": "63_移动能量!D14",
+        "中文说明": "63_移动能量!F14",
+        "合法范围/可选值": "63_移动能量!E14"
+      },
+      "source_data_type": "n",
+      "source_value": 0.5
+    },
+    "other_players_extra_pickup_delay_seconds": {
+      "id": "diaoluo_qita_wanjia_jiashi",
+      "name": "其他玩家额外拾取等待（停用兼容）",
+      "value": 0,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "fixed",
+        "value": 0.0,
+        "raw": "固定0（停用兼容）"
+      },
+      "notes": "历史稳定ID，语义仍为主动投掷后非投掷者在基础延迟之外的额外等待；现规则为0秒。新运行时不得把本字段解释为投掷者等待。生成器兼容旧schema时可保留为0，删除必须走显式schema迁移。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C15",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A15",
+        "参数名称": "63_移动能量!B15",
+        "当前值": "63_移动能量!C15",
+        "单位": "63_移动能量!D15",
+        "中文说明": "63_移动能量!F15",
+        "合法范围/可选值": "63_移动能量!E15"
+      },
+      "source_data_type": "n",
+      "source_value": 0,
+      "runtime_status": "disabled_compatibility_only"
+    },
+    "pickup_attraction_speed_cells_per_second": {
+      "id": "diaoluo_xifu_sudu",
+      "name": "掉落吸附移动速度",
+      "value": 8,
+      "unit": "格/秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 100.0,
+        "raw": "0.1~100"
+      },
+      "notes": "可拾取掉落进入自动拾取范围后向服务器选定的最近合法玩家移动，抵达角色才进入物品栏。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C16",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A16",
+        "参数名称": "63_移动能量!B16",
+        "当前值": "63_移动能量!C16",
+        "单位": "63_移动能量!D16",
+        "中文说明": "63_移动能量!F16",
+        "合法范围/可选值": "63_移动能量!E16"
+      },
+      "source_data_type": "n",
+      "source_value": 8
+    },
+    "throw_distance_cells": {
+      "id": "wanjia_touzhi_juli",
+      "name": "玩家物品投掷距离",
+      "value": 3,
+      "unit": "格",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.1,
+        "maximum": 20.0,
+        "raw": "0.1~20"
+      },
+      "notes": "快捷栏Q或背包/快捷栏拖出界面投掷的目标距离；路径遇高度1阻挡时停在阻挡前最近合法位置。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C17",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A17",
+        "参数名称": "63_移动能量!B17",
+        "当前值": "63_移动能量!C17",
+        "单位": "63_移动能量!D17",
+        "中文说明": "63_移动能量!F17",
+        "合法范围/可选值": "63_移动能量!E17"
+      },
+      "source_data_type": "n",
+      "source_value": 3
+    },
+    "thrower_extra_pickup_delay_seconds": {
+      "id": "diaoluo_touzhi_wanjia_jiashi",
+      "name": "主动投掷者额外拾取等待",
+      "value": 1,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 30.0,
+        "raw": "0~30"
+      },
+      "notes": "玩家主动投掷后，仅原投掷者在基础拾取延迟之外再等待此时间；其他玩家只等待基础延迟。当前基础0.5秒，因此其他玩家0.5秒可拾取，投掷者1.5秒可捡回。PlayerActionRules以base_pickup_delay_seconds与thrower_extra_pickup_delay_seconds表达。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C18",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A18",
+        "参数名称": "63_移动能量!B18",
+        "当前值": "63_移动能量!C18",
+        "单位": "63_移动能量!D18",
+        "中文说明": "63_移动能量!F18",
+        "合法范围/可选值": "63_移动能量!E18"
+      },
+      "source_data_type": "n",
+      "source_value": 1
+    },
+    "gathering_reset_delay_seconds": {
+      "id": "caiji_zhongduan_chongzhi_shijian",
+      "name": "采集中断重置时间",
+      "value": 1,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "exclusive_minimum",
+        "minimum": 0,
+        "raw": ">0"
+      },
+      "notes": "连续砍伐或挖掘中断超过该时间后，服务器重置同一资源的采集进度与累计碎裂蒙版；修改后经正式数据导入生效。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!C19",
+      "source_cells": {
+        "稳定ID": "63_移动能量!A19",
+        "参数名称": "63_移动能量!B19",
+        "当前值": "63_移动能量!C19",
+        "单位": "63_移动能量!D19",
+        "中文说明": "63_移动能量!F19",
+        "合法范围/可选值": "63_移动能量!E19"
+      },
+      "source_data_type": "n",
+      "source_value": 1
+    },
+    "maximum_combat_slow_fraction": {
+      "id": "jiansu_zuidazhi",
+      "name": "普通减速最大比例",
+      "value": 0.6,
+      "unit": "比例",
+      "legal_range": {
+        "kind": "inclusive",
+        "minimum": 0.0,
+        "maximum": 0.95,
+        "raw": "0~0.95"
+      },
+      "notes": "普通减速最多降低60%移动速度。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D7",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B7",
+        "参数名称": "64_伤害控制!C7",
+        "当前值": "64_伤害控制!D7",
+        "单位": "64_伤害控制!E7",
+        "中文说明": "64_伤害控制!G7",
+        "合法范围/可选值": "64_伤害控制!F7"
+      },
+      "source_data_type": "n",
+      "source_value": 0.6
+    },
+    "rooted_blocks_movement": {
+      "id": "dingshen_jinzhi_yidong",
+      "name": "定身禁止普通移动",
+      "value": true,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": true,
+        "raw": "固定为是"
+      },
+      "notes": "定身期间禁止普通移动。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D8",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B8",
+        "参数名称": "64_伤害控制!C8",
+        "当前值": "64_伤害控制!D8",
+        "单位": "64_伤害控制!E8",
+        "中文说明": "64_伤害控制!G8",
+        "合法范围/可选值": "64_伤害控制!F8"
+      },
+      "source_data_type": "s",
+      "source_value": "是"
+    },
+    "rooted_blocks_dodge": {
+      "id": "dingshen_jinzhi_shanbi",
+      "name": "定身禁止闪避",
+      "value": true,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": true,
+        "raw": "固定为是"
+      },
+      "notes": "定身期间不能闪避。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D9",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B9",
+        "参数名称": "64_伤害控制!C9",
+        "当前值": "64_伤害控制!D9",
+        "单位": "64_伤害控制!E9",
+        "中文说明": "64_伤害控制!G9",
+        "合法范围/可选值": "64_伤害控制!F9"
+      },
+      "source_data_type": "s",
+      "source_value": "是"
+    },
+    "rooted_allows_attack": {
+      "id": "dingshen_yunxu_gongji",
+      "name": "定身仍允许攻击",
+      "value": true,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": true,
+        "raw": "固定为是"
+      },
+      "notes": "定身只锁移动。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D10",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B10",
+        "参数名称": "64_伤害控制!C10",
+        "当前值": "64_伤害控制!D10",
+        "单位": "64_伤害控制!E10",
+        "中文说明": "64_伤害控制!G10",
+        "合法范围/可选值": "64_伤害控制!F10"
+      },
+      "source_data_type": "s",
+      "source_value": "是"
+    },
+    "player_stun_immune": {
+      "id": "wanjia_xuanyun_mianyi",
+      "name": "玩家眩晕免疫",
+      "value": true,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": true,
+        "raw": "固定为是"
+      },
+      "notes": "玩家不能被普通眩晕。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D11",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B11",
+        "参数名称": "64_伤害控制!C11",
+        "当前值": "64_伤害控制!D11",
+        "单位": "64_伤害控制!E11",
+        "中文说明": "64_伤害控制!G11",
+        "合法范围/可选值": "64_伤害控制!F11"
+      },
+      "source_data_type": "s",
+      "source_value": "是"
+    },
+    "player_ordinary_hit_stagger": {
+      "id": "wanjia_putong_yingzhi",
+      "name": "玩家普通受击硬直",
+      "value": false,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": false,
+        "raw": "固定为否"
+      },
+      "notes": "普通受击不产生额外玩法硬直；有效受击仍按D-042在0.25秒击退活动期间禁止主动动作，不以本条取消该禁用。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D12",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B12",
+        "参数名称": "64_伤害控制!C12",
+        "当前值": "64_伤害控制!D12",
+        "单位": "64_伤害控制!E12",
+        "中文说明": "64_伤害控制!G12",
+        "合法范围/可选值": "64_伤害控制!F12"
+      },
+      "source_data_type": "s",
+      "source_value": "否"
+    },
+    "dodge_invulnerability_cancels_entire_hit": {
+      "id": "shanbi_wudi_quxiao_zhengci_mingzhong",
+      "name": "闪避无敌取消整次命中",
+      "value": true,
+      "unit": "是/否",
+      "legal_range": {
+        "kind": "fixed",
+        "value": true,
+        "raw": "固定为是"
+      },
+      "notes": "服务器权威闪避无敌拒绝整次命中及其伤害、击退、减速和其他控制；同一攻击实例无敌结束后不得补中。来源：D-042用户裁决。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D18",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B18",
+        "参数名称": "64_伤害控制!C18",
+        "当前值": "64_伤害控制!D18",
+        "单位": "64_伤害控制!E18",
+        "中文说明": "64_伤害控制!G18",
+        "合法范围/可选值": "64_伤害控制!F18"
+      },
+      "source_data_type": "b",
+      "source_value": true
+    },
+    "hit_knockback_distance_cells": {
+      "id": "wanjia_shouji_jitui_juli",
+      "name": "玩家受击统一击退距离",
+      "value": 0.75,
+      "unit": "格",
+      "legal_range": {
+        "kind": "exclusive_minimum",
+        "minimum": 0,
+        "raw": ">0"
+      },
+      "notes": "玩家受到任意有效攻击时的服务器权威统一击退距离。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D22",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B22",
+        "参数名称": "64_伤害控制!C22",
+        "当前值": "64_伤害控制!D22",
+        "单位": "64_伤害控制!E22",
+        "中文说明": "64_伤害控制!G22",
+        "合法范围/可选值": "64_伤害控制!F22"
+      },
+      "source_data_type": "n",
+      "source_value": 0.75
+    },
+    "hit_feedback_duration_seconds": {
+      "id": "wanjia_shouji_fankui_chixu_shijian",
+      "name": "玩家受击反馈持续时间",
+      "value": 0.25,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "exclusive_minimum",
+        "minimum": 0,
+        "raw": ">0"
+      },
+      "notes": "玩家有效受击后的服务器权威击退持续时间；角色受击闪烁共用同一正式时间。击退活动期间禁止主动移动、攻击及启动闪避；取消未完成主动攻击、蓄力、连射和装填，已发射弹体和现存召唤不全局删除。被拒新动作不扣资源、不延后缓存，不附加全局UI禁用或新的受击无敌。来源：D-042用户裁决及03动作入口核对。",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "64_伤害控制!D23",
+      "source_cells": {
+        "稳定ID": "64_伤害控制!B23",
+        "参数名称": "64_伤害控制!C23",
+        "当前值": "64_伤害控制!D23",
+        "单位": "64_伤害控制!E23",
+        "中文说明": "64_伤害控制!G23",
+        "合法范围/可选值": "64_伤害控制!F23"
+      },
+      "source_data_type": "n",
+      "source_value": 0.25
+    },
+    "camera_ground_multiplier": {
+      "id": "camera_ground",
+      "name": "地表/离开驾驶舱镜头倍率",
+      "value": 1,
+      "unit": "倍",
+      "legal_range": {
+        "kind": "not_specified",
+        "raw": null
+      },
+      "notes": "人物步行、地面载具、在飞船内但未坐驾驶舱",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "132_地图UI!C16",
+      "source_cells": {
+        "参数ID": "132_地图UI!A16",
+        "中文参数": "132_地图UI!B16",
+        "当前值/规则": "132_地图UI!C16",
+        "单位/范围": "132_地图UI!D16",
+        "说明": "132_地图UI!E16"
+      },
+      "source_data_type": "n",
+      "source_value": 1
+    },
+    "camera_ship_multiplier": {
+      "id": "camera_ship",
+      "name": "飞船驾驶非战斗镜头倍率",
+      "value": 1.35,
+      "unit": "倍",
+      "legal_range": {
+        "kind": "not_specified",
+        "raw": null
+      },
+      "notes": "行星层/自由空间驾驶平滑拉远",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "132_地图UI!C17",
+      "source_cells": {
+        "参数ID": "132_地图UI!A17",
+        "中文参数": "132_地图UI!B17",
+        "当前值/规则": "132_地图UI!C17",
+        "单位/范围": "132_地图UI!D17",
+        "说明": "132_地图UI!E17"
+      },
+      "source_data_type": "n",
+      "source_value": 1.35
+    },
+    "camera_combat_multiplier": {
+      "id": "camera_combat",
+      "name": "飞船驾驶宇宙战斗镜头倍率",
+      "value": 1.7,
+      "unit": "倍",
+      "legal_range": {
+        "kind": "not_specified",
+        "raw": null
+      },
+      "notes": "仍坐驾驶舱且处于宇宙战斗时",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "132_地图UI!C18",
+      "source_cells": {
+        "参数ID": "132_地图UI!A18",
+        "中文参数": "132_地图UI!B18",
+        "当前值/规则": "132_地图UI!C18",
+        "单位/范围": "132_地图UI!D18",
+        "说明": "132_地图UI!E18"
+      },
+      "source_data_type": "n",
+      "source_value": 1.7
+    },
+    "camera_zoom_transition_seconds": {
+      "id": "camera_transition",
+      "name": "镜头倍率过渡时间",
+      "value": 0.35,
+      "unit": "秒",
+      "legal_range": {
+        "kind": "not_specified",
+        "raw": null
+      },
+      "notes": "平滑过渡",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "132_地图UI!C19",
+      "source_cells": {
+        "参数ID": "132_地图UI!A19",
+        "中文参数": "132_地图UI!B19",
+        "当前值/规则": "132_地图UI!C19",
+        "单位/范围": "132_地图UI!D19",
+        "说明": "132_地图UI!E19"
+      },
+      "source_data_type": "n",
+      "source_value": 0.35
+    }
+  },
+  "document_rules": {
+    "initial_resources": {
+      "source_file": "cehua.docx",
+      "source_part": "word/document.xml",
+      "source_xpath": "/w:document/w:body/w:p[82]",
+      "paragraph_index_1based": 82,
+      "text": "新建人物的生命、饱食度和人物能量均从各自上限开始。 穿脱装备改变生命或人物能量上限时，当前值按新旧上限比例调整。有效正上限下，变化后当前值=变化前当前值÷变化前上限×变化后上限，并沿既有合法范围约束；计算沿正式数值精度，不从UI取整。此规则不得复活已死者、免费补满或通过反复穿脱套利；死亡和复活本身沿既有规则。",
+      "text_sha256": "59bbb36c3852853320df21f066156b4ea335baa2216c4a80c3fe1e4ef0983429"
+    },
+    "movement_and_dodge": {
+      "source_file": "cehua.docx",
+      "source_part": "word/document.xml",
+      "source_xpath": "/w:document/w:body/w:p[84]",
+      "paragraph_index_1based": 84,
+      "text": "玩家采用 8 方向地面移动，WASD 控制移动，鼠标提供 360°瞄准。独立冲刺系统不存在；Shift 只用于闪避，单次按下必须触发一次闪避请求，不要求双击或持续按住。闪避有固定距离、持续时间、能量消耗、无敌窗口和冷却，均由数值表维护。基础位移持续 0.28 秒，基础无敌覆盖整个 0.28 秒闪避位移过程，不依赖饰品；能量消耗 25、距离 2.4 格、冷却 3 秒及已有饰品自身效果保持。人物没有有效移动输入时按 Shift，沿最后一次有效移动方向闪避；尚无历史有效移动方向时不启动闪避。",
+      "text_sha256": "81a0221e144242d9992b51a06186172eac37ebc3d684da98c39763822378eb3a"
+    },
+    "collision_and_hit_feedback": {
+      "source_file": "cehua.docx",
+      "source_part": "word/document.xml",
+      "source_xpath": "/w:document/w:body/w:p[85]",
+      "paragraph_index_1based": 85,
+      "text": "玩家普通受击不产生常规硬直。每次服务器确认对玩家造成有效伤害时，统一触发玩家受击反馈：玩家固定向攻击来源相对于玩家位置的反方向击退；当攻击来源与玩家位置重合，或不存在可用的空间方向（例如未来同格陷阱、毒液等）时，改用玩家当前朝向的反方向。所有伤害来源对玩家共用同一套玩家受击击退数值，不采用武器或怪物各自的击退值：正式击退距离为 0.75 格，击退持续 0.25 秒，角色闪烁持续 0.25 秒。击退活动的 0.25 秒内，玩家禁止主动移动、攻击及启动闪避；取消未完成的主动攻击、蓄力、连射和装填，已发射弹体和现存召唤不全局删除。被拒的新动作不扣资源、不延后缓存。此规则不附加全局 UI 禁用或新的受击无敌。击退由服务器权威执行碰撞约束，可被墙体、建筑、树木、矿石等正式环境阻挡；斜向碰撞沿用既有沿墙滑动规则，不得与阻挡重叠或穿透。该反馈不产生全局或局部时间缩放，也不附加无敌、额外伤害或其他状态。闪烁仅是服务器确认有效受伤事件触发的表现，不参与也不反向决定伤害结算。每次新的有效伤害重新触发一次玩家受击反馈，不排队，也不累计尚未执行的击退距离。闪避无敌窗口取消整次命中：敌对攻击本应命中但目标处于闪避无敌窗口时，该次命中的生命伤害、击退、减速及其他随命中结算的效果均无效；服务器仍将该 attack_instance_id 对该 target_entity_id 记为“无敌拒绝”，无敌结束后不得因同一攻击实例持续重叠而补中。同一攻击实例对同一玩家最多记录一次成功闪避。闪避启动时必须播放残影与音效；因无敌窗口成功取消攻击命中时，另行播放明确的爽感视听奖励。上述反馈禁止使用 hit-stop、时间减速或其他会造成多人时间轴不一致的表现。闪避路径遇到 H1 或实体硬阻挡时，人物停在路径上最近合法位置，已启动闪避的能量消耗与冷却照常结算。在线玩家之间具有实体碰撞。仅玩家对玩家的碰撞几何为不随角色朝向旋转的轴对齐方形（AABB）；方形边长沿用人物逻辑碰撞直径，half extent 使用该直径的一半（即现有 collision radius 数值），不得扩大或缩小玩家占地。服务器最终裁定位置并阻止玩家互相重叠或穿过；正面法向分量被另一玩家阻挡时，仍须结算合法切向分量，使玩家沿方形边滑动，不能因法向受阻同时清零 A/D 切向移动。人物、动物和敌人与 1×1 实体墙体之间不得有任何空间重合；斜向击退可以按 5.4 节保留合法切向分量沿墙滑动，但不得挤入墙内。箱子、工作台、矿石等实体必须具有与其逻辑占地一致的碰撞体积；树木碰撞按 14.4 节以可见树干实际占地为准，不得因 1×1 逻辑锚格而强制等同完整墙体。闪避残影方向优先采用玩家本次实际闪避位移方向；存在实际落点时，以闪避起点指向该落点的方向为准；只有本次闪避实际位移为零时，才使用鼠标方向。",
+      "text_sha256": "f46da67f1783f24ccd03db6c34c0d1e2aefcff732bd64cc8a8b3db2530e7a348"
+    },
+    "context_interaction": {
+      "source_file": "cehua.docx",
+      "source_part": "word/document.xml",
+      "source_xpath": "/w:document/w:body/w:p[86]",
+      "paragraph_index_1based": 86,
+      "text": "F 为情境交互键：鼠标必须指在可交互对象上，且目标交互点距离人物逻辑位置不超过交互范围；鼠标未指向可交互对象或距离超出时，按 F 不产生效果。基础工作台遵循同一指向规则：鼠标悬停工作台且玩家与工作台同层、距离不超过 1.5 格时按 F，打开工作台制作面板和人物背包；未指向、不同层或超出距离时无效。玩家离开交互范围、点击关闭按钮或按 Esc 时，工作台制作面板与背包一起关闭。树木和矿物等资源采集不使用 F：鼠标必须指在资源上，并在采集范围内按住鼠标左键，服务器按采集结算间隔处理。交互范围、自动拾取范围和采集范围统一由数值表维护；当前分别为 1.5 格、3 格和 5 格。 快捷栏选中工具或武器时，临时使用选中的实物；其他时候使用正式武器装备槽中的武器。由该优先规则确定的有效实物为受支持武器时，鼠标左键只进入其攻击、开火或控制链，不能采集；有效实物为工具或空手时，沿既有采集规则执行。 对有使用权限的床按F执行睡觉；只有实际进入睡眠才绑定重生床，单按F或未进入睡眠的交互不产生绑定。",
+      "text_sha256": "d2bdf2edc511694409fe5fbf740bc4bbd942a111d99419fb1bcdf63e21af2292"
+    },
+    "offline_actor": {
+      "source_file": "cehua.docx",
+      "source_part": "word/document.xml",
+      "source_xpath": "/w:document/w:body/w:p[421]",
+      "paragraph_index_1based": 421,
+      "text": "离线玩家不在世界中保留活动碰撞体，而是保存“所处地图/父级 + 局部坐标 + 回退重生点”。上线时优先恢复原位置；父级已经不存在或当前状态不再允许恢复时才回重生点。",
+      "text_sha256": "16e5b8f4ecd544be366c124099740d67353ae60520ab41e6ea1407d6e907a9d2"
+    }
+  },
+  "mechanics": {
+    "low_food": {
+      "comparison": "strictly_less_than",
+      "threshold_parameter": "low_food_threshold",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "62_人物基础!F6"
+    },
+    "energy_regeneration": {
+      "delay_origin": "last_active_energy_consumption",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "63_移动能量!F4"
+    },
+    "input": {
+      "movement_directions": 8,
+      "aim_degrees": 360,
+      "sprint_exists": false,
+      "dodge_trigger": "pressed_edge",
+      "stationary_dodge_direction": "last_valid_movement",
+      "no_movement_history_dodge": false,
+      "document_rule": "movement_and_dodge"
+    },
+    "player_player_collision": {
+      "shape": "axis_aligned_square",
+      "rotates_with_facing": false,
+      "side_parameter": "actor_diameter_cells",
+      "half_extent_expression": "actor_diameter_cells / 2",
+      "document_rule": "collision_and_hit_feedback"
+    },
+    "interaction": {
+      "selection": "pointer_selected_target",
+      "same_layer_required": true,
+      "range_parameter": "interaction_range_cells",
+      "range_comparison": "less_than_or_equal",
+      "nearest_target_fallback": false,
+      "resources_use_f": false,
+      "gathering_trigger": "left_mouse_held",
+      "close_contextual_group_on": [
+        "invalid_context",
+        "Esc"
+      ],
+      "document_rule": "context_interaction"
+    },
+    "dodge_blocked": {
+      "retains_energy_cost": true,
+      "retains_cooldown": true,
+      "document_rule": "collision_and_hit_feedback"
+    },
+    "camera": {
+      "transition_semantic": "zoom_multiplier_transition",
+      "transition_parameter": "camera_zoom_transition_seconds",
+      "source_file": "shuzhi.xlsx",
+      "source_cell": "132_地图UI!B19"
+    }
+  },
+  "asset_interfaces": {
+    "body": {
+      "resource_id": "wanjia_zhuti_2d_01",
+      "name": "玩家角色主体2D资源",
+      "gameplay_content_id": "wanjia_juese",
+      "purpose": "正式运行时显示人物身体、头部、腿部和非攻击通用动作；与独立右臂组合。",
+      "raw_anchor_rule": "脚底中心",
+      "raw_direction_mode": "八方向",
+      "allow_mirror": false,
+      "affects_gameplay": false,
+      "raw_requirements": "逻辑占格或尺寸：1格人物占位；视觉可略超格，碰撞独立\n方向/旋转需求：八方向；显示朝向取鼠标最近8方向\n状态需求：待机、移动、闪避\n动作需求：身体不承担普通攻击动作。移动时步态清楚但克制；右侧肩臂区域需给独立右臂留出自然遮挡关系。\n碰撞/交互语义：逻辑碰撞由人物数据定义，不从透明像素推导。\n挂点/连接点需求：中心特效点、底部点；右臂旋转根与人物逻辑中心重合。\n表现事件需求：动作开始、动作结束、脚步、受到伤害、死亡\n特效需求：无\n镜头/屏幕反馈需求：无\n光照需求：无\n音效需求：脚步事件映射地面声音族；资源本身不携带固定音效。\n音乐需求：无\n贴图/材质需求：继承玩家母资产统一风格\n程序材质/Shader需求：允许客户端闪白/受击染色\nUI动效需求：无\n环境屏幕级表现需求：无\n变体/换色/换材质规则：可由母资产换色/换材质派生\n是否必须独特：是\n复用候选/共享组：玩家母资产输出组\nAI制作限制/一致性要求：所有方向锚点一致；切换动作不得跳位；右臂不能烘进普通攻击。\n地图工具调用：否\n影响玩法逻辑：否\n备注：正式运行2D资源。\n专项补充信息：角色/装备类别：玩家角色\n攻击/动作阶段：待机/移动/闪避\n手持方式：独立右臂覆盖组合\n发射/命中特效点：中心特效点\n受击/死亡表现：受击闪白；死亡另用独立表现\nUI图标/准星需求：无",
+      "production_art_ready": false,
+      "source_file": "sucai.xlsx",
+      "source_cell": "全部素材技术清单!C659",
+      "source_cells": {
+        "资源ID": "全部素材技术清单!C659",
+        "中文名称": "全部素材技术清单!D659",
+        "对应玩法内容ID": "全部素材技术清单!E659",
+        "用途": "全部素材技术清单!I659",
+        "逻辑锚点规则": "全部素材技术清单!M659",
+        "方向制式": "全部素材技术清单!N659",
+        "允许镜像": "全部素材技术清单!O659",
+        "影响玩法逻辑": "全部素材技术清单!P659",
+        "完整需求详情": "全部素材技术清单!V659",
+        "规范状态": "全部素材技术清单!W659"
+      }
+    },
+    "right_arm": {
+      "resource_id": "wanjia_youbi_2d_01",
+      "name": "玩家独立右臂/手部件",
+      "gameplay_content_id": "wanjia_youbishouchi",
+      "purpose": "承担持续瞄准和武器手持，让所有方位的攻击表现共享同一套低成本结构。",
+      "raw_anchor_rule": "脚底中心",
+      "raw_direction_mode": "连续旋转",
+      "allow_mirror": false,
+      "affects_gameplay": false,
+      "raw_requirements": "逻辑占格或尺寸：根部位于人物逻辑中心；手持点保持在人物身体轮廓内或紧贴轮廓\n方向/旋转需求：连续旋转，始终跟随鼠标方向\n状态需求：默认、持武器\n动作需求：不制作骨骼攻击动作；由Godot围绕人物逻辑中心刚性旋转。武器攻击时可按武器需求额外做短弧摆动/后坐位移。\n碰撞/交互语义：右臂和手部件不独立参与伤害碰撞；近战判定以人物中心和武器玩法数据计算。\n挂点/连接点需求：旋转根=人物逻辑中心；末端提供主手持点 guadian_zhushou。\n表现事件需求：攻击开始、攻击释放、装填开始、装填完成\n特效需求：无\n镜头/屏幕反馈需求：无\n光照需求：无\n音效需求：无\n音乐需求：无\n贴图/材质需求：与玩家主体肤色/手套/服装材质一致\n程序材质/Shader需求：无\nUI动效需求：无\n环境屏幕级表现需求：无\n变体/换色/换材质规则：跟随玩家外观变体；几何尽量共用\n是否必须独特：有限\n复用候选/共享组：玩家主体材质组\nAI制作限制/一致性要求：手臂长度必须短；任何配色变体都保持同一旋转根和主手持点位置。不得通过视觉长度改变攻击距离。\n地图工具调用：否\n影响玩法逻辑：否\n备注：这是运行时刚性分件，不交给Kimodo生成攻击动画。\n专项补充信息：角色/装备类别：玩家右臂\n攻击/动作阶段：持续瞄准/攻击表现\n手持方式：主手单手持；连续跟随鼠标\n发射/命中特效点：不固定枪口；具体发射点由武器资源提供\n受击/死亡表现：随主体一起隐藏/死亡\nUI图标/准星需求：无",
+      "production_art_ready": false,
+      "source_file": "sucai.xlsx",
+      "source_cell": "全部素材技术清单!C660",
+      "source_cells": {
+        "资源ID": "全部素材技术清单!C660",
+        "中文名称": "全部素材技术清单!D660",
+        "对应玩法内容ID": "全部素材技术清单!E660",
+        "用途": "全部素材技术清单!I660",
+        "逻辑锚点规则": "全部素材技术清单!M660",
+        "方向制式": "全部素材技术清单!N660",
+        "允许镜像": "全部素材技术清单!O660",
+        "影响玩法逻辑": "全部素材技术清单!P660",
+        "完整需求详情": "全部素材技术清单!V660",
+        "规范状态": "全部素材技术清单!W660"
+      }
+    }
+  },
+  "feedback_interfaces": {
+    "dodge_started": {
+      "trigger": "server_confirmed_dodge_start",
+      "animation_resource_id": "donghua_wanjia_shanbi_01",
+      "sound_resource_id": "yinpin_wanjia_shanbi_01",
+      "visual_resource_id": "texiao_wanjia_shanbi_canying",
+      "visual_interface": {
+        "resource_id": "texiao_wanjia_shanbi_canying",
+        "raw_interface": {
+          "父稳定ID/语义": "wanjia_shanbi",
+          "资源ID": "texiao_wanjia_shanbi_canying",
+          "中文名称": "玩家闪避残影",
+          "类别": "新增/VFX",
+          "最低交付形态": "2~3层短寿命透明残影；沿已发生位移淡出，不留下持久轨迹。",
+          "可编辑源": "E:\\shaheyouxi\\ziyuan_yuan\\tuxiang\\vfx\\texiao_wanjia_shanbi_canying\\",
+          "运行时资源": "res://assets/vfx/texiao_wanjia_shanbi_canying.tres",
+          "中文预览": "E:\\shaheyouxi\\预览\\战斗特效\\玩家闪避残影.mp4",
+          "消费表现语义": "闪避开始/移动预测；权威校正时自然收束。",
+          "约束/Owner": "VFX-01；只表现速度；严禁hit-stop、局部/全局减速或任何时间缩放。"
+        },
+        "source_file": "sucai.xlsx",
+        "source_cells": {
+          "父稳定ID/语义": "B016武器素材接口!B30",
+          "资源ID": "B016武器素材接口!C30",
+          "中文名称": "B016武器素材接口!D30",
+          "类别": "B016武器素材接口!E30",
+          "最低交付形态": "B016武器素材接口!F30",
+          "可编辑源": "B016武器素材接口!G30",
+          "运行时资源": "B016武器素材接口!H30",
+          "中文预览": "B016武器素材接口!I30",
+          "消费表现语义": "B016武器素材接口!J30",
+          "约束/Owner": "B016武器素材接口!K30"
+        }
+      },
+      "sound_interface": {
+        "resource_id": "yinpin_wanjia_shanbi_01",
+        "raw_interface": {
+          "父稳定ID/语义": "wanjia_shanbi",
+          "资源ID": "yinpin_wanjia_shanbi_01",
+          "中文名称": "玩家闪避音效",
+          "类别": "复用/音效",
+          "最低交付形态": "复用既有短促空气掠过+衣物摩擦，准备少量轻变体。",
+          "可编辑源": "E:\\shaheyouxi\\ziyuan_yuan\\yinyue_yinxiao\\yinxiao\\yinpin_wanjia_shanbi_01.wav",
+          "运行时资源": "res://assets/audio/sfx/yinpin_wanjia_shanbi_01.wav",
+          "中文预览": "E:\\shaheyouxi\\预览\\音效\\玩家闪避音效.wav",
+          "消费表现语义": "闪避开始。",
+          "约束/Owner": "AUD-02；普通闪避只给速度感，不冒充成功删除攻击。"
+        },
+        "source_file": "sucai.xlsx",
+        "source_cells": {
+          "父稳定ID/语义": "B016武器素材接口!B37",
+          "资源ID": "B016武器素材接口!C37",
+          "中文名称": "B016武器素材接口!D37",
+          "类别": "B016武器素材接口!E37",
+          "最低交付形态": "B016武器素材接口!F37",
+          "可编辑源": "B016武器素材接口!G37",
+          "运行时资源": "B016武器素材接口!H37",
+          "中文预览": "B016武器素材接口!I37",
+          "消费表现语义": "B016武器素材接口!J37",
+          "约束/Owner": "B016武器素材接口!K37"
+        }
+      },
+      "consumption_label_only_not_public_event_enum": true,
+      "afterimage_required": true,
+      "raw_animation_requirements": "逻辑占格或尺寸：沿用玩家主体\n方向/旋转需求：八方向\n状态需求：闪避非循环\n动作需求：Kimodo自然语言需求：前摇极短，角色向闪避方向快速压低重心并侧滑/冲步，主体动作紧凑，结束立即回正常姿态；不要完整翻滚。右臂仍保持独立瞄准，不烘入动作。非循环。\n碰撞/交互语义：动画不决定无敌帧、位移距离或碰撞；服务器按数值表执行。\n挂点/连接点需求：人物中心/底部点稳定\n表现事件需求：动作开始、动作结束\n特效需求：短残影+轻量脚底拖尘，可程序化\n镜头/屏幕反馈需求：轻微缩放冲击或无，默认不强制\n光照需求：无\n音效需求：短促衣物/空气掠过声，可复用通用闪避声音族\n音乐需求：无\n贴图/材质需求：不适用\n程序材质/Shader需求：轻量残影\nUI动效需求：无\n环境屏幕级表现需求：无\n变体/换色/换材质规则：同骨架复用\n是否必须独特：有限\n复用候选/共享组：玩家人形骨架动作组\nAI制作限制/一致性要求：可由Kimodo生成并预览迭代；不手工指定关键帧。\n地图工具调用：否\n影响玩法逻辑：否\n备注：无敌帧与位移全部由玩法时间线决定。\n专项补充信息：角色/装备类别：玩家动作\n攻击/动作阶段：闪避\n手持方式：独立右臂继续瞄准\n发射/命中特效点：不适用\n受击/死亡表现：不适用\nUI图标/准星需求：无",
+      "raw_sound_purpose": "闪避启动时提供短促速度感反馈。",
+      "raw_audio_runtime": {
+        "资源ID": "yinpin_wanjia_shanbi_01",
+        "音效播放模式": "一次性",
+        "音效播放事件": "动作开始（闪避）",
+        "音效停止事件": "自动结束",
+        "参数来源": "技术默认/现有描述自动推导"
+      },
+      "source_file": "sucai.xlsx",
+      "animation_source_cells": {
+        "资源ID": "全部素材技术清单!C1309",
+        "对应玩法内容ID": "全部素材技术清单!E1309",
+        "用途": "全部素材技术清单!I1309",
+        "完整需求详情": "全部素材技术清单!V1309"
+      },
+      "sound_source_cells": {
+        "资源ID": "全部素材技术清单!C2324",
+        "对应玩法内容ID": "全部素材技术清单!E2324",
+        "用途": "全部素材技术清单!I2324",
+        "完整需求详情": "全部素材技术清单!V2324"
+      },
+      "audio_runtime_source_cells": {
+        "资源ID": "音效运行参数!A57",
+        "音效播放模式": "音效运行参数!E57",
+        "音效播放事件": "音效运行参数!K57",
+        "音效停止事件": "音效运行参数!L57",
+        "参数来源": "音效运行参数!M57"
+      },
+      "document_rule": "collision_and_hit_feedback",
+      "production_art_ready": false
+    },
+    "dodge_attack_cancelled": {
+      "trigger": "server_confirmed_attack_cancelled_by_dodge_invulnerability",
+      "visual_reward_required": true,
+      "sound_reward_required": true,
+      "visual_resource_id": "texiao_wanjia_shanbi_shanchu_gongji",
+      "sound_resource_id": "yinpin_wanjia_shanbi_shanchu_gongji",
+      "visual_interface": {
+        "resource_id": "texiao_wanjia_shanbi_shanchu_gongji",
+        "raw_interface": {
+          "父稳定ID/语义": "wanjia_shanbi",
+          "资源ID": "texiao_wanjia_shanbi_shanchu_gongji",
+          "中文名称": "闪避成功删除攻击反馈",
+          "类别": "新增/VFX",
+          "最低交付形态": "角色中心短促高对比断裂环/擦光；清楚区别普通闪避。",
+          "可编辑源": "E:\\shaheyouxi\\ziyuan_yuan\\tuxiang\\vfx\\texiao_wanjia_shanbi_shanchu_gongji\\",
+          "运行时资源": "res://assets/vfx/texiao_wanjia_shanbi_shanchu_gongji.tres",
+          "中文预览": "E:\\shaheyouxi\\预览\\战斗特效\\闪避成功删除攻击反馈.mp4",
+          "消费表现语义": "服务器确认无敌窗口删除一次本应命中的攻击。",
+          "约束/Owner": "VFX-01；爽快但短促；严禁减慢任何玩家或全局时间，不伪造回血/反伤/格挡。"
+        },
+        "source_file": "sucai.xlsx",
+        "source_cells": {
+          "父稳定ID/语义": "B016武器素材接口!B31",
+          "资源ID": "B016武器素材接口!C31",
+          "中文名称": "B016武器素材接口!D31",
+          "类别": "B016武器素材接口!E31",
+          "最低交付形态": "B016武器素材接口!F31",
+          "可编辑源": "B016武器素材接口!G31",
+          "运行时资源": "B016武器素材接口!H31",
+          "中文预览": "B016武器素材接口!I31",
+          "消费表现语义": "B016武器素材接口!J31",
+          "约束/Owner": "B016武器素材接口!K31"
+        }
+      },
+      "sound_interface": {
+        "resource_id": "yinpin_wanjia_shanbi_shanchu_gongji",
+        "raw_interface": {
+          "父稳定ID/语义": "wanjia_shanbi",
+          "资源ID": "yinpin_wanjia_shanbi_shanchu_gongji",
+          "中文名称": "闪避成功删除攻击音效",
+          "类别": "新增/音效",
+          "最低交付形态": "新增短促清脆断裂/擦闪确认音；与普通闪避声分层播放。",
+          "可编辑源": "E:\\shaheyouxi\\ziyuan_yuan\\yinyue_yinxiao\\yinxiao\\yinpin_wanjia_shanbi_shanchu_gongji.wav",
+          "运行时资源": "res://assets/audio/sfx/yinpin_wanjia_shanbi_shanchu_gongji.wav",
+          "中文预览": "E:\\shaheyouxi\\预览\\音效\\闪避成功删除攻击音效.wav",
+          "消费表现语义": "服务器确认无敌窗口删除一次本应命中的攻击。",
+          "约束/Owner": "AUD-02；不含时间拉伸感、慢动作下潜或长尾；不暗示回血/反击。"
+        },
+        "source_file": "sucai.xlsx",
+        "source_cells": {
+          "父稳定ID/语义": "B016武器素材接口!B38",
+          "资源ID": "B016武器素材接口!C38",
+          "中文名称": "B016武器素材接口!D38",
+          "类别": "B016武器素材接口!E38",
+          "最低交付形态": "B016武器素材接口!F38",
+          "可编辑源": "B016武器素材接口!G38",
+          "运行时资源": "B016武器素材接口!H38",
+          "中文预览": "B016武器素材接口!I38",
+          "消费表现语义": "B016武器素材接口!J38",
+          "约束/Owner": "B016武器素材接口!K38"
+        }
+      },
+      "consumption_label_only_not_public_event_enum": true,
+      "document_rule": "collision_and_hit_feedback",
+      "production_art_ready": false
+    },
+    "accessory10_dodge_heal": {
+      "trigger": "server_confirmed_accessory10_dodge_heal",
+      "resource_id": "texiao_shipin_10_shanbi_huifu",
+      "gameplay_content_id": "shipin_10",
+      "raw_purpose": "成功闪避触发回血时角色中心出现极短绿色回流粒子，不遮挡战斗。",
+      "generic_dodge_feedback": false,
+      "consumption_label_only_not_public_event_enum": true,
+      "source_file": "sucai.xlsx",
+      "source_cells": {
+        "资源ID": "全部素材技术清单!C1417",
+        "对应玩法内容ID": "全部素材技术清单!E1417",
+        "用途": "全部素材技术清单!I1417",
+        "完整需求详情": "全部素材技术清单!V1417"
+      },
+      "production_art_ready": false
+    }
+  },
+  "technical_display_choices": {
+    "pixels_per_cell": null,
+    "camera_follow_deadzone_cells": null,
+    "camera_follow_damping_seconds": null,
+    "status": "not_specified_by_original_sources; explicit technical display choices required"
+  },
+  "source_review_scope": {
+    "workbooks": "verified_original_bytes_and_native_cell_reviews",
+    "cehua_docx": "original_hash_and_body_rule_provenance_verified; rendered_layout_review_pending"
+  },
+  "formal_world_allowed": false,
+  "not_implemented": [
+    "formal character artwork",
+    "combat015",
+    "death_respawn018",
+    "engine collision acceptance",
+    "full terrain and ecology acceptance"
+  ]
+}

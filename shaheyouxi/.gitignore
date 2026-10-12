@@ -1,0 +1,21 @@
+.godot/
+**/.godot/
+.local/
+__pycache__/
+*.py[cod]
+build/
+builds/
+dist/
+.env
+.env.*
+!.env.example
+export_credentials.cfg
+
+# Never commit generated test-session credentials or identity outputs.
+**/session_identity.private.json
+**/client_private_identity.json
+
+identity.json
+state.private.json
+*.private.json
+*.private.log

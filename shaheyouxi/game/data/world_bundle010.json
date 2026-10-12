@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "project": "shaheyouxi_experiment_20261004",
+  "artifact_kind": "technical_world_room_bundle",
+  "sources": {
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+  },
+  "source_template_path": "asset_sources/prefabs/fixture_cua9.json",
+  "source_template_sha256": "b6320db3a00e7b0ccb6792c0979c6447261ce42d0392fd1568df102550d03f51",
+  "generation_projection_sha256": "cd442a1605f1503a5e7f0aee188fa4bec4ae38b915ee48a9845cad7c2a8370a3",
+  "prefab_projection_sha256": "2d760350d019f457bf66004de0b0b747880c11ad9461dd4a19e2ccd7663e3a9e",
+  "template": {
+    "anchors": [],
+    "artifact_kind": "technical_prefab_template",
+    "body_content_id": "xingxing_03",
+    "connections": [],
+    "formal_world_allowed": false,
+    "geometry_kind": "explicit_technical_fixture",
+    "layers": [
+      {
+        "bounds": [
+          -8,
+          -6,
+          17,
+          13
+        ],
+        "depth": 0,
+        "local_id": "layer_0",
+        "map_kind": "surface"
+      },
+      {
+        "bounds": [
+          -8,
+          -6,
+          17,
+          13
+        ],
+        "depth": 1,
+        "local_id": "layer_1",
+        "map_kind": "underground"
+      },
+      {
+        "bounds": [
+          -8,
+          -6,
+          17,
+          13
+        ],
+        "depth": 2,
+        "local_id": "layer_2",
+        "map_kind": "underground"
+      }
+    ],
+    "objects": [
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_1",
+        "plane": "H1",
+        "rect": [
+          -2,
+          -2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_10",
+        "plane": "H1",
+        "rect": [
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_11",
+        "plane": "H1",
+        "rect": [
+          0,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_12",
+        "plane": "H1",
+        "rect": [
+          -1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_13",
+        "plane": "H1",
+        "rect": [
+          -2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_14",
+        "plane": "H1",
+        "rect": [
+          -2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_15",
+        "plane": "H1",
+        "rect": [
+          -2,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_16",
+        "plane": "H1",
+        "rect": [
+          -2,
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_2",
+        "plane": "H1",
+        "rect": [
+          -1,
+          -2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_3",
+        "plane": "H1",
+        "rect": [
+          0,
+          -2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_4",
+        "plane": "H1",
+        "rect": [
+          1,
+          -2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_5",
+        "plane": "H1",
+        "rect": [
+          2,
+          -2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_6",
+        "plane": "H1",
+        "rect": [
+          2,
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_7",
+        "plane": "H1",
+        "rect": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_8",
+        "plane": "H1",
+        "rect": [
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": true,
+        "content_id": "fixture_wall",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "edit_object_9",
+        "plane": "H1",
+        "rect": [
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "blocking": false,
+        "content_id": "fixture_ground",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_0",
+        "local_id": "ground_0",
+        "plane": "H0",
+        "rect": [
+          -8,
+          -6,
+          17,
+          13
+        ]
+      },
+      {
+        "blocking": false,
+        "content_id": "fixture_ground",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_1",
+        "local_id": "ground_1",
+        "plane": "H0",
+        "rect": [
+          -8,
+          -6,
+          17,
+          13
+        ]
+      },
+      {
+        "blocking": false,
+        "content_id": "fixture_ground",
+        "content_namespace": "technical_fixture",
+        "content_scope": "technical_fixture",
+        "is_liquid": false,
+        "layer_id": "layer_2",
+        "local_id": "ground_2",
+        "plane": "H0",
+        "rect": [
+          -8,
+          -6,
+          17,
+          13
+        ]
+      }
+    ],
+    "protected_areas": [],
+    "revision": 1,
+    "schema_version": 1,
+    "sources": {
+      "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+      "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+      "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+    },
+    "template_id": "fixture_cua9"
+  },
+  "formal_world_allowed": false
+}

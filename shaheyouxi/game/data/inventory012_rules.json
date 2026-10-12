@@ -1,0 +1,539 @@
+{
+  "capacities": {
+    "bag": 40,
+    "chest": 30,
+    "hotbar": 10
+  },
+  "capacity_sources": {
+    "bag": "62_人物基础!C10;cehua.docx:P129",
+    "chest": "11_功能建筑!L7;cehua.docx:P131",
+    "hotbar": "62_人物基础!C12;cehua.docx:P129"
+  },
+  "contract": "inventory012-source-rules-v1",
+  "creation_or_grant_authorized": false,
+  "item_rules": {
+    "mucai": {
+      "instance": false,
+      "max_stack": 999,
+      "source": "06_基础主材!B2:N2"
+    },
+    "shitou": {
+      "instance": false,
+      "max_stack": 999,
+      "source": "06_基础主材!B3:N3"
+    },
+    "wuqi_changbing_tansuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A32;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A33;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A34;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A35;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A36;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A37;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A38;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A39;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A40;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_tansuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A41;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A22;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A23;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A24;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A25;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A26;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A27;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A28;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A29;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A30;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_changbing_zhizuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A31;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A12;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A13;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A14;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A15;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A16;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A17;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A18;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A19;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A20;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_tansuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A21;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A2;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A3;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A4;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A5;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A6;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A7;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A8;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A9;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A10;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_daojian_zhizuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A11;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A52;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A53;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A54;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A55;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A56;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A57;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A58;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A59;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A60;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_tansuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A61;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A42;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A43;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A44;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A45;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A46;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A47;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A48;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A49;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A50;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_huoqi_zhizuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A51;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A92;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A93;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A94;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A95;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A96;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A97;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A98;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A99;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A100;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_tansuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A101;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A82;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A83;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A84;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A85;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A86;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A87;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A88;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A89;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A90;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_jixie_zhizuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A91;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A72;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A73;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A74;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A75;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A76;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A77;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A78;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A79;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A80;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_tansuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A81;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_01": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A62;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_02": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A63;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_03": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A64;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_04": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A65;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_05": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A66;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_06": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A67;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_07": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A68;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_08": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A69;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_09": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A70;05_堆叠规则!C7;cehua.docx:P137"
+    },
+    "wuqi_nengliang_zhizuo_10": {
+      "instance": true,
+      "max_stack": 1,
+      "source": "66_武器总表!A71;05_堆叠规则!C7;cehua.docx:P137"
+    }
+  },
+  "schema_version": 1,
+  "scope": "two_source_materials_and_weapon_instance_transport_only",
+  "sources": {
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+  },
+  "unresolved_features": [
+    "Q_quantity",
+    "right_click_source_conflict",
+    "world_drop_merge_distance",
+    "disconnect_carry_disposition"
+  ]
+}

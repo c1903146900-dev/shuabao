@@ -1,0 +1,1000 @@
+{
+  "schema_version": 1,
+  "project": "shaheyouxi_experiment_20261004",
+  "artifact_kind": "derived_authoritative_generation_inputs",
+  "sources": {
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+  },
+  "body": {
+    "body_id": "xingxing_03",
+    "required_instance_id": "body_0001",
+    "starting_biome_id": "x03_db_wendai_linyuan",
+    "radius_cells": 400,
+    "diameter_cells": 800,
+    "spawn_center_radius_cells": 100,
+    "source_cells": {
+      "radius": "42_天体物理总表!D81",
+      "diameter": "42_天体物理总表!D82",
+      "spawn_radius": "34_POI总表!R11"
+    }
+  },
+  "biomes": {
+    "x03_db_wendai_linyuan": {
+      "biome_id": "x03_db_wendai_linyuan",
+      "name": "温带林原",
+      "map_kind": "surface",
+      "depth": 0,
+      "ground_resource_id": "dikuai_x03_wendai_linyuan_01",
+      "default_rock_id": null,
+      "raw_layout_intent": "出生区主基底；大块连续，可与湿地/砾漠自然过渡",
+      "raw_natural_entity_group": "温带乔木、灌木、草丛",
+      "raw_surface_h1_permission": "仅树木、动物、预制区域内实体；普通草花灌木/岩柱/晶簇/碎石等不得作为随机高度1实体",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A9",
+        "中文名称": "32_Biome总表!B9",
+        "天体": "32_Biome总表!C9",
+        "地图层": "32_Biome总表!D9",
+        "生成定位": "32_Biome总表!F9",
+        "自然实体组": "32_Biome总表!J9",
+        "地表高度1生成许可": "32_Biome总表!W9",
+        "地面资源ID": "32_Biome总表!X9",
+        "普通岩石ID": "32_Biome总表!Y9"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "liquid_interface": {
+        "parameter_id": "液体_x03_db_wendai_linyuan",
+        "kind": "普通水",
+        "target_percent": 3,
+        "raw_shape": "河溪+极少小湖",
+        "raw_scale": "小-中",
+        "notes": "水体不是每块生态区都必须出现到目标值，允许局部波动",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A2",
+          "生态区ID": "37_生态区液体!B2",
+          "天体": "37_生态区液体!D2",
+          "地图层": "37_生态区液体!E2",
+          "液体类型": "37_生态区液体!F2",
+          "目标覆盖率": "37_生态区液体!G2",
+          "主要形态": "37_生态区液体!H2",
+          "典型尺度": "37_生态区液体!I2",
+          "备注": "37_生态区液体!J2"
+        }
+      }
+    },
+    "x03_db_heliu_shidi": {
+      "biome_id": "x03_db_heliu_shidi",
+      "name": "河湖湿地",
+      "map_kind": "surface",
+      "depth": 0,
+      "ground_resource_id": "dikuai_x03_shidi_01",
+      "default_rock_id": null,
+      "raw_layout_intent": "沿河湖成片生成；不形成碎点棋盘",
+      "raw_natural_entity_group": "湿地灌丛、芦苇",
+      "raw_surface_h1_permission": "仅树木、动物、预制区域内实体；普通草花灌木/岩柱/晶簇/碎石等不得作为随机高度1实体",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A10",
+        "中文名称": "32_Biome总表!B10",
+        "天体": "32_Biome总表!C10",
+        "地图层": "32_Biome总表!D10",
+        "生成定位": "32_Biome总表!F10",
+        "自然实体组": "32_Biome总表!J10",
+        "地表高度1生成许可": "32_Biome总表!W10",
+        "地面资源ID": "32_Biome总表!X10",
+        "普通岩石ID": "32_Biome总表!Y10"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "liquid_interface": {
+        "parameter_id": "液体_x03_db_heliu_shidi",
+        "kind": "普通水",
+        "target_percent": 25,
+        "raw_shape": "河流+湖泊",
+        "raw_scale": "中-大",
+        "notes": "主要水体生态区",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A3",
+          "生态区ID": "37_生态区液体!B3",
+          "天体": "37_生态区液体!D3",
+          "地图层": "37_生态区液体!E3",
+          "液体类型": "37_生态区液体!F3",
+          "目标覆盖率": "37_生态区液体!G3",
+          "主要形态": "37_生态区液体!H3",
+          "典型尺度": "37_生态区液体!I3",
+          "备注": "37_生态区液体!J3"
+        }
+      }
+    },
+    "x03_db_ganhao_limo": {
+      "biome_id": "x03_db_ganhao_limo",
+      "name": "干旱砾漠",
+      "map_kind": "surface",
+      "depth": 0,
+      "ground_resource_id": "dikuai_x03_limo_01",
+      "default_rock_id": null,
+      "raw_layout_intent": "大片干旱区域；与林原之间保留渐变带",
+      "raw_natural_entity_group": "枯灌木、耐旱草",
+      "raw_surface_h1_permission": "仅树木、动物、预制区域内实体；普通草花灌木/岩柱/晶簇/碎石等不得作为随机高度1实体",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A11",
+        "中文名称": "32_Biome总表!B11",
+        "天体": "32_Biome总表!C11",
+        "地图层": "32_Biome总表!D11",
+        "生成定位": "32_Biome总表!F11",
+        "自然实体组": "32_Biome总表!J11",
+        "地表高度1生成许可": "32_Biome总表!W11",
+        "地面资源ID": "32_Biome总表!X11",
+        "普通岩石ID": "32_Biome总表!Y11"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "liquid_interface": {
+        "parameter_id": "液体_x03_db_ganhao_limo",
+        "kind": "普通水",
+        "target_percent": 0.5,
+        "raw_shape": "极少小洼地",
+        "raw_scale": "小",
+        "notes": "可以整块局部不出现",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A4",
+          "生态区ID": "37_生态区液体!B4",
+          "天体": "37_生态区液体!D4",
+          "地图层": "37_生态区液体!E4",
+          "液体类型": "37_生态区液体!F4",
+          "目标覆盖率": "37_生态区液体!G4",
+          "主要形态": "37_生态区液体!H4",
+          "典型尺度": "37_生态区液体!I4",
+          "备注": "37_生态区液体!J4"
+        }
+      }
+    },
+    "x03_db_dongtu_bingyuan": {
+      "biome_id": "x03_db_dongtu_bingyuan",
+      "name": "冻土冰原",
+      "map_kind": "surface",
+      "depth": 0,
+      "ground_resource_id": "dikuai_x03_dongtu_01",
+      "default_rock_id": null,
+      "raw_layout_intent": "连续寒冷区域；湖面/冻土形成明显边界",
+      "raw_natural_entity_group": "冻原灌木",
+      "raw_surface_h1_permission": "仅树木、动物、预制区域内实体；普通草花灌木/岩柱/晶簇/碎石等不得作为随机高度1实体",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A12",
+        "中文名称": "32_Biome总表!B12",
+        "天体": "32_Biome总表!C12",
+        "地图层": "32_Biome总表!D12",
+        "生成定位": "32_Biome总表!F12",
+        "自然实体组": "32_Biome总表!J12",
+        "地表高度1生成许可": "32_Biome总表!W12",
+        "地面资源ID": "32_Biome总表!X12",
+        "普通岩石ID": "32_Biome总表!Y12"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null
+    },
+    "x03_dx_genxi_tudong": {
+      "biome_id": "x03_dx_genxi_tudong",
+      "name": "根系土洞",
+      "map_kind": "underground",
+      "depth": 1,
+      "ground_resource_id": "dikuai_x03_genxi_tudong_01",
+      "default_rock_id": "rock_x03_dx_genxi_tudong",
+      "raw_layout_intent": "靠近地表的浅层洞区，常与温带/湿地上方对应",
+      "raw_natural_entity_group": "根系、苔藓、洞穴小岩体",
+      "raw_surface_h1_permission": "按地下/专项规则",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A13",
+        "中文名称": "32_Biome总表!B13",
+        "天体": "32_Biome总表!C13",
+        "地图层": "32_Biome总表!D13",
+        "生成定位": "32_Biome总表!F13",
+        "自然实体组": "32_Biome总表!J13",
+        "地表高度1生成许可": "32_Biome总表!W13",
+        "地面资源ID": "32_Biome总表!X13",
+        "普通岩石ID": "32_Biome总表!Y13"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "material_weights": {
+        "ordinary_rock": 84,
+        "kuang_chitie": 6,
+        "kuang_tantie": 7,
+        "heijingshi": 2,
+        "kuang_citie": 1
+      },
+      "material_weight_source_cells": {
+        "天体": "33_材料权重总表!A8",
+        "区域ID": "33_材料权重总表!C8",
+        "非资源/普通石/组织权重": "33_材料权重总表!F8",
+        "1级": "33_材料权重总表!G8",
+        "2级": "33_材料权重总表!H8",
+        "3级": "33_材料权重总表!I8",
+        "4级": "33_材料权重总表!J8",
+        "合计": "33_材料权重总表!S8"
+      },
+      "liquid_interface": {
+        "parameter_id": "液体_x03_dx_genxi_tudong",
+        "kind": "普通水",
+        "target_percent": 4,
+        "raw_shape": "积水池",
+        "raw_scale": "小",
+        "notes": "只在已有高度0洞穴内生成",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A5",
+          "生态区ID": "37_生态区液体!B5",
+          "天体": "37_生态区液体!D5",
+          "地图层": "37_生态区液体!E5",
+          "液体类型": "37_生态区液体!F5",
+          "目标覆盖率": "37_生态区液体!G5",
+          "主要形态": "37_生态区液体!H5",
+          "典型尺度": "37_生态区液体!I5",
+          "备注": "37_生态区液体!J5"
+        }
+      }
+    },
+    "x03_dx_huiyan_dongqun": {
+      "biome_id": "x03_dx_huiyan_dongqun",
+      "name": "灰岩洞群",
+      "map_kind": "underground",
+      "depth": 1,
+      "ground_resource_id": "dikuai_x03_huiyan_dongqun_01",
+      "default_rock_id": "rock_x03_dx_huiyan_dongqun",
+      "raw_layout_intent": "地下最常见的石质洞区",
+      "raw_natural_entity_group": "石笋、岩柱、散石",
+      "raw_surface_h1_permission": "按地下/专项规则",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A14",
+        "中文名称": "32_Biome总表!B14",
+        "天体": "32_Biome总表!C14",
+        "地图层": "32_Biome总表!D14",
+        "生成定位": "32_Biome总表!F14",
+        "自然实体组": "32_Biome总表!J14",
+        "地表高度1生成许可": "32_Biome总表!W14",
+        "地面资源ID": "32_Biome总表!X14",
+        "普通岩石ID": "32_Biome总表!Y14"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "material_weights": {
+        "ordinary_rock": 78,
+        "kuang_chitie": 5,
+        "kuang_tantie": 7,
+        "heijingshi": 8,
+        "kuang_citie": 2
+      },
+      "material_weight_source_cells": {
+        "天体": "33_材料权重总表!A9",
+        "区域ID": "33_材料权重总表!C9",
+        "非资源/普通石/组织权重": "33_材料权重总表!F9",
+        "1级": "33_材料权重总表!G9",
+        "2级": "33_材料权重总表!H9",
+        "3级": "33_材料权重总表!I9",
+        "4级": "33_材料权重总表!J9",
+        "合计": "33_材料权重总表!S9"
+      },
+      "liquid_interface": {
+        "parameter_id": "液体_x03_dx_huiyan_dongqun",
+        "kind": "普通水",
+        "target_percent": 2,
+        "raw_shape": "小水池",
+        "raw_scale": "小",
+        "notes": "只在已有高度0洞穴内生成",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A6",
+          "生态区ID": "37_生态区液体!B6",
+          "天体": "37_生态区液体!D6",
+          "地图层": "37_生态区液体!E6",
+          "液体类型": "37_生态区液体!F6",
+          "目标覆盖率": "37_生态区液体!G6",
+          "主要形态": "37_生态区液体!H6",
+          "典型尺度": "37_生态区液体!I6",
+          "备注": "37_生态区液体!J6"
+        }
+      }
+    },
+    "x03_dx_hanshui_rongdong": {
+      "biome_id": "x03_dx_hanshui_rongdong",
+      "name": "含水溶洞",
+      "map_kind": "underground",
+      "depth": 1,
+      "ground_resource_id": "dikuai_x03_hanshui_rongdong_01",
+      "default_rock_id": "rock_x03_dx_hanshui_rongdong",
+      "raw_layout_intent": "地下局部成片水洞；提供路线分割",
+      "raw_natural_entity_group": "湿润岩柱、苔藓覆盖石",
+      "raw_surface_h1_permission": "按地下/专项规则",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A15",
+        "中文名称": "32_Biome总表!B15",
+        "天体": "32_Biome总表!C15",
+        "地图层": "32_Biome总表!D15",
+        "生成定位": "32_Biome总表!F15",
+        "自然实体组": "32_Biome总表!J15",
+        "地表高度1生成许可": "32_Biome总表!W15",
+        "地面资源ID": "32_Biome总表!X15",
+        "普通岩石ID": "32_Biome总表!Y15"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "material_weights": {
+        "ordinary_rock": 82,
+        "kuang_chitie": 5,
+        "kuang_tantie": 7,
+        "heijingshi": 5,
+        "kuang_citie": 1
+      },
+      "material_weight_source_cells": {
+        "天体": "33_材料权重总表!A10",
+        "区域ID": "33_材料权重总表!C10",
+        "非资源/普通石/组织权重": "33_材料权重总表!F10",
+        "1级": "33_材料权重总表!G10",
+        "2级": "33_材料权重总表!H10",
+        "3级": "33_材料权重总表!I10",
+        "4级": "33_材料权重总表!J10",
+        "合计": "33_材料权重总表!S10"
+      },
+      "liquid_interface": {
+        "parameter_id": "液体_x03_dx_hanshui_rongdong",
+        "kind": "普通水",
+        "target_percent": 18,
+        "raw_shape": "地下水池",
+        "raw_scale": "中",
+        "notes": "水体明显但保持静态",
+        "source_cells": {
+          "参数ID": "37_生态区液体!A7",
+          "生态区ID": "37_生态区液体!B7",
+          "天体": "37_生态区液体!D7",
+          "地图层": "37_生态区液体!E7",
+          "液体类型": "37_生态区液体!F7",
+          "目标覆盖率": "37_生态区液体!G7",
+          "主要形态": "37_生态区液体!H7",
+          "典型尺度": "37_生态区液体!I7",
+          "备注": "37_生态区液体!J7"
+        }
+      }
+    },
+    "x03_sc_gaoya_shenyan": {
+      "biome_id": "x03_sc_gaoya_shenyan",
+      "name": "高压深岩区",
+      "map_kind": "underground",
+      "depth": 2,
+      "ground_resource_id": "dikuai_x03_gaoya_shenyan_01",
+      "default_rock_id": "rock_x03_sc_gaoya_shenyan",
+      "raw_layout_intent": "地下2主背景Biome；范围大",
+      "raw_natural_entity_group": "厚重岩柱、深岩块",
+      "raw_surface_h1_permission": "按地下/专项规则",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A16",
+        "中文名称": "32_Biome总表!B16",
+        "天体": "32_Biome总表!C16",
+        "地图层": "32_Biome总表!D16",
+        "生成定位": "32_Biome总表!F16",
+        "自然实体组": "32_Biome总表!J16",
+        "地表高度1生成许可": "32_Biome总表!W16",
+        "地面资源ID": "32_Biome总表!X16",
+        "普通岩石ID": "32_Biome总表!Y16"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "material_weights": {
+        "ordinary_rock": 55,
+        "kuang_chitie": 0,
+        "kuang_tantie": 5,
+        "heijingshi": 20,
+        "kuang_citie": 20
+      },
+      "material_weight_source_cells": {
+        "天体": "33_材料权重总表!A11",
+        "区域ID": "33_材料权重总表!C11",
+        "非资源/普通石/组织权重": "33_材料权重总表!F11",
+        "1级": "33_材料权重总表!G11",
+        "2级": "33_材料权重总表!H11",
+        "3级": "33_材料权重总表!I11",
+        "4级": "33_材料权重总表!J11",
+        "合计": "33_材料权重总表!S11"
+      }
+    },
+    "x03_sc_relie_yanqu": {
+      "biome_id": "x03_sc_relie_yanqu",
+      "name": "热裂岩区",
+      "map_kind": "underground",
+      "depth": 2,
+      "ground_resource_id": "dikuai_x03_relie_yanqu_01",
+      "default_rock_id": "rock_x03_sc_relie_yanqu",
+      "raw_layout_intent": "地下2内第二主Biome；以热裂视觉形成差异，不额外增加地图层",
+      "raw_natural_entity_group": "热裂岩块、结晶边缘",
+      "raw_surface_h1_permission": "按地下/专项规则",
+      "source_cells": {
+        "Biome/区域ID": "32_Biome总表!A17",
+        "中文名称": "32_Biome总表!B17",
+        "天体": "32_Biome总表!C17",
+        "地图层": "32_Biome总表!D17",
+        "生成定位": "32_Biome总表!F17",
+        "自然实体组": "32_Biome总表!J17",
+        "地表高度1生成许可": "32_Biome总表!W17",
+        "地面资源ID": "32_Biome总表!X17",
+        "普通岩石ID": "32_Biome总表!Y17"
+      },
+      "area_fraction": null,
+      "cave_fraction": null,
+      "natural_density": null,
+      "material_weights": {
+        "ordinary_rock": 60,
+        "kuang_chitie": 0,
+        "kuang_tantie": 5,
+        "heijingshi": 12,
+        "kuang_citie": 23
+      },
+      "material_weight_source_cells": {
+        "天体": "33_材料权重总表!A12",
+        "区域ID": "33_材料权重总表!C12",
+        "非资源/普通石/组织权重": "33_材料权重总表!F12",
+        "1级": "33_材料权重总表!G12",
+        "2级": "33_材料权重总表!H12",
+        "3级": "33_材料权重总表!I12",
+        "4级": "33_材料权重总表!J12",
+        "合计": "33_材料权重总表!S12"
+      }
+    }
+  },
+  "material_by_rank": {
+    "1": {
+      "resource_id": "kuang_chitie",
+      "source_cell": "06_基础主材!F4"
+    },
+    "2": {
+      "resource_id": "kuang_tantie",
+      "source_cell": "06_基础主材!F5"
+    },
+    "3": {
+      "resource_id": "heijingshi",
+      "source_cell": "06_基础主材!F6"
+    },
+    "4": {
+      "resource_id": "kuang_citie",
+      "source_cell": "06_基础主材!F7"
+    }
+  },
+  "liquid_permissions": [
+    {
+      "map_kind": "surface",
+      "depth": 0,
+      "allowed": true,
+      "kinds": "普通水",
+      "required": false,
+      "source_cells": {
+        "天体": "36_层级液体许可!A8",
+        "地图层": "36_层级液体许可!B8",
+        "允许天然液体": "36_层级液体许可!C8",
+        "允许类型": "36_层级液体许可!D8",
+        "是否必须出现": "36_层级液体许可!E8"
+      }
+    },
+    {
+      "map_kind": "underground",
+      "depth": 1,
+      "allowed": true,
+      "kinds": "普通水",
+      "required": false,
+      "source_cells": {
+        "天体": "36_层级液体许可!A9",
+        "地图层": "36_层级液体许可!B9",
+        "允许天然液体": "36_层级液体许可!C9",
+        "允许类型": "36_层级液体许可!D9",
+        "是否必须出现": "36_层级液体许可!E9"
+      }
+    },
+    {
+      "map_kind": "underground",
+      "depth": 2,
+      "allowed": false,
+      "kinds": "无",
+      "required": false,
+      "source_cells": {
+        "天体": "36_层级液体许可!A10",
+        "地图层": "36_层级液体许可!B10",
+        "允许天然液体": "36_层级液体许可!C10",
+        "允许类型": "36_层级液体许可!D10",
+        "是否必须出现": "36_层级液体许可!E10"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "upper": {
+        "map_kind": "surface",
+        "depth": 0
+      },
+      "lower": {
+        "map_kind": "underground",
+        "depth": 1
+      },
+      "natural_allowed": true,
+      "artificial_allowed": true,
+      "body_side_cells": 3,
+      "safety_side_cells": 7,
+      "notes": "母星出生点10–30格内保证至少1个天然向下入口",
+      "source_cells": {
+        "天体": "38_层间连接!A6",
+        "上层": "38_层间连接!B6",
+        "下层": "38_层间连接!C6",
+        "随机天然入口": "38_层间连接!E6",
+        "玩家人工连接": "38_层间连接!F6",
+        "说明": "38_层间连接!I6",
+        "出生入口最小距离（格）": "38_层间连接!J6",
+        "出生入口最大距离（格）": "38_层间连接!K6",
+        "出生入口保底数量": "38_层间连接!L6",
+        "落点继续深入半径（格）": "38_层间连接!M6",
+        "落点继续深入保底数量": "38_层间连接!N6",
+        "天然入口本体边长（格）": "38_层间连接!O6",
+        "天然入口安全区边长（格）": "38_层间连接!P6"
+      },
+      "spawn_min_distance": 10,
+      "spawn_max_distance": 30,
+      "spawn_min_count": 1,
+      "continuation_radius": 30,
+      "continuation_min_count": 1
+    },
+    {
+      "upper": {
+        "map_kind": "underground",
+        "depth": 1
+      },
+      "lower": {
+        "map_kind": "underground",
+        "depth": 2
+      },
+      "natural_allowed": true,
+      "artificial_allowed": true,
+      "body_side_cells": 3,
+      "safety_side_cells": 7,
+      "notes": "每个地表入口的地下1落点30格内至少有1个继续向下入口",
+      "source_cells": {
+        "天体": "38_层间连接!A7",
+        "上层": "38_层间连接!B7",
+        "下层": "38_层间连接!C7",
+        "随机天然入口": "38_层间连接!E7",
+        "玩家人工连接": "38_层间连接!F7",
+        "说明": "38_层间连接!I7",
+        "出生入口最小距离（格）": "38_层间连接!J7",
+        "出生入口最大距离（格）": "38_层间连接!K7",
+        "出生入口保底数量": "38_层间连接!L7",
+        "落点继续深入半径（格）": "38_层间连接!M7",
+        "落点继续深入保底数量": "38_层间连接!N7",
+        "天然入口本体边长（格）": "38_层间连接!O7",
+        "天然入口安全区边长（格）": "38_层间连接!P7"
+      }
+    }
+  ],
+  "poi_interfaces": [
+    {
+      "template_id": "poi_x03_chusheng_anquan",
+      "name": "出生安全区模板",
+      "applicable_layers": [
+        {
+          "map_kind": "surface",
+          "depth": 0
+        }
+      ],
+      "required": true,
+      "fixed_count": 1,
+      "raw_count": "固定1",
+      "raw_size": "小",
+      "raw_preferred_environment": "温带林原",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "若含人工构件，仅需极少拓殖基础件；工业/建筑系统具体描述",
+      "raw_enemy_interface": "不得放置Boss/高危险敌人",
+      "raw_tool_requirement": "必须可在地图工具直接测试出生/碰撞/照明",
+      "notes": "中心半径100格内选合法位置后嵌入",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A11",
+        "中文名称": "34_POI总表!B11",
+        "天体": "34_POI总表!C11",
+        "地图层": "34_POI总表!D11",
+        "生成性质": "34_POI总表!F11",
+        "数量/范围": "34_POI总表!G11",
+        "规模": "34_POI总表!H11",
+        "推荐环境": "34_POI总表!I11",
+        "关键保底": "34_POI总表!K11",
+        "工业/建筑系统建筑接口": "34_POI总表!M11",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O11",
+        "地图工具需求": "34_POI总表!P11",
+        "备注": "34_POI总表!R11"
+      }
+    },
+    {
+      "template_id": "poi_x03_tuozhi_qianshao",
+      "name": "拓殖地表前哨遗迹",
+      "applicable_layers": [
+        {
+          "map_kind": "surface",
+          "depth": 0
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "2–4",
+      "raw_size": "小/中",
+      "raw_preferred_environment": "温带林原、干旱砾漠、冻土冰原",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "模块化墙体、简易气密门、存储/工作区构件",
+      "raw_enemy_interface": "固定2只普通开拓巡检机（diren_kaitu_xunjianji）；两个不同合法候选点初始化一次，死亡持久不重刷。既有行为/掉落保持，详见Y:AC列。来源：D-044。",
+      "raw_tool_requirement": "模板允许旋转/部分损坏变体",
+      "notes": "强调实用、可扩展、低装饰",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A12",
+        "中文名称": "34_POI总表!B12",
+        "天体": "34_POI总表!C12",
+        "地图层": "34_POI总表!D12",
+        "生成性质": "34_POI总表!F12",
+        "数量/范围": "34_POI总表!G12",
+        "规模": "34_POI总表!H12",
+        "推荐环境": "34_POI总表!I12",
+        "关键保底": "34_POI总表!K12",
+        "工业/建筑系统建筑接口": "34_POI总表!M12",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O12",
+        "地图工具需求": "34_POI总表!P12",
+        "备注": "34_POI总表!R12"
+      }
+    },
+    {
+      "template_id": "poi_x03_ziyuan_guance",
+      "name": "拓殖地质观测站遗迹",
+      "applicable_layers": [
+        {
+          "map_kind": "surface",
+          "depth": 0
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "1–3",
+      "raw_size": "小",
+      "raw_preferred_environment": "干旱砾漠、冻土冰原、河湖湿地边缘",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "观测塔/传感器/小型站房外观需求由工业/建筑系统具体化",
+      "raw_enemy_interface": "可配置少量守卫敌人",
+      "raw_tool_requirement": "需要地质标记点和Loot插槽；不设置地表矿物资源插槽",
+      "notes": "只是世界模板，不提供实时扫描机制",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A13",
+        "中文名称": "34_POI总表!B13",
+        "天体": "34_POI总表!C13",
+        "地图层": "34_POI总表!D13",
+        "生成性质": "34_POI总表!F13",
+        "数量/范围": "34_POI总表!G13",
+        "规模": "34_POI总表!H13",
+        "推荐环境": "34_POI总表!I13",
+        "关键保底": "34_POI总表!K13",
+        "工业/建筑系统建筑接口": "34_POI总表!M13",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O13",
+        "地图工具需求": "34_POI总表!P13",
+        "备注": "34_POI总表!R13"
+      }
+    },
+    {
+      "template_id": "poi_x03_tianran_liexi",
+      "name": "大型天然裂隙入口",
+      "applicable_layers": [
+        {
+          "map_kind": "surface",
+          "depth": 0
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "3–8",
+      "raw_size": "小/中",
+      "raw_preferred_environment": "除湿地主水面外多数Biome",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "无",
+      "raw_enemy_interface": "地下入口附近可连接普通敌人池",
+      "raw_tool_requirement": "需要地表/地下对应坐标连接标记",
+      "notes": "天然入口优先，不要求玩家早期建竖井",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A14",
+        "中文名称": "34_POI总表!B14",
+        "天体": "34_POI总表!C14",
+        "地图层": "34_POI总表!D14",
+        "生成性质": "34_POI总表!F14",
+        "数量/范围": "34_POI总表!G14",
+        "规模": "34_POI总表!H14",
+        "推荐环境": "34_POI总表!I14",
+        "关键保底": "34_POI总表!K14",
+        "工业/建筑系统建筑接口": "34_POI总表!M14",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O14",
+        "地图工具需求": "34_POI总表!P14",
+        "备注": "34_POI总表!R14"
+      }
+    },
+    {
+      "template_id": "poi_x03_feiqi_kuangdao",
+      "name": "废弃浅层矿道",
+      "applicable_layers": [
+        {
+          "map_kind": "underground",
+          "depth": 1
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "1–3",
+      "raw_size": "中",
+      "raw_preferred_environment": "根系土洞、灰岩洞群",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "矿道支撑、照明残骸、简易设备由工业/建筑系统",
+      "raw_enemy_interface": "普通地下敌人可占据",
+      "raw_tool_requirement": "需要入口/出口、Loot位、敌人区域",
+      "notes": "不把它设计成完整工业基地",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A15",
+        "中文名称": "34_POI总表!B15",
+        "天体": "34_POI总表!C15",
+        "地图层": "34_POI总表!D15",
+        "生成性质": "34_POI总表!F15",
+        "数量/范围": "34_POI总表!G15",
+        "规模": "34_POI总表!H15",
+        "推荐环境": "34_POI总表!I15",
+        "关键保底": "34_POI总表!K15",
+        "工业/建筑系统建筑接口": "34_POI总表!M15",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O15",
+        "地图工具需求": "34_POI总表!P15",
+        "备注": "34_POI总表!R15"
+      }
+    },
+    {
+      "template_id": "poi_x03_kuangmai_loutou",
+      "name": "大型地下矿脉富集区",
+      "applicable_layers": [
+        {
+          "map_kind": "underground",
+          "depth": 1
+        },
+        {
+          "map_kind": "underground",
+          "depth": 2
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "3–6",
+      "raw_size": "小/中",
+      "raw_preferred_environment": "灰岩洞群、含水溶洞、高压深岩区、热裂岩区",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "无",
+      "raw_enemy_interface": "可作为普通地下敌人活动区",
+      "raw_tool_requirement": "程序生成地下矿脉区+少量模板边缘",
+      "notes": "实际矿种由工业/建筑系统材料表填充；禁止生成在地表",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A16",
+        "中文名称": "34_POI总表!B16",
+        "天体": "34_POI总表!C16",
+        "地图层": "34_POI总表!D16",
+        "生成性质": "34_POI总表!F16",
+        "数量/范围": "34_POI总表!G16",
+        "规模": "34_POI总表!H16",
+        "推荐环境": "34_POI总表!I16",
+        "关键保底": "34_POI总表!K16",
+        "工业/建筑系统建筑接口": "34_POI总表!M16",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O16",
+        "地图工具需求": "34_POI总表!P16",
+        "备注": "34_POI总表!R16"
+      }
+    },
+    {
+      "template_id": "poi_x03_shenceng_hexin",
+      "name": "拓殖地下2核心遗迹",
+      "applicable_layers": [
+        {
+          "map_kind": "underground",
+          "depth": 2
+        }
+      ],
+      "required": true,
+      "fixed_count": 1,
+      "raw_count": "固定1",
+      "raw_size": "大",
+      "raw_preferred_environment": "高压深岩区",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "大型拓殖核心设施、门禁、核心大厅由工业/建筑系统具体设计",
+      "raw_enemy_interface": "敌人与Boss系统负责Boss本体、招式、战斗阶段",
+      "raw_tool_requirement": "必须支持固定Boss房模板+外围随机连接",
+      "notes": "Boss具体奖励不在世界系统重复",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A17",
+        "中文名称": "34_POI总表!B17",
+        "天体": "34_POI总表!C17",
+        "地图层": "34_POI总表!D17",
+        "生成性质": "34_POI总表!F17",
+        "数量/范围": "34_POI总表!G17",
+        "规模": "34_POI总表!H17",
+        "推荐环境": "34_POI总表!I17",
+        "关键保底": "34_POI总表!K17",
+        "工业/建筑系统建筑接口": "34_POI总表!M17",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O17",
+        "地图工具需求": "34_POI总表!P17",
+        "备注": "34_POI总表!R17"
+      }
+    },
+    {
+      "template_id": "poi_x03_shidi_shuiwen",
+      "name": "拓殖湿地水文站遗迹",
+      "applicable_layers": [
+        {
+          "map_kind": "surface",
+          "depth": 0
+        }
+      ],
+      "required": false,
+      "fixed_count": null,
+      "raw_count": "0–2",
+      "raw_size": "小",
+      "raw_preferred_environment": "河湖湿地",
+      "geometry_ready": false,
+      "functional_integration_ready": false,
+      "raw_building_interface": "高脚/防水站体仅作外形需求；真实建筑逻辑由工业/建筑系统",
+      "raw_enemy_interface": "可配置水边普通敌人",
+      "raw_tool_requirement": "需适配水岸边界和少量栈道接口",
+      "notes": "不引入新水流体机制",
+      "source_cells": {
+        "POI/模板ID": "34_POI总表!A18",
+        "中文名称": "34_POI总表!B18",
+        "天体": "34_POI总表!C18",
+        "地图层": "34_POI总表!D18",
+        "生成性质": "34_POI总表!F18",
+        "数量/范围": "34_POI总表!G18",
+        "规模": "34_POI总表!H18",
+        "推荐环境": "34_POI总表!I18",
+        "关键保底": "34_POI总表!K18",
+        "工业/建筑系统建筑接口": "34_POI总表!M18",
+        "敌人与Boss系统敌人/Boss接口": "34_POI总表!O18",
+        "地图工具需求": "34_POI总表!P18",
+        "备注": "34_POI总表!R18"
+      }
+    }
+  ],
+  "required_boss": {
+    "content_id": "boss_dimai_guanshou",
+    "raw_location": "行星3最深层",
+    "source_cells": {
+      "稳定ID": "86_Boss总表!B2",
+      "主要区域": "86_Boss总表!D2"
+    },
+    "integration_ready": false
+  },
+  "natural_object_interfaces": {
+    "tree": {
+      "content_id": "tree_putong",
+      "initial_stage": "成熟态",
+      "footprint": "1×1",
+      "collision_offset": [
+        0,
+        -0.12
+      ],
+      "collision_size": [
+        0.76,
+        0.3
+      ],
+      "density": null,
+      "source_cells": {
+        "植物ID": "24_植物!A14",
+        "自然生成阶段": "24_植物!T14",
+        "逻辑占格": "24_植物!R14",
+        "碰撞中心偏移X（格）": "24_植物!U14",
+        "碰撞中心偏移Y（格）": "24_植物!V14",
+        "碰撞宽度（格）": "24_植物!W14",
+        "碰撞高度（格）": "24_植物!X14"
+      }
+    },
+    "animals": [
+      {
+        "content_id": "animal_rongjiao",
+        "raw_surface_distribution": "行星3·温带林原；行星4·高草花原、彩叶疏林",
+        "notes": "野外只生成成年体",
+        "source_cells": {
+          "动物ID": "23_动物!A2",
+          "自然星球": "23_动物!E2",
+          "自然地表Biome": "23_动物!F2",
+          "备注": "23_动物!S2"
+        },
+        "density": null
+      },
+      {
+        "content_id": "animal_duanjiao",
+        "raw_surface_distribution": "行星3·温带林原；行星4·巨蕨林带、彩叶疏林",
+        "notes": "野外只生成成年体",
+        "source_cells": {
+          "动物ID": "23_动物!A3",
+          "自然星球": "23_动物!E3",
+          "自然地表Biome": "23_动物!F3",
+          "备注": "23_动物!S3"
+        },
+        "density": null
+      },
+      {
+        "content_id": "animal_luhui",
+        "raw_surface_distribution": "行星3·河湖湿地；行星4·清水湿地；行星5·雷雨湿原非液体地块",
+        "notes": "不主动进入水格",
+        "source_cells": {
+          "动物ID": "23_动物!A4",
+          "自然星球": "23_动物!E4",
+          "自然地表Biome": "23_动物!F4",
+          "备注": "23_动物!S4"
+        },
+        "density": null
+      },
+      {
+        "content_id": "animal_caijing",
+        "raw_surface_distribution": "行星3·温带林原；行星4·高草花原、彩叶疏林",
+        "notes": "不飞行",
+        "source_cells": {
+          "动物ID": "23_动物!A5",
+          "自然星球": "23_动物!E5",
+          "自然地表Biome": "23_动物!F5",
+          "备注": "23_动物!S5"
+        },
+        "density": null
+      },
+      {
+        "content_id": "animal_lijia",
+        "raw_surface_distribution": "行星3·干旱砾漠；行星4·白岩林谷",
+        "notes": "野外只生成成年体",
+        "source_cells": {
+          "动物ID": "23_动物!A6",
+          "自然星球": "23_动物!E6",
+          "自然地表Biome": "23_动物!F6",
+          "备注": "23_动物!S6"
+        },
+        "density": null
+      },
+      {
+        "content_id": "animal_shuangzong",
+        "raw_surface_distribution": "行星3·冻土冰原；行星8·白霜原野、霜林带",
+        "notes": "无温度影响",
+        "source_cells": {
+          "动物ID": "23_动物!A7",
+          "自然星球": "23_动物!E7",
+          "自然地表Biome": "23_动物!F7",
+          "备注": "23_动物!S7"
+        },
+        "density": null
+      }
+    ]
+  },
+  "required_material_minimums": null,
+  "formal_world_ready": false,
+  "unresolved": [
+    "Concrete required Prefab/protection geometry",
+    "Boss/civilization functional integration",
+    "Traceable necessary-material minimum proof",
+    "Biome/cave/natural population balance quantities"
+  ],
+  "generation_order": [
+    "natural_body_skeleton",
+    "required_templates_and_protected_areas",
+    "spawn_and_required_connections",
+    "biomes",
+    "base_terrain",
+    "static_liquids",
+    "underground_resources",
+    "poi_and_civilization",
+    "trees_and_animals",
+    "integrity_validation"
+  ]
+}

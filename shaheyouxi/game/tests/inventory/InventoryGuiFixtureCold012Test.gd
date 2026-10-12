@@ -1,0 +1,37 @@
+extends GdUnitTestSuite
+## Independent new-process cold content validation; never repairs prior guard red.
+const Slots = preload("res://scripts/actor/actor_local_save_slots.gd")
+func test_independent_gui_fixture_store_index_and_exact_contents() -> void:
+	var expected := OS.get_environment("SANDBOX_GUI_USER_ROOT")
+	assert_bool(not expected.is_empty()).is_true()
+	assert_str(OS.get_user_data_dir()).is_equal(expected)
+	if expected.is_empty() or expected != OS.get_user_data_dir(): return
+	var proof: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(expected.path_join("gui_fixture.json")))
+	assert_str(proof["kind"]).is_equal("explicit_offline_gui_inventory_fixture")
+	var slots := Slots.new()
+	assert_bool(slots.configure()["ok"]).is_true()
+	var paths: Dictionary = slots._paths(proof["slot_id"], proof["slot_id"])
+	var before_main: String = FileAccess.get_sha256(paths["main_path"])
+	var before_identity: String = FileAccess.get_sha256(paths["identity_path"])
+	var before_index: String = FileAccess.get_sha256(expected.path_join("local_play011/index.json"))
+	assert_str(before_main).is_equal(proof["main_sha256"])
+	var inspected: Dictionary = slots.inspect_save(proof["slot_id"])
+	assert_bool(inspected.get("ok", false)).is_true()
+	assert_str(inspected["reason"]).is_equal("inventory_gui_fixture")
+	assert_int(int(inspected["sequence"])).is_equal(int(proof["sequence"]))
+	var row: Dictionary = slots._index["slots"][proof["slot_id"]]
+	assert_str(row["status"]).is_equal("ready")
+	assert_int(row["last_sequence"]).is_equal(int(proof["sequence"]))
+	var player: Dictionary = inspected["state"]["inventory_component"]["players"][proof["profile_id"]]
+	assert_int(player["bag"][0]["quantity"]).is_equal(997)
+	assert_int(player["carry"]["quantity"]).is_equal(7)
+	assert_int(player["hotbar"][0]["quantity"]).is_equal(10)
+	assert_int(player["last_sequence"]).is_equal(19)
+	assert_str(player["bag"][2]["item_instance_id"]).is_equal("item_fixture_gun")
+	assert_str(player["bag"][2]["protected_instance_id"]).is_equal("protected_fixture_gun")
+	assert_bool(var_to_bytes(player["bag"][2]["state"]) == var_to_bytes({"fixture_magazine":3,"bits":-0.0})).is_true()
+	assert_str(FileAccess.get_sha256(paths["main_path"])).is_equal(before_main)
+	assert_str(FileAccess.get_sha256(paths["identity_path"])).is_equal(before_identity)
+	assert_str(FileAccess.get_sha256(expected.path_join("local_play011/index.json"))).is_equal(before_index)
+	assert_bool(not DirAccess.dir_exists_absolute(paths["world_directory"].path_join(".writer_lock"))).is_true()
+	assert_bool(slots.close()["ok"]).is_true()

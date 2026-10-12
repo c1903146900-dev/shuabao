@@ -1,0 +1,90 @@
+{
+  "collision": {
+    "center_offset_cells": [
+      0,
+      -0.12
+    ],
+    "size_cells": [
+      0.76,
+      0.3
+    ],
+    "source": "24_植物!U14:X14"
+  },
+  "content_id": "tree_putong",
+  "contract": "sandbox012-tree-authority-projection-v1",
+  "entry_safety_source": "38_层间连接!P6;cehua.docx §3.5 body69/all175",
+  "entry_safety_square_side_cells": 7,
+  "generation_order_source": "cehua.docx §3.6 body74/all180: after POI/civilization and before integrity checks; preserve protected regions",
+  "harvest": {
+    "durability": 3,
+    "first_settlement_timing": null,
+    "interruption_reset_strictly_over_seconds": 1,
+    "mature_seed_content_id": "seed_shumu",
+    "mature_seed_quantity_range": [
+      0,
+      1
+    ],
+    "maximum_distance_cells": 5,
+    "settlement_interval_seconds": 0.3,
+    "sources": [
+      "24_植物!F14:J14",
+      "24_植物!P14",
+      "20_挖掘!C2:C3/C13",
+      "63_移动能量!C13/C19"
+    ],
+    "unarmed_damage_per_settlement": 0.5,
+    "unmature_seed_quantity": 0,
+    "wood_content_id": "mucai",
+    "wood_quantity_range": [
+      3,
+      5
+    ]
+  },
+  "height_class": "H1",
+  "logical_cells": [
+    1,
+    1
+  ],
+  "natural_drop_timing": {
+    "minimum_pickup_delay_seconds": 0.5,
+    "separate_natural_protection_seconds": null,
+    "sources": [
+      "63_移动能量!C14/F14",
+      "63_移动能量!C18/F18",
+      "cehua.docx §7.3 body143/all289"
+    ],
+    "thrower": null,
+    "thrower_additional_rule": "not_applicable_without_player_throw"
+  },
+  "natural_generation": {
+    "biome_ids": null,
+    "density": null,
+    "enabled": false,
+    "planet_ids": null,
+    "source_reference": {
+      "biome": "24_植物!E14",
+      "planet": "24_植物!D14"
+    },
+    "status": "DESIGN_BLOCKED"
+  },
+  "natural_respawn": false,
+  "natural_stage": "成熟态",
+  "output_item_limits": {
+    "mucai": 999,
+    "seed_shumu": 99
+  },
+  "planting_only_constraints": {
+    "allowed_text": "仅固态天体地表层的自然非流体格；目标格无高度1实体，且无玩家铺设的高度0覆盖层或地板",
+    "not_a_natural_biome_whitelist": true,
+    "notes_text": "禁止地下层、液体格、农田、人工地板/桥面/轨道桥、飞船内部、空间站/固定空间站内部及其他非天然地表。任意生长阶段砍倒均随机掉落3–5木材；仅成熟树木随机掉落0–1树种，未成熟不掉树种。树木不自然重生，只能依靠树种重新种植；可徒手砍伐，斧类显著提高效率。",
+    "source": "24_植物!O14:P14"
+  },
+  "runtime_published": false,
+  "schema_version": 1,
+  "sources": {
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+  },
+  "starting_grant_authorized": false
+}

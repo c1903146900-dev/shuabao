@@ -1,0 +1,61 @@
+{
+  "version": "normal_development_source01",
+  "original_source_files": 1368,
+  "published_source_files": 1370,
+  "source_bytes_unchanged": false,
+  "excluded_generated_cache": [
+    ".godot/global_script_class_cache.cfg"
+  ],
+  "independent_project": "game/project.godot",
+  "main_scene": "res://scenes/actor_local_menu011.tscn",
+  "original_default_promoted": false,
+  "validation1369_used": false,
+  "historical_evidence": {
+    "contract_checks": 30,
+    "contract_status": "limited_pass",
+    "menu01": "failed; no successful native actions",
+    "menu02": "limited_pass: empty menu, disabled Continue, titlebar focus and close only",
+    "import01": "joint_failed: terminal_pidfd_not_readable; child exit 0 and guard CLI exit 1"
+  },
+  "not_verified": [
+    "fresh cache-free import",
+    "complete enter-world path",
+    "New or Continue gameplay",
+    "Host or networking ACK",
+    "save/profile6 integration",
+    "full-game acceptance",
+    "new nested-project import/export isolation"
+  ],
+  "known_ui_limit": "Carry may overlap hotbar slot 4; containment does not demonstrate no obstruction.",
+  "performed_in_this_checkpoint": [
+    "frozen source recovery and hash verification",
+    "reviewed safe synthetic test identity refactor",
+    "5 Python preparer unit tests passed",
+    "two isolated Godot integration attempts failed; no complete sandbox import or regression"
+  ],
+  "authority_sha256": {
+    "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+    "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+  },
+  "authority_originals_included": false,
+  "unchanged_original_source_files": 1357,
+  "modified_test_files": 10,
+  "new_test_support_files": 3,
+  "test_identity_revision": {
+    "scope": "4 fixed synthetic test identity definitions and 6 consumers; shared per-session private sidecar",
+    "platform": "POSIX only",
+    "production_authentication_and_gameplay_changed": false,
+    "preparer_python_unit_tests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "godot_integration": "not_verified",
+    "run01": "failed: producer child timed out after 8 seconds; other 7 cases not run",
+    "run02": "failed: guard raised GuardError during editor preparation; all 8 business cases not run; precise guard cause unavailable",
+    "full_10_suite_regression": "not_run",
+    "process_cleanup": "both runs verified clear",
+    "generated_private_fixture_cleanup": "run01 automatic; run02 explicit post-guard cleanup verified",
+    "historical_green_inherited": false
+  }
+}

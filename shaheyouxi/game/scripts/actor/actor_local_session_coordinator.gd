@@ -1,0 +1,542 @@
+extends Node
+## One ordinary GUI/menu process owns one exact headless server child. The GUI
+## client is a child scene in this process, with its original scoped multiplayer.
+const SpawnReceipt = preload("res://scripts/actor/ordinary_spawn_receipt012.gd")
+const Scope = preload("res://scripts/actor/actor_local_session_scope.gd")
+const Slots = preload("res://scripts/actor/actor_local_save_slots.gd")
+const Client = preload("res://scripts/actor/actor_terrain_play_client.gd")
+const Close = preload("res://scripts/actor/actor_local_session_close.gd")
+signal changed
+signal session_finished(success: bool, message: String)
+var session_ready: bool = false
+var _slots: RefCounted
+var _settings: Dictionary = {}
+var _phase: String = "idle"
+var _session: Dictionary = {}
+var _scope: Dictionary = {}
+var _manifest: Dictionary = {}
+var _request: Dictionary = {}
+var _client: Node
+var _client_arguments: PackedStringArray = []
+var _client_path: NodePath
+var _retiring: WeakRef
+var _guard_spawn_failure: String = ""
+var _child_pid: int = -1
+var _child_exit: int = -1
+var _forced: bool = false
+var _phase_started_usec: int = 0
+var _heartbeat_usec: int = 0
+var _poll_usec: int = 0
+var _counter: int = 0
+var _failure: String = ""
+var _message: String = ""
+var _world_hash: String = ""
+var _terrain_hash: String = ""
+var _display_name: String = "本地玩家"
+var _verified_sequence: int = -1
+var _ticket_finished: bool = false
+var _exit_after_session: bool = false
+
+func configure() -> Dictionary:
+	if session_ready or _slots != null or OS.get_name() not in ["Windows", "Linux"]:
+		return {"ok": false, "code": "LOCAL_MENU_PLATFORM_OR_ORDER"}
+	_settings = Scope.settings()
+	if _settings.is_empty():
+		return {"ok": false, "code": "LOCAL_MENU_SETTINGS_INVALID"}
+	_settings.make_read_only()
+	_slots = Slots.new()
+	var loaded: Dictionary = _slots.configure()
+	session_ready = loaded.get("ok", false)
+	return loaded
+
+func menu_state() -> Dictionary:
+	return {"phase": _phase, "can_start": session_ready and _phase == "idle", "message": _message, "failed": not _failure.is_empty(), "forced": _forced, "playing": _phase in ["joining", "playing", "server_stopping", "client_stopping"]}
+
+func slots() -> Dictionary:
+	return _slots.list_slots() if session_ready else {"ok": false, "code": "LOCAL_MENU_NOT_READY"}
+
+func new_world(label: String, profile: Variant = 4) -> Dictionary:
+	if not session_ready or _phase != "idle":
+		return {"ok": false, "code": "LOCAL_MENU_BUSY"}
+	var created: Dictionary = _slots.create_slot(label, profile)
+	return _start(created["slot_id"]) if created.get("ok", false) else created
+
+func _session_profile() -> int:
+	var profile: Variant = _session.get("profile", 4)
+	return int(profile) if typeof(profile) == TYPE_INT and profile in [4, 5] else -1
+
+func supports_inventory_world() -> bool:
+	return Slots.Profiles.platform_supported(5, OS.get_name())
+
+func continue_world(slot_id: String) -> Dictionary:
+	if not session_ready or _phase != "idle":
+		return {"ok": false, "code": "LOCAL_MENU_BUSY"}
+	return _start(slot_id)
+
+func _start(slot_id: String) -> Dictionary:
+	# Lock UI before any I/O or child creation, including synchronous callbacks.
+	_phase = "preparing"
+	_failure = ""
+	_message = "正在准备本地世界…"
+	changed.emit()
+	var started: Dictionary = _slots.begin_session(slot_id)
+	if not started.get("ok", false):
+		_phase = "idle"
+		_message = "此存档的地形版本不兼容，请使用创建它的技术版本；原存档已保留" if started.get("code") == "TERRAIN_CONTRACT_INCOMPATIBLE" else "无法进入世界：" + str(started.get("code", "LOCAL_SLOT_FAILED"))
+		changed.emit()
+		return started
+	# Reset every acquired attempt before marker/profile checks may abort.
+	_manifest = {}
+	_request = {}
+	_client_arguments = PackedStringArray()
+	_child_pid = -1
+	_child_exit = -1
+	_forced = false
+	_counter = 0
+	_heartbeat_usec = 0
+	_verified_sequence = -1
+	_ticket_finished = false
+	_exit_after_session = false
+	_display_name = "本地玩家"
+	_world_hash = ""
+	_terrain_hash = ""
+	_session = started.duplicate(true)
+	_scope = Scope.paths(started["slot_id"], started["session_id"])
+	_scope.merge({"slot_id": started["slot_id"], "session_id": started["session_id"], "owner_pid": OS.get_process_id(), "owner_nonce": Crypto.new().generate_random_bytes(16).hex_encode()})
+	if typeof(started.get("profile")) != TYPE_INT or started["profile"] not in [4, 5]:
+		_begin_failure("LOCAL_SLOT_PROFILE_INVALID")
+		return {"ok": false, "code": _failure}
+	if started["profile"] == 5:
+		_scope["save_profile"] = 5
+		_scope["profile_marker_sha256"] = started["profile_marker_sha256"]
+		if not Scope.profile_marker_matches(_scope):
+			_begin_failure("LOCAL_SLOT_PROFILE_CHANGED")
+			return {"ok": false, "code": _failure}
+	if started["last_sequence"] > 0:
+		var saved: Dictionary = _slots.inspect_save(slot_id)
+		if not saved.get("ok", false):
+			_begin_failure(str(saved.get("code", "LOCAL_CONTINUE_INVALID")))
+			return {"ok": false, "code": _failure}
+		var identity: Dictionary = saved["identity"]
+		_display_name = saved["state"]["profiles"][identity["player_profile_id"]]["display_name"]
+		_world_hash = JSON.stringify(saved["state"]["world_component"], "", true, true).sha256_text()
+		_terrain_hash = saved["state"]["terrain_component"]["artifact_sha256"]
+	if not _write_heartbeat():
+		_begin_failure("LOCAL_HEARTBEAT_WRITE_FAILED")
+		return {"ok": false, "code": _failure}
+	var port_probe := PacketPeerUDP.new()
+	if port_probe.bind(0, "127.0.0.1") != OK:
+		_begin_failure("LOCAL_PORT_UNAVAILABLE")
+		return {"ok": false, "code": _failure}
+	var port: int = port_probe.get_local_port()
+	port_probe.close()
+	var server_args := PackedStringArray(["--headless", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy"])
+	if OS.has_feature("editor"):
+		server_args.append_array(["--path", ProjectSettings.globalize_path("res://")])
+	server_args.append_array(["--log-file", _scope["session_directory"].path_join("server.log"), "res://scenes/actor_terrain_session011.tscn", "--"])
+	server_args.append_array(_arguments_for("server", port))
+	_phase = "starting"
+	_phase_started_usec = Time.get_ticks_usec()
+	_child_pid = _spawn_child(server_args)
+	if _child_pid <= 1:
+		_begin_failure("LOCAL_SERVER_START_FAILED")
+		return {"ok": false, "code": _failure}
+	if not _guard_spawn_failure.is_empty():
+		_begin_failure(_guard_spawn_failure)
+		return {"ok": false, "code": _failure}
+	_client_arguments = _arguments_for("client", port)
+	changed.emit()
+	return {"ok": true}
+
+func _arguments_for(role: String, port: int) -> PackedStringArray:
+	var result := PackedStringArray(["--mode=" + role, "--port=" + str(port), "--local_slot=" + _scope["slot_id"], "--local_session_id=" + _scope["session_id"], "--local_owner_nonce=" + _scope["owner_nonce"], "--local_owner_pid=" + str(_scope["owner_pid"])])
+	if role == "server":
+		result.append_array(["--save_dir=" + _scope["world_directory"], "--report=" + _scope["server_report"], "--stop=" + _scope["server_stop"], "--seed=42", "--test_entry=true"])
+	else:
+		result.append_array(["--report=" + _scope["client_report"], "--stop=" + _scope["client_stop"], "--resume=" + _scope["identity_path"], "--local_session=" + _scope["manifest"], "--name=" + _display_name, "--exercise=false"])
+	if _scope.get("save_profile", 4) == 5:
+		result.append_array(["--save_profile=5", "--slot_profile_sha256=" + _scope["profile_marker_sha256"]])
+	return result
+
+func _spawn_child(arguments: PackedStringArray) -> int:
+	_guard_spawn_failure = ""
+	var prepared: Dictionary = SpawnReceipt.prepare(arguments)
+	if not prepared.get("ok", false):
+		_guard_spawn_failure = "LOCAL_GUARD_DECLARATION_FAILED"
+		return -1
+	var actual_pid: int = OS.create_process(OS.get_executable_path(), arguments, false)
+	if actual_pid > 1 and not SpawnReceipt.receipt(prepared, actual_pid):
+		_guard_spawn_failure = "LOCAL_GUARD_RECEIPT_FAILED"
+	# Preserve the real PID even on receipt error for original owned-child cleanup.
+	return actual_pid
+
+func _child_running() -> bool:
+	return OS.is_process_running(_child_pid)
+
+func _child_exit_code() -> int:
+	return OS.get_process_exit_code(_child_pid)
+
+func _signal_owned_child() -> Error:
+	return OS.kill(_child_pid)
+
+func permits_client_binding(client: Node, arguments: PackedStringArray) -> bool:
+	return session_ready and _phase == "joining" and client == _client and client.get_script() == Client and arguments == _client_arguments and not _manifest.is_empty() and _child_pid > 1 and not _forced
+
+func owns_client(client: Node) -> bool:
+	return session_ready and is_instance_valid(_client) and client == _client and client.get_script() == Client and not _session.is_empty()
+
+func request_exit() -> void:
+	_exit_after_session = true
+	if _phase in ["idle", "blocked"]:
+		var code: int = 1 if _phase == "blocked" else 0
+		if _phase == "idle" and _slots != null:
+			var closed: Dictionary = _slots.close()
+			if not closed.get("ok", false):
+				code = 1
+		get_tree().quit(code)
+	elif is_instance_valid(_client) and _phase in ["joining", "playing", "server_stopping", "client_stopping"]:
+		_client._request_user_close()
+	else:
+		_begin_failure("LOCAL_START_CANCELLED")
+
+func _process(_delta: float) -> void:
+	if not session_ready or _phase in ["idle", "blocked", "preparing"]:
+		return
+	if _phase in ["releasing", "releasing_failed"]:
+		_poll_release()
+		return
+	var now: int = Time.get_ticks_usec()
+	if _phase == "aborting":
+		_poll_abort(now)
+		return
+	if now - _heartbeat_usec >= int(_settings["heartbeat_interval_seconds"] * 1000000.0) and not _write_heartbeat():
+		_begin_failure("LOCAL_HEARTBEAT_WRITE_FAILED")
+		return
+	if now - _poll_usec < int(_settings["poll_interval_seconds"] * 1000000.0):
+		return
+	_poll_usec = now
+	if _startup_deadline_reached(now):
+		_begin_failure("LOCAL_LOAD_TIMEOUT" if _phase == "starting" else "LOCAL_JOIN_TIMEOUT")
+		return
+	if _phase in ["server_stopping", "client_stopping"] and now - _phase_started_usec > int(_settings["close_timeout_seconds"] * 1000000.0):
+		_begin_failure("LOCAL_STOP_TIMEOUT")
+		return
+	var running: bool = _child_running()
+	if not running and _phase != "server_stopping" and _phase != "client_stopping":
+		_child_exit = _child_exit_code()
+		_begin_failure("LOCAL_SERVER_EXITED_EARLY")
+		return
+	if _phase == "starting":
+		_poll_start()
+	elif _phase in ["joining", "playing"]:
+		_poll_client()
+	elif _phase == "server_stopping" and not running:
+		_child_exit = _child_exit_code()
+		_complete_server_stop()
+
+func _startup_deadline_reached(now_usec: int) -> bool:
+	return _phase in ["starting", "joining"] and now_usec - _phase_started_usec > int(_settings["startup_timeout_seconds"] * 1000000.0)
+
+func _begin_join_phase() -> bool:
+	if _phase != "starting":
+		return false
+	_phase = "joining"
+	# One new fixed join budget, never refreshed by progress or packets.
+	_phase_started_usec = Time.get_ticks_usec()
+	_message = "正在确认角色并保存加入状态…"
+	return true
+
+func _write_heartbeat() -> bool:
+	if _counter >= 9007199254740991:
+		return false
+	_counter += 1
+	var value := {"schema_version": 1, "session_id": _scope["session_id"], "slot_id": _scope["slot_id"], "owner_nonce": _scope["owner_nonce"], "owner_pid": _scope["owner_pid"], "counter": _counter}
+	var written: bool = Scope.write_unique_counter(_scope, value) if OS.get_name() == "Windows" else Scope.write_json(_scope["heartbeat"], value)
+	if not written:
+		return false
+	_heartbeat_usec = Time.get_ticks_usec()
+	return true
+
+func _read_server() -> Dictionary:
+	if OS.get_name() == "Windows":
+		if Scope.report_layout_pending(_scope):
+			return {"ok": false, "missing": true}
+		var configured := Scope.report_store(_scope)
+		if not configured.get("ok", false):
+			return configured
+		var source: Dictionary = configured["store"].read_latest("server", _validate_ordinary_report)
+		if not source.get("ok", false):
+			return {"ok": false, "missing": source.get("code") == "MISSING", "code": source.get("code", "LOCAL_REPORT_READ_FAILED")}
+		var checked := _validate_ordinary_report(source["text"])
+		return {"ok": true, "value": checked["report"], "stage": checked["stage"]} if checked.get("ok", false) else checked
+	return Scope.read_json(_scope["server_report"], Scope.REPORT_BYTES)
+
+func _validate_ordinary_report(text: String) -> Dictionary:
+	return Scope.validate_report(text, _scope, _child_pid)
+
+static func _fields_typed(value: Dictionary, fields: Dictionary) -> bool:
+	for field in fields:
+		if typeof(value.get(field)) != fields[field]:
+			return false
+	return true
+
+func _poll_start() -> void:
+	var loaded := _read_server()
+	if not loaded.get("ok", false):
+		if loaded.get("missing", false):
+			return # Live child may be between Windows report target replacement.
+		_begin_failure("LOCAL_SERVER_REPORT_INVALID")
+		return
+	var report: Dictionary = loaded["value"]
+	if not _fields_typed(report, {"status": TYPE_STRING, "mode": TYPE_STRING, "snapshot": TYPE_DICTIONARY, "world_statistics": TYPE_DICTIONARY, "terrain_persistence": TYPE_DICTIONARY}) or report["status"] != "server_ready" or report["mode"] != "server" or not Scope.exact_integer(report.get("actor_save_schema"), 4) or int(report["actor_save_schema"]) != _session_profile():
+		_begin_failure("LOCAL_SERVER_NOT_READY")
+		return
+	if OS.get_name() == "Windows" and loaded.get("stage") != "startup":
+		_begin_failure("LOCAL_SERVER_START_STAGE_INVALID")
+		return
+	var snapshot: Dictionary = report["snapshot"]
+	if not SandboxServerAuthority._valid_id(snapshot.get("world_id"), "world_") or not SandboxServerAuthority._valid_id(snapshot.get("server_epoch"), "session_"):
+		_begin_failure("LOCAL_SERVER_IDENTITY_INVALID")
+		return
+	if not _session["world_id"].is_empty() and snapshot["world_id"] != _session["world_id"]:
+		_begin_failure("LOCAL_SERVER_WRONG_WORLD")
+		return
+	var world_hash: Variant = report.get("world_statistics", {}).get("component_sha256")
+	var terrain_hash: Variant = report.get("terrain_persistence", {}).get("artifact_sha256")
+	if not world_hash is String or not terrain_hash is String or not Close._hex(world_hash, 64) or not Close._hex(terrain_hash, 64) or (not _world_hash.is_empty() and (_world_hash != world_hash or _terrain_hash != terrain_hash)):
+		_begin_failure("LOCAL_SERVER_STATIC_STATE_CHANGED")
+		return
+	_world_hash = world_hash
+	_terrain_hash = terrain_hash
+	_manifest = {"schema_version": 1, "contract": Close.OWNED_CONTRACT, "session_id": _scope["session_id"], "slot_id": _scope["slot_id"], "server_pid": _child_pid, "owner_pid": OS.get_process_id(), "owner_nonce": _scope["owner_nonce"], "server_epoch": snapshot["server_epoch"], "world_id": snapshot["world_id"], "save_schema": 4}
+	if _session_profile() == 5:
+		if not Scope.profile_marker_matches(_scope):
+			_begin_failure("LOCAL_SLOT_PROFILE_CHANGED")
+			return
+		_manifest["contract"] = Close.INVENTORY_OWNED_CONTRACT
+		_manifest["save_schema"] = 5
+		_manifest["profile_marker_sha256"] = _scope["profile_marker_sha256"]
+	if not Scope.write_json(_scope["manifest"], _manifest):
+		_begin_failure("LOCAL_MANIFEST_WRITE_FAILED")
+		return
+	if not _begin_join_phase():
+		_begin_failure("LOCAL_JOIN_PHASE_INVALID")
+		return
+	_client = Client.new()
+	_client.name = "NetworkMain"
+	var bound: Dictionary = _client.bind_owned_session(self, _client_arguments)
+	if not bound.get("ok", false):
+		_begin_failure(str(bound.get("code", "LOCAL_CLIENT_BIND_FAILED")))
+		return
+	add_child(_client)
+	if is_instance_valid(_client):
+		_client_path = _client.get_path()
+	changed.emit()
+
+func _poll_client() -> void:
+	if not is_instance_valid(_client):
+		_begin_failure("LOCAL_CLIENT_LOST")
+		return
+	if _phase == "joining" and _client._reported_ready:
+		_phase = "playing"
+		_message = "地表技术区域 · WASD移动 · Shift闪避 · F10保存返回"
+		changed.emit()
+	if _client._session_close == null or _client._session_close.get_script() != Close:
+		return
+	var close: Dictionary = _client._session_close.statistics()
+	if close.get("phase") != "waiting_server" or not close.get("request_written", false):
+		return
+	var loaded: Dictionary = Client._read_local_control(_scope["session_directory"].path_join("client_close.request.json"))
+	var current_manifest: Dictionary = Client._read_local_control(_scope["manifest"])
+	var request: Dictionary = _client._session_close._request.duplicate(true)
+	if not loaded.get("ok", false) or loaded["value"] != request or not current_manifest.get("ok", false) or current_manifest["value"] != _manifest or not _client._session_close.manifest_matches(_manifest) or request.get("client_pid") != OS.get_process_id():
+		_begin_failure("LOCAL_CLOSE_REQUEST_MISMATCH")
+		return
+	var loaded_server := _read_server()
+	if not loaded_server.get("ok", false):
+		if loaded_server.get("missing", false):
+			return # Does not renew the client's bounded close deadline.
+		_begin_failure("LOCAL_SERVER_REPORT_INVALID")
+		return
+	if OS.get_name() == "Windows" and loaded_server.get("stage") == "startup":
+		return # The child has not yet published a physically covered close cursor.
+	if OS.get_name() == "Windows" and loaded_server.get("stage") != "close_cursor":
+		_begin_failure("LOCAL_SERVER_CLOSE_STAGE_INVALID")
+		return
+	var proof := server_covers_request(loaded_server["value"], request)
+	if proof.get("pending", false):
+		return
+	if not proof.get("ok", false):
+		_begin_failure(str(proof.get("code", "LOCAL_CLOSE_BINDING_INVALID")))
+		return
+	_request = request
+	if not Scope.write_json(_scope["server_stop"], {"session_id": _scope["session_id"], "reason": "confirmed_local_close"}):
+		_begin_failure("LOCAL_STOP_WRITE_FAILED")
+		return
+	_phase = "server_stopping"
+	_phase_started_usec = Time.get_ticks_usec()
+	_message = "正在保存并关闭本地服务器…"
+	changed.emit()
+
+static func server_covers_request(report: Dictionary, request: Dictionary) -> Dictionary:
+	return Scope.server_covers_request(report, request)
+
+func _complete_server_stop() -> void:
+	if _forced or _child_exit != 0:
+		_begin_failure("LOCAL_SERVER_EXIT_NOT_NORMAL")
+		return
+	var loaded := _read_server()
+	if not loaded.get("ok", false):
+		_begin_failure("LOCAL_FINAL_REPORT_INVALID")
+		return
+	var report: Dictionary = loaded["value"]
+	var last: Variant = report.get("last_save")
+	if not _fields_typed(report, {"status": TYPE_STRING, "saved": TYPE_BOOL, "mode": TYPE_STRING}) or report["status"] != "normal_shutdown" or not report["saved"] or report["mode"] != "server" or not last is Dictionary or not _fields_typed(last, {"ok": TYPE_BOOL, "reason": TYPE_STRING, "code": TYPE_STRING, "save_receipt": TYPE_DICTIONARY}) or not last["ok"] or last["reason"] != "normal_shutdown" or last["code"] != "":
+		_begin_failure("LOCAL_FINAL_SAVE_UNPROVEN")
+		return
+	if OS.get_name() == "Windows" and loaded.get("stage") != "terminal":
+		_begin_failure("LOCAL_SERVER_FINAL_STAGE_INVALID")
+		return
+	var receipt: Dictionary = last["save_receipt"]
+	if not _fields_typed(receipt, {"main_committed": TYPE_BOOL, "complete": TYPE_BOOL}) or not receipt["main_committed"] or not receipt["complete"] or not Scope.exact_integer(last.get("sequence"), 1) or not Scope.exact_integer(receipt.get("sequence"), 1) or int(last["sequence"]) != int(receipt["sequence"]):
+		_begin_failure("LOCAL_FINAL_SAVE_INCOMPLETE")
+		return
+	var saved: Dictionary = _slots.inspect_save(_scope["slot_id"])
+	if not saved.get("ok", false) or saved.get("world_id") != _manifest["world_id"] or saved.get("profile") != _session_profile() or saved.get("reason") != "normal_shutdown" or saved.get("sequence") != int(receipt["sequence"]) or saved["sequence"] <= _session["last_sequence"]:
+		_begin_failure("LOCAL_SAVED_STATE_INVALID")
+		return
+	var state: Dictionary = saved["state"]
+	if saved["identity"]["player_profile_id"] != _request["player_profile_id"] or state["profiles"].size() != 1 or state["profiles"][_request["player_profile_id"]]["player_instance_id"] != _request["player_instance_id"] or state["profiles"][_request["player_profile_id"]]["role"] != "MEMBER" or state["actor_component"]["revision"] < _request["actor_revision"] or JSON.stringify(state["world_component"], "", true, true).sha256_text() != _world_hash or state["terrain_component"]["artifact_sha256"] != _terrain_hash:
+		_begin_failure("LOCAL_SAVED_BINDING_OR_STATIC_STATE_CHANGED")
+		return
+	var inventory_receipt: Dictionary = {}
+	if _session_profile() == 5:
+		var inventory_checked := verify_inventory_saved_state(saved, _request, report, receipt)
+		if not inventory_checked.get("ok", false):
+			_begin_failure(str(inventory_checked.get("code", "LOCAL_INVENTORY_SAVE_UNPROVEN")))
+			return
+		inventory_receipt = inventory_checked["receipt_fields"]
+	var stored: Dictionary = _slots.finish_session(_session["ticket"], saved["world_id"], saved["sequence"])
+	if not stored.get("ok", false):
+		_begin_failure(str(stored.get("code", "LOCAL_INDEX_UPDATE_FAILED")))
+		return
+	_ticket_finished = true
+	_verified_sequence = saved["sequence"]
+	var acknowledgement := _manifest.duplicate(true)
+	for field in ["peer_id", "player_profile_id", "player_instance_id", "input_generation"]:
+		acknowledgement[field] = _request[field]
+	acknowledgement.merge({"client_pid": OS.get_process_id(), "cutoff_sequence": _request["cutoff_sequence"], "accepted_sequence": _request["accepted_sequence"], "server_exit_code": 0, "child_exit_observed": true, "writer_lock_released": true, "main_committed": true, "complete": true, "main_sequence": saved["sequence"], "main_sha256": saved["main_sha256"], "reason": "normal_shutdown"})
+	if _session_profile() == 5: acknowledgement.merge(inventory_receipt)
+	if not Scope.write_json(_scope["session_directory"].path_join("server_close.result.json"), acknowledgement):
+		_begin_failure("LOCAL_RECEIPT_WRITE_FAILED")
+		return
+	_phase = "client_stopping"
+	changed.emit()
+
+func client_finished(client: Node, code: int) -> void:
+	if not owns_client(client):
+		return
+	var completed: bool = code == 0 and _phase == "client_stopping" and _ticket_finished and _verified_sequence > 0 and client._session_close != null and client._session_close.statistics().get("phase") == "closed"
+	_retiring = weakref(client)
+	_client_path = client.get_path() if client.is_inside_tree() else NodePath()
+	_client = null
+	client.queue_free()
+	if completed:
+		_phase = "releasing"
+		_phase_started_usec = Time.get_ticks_usec()
+		_message = "世界已保存"
+	else:
+		_begin_failure("LOCAL_CLIENT_EXIT_NOT_CONFIRMED")
+
+func _begin_failure(code: String) -> void:
+	if _phase == "blocked":
+		return
+	if _failure.is_empty():
+		_failure = code
+		_phase_started_usec = Time.get_ticks_usec()
+	_phase = "aborting"
+	_message = "会话已停止：" + _failure + "。未完成的进度不作为正常保存，最近有效存档保留。"
+	if not _scope.is_empty() and not FileAccess.file_exists(_scope["abort"]):
+		Scope.write_json(_scope["abort"], {"session_id": _scope["session_id"], "owner_nonce": _scope["owner_nonce"], "code": _failure})
+	if is_instance_valid(_client) and not _client._closing and not _client._fatal_shutdown:
+		_client._stop_local_input("LOCAL_SESSION_ABORTED")
+	changed.emit()
+
+func _poll_abort(now: int) -> void:
+	if _child_pid <= 1 or (not _forced and not _child_running()):
+		if _child_pid > 1:
+			_child_exit = _child_exit_code()
+			if _child_exit < 0:
+				_phase = "blocked"
+				_message = "无法确认本地服务器退出状态，保留存档锁，本次不开放新会话。"
+				changed.emit()
+				return
+		if not _ticket_finished and not _session.is_empty():
+			var recorded: Dictionary = _slots.fail_session(_session["ticket"], _failure)
+			if typeof(recorded.get("files_preserved")) != TYPE_BOOL or not recorded["files_preserved"] or not _slots._active_ticket.is_empty():
+				_phase = "blocked"
+				_message = "本次会话记录无法确认，保留文件和锁，未开放新的世界。"
+				changed.emit()
+				return
+			_ticket_finished = true
+		_phase = "releasing_failed"
+		_phase_started_usec = Time.get_ticks_usec()
+		_poll_release()
+		return
+	if not _forced and now - _phase_started_usec > int((_settings["owner_timeout_seconds"] + _settings["kill_grace_seconds"]) * 1000000.0):
+		# Godot keeps the spawned Windows child HANDLE until kill(). kill() erases
+		# that mapping: never signal this PID twice or treat it as a normal exit.
+		_forced = true
+		_signal_owned_child()
+		_phase = "blocked"
+		_message = "本地服务器未按时退出，已尝试停止一次。退出状态未获正常确认，本次不再开放新会话。"
+		changed.emit()
+		if _exit_after_session:
+			get_tree().quit(1)
+
+func _poll_release() -> void:
+	var pending: bool = (_retiring != null and _retiring.get_ref() != null) or (not _client_path.is_empty() and get_tree().get_multiplayer(_client_path) != get_tree().get_multiplayer())
+	if pending:
+		# Original cleanup releases its exact scoped API with call_deferred.
+		if Time.get_ticks_usec() - _phase_started_usec > int(_settings["kill_grace_seconds"] * 1000000.0):
+			_phase = "blocked"
+			_message = "本次连接尚未清理完成，未开放新的世界。请退出后重新检查。"
+			changed.emit()
+		return
+	var success: bool = _phase == "releasing"
+	_retiring = null
+	_client_path = NodePath()
+	_session = {}
+	_scope = {}
+	_manifest = {}
+	_request = {}
+	_client_arguments = PackedStringArray()
+	_child_pid = -1
+	_phase = "idle"
+	changed.emit()
+	session_finished.emit(success, _message)
+	if _exit_after_session:
+		var closed: Dictionary = _slots.close()
+		get_tree().quit(0 if success and closed.get("ok", false) else 1)
+
+
+static func verify_inventory_saved_state(saved: Dictionary, request: Dictionary, report: Dictionary, frame_receipt: Dictionary) -> Dictionary:
+	# Validation seam only. The caller obtains saved from real Slots.inspect_save,
+	# owns the matching exited child, and verifies the Frame receipt beforehand.
+	if typeof(saved.get("ok")) != TYPE_BOOL or not saved["ok"] or typeof(saved.get("profile")) != TYPE_INT or saved["profile"] != 5 or not saved.get("state") is Dictionary:
+		return {"ok": false, "code": "LOCAL_INVENTORY_SAVED_PROFILE"}
+	var covered: Dictionary = Scope.inventory_covers_request(report, request, true)
+	if not covered.get("ok", false): return covered
+	var state: Dictionary = saved["state"]
+	var inventory: Variant = state.get("inventory_component")
+	var profile: Variant = request.get("player_profile_id")
+	if not profile is String or not inventory is Dictionary or not inventory.get("players") is Dictionary or not inventory["players"].get(profile) is Dictionary or typeof(inventory.get("revision")) != TYPE_INT or not Scope.exact_integer(inventory["revision"]):
+		return {"ok": false, "code": "LOCAL_INVENTORY_SAVED_FIELDS"}
+	var player: Dictionary = inventory["players"][profile]
+	if typeof(player.get("last_sequence")) != TYPE_INT or not Scope.exact_integer(player["last_sequence"]) or player["last_sequence"] != request["inventory_accepted_sequence"] or inventory["revision"] < request["inventory_revision"] or inventory["revision"] != covered["proof"]["revision"]:
+		return {"ok": false, "code": "LOCAL_INVENTORY_SAVED_CURSOR"}
+	var encoded: Dictionary = Scope.Codec.encode(state)
+	if not encoded.get("ok", false) or not frame_receipt.get("state_sha256") is String or JSON.stringify(encoded["value"], "", true, true).sha256_text() != frame_receipt["state_sha256"]:
+		return {"ok": false, "code": "LOCAL_INVENTORY_SAVED_RECEIPT_HASH"}
+	var proof: Dictionary = covered["proof"]
+	return {"ok": true, "receipt_fields": {"inventory_initial_sequence": proof["initial_sequence"], "inventory_cutoff_sequence": proof["cutoff_sequence"], "inventory_processed_sequence": proof["processed_sequence"], "inventory_saved_accepted_sequence": player["last_sequence"], "inventory_saved_revision": inventory["revision"], "inventory_queue_empty": true}}

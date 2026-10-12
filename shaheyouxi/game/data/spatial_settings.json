@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "project": "shaheyouxi_experiment_20261004",
+  "artifact_kind": "derived_authoritative_spatial_inputs",
+  "sources": {
+    "shuzhi_sha256": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+    "sucai_sha256": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+  },
+  "planes": [
+    {
+      "id": "H0",
+      "meaning": "高度0基础地面",
+      "notes": "每格唯一基础地面",
+      "source_cell": "01_枚举!B2"
+    },
+    {
+      "id": "H0_OVERLAY",
+      "meaning": "高度0覆盖层",
+      "notes": "有玩法意义的表面；原则上每格最多一个",
+      "source_cell": "01_枚举!B3"
+    },
+    {
+      "id": "H0_DECAL",
+      "meaning": "高度0贴花层",
+      "notes": "纯视觉无碰撞；允许少量叠加",
+      "source_cell": "01_枚举!B4"
+    },
+    {
+      "id": "H1",
+      "meaning": "高度1实体",
+      "notes": "墙、树干、机器等实际占空间对象",
+      "source_cell": "01_枚举!B5"
+    }
+  ],
+  "body_definitions": {
+    "star_hengxing": {
+      "body_id": "star_hengxing",
+      "display_name": "恒星",
+      "kind": "恒星",
+      "size_class": "—",
+      "raw_map_layers": "特殊终局箱庭",
+      "source_cell": "30_天体总表!A2"
+    },
+    "xingxing_01": {
+      "body_id": "xingxing_01",
+      "display_name": "行星1",
+      "kind": "主行星",
+      "size_class": "大",
+      "raw_map_layers": "地表→地下1→地下2→地下3",
+      "source_cell": "30_天体总表!A3"
+    },
+    "xingxing_02": {
+      "body_id": "xingxing_02",
+      "display_name": "行星2",
+      "kind": "主行星",
+      "size_class": "小",
+      "raw_map_layers": "地表→地下1；冰火双态共享XY骨架",
+      "source_cell": "30_天体总表!A4"
+    },
+    "xingxing_03": {
+      "body_id": "xingxing_03",
+      "display_name": "行星3",
+      "kind": "主行星",
+      "size_class": "中",
+      "raw_map_layers": "地表→地下1→地下2",
+      "source_cell": "30_天体总表!A5"
+    },
+    "xingxing_03_weixing": {
+      "body_id": "xingxing_03_weixing",
+      "display_name": "行星3卫星",
+      "kind": "天然卫星",
+      "size_class": "小",
+      "raw_map_layers": "地表→地下1（巨大月内空腔）",
+      "source_cell": "30_天体总表!A6"
+    },
+    "xingxing_04": {
+      "body_id": "xingxing_04",
+      "display_name": "行星4",
+      "kind": "主行星",
+      "size_class": "中",
+      "raw_map_layers": "地表→地下1→地下2",
+      "source_cell": "30_天体总表!A7"
+    },
+    "xingxing_05": {
+      "body_id": "xingxing_05",
+      "display_name": "行星5",
+      "kind": "主行星",
+      "size_class": "大",
+      "raw_map_layers": "地表→地下1→地下2→地下3",
+      "source_cell": "30_天体总表!A8"
+    },
+    "xingxing_05_weixing_01": {
+      "body_id": "xingxing_05_weixing_01",
+      "display_name": "行星5卫星1",
+      "kind": "天然卫星",
+      "size_class": "小",
+      "raw_map_layers": "地表→地下1",
+      "source_cell": "30_天体总表!A9"
+    },
+    "xingxing_05_weixing_02": {
+      "body_id": "xingxing_05_weixing_02",
+      "display_name": "行星5卫星2",
+      "kind": "天然卫星",
+      "size_class": "小",
+      "raw_map_layers": "地表→地下1",
+      "source_cell": "30_天体总表!A10"
+    },
+    "xingxing_06": {
+      "body_id": "xingxing_06",
+      "display_name": "行星6",
+      "kind": "主行星",
+      "size_class": "中",
+      "raw_map_layers": "地表→地下1→地下2",
+      "source_cell": "30_天体总表!A11"
+    },
+    "xingxing_07": {
+      "body_id": "xingxing_07",
+      "display_name": "行星7",
+      "kind": "主行星",
+      "size_class": "巨大",
+      "raw_map_layers": "单层大气浮岛世界",
+      "source_cell": "30_天体总表!A12"
+    },
+    "xingxing_07_weixing": {
+      "body_id": "xingxing_07_weixing",
+      "display_name": "行星7卫星",
+      "kind": "天然卫星",
+      "size_class": "中",
+      "raw_map_layers": "地表→地下1→地下2",
+      "source_cell": "30_天体总表!A13"
+    },
+    "xingxing_08": {
+      "body_id": "xingxing_08",
+      "display_name": "行星8",
+      "kind": "主行星",
+      "size_class": "大",
+      "raw_map_layers": "地表→地下1→地下2→地下3",
+      "source_cell": "30_天体总表!A14"
+    }
+  },
+  "starting_body": {
+    "body_id": "xingxing_03",
+    "biome_id": "x03_db_wendai_linyuan",
+    "biome_source_cell": "32_Biome总表!A9",
+    "ground_resource_id": "dikuai_x03_wendai_linyuan_01",
+    "ground_source_cell": "32_Biome总表!X9",
+    "asset_requirement_source_cell": "B019地表素材接口!C5",
+    "surface_depth": 0,
+    "underground_depths": [
+      1,
+      2
+    ]
+  },
+  "parameters": {
+    "movement_speed_cells_per_second": {
+      "id": "yidong_jichu_sudu",
+      "value": 4.5,
+      "unit": "格/秒",
+      "source_cell": "63_移动能量!C2"
+    },
+    "actor_diameter_cells": {
+      "id": "renwu_pengzhuang_zhijing",
+      "value": 0.65,
+      "unit": "格",
+      "source_cell": "63_移动能量!C10"
+    },
+    "interaction_range_cells": {
+      "id": "jiaohu_zuidajuli",
+      "value": 1.5,
+      "unit": "格",
+      "source_cell": "63_移动能量!C11"
+    }
+  },
+  "object_definitions": {
+    "jianzhu_diban_00": {
+      "content_id": "jianzhu_diban_00",
+      "name": "木地板",
+      "plane": "H0_OVERLAY",
+      "footprint_cells": [
+        1,
+        1
+      ],
+      "blocks_motion": false,
+      "collision_rect_cells": null,
+      "source_cell": "10_建材家具装饰!G2"
+    },
+    "jianzhu_qiang_00": {
+      "content_id": "jianzhu_qiang_00",
+      "name": "木墙",
+      "plane": "H1",
+      "footprint_cells": [
+        1,
+        1
+      ],
+      "blocks_motion": true,
+      "collision_rect_cells": {
+        "offset": [
+          0,
+          0
+        ],
+        "size": [
+          1,
+          1
+        ]
+      },
+      "source_cell": "10_建材家具装饰!G15"
+    },
+    "gongzuotai_jichu": {
+      "content_id": "gongzuotai_jichu",
+      "name": "基础工作台",
+      "plane": "H1",
+      "footprint_cells": [
+        2,
+        2
+      ],
+      "blocks_motion": true,
+      "collision_rect_cells": {
+        "offset": [
+          0,
+          0
+        ],
+        "size": [
+          2,
+          2
+        ]
+      },
+      "source_cell": "11_功能建筑!F9"
+    }
+  },
+  "visual_only_decal_requirement": {
+    "asset_requirement_id": "fugai_x03_linyuan_01",
+    "source_cell": "B019地表素材接口!C6",
+    "server_snapshot_field": false
+  },
+  "not_implemented": [
+    "world generation",
+    "formal art assets",
+    "construction gameplay",
+    "full character movement/dodge/HUD",
+    "complete world save integration"
+  ]
+}

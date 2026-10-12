@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/bootstrap.gd" id="1"]
+
+[node name="SandboxFoundation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Status" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 1104.0
+offset_bottom = 672.0
+text = "沙盒游戏 · 独立工程\n\n001 工程准备\n正式玩法、数据和素材尚未接入\n原始权威文件字节待恢复核验\n\n此界面仅用于工程启动验证，不是可玩版本"
