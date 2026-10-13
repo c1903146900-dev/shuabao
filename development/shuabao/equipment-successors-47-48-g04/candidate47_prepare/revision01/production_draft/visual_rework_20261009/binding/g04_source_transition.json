@@ -1,0 +1,41 @@
+{
+  "schema": "g04-source-transition-1",
+  "predecessor_source": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+  "predecessor_visual": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+  "changes": {
+    "res://tests/equipment_shop_transactions_20261004/shop_visit_model.gd": {
+      "before": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+      "after": "bfa9c96df0b398f2f5d816e59bfd3a2c160c270451868b68e0dfd040578149fe"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "93ab35c5834b69e53ee296ae705b3bc47cefeb661afeb2a9ad305aed4e97e1d7",
+      "after": "6039535bf3281509eb56b4a5d02267c47c548529078f5b172f93fdbb72bc0524"
+    },
+    "res://visual_rework_20261009/binding/bridge.gd": {
+      "before": "dcd35be1dce7f6365a0acb0d3ba29d7a74f090e8fa19adc4714ddd3c386aea91",
+      "after": "7a25f2beb4c85171df0c992a8202c2389ec1c503923b715f03db649662e6a384"
+    },
+    "res://visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "before": "870e86540d8db5adbd401f335cd13411bddaef43d5f54e5023e2b1bf756d53f5",
+      "after": "1616958b43cfb7cdfd3f30bc617e8da32004dcca6f2da547e35506989b77de52"
+    },
+    "res://visual_rework_20261009/binding/live_binding.gd": {
+      "before": "7dc11d5f15f65f97c1161c4b70a892a2f8ae545e217d7c3c56c7041db5e2de5c",
+      "after": "2350397055e0929c6c4a484c4ecb2937e579eeb2d3dcd3238e663f557761758c"
+    },
+    "res://visual_rework_20261009/runtime_host.gd": {
+      "before": "f953ef0e925ec5000e39dc4045707f8415462b71a395421d2d1cd67a7ff53327",
+      "after": "bbfda827f5643b8bddb53e88d39b13e1ab7ab58c7a3e2371b602d56b4677c7f8"
+    }
+  },
+  "new_ancestor_replacement": {
+    "path": "res://tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+    "before": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+    "after": "bfa9c96df0b398f2f5d816e59bfd3a2c160c270451868b68e0dfd040578149fe",
+    "preimage": "res://visual_rework_20261009/binding/preimages/tests/equipment_shop_transactions_20261004/shop_visit_model.gd"
+  },
+  "strict_sim_leaf_replacements": 5,
+  "old_20_ancestor_before_images_unchanged": true,
+  "authority": "equipment_gold_20261013/user_decisions.json",
+  "scope": "Same original Session/reward command/wallet/task kernel/lineage/atomic rollback; G04 external commerce facts rejected at successor leaf."
+}

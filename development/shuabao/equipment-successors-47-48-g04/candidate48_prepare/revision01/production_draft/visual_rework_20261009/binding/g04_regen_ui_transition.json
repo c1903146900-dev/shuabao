@@ -1,0 +1,59 @@
+{
+  "schema": "g04-regen-ui-consumer-contract-successor-1",
+  "status": "PREPARED_NOT_PARSED_NOT_RUN",
+  "source_predecessor_sha256": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+  "visual_unchanged_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": {
+    "equipment_gold_20261013/adapter.gd": {
+      "before": "4b93d2e225b7a57ffb74a3e3316496a818eb2a51382ade87fcf2b976b1b9e1f5",
+      "after": "f5abeeab4351cf3abc68f34deb3cba79ec284500469ec71ec965ed25e880d83f"
+    },
+    "equipment_gold_20261013/model.gd": {
+      "before": "072ba7e62cd6b2ee57ef64cca3e21a7330461505bf90537407dee2c928e57e38",
+      "after": "ee67c383661c774d6932a2373bc6856739a4d79e1679541feeab8a06f3c09d04"
+    }
+  },
+  "reason": "Original Host calls original RegenUI.describe on regen_mapping; describe requires flat current_value. Prior G04 nested base/stage rows lack it.",
+  "consumer_chain": [
+    "scripts/integration/yanguizhou_first_floor.gd",
+    "tests/ink_equipment_regen_20261008/candidate01/regen_ui.gd",
+    "tests/ink_equipment_regen_20261008/candidate01/regen_units.gd"
+  ],
+  "unchanged_consumer_sha256": {
+    "scripts/integration/yanguizhou_first_floor.gd": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962",
+    "tests/ink_equipment_regen_20261008/candidate01/regen_ui.gd": "7a80996d6092eec8cbec5d97893f4b0052be5aaf08bee063466f3a2c7b9cb11d",
+    "tests/ink_equipment_regen_20261008/candidate01/regen_units.gd": "eb98906bd0846f3c41fc8e44615f11cb04c375b4f5169129c9329b2b59389a47"
+  },
+  "flat_fields": [
+    "parameter",
+    "current_value",
+    "source_value",
+    "source_ref",
+    "source_unit",
+    "resolved_source_unit",
+    "runtime_stat",
+    "runtime_unit",
+    "scale",
+    "runtime_value",
+    "rule_provenance"
+  ],
+  "preserved_original_evidence": "g04_regen_source_mappings.base and .stage retain complete RegenUnits.build rows",
+  "dynamic_fields": [
+    "regen_mapping.current_value",
+    "regen_mapping.runtime_value"
+  ],
+  "current_value": "g04_authored_source_stats.health_regen + completed stages * taskG04.regen_per_stage",
+  "runtime_value": "Same existing GoldRegenUnits.per_second(current_value), exactly /5 actor combat seconds",
+  "immutable_provenance_fields": [
+    "source_value",
+    "source_ref",
+    "source_unit",
+    "resolved_source_unit",
+    "scale",
+    "rule_provenance"
+  ],
+  "no_gameplay_formula_or_task_authority_change": true,
+  "existing_49_definitions_unchanged": true,
+  "prior47_evidence_not_inherited": true,
+  "engine_run": false
+}

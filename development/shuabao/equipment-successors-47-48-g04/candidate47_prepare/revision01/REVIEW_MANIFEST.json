@@ -1,0 +1,146 @@
+{
+  "status": "SPARSE_REVIEW_DRAFT_NOT_APPLIED_NOT_PARSED_NOT_RUN",
+  "base_candidate": "/workspace/scratch/73ebae91a474/recovery_20261013_c02/candidate46_d06_counterattack",
+  "proposed_candidate": "candidate47_g04_gold_task",
+  "base_source_sha256": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+  "base_visual_sha256": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+  "source_sha256": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": [
+    {
+      "path": "equipment_gold_20261013/adapter.gd",
+      "before": null,
+      "after": "4b93d2e225b7a57ffb74a3e3316496a818eb2a51382ade87fcf2b976b1b9e1f5",
+      "kind": "new"
+    },
+    {
+      "path": "equipment_gold_20261013/model.gd",
+      "before": null,
+      "after": "072ba7e62cd6b2ee57ef64cca3e21a7330461505bf90537407dee2c928e57e38",
+      "kind": "new"
+    },
+    {
+      "path": "equipment_gold_20261013/task04.gd",
+      "before": null,
+      "after": "35f41b0821dd42fd9a92fdc7f40af09b730bc7c996586710f53c36f72a8350db",
+      "kind": "new"
+    },
+    {
+      "path": "equipment_gold_20261013/user_decisions.json",
+      "before": null,
+      "after": "d7c6b5276eec8bdafee04cfc1d14c7a60c11074cb98b00733dafe3bbd1dd1a6c",
+      "kind": "new"
+    },
+    {
+      "path": "tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+      "before": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+      "after": "bfa9c96df0b398f2f5d816e59bfd3a2c160c270451868b68e0dfd040578149fe",
+      "kind": "modify"
+    },
+    {
+      "path": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "93ab35c5834b69e53ee296ae705b3bc47cefeb661afeb2a9ad305aed4e97e1d7",
+      "after": "6039535bf3281509eb56b4a5d02267c47c548529078f5b172f93fdbb72bc0524",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/bridge.gd",
+      "before": "dcd35be1dce7f6365a0acb0d3ba29d7a74f090e8fa19adc4714ddd3c386aea91",
+      "after": "7a25f2beb4c85171df0c992a8202c2389ec1c503923b715f03db649662e6a384",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "870e86540d8db5adbd401f335cd13411bddaef43d5f54e5023e2b1bf756d53f5",
+      "after": "1616958b43cfb7cdfd3f30bc617e8da32004dcca6f2da547e35506989b77de52",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/equipment50_plan.json",
+      "before": null,
+      "after": "2256c05aea77061ca253b7175a6bea6a7f74d73e039a5dc87ae23a11a026a37d",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g04_source_transition.json",
+      "before": null,
+      "after": "64307ebac9d7f8ac27eaaa4fe3d1411807445c2e3fdae955a8e9e654e274c392",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g04_visual_source_transition.json",
+      "before": null,
+      "after": "d86a4b9a64862680557c998d26207c4850b6f6d3c1f75e9473a40ef8a4af8525",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g04_visual_transition.json",
+      "before": null,
+      "after": "987822bea6d62d79395135970a0eeca0c0228b80f9a3dcc746ae63904688b2b1",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "before": "7dc11d5f15f65f97c1161c4b70a892a2f8ae545e217d7c3c56c7041db5e2de5c",
+      "after": "2350397055e0929c6c4a484c4ecb2937e579eeb2d3dcd3238e663f557761758c",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/preimages/tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+      "before": null,
+      "after": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+      "after": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/visual_binding.json",
+      "before": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+      "after": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/runtime_host.gd",
+      "before": "f953ef0e925ec5000e39dc4045707f8415462b71a395421d2d1cd67a7ff53327",
+      "after": "bbfda827f5643b8bddb53e88d39b13e1ab7ab58c7a3e2371b602d56b4677c7f8",
+      "kind": "modify"
+    }
+  ],
+  "modified_count": 8,
+  "new_count": 9,
+  "core": 1768,
+  "visual": 72,
+  "intersection": 8,
+  "ancestor": 21,
+  "base_source_stability_not_full_acceptance": true,
+  "engine_run": false,
+  "gdscript_parser_run": false,
+  "historical_checks_inherited": false,
+  "full_candidate_copied": false,
+  "applied_to_base": false,
+  "required_outstanding_regression": "New47 D06 lifecycle and short/long aggregate controls; preserve46 lifecycle resource red and all past failure evidence.",
+  "q3_source_transition": {
+    "reason": "Q3 hero_view._bind_q3_clips verifies every entry of the preserved fix02 source_binding.files, including this original shop task kernel. Main runtime_map replacement alone would fail Q3 source verification. Append exactly one kernel transition after the existing C03/G01/Swift/C02/D06 chain.",
+    "frozen_q3_map": "tests/ink_q3_foundation_20261004/fix02/source_binding.json",
+    "consumer": "tests/ink_q3_gesture_runtime_20261004/fix01/hero_view.gd",
+    "successor": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+    "plan": "visual_rework_20261009/binding/g04_visual_source_transition.json",
+    "path": "tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+    "before": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+    "after": "bfa9c96df0b398f2f5d816e59bfd3a2c160c270451868b68e0dfd040578149fe",
+    "old_chain_and_frozen_map_unchanged": true
+  },
+  "new_ancestor_replacement": {
+    "count_before": 20,
+    "count_after": 21,
+    "path": "res://tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+    "before": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+    "after": "bfa9c96df0b398f2f5d816e59bfd3a2c160c270451868b68e0dfd040578149fe",
+    "preimage": "res://visual_rework_20261009/binding/preimages/tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+    "existing_20_before_and_preimages_unchanged": true
+  }
+}

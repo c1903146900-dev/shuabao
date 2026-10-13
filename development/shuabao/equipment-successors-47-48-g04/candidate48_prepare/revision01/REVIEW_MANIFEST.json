@@ -1,0 +1,57 @@
+{
+  "status": "SPARSE_REVIEW_DRAFT_NOT_APPLIED_NOT_PARSED_NOT_RUN",
+  "base_candidate": "/workspace/scratch/73ebae91a474/recovery_20261013_c02/candidate47_g04_gold_task",
+  "proposed_candidate": "candidate48_g04_regen_ui",
+  "base_source_sha256": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+  "base_visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "source_sha256": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": [
+    {
+      "path": "equipment_gold_20261013/adapter.gd",
+      "before": "4b93d2e225b7a57ffb74a3e3316496a818eb2a51382ade87fcf2b976b1b9e1f5",
+      "after": "f5abeeab4351cf3abc68f34deb3cba79ec284500469ec71ec965ed25e880d83f",
+      "kind": "modify"
+    },
+    {
+      "path": "equipment_gold_20261013/model.gd",
+      "before": "072ba7e62cd6b2ee57ef64cca3e21a7330461505bf90537407dee2c928e57e38",
+      "after": "ee67c383661c774d6932a2373bc6856739a4d79e1679541feeab8a06f3c09d04",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g04_regen_ui_transition.json",
+      "before": null,
+      "after": "f5ef72b0bca620e9c9afbb39c4bd8191b27221d8282ccac6384bfbcd8c474852",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+      "after": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+      "kind": "modify"
+    }
+  ],
+  "modified_count": 3,
+  "new_count": 1,
+  "business_code_delta_count": 2,
+  "core": 1769,
+  "visual": 72,
+  "intersection": 8,
+  "ancestor": 21,
+  "ancestor_replacements_identical": true,
+  "visual_binding_identical": true,
+  "shared_regen_ui_and_units_identical": true,
+  "review_note": "The transition JSON is audit provenance, not an executable authority or new plan consumer. It is hash pinned by the original runtime_map and explicit_successor_dependencies. No new mandatory runtime dependency loop or loosened identity check is needed.",
+  "pending_regression": [
+    "New48 definition/commerce, including flat full regen mapping and original describe baseline",
+    "New48 original reward chain plus all three threshold stages and existing lifecycle/fraud/rollback groups",
+    "Real original RegenUI.describe and Host detail at base/stages1-3, sale-freeze and rebuy",
+    "Native entry/shop GUI and required prior49/C02/D06 regression separately assigned"
+  ],
+  "old47_runs_remain_old47_evidence": true,
+  "engine_run": false,
+  "gdscript_parser_run": false,
+  "full_candidate_copied": false,
+  "applied_to_base": false
+}

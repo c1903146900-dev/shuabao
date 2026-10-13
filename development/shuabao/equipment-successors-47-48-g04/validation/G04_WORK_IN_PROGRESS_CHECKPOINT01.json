@@ -1,0 +1,52 @@
+{
+  "schema": "g04_work_in_progress_checkpoint_v1",
+  "status": "工作中，未最终验收",
+  "as_of_utc": "2026-10-13T13:22:26Z",
+  "source_candidates": {
+    "47": {
+      "source_sha256": "b64855a35ef87e8dcf161a52db8350f39ebed3562958e019f66dce5d18aad214",
+      "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80"
+    },
+    "48": {
+      "source_sha256": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+      "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80"
+    }
+  },
+  "candidate47": {
+    "definition_commerce_checks": 401,
+    "definition_commerce_business_passed": true,
+    "definition_commerce_joint_passed": true,
+    "known_ui_defect": "regen_mapping nested shape is incompatible with original RegenUI.describe; preserved as historical candidate, not current complete UI.",
+    "superseded_test_false_negative": {
+      "checks": 135,
+      "status": "原业务红保留",
+      "cause": "Definition test incorrectly expected legal editable value changes to reject; revised test distinguishes source_value provenance from valid current value."
+    }
+  },
+  "candidate48": {
+    "definition_and_original_regen_consumer_checks": 449,
+    "definition_joint_passed": true,
+    "single_three_threshold_checks": 82,
+    "single_three_business_passed": true,
+    "single_three_joint_passed": false,
+    "single_three_resource_status": "资源红，不能提升为联合通过",
+    "original_source_reward_status": "首轮资源红无业务输出；更早阶段观测稿已准备，仍待后续补测",
+    "remaining": [
+      "原source奖励/重放",
+      "防伪与owner",
+      "顺序三阈值/overshoot",
+      "售空重购/跨房新局",
+      "同事务回滚",
+      "原49相关回归",
+      "实际默认入口与阶段GUI"
+    ]
+  },
+  "all_green": false,
+  "final_acceptance": false,
+  "historical_checks_inherited": false,
+  "native_input": false,
+  "natural_play": false,
+  "playable_package_delivered": false,
+  "raw_logs_screenshots_or_private_reports_included": false,
+  "update_policy": "补后续独立检查点；保留本检查点及原红，不回填为通过。"
+}

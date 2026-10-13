@@ -1,0 +1,17 @@
+{
+  "schema": "g04_reward_source_user_decision_20261013",
+  "status": "approved",
+  "equipment_id": "final:G04",
+  "task_id": "task:G04",
+  "proposal_message_id": "Sentinel_b92f64ca7750819184890c7d1ca16cca",
+  "proposal_quote": "远征财典的金币任务只计玩法奖励，不计卖装备或撤销交易返还的钱。",
+  "approval_message_id": "Sentinel_dc79a8a31b10819186c02bca14248806",
+  "approval_at": "2026-10-13T11:03:00Z",
+  "approval_quote": "行，那就继续做吧，按你的建议做。",
+  "gold_source_policy": "original_committed_gameplay_reward_only",
+  "excluded": [
+    "sale_proceeds",
+    "undo_refunds"
+  ],
+  "scope": "Source classification only; does not change original reward amounts, recipes, stage thresholds, SP, or task persistence."
+}
