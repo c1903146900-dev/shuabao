@@ -1,0 +1,270 @@
+{
+  "document": "多API智能陪玩角色系统完整策划与分期实施方案",
+  "version": "1.0",
+  "date": "2026-10-09",
+  "status": "DOCUMENT_ONLY_PLANNED_NOT_IMPLEMENTED",
+  "source": {
+    "message_id": "Sentinel_b56f48372344819193e0d2d225995e2b",
+    "sent_at": "2026-10-09T11:32:00.663725+00:00",
+    "author": "user",
+    "full_source_read": true,
+    "source_text_sha256": "747f16b815ce160b5ebf366750bd038f2df1328b07db0354345524f6323da9e9"
+  },
+  "requirements": {
+    "groups": [
+      {
+        "requirement_group": "R01",
+        "source_heading": "一、系统定位",
+        "numbered_items": [
+          "R01.01",
+          "R01.02",
+          "R01.03",
+          "R01.04",
+          "R01.05",
+          "R01.06",
+          "R01.07"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R02",
+        "source_heading": "二、本地与联机",
+        "numbered_items": [
+          "R02.01",
+          "R02.02",
+          "R02.03",
+          "R02.04",
+          "R02.05",
+          "R02.06",
+          "R02.07",
+          "R02.08",
+          "R02.09"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R03",
+        "source_heading": "三、持续语音陪伴",
+        "numbered_items": [
+          "R03.01",
+          "R03.02",
+          "R03.03",
+          "R03.04",
+          "R03.05",
+          "R03.06",
+          "R03.07",
+          "R03.08",
+          "R03.09",
+          "R03.10"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R04",
+        "source_heading": "四、语音与任务必须分层",
+        "numbered_items": [
+          "R04.01",
+          "R04.02",
+          "R04.03",
+          "R04.04"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R05",
+        "source_heading": "五、游戏知识与能力目录",
+        "numbered_items": [],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R06",
+        "source_heading": "六、复杂自由任务",
+        "numbered_items": [
+          "R06.01",
+          "R06.02",
+          "R06.03",
+          "R06.04",
+          "R06.05",
+          "R06.06",
+          "R06.07",
+          "R06.08",
+          "R06.09",
+          "R06.10",
+          "R06.11",
+          "R06.12"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R07",
+        "source_heading": "七、视觉要求",
+        "numbered_items": [
+          "R07.01",
+          "R07.02",
+          "R07.03",
+          "R07.04",
+          "R07.05",
+          "R07.06",
+          "R07.07",
+          "R07.08",
+          "R07.09"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R08",
+        "source_heading": "八、多家API及中途更换",
+        "numbered_items": [
+          "R08.01",
+          "R08.02",
+          "R08.03",
+          "R08.04",
+          "R08.05",
+          "R08.06",
+          "R08.07"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R09",
+        "source_heading": "九、记忆和上下文",
+        "numbered_items": [
+          "R09.01",
+          "R09.02",
+          "R09.03",
+          "R09.04",
+          "R09.05"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R10",
+        "source_heading": "十、流量、成本与服务器负载",
+        "numbered_items": [
+          "R10.01",
+          "R10.02",
+          "R10.03",
+          "R10.04",
+          "R10.05",
+          "R10.06",
+          "R10.07",
+          "R10.08",
+          "R10.09",
+          "R10.10"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R11",
+        "source_heading": "十一、服务器权威与安全",
+        "numbered_items": [
+          "R11.01",
+          "R11.02",
+          "R11.03",
+          "R11.04",
+          "R11.05",
+          "R11.06"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R12",
+        "source_heading": "十二、最低验收场景",
+        "numbered_items": [
+          "R12.01",
+          "R12.02",
+          "R12.03",
+          "R12.04",
+          "R12.05",
+          "R12.06",
+          "R12.07",
+          "R12.08",
+          "R12.09",
+          "R12.10",
+          "R12.11",
+          "R12.12"
+        ],
+        "present_in_traceability_chapter": true
+      },
+      {
+        "requirement_group": "R13",
+        "source_heading": "十三、当前明确边界",
+        "numbered_items": [
+          "R13.01",
+          "R13.02",
+          "R13.03",
+          "R13.04"
+        ],
+        "present_in_traceability_chapter": true
+      }
+    ],
+    "group_count": 13,
+    "numbered_item_count": 95,
+    "unindexed_fields_and_subitems": "原文全部保留；第十五章规定 Rxx.00 与 a b c 子项编号，含能力九字段、九命名空间及各条内短横线要求。",
+    "minimum_acceptance_scenarios": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12"
+    ],
+    "original_source_included_verbatim": true
+  },
+  "validation": {
+    "md_txt_byte_equal": true,
+    "docx_body_content_equal_after_layout_marker_removal": true,
+    "docx_pages": 29,
+    "all_docx_pages_visually_reviewed": true,
+    "game_engine_or_api_test_executed": false,
+    "runtime_implementation_claimed": false,
+    "authority_original_bytes_unchanged": true
+  },
+  "authority_references": [
+    {
+      "relative_path": "authorities/originals/shuzhi.xlsx",
+      "sha256": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc"
+    },
+    {
+      "relative_path": "authorities/originals/sucai.xlsx",
+      "sha256": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
+    },
+    {
+      "relative_path": "authorities/originals/cehua.docx",
+      "sha256": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9"
+    }
+  ],
+  "artifacts": [
+    {
+      "relative_path": "docs/planning/ai_companion/MULTI_API_AI_COMPANION_PLAN.md",
+      "bytes": 67338,
+      "sha256": "056fb0b4491a1ed2d2fbc6e3c522fcf0acef11e8e7110932a1fed1b27bb47e7d"
+    },
+    {
+      "relative_path": "docs/planning/ai_companion/MULTI_API_AI_COMPANION_PLAN.txt",
+      "bytes": 67338,
+      "sha256": "056fb0b4491a1ed2d2fbc6e3c522fcf0acef11e8e7110932a1fed1b27bb47e7d"
+    },
+    {
+      "relative_path": "docs/planning/ai_companion/MULTI_API_AI_COMPANION_PLAN.docx",
+      "bytes": 70501,
+      "sha256": "eebe3756b1fd4f2908534966ad48c939d571afe84cb60385ca4734039d99d346"
+    },
+    {
+      "relative_path": "docs/planning/ai_companion/USER_REQUIREMENT_20261009.txt",
+      "bytes": 11426,
+      "sha256": "d7449d2a83e2b0189a192e52fac5429d407494a0029d83f933cbd88577efe6ff"
+    },
+    {
+      "relative_path": "docs/AI_COMPANION_INDEX.md",
+      "bytes": 1419,
+      "sha256": "662550fa2cab09b2559c0e2e394e33458741e07ce68dde2d8cc744fe0e2d34a0"
+    }
+  ]
+}

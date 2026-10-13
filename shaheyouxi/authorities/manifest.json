@@ -1,0 +1,43 @@
+{
+  "project": "shaheyouxi_experiment_20261004",
+  "status": "original_bytes_recovered_workbooks_verified_docx_layout_pending",
+  "reason": "Both workbook native/effective-cell audits complete; DOCX semantic and topology match, actual rendered layout pending. Latest decisions still require versioned working-source changes before dependent batches.",
+  "sources": [
+    {
+      "name": "shuzhi.xlsx",
+      "library_file_id": "libfile_aa8e4c2c718481919fad5b049408a8db",
+      "file_id": "file_000000008fd881fd9ac91b353718e12d",
+      "sha256": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
+      "expected_size": 936392,
+      "local_path": "originals/shuzhi.xlsx",
+      "identity_source": "root verified new Library upload and downloaded_file result",
+      "original_bytes_verified": true,
+      "review_evidence": "reviews/shuzhi_original_review.json",
+      "previous_library_file_id": "libfile_e84f8d925abc8191b4d38f9e1200c6ae"
+    },
+    {
+      "name": "sucai.xlsx",
+      "library_file_id": "libfile_e05beb9d065881919249519ea42987e3",
+      "file_id": "file_00000000d1cc823085c2c7cf95485070",
+      "sha256": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+      "expected_size": 993240,
+      "local_path": "originals/sucai.xlsx",
+      "identity_source": "root verified new Library upload and downloaded_file result",
+      "original_bytes_verified": true,
+      "review_evidence": "reviews/sucai_original_review.json",
+      "previous_library_file_id": "libfile_d1496057d3c881918ca5a3b87432f48f"
+    },
+    {
+      "name": "cehua.docx",
+      "library_file_id": "libfile_cbd10bcd95d881919db71590c2dc81da",
+      "file_id": "file_00000000f5d881fdbddb213710eee89a",
+      "sha256": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+      "expected_size": 108748,
+      "local_path": "originals/cehua.docx",
+      "identity_source": "root verified new Library upload and downloaded_file result",
+      "original_bytes_verified": true,
+      "review_evidence": "reviews/cehua_original_review.json",
+      "previous_library_file_id": "libfile_8fccbfb8bfb481918814f401c830a6ff"
+    }
+  ]
+}

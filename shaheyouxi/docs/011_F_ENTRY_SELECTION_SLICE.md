@@ -1,0 +1,33 @@
+# 011 F natural-entry selection, first source slice
+
+2026-10-06. Source candidate only. Engine suites, native projection/rendering and live F acceptance are unrun for this change.
+
+## Authority and coordinate mapping
+
+Direct original-source verification identifies cehua P22 input-only/server authority; P65 underground H1 before carving; P68 paired same-XY, bidirectional, interaction-required natural entries; P69–70 protected surrounds and mother entry 10–30 cells from spawn; P86 pointed-object interaction within range and no F resource-target interaction. The verified actor projection supplies interaction_range_cells from shuzhi 63!C11 = 1.5 (F11 semantics); 63!C10 = .65 remains actor diameter, not an extra interaction allowance. The verified generation projection supplies existing natural-entry body/safety dimensions from 38_层间连接 O6:P6 and O7:P7 = 3,7. No formal table or original source was changed.
+
+The selector uses Address.cell_center(endpoint.cell) as the natural-entry interaction anchor. This reuses the existing cell-to-world coordinate mapping; it is an explicit technical mapping, not a claim that the originals prescribe a separate subcell anchor. Pointer hit testing uses the actual generated body_side_cells footprint, currently 3×3. Rect2 half-open edges follow existing cell addressing. The 7×7 protected safety rectangle is not a larger pointer target or interaction range.
+
+Seed42's existing spawn is [9,88]; actual surface↔underground1 endpoint is [23,78], body [22,77,3,3], safety [20,75,7,7]. Actual underground1↔2 endpoint is [37,69], body [36,68,3,3], safety [34,66,7,7]. The active technical prefab has five spawn anchors and no materialized entries. Its native surface support [1,82,17,13] contains neither entry; underground terrain is unsupported. No central substitute entry, target art, H0 terrain extension, carving or transfer was added.
+
+## Implemented boundary
+
+- The live F pressed edge freshly maps the current viewport pointer through the existing camera mapping. Invalid/out-of-view pointers suppress that press rather than sending cached aim. Physical held/release bookkeeping remains intact, including explicit release and focus cleanup. Pointer re-entry while F stays held cannot invent a new press. Other keys and ordinary coalesced aim sampling retain their existing semantics.
+- Only ActorMotion's successful interaction_requested edge admits controller selection. Duplicate, held, released, rejected and dead-actor commands do not dispatch selection. Client commands remain the same six fields; clients cannot supply target identity, actor position or layer.
+- The controller revalidates its server-owned world component before calling the pure selector. The selector reads only layout.connections natural entries, matches complete logical layer identity, checks the actual body footprint, and measures authoritative actor-position distance to the endpoint cell center against the table-derived inclusive range. There is no nearest-entry fallback, resource/Prefab-anchor target lookup, body-radius extension or range epsilon.
+- No hit, out-of-range, ambiguous, duplicate-identity and malformed inputs fail closed. The pure selector's structural checks are defensive, not a replacement for complete World source/fingerprint validation.
+- A selected candidate returns the internal INTERACTION_TRANSFER_UNSUPPORTED result. There is no native transfer transaction, no successful-transfer claim, and no actor/body/layer/resource/world movement or mutation. Normal accepted-input revision and cursor changes still happen in ActorMotion. Input generations, network protocol, save schema and existing camera/native wall mechanisms are unchanged.
+
+## Added verification scope
+
+Affected GdUnit suites: ActorInputSamplerTest 21, ActorPlayClientAdapterTest 23, ActorSessionControllerTest 17, new ActorInteractionSelectorTest 10; total 71 methods. Added cases cover fresh-pointer sampling, invalidation/release/focus and non-F semantics; actual seed42 body boundaries; inclusive 1.5-cell range and nearby-pointer rejection; complete layers and both endpoint directions; empty-space, ambiguous, malformed, duplicate, resource-only and client-target rejection; detached results; duplicate/held/released/dead non-dispatch; and unchanged authoritative actor/world/native/generation state for selected-but-unsupported interactions.
+
+Selection tests deliberately use a pure fake-space actor at the existing entry when necessary; that is not evidence of a reachable or native-supported entry. The full verified world is used for normal selector fixtures. Corrupt overlap and resource-only selector fixtures are clearly labeled unverified and never enter production world content.
+
+Source checks completed: git diff --check and direct preload-path existence checks. No Godot, Blender, GUI, CUA or native engine test has run for this checkpoint. Any bounded engine run requires a separate resource allocation. Transfer, native entry materialization/rendering, underground terrain, live F acceptance and full 011 remain pending.
+
+Independent static review found no blocking issue in the four runtime files.101Python runner/GUI evidence checks and source/cache preflight pass. The dedicated --actor011-interaction profile is fixed to the71pure methods above, one headless192MiB process/effective900/raw192MiB,45seconds command/110seconds total, with the existing delayed desktop launcher. No runtime approval follows from preparing it.
+
+2026-10-06 06:25 UTC: frozen a1ced39 passed 71/71 pure methods and the resource gate, exit 0, zero errors/failures/skips/orphans. Report 011core_runs_20261006T062429466896Z; PID/PGID 156493 absent, peak 125759488 bytes, 6.09 seconds, CUA reset. One test-only warning exposed lossy JSON comparison of a NaN corrupted fixture. Original log is retained. The assertion now uses var_to_bytes to preserve Variant data, with only the changed corrupt-fixture method proposed for recheck; that test-only refinement is currently UNRUN. No production code changed after the 71-method pass. F transfer remains unsupported; native entry materialization and real F GUI behavior are not proved here.
+
+2026-10-06 06:32 UTC: frozen 4b73fee passed the single changed corrupt-fixture method with no WARNING, errors, failures, skips or orphans, exit 0. The nine unchanged selector methods were explicitly outside this narrow discovery scope; this is one method, not a new ten-method pass. PID/PGID 159103 absent, peak 99885056 bytes, 1.15 seconds, CUA reset. Report 011core_runs_20261006T063215802536Z. The original 71-method run and its test-only NaN warning remain intact.

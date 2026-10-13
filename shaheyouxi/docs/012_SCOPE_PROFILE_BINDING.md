@@ -1,0 +1,5 @@
+# Explicit local schema5 launch binding
+
+The existing ordinary argument set and resulting dictionary shape remain unchanged for no-marker schema4 slots. Schema5 requires both save_profile=5 and slot_profile_sha256 equal to the canonical slot marker's start-time hash. Scope reuses the Codec-only marker leaf, avoiding a Scope→Registry/Core→Scope preload cycle. It checks fixed root/slots/slot/marker paths for links, exact marker bytes, slot identity and contract; missing/directory/changed/noncanonical marker fails. A legacy launch cannot silently enter a marked slot. The helper grants no writer or inventory authority.
+
+Independent source review passed after adding orphan-hash refusal and strengthening negative fixtures with exact old4 shape, actual deletion/directory proof and write readback. Five actual headless tests passed on2026-10-08: both server/client binding, malformed/partial args, changed/wrong-slot/missing marker and noncanonical/directory states. Non-UTF8, oversize and Scope-specific ancestor/marker-link paths are source-reviewed, not directly tested here. Guard1.532s/121098240B, exit0/full cleanup. See012_inventory_slot_scope_actual_result.json.

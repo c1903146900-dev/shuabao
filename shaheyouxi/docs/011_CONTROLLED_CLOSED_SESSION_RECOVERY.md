@@ -1,0 +1,23 @@
+# Controlled recovery of the actual pair06 committed save
+
+2026-10-08 00:44 UTC. Source/isolated-copy preparation only; Godot validation and actual Continue remain pending.
+
+The interrupted GUI left its library/session locks. Pair07 refused at startup rather than silently reclaiming them. Legacy library markers contain only token and Godot object identity; they cannot establish a process incarnation. No general automatic stale-lock deletion is introduced, and the ordinary Slots methods are unchanged.
+
+The specifically reviewed external pair06 guard receipt proves the client identity was reaped and the exact validated server incarnation exited0. The original session manifest, close request, server normal-shutdown report, original slot ticket and library owner are bound to one slot/session. The server completed sequence3 while the existing index was incomplete at sequence0. This is not an original normal GUI completion.
+
+An explicitly scoped preparer accepts only that pinned guard receipt hash. It rejects other/later sessions, active writer/index locks, symlinks, hardlinks, failed cleanup, mismatched process/slot/session/owner/receipt evidence. It copies the complete 15-file original tree and proves both the copy and the still-untouched original hashes. Only in the disconnected copy, the two old lock directories are moved into a quarantine directory; their bytes remain intact. No original save, identity, lock or index is changed.
+
+The separate Godot verifier is pinned to that one candidate plan hash. It independently rechecks hashes and quarantined locks, configures a new Slots instance on the copied root, calls the real inspect_save (main checksum, exact scalars, full actor/world/terrain semantics, marker and private identity, no generation), checks normal_shutdown sequence3 and identity, then calls after_verified_save and _persist_index for the genuine index transition. It closes only its own new lock. It does not forge an old active ticket, server close result, client ack or normal-completion receipt.
+
+Twelve pure Python tests pass. Review and engine validation remain distinct. A successful copy-index transition alone does not establish ordinary Continue/F10/Exit acceptance. Original hash invariance and unchanged copied main/identity/world bytes must be checked again after application. This controlled, source-specific repair is not a cross-platform product crash-recovery feature.
+
+## Actual closure, 2026-10-08 01:10 UTC
+
+The real Godot recovery verifier passed in 3.587 seconds at 240578560 bytes; exact original 15-file snapshot stayed unchanged. Only copied index.json changed from incomplete0 to ready3, the other12 copied files stayed exact, and old locks remained quarantined. No generation or synthetic close-ack file occurred.
+
+Pair09 reached the recovered Continue menu but failed in the resource observer during an unpinned short-lived child transition before welcome. Its failure is retained. A source-reviewed pair-only adapter now requires first-admission live-parent pidfd and exact child stat identity, complete actual server executable/argv verification, repeated child absence, complete inventory and no unresolved descendants/adopted children. Unpinned classification explicitly does not prove kernel terminal identity or its instantaneous RSS peak; it never substitutes zero RSS. Existing held-terminal children retain their cleanup records. Three real small-process lifecycle tests include fork/setsid/exec/reap and full scan exclusion. Alive/unknown/reused identities remain failures.
+
+Pair10 genuinely continued the recovered same world/profile/actor with exact position bits, no regeneration, exact static world/terrain preservation, then native F10 obtained client verified save receipt sequence5, server exit0, completed ticket/released scope, and menu returned displaying world saved. Native Exit produced client exit0. Index is ready5; library/session locks are released. Original15 files remain unchanged. Total75.069 seconds; peak739577856 bytes; complete owned cleanup.
+
+The pair10 guard report remains RED because the already naturally exiting client lost /proc/exe just before its retained pidfd became terminal. Do not turn that report green or claim a full all-green run. The product lifecycle has its separate direct successful evidence. A final narrow same-identity held-pidfd metadata recheck with a10ms retry budget passed source review and47 pair Python tests (plus14 held-exit and9 profile regressions); it has not been re-tested in Godot merely to chase a green report. Ordinary import/gui profiles remain unchanged. This recovery closure does not establish F layer transfer, complete world generation, full art or Windows acceptance.

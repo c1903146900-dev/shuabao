@@ -31,14 +31,17 @@
     "frozen source recovery and hash verification",
     "reviewed safe synthetic test identity refactor",
     "5 Python preparer unit tests passed",
-    "two isolated Godot integration attempts failed; no complete sandbox import or regression"
+    "two isolated Godot integration attempts failed; no complete sandbox import or regression",
+    "formal documents and three authority originals restored and hash checked",
+    "isolated identity probe passed 8 cases / 25 checks",
+    "real Store/Slots fixture chain attempted twice; resource failures, neither business suite completed"
   ],
   "authority_sha256": {
     "cehua.docx": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
     "shuzhi.xlsx": "736e69ab96ff099e1bec5148b85c82f91865eed0c0012153a8ab5a03079966bc",
     "sucai.xlsx": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5"
   },
-  "authority_originals_included": false,
+  "authority_originals_included": true,
   "unchanged_original_source_files": 1357,
   "modified_test_files": 10,
   "new_test_support_files": 3,
@@ -50,12 +53,34 @@
       "passed": 5,
       "failed": 0
     },
-    "godot_integration": "not_verified",
+    "godot_integration": "limited_probe_pass_8_cases_25_checks; full suite regression remains not_run",
     "run01": "failed: producer child timed out after 8 seconds; other 7 cases not run",
     "run02": "failed: guard raised GuardError during editor preparation; all 8 business cases not run; precise guard cause unavailable",
     "full_10_suite_regression": "not_run",
     "process_cleanup": "both runs verified clear",
     "generated_private_fixture_cleanup": "run01 automatic; run02 explicit post-guard cleanup verified",
-    "historical_green_inherited": false
+    "historical_green_inherited": false,
+    "current_limited_evidence": "LIMITED_VERIFICATION_20261013.json"
+  },
+  "authority_originals_directory": "authorities/originals",
+  "restored_documents": {
+    "files": 116,
+    "bytes": 3204595,
+    "original_bytes_unchanged_files": 110,
+    "minimal_public_text_derivatives": 5,
+    "new_readme": 1,
+    "ai_companion_status": "planning_only_not_implemented",
+    "manifest": "DOCUMENTS_MANIFEST.json"
+  },
+  "real_store_slots_fixture_chain": {
+    "status": "not_validated",
+    "attempts": 2,
+    "producer_suite_completed": false,
+    "cold_consumer_suite_completed": false,
+    "run01": "failed during import: child stat disappeared after unregistered pidfd open",
+    "run02": "failed during import: missing live RSS with no contemporaneous kernel exit proof",
+    "process_cleanup_verified": true,
+    "private_generated_files_removed": true,
+    "run02_cleanup_observer_failure_retained": true
   }
 }

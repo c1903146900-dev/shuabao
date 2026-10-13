@@ -1,0 +1,15 @@
+{
+  "source_sha256": "ea47bd7c60236a94a7a7d8fbc374fe0f10cb88af7a3c1815dea94009841effc9",
+  "library_file_id": "libfile_cbd10bcd95d881919db71590c2dc81da",
+  "reviewed_at": "2026-10-04T16:49:09Z",
+  "checks": {
+    "original_identity": true,
+    "native_structure": true,
+    "transcription_differences": true,
+    "layout_images": false
+  },
+  "unresolved_blockers": [
+    "Actual pagination/font/clipping layout rendering not yet performed; text/paragraph styles/table topology verified, no body images present."
+  ],
+  "evidence": "../../evidence/source_audit_worker/READ_ONLY_SOURCE_AUDIT.md"
+}

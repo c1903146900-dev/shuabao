@@ -1,0 +1,15 @@
+{
+  "source_sha256": "e0389a4b17f150e6d3335c8f18b7c21584bad9dd664c918e11f07ae1dcc97cd5",
+  "library_file_id": "libfile_e05beb9d065881919249519ea42987e3",
+  "reviewed_at": "2026-10-04T16:49:09Z",
+  "checks": {
+    "original_identity": true,
+    "native_structure": true,
+    "transcription_differences": true,
+    "formulas_and_caches": true,
+    "hidden_and_merged_structure": true
+  },
+  "unresolved_blockers": [],
+  "evidence": "../../evidence/source_audit_worker/READ_ONLY_SOURCE_AUDIT.md",
+  "details": "99200 effective merged-cell values/types agree. Physical XML has 6 duplicate-title and 6 merged-shadowed old-text cells; retained unchanged and not treated as active rules. Latest design decisions require later versioned working-source updates."
+}

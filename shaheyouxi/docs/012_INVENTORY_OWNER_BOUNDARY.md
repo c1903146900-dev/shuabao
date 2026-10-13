@@ -1,0 +1,7 @@
+# Private inventory owner boundary
+
+The private service owns its current Core, builds detached candidate actions and validates the full 667-cell combined save shape/budget before replacing its Core reference. Snapshots and per-player views are copies. Ephemeral chest scopes remain private across candidate replacement; close only removes access and preserves carry. Actual Authority identity/config drift refuses reads and writes. Network authentication, exact transport cursor/epoch and confirmed Frame freshness are the actual owner integration responsibility.
+
+2026-10-08 finite verification: eight distinct methods passed across two bounded runs. Run01 passed seven, then hit the 60-second resource deadline during the final drift case: 59.555 seconds/304869376 bytes, TERM and full cleanup, negative receipt retained. Run02 ran only the remaining case: 12.157 seconds/259567616 bytes, exit0, zero errors/failures/skips/orphans and full cleanup. Registry7 separately passed 33.363 seconds/369647616 bytes. These are not RPC, ordinary entry or native UI acceptance. Evidence: 012_inventory_modules_actual_result.json.
+
+The simultaneous Slots edit at 02:50:52 UTC is recorded; the stored actual-source extends/preload closure contains57 files and no Slots. That is a static closure, not an engine dynamic-resource trace. Future shared engine tests require a freeze announcement and explicit confirmation before launch.

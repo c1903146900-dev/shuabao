@@ -1,0 +1,246 @@
+{
+  "status": "limited_probe_pass_not_full_game_acceptance",
+  "scope": "unchanged production ServerAuthority plus private session reader in isolated test project",
+  "cases": [
+    {
+      "case": "same_session_producer",
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "checks": [
+        {
+          "name": "valid_reader",
+          "passed": true
+        },
+        {
+          "name": "reader_stable",
+          "passed": true
+        },
+        {
+          "name": "real_authority_creates_profile",
+          "passed": true
+        },
+        {
+          "name": "synthetic_fixture_validates",
+          "passed": true
+        },
+        {
+          "name": "private_state_file_open",
+          "passed": true
+        },
+        {
+          "name": "private_state_permissions",
+          "passed": true
+        }
+      ],
+      "mode": "producer",
+      "passed": true
+    },
+    {
+      "case": "same_session_cross_process_cold_consumer",
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "checks": [
+        {
+          "name": "valid_reader",
+          "passed": true
+        },
+        {
+          "name": "producer_state_readable",
+          "passed": true
+        },
+        {
+          "name": "real_cold_restore",
+          "passed": true
+        },
+        {
+          "name": "same_session_resume_accepted",
+          "passed": true
+        },
+        {
+          "name": "wrong_case_cold_restore",
+          "passed": true
+        },
+        {
+          "name": "wrong_secret_rejected",
+          "passed": true
+        },
+        {
+          "name": "wrong_profile_rejected",
+          "passed": true
+        }
+      ],
+      "mode": "consumer",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "missing_sidecar",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "wide_file_permissions",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "wide_directory_permissions",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "invalid_document",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "symlink_sidecar",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "raw_errors_absent": true,
+      "timed_out": false,
+      "case": "in_project_path",
+      "checks": [
+        {
+          "name": "reader_rejects_invalid_private_input",
+          "passed": true
+        },
+        {
+          "name": "environment_restored_and_reader_not_cached",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "case_count": 8,
+  "check_count": 25,
+  "preparation": {
+    "passed": true,
+    "exit_code": 0,
+    "raw_errors_absent": true,
+    "timed_out": false
+  },
+  "guard": {
+    "wall_seconds": 60,
+    "sample_interval_seconds": 0.05,
+    "max_allowed_sample_gap_seconds": 0.2,
+    "rss_sample_limit_bytes": 939524096,
+    "elapsed_seconds": 7.064601088999552,
+    "peak_sampled_total_rss_bytes": 727846912,
+    "max_sample_gap_seconds": 0.08714084200073557,
+    "exit_code": 0,
+    "process_cleanup_verified": true,
+    "post_pins_verified": true,
+    "generated_private_files_cleaned": true
+  },
+  "resource_scope_limit": "Sampling gate, not a kernel-enforced hard limit or lifetime peak proof. Narrow membership and held-terminal-exit classifications are supported; both had zero actual occurrences in this successful run. Mock tests do not establish real-race coverage.",
+  "historical_failed_runs": [
+    "run01: producer 8-second timeout; later cases not run",
+    "run02: unspecified GuardError during editor preparation",
+    "run03: reaped_inventory_missing_or_ambiguous_held_identity",
+    "run04: sample gap 320.717ms; import and first 7 cases had successful individual results, final case incomplete; aggregate remained failed",
+    "run05: FileNotFoundError during RSS exit evidence reread; preparation incomplete"
+  ],
+  "not_verified": [
+    "complete regression of 10 modified suites",
+    "real inventory fixture production and independent cold restore",
+    "full sandbox import and enter-world acceptance",
+    "visible GUI interaction",
+    "Windows test preparation"
+  ],
+  "support_python_tests_passed": 5,
+  "guard_mock_tests": {
+    "inventory_classification": 7,
+    "inventory_negative_subcases": 18,
+    "held_terminal_sampling": 16
+  },
+  "subsequent_real_store_slots_chain": {
+    "status": "failed_not_validated",
+    "run01": {
+      "seconds": 1.8596917199993186,
+      "peak_sampled_rss_bytes": 301985792,
+      "max_sample_gap_seconds": 0.07966088299963303,
+      "error": "FileNotFoundError during unregistered child pin verification",
+      "business_suites_completed": 0,
+      "processes_clear": true,
+      "private_files_removed": true
+    },
+    "run02": {
+      "seconds": 9.765830889000426,
+      "peak_sampled_rss_bytes": 857759744,
+      "max_sample_gap_seconds": 0.1587779239998781,
+      "error": "RSS_exit_no_kernel_exit_proof",
+      "business_suites_completed": 0,
+      "processes_clear": true,
+      "cleanup_observer_errors": 1,
+      "automatic_private_cleanup": false,
+      "authorized_post_cleanup_verified": true
+    },
+    "old_failures_reclassified": false
+  }
+}

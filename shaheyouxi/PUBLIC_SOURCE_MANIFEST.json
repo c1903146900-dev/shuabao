@@ -8243,7 +8243,12 @@
     "runtime_validation_passed": false,
     "python_preparer_tests_passed": 5,
     "full_sandbox_regression_performed": false,
-    "publication": "explicit source and management allowlist; generated identities, saves, caches, private raw diagnostics and diffs excluded"
+    "publication": "explicit source and management allowlist; generated identities, saves, caches, private raw diagnostics and diffs excluded",
+    "limited_identity_probe_passed": true,
+    "limited_identity_probe_cases": 8,
+    "limited_identity_probe_checks": 25,
+    "real_store_slots_chain": "two resource-failed attempts; neither business suite completed",
+    "authority_documents_restored": "See DOCUMENTS_MANIFEST.json; game source hashes unchanged"
   },
   "unchanged_original_source_count": 1357,
   "modified_original_tests": [
