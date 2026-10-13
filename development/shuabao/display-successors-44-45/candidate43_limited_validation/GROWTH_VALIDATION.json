@@ -1,0 +1,57 @@
+{
+  "candidate": "candidate43_public_rebuild_20261013",
+  "date_utc": "2026-10-13",
+  "source_sha256": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+  "scope": "original_paid_Q1_growth_and_900_training_cross_room_retention",
+  "combined_passed": true,
+  "business_passed": true,
+  "checks": 183,
+  "elapsed_seconds": 37.82869765800024,
+  "sampled_peak_bytes": 757080064,
+  "max_sample_gap_seconds": 0.16366104000007908,
+  "raw_errors": 0,
+  "warnings": {
+    "UID_text_path_fallback": 204,
+    "unsupported_VSync": 1
+  },
+  "six_PNG_stages": [
+    "01_original_Q1_learned",
+    "02_earned_Q1_upgraded",
+    "03_training900_ready",
+    "04_paid_three_choices",
+    "05_training_selected",
+    "06_r07_growth_retained"
+  ],
+  "builder_reviewer_root_viewed_key_PNGs": [
+    "01_original_Q1_learned",
+    "04_paid_three_choices",
+    "06_r07_growth_retained"
+  ],
+  "fixture": {
+    "direct_source_lethal_packets": 19,
+    "authentic_unique_reward_ids": 19,
+    "wallet_injection": false,
+    "gold_SP_HP_clock_assignment": false,
+    "initial_gold": 0,
+    "earned_gold": 990,
+    "training_charge": 900,
+    "remaining_gold": 90,
+    "selected_original_outcome": "training:11",
+    "selected_stat": "penetration",
+    "selected_value": 5,
+    "next_room": "r07c"
+  },
+  "native_input": false,
+  "natural_clear": false,
+  "PCK_verified": false,
+  "historical_checks_inherited": false,
+  "all_owned_processes_confirmed_exited": true,
+  "cleanup_resource_error_count": 0,
+  "test_source": {
+    "path": "growth_drafts/revision01/growth_training_gui.gd",
+    "sha256": "37157874602d2b071b8d4f63c8ce3bf9e0b81e08d8d9af95a73ab33150ce822b"
+  },
+  "business_report_sha256": "3816e046971eef1ccf421bb003da233177c38cb817324b379d1396e97cb179bf",
+  "guard_report_sha256": "b7ed64e8a0532b18529be534ac7fba4ae7d146b4d49be0db42a9369cd95e4ae3",
+  "not_combined_into_C02_all_green_total": true
+}

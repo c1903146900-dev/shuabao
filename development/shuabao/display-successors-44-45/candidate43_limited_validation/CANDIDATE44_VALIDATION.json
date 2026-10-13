@@ -1,0 +1,35 @@
+{
+  "candidate": "44_q2_tooltip_display",
+  "source_sha256": "95d5ddf6cce7084c95dbb69e3290435706f4ac25d80a464a05df8740f9244318",
+  "visual_sha256": "d4bad8b3882838619f1d65fa06cd4056bf3ba12db904d420c6f17d5a49dffab3",
+  "text_functional_gate": {
+    "checks": 17,
+    "passed": true,
+    "closed_and_reopened": true,
+    "entire_model_unchanged": true,
+    "native_input": false,
+    "original_full_text_except_exact_stale_suffix_preserved": true
+  },
+  "resource_gate": {
+    "passed": true,
+    "seconds": 30.819894268999633,
+    "sampled_max_rss_bytes": 658124800,
+    "max_gap_seconds": 0.1827254969994101,
+    "pins": 26,
+    "four_exit_proofs": true,
+    "cleanup_errors": 0
+  },
+  "raw": {
+    "errors": 0,
+    "warnings": 91,
+    "invalid_uid_text_fallback": 90,
+    "unsupported_vsync": 1
+  },
+  "visual_review": {
+    "actual_images_viewed": true,
+    "full_text_visible_in_game_viewport": false,
+    "finding": "Default tooltip popup is about 2000 pixels wide and clipped by the game viewport. Separate popup texture contains the text but does not prove player readability."
+  },
+  "next_change": "Independent candidate45 fixed-width wrapped growth skill tooltips; not yet run",
+  "historical_checks_inherited": false
+}

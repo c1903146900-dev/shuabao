@@ -1,0 +1,16 @@
+{
+  "schema": "q2-growth-tooltip-display-successor-1",
+  "predecessor_source_sha256": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+  "predecessor_visual_sha256": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+  "successor_visual_sha256": "d4bad8b3882838619f1d65fa06cd4056bf3ba12db904d420c6f17d5a49dffab3",
+  "changed": [
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b",
+      "after": "50ba9137a06613ef848e51d676a14d827138d65616d4b0b44bb7d40dee120220"
+    }
+  ],
+  "exact_removed_text": "\nQ2临时功能显示；美术/音频未实现，实机未验；H03/H04未开放",
+  "scope": "initial_hud Q2 upgrade tooltip only; original descriptions, operation rules, titles, values and signals unchanged",
+  "runtime_verified": false
+}

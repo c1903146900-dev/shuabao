@@ -1,0 +1,79 @@
+{
+  "candidate": "45_growth_tooltip_wrap",
+  "source_sha256": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+  "visual_sha256": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+  "changes": "Original ten growth skill Button instances receive presentation-only custom tooltip wrapping; original text, pressed connections and disabled state retained. Candidate44 Q2 stale sentence removal retained.",
+  "limited_gate": {
+    "checks": 75,
+    "passed": true,
+    "original_button_count": 10,
+    "entire_model_unchanged": true,
+    "native_input": false,
+    "actual_hover_candidates": [
+      "Q2",
+      "E3"
+    ],
+    "longest_other_selected_from_actual_text_lengths": "E3",
+    "Q2": {
+      "popup_size": [
+        446,
+        139
+      ],
+      "label_width": 430,
+      "rendered_lines": 6
+    },
+    "E3": {
+      "popup_size": [
+        446,
+        323
+      ],
+      "label_width": 430,
+      "rendered_lines": 14
+    },
+    "actual_window_sizes": [
+      [
+        1178,
+        814
+      ],
+      [
+        900,
+        600
+      ]
+    ],
+    "logical_viewport": [
+      1280,
+      720
+    ],
+    "all_four_popups_and_labels_within_bounds": true,
+    "same_full_text_after_close_reopen": true
+  },
+  "resource_gate": {
+    "passed": true,
+    "seconds": 31.9531509669996,
+    "sampled_max_rss_bytes": 666939392,
+    "max_gap_seconds": 0.06879156200011494,
+    "pins": 28,
+    "four_exit_proofs": true,
+    "cleanup_errors": 0
+  },
+  "raw": {
+    "errors": 0,
+    "warnings": 91,
+    "invalid_uid_text_fallback": 90,
+    "unsupported_vsync": 1
+  },
+  "visual_review": {
+    "builder_viewed_four_main_viewport_images": true,
+    "full_Q2_and_E3_text_inside_viewport": true,
+    "root_viewed_four_main_viewport_images": true,
+    "independent_review_passed": true
+  },
+  "limits": [
+    "The 900x600 window preserves the original 1280x720 logical canvas and scales it. It does not exercise a logical viewport narrower than 478 pixels.",
+    "Only Q2 and the longest other current tooltip E3 were hovered; all ten buttons have installation and text retention checks.",
+    "No gameplay balance, native-input or new combat acceptance is claimed.",
+    "896 MiB is a sampled resource gate, not a kernel hard memory guarantee.",
+    "Clean-clone import/startup has not been validated; bound import descriptors and UID fallback warnings are retained."
+  ],
+  "historical_checks_inherited": false
+}

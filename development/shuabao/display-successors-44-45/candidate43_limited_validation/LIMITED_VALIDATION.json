@@ -1,0 +1,161 @@
+{
+  "status": "LIMITED_CURRENT43_EVIDENCE_NOT_FULL_GREEN",
+  "candidate": "candidate43_public_rebuild_20261013",
+  "date_utc": "2026-10-13",
+  "source_sha256": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+  "visual_sha256": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+  "gates": [
+    {
+      "run": "candidate43_definition_run02",
+      "scope": "definitions_original_commerce_pure_window",
+      "combined_passed": true,
+      "business_passed": true,
+      "checks": 178,
+      "guard_reason": "",
+      "elapsed_seconds": 11.894739000999834,
+      "sampled_peak_bytes": 401010688,
+      "max_sample_gap_seconds": 0.08052544299971487,
+      "all_owned_processes_confirmed_exited": true,
+      "guard_report_sha256": "963d54ff686e0e36887cfc8bed0dba46090b7091800ff1dea97c1c6438b5088e",
+      "business_report_sha256": "e35de86a6614f83a523f7bacc87938ccc1d2b029d8cf80f51e2b59da0c83d07e",
+      "raw_error_count": 0,
+      "raw_warning_count": 0
+    },
+    {
+      "run": "candidate43_real_damage_run03",
+      "scope": "original_Q1_empty_E1_and_Q2_enhanced_basic_exclusion",
+      "combined_passed": false,
+      "business_passed": true,
+      "checks": 343,
+      "guard_reason": "RSS_exit_still_live_or_unproved",
+      "elapsed_seconds": 18.521674032000192,
+      "sampled_peak_bytes": 401862656,
+      "max_sample_gap_seconds": 0.0715469890001259,
+      "all_owned_processes_confirmed_exited": true,
+      "guard_report_sha256": "a7139abf823329ecfc8ff7d317c8f767bcfc27b2325950c5804d31716266056d",
+      "business_report_sha256": "51e652248d33ba51222a4b303d415b235c9d067ca41b26c74d5c5a1ed0730593",
+      "raw_error_count": 0,
+      "raw_warning_count": 0
+    },
+    {
+      "run": "candidate43_gui_run01",
+      "scope": "original_Host_shop_display",
+      "combined_passed": true,
+      "business_passed": true,
+      "checks": 44,
+      "guard_reason": "",
+      "elapsed_seconds": 28.38649884699953,
+      "sampled_peak_bytes": 654336000,
+      "max_sample_gap_seconds": 0.19322037000074488,
+      "all_owned_processes_confirmed_exited": true,
+      "guard_report_sha256": "40ab269b1ce86aef0e8663e0fa0108d133f9b6f8312ca13c4ae789ddcebde6fd",
+      "business_report_sha256": "b390796243631cb3d4f5c24536cd8f902465349486e23316f8f9dc4ef3f5178b",
+      "raw_error_count": 0,
+      "raw_warning_count": 91
+    }
+  ],
+  "combat_values": {
+    "E1_nominal_snapshot": 84.0,
+    "C02_cast_multiplier": 1.18,
+    "armor_guard": 0.45,
+    "armor_defence": 10.0,
+    "E1_actual": 40.5490909090909,
+    "E1_HP": [
+      258.0,
+      217.450909090909
+    ],
+    "Q1_naturally_retired_without_any_hits": true,
+    "Q2_skill_multiplier": 1.18,
+    "independent_enhanced_basic_actual": 36.0,
+    "independent_enhanced_basic_HP": [
+      129.0,
+      93.0
+    ]
+  },
+  "fixtures": {
+    "wallet": 60000,
+    "combat_first_room": "original r01a technical lethal damage, four authentic kill rewards",
+    "earned_total_XP": 108,
+    "level_after_rewards": 2,
+    "remaining_XP": 8,
+    "earned_real_SP": 1,
+    "SP_HP_CD_position_direct_writes": false,
+    "natural_clear": false,
+    "native_input": false
+  },
+  "GUI": {
+    "two_local_PNGs_actual_viewed_by_builder_and_root": true,
+    "full_passive_text_readable": true,
+    "before_after_inventory_and_AP_MS_readable": true,
+    "actual_owned_CDR_checked": 0.15,
+    "warnings": {
+      "UID_text_path_fallback": 90,
+      "unsupported_VSync": 1
+    },
+    "preflight_scope": "fixed12registered_task_terminal_receipts_only",
+    "unregistered_processes_unknown": true
+  },
+  "resource_contract": "896 MiB sampled aggregate, 50ms intended samples, 200ms maximum observed gap; no kernel hard peak guarantee. Missing live RSS remains failure; no zero substituted or later exit used to retroactively certify sample.",
+  "retained_failures": [
+    {
+      "run": "candidate43_definition_run01",
+      "scope": "startup environment; no business checks",
+      "failure": "default Godot user directory unwritable"
+    },
+    {
+      "run": "candidate43_real_damage_run01",
+      "checks": 242,
+      "failed_assertions": 3,
+      "failure": "test conflated cumulativeXP108 with remainingXP"
+    },
+    {
+      "run": "candidate43_real_damage_run02",
+      "checks": 276,
+      "failed_assertions": 3,
+      "failure": "test queried int-key roots with string and selected unreachable r02c; separate live RSS guard failure"
+    },
+    {
+      "run": "candidate43_real_damage_run03",
+      "business_passed": true,
+      "failure": "RSS_exit_still_live_or_unproved retained; combined false"
+    },
+    {
+      "scope": "GUI pre-spawn attempts",
+      "count": 3,
+      "engine_runs": 0,
+      "failures": [
+        "python not found",
+        "whole-process exe permission denied",
+        "sameUID exe permission denied"
+      ]
+    }
+  ],
+  "historical_1968_and_59_reused": false,
+  "coverage_not_claimed": [
+    "full regression of all skills/equipment",
+    "nested producer adversarial cases",
+    "all special Hex derivatives",
+    "natural playthrough",
+    "native mouse/keyboard shop interaction",
+    "current43 growth/training cross-room regression"
+  ],
+  "selected_test_sources": [
+    {
+      "path": "test_drafts/revision01/c02_definition_commerce.gd",
+      "sha256": "95b00c66ecb6bb8a75aca733bdcda98f079ac1027478d8e4f23f105f97927336",
+      "bytes": 8499
+    },
+    {
+      "path": "test_drafts/revision04/c02_real_damage.gd",
+      "sha256": "45a23a180087ae16f414b0ce87cebd4a97571a946f7ce1b72bcd50b829a4592d",
+      "bytes": 14537
+    },
+    {
+      "path": "test_drafts/revision02/c02_shop_gui.gd",
+      "sha256": "208cec8469903f4b29c1f22e70865505d86fd75c240e8d2d04a829e2691bdb6d",
+      "bytes": 6602
+    }
+  ],
+  "local_launchers_not_clean_clone_runnable": true,
+  "production_modified_by_tests": false
+}

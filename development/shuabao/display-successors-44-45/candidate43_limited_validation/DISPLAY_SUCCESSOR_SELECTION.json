@@ -1,0 +1,129 @@
+{
+  "purpose": "Ordered display-only successors from complete candidate43; do not omit candidate44 transition when persisting candidate45.",
+  "steps": [
+    {
+      "manifest": "candidate44_prepare/revision02/REVIEW_MANIFEST.json",
+      "manifest_sha256": "504c80a70c6e41b0b659afe4c982ccc9f8123dc80680334a56af91c1fe20ebda",
+      "files": [
+        {
+          "path": "visual_rework_20261009/runtime_host.gd",
+          "before": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b",
+          "after": "50ba9137a06613ef848e51d676a14d827138d65616d4b0b44bb7d40dee120220",
+          "bytes": 46620,
+          "artifact": "candidate44_prepare/revision02/production_draft/visual_rework_20261009/runtime_host.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "before": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+          "after": "95d5ddf6cce7084c95dbb69e3290435706f4ac25d80a464a05df8740f9244318",
+          "bytes": 323177,
+          "artifact": "candidate44_prepare/revision02/production_draft/visual_rework_20261009/binding/source_binding.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/visual_binding.json",
+          "before": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+          "after": "d4bad8b3882838619f1d65fa06cd4056bf3ba12db904d420c6f17d5a49dffab3",
+          "bytes": 9222,
+          "artifact": "candidate44_prepare/revision02/production_draft/visual_rework_20261009/binding/visual_binding.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/q2_tooltip_display_transition.json",
+          "before": null,
+          "after": "a83217a69c20e59c35264ace81324877311baeb7dca4bed6d3b690cd2ceb2b8c",
+          "bytes": 877,
+          "artifact": "candidate44_prepare/revision02/production_draft/visual_rework_20261009/binding/q2_tooltip_display_transition.json"
+        }
+      ]
+    },
+    {
+      "manifest": "candidate45_prepare/revision01/REVIEW_MANIFEST.json",
+      "manifest_sha256": "b05b59a197e6ae9529c0e11b1c2490c4e2fffff86bd25a271953d55c78c05d26",
+      "files": [
+        {
+          "path": "visual_rework_20261009/runtime_host.gd",
+          "before": "50ba9137a06613ef848e51d676a14d827138d65616d4b0b44bb7d40dee120220",
+          "after": "9195e3f133346ba38f99a0b7f4382cb965d550077062a3f38e4f5ce957b717ef",
+          "bytes": 48556,
+          "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/runtime_host.gd"
+        },
+        {
+          "path": "visual_rework_20261009/growth_tooltip_button.gd",
+          "before": null,
+          "after": "91120fea272230c72d94c3cfae7b401816acc7dfd4fb1ac7f7cd392b06abf69f",
+          "bytes": 595,
+          "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/growth_tooltip_button.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "before": "95d5ddf6cce7084c95dbb69e3290435706f4ac25d80a464a05df8740f9244318",
+          "after": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+          "bytes": 323731,
+          "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/source_binding.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/visual_binding.json",
+          "before": "d4bad8b3882838619f1d65fa06cd4056bf3ba12db904d420c6f17d5a49dffab3",
+          "after": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+          "bytes": 9351,
+          "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/visual_binding.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/growth_tooltip_wrap_transition.json",
+          "before": null,
+          "after": "1bab116a8ae81fdb84e6352c66ecbec0b6296fbe75681df07986fd651d77cb8c",
+          "bytes": 1619,
+          "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/growth_tooltip_wrap_transition.json"
+        }
+      ]
+    }
+  ],
+  "candidate45_unique_files_relative_to43": [
+    {
+      "path": "visual_rework_20261009/runtime_host.gd",
+      "before": "50ba9137a06613ef848e51d676a14d827138d65616d4b0b44bb7d40dee120220",
+      "after": "9195e3f133346ba38f99a0b7f4382cb965d550077062a3f38e4f5ce957b717ef",
+      "bytes": 48556,
+      "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/runtime_host.gd"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "95d5ddf6cce7084c95dbb69e3290435706f4ac25d80a464a05df8740f9244318",
+      "after": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+      "bytes": 323731,
+      "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/source_binding.json"
+    },
+    {
+      "path": "visual_rework_20261009/binding/visual_binding.json",
+      "before": "d4bad8b3882838619f1d65fa06cd4056bf3ba12db904d420c6f17d5a49dffab3",
+      "after": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+      "bytes": 9351,
+      "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/visual_binding.json"
+    },
+    {
+      "path": "visual_rework_20261009/binding/q2_tooltip_display_transition.json",
+      "before": null,
+      "after": "a83217a69c20e59c35264ace81324877311baeb7dca4bed6d3b690cd2ceb2b8c",
+      "bytes": 877,
+      "artifact": "candidate44_prepare/revision02/production_draft/visual_rework_20261009/binding/q2_tooltip_display_transition.json"
+    },
+    {
+      "path": "visual_rework_20261009/growth_tooltip_button.gd",
+      "before": null,
+      "after": "91120fea272230c72d94c3cfae7b401816acc7dfd4fb1ac7f7cd392b06abf69f",
+      "bytes": 595,
+      "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/growth_tooltip_button.gd"
+    },
+    {
+      "path": "visual_rework_20261009/binding/growth_tooltip_wrap_transition.json",
+      "before": null,
+      "after": "1bab116a8ae81fdb84e6352c66ecbec0b6296fbe75681df07986fd651d77cb8c",
+      "bytes": 1619,
+      "artifact": "candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/growth_tooltip_wrap_transition.json"
+    }
+  ],
+  "unique_file_count": 6,
+  "validation_summary": "candidate43_limited_validation/CANDIDATE45_VALIDATION.json",
+  "validation_sha256": "24ab414617f617c2d8b0a629c7ffbc1b27bec4bb943d35d7cd8316cec6c2a5fc",
+  "local_launchers_not_in_portable_public_selection": true,
+  "clean_clone_verified": false
+}
