@@ -1,0 +1,11 @@
+{
+  "schema": "d06-one-source-visual-successor-1",
+  "predecessor_source": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+  "changes": {
+    "scripts/combat/hero_combat_core.gd": {
+      "before": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "after": "3ea94d07702eacd90db05281abd87afb9562a6c7d31bf50404ac3db01e55ecb9"
+    }
+  },
+  "scope": "Only the original source stun commit and natural actor-timer expiry observer; no original skill behavior change."
+}

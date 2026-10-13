@@ -1,0 +1,331 @@
+{
+  "schema": "d06_limited_validation_checkpoint_v1",
+  "candidate": "candidate46_d06_counterattack",
+  "source_sha256": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+  "visual_sha256": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+  "historical_checks_inherited": false,
+  "no_all_green_total": true,
+  "fixtures": [
+    "60000 test wallet",
+    "AI disabled after original spawn-ready for timer integration",
+    "technical incoming packets through original damage_hero",
+    "manual advancement of original fixed steps",
+    "adversarial private reentry only in explicitly named negative cases"
+  ],
+  "positive_buff_or_witness_assignment": false,
+  "native_input": false,
+  "natural_clear": false,
+  "GUI_verified": true,
+  "runs": [
+    {
+      "run": "candidate46_definition_run01",
+      "local_evidence_relative": "checks/candidate46_definition_run01",
+      "exit_receipt_sha256": "7615957a3861805eb70881d2988ad72114982e95e318d61617eeb6712ed1ca54",
+      "business_report_sha256": "d394536576d63e436550454e16fc8cbc6d2c0dbe0431ddc4809dae86dd6665a2",
+      "joint_passed": false,
+      "business_passed": false,
+      "checks": 167,
+      "completed_groups": [
+        "definition_commerce"
+      ],
+      "business_failures": [
+        "four original base stats"
+      ],
+      "elapsed_seconds": 11.462044482001147,
+      "maximum_sampled_rss_bytes": 403394560,
+      "maximum_observed_sample_gap_seconds": 0.12132791100157192,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 1,
+      "raw_warning_count": 0,
+      "scope": "Preserved business failure: exact composite stat-dictionary comparison. Old report did not preserve binary floating point values; source arithmetic motivated a narrow numeric-comparison test revision. Production unchanged."
+    },
+    {
+      "run": "candidate46_definition_run02",
+      "local_evidence_relative": "checks/candidate46_definition_run02",
+      "exit_receipt_sha256": "3cdb0afc76b35d52ccb96ff0035c04b41574ab945168ab65211eba4edf54d077",
+      "business_report_sha256": "f02358186cc3e403f9a54a5f8dce7f1fd3d1eedf3cf9b457f4020ecaf74f6b1a",
+      "joint_passed": false,
+      "business_passed": true,
+      "checks": 176,
+      "completed_groups": [
+        "definition_commerce"
+      ],
+      "business_failures": [],
+      "elapsed_seconds": 13.882104921000064,
+      "maximum_sampled_rss_bytes": 403492864,
+      "maximum_observed_sample_gap_seconds": 0.19026755099912407,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 2,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "scope": "All 176 business checks passed. Joint result failed because exit RSS observation lacked contemporaneous terminal proof. Two cleanup observer errors remain; four process-exit proofs and subreaper restoration succeeded."
+    },
+    {
+      "run": "candidate46_control_run01",
+      "local_evidence_relative": "checks/candidate46_control_run01",
+      "exit_receipt_sha256": "8f142a7bbea0a75ffc9a363a7735eb0a3aa15844654524520b1ce148b070d0e2",
+      "business_report_sha256": "14e5dea9372c52f85c1489310767cf81f794ecf2174372572a79b481e00f730f",
+      "joint_passed": false,
+      "business_passed": false,
+      "checks": 297,
+      "completed_groups": [
+        "refresh",
+        "duplicates"
+      ],
+      "business_failures": [
+        "original living melee has unclipped HP for packet test",
+        "all requested original control integration cases complete"
+      ],
+      "elapsed_seconds": 28.808414072000232,
+      "maximum_sampled_rss_bytes": 403832832,
+      "maximum_observed_sample_gap_seconds": 0.1741946869988169,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 2,
+      "raw_warning_count": 0,
+      "scope": "Overall business failed. Refresh and duplicate-copy control groups completed. Damage group selected nonexistent kind melee; actual authored r01a receipt lists four minion actors. Arithmetic was not reached. No production fault established; no claim of insufficient enemy HP."
+    },
+    {
+      "run": "candidate46_damage_run01",
+      "local_evidence_relative": "checks/candidate46_damage_run01",
+      "exit_receipt_sha256": "a0d44fac2d7f87720795377c2f71e9536f6193f8b5a1d920aee3ae8e19c9f208",
+      "business_report_sha256": "d32526c3cbce11d51456e280c886ec39bd9843407445528b1112dc57d1543464",
+      "joint_passed": true,
+      "business_passed": true,
+      "checks": 126,
+      "completed_groups": [
+        "damage",
+        "arithmetic"
+      ],
+      "business_failures": [],
+      "elapsed_seconds": 13.75309213699984,
+      "maximum_sampled_rss_bytes": 405258240,
+      "maximum_observed_sample_gap_seconds": 0.10334633599995868,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "scope": "Independent damage and formula groups passed. Original minion HP120 ->108.5 ->98.5 ->88.5; ordinary final applies 15% once, snapshot_final and replay do not reapply. Prior control groups were not rerun."
+    },
+    {
+      "run": "candidate46_reentry_run01",
+      "local_evidence_relative": "checks/candidate46_reentry_run01",
+      "exit_receipt_sha256": "8844949988c6c42c33c6b62bf9ef088da607962edf433b6734abd9575ba591b9",
+      "business_report_sha256": "89e71aad5889b95ba06c3692390c61d8ed3b3c2b09eddefcd91d55dc0366492e",
+      "joint_passed": true,
+      "business_passed": true,
+      "checks": 177,
+      "completed_groups": [
+        "direct_private_fixed",
+        "G05_callback_private_fixed"
+      ],
+      "business_failures": [],
+      "elapsed_seconds": 27.682485866000206,
+      "maximum_sampled_rss_bytes": 405549056,
+      "maximum_observed_sample_gap_seconds": 0.15366399800041108,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "scope": "Direct private fixed-step and real G05 callback nested fixed-step both consume actual timer without granting claims/buff. Same actors later grant once through original public-step expiry. Outer callback frame observed; inner denied frame not directly observed."
+    },
+    {
+      "run": "candidate46_lifecycle_run01",
+      "local_evidence_relative": "checks/candidate46_lifecycle_run01",
+      "exit_receipt_sha256": "ff34dd2a995c0f3b129597c628a90e96bb26d2d31aa824b4333b749ecfdf16d7",
+      "joint_passed": false,
+      "business_passed": false,
+      "checks": 0,
+      "completed_groups": [],
+      "business_report_exists": false,
+      "stage_reports_exist": false,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "elapsed_seconds": 3.2262176089971035,
+      "maximum_sampled_rss_bytes": 329740288,
+      "maximum_observed_sample_gap_seconds": 0.23818606699933298,
+      "failure_code": "sample_gap_untrusted",
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "scope": "Startup resource gate failed before any business/stage output. Raw contains only engine version banner. Trace has no component timings; cause of the 238ms gap remains unknown. No lifecycle production defect established; no automatic retry."
+    },
+    {
+      "run": "candidate46_c02_combination_run01",
+      "local_evidence_relative": "checks/candidate46_c02_combination_run01",
+      "exit_receipt_sha256": "d944c7514156bfd975d2cfd6a7e340d3c71df2415c2bd431deeb04bf7d7c62c5",
+      "business_report_sha256": "7aa7bd2c103326fdd16e8fda3bfb3abfaed8a5e748820d1e62d08b8f69515227",
+      "joint_passed": true,
+      "business_passed": true,
+      "checks": 187,
+      "completed_groups": [
+        "c02_d06_q1_e1"
+      ],
+      "business_failures": [],
+      "elapsed_seconds": 12.552173634998326,
+      "maximum_sampled_rss_bytes": 406196224,
+      "maximum_observed_sample_gap_seconds": 0.059857411000848515,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "scope": "One original E1 retired tail after empty Q1: unchanged AP80/base84 snapshot, final product1.18*1.15 with original armor/frontguard gives46.6314545454545; actual HP258->211.368545454545 and contact receipt agree. Q1 naturally retires with zero hits. Technical first-room kills obtain108 cumulative XP and genuine skill point; AI disabled only after original approach, real incoming stun naturally expires before casts. Not all six skills or48equipment combat regressions."
+    },
+    {
+      "run": "candidate46_shop_gui_run01",
+      "local_evidence_relative": "checks/candidate46_shop_gui_run01",
+      "exit_receipt_sha256": "973dd4bd83a846241f3c01d4e8ce373aa6f3667a8e05e27cbd5d8d63bae81a92",
+      "business_report_sha256": "335aed795e1f6f2c089d98abbe32f80071dc988a3748a25128b32a3739a37074",
+      "joint_passed": true,
+      "business_passed": true,
+      "checks": 83,
+      "completed_stages": [
+        "01_D06_before_purchase",
+        "02_D06_after_purchase",
+        "03_D06_reopened"
+      ],
+      "elapsed_seconds": 32.71192977700048,
+      "maximum_sampled_rss_bytes": 664965120,
+      "maximum_observed_sample_gap_seconds": 0.05780071800108999,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 91,
+      "warnings_breakdown": {
+        "invalid_UID_text_path_fallback": 90,
+        "unsupported_VSync": 1
+      },
+      "manual_pixel_review": {
+        "builder": true,
+        "root": true,
+        "reviewer": true
+      },
+      "images": [
+        {
+          "relative_path": "checks/candidate46_shop_gui_run01/01_D06_before_purchase.png",
+          "sha256": "0ff0e17893fe971419d3c047a1b3642244f3cde9d529e4d31121eb32bcf004f1"
+        },
+        {
+          "relative_path": "checks/candidate46_shop_gui_run01/02_D06_after_purchase.png",
+          "sha256": "61b057ebae83c61f304666ec2d01659300cc9a5760c8dedeafb034004d92a627"
+        },
+        {
+          "relative_path": "checks/candidate46_shop_gui_run01/03_D06_reopened.png",
+          "sha256": "61b057ebae83c61f304666ec2d01659300cc9a5760c8dedeafb034004d92a627"
+        }
+      ],
+      "scope": "Full D06 name3150/four stats/passive wording readable and wrapped within actual viewport. Purchase updates original inventory and HPcap760/defense40/MS6.48, close/reopen retains display. Original item hover only gives generic selection hint; this is fixed shop detail validation."
+    },
+    {
+      "run": "candidate46_lifecycle_run02",
+      "local_evidence_relative": "checks/candidate46_lifecycle_run02",
+      "exit_receipt_sha256": "e9935b7043f6198e3378eccb525760f3b9a58daa1ab10e82ddf5585dce2f7956",
+      "business_report_sha256": "83a5726e9bc71c581c456771a11feb7808358b101e22b9fe41ae0ba3f2ddf9d7",
+      "joint_passed": false,
+      "business_passed": true,
+      "checks": 372,
+      "completed_groups": [
+        "pending_room_end",
+        "active_room_end_sales",
+        "death"
+      ],
+      "business_failures": [],
+      "elapsed_seconds": 26.95744383499914,
+      "maximum_sampled_rss_bytes": 405995520,
+      "maximum_observed_sample_gap_seconds": 0.1234476680001535,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_observer_error_count": 1,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true,
+      "raw_error_count": 0,
+      "raw_warning_count": 0,
+      "resource_failure_code": "RSS_exit_still_live_or_unproved",
+      "scope": "Pending actual stun cleared by technical original kills and genuine room settlement adds no claim. Active dual-copy effect clears at room end; original safe sale one/last/undo/rebuy never resurrect it. Original incoming lethal packet clears effect on true death. All three business cases pass; joint resource remains RED at process exit with one cleanup observer error. Four exit proofs are independent of observation validity.",
+      "sampling_phase_diagnostic": {
+        "relative_path": "checks/candidate46_lifecycle_run02/sampling_phases.private.json",
+        "sha256": "cfe61318b33641d8d2bf494c5ce3ebec7c7df692b44aa218c1652d7d1c4a2222",
+        "delivered": true,
+        "observational_only": true
+      },
+      "same_read_RSS_diagnostics": {
+        "failures": 2,
+        "status_state": "R",
+        "Threads": 1,
+        "VmRSS_line_count": 0,
+        "capture_failures": 0
+      }
+    }
+  ],
+  "remaining": [
+    "shorter/longer aggregate control extensions not dynamically tested",
+    "active-buff combat sale not available through original shop; formula copy predicate only",
+    "all prior 48 definitions unchanged checked; not all prior equipment combat behaviours rerun",
+    "clean noncached clone/import not verified",
+    "Candidate47 or later successors require their own regression evidence; candidate46 results do not transfer automatically."
+  ],
+  "resource_boundary": "896 MiB is a sampled gate, not a kernel-enforced peak guarantee. Unknown terminal RSS remains null. Preserved resource failures are not replaced by later successful runs.",
+  "rss_diagnostic_boundary": "Lifecycle run02 captured two original single-read status failures: sampled/current State R, Threads1, no VmRSS line. Original terminal proof failure remains RED; later exit0 does not validate earlier samples. This run did not exceed200ms gap and cannot explain historical gap failures.",
+  "supersedes_summary_sha256": "080ddddf9957690c66fcda1f76dcc90c174c845ac5c91fdf8b3767b3ba41f17c",
+  "GUI_scope": "Original shop fixed detail, purchase, close/reopen at actual captured viewport; not native mouse/keyboard and not all tooltip widgets."
+}

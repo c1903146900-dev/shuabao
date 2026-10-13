@@ -1,0 +1,173 @@
+{
+  "schema": "candidate46_d06_sparse_preservation_v1",
+  "scope": "Exact candidate45 -> candidate46 delta plus frozen limited-validation summaries; no full-copy replay.",
+  "base_source_sha256": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+  "base_visual_sha256": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+  "source_sha256": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+  "visual_sha256": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+  "review_manifest_sha256": "2d30791b459c5f3a69d8cebe8affc460ccf736e564cca0131cca8f72ddd4a794",
+  "changed_source_files": 17,
+  "modified": 8,
+  "new": 9,
+  "canonical_preimages_reused": 20,
+  "parent_before_images_reused": 8,
+  "historical_validation_inherited": false,
+  "all_green": false,
+  "clean_clone_import_verified": false,
+  "native_input": false,
+  "natural_clear": false,
+  "excluded": [
+    "full repeated game",
+    "cache",
+    "raw process logs",
+    "sampling private reports",
+    "screenshots",
+    "private launchers"
+  ],
+  "files": [
+    {
+      "path": ".gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "ANCESTOR_PREIMAGE_REFERENCES.json",
+      "bytes": 15201,
+      "sha256": "cfb6fe910157b24984f203b6704c496a9852e7e4aba28180d6b116625ee874a6",
+      "git_blob_sha1": "11958a98a57cdb25f8d622f6ce329e443effd275"
+    },
+    {
+      "path": "PARENT_PREIMAGE_REFERENCES.json",
+      "bytes": 4031,
+      "sha256": "3d9c72a940be93b73e8f23c9b931dc25e9c92e6f8c5c6429ace2b51d723e8c12",
+      "git_blob_sha1": "c66eb3a1e7a2e08aa3298c5c60c0f73709146659"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3056,
+      "sha256": "1a0e10a095302684ab6eb0424475d586df7d865cb9fc63bee1222fb90ad6fba8",
+      "git_blob_sha1": "544d5fd982cd8951a1a02a23b5ee5745da16fc74"
+    },
+    {
+      "path": "candidate46_prepare/revision02/REVIEW_MANIFEST.json",
+      "bytes": 4717,
+      "sha256": "2d30791b459c5f3a69d8cebe8affc460ccf736e564cca0131cca8f72ddd4a794",
+      "git_blob_sha1": "124623e3b474e5947b5039ef838ae643b7411765"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/equipment_counterattack_20261013/adapter.gd",
+      "bytes": 7529,
+      "sha256": "99be79eb16ced9ddd3555400ffd59210b8f2e423a3b3ef5d3a88f33d946e14fe",
+      "git_blob_sha1": "2e080672c02dbb78d5871c4b6c3e4bf8af036a62"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/equipment_counterattack_20261013/common_bridge.gd",
+      "bytes": 1556,
+      "sha256": "448a25a440260793f56c2924605bd30823eb7e3315fec0b3ff51a3250ed03dc9",
+      "git_blob_sha1": "694c679bd3dd46be0120c3fccc8021dc227bf38d"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/equipment_counterattack_20261013/decision10.json",
+      "bytes": 1261,
+      "sha256": "6a3ed0b922dbb1cb8468bcef2fc33217c26d17df7da174eabd16a2830e3519fb",
+      "git_blob_sha1": "ba9484d975c9f8da3512b71324396bccbf0dad41"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/equipment_counterattack_20261013/model.gd",
+      "bytes": 6536,
+      "sha256": "dee574f980308e18c68baeb9d8e65d48a3fa99da479a692db087cfa90db99e86",
+      "git_blob_sha1": "f07cc1f522fd4bb36ca7ce2ece6566442f8a0d07"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/equipment_counterattack_20261013/passive27.gd",
+      "bytes": 3170,
+      "sha256": "c65e05ae4fa7fccf4021d84d5d05dc3c78790d46447c38682921c216bd017636",
+      "git_blob_sha1": "87ffeeb4bc496e10b363f7eead6e0eae6291a7cf"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/scripts/combat/hero_combat_core.gd",
+      "bytes": 53356,
+      "sha256": "3ea94d07702eacd90db05281abd87afb9562a6c7d31bf50404ac3db01e55ecb9",
+      "git_blob_sha1": "3e1f50f5d8e25978ce4e614c4dceb7389d37874a"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "bytes": 112689,
+      "sha256": "93ab35c5834b69e53ee296ae705b3bc47cefeb661afeb2a9ad305aed4e97e1d7",
+      "git_blob_sha1": "af446360f2d0d4a6d02265de43a2842b2bffc73d"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/bridge.gd",
+      "bytes": 4091,
+      "sha256": "dcd35be1dce7f6365a0acb0d3ba29d7a74f090e8fa19adc4714ddd3c386aea91",
+      "git_blob_sha1": "2719b8d0e897c8ce6d8b30e33a0a254bf8181f3d"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "bytes": 7371,
+      "sha256": "870e86540d8db5adbd401f335cd13411bddaef43d5f54e5023e2b1bf756d53f5",
+      "git_blob_sha1": "3a1553e3857fb265de5c6d05e6f8bba7621f0dbe"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/d06_source_transition.json",
+      "bytes": 1702,
+      "sha256": "a27c7b1b3699d5a7f5a52a17b525c1db355bd5e2e58ffcb90024f9b25d4310d4",
+      "git_blob_sha1": "56911375cabf83cdaacb992d9a8cc064883f9e4f"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/d06_visual_source_transition.json",
+      "bytes": 507,
+      "sha256": "724603a5f4f9e0ff2fa4342d8d85f09aba607a41492d2ec919fd239835e1a5a9",
+      "git_blob_sha1": "5a17769ad665d0cf538b89296d658d29e2dac082"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/d06_visual_transition.json",
+      "bytes": 673,
+      "sha256": "af0451b081b22647a4eebde2e80f0d4c2cd82750244befc3f3fb1de4482ac293",
+      "git_blob_sha1": "e341f2e8cb00d6e9017e61efae91ceffb34a1b19"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/equipment49_plan.json",
+      "bytes": 4118,
+      "sha256": "e9d1fb09d675be36f1f416d457bcbfe3a9ccd58f773e3716feaafaec7f7ca5f6",
+      "git_blob_sha1": "fd843d6a376851112269f818cb92a904aa004f2b"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 13992,
+      "sha256": "7dc11d5f15f65f97c1161c4b70a892a2f8ae545e217d7c3c56c7041db5e2de5c",
+      "git_blob_sha1": "5f7c9ad4515b0228de623b5cc07c52b30d69dda3"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 326119,
+      "sha256": "bd7004e97cd0d35c6168201b507d06fd22e816a9734601c229cfb69a0fb99643",
+      "git_blob_sha1": "b1db30506913339fd36a397af63830c83ccfd622"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/binding/visual_binding.json",
+      "bytes": 9351,
+      "sha256": "ab03df0afc573452879dd2b478bb1a627e79a5cde845d31ae689a1ad128bef81",
+      "git_blob_sha1": "1c9d6692604ba04659a3e04074bbc7775cb0c476"
+    },
+    {
+      "path": "candidate46_prepare/revision02/production_draft/visual_rework_20261009/runtime_host.gd",
+      "bytes": 49086,
+      "sha256": "f953ef0e925ec5000e39dc4045707f8415462b71a395421d2d1cd67a7ff53327",
+      "git_blob_sha1": "afd82b95532aed3e35858050bb8dd2a6226d4674"
+    },
+    {
+      "path": "validation/D06_LIMITED_VALIDATION_ZH_FINAL.md",
+      "bytes": 3780,
+      "sha256": "c2a7cffe3b2426470f0768eef611a24c684243febcdaa312b80483e28a3c024d",
+      "git_blob_sha1": "608a5920caf8bd16f1da5194aa133a963ba732a0"
+    },
+    {
+      "path": "validation/LIMITED_VALIDATION_CHECKPOINT06.json",
+      "bytes": 15770,
+      "sha256": "1b71683d475b13a2ac002d8de1217a833ec31bb9d11718d63ddc1785391f346d",
+      "git_blob_sha1": "c13ed6e80224a80aad29e94bc06306b83cfef330"
+    }
+  ]
+}

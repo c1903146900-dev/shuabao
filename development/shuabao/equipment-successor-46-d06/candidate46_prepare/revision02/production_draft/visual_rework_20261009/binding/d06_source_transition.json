@@ -1,0 +1,31 @@
+{
+  "schema": "d06-source-transition-1",
+  "predecessor_source": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+  "changes": {
+    "res://scripts/combat/hero_combat_core.gd": {
+      "before": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "after": "3ea94d07702eacd90db05281abd87afb9562a6c7d31bf50404ac3db01e55ecb9"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "93ab35c5834b69e53ee296ae705b3bc47cefeb661afeb2a9ad305aed4e97e1d7"
+    },
+    "res://visual_rework_20261009/binding/bridge.gd": {
+      "before": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+      "after": "dcd35be1dce7f6365a0acb0d3ba29d7a74f090e8fa19adc4714ddd3c386aea91"
+    },
+    "res://visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "before": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "after": "870e86540d8db5adbd401f335cd13411bddaef43d5f54e5023e2b1bf756d53f5"
+    },
+    "res://visual_rework_20261009/binding/live_binding.gd": {
+      "before": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "after": "7dc11d5f15f65f97c1161c4b70a892a2f8ae545e217d7c3c56c7041db5e2de5c"
+    },
+    "res://visual_rework_20261009/runtime_host.gd": {
+      "before": "9195e3f133346ba38f99a0b7f4382cb965d550077062a3f38e4f5ce957b717ef",
+      "after": "f953ef0e925ec5000e39dc4045707f8415462b71a395421d2d1cd67a7ff53327"
+    }
+  },
+  "preimages": "Exact candidate45 modified-file before images retained in review bundle. All canonical20 ancestor before-images remain unchanged."
+}

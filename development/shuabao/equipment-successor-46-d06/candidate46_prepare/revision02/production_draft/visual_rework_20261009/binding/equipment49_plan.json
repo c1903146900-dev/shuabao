@@ -1,0 +1,85 @@
+{
+  "schema": "d06-equipment49-source-plan-1",
+  "status": "STATIC_DRAFT_ENGINE_AND_GUI_UNVERIFIED",
+  "parent_candidate": "candidate45_growth_tooltip_wrap",
+  "parent_source_sha256": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+  "parent_visual_sha256": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+  "supported_equipment": 49,
+  "added_item": "final:D06",
+  "inherited_supported_equipment": 48,
+  "formal_item": "DOCX table 9, row 7",
+  "formal_passive": "DOCX table 4, row 28",
+  "formal_parameters": {
+    "price": 3150,
+    "HP": 400,
+    "defense": 30,
+    "tenacity_percent": 35,
+    "move_percent": 8,
+    "passive_duration": 3,
+    "passive_move_percent": 20,
+    "passive_final_damage_percent": 15,
+    "passive_tenacity_percent": 30
+  },
+  "recipe": {
+    "intermediate:I08": 1100,
+    "intermediate:I16": 1200,
+    "base:B07": 450,
+    "combine_fee": 400
+  },
+  "decisions": "equipment_counterattack_20261013/decision10.json",
+  "implemented_control_sources": [
+    "hero_combat_core.damage_hero tenacity stun"
+  ],
+  "future_control_boundary": "No existing root source was found. Future tenacity-eligible controls require their own authentic apply/expire integration and validation; do not infer eligibility from generic timer names.",
+  "clock": "existing hero actor combat clock; pause and safe phases do not age effect",
+  "stat_order": "Original catalog move_speed base_fraction rule; immutable original hero move base; tenacity additive points before original Common projection/cap; existing final outgoing multiplier once, replay/snapshot excluded by original core.",
+  "transaction_rule": "Original atomic ledger/UID/inverse patches/90 percent invested-gold refund retained. Original shop is combat-locked, so live-buff sale is unreachable in legal flow; retention by copy-count is tested separately without claiming legal combat sales.",
+  "no_asset_injection": true,
+  "no_extra_damage_packets": true,
+  "old_authorities_modified": false,
+  "changed": [
+    {
+      "path": "res://scripts/combat/hero_combat_core.gd",
+      "before": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "after": "3ea94d07702eacd90db05281abd87afb9562a6c7d31bf50404ac3db01e55ecb9"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "93ab35c5834b69e53ee296ae705b3bc47cefeb661afeb2a9ad305aed4e97e1d7"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/bridge.gd",
+      "before": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+      "after": "dcd35be1dce7f6365a0acb0d3ba29d7a74f090e8fa19adc4714ddd3c386aea91"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "after": "870e86540d8db5adbd401f335cd13411bddaef43d5f54e5023e2b1bf756d53f5"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "after": "7dc11d5f15f65f97c1161c4b70a892a2f8ae545e217d7c3c56c7041db5e2de5c"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "9195e3f133346ba38f99a0b7f4382cb965d550077062a3f38e4f5ce957b717ef",
+      "after": "f953ef0e925ec5000e39dc4045707f8415462b71a395421d2d1cd67a7ff53327"
+    }
+  ],
+  "new": [
+    "equipment_counterattack_20261013/adapter.gd",
+    "equipment_counterattack_20261013/model.gd",
+    "equipment_counterattack_20261013/passive27.gd",
+    "equipment_counterattack_20261013/common_bridge.gd",
+    "equipment_counterattack_20261013/decision10.json",
+    "visual_rework_20261009/binding/equipment49_plan.json",
+    "visual_rework_20261009/binding/d06_source_transition.json",
+    "visual_rework_20261009/binding/d06_visual_transition.json",
+    "visual_rework_20261009/binding/d06_visual_source_transition.json"
+  ],
+  "engine_run": false,
+  "historical_checks_inherited": false
+}

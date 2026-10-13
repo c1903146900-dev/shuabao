@@ -1,0 +1,20 @@
+{
+  "schema": "equipment-authorized-d06-decisions-20261013-1",
+  "status": "USER_APPROVED_IMPLEMENTATION_DRAFT_ENGINE_UNVERIFIED",
+  "owner": "final:D06",
+  "assistant_message_id": "Sentinel_b92f64ca7750819184890c7d1ca16cca",
+  "assistant_at": "2026-10-13T09:22:22Z",
+  "user_message_id": "Sentinel_dc79a8a31b10819186c02bca14248806",
+  "user_at": "2026-10-13T11:03:00Z",
+  "user_verbatim": "行，那就继续做吧，按你的建议做。",
+  "approved_rules": [
+    "破阵甲再次触发时，只刷新3秒加成，不叠层。",
+    "卖掉最后一件破阵甲，已有加成立刻结束。",
+    "战斗结束，破阵甲的加成清除。"
+  ],
+  "outside_scope": "The fourth approved decision concerns G04 and is not implemented by this D06 candidate. Earlier C03 approvals are not substituted for this approval.",
+  "formal_item_source": "DOCX table 9, row 7",
+  "formal_passive_source": "DOCX table 4, row 28",
+  "numeric_authority": "res://tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json",
+  "control_scope": "Only the existing hero_combat_core.damage_hero tenacity-affected stun has a production source today. No new root, lock, knockback or other control mechanic is created or claimed."
+}

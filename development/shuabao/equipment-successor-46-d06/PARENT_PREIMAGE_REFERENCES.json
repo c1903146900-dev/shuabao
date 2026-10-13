@@ -1,0 +1,75 @@
+{
+  "scope": "All eight exact candidate45 before-images already persisted; reuse verified blobs without duplicating bytes.",
+  "rebuild_order": [
+    "candidate43-rebuild/game",
+    "display-successors-44-45 candidate44 stage",
+    "display-successors-44-45 candidate45 stage",
+    "this candidate46 stage"
+  ],
+  "files": [
+    {
+      "path": "scripts/combat/hero_combat_core.gd",
+      "before_sha256": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+      "persisted_path": "development/shuabao/candidate43-rebuild/game/scripts/combat/hero_combat_core.gd",
+      "persisted_commit": "42e89c9e6dd470d619c596e5e471882a17b2dcbb",
+      "bytes": 50325,
+      "git_blob_sha1": "4a2cd93d3f4f53f04fc7a3d4f6e75be9399cedeb"
+    },
+    {
+      "path": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before_sha256": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "persisted_path": "development/shuabao/candidate43-rebuild/game/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "persisted_commit": "42e89c9e6dd470d619c596e5e471882a17b2dcbb",
+      "bytes": 108217,
+      "git_blob_sha1": "41931f330579484bfca97bbcd3e41bd252ef6a00"
+    },
+    {
+      "path": "visual_rework_20261009/binding/bridge.gd",
+      "before_sha256": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+      "persisted_path": "development/shuabao/candidate43-rebuild/game/visual_rework_20261009/binding/bridge.gd",
+      "persisted_commit": "42e89c9e6dd470d619c596e5e471882a17b2dcbb",
+      "bytes": 4075,
+      "git_blob_sha1": "1677a77aa12691363ff729982840fa57e14cac5b"
+    },
+    {
+      "path": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before_sha256": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "persisted_path": "development/shuabao/candidate43-rebuild/game/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "persisted_commit": "42e89c9e6dd470d619c596e5e471882a17b2dcbb",
+      "bytes": 6145,
+      "git_blob_sha1": "04483c06f5378c8bc924ea30a174cc72c60e7430"
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "before_sha256": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "persisted_path": "development/shuabao/candidate43-rebuild/game/visual_rework_20261009/binding/live_binding.gd",
+      "persisted_commit": "42e89c9e6dd470d619c596e5e471882a17b2dcbb",
+      "bytes": 13345,
+      "git_blob_sha1": "321bda767a8653c1aedfa7805475643bc2e97466"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before_sha256": "372e7f539899112a944bb76f8de5a6063d0247c57082271fc1243f7fb6000842",
+      "persisted_path": "development/shuabao/display-successors-44-45/candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/source_binding.json",
+      "persisted_commit": "419d1992d860867b7087a87d8aecf17d5504255f",
+      "bytes": 323731,
+      "git_blob_sha1": "e0ee2df733d3dbb859c8b8ff278832b25cb3829e"
+    },
+    {
+      "path": "visual_rework_20261009/binding/visual_binding.json",
+      "before_sha256": "e8d651575f374922d7aad2365013540c6b37a3627893e692fb9b306b9f3a7c53",
+      "persisted_path": "development/shuabao/display-successors-44-45/candidate45_prepare/revision01/production_draft/visual_rework_20261009/binding/visual_binding.json",
+      "persisted_commit": "419d1992d860867b7087a87d8aecf17d5504255f",
+      "bytes": 9351,
+      "git_blob_sha1": "e5b52273aa71236f0c65a369760bdcdb9d59bb4b"
+    },
+    {
+      "path": "visual_rework_20261009/runtime_host.gd",
+      "before_sha256": "9195e3f133346ba38f99a0b7f4382cb965d550077062a3f38e4f5ce957b717ef",
+      "persisted_path": "development/shuabao/display-successors-44-45/candidate45_prepare/revision01/production_draft/visual_rework_20261009/runtime_host.gd",
+      "persisted_commit": "419d1992d860867b7087a87d8aecf17d5504255f",
+      "bytes": 48556,
+      "git_blob_sha1": "1692457cedb681f0029d1fd589ac72603c747142"
+    }
+  ]
+}
