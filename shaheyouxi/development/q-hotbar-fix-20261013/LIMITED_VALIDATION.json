@@ -1,0 +1,84 @@
+{
+  "schema": "q-hotbar-limited-checkpoint-1",
+  "production_files": 2,
+  "test_files": 9,
+  "main_suite_methods": 120,
+  "all_120_joint_passed": false,
+  "mirror_tests_double_counted": false,
+  "results": [
+    {
+      "case": "A",
+      "completed_methods": 58,
+      "business": "business_pass_posthoc",
+      "resource_or_wrapper": "wrapper_red"
+    },
+    {
+      "case": "B",
+      "completed_methods": 51,
+      "business": "business_pass_posthoc",
+      "resource_or_wrapper": "resource_red"
+    },
+    {
+      "case": "C",
+      "completed_methods": 8,
+      "business": "joint_pass",
+      "resource_or_wrapper": "pass",
+      "private_receipt_sha256": "319026f1f8451f89125841a6beab01084ff2aad5e3540704005dc138c3235442"
+    },
+    {
+      "case": "D1",
+      "completed_methods": 1,
+      "business": "joint_pass",
+      "resource_or_wrapper": "pass",
+      "private_receipt_sha256": "71b806d16e215c207cd4348af732ac48cc54c6740da8a28f4911bd8e9c6269a2"
+    },
+    {
+      "case": "D2_observed",
+      "completed_methods": 1,
+      "business": "business_pass_posthoc",
+      "resource_or_wrapper": "resource_red",
+      "private_receipt_sha256": "3226ae53acfe174f8a4b0f56f1e31114ce952ff3ec013b15c82c46a41229cee4"
+    },
+    {
+      "case": "E_observed",
+      "completed_methods": 1,
+      "business": "joint_pass",
+      "resource_or_wrapper": "pass",
+      "private_receipt_sha256": "52d50b2b32f0d020114ba8cd28d5aea6681c80750a32ea128c14681e4d5d83ae"
+    },
+    {
+      "case": "F0_producer",
+      "completed_methods": 1,
+      "business": "joint_pass",
+      "resource_or_wrapper": "pass",
+      "private_receipt_sha256": "ac1f51c6843b1506fac81f8b158a32dc164e811b0877ab6d19b563261535a24e"
+    },
+    {
+      "case": "F0_cold_consumer",
+      "completed_methods": 1,
+      "business": "joint_pass",
+      "resource_or_wrapper": "pass",
+      "private_receipt_sha256": "060aa39e95c4bd44b0a24dfe356a26b04f0260d01ad0851ec088bdd55a84fdab"
+    },
+    {
+      "case": "F1_GUI",
+      "completed_methods": 0,
+      "business": "incomplete",
+      "resource_or_wrapper": "owned_descendant_escaped",
+      "private_receipt_sha256": "89789b541ee12e3945cd6cffea2b763431ca182618309f45666f35527b65f684"
+    }
+  ],
+  "source_diagnostic_modifications_published": false,
+  "historical_reds_replaced": false,
+  "F0_independent_process_cold_store_passed": true,
+  "F1_gui_save_and_cold_passed": false,
+  "native_input_verified": false,
+  "complete_game_acceptance": false,
+  "limits": [
+    "A58/B51 exact JUnit method sets and source/cache hashes were verified posthoc; original wrapper/resource reds remain.",
+    "D2 and E completion came from source-identical methods with fixed stage-only markers. Original D2/E timeout attempts remain failed.",
+    "F1 four process-exit proofs and post-pins passed, but cleanup resource observer also recorded escape errors. No snapshot or Consumer qualification.",
+    "F1 escaped child role was not proved by an application receipt; process names were not used to infer it.",
+    "No original run receipts, generated identities, saves or screenshots are published."
+  ]
+}

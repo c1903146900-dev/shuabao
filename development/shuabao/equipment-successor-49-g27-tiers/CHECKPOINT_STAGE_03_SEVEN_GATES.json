@@ -1,0 +1,228 @@
+{
+  "schema": "candidate49-additional-seven-gates-limited-checkpoint-1",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "previous_checkpoints_replaced": false,
+  "production_changed": false,
+  "full_gameplay_acceptance": false,
+  "raw_logs_included": false,
+  "results": [
+    {
+      "case": "candidate49_g04_d06_lifecycle__pending_room_end_run01",
+      "receipt_sha256": "94d92d389f55a201f8214b31644c96bc8426d24ead3911761a43065a50b3e69e",
+      "joint_passed": true,
+      "business": {
+        "passed": true,
+        "checks": 69,
+        "completed": [
+          "candidate47_d06_lifecycle_regression:pending_room_end"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 14.609335195000313,
+      "sampled_peak_rss_bytes": 359124992,
+      "maximum_sample_gap_seconds": 0.15249344699986978,
+      "failure_code": null,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_d06_lifecycle__active_room_end_run01",
+      "receipt_sha256": "a3796976667bb708f25c260f7879a26980af3d29ab841aed1cbf49c89878d775",
+      "joint_passed": true,
+      "business": {
+        "passed": true,
+        "checks": 70,
+        "completed": [
+          "candidate47_d06_lifecycle_regression:active_room_end"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 14.12465161399814,
+      "sampled_peak_rss_bytes": 359206912,
+      "maximum_sample_gap_seconds": 0.06437740200271946,
+      "failure_code": null,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_d06_lifecycle__death_run01",
+      "receipt_sha256": "dd852031bb20528ff8aa00b157dab1d163f4c4dfa90a91137df66c95ea83797d",
+      "joint_passed": true,
+      "business": {
+        "passed": true,
+        "checks": 61,
+        "completed": [
+          "candidate47_d06_lifecycle_regression:death"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 19.51230763300191,
+      "sampled_peak_rss_bytes": 359198720,
+      "maximum_sample_gap_seconds": 0.11383281599773909,
+      "failure_code": null,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_d06_aggregate__shorter_run01",
+      "receipt_sha256": "6d8ee82e826b557cf790f5f108839643324a983e66d2ffdb29df8ac2b5a15374",
+      "joint_passed": true,
+      "business": {
+        "passed": true,
+        "checks": 65,
+        "completed": [
+          "candidate47_d06_aggregate_control:shorter"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 14.119257531001494,
+      "sampled_peak_rss_bytes": 359174144,
+      "maximum_sample_gap_seconds": 0.0589477089997672,
+      "failure_code": null,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_d06_aggregate__longer_run01",
+      "receipt_sha256": "8076ea0fa76268d38e233075eda012000aa14b62c5d95955519b3178ccc8d1f5",
+      "joint_passed": false,
+      "business": {
+        "passed": true,
+        "checks": 65,
+        "completed": [
+          "candidate47_d06_aggregate_control:longer"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 13.239745250000851,
+      "sampled_peak_rss_bytes": 359178240,
+      "maximum_sample_gap_seconds": 0.13591874099802226,
+      "failure_code": "RSS_exit_still_live_or_unproved",
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [
+        "cleanup_resources:GuardError('RSS_exit_still_live_or_unproved')"
+      ],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_reward_replay__main_run01",
+      "receipt_sha256": "5b781e26b614800b0faa47c0f3a2d422bd66992bd83850bc7dbe996f47232d3e",
+      "joint_passed": true,
+      "business": {
+        "passed": true,
+        "checks": 71,
+        "completed": [
+          "real_reward_and_replay:main"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 12.57209234200127,
+      "sampled_peak_rss_bytes": 359608320,
+      "maximum_sample_gap_seconds": 0.08279770000081044,
+      "failure_code": null,
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    },
+    {
+      "case": "candidate49_g04_forgery__main_run01",
+      "receipt_sha256": "62f630171728ec38237b20c9ab9e5bda982421ee28fc3a73730b562bb521aee8",
+      "joint_passed": false,
+      "business": {
+        "passed": true,
+        "checks": 112,
+        "completed": [
+          "forged_sources_and_owners:main"
+        ],
+        "GUI_verified": false,
+        "raw_error_count": 0,
+        "raw_warning_count": 0
+      },
+      "elapsed_seconds": 20.812420959999145,
+      "sampled_peak_rss_bytes": 359968768,
+      "maximum_sample_gap_seconds": 0.1777786210004706,
+      "failure_code": "RSS_exit_still_live_or_unproved",
+      "four_exit_proofs": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true
+      },
+      "cleanup_resource_errors": [
+        "cleanup_resources:GuardError('RSS_exit_still_live_or_unproved')"
+      ],
+      "exit_code": 0,
+      "local_subreaper_restored": true,
+      "post_pins_verified": true
+    }
+  ],
+  "source_reward_phase_observed_stages": 20,
+  "limitations": [
+    "D06 group labels retain historical candidate47 text only; all listed runs independently pin and execute candidate49. No earlier results inherited.",
+    "D06 and reward tests use their declared technical model/control/reward fixtures; no claim of natural in-combat shop transactions or natural gold farming.",
+    "Longer and forgery business checks passed but RSS-exit observer resource gates remain red. No unchanged rerun.",
+    "Candidate49 original single_three/sequential/overshoot independent cases remain not run; candidate49 growth proof is separately scoped and does not masquerade as those exact cases.",
+    "Default GUI0-stage three-frame limited review remains separate; growth-stage GUI and native-input play remain not executed here.",
+    "Ordinary G21/G27 admission is unchanged and no acquisition/award-chain claim is added.",
+    "896MiB is sampled aggregate RSS, not kernel hard peak."
+  ]
+}

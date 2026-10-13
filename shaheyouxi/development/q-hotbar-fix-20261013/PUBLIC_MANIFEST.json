@@ -1,0 +1,155 @@
+{
+  "schema": "q-hotbar-source-delta-1",
+  "base_repository": "c1903146900-dev/shuabao",
+  "base_commit": "450836d12d875cc553d00e25c5d140dc7605d353",
+  "baseline_project": "shaheyouxi/game",
+  "source_files": [
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/scripts/inventory/inventory_drop_plan012.gd",
+      "bytes": 6122,
+      "sha256": "25da9c2aa6a2e31a2f63226a6d6484569f63041e2ceacf2fe1d553066ffe39e1",
+      "git_blob_sha1": "b5e66833bbd53a35e4db75509f7538afaced69a5"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/scripts/inventory/ui012/inventory_panel012.gd",
+      "bytes": 17024,
+      "sha256": "dda765e490a2324ac44217fe0f4d2b081e03fca1cf76a4d470ccb9a021852e62",
+      "git_blob_sha1": "67eda65de646ed704313560d64ea7b506c155589"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryDropClientInput012Test.gd",
+      "bytes": 7063,
+      "sha256": "ed9caf26efc2ad76012b3029d9b9b29a2cdfcddd5b2f4372fe70c72f22f1f515",
+      "git_blob_sha1": "5a90ece94c56a685f728da278dedf14564a82cae"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryDropPlan012Test.gd",
+      "bytes": 9692,
+      "sha256": "9807c412c3cb8bfdf145eb4d2da43a15ebad5dc3c47f6d1862846f781fb05c2b",
+      "git_blob_sha1": "23497d95928302254af3dc6b77c7a63a00b220c3"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryGround012Test.gd",
+      "bytes": 10438,
+      "sha256": "9ef0852a95dbfa84af509259cbe6ee7b3d9925cba7688ee67e8c85f10293dd04",
+      "git_blob_sha1": "6154fa89a17b477950c5655a7de7323b44d85215"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryGroundFrame012Test.gd",
+      "bytes": 11737,
+      "sha256": "4da3459f4af9a2c8c3ba07adbda0536437deb9f88e48548ce648dfc15d6fa500",
+      "git_blob_sha1": "90de5eddc1791d3aa3174753208554cfbfa7f669"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryHotFrame012Test.gd",
+      "bytes": 8316,
+      "sha256": "4047db306571068eace8da40654af5c9d96e8d043aedccf394b0d14aaa3a97e3",
+      "git_blob_sha1": "10fea633536f6cd4686ad2bf40479258f699d22e"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryLive012Test.gd",
+      "bytes": 29841,
+      "sha256": "2fd97781a5d48926bbd06e9e4c1558a37d1147f503c29871d65f303cbd56a2a5",
+      "git_blob_sha1": "9982bc5fb02308995e3d0525ee4b03829630c011"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryPanel012Test.gd",
+      "bytes": 20789,
+      "sha256": "1821ea1b126b348a663099abd97e1655b8f5830965587c39deed02975b9e1ce5",
+      "git_blob_sha1": "2fdcf67662283669610badd88ff98e29e0f45fd5"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/ui_sync012/InventoryLive012Test.gd",
+      "bytes": 29841,
+      "sha256": "2fd97781a5d48926bbd06e9e4c1558a37d1147f503c29871d65f303cbd56a2a5",
+      "git_blob_sha1": "9982bc5fb02308995e3d0525ee4b03829630c011"
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/ui_sync012/InventoryPanel012Test.gd",
+      "bytes": 20789,
+      "sha256": "1821ea1b126b348a663099abd97e1655b8f5830965587c39deed02975b9e1ce5",
+      "git_blob_sha1": "2fdcf67662283669610badd88ff98e29e0f45fd5"
+    }
+  ],
+  "preimages": [
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/scripts/inventory/inventory_drop_plan012.gd",
+      "baseline_path": "shaheyouxi/game/scripts/inventory/inventory_drop_plan012.gd",
+      "baseline_sha256": "e1aceafa98db9f888391566ecfeb8c4f97a79a0770b5a74c5f98f056212d5621",
+      "baseline_git_blob_sha1": "cd3814ead257bdda924774b569127d568f3756e9",
+      "baseline_bytes": 6056
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/scripts/inventory/ui012/inventory_panel012.gd",
+      "baseline_path": "shaheyouxi/game/scripts/inventory/ui012/inventory_panel012.gd",
+      "baseline_sha256": "526dfb3719d18f4e1759846d8d7836d024496d97cc9afc4a6cabe899dd6864f3",
+      "baseline_git_blob_sha1": "f7e23d3aac57cba322a9c3813f3a9fff7e19e3b6",
+      "baseline_bytes": 16789
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryDropClientInput012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryDropClientInput012Test.gd",
+      "baseline_sha256": "f5520a67b23c8dc8d2e9bd0f7897660e505c810756d942220cc945be53d31841",
+      "baseline_git_blob_sha1": "8252f82d59875158761ca156e080ee1d09ef13ab",
+      "baseline_bytes": 4522
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryDropPlan012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryDropPlan012Test.gd",
+      "baseline_sha256": "e2e85c21501efbb631266194eb363a479afa978d3212d584a16a4a5f474276ae",
+      "baseline_git_blob_sha1": "09bb2bbbe6b04aaf28b4b2b312c29b55061f720c",
+      "baseline_bytes": 7465
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryGround012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryGround012Test.gd",
+      "baseline_sha256": "eaedae1bf78cfe1e529bcb8582f8bcb422be60fb63d0d41ef930f241f3208150",
+      "baseline_git_blob_sha1": "6cc9a91dfd7948ae9f4d3a5f0982eaaecded3615",
+      "baseline_bytes": 9090
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryGroundFrame012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryGroundFrame012Test.gd",
+      "baseline_sha256": "86bb94d3778e2154bfcabff9868935c5b6c5c06954388d2d2b90e9dfcbcc938e",
+      "baseline_git_blob_sha1": "03b74361bcf93a6424c0d90db94534312bc3b460",
+      "baseline_bytes": 10137
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryHotFrame012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryHotFrame012Test.gd",
+      "baseline_sha256": "ac8cd383166ecdf4b9e4363478c657e6331cd5b712069bbd8d8f4122d3987726",
+      "baseline_git_blob_sha1": "f8a5adb0758e752687b269f73a9bff1e21fd6a8c",
+      "baseline_bytes": 7612
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryLive012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryLive012Test.gd",
+      "baseline_sha256": "1caab2f694e1f64e712f363d8907e423a5199e1ab8a31e24b3a34301f76014ef",
+      "baseline_git_blob_sha1": "bf2836bbbce608cf8876b00e44e48d0a5595d0d8",
+      "baseline_bytes": 26921
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/inventory/InventoryPanel012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/inventory/InventoryPanel012Test.gd",
+      "baseline_sha256": "4efeb90e5202170e0c0c794136f2de0be17e16227d20e2273573c1e40ea137a2",
+      "baseline_git_blob_sha1": "0cfe82f86cc6ca65971b9411cb4b5f54880dd2e6",
+      "baseline_bytes": 19002
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/ui_sync012/InventoryLive012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/ui_sync012/InventoryLive012Test.gd",
+      "baseline_sha256": "1caab2f694e1f64e712f363d8907e423a5199e1ab8a31e24b3a34301f76014ef",
+      "baseline_git_blob_sha1": "bf2836bbbce608cf8876b00e44e48d0a5595d0d8",
+      "baseline_bytes": 26921
+    },
+    {
+      "path": "shaheyouxi/development/q-hotbar-fix-20261013/source_delta/game/tests/ui_sync012/InventoryPanel012Test.gd",
+      "baseline_path": "shaheyouxi/game/tests/ui_sync012/InventoryPanel012Test.gd",
+      "baseline_sha256": "4efeb90e5202170e0c0c794136f2de0be17e16227d20e2273573c1e40ea137a2",
+      "baseline_git_blob_sha1": "0cfe82f86cc6ca65971b9411cb4b5f54880dd2e6",
+      "baseline_bytes": 19002
+    }
+  ],
+  "reconstruction": "Verify each baseline Git blob and SHA256; replace only the corresponding eleven paths with source_delta/game postimages. Keep all other baseline files. Preserve parent .gdignore when storing this snapshot under root Godot.",
+  "runtime_project_switched": false
+}
