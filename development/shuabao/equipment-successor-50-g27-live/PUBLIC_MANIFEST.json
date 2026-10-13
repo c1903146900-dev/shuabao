@@ -1,0 +1,78 @@
+{
+  "schema": "candidate50-sparse-public-source-checkpoint-1",
+  "parent_commit": "5d26eec68eeeff12dc34209bca355b2c42803eea",
+  "source_sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+  "source_delta_count": 5,
+  "source_bytes_unchanged": true,
+  "management_json_uses_relative_references": true,
+  "entries_excluding_this_manifest": [
+    {
+      "target_path": "development/shuabao/equipment-successor-49-g27-tiers/ISOLATED_THREE_STAGES_SUMMARY.json",
+      "bytes": 3430,
+      "sha256": "e84fedddb9d793a067c62cf1d180eeda1c829776aa19805f67646299e5cdfdca",
+      "git_blob_sha1": "110f52545dd830e3213de1c02413995e38fdc258"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/BEFORE_IMAGE_REFERENCES.json",
+      "bytes": 1613,
+      "sha256": "bd8db4ab05998726b3cdd4e2c8a75d010de4568de83629e75f04831848ef8e00",
+      "git_blob_sha1": "bfcc5add6a4bc174fb40095183dc7137e97d9d4f"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/LIMITED_VALIDATION.json",
+      "bytes": 6055,
+      "sha256": "a334fe4002d70c924c6f1877580cef2b55807fd5c63db4ff32a7867181637c1f",
+      "git_blob_sha1": "d3a9962b9abb6f22aad00a9659c439f1ce05d28c"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/README.md",
+      "bytes": 1663,
+      "sha256": "43bd4a6f299a94c977c999d963705eda74d494d0b5d6eeb4ff641786b6d50770",
+      "git_blob_sha1": "ad9484924b22d4a55cf374785a07d3dfbd4b6c7a"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/SOURCE_REVIEW.json",
+      "bytes": 3351,
+      "sha256": "28a641e4838f9a59935c9d2e35952b1e076859835d5f7e5f8f24b2a9acac98e0",
+      "git_blob_sha1": "2d837f966f19b5b5e295d627f4f4b884d7cfc098"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/hex_component_expert_20261013/catalog.gd",
+      "bytes": 3714,
+      "sha256": "887853fb69017bb1a8988f422b0927a8a9001fcf5378e55eb390c044c3f06fc2",
+      "git_blob_sha1": "a9fd358852a44ec0f7dbe67dc538b800708b1dd4"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/bridge.gd",
+      "bytes": 4061,
+      "sha256": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05",
+      "git_blob_sha1": "6e14ce0a0b5c39aba00b90b4a981d9af92d63e7a"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/g27_live_admission_plan.json",
+      "bytes": 5233,
+      "sha256": "71a016e9c1b038d1164254d23dead787534a1a4d7fc2a9d84d5711aae80960f4",
+      "git_blob_sha1": "692201157f3f5e89a6c5c9c2be2073a3ea516b00"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 15693,
+      "sha256": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5",
+      "git_blob_sha1": "7d57bdb2cc54060d15d1e93fec06f7c128e15112"
+    },
+    {
+      "target_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 331113,
+      "sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+      "git_blob_sha1": "628e889a55b1cc71cac06ef66cc14f8dfdf72f56"
+    }
+  ],
+  "status": "Limited development checkpoint after GUI01 business failure; no full-game or pixel acceptance.",
+  "previous_local_draft_allowlist_sha256": "d52a07fb480619914402d4ee08ee53c8232b0f4780e5ea1c5e99b9213caa5510"
+}

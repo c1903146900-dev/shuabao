@@ -1,0 +1,74 @@
+{
+  "status": "SPARSE_SOURCE_REVIEW_NOT_COPIED_NOT_PARSED_NOT_RUN",
+  "base_candidate": "candidate49_g27_formal_tiers",
+  "proposed_candidate": "candidate50_g27_ordinary_admission",
+  "base_source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "base_visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "source_sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": [
+    {
+      "path": "hex_component_expert_20261013/catalog.gd",
+      "kind": "new",
+      "before": null,
+      "after": "887853fb69017bb1a8988f422b0927a8a9001fcf5378e55eb390c044c3f06fc2",
+      "bytes": 3714
+    },
+    {
+      "path": "visual_rework_20261009/binding/bridge.gd",
+      "kind": "modify",
+      "before": "7a25f2beb4c85171df0c992a8202c2389ec1c503923b715f03db649662e6a384",
+      "after": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05",
+      "bytes": 4061
+    },
+    {
+      "path": "visual_rework_20261009/binding/g27_live_admission_plan.json",
+      "kind": "new",
+      "before": null,
+      "after": "71a016e9c1b038d1164254d23dead787534a1a4d7fc2a9d84d5711aae80960f4",
+      "bytes": 5233
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "kind": "modify",
+      "before": "5b797c7d1649e357ec08edbf4ad21c902ea37887ccbc2b04b2c713cbb60e0c11",
+      "after": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5",
+      "bytes": 15693
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "kind": "modify",
+      "before": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+      "after": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+      "bytes": 331113
+    }
+  ],
+  "modified_count": 3,
+  "new_count": 2,
+  "core": 1774,
+  "visual": 72,
+  "intersection": 8,
+  "ancestor": 22,
+  "ancestor_rows_unchanged": true,
+  "original_catalog_twelve_hooks_unchanged_sha256": "d6b63ac39558cc95a4e0607d9935da85d981206114041c308920ac8f1e58e323",
+  "q3_actions_177_and_transitions_unchanged": true,
+  "maps_overlay_verified": true,
+  "map_hash_passes": 1,
+  "unique_overlay_files_hashed": 1838,
+  "overlay_bytes_hashed": 193295580,
+  "delta_and_preimage_files_additional_small_hashes": true,
+  "script_sha256": "204d31661ebc211fd642370f3bdc82b73a2976292bb4f1cd18b729a176c26971",
+  "engine_run": false,
+  "full_candidate_copied": false,
+  "original49_unchanged": true,
+  "pending_tests": [
+    "exact13 capability and fail-closed malformed/old12/unknown/duplicate hooks",
+    "original seed1 offer/open/refresh/select G27, G21 remains unsupported",
+    "same Model commerce buy/craft/sell/undo and outer-only1.35 projection",
+    "base/intermediate/final and no hidden ingredient counting; original current HP clamp",
+    "default Host real_ready choice/HUD stats and unmodified normal entrance, if graphics window is separately authorized"
+  ],
+  "prior_detached_results_inherited": false,
+  "original_review_manifest_sha256": "7c1756bb322aba14eca64e377bf0efa1787b3a3c65633bfda159345e5dfbba0b",
+  "note": "Historical source-preparation record; original status/pending_tests describe its creation time. Read LIMITED_VALIDATION.json for later evidence."
+}

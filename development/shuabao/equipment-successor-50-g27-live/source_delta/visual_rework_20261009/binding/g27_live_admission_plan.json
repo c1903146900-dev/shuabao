@@ -1,0 +1,130 @@
+{
+  "schema": "g27-one-ordinary-capability-successor-1",
+  "status": "PREPARED_SOURCE_REVIEW_NOT_PARSED_NOT_RUN",
+  "parent_candidate": "candidate49_g27_formal_tiers",
+  "parent_source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "parent_visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "formal_source": {
+    "source": "mechanics",
+    "file": "heroes_mechanics_no_values_v03(1).docx",
+    "part": "word/document.xml",
+    "paragraph_all_body_descendants": 360
+  },
+  "formal_template": "未合成为最终装备的基础与中级组件，其提供的基础属性提高[G27-1]%。只强化最外层持有的组件，不重复计算其合成树内的材料；合成成装后对应增益消失。",
+  "formal_parameter": {
+    "token": "G27-1",
+    "label": "未成装组件基础属性增幅",
+    "unit": "%",
+    "values": [
+      35
+    ],
+    "rank_count": 1,
+    "source": {
+      "source": "numbers",
+      "file": "heroes_balance_values_v03(1).xlsx",
+      "sheet": "通用海克斯",
+      "row": 120,
+      "cells": [
+        "E120"
+      ]
+    },
+    "notes": "",
+    "balance_status": "source_v03_initial_unvalidated",
+    "overrides": []
+  },
+  "formal_pool_approval": {
+    "id": "approve_g24_g30_formal_pool",
+    "status": "user_confirmed",
+    "rules": {
+      "enabled_common_hexes": [
+        "common_g24",
+        "common_g25",
+        "common_g26",
+        "common_g27",
+        "common_g28",
+        "common_g29",
+        "common_g30"
+      ],
+      "activation": "formal_pool_with_normal_hook_and_eligibility_checks"
+    },
+    "authority": {
+      "user_message_id": "Sentinel_c2c2b5caac7081919f15300d065626e2",
+      "user_quote": "可以",
+      "accepted_question_id": "Sentinel_233cf2c790408191a03ba232be67d62e",
+      "accepted_scope": "Include the seven supplied G24–G30 proposals in the formal common-Hex pool; numerically balance alongside the others"
+    },
+    "preserves_original_source": true
+  },
+  "admission_delta": {
+    "historical_parent_hex_hooks": [
+      "hex.final_design.yanguizhou_h01.v1",
+      "hex.final_design.yanguizhou_h02.v1",
+      "hex.final_design.yanguizhou_h03.v1",
+      "hex.final_design.yanguizhou_h04.v1",
+      "hex.final_design.yanguizhou_h05.v1",
+      "hex.final_design.yanguizhou_h06.v1",
+      "hex.final_design.common_g01.v1",
+      "hex.final_design.common_g05.v1",
+      "hex.final_design.common_g06.v1",
+      "hex.final_design.common_g15.v1",
+      "hex.final_design.common_g24.v1",
+      "hex.final_design.common_g30.v1"
+    ],
+    "current_hex_hooks": [
+      "hex.final_design.yanguizhou_h01.v1",
+      "hex.final_design.yanguizhou_h02.v1",
+      "hex.final_design.yanguizhou_h03.v1",
+      "hex.final_design.yanguizhou_h04.v1",
+      "hex.final_design.yanguizhou_h05.v1",
+      "hex.final_design.yanguizhou_h06.v1",
+      "hex.final_design.common_g01.v1",
+      "hex.final_design.common_g05.v1",
+      "hex.final_design.common_g06.v1",
+      "hex.final_design.common_g15.v1",
+      "hex.final_design.common_g24.v1",
+      "hex.final_design.common_g30.v1",
+      "hex.final_design.common_g27.v1"
+    ],
+    "added_only": "hex.final_design.common_g27.v1",
+    "unexpanded": [
+      "common_g21",
+      "common_g25",
+      "common_g26",
+      "common_g28",
+      "common_g29"
+    ],
+    "adapter_hooks_unchanged": 15,
+    "supported_equipment_unchanged": 50
+  },
+  "catalog_successor": "Existing original twelve-hook catalog is byte-preserved. New leaf first verifies caller supplies exactly thirteen or thirteen plus original fifteen adapter hooks, then reuses Existing.build with an explicitly narrower read-only view; any ancestor rejection survives. Only the bound current result returns actual thirteen-hook capabilities.",
+  "changes": {
+    "hex_component_expert_20261013/catalog.gd": {
+      "before": null,
+      "after": "887853fb69017bb1a8988f422b0927a8a9001fcf5378e55eb390c044c3f06fc2"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "7a25f2beb4c85171df0c992a8202c2389ec1c503923b715f03db649662e6a384",
+      "after": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "5b797c7d1649e357ec08edbf4ad21c902ea37887ccbc2b04b2c713cbb60e0c11",
+      "after": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5"
+    }
+  },
+  "unchanged_authorities": [
+    "original Model and selector RNG/open/refresh/select commands",
+    "original Session and reward table",
+    "50 equipment definitions and original commerce UID/undo/lineage",
+    "candidate49 component tier consumer and G21 ordering",
+    "Common caps and original stat-to-hero projection",
+    "all old22 ancestor replacements and historical parent twelve-hook manifests",
+    "Q3 original177 file map and every historical action-source transition",
+    "visual72 bindings and assets"
+  ],
+  "q3_transition_required": false,
+  "q3_reason": "No changed file belongs to the original177 action map; no extra Q3 transition is created.",
+  "runtime_acceptance": "NOT_RUN",
+  "ordinary_hex_selection": "NOT_RUN",
+  "native_input": "NOT_RUN",
+  "historical_test_qualification_inherited": false
+}

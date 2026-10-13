@@ -1,0 +1,70 @@
+{
+  "schema": "candidate49-isolated-three-stages-public-relative-summary-1",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "rows": [
+    {
+      "stage": 1,
+      "receipt": "checks/candidate49_isolated_ready_stage1_run01/exit.private.json",
+      "receipt_sha256": "da894888cc62cdbf1775db9ff1bc6d7cd075873c7248ebf717c114232a1dc32d",
+      "original_joint_passed": false,
+      "original_business_passed": false,
+      "script_assertions": 141,
+      "elapsed_seconds": 36.386619703996985,
+      "max_sample_gap_seconds": 0.10566561700034072,
+      "actual_cleanup_complete": true,
+      "private_assembly_pre_post_verified": true,
+      "pixel_record": "g04_implementation_prepare/isolated_stage1_pixel_review_revision01/PIXEL_REVIEW.json",
+      "pixel_record_sha256": "a3962e90a01bb455a3c2314a09cc494378d2cb739fc1359daea917ed1fb69a3a",
+      "root_limited_pixel_accepted": true
+    },
+    {
+      "stage": 2,
+      "receipt": "checks/candidate49_isolated_ready_stage2_run01/exit.private.json",
+      "receipt_sha256": "fbdbaa60fb1b3e691f6dd1d0c7d1820c5f76aa6113ca6bec5f17ccf5cbe0d7d9",
+      "original_joint_passed": true,
+      "original_business_passed": true,
+      "script_assertions": 141,
+      "elapsed_seconds": 33.42431693300023,
+      "max_sample_gap_seconds": 0.06023791499683284,
+      "actual_cleanup_complete": true,
+      "private_assembly_pre_post_verified": true,
+      "pixel_record": "g04_implementation_prepare/isolated_stage2_pixel_review_revision01/PIXEL_REVIEW.json",
+      "pixel_record_sha256": "9870beeaae475f15b18e4e8e4c616c26785408ba57d2ad45dc50af020e523718",
+      "root_limited_pixel_accepted": true
+    },
+    {
+      "stage": 3,
+      "receipt": "checks/candidate49_isolated_ready_stage3_run01/exit.private.json",
+      "receipt_sha256": "6141f5a47a6745d77076b4fb4d12a3e42c27afefd120b39c4063ce449312e9ff",
+      "original_joint_passed": true,
+      "original_business_passed": true,
+      "script_assertions": 141,
+      "elapsed_seconds": 31.59774054099762,
+      "max_sample_gap_seconds": 0.10596966400044039,
+      "actual_cleanup_complete": true,
+      "private_assembly_pre_post_verified": true,
+      "pixel_record": "g04_implementation_prepare/isolated_stage3_pixel_review_revision01/PIXEL_REVIEW.json",
+      "pixel_record_sha256": "9e73be7e151e2150cbd27bf8e8df0af5b1819cd2d9905fcdc68ed138d9f0d90d",
+      "root_limited_pixel_accepted": true
+    }
+  ],
+  "stage1_posthoc": {
+    "path": "g04_implementation_prepare/gui49_isolated_checker_revision02/POSTHOC_STAGE1.json",
+    "sha256": "fc4cb657ddcd0ae3fc5c7dcb311ae859e7a7a666f0cc3b6dce29cc1cdc3bf17c",
+    "business_passed": true,
+    "assertions": 141,
+    "reason": "old checker incorrectly rejected signed negative valid RefCounted IDs; exact signed64 nonzero ID checker revised",
+    "old_engine_receipt_unchanged": true,
+    "engine_rerun": false
+  },
+  "scope": "three independent technical reward fixtures with isolated27-Host assembly and original full-ready/reward/controller/consumer chain; buy/sell/rebuy snapshots",
+  "default_entry": false,
+  "native_input": false,
+  "natural_15000_gold": false,
+  "ordinary_G21_G27_opened": false,
+  "candidate_modified": false,
+  "raw_logs_published": false,
+  "equivalent_G04_tests_stopped": true,
+  "local_checkpoint_sha256": "c359c06890a9266e1e8611b2740c84580870e9279893d92c9dc2382b752e0300",
+  "no_raw_logs_or_host_process_details": true
+}
