@@ -1,0 +1,37 @@
+extends RefCounted
+## Definitions are not implementation. Runtime readiness is injected from the bound Ink Sim.
+const Design = preload("res://data/final_design/catalog.gd")
+const ShopTable = preload("res://tests/ink_first_floor_flow_20261004/shop_table.gd")
+const HERO_ID = "yanguizhou"
+const FIRST_SLICE_ALLOWED_CANDIDATES = ["Q1", "Q2", "Q3"]
+const FIRST_SLICE_HEX_HOOKS = ["hex.final_design.yanguizhou_h01.v1", "hex.final_design.yanguizhou_h02.v1", "hex.final_design.yanguizhou_h05.v1", "hex.final_design.yanguizhou_h06.v1", "hex.final_design.common_g01.v1", "hex.final_design.common_g05.v1", "hex.final_design.common_g06.v1", "hex.final_design.common_g15.v1", "hex.final_design.common_g24.v1", "hex.final_design.common_g30.v1"]
+const CANDIDATES = ["Q1", "Q2", "Q3", "E1", "E2", "E3", "P1", "P2", "P3", "R1", "R2"]
+
+static func build(capabilities: Dictionary, table_path: String, allow_provisional: bool = false) -> Dictionary:
+ if capabilities.get("schema_version", 0) != 1 or capabilities.get("hero_id", "") != HERO_ID:
+  return {"accepted":false, "reason":"ink_capability_identity_missing"}
+ if str(capabilities.get("source_binding_id", "")).is_empty():
+  return {"accepted":false, "reason":"ink_source_binding_missing"}
+ if not capabilities.get("runtime_candidates") is Array or not capabilities.get("supported_hooks") is Array:
+  return {"accepted":false, "reason":"ink_capabilities_missing"}
+ for candidate in capabilities.runtime_candidates:
+  if candidate not in FIRST_SLICE_ALLOWED_CANDIDATES:
+   return {"accepted":false, "reason":"candidate_outside_first_slice"}
+ for hook in capabilities.supported_hooks:
+  if not hook is String: return {"accepted":false, "reason":"invalid_capability_hook"}
+  if hook.begins_with("hex.") and hook not in FIRST_SLICE_HEX_HOOKS:
+   return {"accepted":false, "reason":"hex_outside_verified_first_slice"}
+ # An intentional first-slice ceiling. Increase only alongside actual family runtime and gates.
+ var definitions: Dictionary = Design.build_progression(HERO_ID)
+ if definitions.is_empty() or definitions.get("hero_id", "") != HERO_ID:
+  return {"accepted":false, "reason":"ink_final_design_missing"}
+ var loaded: Dictionary = ShopTable.load_table(table_path, definitions, allow_provisional)
+ if not loaded.accepted: return loaded
+ definitions = loaded.definitions
+ definitions.version = str(definitions.version) + "|ink-q2-ordinary-source-candidate-v1"
+ definitions["initial_hex_scope"] = "Lv1_Lv4_Lv7_ten_source_effects_four_personal_pending_composed_engine_gate"
+ definitions.runtime_candidates = capabilities.runtime_candidates.duplicate()
+ definitions.runtime_source_binding = capabilities.source_binding_id
+ definitions["q2_limitations"] = "Q2基础两段；H03/H04未开放；临时功能显示，Q2美术/音频未实现"
+ definitions.runtime_validation = {"engine":"NOT_RUN", "normal_input":"NOT_RUN", "first_floor":"NOT_CONFIGURED", "production_cutover":false}
+ return {"accepted":true, "reason":"", "definitions":definitions, "hooks":capabilities.supported_hooks.duplicate()}

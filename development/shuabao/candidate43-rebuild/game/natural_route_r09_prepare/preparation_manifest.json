@@ -1,0 +1,152 @@
+{
+  "status": "FROZEN_PREPARED_NOT_ENGINE_PARSED_NOT_RUN",
+  "route": [
+    "r01a",
+    "r02a",
+    "r03a",
+    "r04a",
+    "r05a",
+    "r06a",
+    "r07a",
+    "r08a",
+    "r09a"
+  ],
+  "source_binding_sha256": "da26defba5cbdcf2ca2b0a7e51d03ed0345f2525336d3543598df5090c001360",
+  "baseline": {
+    "natural_route_r06.gd": "69aa48269d746c4321a10053d2aa4ba02eab39242292f472bf31b3eb001d845e",
+    "visible_route_r06.gd": "20441c2960f5f2d1edaddc888f86a78dba65ad26142a352cd9c430d0bd97f34f"
+  },
+  "files": [
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/README.md",
+      "sha256": "022d632a0827487b159fb19a424c79d2b4b5be717e9058ea56d076c09670091a",
+      "bytes": 9514
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/natural_route_r09.gd",
+      "sha256": "972e41fd011a850e96982115457164d8c29e460566f95721dfbab34512cf39c5",
+      "bytes": 40965
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/natural_route_r09.gd.diff",
+      "sha256": "77778f2ff5bc4742a4bb4e482872b0f29ba0b40f1101e4d1da018e5b741ca8bb",
+      "bytes": 21077
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/protected_baseline.json",
+      "sha256": "5b35b085644e884a66c09cef4ab00480d734831e79bc53c77315d526dee0dcb5",
+      "bytes": 1696
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/static_check.py",
+      "sha256": "f7110939142ba0a0f6b3690c3258308746e71e35579e2face30b4b9fcbeb088d",
+      "bytes": 7761
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/static_check_result.json",
+      "sha256": "526053dec1737d342a1f1cbeb82fa7375b37b70a9df1a21285710a72ab3dcc88",
+      "bytes": 5009
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/visible_route_r09.gd",
+      "sha256": "f559dfdd127e8e1fcc9f0a3235fa255ad027b2a9da7fabc4b225d6bd80ede10f",
+      "bytes": 27620
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r09_prepare/visible_route_r09.gd.diff",
+      "sha256": "9a9a5095ea23573fa42f5c9c2d911d9221963ae5ec3e2b900ff27a61cd009d23",
+      "bytes": 988
+    }
+  ],
+  "verification": {
+    "static_checks_passed": true,
+    "static_check_count": 30,
+    "source_runtime_map_count": 1550,
+    "source_runtime_map_mismatches": [],
+    "protected_baselines_unchanged": true,
+    "driver_only_change": "expected service rows [3,4,6] -> [3,4,6,9]",
+    "inherited_observer_functions_unchanged_except": [
+      "run",
+      "finish"
+    ],
+    "new_functions": [
+      "upgrade_after_original_row",
+      "potion_course_summary",
+      "verify_r09_success"
+    ],
+    "engine_started": false,
+    "engine_parser_run": false,
+    "gui_started": false,
+    "gameplay_result_claimed": false
+  },
+  "observation_wall_ms": 100000,
+  "external_guard_seconds": 110,
+  "completion_must_be_observed_before_wall_deadline": true,
+  "production_files_edited": [],
+  "previously_verified_files_edited": [],
+  "checkpoint_restored": false,
+  "new_combat_rows": {
+    "7": [
+      "minion",
+      "minion",
+      "minion",
+      "minion"
+    ],
+    "8": [
+      "armored",
+      "armored",
+      "minion",
+      "minion"
+    ]
+  },
+  "completion_requirements": {
+    "combat_rows": [
+      1,
+      2,
+      5,
+      7,
+      8
+    ],
+    "scoped_deaths": 20,
+    "distinct_original_rewards": 20,
+    "source_victory_terminals": 5,
+    "original_row_completions": 9,
+    "original_rest_settlements": 2,
+    "original_training_skips": 2,
+    "same_original_owners_and_run": true
+  },
+  "later_upgrade_policy": [
+    {
+      "after_row": 6,
+      "expected_current_Q1_rank": 3,
+      "target_rank": 4,
+      "cost_actual_earned_SP": 1,
+      "optional": true
+    },
+    {
+      "after_row": 7,
+      "expected_current_Q1_rank": 4,
+      "target_rank": 5,
+      "cost_actual_earned_SP": 1,
+      "optional": true
+    }
+  ],
+  "upgrade_admission": "resolve actual mandatory visible Hex first; retain original safe learning and visible enabled Q1 button checks; preserve actual upgraded/rank/SP result",
+  "potion_policy": {
+    "inherited_unchanged": true,
+    "maximum_purchases": 1,
+    "original_price": 200,
+    "maximum_use_button_attempts": 1,
+    "strict_HP_threshold_fraction": 0.6,
+    "actual_visible_enabled_button_signal": true,
+    "native_input": false,
+    "source_combat_clock_only": true,
+    "report_exact_last_observed_active_actual_and_left": true,
+    "removed_effect_terminal_actual_available": false,
+    "infer_final_heal_from_HP_or_20pct": false
+  },
+  "source_input_injection": true,
+  "native_input": false,
+  "full_floor_victory": false,
+  "scope": "Independent original fresh zero-resource continuous source-input replay through r09 original rest readiness only. No engine or GUI started. Freeze requires disclosed revision before changes."
+}

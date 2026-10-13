@@ -1,0 +1,73 @@
+{
+  "command": [
+    "/usr/local/bin/godot",
+    "--headless",
+    "--rendering-method",
+    "gl_compatibility",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/gltf_runtime_conversion01",
+    "--script",
+    "res://convert.gd",
+    "--",
+    "3"
+  ],
+  "profile": {
+    "name": "import",
+    "rss_limit_bytes": 939524096,
+    "wall_seconds": 60.0,
+    "sample_interval_seconds": 0.05,
+    "scope": "controller plus owned descendants",
+    "memory_enforcement": "sampled RSS, not a kernel hard limit",
+    "cgroup_or_OOM_guarantee": false
+  },
+  "started": true,
+  "reason": "",
+  "peak_total_rss": 144945152,
+  "max_sample_gap": 0.0534469390004233,
+  "recovery_note": "Archived strict rss_reread01 tree; narrow held terminal omission restored; proc_exit adapter not reconstructed; pair profiles disabled",
+  "pid": 37,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "reaps": [
+      {
+        "pid": 37,
+        "start_ticks": 1135981,
+        "si_code": 1,
+        "si_status": 0
+      }
+    ],
+    "errors": [],
+    "seconds": 0.025337060000310885
+  },
+  "exit": 0,
+  "signals": [],
+  "cancellation_requests": [],
+  "elapsed_seconds": 0.8338092310004868,
+  "local_subreaper_restored": true,
+  "passed": true,
+  "rss_resolution_evidence": [
+    {
+      "pid": 37,
+      "start_ticks": 1135981,
+      "original_error": "missing_live_VmRSS:37",
+      "attempts": 55,
+      "resolved": true,
+      "reaped_by_probe": false,
+      "sample_retry_started": 11360.619285885,
+      "deadline": 11360.629285885001,
+      "proof": "same_identity_Z",
+      "final_state": "Z",
+      "finished": 11360.622256632,
+      "shared_elapsed": 0.0029707469984714407
+    }
+  ],
+  "inventory_evidence": [],
+  "proc_exit_adapter_evidence": [],
+  "held_exit_evidence": [],
+  "pair_terminal_evidence": []
+}

@@ -1,0 +1,109 @@
+--- /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_first_room_replay_prepare/visible_player_replay.gd
++++ /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/visible_route_replay.gd
+@@ -194,7 +194,7 @@
+   ids.append(visible[1].id)
+  var start: Vector3=first-direction*0.6
+  if start.distance_to(host.sim.hero.position)>float(host.sim.tuning.q1_initial_placement_range_m)-0.1:return {}
+- if start.distance_to(finish)>float(host.sim.v("Q1-4",1)):return {}
++ if start.distance_to(finish)>float(host.sim.v("Q1-4",int(host.sim.hero.ranks.q))):return {}
+  if _visible_ground(start).is_empty() or _visible_ground(finish).is_empty() or not _ground_clear(start,finish):return {}
+  return {"start":start,"finish":finish,"visible_ids":ids,"stage":0}
+ 
+@@ -240,3 +240,97 @@
+    _key(KEY_Q,false)
+  _mouse(target.position,false,true)
+  if not left_held:_mouse(target.position,true)
++
++
++func release_between_nodes() -> void:
++ # Only ordinary releases; source/Session owns every boundary reset.
++ if not gesture.is_empty():_cancel_gesture()
++ _release_left();_move(Vector3.ZERO);_key(KEY_Q,false)
++
++func resolve_visible_required_hexes() -> Dictionary:
++ while not host.shop_session.ledger.model.snapshot().pending_milestones.is_empty():
++  if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_required_hex"}
++  if host.sim.hero.dead or host.finished:return {"accepted":false,"reason":"owner_ended_before_required_hex"}
++  if host._mainprep_required or not host.initial_hud.hex_draft.is_visible_in_tree():
++   await host.get_tree().process_frame;continue
++  var shown: Dictionary=host.initial_hud.projection.duplicate(true)
++  var pending: Array=host.shop_session.ledger.model.snapshot().pending_milestones
++  if shown.get("choices",[]).size()!=4 or int(shown.get("active_milestone",0)) not in pending:
++   await host.get_tree().process_frame;continue
++  release_between_nodes()
++  var choice: Dictionary=shown.choices[1].duplicate(true)
++  var chosen: Dictionary=_hud_request("hex_select",{"milestone":shown.active_milestone,"slot":1})
++  _record("visible_required_hex_choice",choice,chosen)
++  if not chosen.get("accepted",false):return chosen
++  await host.get_tree().process_frame
++ return {"accepted":true,"reason":"original_required_hexes_resolved"}
++
++func upgrade_earned_Q1_once() -> Dictionary:
++ var state: Dictionary=host.shop_session.ledger.model.snapshot()
++ if int(state.points)<1 or int(state.skills.Q.rank)!=1 or str(state.skills.Q.candidate)!="Q1":
++  var skipped: Dictionary={"accepted":true,"upgraded":false,"reason":"earned_Q1_upgrade_not_available","level":state.level,"SP":state.points,"Q":state.skills.Q.duplicate(true)}
++  _record("optional_earned_Q1_upgrade",{},skipped);return skipped
++ if not host._learning_panel_allowed():return {"accepted":false,"reason":"original_safe_learning_not_allowed"}
++ if not host.initial_hud.growth_panel.is_visible_in_tree():
++  host._toggle_growth()
++  _record("Host:_toggle_growth",{}, {"accepted":host.initial_hud.growth_panel.is_visible_in_tree()})
++ var button: Button=host.initial_hud.q_choices.Q1.upgrade
++ if not button.is_visible_in_tree() or button.disabled:return {"accepted":false,"reason":"original_earned_Q1_button_disabled"}
++ var learned: Dictionary=_hud_request("learn",{"slot_id":"Q","candidate_id":"Q1","expected_rank":1})
++ if not learned.get("accepted",false):return learned
++ var after: Dictionary=host.shop_session.ledger.model.snapshot()
++ if int(after.skills.Q.rank)!=2 or int(after.points)!=int(state.points)-1 or after.gold!=state.gold or after.xp!=state.xp or after.level!=state.level:
++  return {"accepted":false,"reason":"original_earned_Q1_upgrade_accounting_failed"}
++ return {"accepted":true,"upgraded":true,"before":state,"after":after}
++
++func prepare_next_original_node(row: int, node_id: String, upgrade: bool=false) -> Dictionary:
++ release_between_nodes()
++ if host.shop_session.panel_open:
++  host._shop(false)
++  _record("Host:_shop",{"open":false},host.shop_session.last_receipt)
++  if host.shop_session.panel_open:return {"accepted":false,"reason":"original_shop_close_failed"}
++ var hex_result: Dictionary=await resolve_visible_required_hexes()
++ if not hex_result.get("accepted",false):return hex_result
++ var upgrade_result: Dictionary={"accepted":true,"upgraded":false,"reason":"not_requested_for_this_boundary"}
++ if upgrade:
++  upgrade_result=upgrade_earned_Q1_once()
++  if not upgrade_result.get("accepted",false):return upgrade_result
++ if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_next_selection"}
++ host._select_row(row,node_id)
++ _record("Host:_select_row",{"row":row,"node":node_id},host.shop_session.last_receipt)
++ if not host.shop_session.last_receipt.get("accepted",false):return host.shop_session.last_receipt.duplicate(true)
++ var ready: Dictionary=host.shop_session.next_room_preflight()
++ while not ready.get("accepted",false) and ready.get("reason","")=="hero_too_close_to_next_spawn":
++  # A fixed visible central floor point, not unseen future enemy coordinates.
++  # Original Host free-move/collision remains the sole movement executor.
++  if Time.get_ticks_msec()>=deadline_ms:release_between_nodes();return {"accepted":false,"reason":"deadline_during_safe_entry_movement"}
++  if host.finished or host.sim.hero.dead or host.sim.paused or not host.shop_session.fault.is_empty():release_between_nodes();return {"accepted":false,"reason":"original_safe_movement_unavailable"}
++  var center: Vector3=Vector3.ZERO
++  if _visible_ground(center).is_empty():return {"accepted":false,"reason":"safe_entry_center_not_visible"}
++  var toward: Vector3=center-host.sim.hero.position
++  if toward.length()<0.30:return {"accepted":false,"reason":"original_preflight_still_rejects_center"}
++  toward=toward.normalized()
++  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+toward,0.75):return {"accepted":false,"reason":"safe_entry_local_movement_blocked"}
++  _move(toward)
++  await host.get_tree().process_frame
++  ready=host.shop_session.next_room_preflight()
++ release_between_nodes()
++ if not ready.get("accepted",false):return ready
++ var before_entry: Dictionary={"model":host.shop_session.ledger.model.snapshot(),"hp":host.sim.hero.hp,"max_hp":host.sim.hero.stats.max_hp,"cooldowns":host.sim.hero.cooldowns.duplicate(true),"rest_settlements":host.shop_session.snapshot().get("rest_settlements",[]).duplicate(true)}
++ host._request_next_room()
++ _record("Host:_request_next_room",{"row":row,"node":node_id},host.shop_session.last_receipt)
++ if not host.shop_session.last_receipt.get("accepted",false):return host.shop_session.last_receipt.duplicate(true)
++ var entered_flow: Dictionary=host.shop_session.snapshot()
++ var expected_status: String="service" if row==3 else "combat"
++ if entered_flow.status!=expected_status or entered_flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","")!=node_id:
++  return {"accepted":false,"reason":"original_next_entry_scope_not_established"}
++ return {"accepted":true,"node_id":node_id,"row":row,"upgrade":upgrade_result,"before_entry":before_entry,"entry_result":host.shop_session.last_receipt.duplicate(true)}
++
++func complete_original_rest() -> Dictionary:
++ release_between_nodes()
++ if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_rest_readiness"}
++ if not host.service_continue.is_visible_in_tree() or host.service_continue.disabled:
++  return {"accepted":false,"reason":"actual_rest_continue_button_unavailable"}
++ host._complete_service()
++ _record("Host:_complete_service",{},host.shop_session.last_receipt)
++ return host.shop_session.last_receipt.duplicate(true)

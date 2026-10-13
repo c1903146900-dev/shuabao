@@ -1,0 +1,19 @@
+; Explicit successor runtime GLTFDocument mapping; not editor-import equivalence.
+[remap]
+importer="scene"
+importer_version=1
+type="PackedScene"
+path="res://runtime_converted_assets/yanguizhou_gait06.scn"
+
+[deps]
+source_file="res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/gait06/runtime/assets/yanguizhou_gait06.glb"
+dest_files=["res://runtime_converted_assets/yanguizhou_gait06.scn"]
+
+[params]
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+nodes/import_as_skeleton_bones=false
+gltf/embedded_image_handling=3

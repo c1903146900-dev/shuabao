@@ -1,0 +1,70 @@
+{
+  "status": "SOURCE_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "6ccfcbc2b7f2200dcfc6ba96040c54e6c4f7baa0f6c2d9bfe168c00a3553cc84",
+  "target_candidate": "candidate33",
+  "changed": [
+    {
+      "path": "res://visual_rework_20261009/entry.gd",
+      "before": "c1d3c78f355d3fe5f25c80351b2843a4be6d8f8e58e92638c7f98a3628561f9f",
+      "after": "42592b9d2036d9f9a91a0540e7ddb55ba607716cddc83e4e7971121f7133f7fa",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_revision03_prepare/entry.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "14ab5590ec2ff78a9371e1026daef99e0061348bba2dde664676ccc4316eb21a",
+      "after": "082904db653662cb75a6cee5b7702af5b6a36b475cdcd8b721202233db742817",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_revision03_prepare/runtime_host.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "c6c4adf18fff5e787fe35598fa5dfaf7af16a2992953dc3175325812306fc48d",
+      "after": "00eadad610c9818a4d95aeb35470b53bc2df721fe34a1c8c3a0861d6d5489c36",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_revision03_prepare/live_binding.gd"
+    }
+  ],
+  "new": [],
+  "new_plan_path": "res://visual_rework_20261009/binding/growth_readability_card_plan.json",
+  "preserve_13_ancestor_replacements": true,
+  "source_maps_require_actual_intersection_equality": true,
+  "sealed_parent_unmodified": true,
+  "engine_run": false,
+  "basis": {
+    "gui32_report_sha256": "2c08db25f6d3921a75dc1a006bb79ef5616169bb1aff945a7c7b43e7a3083914",
+    "return_actual_rect": [
+      1070,
+      52,
+      170,
+      48
+    ],
+    "return_theme_min": [
+      92,
+      48
+    ],
+    "growth_panel": [
+      838,
+      88,
+      420,
+      510
+    ],
+    "growth_title": [
+      846,
+      96,
+      404,
+      27
+    ],
+    "original_card": [
+      936,
+      640,
+      156,
+      58
+    ],
+    "original_source_pins": {
+      "scripts/integration/hero_entry.gd": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+      "scripts/ui/hero_chooser.gd": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+      "tests/ink_style_specimen_20261004/revision10_hud/hud.gd": "62c2b2518d0dc76aaa14d29aad51664f89802ff3e7d862de59479114305464d8",
+      "tests/ink_equipment_live_20261008/content01/potion_model.gd": "c6f24e2e2d3baca70f285421dc1554f71f2891d4558fdd97dc6ef40a2b3945ee"
+    },
+    "proposal_sha256": "50d2bd833ba1b3da2e6fbd4091b7684bb004f4e5955a015a7e7c5fcdf7ab7e74"
+  },
+  "scope": "Return Button private clones of5 styleboxes change only top/bottom12→4; other hero removes overrides/restores original. Summary within originalcard140x50 font10; complete3line text, basic health-bottle cap only. No gameplay/authority/transactions changes. All actual rect/min/line widths/theme retention and pixels pending."
+}

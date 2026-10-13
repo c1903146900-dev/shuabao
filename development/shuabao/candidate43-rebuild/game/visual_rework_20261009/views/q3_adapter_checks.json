@@ -1,0 +1,26 @@
+{
+  "scope": "Python static and algebra only; Godot parse/runtime pending integrator",
+  "passed": true,
+  "checks": {
+    "uses_source_clock": true,
+    "absolute_mesh_clock": true,
+    "no_process_or_physics": true,
+    "no_sim_reference_or_gameplay_writes": true,
+    "flat_event_kind": true,
+    "scope_guard": true,
+    "event_dedup": true,
+    "collapsed_receipt_keeps_tail": true,
+    "uses_source_dimensions": true,
+    "source_collapse_dimensions": true,
+    "no_fabricated_reconstruction": true,
+    "preview_ignored": true,
+    "reset_clears_transients": true,
+    "dimensions_4.5_1.4_0": true,
+    "dimensions_6.3_1.4_0.8": true,
+    "dimensions_4.5_2.0_2.1": true,
+    "reference_visual_rework_20261009/views/q3_mountain_mesh.gd": true,
+    "reference_visual_rework_20261009/views/q3_wave.gdshader": true,
+    "reference_visual_rework_20261009/views/q3_rock.gdshader": true,
+    "reference_visual_rework_20261009/views/q3_mist.gdshader": true
+  }
+}

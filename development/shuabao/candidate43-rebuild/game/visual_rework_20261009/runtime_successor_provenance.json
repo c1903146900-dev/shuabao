@@ -1,0 +1,17 @@
+{
+  "original_host": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+  "original_host_sha256": "5c1cf30eefaf407c9a3c754dd86da5962edff8d3e2ab3d8a308b7e6239cec7ef",
+  "host_changes": [
+    "New exact actor path/hash",
+    "Exact additional original brush ancestry verified; old parent and ReleaseActor chain preserved"
+  ],
+  "entry_changes": [
+    "Copy original _launch_fresh unchanged except explicit successor room resource",
+    "Accept exact successor host path in local entry only"
+  ],
+  "actor_changes": [
+    "Only override editor UID preflight with sealed explicit runtime conversion verification",
+    "Original bind_ultimate_asset numeric/rig/clip checks inherited intact"
+  ],
+  "original_chooser_sha256": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770"
+}

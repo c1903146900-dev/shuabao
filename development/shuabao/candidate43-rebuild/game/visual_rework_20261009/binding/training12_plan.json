@@ -1,0 +1,27 @@
+{
+  "schema": "formal-training12-explicit-successor-1",
+  "previous_source_binding_sha256": "22cbb3dc3aee71e7c0ce5729abb90983c22f036e21063b00645dca7f31bf47f3",
+  "changes": {
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "31ee15b2fa58506951d8ce315668ffaf0deb0b924da2fcbe6cf74cc59c9576c7",
+      "after": "47172b330992730e414cd297f4635b4f3f35622a1c624ea0f78f6b62b471f701"
+    },
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "7da1cb4b83e602081c99b7b38008ebe1ba79661aabd77e208c3be2c4596fe8f8",
+      "after": "57ff1f30840e4a6ca9c8764b0eb35df39d68a291d7c147c1b4d136441d219f3f"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "dd2f88aaaab8ca8f2ade615351345018d0c421dcf2f4ba41488850541aa51448",
+      "after": "7e2b89062237ab9935df5038eeb91f014ad9b8206acda2f640cae5c6d95f66d1"
+    }
+  },
+  "new_files": {
+    "formal_training_20261009/adapter.gd": "a2f5b0576eb54e531b33469cbd54a5132828c60673b54e32a7da517e5e41ef6b",
+    "formal_training_20261009/model.gd": "e0cd67feae341c6176890dd1809797b6e622ad537a945fa5782d26d78428e78c",
+    "formal_training_20261009/session.gd": "4746bdc7b09e0070a8f88f93cf2812b224731674c43433e3268963b217844f46",
+    "formal_training_20261009/panel.gd": "a2f3d3c9073fe485871ffd404c79cff39d7ed2cc51afa16f0bbd29f5c3a0f1b4"
+  },
+  "source_rules": "Formal12 original numeric outcomes; fixed900, original three distinct draws/payment/RNG/receipts, permanent non-undoable choices. Existing final effective caps filter only new paid offers. No free-credit issuance, G05 or extra equipment admission.",
+  "equipment_count_unchanged": 43,
+  "ancestor_replacement_count_unchanged": 4
+}

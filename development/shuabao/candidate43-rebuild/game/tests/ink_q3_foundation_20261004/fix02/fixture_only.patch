@@ -1,0 +1,199 @@
+--- tests/ink_q3_foundation_20261004/fix01/q1_regression_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/q1_regression_gate.gd
+@@ -1,5 +1,5 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+ const Geometry=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd")
+ const InputAdapter=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd")
+ var checks:int=0
+@@ -26,8 +26,8 @@
+ func _initialize()->void:call_deferred("run")
+ func run()->void:
+  test_source();test_input_boundaries();test_time_and_movement();test_h01();test_wave_contacts();test_basic_and_shift();test_geometry();test_lifecycle_and_readonly();test_event_adapter();test_partition();test_cross_family_order();test_world_cadence();test_hold_input();test_wall_and_retrace()
+- var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"scope":"isolated finite BASIC/Shift/Q1/H01 engine mechanism checks only; not art/input-device/full hero acceptance"}
+- var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/q1_regression_result.json",FileAccess.WRITE)
++ var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"scope":"isolated finite BASIC/Shift/Q1/H01 engine mechanism checks only; not art/input-device/full hero acceptance"}
++ var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/q1_regression_result.json",FileAccess.WRITE)
+  file.store_string(JSON.stringify(report,"  "));file.close()
+  print("INK_FOUNDATION_REPORT ",JSON.stringify(report));quit(0 if failures.is_empty() else 1)
+ func test_source()->void:
+--- tests/ink_q3_foundation_20261004/fix01/control_regression_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/control_regression_gate.gd
+@@ -1,5 +1,5 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+ const Adapter=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd")
+ const Geometry=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd")
+ var checks:int=0
+@@ -31,8 +31,8 @@
+ func _initialize()->void:call_deferred("run")
+ func run()->void:
+  test_natural_control();test_duration_immunity_and_recovery();test_motion_and_live_flights();test_idle_cancel();test_terminal_frame()
+- var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"natural_boss_observations":natural_observations,"scope":"revision02 finite control/input/terminal-frame checks; not OS/art/full-hero acceptance"}
+- var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/control_regression_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
++ var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"natural_boss_observations":natural_observations,"scope":"revision02 finite control/input/terminal-frame checks; not OS/art/full-hero acceptance"}
++ var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/control_regression_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
+  print("INK_CONTROL_REV02_REPORT ",JSON.stringify(report));quit(0 if failures.is_empty() else 1)
+ func test_natural_control()->void:
+  for operation in ["walk","new_basic","new_shift","q_arm","accepted_preview_release"]:
+--- tests/ink_q3_foundation_20261004/fix01/h02_regression_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/h02_regression_gate.gd
+@@ -1,5 +1,5 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+ const Adapter=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd")
+ var checks:int=0
+ var failures:Array=[]
+@@ -26,8 +26,8 @@
+ func _initialize()->void:call_deferred("run")
+ func run()->void:
+  test_source_and_endpoint();test_precise_lifetime();test_wall_and_eligibility();test_ai_center_and_damage();test_h01_endpoint();test_ownership_cancel_rooms();test_callback_cleanup();test_concurrent_sources()
+- var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"scope":"finite real H02 source mechanism; no engine run claimed until this report is emitted by main's Godot; no renderer or complete hero acceptance"}
+- var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/h02_regression_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
++ var report:Dictionary={"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"scope":"finite real H02 source mechanism; no engine run claimed until this report is emitted by main's Godot; no renderer or complete hero acceptance"}
++ var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/h02_regression_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
+  print("INK_H02_FINITE_REPORT ",JSON.stringify(report));quit(0 if failures.is_empty() else 1)
+ func test_source_and_endpoint()->void:
+  var sim=fresh();var enemy:Dictionary=target(sim,Vector3(4,0,2));var hp:float=enemy.hp
+--- tests/ink_q3_foundation_20261004/fix01/common_regression_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/common_regression_gate.gd
+@@ -1,6 +1,6 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
+-const Bridge=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_bridge.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
++const Bridge=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_bridge.gd")
+ const Catalog=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_catalog.gd")
+ const SHOP="res://tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json"
+ const FIXTURE="res://tests/equipment_shop_transactions_20261004/fixtures/source_prices.json"
+@@ -20,7 +20,7 @@
+ func caps()->Dictionary:
+  var hooks: Array=Catalog.FIRST_SLICE_HEX_HOOKS.duplicate()+["stats.v1","equipment.task_completion.v1"]
+  for stat in ["AD","AP","attack_speed","max_hp","defense","move_speed","crit_chance","cooldown_reduction","lifesteal","tenacity","penetration","hp_regen"]:hooks.append("stat."+stat+".v1")
+- return {"schema_version":1,"hero_id":"yanguizhou","source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"runtime_candidates":["Q1"],"supported_hooks":hooks}
++ return {"schema_version":1,"hero_id":"yanguizhou","source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"runtime_candidates":["Q1"],"supported_hooks":hooks}
+ func fresh(id: String)->Dictionary:
+  var sim=Sim.new();root.add_child(sim)
+  var bridge=Bridge.new();var owner=RefCounted.new()
+@@ -132,8 +132,8 @@
+  if case_status.get("personal",{}).get("passed",false):verified_hooks.append_array(Catalog.FIRST_SLICE_HEX_HOOKS.slice(0,2))
+  for id in ["G01","G05","G06","G15","G24","G30"]:
+   if case_status.get(id,{}).get("passed",false):verified_hooks.append("hex.final_design.common_"+id.to_lower()+".v1")
+- var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"hooks_tested":verified_hooks,"case_status":case_status,"command_evidence":command_evidence,"kill_evidence":kill_evidence,"upstream_runtime_source_binding_id":"c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a","scope":"finite actual Ink consumers via ordinary Lv1 choice and paid Q1; not native UI, later milestones or full hero"}
+- var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/common_regression_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
++ var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"hooks_tested":verified_hooks,"case_status":case_status,"command_evidence":command_evidence,"kill_evidence":kill_evidence,"upstream_runtime_source_binding_id":"c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a","scope":"finite actual Ink consumers via ordinary Lv1 choice and paid Q1; not native UI, later milestones or full hero"}
++ var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/common_regression_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
+  print("INK_INITIAL_SINK_REPORT ",JSON.stringify(result));quit(0 if failures.is_empty() else 1)
+ func test_personal()->void:
+  var failed_before: int=failures.size()
+--- tests/ink_q3_foundation_20261004/fix01/hp_regression_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/hp_regression_gate.gd
+@@ -1,6 +1,6 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
+-const Bridge=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_bridge.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
++const Bridge=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_bridge.gd")
+ const SHOP="res://tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json"
+ const FIXTURE="res://tests/equipment_shop_transactions_20261004/fixtures/source_prices.json"
+ const NUMERIC="res://tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json"
+@@ -53,9 +53,9 @@
+  return f
+ func run() -> void:
+  _exact_restore();_unchanged_refresh();_rebuy_not_heal();_health_dependencies();_consumption_dependencies();_body_dependency();_rooms();_stats_and_aim()
+- var result: Dictionary={"suite":"ink_same_visit_exact_hp_clamp_undo","source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"checks":checks,"failures":failures,"observed":observed,"scope":"real-source finite health projection and dependency fixtures; no UI/native/final-balance pass","ordinary_consumable_healing_implemented":false,"old_531_binding_unchanged":true}
++ var result: Dictionary={"suite":"ink_same_visit_exact_hp_clamp_undo","source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"checks":checks,"failures":failures,"observed":observed,"scope":"real-source finite health projection and dependency fixtures; no UI/native/final-balance pass","ordinary_consumable_healing_implemented":false,"old_531_binding_unchanged":true}
+  print("INK_HP_UNDO_REPORT ",JSON.stringify(result))
+- var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/hp_regression_result.json",FileAccess.WRITE)
++ var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/hp_regression_result.json",FileAccess.WRITE)
+  file.store_string(JSON.stringify(result,"  "));file.close()
+  quit(0 if failures.is_empty() else 1)
+ func _exact_restore() -> void:
+--- tests/ink_q3_foundation_20261004/fix01/q3_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/q3_gate.gd
+@@ -1,7 +1,8 @@
+ extends SceneTree
+ ## Main-owned finite engine gate. Merely reading this script is not a pass.
+-const Sim=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
++const Sim=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+ const Before=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd")
++const InputAdapter=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd")
+ const Geo=preload("res://tests/ink_q3_foundation_20261004/ink_q3_geometry.gd")
+ var checks:int=0
+ var failures:Array=[]
+@@ -29,8 +30,8 @@
+  test_source_ranks();test_manual_admission();test_recast_and_controls();test_geometry_and_categories();test_actual_projectiles();test_lifecycle_and_clocks();test_root_proc_budget();test_callbacks();test_q3_admission_guard();test_retained_before_after()
+  var required:Array=["source_ranks","manual_admission","recast_controls","geometry_categories","actual_projectiles","lifecycle_clocks","root_proc_budget","callbacks","q3_admission_guard","retained_before_after"]
+  for label in required:check(label in completed,"case completed: "+label)
+- var report:Dictionary={"suite":"ink_q3_foundation_mechanic_gate","passed":failures.is_empty(),"checks":checks,"failures":failures,"completed":completed,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"scope":"finite source mechanics only; no normal input, art, full floor, balance or user acceptance"}
+- var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/q3_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
++ var report:Dictionary={"suite":"ink_q3_foundation_mechanic_gate","passed":failures.is_empty(),"checks":checks,"failures":failures,"completed":completed,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"scope":"finite source mechanics only; no normal input, art, full floor, balance or user acceptance"}
++ var f=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/q3_result.json",FileAccess.WRITE);f.store_string(JSON.stringify(report,"  "));f.close()
+  print("INK_Q3_FOUNDATION_REPORT ",JSON.stringify(report));quit(0 if failures.is_empty() else 1)
+ func test_source_ranks()->void:
+  for rank in range(1,7):
+@@ -154,13 +155,16 @@
+  var sim=fresh();var e:Dictionary=target(sim,Vector3(7,0,0));var hp:float=e.hp;var first:Dictionary=raise_at(sim)
+  sim.paused=true;sim.step(8);near(sim.hero_time,0,"pause freezes actor and terrain clock")
+  sim.paused=false;sim.move_during_hitstop(.1,Vector3.RIGHT);near(sim.hero_time,0,"hitstop movement does not age terrain")
++ var adapter=InputAdapter.new();adapter.bind(sim)
++ var keyup=InputEventKey.new();keyup.physical_keycode=KEY_D;keyup.pressed=false
++ check(adapter.handle_event(keyup).accepted and sim.hero.move_intent==Vector3.ZERO,"actual D key-up stops fixture movement without cancelling terrain")
+  sim.step(4.98);check(not sim.ink_mountain.is_empty(),"mountain persists before exact duration")
+  sim.step(.02);check(sim.ink_mountain.is_empty(),"natural expiry removes terrain")
+  near(e.hp,hp,"natural expiry no invented collapse damage")
+  check(sim._casts[first.cast_id].finished,"expiry completes root once")
+  near(sim.ink_q3_finished[0].finished_at,5,"exact authored expiry receipt")
+  check(not sim.request_action("q",Vector3(4,0,0)).accepted,"expired terrain does not bypass remaining cooldown")
+- sim.common_reset_cooldowns(["q"]);var second:Dictionary=raise_at(sim)
++ sim.common_reset_cooldowns(["q"]);near(sim.hero.cooldowns.q,0,"real inherited CD reset reached zero before rebuild");var second:Dictionary=raise_at(sim)
+  check(second.cast_id!=first.cast_id,"rebuilt terrain has fresh root identity")
+  sim.cancel_cast(second.cast_id);check(sim.ink_mountain.is_empty(),"explicit cancellation removes terrain")
+  var cd:float=sim.hero.cooldowns.q;sim.cancel_cast(second.cast_id);near(sim.hero.cooldowns.q,cd,"repeated cancellation neither refunds nor duplicates")
+@@ -200,11 +204,22 @@
+  for trigger in ["ink_q3_raised","damage","ink_q3_collapse_started"]:
+   var sim=fresh();var e:Dictionary=target(sim,Vector3(4,0,0));var hp:float=e.hp
+   var fired:Array=[false]
++  var callback_results:Array=[]
+   sim.combat_event.connect(func(event):
+    if not fired[0] and event.kind==trigger:
+-    fired[0]=true;sim.end_encounter("cancelled");sim.begin_encounter("callback-new-room",[]))
++    fired[0]=true;sim.end_encounter("cancelled")
++    var attempt:Dictionary=sim.begin_encounter("callback-new-room",[])
++    callback_results.append({"event_kind":event.kind,"transaction_active":sim.transaction_active,"begin_result":attempt}))
+   raise_at(sim)
+   if trigger=="ink_q3_collapse_started":sim.request_action("q",Vector3(12,0,0))
++  check(fired[0] and callback_results.size()==1,"source callback actually fired exactly once "+trigger)
++  if callback_results.size()==1:
++   var actual:Dictionary=callback_results[0]
++   check(actual.event_kind==trigger and actual.transaction_active and not actual.begin_result.accepted and actual.begin_result.reason=="invalid_phase","in-transaction begin correctly rejected "+trigger)
++  check(not sim.transaction_active and sim.phase=="cancelled","action unwinds transaction after callback cancellation "+trigger)
++  var rebuilt:Dictionary=sim.begin_encounter("callback-new-room",[])
++  check(rebuilt.accepted,"legal post-transaction room rebuild accepted "+trigger)
++  observations["callback_"+trigger]={"inside_action":callback_results,"after_action":rebuilt}
+   check(fired[0] and sim.room_id=="callback-new-room","callback rebuild actually reached "+trigger)
+   check(sim.ink_mountain.is_empty() and sim.ink_q3_receipts.is_empty(),"callback never leaks old mountain/receipts "+trigger)
+   check(sim.common._inside_hit==0,"callback preserves shared damage-depth guard "+trigger)
+--- tests/ink_q3_foundation_20261004/fix01/diagnostic_gate.gd
++++ tests/ink_q3_foundation_20261004/fix02/diagnostic_gate.gd
+@@ -3,7 +3,7 @@
+ ## Known bad must remain bad. No patching initialized fields or waived admission.
+ const Before=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd")
+ const Bad=preload("res://tests/ink_q3_foundation_20261004/ink_q3_sim.gd")
+-const Fixed=preload("res://tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd")
++const Fixed=preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+ const T=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
+ const INK_BRIDGE="res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd"
+ var checks:int=0
+@@ -81,6 +81,6 @@
+  check(is_same(fixed_q3.ink_mountain,terrain_before) and float(fixed_q3.ink_mountain.get("expires_at",-2.0))==expires_before,"walking/BASIC flight preserve same terrain and expiry, no cancel-active reset")
+  completed.append("basic_walk_lifecycle")
+  for sim in [old,bad,fixed_q1,fixed_q3]:sim.free()
+- var report:Dictionary={"suite":"q3_fix01_actual_initializer_diagnostic","passed":failures.is_empty(),"checks":checks,"failures":failures,"completed":completed,"evidence":evidence,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix01/source_binding.json"),"scope":"initialization and actual admission only; not full Q3 mechanics or retained gate acceptance"}
+- var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix01/diagnostic_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(report,"  "));file.close()
++ var report:Dictionary={"suite":"q3_fix01_actual_initializer_diagnostic","passed":failures.is_empty(),"checks":checks,"failures":failures,"completed":completed,"evidence":evidence,"source_binding_id":FileAccess.get_sha256("res://tests/ink_q3_foundation_20261004/fix02/source_binding.json"),"scope":"initialization and actual admission only; not full Q3 mechanics or retained gate acceptance"}
++ var file=FileAccess.open("res://tests/ink_q3_foundation_20261004/fix02/diagnostic_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(report,"  "));file.close()
+  print("INK_Q3_INIT_DIAGNOSTIC_REPORT ",JSON.stringify(report));quit(0 if failures.is_empty() else 1)

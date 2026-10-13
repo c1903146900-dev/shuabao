@@ -1,0 +1,42 @@
+{
+  "decision_id": "20261011-equipment-G01-effective-cast-08",
+  "scope": "final:G01 / task:G01 only",
+  "assistant_message": {
+    "id": "Sentinel_06bd659fe9848191a86c1661703da3ca",
+    "timestamp": "2026-10-11T00:23:48Z",
+    "text": "接下来做“无尽学录”时，有一处原策划需要你定：它要求累计80次有效Q/E施法。我建议技能成功放出并首次产生实际战斗效果时记1次，同次技能后续效果不重复计；之后被打断、死亡或离开房间，也不撤回已经获得的次数。空放不计。按这个来可以吗？"
+  },
+  "user_message": {
+    "id": "Sentinel_1e8185942ae88191bc9e76b38b1455ec",
+    "timestamp": "2026-10-11T01:15:09Z",
+    "text": "看可以"
+  },
+  "approved_rule": {
+    "requires_successful_release": true,
+    "count_on": "first_actual_combat_effect",
+    "count_per_root_cast": 1,
+    "empty_cast_counts": false,
+    "later_interrupt_revokes": false,
+    "later_death_revokes": false,
+    "later_room_exit_revokes": false
+  },
+  "unchanged_formal": {
+    "price": 2800,
+    "components": [
+      "intermediate:I05",
+      "intermediate:I02"
+    ],
+    "combine_fee": 500,
+    "initial_AP": 70,
+    "initial_CDR_percent": 15,
+    "threshold": 80,
+    "evolved_AP": 110,
+    "evolved_CDR_percent": 22,
+    "SP_reward": 0,
+    "held_only": true,
+    "sold_progress_retained": true,
+    "rebuy_continues": true,
+    "duplicate_copies_multiply_progress": false
+  },
+  "does_not_authorize": "No other item counting, damage taxonomy, new skill effects, resources, input policies, or engine execution."
+}

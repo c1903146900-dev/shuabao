@@ -1,0 +1,38 @@
+--- tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd
++++ tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd
+@@ -1,5 +1,6 @@
+ extends "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd"
+ ## Isolated Ink BASIC/Shift/Q1 candidate. No normal-entry or complete-hero claim.
++const Q1FreeCurve=preload("res://visual_rework_20261009/input/q1_free_curve_sampler.gd")
+ const InkBridge=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd")
+ const T=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
+ const Geometry=preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd")
+@@ -133,22 +134,12 @@
+  ink_input.phase="frozen";ink_input.freeze_reason=reason;ink_input.frozen_at=at
+  emit_event("ink_q1_preview_frozen",{"gesture_id":ink_input.gesture_id,"path":ink_input.path.duplicate(true),"reason":reason,"frozen_at":at,"preview_only":true})
+ func _update_preview(point:Vector3)->void:
+- var path:Array=ink_input.path.duplicate(true)
+- var anchor:Vector3=path[path.size()-2]
+- var previous:Vector3=path.back()
+- var leg:Vector3=previous-anchor
+- var motion:Vector3=point-previous
+- if int(ink_input.committed_corners)<int(ink_input.corner_cap) and leg.length()>=float(tuning.h01_corner_min_leg_m) and motion.length()>=float(tuning.h01_corner_min_motion_m):
+-  var turn:float=rad_to_deg(acos(clampf(leg.normalized().dot(motion.normalized()),-1.0,1.0)))
+-  if turn>=float(tuning.h01_corner_angle_degrees):
+-   path.append(previous);ink_input.committed_corners+=1;anchor=previous
+- var fixed_length:float=0.0
+- for i in range(1,path.size()-1):fixed_length+=Vector3(path[i-1]).distance_to(path[i])
+- var remaining:float=maxf(0.0,float(ink_input.length_cap)-fixed_length)
+- var desired:Vector3=point-anchor
+- path[path.size()-1]=anchor+desired.limit_length(remaining)
+- ink_input.path=path;revision+=1
+- if desired.length()>=remaining:_freeze_preview("length_limit",hero_time)
++ # User override 2026-10-08: free curves are baseline, not H01-gated.
++ # Existing input handler freezes time BEFORE this call and commits on release.
++ var sampled:Dictionary=Q1FreeCurve.sample(ink_input.path,point,float(ink_input.length_cap))
++ if bool(sampled.changed):
++  ink_input.path=sampled.path;revision+=1
++ if bool(sampled.at_limit):_freeze_preview("length_limit",hero_time)
+ func _hero_action_policy(action:String,aim:Vector3=Vector3.INF)->Dictionary:
+  if action in ["attack","shift","q"] and _ink_action_controlled(action):return {"reason":"controlled"}
+  if source_rules_hash!=EXPECTED_RULES_HASH:return {"reason":"source_binding_mismatch"}

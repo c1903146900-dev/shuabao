@@ -1,0 +1,21 @@
+{
+  "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/base_v143/six-hero-current-wip/tests/ink_ultimate_presentation_20261006/r1_consumer01/source_checkpoint02/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+  "resource": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+  "base_sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+  "patched_sha256": "5ce55d9a1c1fb93778d71632258978be432f4dbd8461183a4f9d8050247076d6",
+  "instruction": "Apply only to copied production branch, then rebuild source pins using normal binding process. Do not edit or bypass original pins.",
+  "unchanged": [
+    "Q1 input validation",
+    "0.75-second source clock freeze",
+    "11m baseline arc-length cap",
+    "H01 length bonus",
+    "1.6m width",
+    "24m/s front",
+    "damage",
+    "push",
+    "cooldown",
+    "movement",
+    "same-frame release"
+  ],
+  "known_conflict": "H01 old curve-unlock and corner-count role redundant; no compensating mechanic invented."
+}

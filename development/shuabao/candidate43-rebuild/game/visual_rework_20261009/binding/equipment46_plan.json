@@ -1,0 +1,58 @@
+{
+  "schema": "C03-original-release-successor-1",
+  "base_source_sha256": "a4455e7f3c5a86eb423432f7a8e2a97a1d0b8ddb83bdcc10fc95bb9818cd70b9",
+  "changes": {
+    "scripts/combat/hero_combat_core.gd": {
+      "before": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+      "after": "20a6768441aeab8ea6ac3103e3fe94043bdc5322ce6e4620943ce327fc24cfa6"
+    },
+    "tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd": {
+      "before": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d",
+      "after": "c78fcb1a0790e7ac26f5d88a44eca064e1c49c732245409f6afe59f32101b700"
+    },
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd": {
+      "before": "21172268b92fa0ac7afebe174aced154e43205768e1db3cd48fb03ad75c4fd30",
+      "after": "dec74b7edd055285dee6752aac9e1f0482058f0f9c9320c7bb20d5eb2fa05109"
+    },
+    "tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd": {
+      "before": "e786cc01dbf3a41ede0f25f3f7cfcca4fe65e7044256162700245c334034fab9",
+      "after": "4b65b0a0eed95efc3e99a4e878326c375c8d3eedfff206f9b15eeae79a380118"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "before": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+      "after": "e40c0702565720e601aa3587ba466cf3ac174d5a10c17ea20663f5e684367172"
+    },
+    "tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd": {
+      "before": "cc981a8cf3e884157dcaee0d7082dde0d2a80828de9453d58348a43cd0ae1825",
+      "after": "e3b1b5fcdd98c4816bfaaa9969c75bce798faa52ffa1a0fe6c8614475846f020"
+    },
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": {
+      "before": "91897e8af75292259012a4a7a85f6e83702fa52e9b0ebe8c1659d35369c669f5",
+      "after": "fd5e68c9805739111b82a3e4e17981069a62ba6d030259944887cca7bb853e6b"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "026d98172344400fb7aee63407d5f77874e011ba64c5f9433e15c3ecbc5baaa6",
+      "after": "efef125dc9b27e32887da42e0358b4151322ad89a8458e7413c9037d5920d91c"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "d30b391d4b0e555e475dd2c30f890741aaca108dd4a8e5c4cc8a913fb9ea6597",
+      "after": "77c3136ae407d0dadd434554e3ed0e45c09d64024eb05b6d5960b42886144847"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "c6fd1d2279da0232c5d12e266e24282bb2dfbac2a3a4666b5e2559904072975e",
+      "after": "53e338182f6044a1845dfa4d4c036f0b81969c857fc8a3852e8ce008358cc476"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "76ce16eaf1bc73f8c299b69da3ea5e2f464caba17d8bc228009c996016c22fc5",
+      "after": "47ee92185a66f19b42ca5a8ace56a84b4c9573354802af1f33a4ecd5191729fb"
+    }
+  },
+  "new_files": {
+    "equipment_overload_20261010/adapter.gd": "4ab76be5b30bd06e07886ccd3c3ba2fc282bb75fb2749cef78b9a01a8153e685",
+    "equipment_overload_20261010/common_bridge.gd": "36501dffee31a72734f8b67d44cd368bc1607b2bb05c6474ed40296b64e5bd88",
+    "equipment_overload_20261010/model.gd": "73f2d1085c21fa2c6d2cbb8057688b910983677f79de6da2676686f12e52f456",
+    "equipment_overload_20261010/passive11.gd": "81e32d65528802fdf366c37ef8cec551933a0d8566059611ef9e05c0e0f39143",
+    "equipment_overload_20261010/user_decisions.json": "ab3137db2a25003ff71a1e08f05459f691660fa96533c42bdc246c92c4f95375"
+  },
+  "scope": "C03 only; original six release snapshots precede trusted grant; 4 seconds / 6 stacks / successful release, last source sale and battle end clear"
+}

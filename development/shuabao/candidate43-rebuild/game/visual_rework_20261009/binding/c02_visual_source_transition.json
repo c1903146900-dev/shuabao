@@ -1,0 +1,20 @@
+{
+  "schema": "c02-three-source-visual-successor-1",
+  "predecessor_source": "45f0a7080bd4bf671b2a165af8211d23f003c4983bb27e48b49a3e0a933f34c3",
+  "source_snapshot_commit": "059dcc742c99ccb107429c164a39a33f03b9434a",
+  "identity": "candidate43_public_rebuild_20261013",
+  "changes": {
+    "scripts/combat/hero_combat_core.gd": {
+      "before": "2431e9d682c1e6a1871a78cfb8feeae7552c021f7c6d6eecc49456cea731a69e",
+      "after": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "before": "3d5d328b62bc6520b90b010bcfaa2e293418dec1d5599fbaa2868df44ffa538f",
+      "after": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8"
+    },
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": {
+      "before": "33c0be66bab86c7fd635e90219fc38ff590ec58b06568525c6fdfdd7f158fc9b",
+      "after": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7"
+    }
+  }
+}

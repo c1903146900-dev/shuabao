@@ -1,0 +1,133 @@
+{
+  "schema": "ink-r2-ground-peaks-production-authoring-1",
+  "created_utc": "2026-10-06T08:18:00Z",
+  "status": "SOURCE_ONLY_NOT_RUNTIME_OR_BALANCE_ACCEPTED",
+  "hero": "yanguizhou",
+  "ability": "r2",
+  "authority": {
+    "user_message": "Sentinel_0a6789080ce48191abd8a74885876fd3",
+    "decision": "docs/source_decisions/20261006-ink-five-resolutions.json",
+    "original_catalog_sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+    "original_tokens": {
+      "cast_range": "R2-1",
+      "domain_radius": "R2-2",
+      "duration": "R2-3",
+      "peak_body_duration": "R2-5",
+      "rollup_flat": "R2-10",
+      "rollup_ap_percent": "R2-11",
+      "cooldown": "R2-12"
+    },
+    "root_review": "2026-10-06T08:16Z approved independent deterministic peak candidate"
+  },
+  "retained_original": {
+    "cast_range": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "domain_radius": [
+      10,
+      10.54,
+      11.5,
+      13
+    ],
+    "duration": [
+      5,
+      5.5,
+      6.5,
+      8
+    ],
+    "peak_body_duration": [
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "rollup_flat": [
+      300,
+      420,
+      720,
+      1150
+    ],
+    "rollup_ap_percent": [
+      220,
+      260,
+      340,
+      470
+    ],
+    "cooldown": [
+      145,
+      136,
+      121,
+      101
+    ]
+  },
+  "user_peak_counts": [
+    7,
+    9,
+    13,
+    20
+  ],
+  "authored_values": {
+    "peak_radius": 2.0,
+    "peak_flat": [
+      40,
+      55,
+      80,
+      120
+    ],
+    "peak_ap_fraction": [
+      0.25,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "warning_duration": 0.18,
+    "rise_to_hit_duration": 0.06,
+    "hit_offset": 0.24,
+    "hold_end_offset": 0.32,
+    "disappear_offset": 0.48
+  },
+  "schedule": {
+    "warning_start_formula": "i * (domain_duration - disappear_offset) / (peak_count - 1), i=0..N-1",
+    "first_warning_offset": 0.0,
+    "peak_visible_interval": "[warning_start+0.18, warning_start+0.48)",
+    "damage_once_at": "warning_start+0.24",
+    "end_order": [
+      "last_peak_disappears",
+      "one_original_rollup",
+      "one_cast_completion"
+    ],
+    "world_time": true,
+    "no_angle_rotation": true,
+    "no_repeated_rounded_interval_accumulation": true
+  },
+  "selection": {
+    "candidates": "eligible enemy centers and pairwise center midpoints",
+    "score": "distinct eligible enemy bodies intersecting fixed-domain-limited peak footprint",
+    "tie_break": "stable ground coordinates then stable actor identity",
+    "continuous_global_optimum_claimed": false,
+    "lock_at_warning": true,
+    "retarget_during_warning": false,
+    "empty_domain": "consume this ordinal; harmless visual peak without storing a future attack",
+    "hit_membership": "query actual eligible bodies at hit time within original fixed domain and locked peak footprint",
+    "one_hit_per_peak_per_enemy": true
+  },
+  "collision_and_control": {
+    "solid_mountain": false,
+    "new_displacement": false,
+    "new_slow": false,
+    "new_stun": false
+  },
+  "hex_admission": {
+    "H15": false,
+    "H16": false,
+    "note": "Original enhancement definitions retained; admission waits for complete individual implementation"
+  },
+  "limits": [
+    "No final visual asset or runtime implementation supplied by this table",
+    "No ordinary selection or presentation integration",
+    "Peak damage is provisional authored balance, not user original spreadsheet values"
+  ]
+}

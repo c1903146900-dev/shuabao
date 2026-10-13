@@ -1,0 +1,264 @@
+{
+  "schema": "representative-first-floor-room-1",
+  "revision": "01_ruin_forecourt",
+  "theme": "Neutral stylized ruin forecourt; ink is reserved for Yan Guizhou",
+  "scope": "One representative room layout, not a twelve-room floor, normal progression, new enemy, or skill revision",
+  "arena_half_extent": 13.0,
+  "ground_y": 0.0,
+  "vertical_traversal": false,
+  "central_clear_rectangle": {
+    "min": [
+      -7,
+      -6
+    ],
+    "max": [
+      7,
+      6
+    ],
+    "width": 14.0,
+    "depth": 12.0
+  },
+  "camera": {
+    "size": 18.0,
+    "elevation_degrees": 40.0,
+    "ground_distance": 24.0,
+    "follow_clamp_x": 8.0,
+    "follow_clamp_z": 7.0
+  },
+  "reference_radii": {
+    "hero": 0.65,
+    "teaching_minion": 0.46,
+    "largest_existing_enemy": 1.25
+  },
+  "obstacles": [
+    {
+      "id": "west_gallery",
+      "position": [
+        -10.6,
+        0,
+        -2.4
+      ],
+      "half": [
+        2.4,
+        0,
+        6.4
+      ],
+      "height_range": [
+        0.78,
+        3.25
+      ],
+      "purpose": "continuous raised gallery base, broken piers, timber remnants"
+    },
+    {
+      "id": "east_cistern_garden",
+      "position": [
+        10.7,
+        0,
+        -2.4
+      ],
+      "half": [
+        2.3,
+        0,
+        6.4
+      ],
+      "height_range": [
+        0.72,
+        2.35
+      ],
+      "purpose": "raised dry cistern terrace, copper mass, restrained foliage"
+    },
+    {
+      "id": "north_west_wing",
+      "position": [
+        -8,
+        0,
+        -10.5
+      ],
+      "half": [
+        5,
+        0,
+        2.5
+      ],
+      "height_range": [
+        1.2,
+        3.7
+      ],
+      "purpose": "high broken entry wing; overlap gallery base prevents sliver lane"
+    },
+    {
+      "id": "north_east_wing",
+      "position": [
+        8,
+        0,
+        -10.5
+      ],
+      "half": [
+        5,
+        0,
+        2.5
+      ],
+      "height_range": [
+        0.95,
+        2.9
+      ],
+      "purpose": "lower broken entry wing and uneven skyline"
+    },
+    {
+      "id": "south_west_wing",
+      "position": [
+        -8,
+        0,
+        11.5
+      ],
+      "half": [
+        5,
+        0,
+        1.5
+      ],
+      "height_range": [
+        0.62,
+        1.25
+      ],
+      "purpose": "low foreground parapet; does not obscure the battle court"
+    },
+    {
+      "id": "south_east_wing",
+      "position": [
+        8,
+        0,
+        11.5
+      ],
+      "half": [
+        5,
+        0,
+        1.5
+      ],
+      "height_range": [
+        0.62,
+        1.1
+      ],
+      "purpose": "low foreground parapet; does not obscure the battle court"
+    }
+  ],
+  "closed_boundary_gates": [
+    {
+      "id": "north_closed_gate",
+      "center": [
+        0,
+        0,
+        -13.12
+      ],
+      "size": [
+        6,
+        2.4,
+        0.24
+      ],
+      "inner_face_z": -13.0,
+      "collision": "arena north clamp; combat-closed, no room transition implemented"
+    },
+    {
+      "id": "south_closed_gate",
+      "center": [
+        0,
+        0,
+        13.12
+      ],
+      "size": [
+        6,
+        1.1,
+        0.24
+      ],
+      "inner_face_z": 13.0,
+      "collision": "arena south clamp; combat-closed, no room transition implemented"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "central_lateral",
+      "from": [
+        -8.2,
+        0
+      ],
+      "to": [
+        8.4,
+        0
+      ],
+      "physical_width": 16.6,
+      "hero_center_width": 15.3
+    },
+    {
+      "id": "north_gate",
+      "from": [
+        -3,
+        -10.5
+      ],
+      "to": [
+        3,
+        -10.5
+      ],
+      "physical_width": 6.0,
+      "hero_center_width": 4.7
+    },
+    {
+      "id": "south_gate",
+      "from": [
+        -3,
+        11.5
+      ],
+      "to": [
+        3,
+        11.5
+      ],
+      "physical_width": 6.0,
+      "hero_center_width": 4.7
+    },
+    {
+      "id": "west_south_bypass",
+      "from": [
+        -10,
+        4
+      ],
+      "to": [
+        -10,
+        10
+      ],
+      "physical_width": 6.0,
+      "hero_center_width": 4.7
+    },
+    {
+      "id": "east_south_bypass",
+      "from": [
+        10,
+        4
+      ],
+      "to": [
+        10,
+        10
+      ],
+      "physical_width": 6.0,
+      "hero_center_width": 4.7
+    }
+  ],
+  "spawn_suggestions": [
+    {
+      "id": "hero_preview",
+      "kind": "hero",
+      "position": [
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "id": "minion_preview",
+      "kind": "minion",
+      "position": [
+        0,
+        0,
+        -5
+      ]
+    }
+  ],
+  "collision_semantics": "Same authoritative 2D XZ AABBs for movement, swept dash, enemy motion and projectile clipping. No Physics3D or hidden height mechanic. Foundations are visibly raised, not traversable stairs.",
+  "acceptance": "source candidate only; engine/collision gate and actual normal-camera art review pending"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "ultimate-presentation-group-resolution-1",
+  "status": "USER_CONFIRMED_SHORT_PRESENTATION_ONLY",
+  "initial_message_id": "Sentinel_ffa56f9f0c1c819194d752157ed88b65",
+  "clarification_message_id": "Sentinel_4fc1d61ecaa08191baaaa9e8031c116a",
+  "final_message_id": "Sentinel_1cfd9a8b44888191bc6416503f67a6e9",
+  "final_user_quote": "是这个意思，是这个意思。就是每个大招是这样使用，一个短暂的演出的，短暂的效果展示的。在出了这个效果展示以后，其他的大招期间是正常速度的。因为就是有些大招就是我之前说了嘛，它是立刻结算伤害的，有些是持续伤害的，有些是分为多段的，等等等等。它都是正常速度，就是只是播那一下而已。",
+  "confirmed_rules": {
+    "duration_scope": "short_presentation_only_not_ability_effect_lifetime",
+    "presenters": "normal_presentation_animation_and_presentation_motion_with_invulnerability",
+    "others": "single_shared_slow_game_world_while_any_presentation_remains",
+    "overlap": "multiple_presenters_normal_and_invulnerable_shared_world_slow_does_not_multiply",
+    "last_exit": "all_return_to_normal_speed",
+    "after_presentation": "persistent_fields_multihits_and_other_skill_effects_do_not_keep_own_presentation_slow_active"
+  },
+  "explicit_inference": {
+    "early_presenter_exit_while_other_remains": "leaver_rejoins_shared_slow_group"
+  },
+  "coordinator_approved_consumer_contract": {
+    "cooldowns_buffs_world_projectiles": "world_dt",
+    "presentation_animation_and_motion": "presenter_group_normal_dt",
+    "ordinary_locomotion": "must_consume_actor_group_dt_not_unconditionally_real_dt",
+    "avoid_global_Engine_time_scale": true,
+    "same_cast_replay": "must_not_extend_invulnerability",
+    "pause": "freeze_presentation_and_world_times"
+  },
+  "numeric_authorization": "short_configurable_Yanguizhou_presentation_lengths_and_slow_factor_may_be_authored_and_recorded_as_production_values_not_claimed_original_values",
+  "source_limits": [
+    "old0.20_is_test_initial_not_source_approval",
+    "Fengli1.6s_has_own_source_not_Yanguizhou",
+    "R1field6_to10.5s_is_not_presentation_length",
+    "current_game_real_multiplayer_not_implemented"
+  ],
+  "acceptance": [
+    "local_dual_presenter_tests_are_not_true_network_play",
+    "full_hero_video_later_includes_solo_and_actual_multiplayer_overlap_exit_recovery_when_network_exists"
+  ],
+  "current_implementation": "AUDITED_GAP_NO_NEW_RUNTIME_INTEGRATION_YET"
+}

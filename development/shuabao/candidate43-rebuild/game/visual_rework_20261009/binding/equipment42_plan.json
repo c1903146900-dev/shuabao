@@ -1,0 +1,28 @@
+{
+  "schema": "equipment42-explicit-successor-1",
+  "previous_source_binding_sha256": "196f890e756c34f1c3085af29187f276c6dbedc48410423a5e621424fa4a3171",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "33c178934959b5933eb01b71a58df34f1ecf3b81304a050a184a8fe5b13c9302",
+      "after": "b020edf0408994b18e464d1a98d9e24991f37b1880ccf6c0292f9412341c2807"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "912fcbd7908f1ba4efe2c8b7303df609e2fe4dd454788a8d0e4e3f60cbf76a9b",
+      "after": "6a377cd31fab406f064049eb44844c016ceb20afad6cc2ed4d138a4af591c207"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "7ce55d608222550aebf5d0a436c82f388e6ce9595ef56dc5321deef464568887",
+      "after": "f09f92a6b40d5562b7ca605f3c598b6552739d2d228e13b41f62f45916551c59"
+    }
+  },
+  "new_files": {
+    "equipment_blood_trial_20261009/adapter.gd": "bdb237796e5e0a2396afe1bfc438ce4d6321f5f2f4a9ef5aa31c3a1da6f15503",
+    "equipment_blood_trial_20261009/task03.gd": "50eb804fb346d97fac24fc1115dbf9874b8efb5220e3e0bb225166371805f9d5",
+    "equipment_blood_trial_20261009/model.gd": "2568aa4195b0cdb8d0b273a58d663622561fbae95e783d57151a07c83e201ee5"
+  },
+  "source_rules": "original G03 task03: held actual outgoing HP damage while owner HP strictly below35percent divided by contemporaneous final maxHP per committed packet; total500 once per run yields1 permanent SP; unique per item, heal pauses eligibility, sale freezes and repurchase resumes, rooms retain; separate core/P1 original commit witness, no per-packet rounding",
+  "admitted_item": "final:G03",
+  "previous_item_count": 41,
+  "new_item_count": 42,
+  "earlier_equipment_and_terminal_inherited": true
+}

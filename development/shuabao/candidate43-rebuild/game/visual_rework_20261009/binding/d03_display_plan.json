@@ -1,0 +1,12 @@
+{
+  "schema": "d03-final-quote-display-successor-1",
+  "base_source_sha256": "50c63ec362f03878aa1776467ebec06f85b2ddf161fbb46aa55b5cf8333a9e73",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "a931bfd2ceeea58d7ac1e32d6050836ed7335d30b0d822b08ca835f561933d31",
+      "after": "45ba8349597e132f52522df9b26e72bd9e77090aaf16ce2d5c5206b643499805"
+    }
+  },
+  "new_files": {},
+  "scope": "UI text only; original quote and existing distance/regen tuning; no transaction or consumer changes"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "SOURCE_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "881ecc74ba7521b531da0fd41f760f1456cbac277226a2caf4110e29182e62ff",
+  "target_candidate": "candidate32",
+  "changed": [
+    {
+      "path": "res://visual_rework_20261009/readable_layout.gd",
+      "before": "227460c5dad582ee62e15cd5a8a120a69030db625ea661ac8e5c51d03f9da927",
+      "after": "87305ad176dc176d73a9b82c95646ea4687d9a0560f6fb41882a409d57c8c22f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_revision02_prepare/readable_layout.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "e8a9de3c947d1d56ee53ca77d5eec23bc3d1e2db076847b4f65aab956942a16a",
+      "after": "c6c4adf18fff5e787fe35598fa5dfaf7af16a2992953dc3175325812306fc48d",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_revision02_prepare/live_binding.gd"
+    }
+  ],
+  "new": [],
+  "new_plan_path": "res://visual_rework_20261009/binding/growth_readability_size_plan.json",
+  "preserve_13_ancestor_replacements": true,
+  "source_maps_require_actual_intersection_equality": true,
+  "sealed_parent_unmodified": true,
+  "engine_run": false,
+  "basis": {
+    "diagnostic_report_sha256": "e70071749be0bf0cd832061f622aee101f7b0b4fda2e17cc24c739caefee67fc",
+    "diagnostic_guard_sha256": "dbe091556b175bcdfa49e3d31ce94a1bbb7674a6d8c736f887d66537da21a07c",
+    "original_gui31_failure_report_sha256": "f06cc4a96d0653dc9a0e34d1adc47be4b704ddaf0dc35dbf82c1ca2126ed58bd",
+    "four_observed_stages_same_sizes": true,
+    "original_constructor_sizes": {
+      "示意框": [
+        43,
+        18
+      ],
+      "装备接入中": [
+        135,
+        18
+      ]
+    },
+    "observed_sizes_not_new_constants": {
+      "示意框": [
+        43,
+        23
+      ],
+      "装备接入中": [
+        135,
+        23
+      ]
+    },
+    "engine_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+    "fixed_original_dependencies": {
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/tests/ink_style_specimen_20261004/revision10_hud/hud.gd": "62c2b2518d0dc76aaa14d29aad51664f89802ff3e7d862de59479114305464d8",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/tests/ink_style_specimen_20261004/revision03/hud.gd": "e6e17791cb3f28124ed140a58b31bfbe3404d4411ce78ba7284060d433502b93",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/tests/ink_style_specimen_20261004/revision10_hud/icons.gd": "0ac5b1b2416f80dcba2243dddb43b55da38a4d2743a5ed70879655f1c5cef090",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/tests/ink_style_specimen_20261004/style.gd": "508e4a2b91f8a698c4cca6e2767261504a45fdfbb0b11a185ddc960af7e94b97",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/assets/ui/NotoSansCJKsc-Regular.otf": "f2cac2db5b5304a895930b9076f27a3f38da20c0d8f804ce6fa44e60efba94db",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/assets/ui/NotoSansCJKsc-Regular.otf.import": "eeff27ff191fc278e1a1a7e539663f9f9090710d46bff9b65c814f90145c3f23",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/project.godot": "cf96213f7ae2b87369e6e1552229a59854b0988a1bf28307b25a736598ca7106",
+      "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate31/.godot/imported/NotoSansCJKsc-Regular.otf-ffed665f475823ec8d8910f3a362173a.fontdata": "a75640a465fe8913b152aa4400b52e9b3e482721db82abc4c6cb5ca7ef9d3407"
+    }
+  },
+  "scope": "Source-pinned HUD plus _label creator prove declared parameters. Native Label/full text/position/font/no children/no connections/IGNORE/three unique atomic selection retained. Effective size/min recorded; clearing text must preserve geometry. No size tolerance/new23 constant/extra reference Label. Does not claim to reject arbitrary size-only tampering. Old31 failure remains red; pixel proof pending. Content minimum sizes are recorded before/after and are NOT required equal; only effective geometry must remain unchanged."
+}

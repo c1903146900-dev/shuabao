@@ -1,0 +1,545 @@
+{
+  "inputs": [
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_a.wav",
+      "sha256": "cd8162a58912cf331adaaed62b9b56710fea7c8f34907800a8a15d11261e39f4",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 3360,
+        "pcm_sha256": "c4fdeab0b60e4706469cfdea987c8bd2d1ff34a9a9c97a6f5787fa149e238f92"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_b.wav",
+      "sha256": "984fbf9a28d672ad2a528c81f916accc93396e5806cfdbcffb42c3ec4a143750",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_contact_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 3360,
+        "pcm_sha256": "0347405582b8f47b51038d49b4efd62030edbffe33c4b2b1a2d1852e16ff172f"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_a.wav",
+      "sha256": "101c6154d863f8b58996449913823ba2699877cdf7829565dba3a4fc87b7c5fa",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 4080,
+        "pcm_sha256": "3a3ed8a62903ae60d37a40a18c0bd69ebb261778bcc5a2d8b6b805c11904f26d"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_b.wav",
+      "sha256": "526fc3273f80bab74ac86b899abe2b71ec01889706231dc8230f11355dd5bf8c",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_critical_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 4080,
+        "pcm_sha256": "73ac4352ebae108d362d8392e0a2073e1831afef768bdfd4849744e269c7d0b6"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_release_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_release_a.wav",
+      "sha256": "c741c31220ce9ecf5ddd956c540c545119f33a175a4aaf1c01cccf157a7938bc",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_release_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 6480,
+        "pcm_sha256": "93ca39953d2dd5d9b844801813093b216c1218e151838de5e5ee2767f6d746dd"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_basic_release_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_basic_release_b.wav",
+      "sha256": "8dd93e5866c431ab536b37f9d820cc584a484a9491bf3bfb0bccab7bb575ac3a",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_basic_release_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 6480,
+        "pcm_sha256": "fa63cda317b839bd93cdcbd44cec2353dd55ee2bffdf6a512d15e984aab206e3"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_body_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_body_a.wav",
+      "sha256": "58f810db36dda563bfa1c01ec8658cee6a91390069536980b0504e8f325420ce",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_body_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 13200,
+        "pcm_sha256": "7a56069ff4240ed6cfcd582175037f6e3f8f6e3d5211c5cfe648b7f9efb1dc59"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_body_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_body_b.wav",
+      "sha256": "10ec09a0c9930c9f33e56ea244375f7588ea05af429605e2a21338979cd93f7f",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_body_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 13200,
+        "pcm_sha256": "716d5afe2ed87f873b206725ac4e6db185f0fbcf06da378d0ec8a6d87cb70107"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_a.wav",
+      "sha256": "c9e458cb4c1981373ddcbeac39b08cb4336ed755cd5e9bc92e07a07097085eb9",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 6000,
+        "pcm_sha256": "43205ec95d50105c7c556b5eefc90e7949c6db25a67a345fbefb753eae7e640a"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_b.wav",
+      "sha256": "e19a2ec5ae584f7c098af0c2475f0b07959f4be1b1eafa431b48bd02df06cadc",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_contact_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 6000,
+        "pcm_sha256": "a0537359230080ea943754665b6564ec3ce91197e6a6e365ca484424456eb9d9"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_release_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_release_a.wav",
+      "sha256": "f7ea21214318a807d099dea1b48b4a3d83367e26a3c3d1540321d74843f14489",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_release_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 9360,
+        "pcm_sha256": "6a3dbfb167103785ec8f4c0e159223fdd50eaf12ff27b35320e75fb8496f17cd"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_q1_release_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_q1_release_b.wav",
+      "sha256": "371c8d7eec16e8ef0d6a26c2fbff36357e5ed6d9446266cef87e72b38b3aa6ba",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_q1_release_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 9360,
+        "pcm_sha256": "92abc94b4b7fdfb46f5b2fcaeac722eab0e46cfff7d89e90d9a85d3d561610bc"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_a.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_a.wav",
+      "sha256": "4a8c0ab1d9a1ecccf676d70e42f33274cf5024dbe7b3d2b40ad41e918930d842",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 8640,
+        "pcm_sha256": "248e36a5b831c6b8d49387eb620a58b53178bf9173964f38fb87c3c1d4058738"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_b.wav",
+      "resource": "res://tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_b.wav",
+      "sha256": "fe7c05e3cad5816abfe4470e80c76ae2d8ac647d3f92cdbd622469f5d1bcd472",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_benchmark_audio_20261004/wav/ink_shift_scatter_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 8640,
+        "pcm_sha256": "d14a404fc8943fcf376c2734b7a4b57f3b23f6987f73a336283c046649fe0780"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_a.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_a.wav",
+      "sha256": "4f9a088467cebdf6ac9a2ba793edb2ae1baf0447a90fd2f5992886de32fdca61",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 11520,
+        "pcm_sha256": "f8a77f2b62394bf0f6a0426d55032b08a6eb5cc5fa9f1aaddc0b53eea2b1de9a"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_b.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_b.wav",
+      "sha256": "c09609d28ead2a252f2ce62cf4e7f37731be8106d8e0b61108c1e371b589fd64",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_collapse_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 11520,
+        "pcm_sha256": "8e553898a2ffa795ad3255644ca7b9e37d3ef0732826847bf3411cf311fbbae5"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_a.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_a.wav",
+      "sha256": "44e420466f2dea1f223ba476a0207ecf36d2fa7cecd933417e05eb2c27f050f6",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 4560,
+        "pcm_sha256": "70d74d9874599fdc505a59055bcdb4721076dc4c9b92f58bb046504c37550feb"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_b.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_b.wav",
+      "sha256": "7b4c1acd8988de4f8fb97f585794cf602aa7faaeadf0ded8691a654f8face66d",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_contact_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 4560,
+        "pcm_sha256": "52f074f7c0148d267417526d9e527c83f5ab7f251c4faec4df90406bda611a1a"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_a.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_a.wav",
+      "sha256": "a8701a8eb391cf1d3908833d3a9a06d1c716e5231b5679f8b98a5595600e202d",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_a.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 10080,
+        "pcm_sha256": "eaa7ba6ccdf2bc9ddf0a87552b4f5a2dcfd9eaf27caaf18883360d429396c70d"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_b.wav",
+      "resource": "res://tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_b.wav",
+      "sha256": "570235a7f325d71392bb8eaac969dd7adb48c0e6d7fbca61d84540a5cc230315",
+      "historical_source": "/workspace/scratch/73ebae91a474/loot_base_restore_20261009/full_v33_plus_delta44/tests/ink_composed_audio_fix01_20261005/wav/ink_q3_raise_b.wav",
+      "historical_descriptor_exists": false,
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 48000,
+        "frames": 10080,
+        "pcm_sha256": "3b6e01312133f76611d3dd79908ef8e92b44d3a93bdaa065a48431333c6a4da3"
+      },
+      "has_smpl_loop_metadata": false,
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 0
+      }
+    }
+  ],
+  "new_successor_choice": "No historical import settings. Explicit lossless PCM, original rate/channels/data/loop detection; not an assertion of historic editor parameters."
+}

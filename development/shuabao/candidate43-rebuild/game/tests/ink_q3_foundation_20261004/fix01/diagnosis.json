@@ -1,0 +1,458 @@
+{
+  "schema": 1,
+  "original_source_binding": "041a5b5bea1c0797308e6a06cbddf4bd27d1bf0bb6d90ee7e99cdeb2fefb1795",
+  "original_failed_actual": {
+    "log_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink_q3_floor_finite_2056/q3_gate/raw.log",
+    "log_sha256": "249b39286fbd1715d0c32e25f66e28ab954a18ed0094daadcd92af6258cee94a",
+    "exit_receipt": {
+      "label": "q3_gate",
+      "command": [
+        "/usr/local/bin/godot",
+        "--headless",
+        "--path",
+        "/workspace/scratch/73ebae91a474/recovery_2309/ink_q3_stage_2055",
+        "--script",
+        "res://tests/ink_q3_foundation_20261004/q3_gate.gd"
+      ],
+      "exit": 1,
+      "reaped": true,
+      "reason": "",
+      "errors": [
+        "ERROR: Q3 first real raise admitted",
+        "SCRIPT ERROR: Invalid access to property or key 'length' on a base object of type 'Dictionary'.",
+        "ERROR: coincident target allowed with stable facing",
+        "SCRIPT ERROR: Invalid access to property or key 'cast_id' on a base object of type 'Dictionary'.",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: recast aims from mountain to manual mouse after hero moves",
+        "ERROR: movable ordinary/elite pushed in collapse direction",
+        "ERROR: H06 exact hit stun 0.000000000 expected 0.800000000",
+        "ERROR: movable ordinary/elite pushed in collapse direction",
+        "ERROR: H06 exact hit stun 0.000000000 expected 0.800000000",
+        "ERROR: Boss H06 stun follows tenacity, not invented immunity 0.000000000 expected 0.600000000",
+        "SCRIPT ERROR: Invalid access to property or key 'cast_id' on a base object of type 'Dictionary'.",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: ordinary versus elite/Boss terrain minion",
+        "ERROR: birth overlap cannot cross deeper through mountain",
+        "ERROR: actual pounce family obeys terrain, no tunnelling",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: actual projectile blocked once by source ID ranged",
+        "ERROR: blocked projectile cannot hit hero ranged 0.000000000 expected 1.000000000",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: actual projectile blocked once by source ID support",
+        "ERROR: blocked projectile cannot hit hero support 0.000000000 expected 1.000000000",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: actual projectile blocked once by source ID pitcher",
+        "ERROR: blocked projectile cannot hit hero pitcher 0.000000000 expected 1.000000000",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: mountain persists before exact duration",
+        "SCRIPT ERROR: Invalid access to property or key 'cast_id' on a base object of type 'Dictionary'.",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: actual G25 root commitment cost applies",
+        "ERROR: actual G25 recast",
+        "SCRIPT ERROR: Invalid access to property or key 'cast_id' on a base object of type 'Dictionary'.",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: callback rebuild actually reached ink_q3_raised",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: callback rebuild actually reached damage",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: callback rebuild actually reached ink_q3_collapse_started",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: rejected nonlethal recast keeps current mountain actual_stun",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: rejected nonlethal recast keeps current mountain pause",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: rejected nonlethal recast keeps current mountain stale_generation",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: Q3 first real raise admitted",
+        "ERROR: walking recast legal",
+        "ERROR: retained Q1 arm",
+        "ERROR: retained Q1 manual start",
+        "ERROR: retained physical release",
+        "ERROR: retained BASIC manual",
+        "ERROR: retained Shift manual",
+        "ERROR: before/after Q1 H01/H02 BASIC Shift exact event equality",
+        "ERROR: before/after exact actor/cooldown/control state",
+        "ERROR: before/after exact enemy damage/displacement state",
+        "ERROR: case completed: source_ranks",
+        "ERROR: case completed: manual_admission",
+        "ERROR: case completed: recast_controls",
+        "ERROR: case completed: lifecycle_clocks",
+        "ERROR: case completed: root_proc_budget"
+      ],
+      "elapsed": 0.6314072660024976,
+      "rss_cap": 536870912,
+      "before": {
+        "memory.current": "7352127488",
+        "memory.max": "8589934592",
+        "memory.events": "low 0\nhigh 0\nmax 34016\noom 0\noom_kill 0\noom_group_kill 0",
+        "memory.stat": "anon 635613184\nfile 6161924096\nkernel 553365504\nkernel_stack 6160384\npagetables 20107264\nsec_pagetables 0\npercpu 22088\nsock 0\nvmalloc 65536\nshmem 152727552\nfile_mapped 20160512\nfile_dirty 1146880\nfile_writeback 0\nswapcached 0\nanon_thp 29360128\nfile_thp 503316480\nshmem_thp 0\ninactive_anon 712818688\nactive_anon 75366400\ninactive_file 434176000\nactive_file 5575041024\nunevictable 0\nslab_reclaimable 511203080\nslab_unreclaimable 15126040\nslab 526329120\nworkingset_refault_anon 0\nworkingset_refault_file 904766\nworkingset_activate_anon 0\nworkingset_activate_file 630848\nworkingset_restore_anon 0\nworkingset_restore_file 59109\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 2346978\npgsteal 2150446\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 2346978\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2150446\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 257614328\npgmajfault 94\npgrefill 935298\npgactivate 6449945\npgdeactivate 935298\npglazyfree 2\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 3672\nthp_collapse_alloc 21\nthp_swpout 0\nthp_swpout_fallback 0",
+        "budget_v3_observation": {
+          "memory_events": {
+            "low": 0,
+            "high": 0,
+            "max": 34016,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "reclaim_and_fault_counters": {
+            "workingset_refault_anon": 0,
+            "workingset_refault_file": 904766,
+            "workingset_activate_anon": 0,
+            "workingset_activate_file": 630848,
+            "workingset_restore_anon": 0,
+            "workingset_restore_file": 59109,
+            "workingset_nodereclaim": 0,
+            "pgscan": 2346978,
+            "pgsteal": 2150446,
+            "pgscan_kswapd": 0,
+            "pgscan_direct": 2346978,
+            "pgscan_khugepaged": 0,
+            "pgscan_proactive": 0,
+            "pgsteal_kswapd": 0,
+            "pgsteal_direct": 2150446,
+            "pgsteal_khugepaged": 0,
+            "pgsteal_proactive": 0,
+            "pgfault": 257614328,
+            "pgmajfault": 94,
+            "pgrefill": 935298,
+            "pgactivate": 6449945,
+            "pgdeactivate": 935298
+          },
+          "memory_PSI": {
+            "path": "/sys/fs/cgroup/memory.pressure",
+            "available": false,
+            "error_type": "FileNotFoundError",
+            "error": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.pressure'"
+          },
+          "counter_scope": "This visiblememorycgroup memory.stat/events and memory.pressure only; no hostglobalorhiddenancestor inference"
+        }
+      },
+      "after": {
+        "memory.current": "7352623104",
+        "memory.max": "8589934592",
+        "memory.events": "low 0\nhigh 0\nmax 34016\noom 0\noom_kill 0\noom_group_kill 0",
+        "memory.stat": "anon 635740160\nfile 6162034688\nkernel 553291776\nkernel_stack 6160384\npagetables 20033536\nsec_pagetables 0\npercpu 18392\nsock 0\nvmalloc 65536\nshmem 152727552\nfile_mapped 20160512\nfile_dirty 1277952\nfile_writeback 0\nswapcached 0\nanon_thp 29360128\nfile_thp 503316480\nshmem_thp 0\ninactive_anon 712912896\nactive_anon 75366400\ninactive_file 431894528\nactive_file 5577437184\nunevictable 0\nslab_reclaimable 511242320\nslab_unreclaimable 15096784\nslab 526339104\nworkingset_refault_anon 0\nworkingset_refault_file 904766\nworkingset_activate_anon 0\nworkingset_activate_file 630848\nworkingset_restore_anon 0\nworkingset_restore_file 59109\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 2346978\npgsteal 2150446\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 2346978\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2150446\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 257644247\npgmajfault 94\npgrefill 935298\npgactivate 6450520\npgdeactivate 935298\npglazyfree 2\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 3672\nthp_collapse_alloc 21\nthp_swpout 0\nthp_swpout_fallback 0",
+        "budget_v3_observation": {
+          "memory_events": {
+            "low": 0,
+            "high": 0,
+            "max": 34016,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "reclaim_and_fault_counters": {
+            "workingset_refault_anon": 0,
+            "workingset_refault_file": 904766,
+            "workingset_activate_anon": 0,
+            "workingset_activate_file": 630848,
+            "workingset_restore_anon": 0,
+            "workingset_restore_file": 59109,
+            "workingset_nodereclaim": 0,
+            "pgscan": 2346978,
+            "pgsteal": 2150446,
+            "pgscan_kswapd": 0,
+            "pgscan_direct": 2346978,
+            "pgscan_khugepaged": 0,
+            "pgscan_proactive": 0,
+            "pgsteal_kswapd": 0,
+            "pgsteal_direct": 2150446,
+            "pgsteal_khugepaged": 0,
+            "pgsteal_proactive": 0,
+            "pgfault": 257644247,
+            "pgmajfault": 94,
+            "pgrefill": 935298,
+            "pgactivate": 6450520,
+            "pgdeactivate": 935298
+          },
+          "memory_PSI": {
+            "path": "/sys/fs/cgroup/memory.pressure",
+            "available": false,
+            "error_type": "FileNotFoundError",
+            "error": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.pressure'"
+          },
+          "counter_scope": "This visiblememorycgroup memory.stat/events and memory.pressure only; no hostglobalorhiddenancestor inference"
+        }
+      },
+      "samples": [
+        {
+          "seconds": 0.008756374998483807,
+          "memory": {
+            "memory.current": "7352389632",
+            "memory.max": "8589934592",
+            "memory.events": "low 0\nhigh 0\nmax 34016\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.stat": "anon 635613184\nfile 6161924096\nkernel 553365504\nkernel_stack 6160384\npagetables 20107264\nsec_pagetables 0\npercpu 22088\nsock 0\nvmalloc 65536\nshmem 152727552\nfile_mapped 20160512\nfile_dirty 1146880\nfile_writeback 0\nswapcached 0\nanon_thp 29360128\nfile_thp 503316480\nshmem_thp 0\ninactive_anon 712818688\nactive_anon 75366400\ninactive_file 434176000\nactive_file 5575041024\nunevictable 0\nslab_reclaimable 511203080\nslab_unreclaimable 15126040\nslab 526329120\nworkingset_refault_anon 0\nworkingset_refault_file 904766\nworkingset_activate_anon 0\nworkingset_activate_file 630848\nworkingset_restore_anon 0\nworkingset_restore_file 59109\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 2346978\npgsteal 2150446\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 2346978\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2150446\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 257614328\npgmajfault 94\npgrefill 935298\npgactivate 6449945\npgdeactivate 935298\npglazyfree 2\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 3672\nthp_collapse_alloc 21\nthp_swpout 0\nthp_swpout_fallback 0",
+            "budget_v3_observation": {
+              "memory_events": {
+                "low": 0,
+                "high": 0,
+                "max": 34016,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "reclaim_and_fault_counters": {
+                "workingset_refault_anon": 0,
+                "workingset_refault_file": 904766,
+                "workingset_activate_anon": 0,
+                "workingset_activate_file": 630848,
+                "workingset_restore_anon": 0,
+                "workingset_restore_file": 59109,
+                "workingset_nodereclaim": 0,
+                "pgscan": 2346978,
+                "pgsteal": 2150446,
+                "pgscan_kswapd": 0,
+                "pgscan_direct": 2346978,
+                "pgscan_khugepaged": 0,
+                "pgscan_proactive": 0,
+                "pgsteal_kswapd": 0,
+                "pgsteal_direct": 2150446,
+                "pgsteal_khugepaged": 0,
+                "pgsteal_proactive": 0,
+                "pgfault": 257614328,
+                "pgmajfault": 94,
+                "pgrefill": 935298,
+                "pgactivate": 6449945,
+                "pgdeactivate": 935298
+              },
+              "memory_PSI": {
+                "path": "/sys/fs/cgroup/memory.pressure",
+                "available": false,
+                "error_type": "FileNotFoundError",
+                "error": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.pressure'"
+              },
+              "counter_scope": "This visiblememorycgroup memory.stat/events and memory.pressure only; no hostglobalorhiddenancestor inference"
+            }
+          },
+          "owned_engines": [
+            {
+              "pid": 207184,
+              "rss": 4059136
+            }
+          ],
+          "budget": {
+            "schema": "conservative-memory-budget-v3",
+            "raw": 1237544960,
+            "memory_current": 7352389632,
+            "memory_max": 8589934592,
+            "inactive_file": 434176000,
+            "excluded_from_inactive_file": {
+              "shmem": 152727552,
+              "file_dirty": 1146880,
+              "file_writeback": 0,
+              "file_mapped": 20160512
+            },
+            "exclusion_sum": 174034944,
+            "eligible_inactive_file": 260141056,
+            "file_credit_50pct_uncapped": 130070528,
+            "slab_reclaimable": 511203080,
+            "slab_credit25pct_capped128MiB": 127800770,
+            "slab_credit_cap": 134217728,
+            "uncredited_categories_informational": {
+              "anon": 635613184,
+              "active_anon": 75366400,
+              "inactive_anon": 712818688,
+              "active_file": 5575041024,
+              "kernel": 553365504,
+              "slab_unreclaimable": 15126040,
+              "kernel_stack": 6160384,
+              "pagetables": 20107264,
+              "sock": 0,
+              "unevictable": 0
+            },
+            "effective": 1495416258,
+            "scope": "Conservative estimate, not promisedavailableRAM. Excluded categories may overlap; all are subtracted conservatively. Noactivefile/anon/nonreclaimablekernelcredit."
+          }
+        },
+        {
+          "seconds": 0.22011515499616507,
+          "memory": {
+            "memory.current": "7416799232",
+            "memory.max": "8589934592",
+            "memory.events": "low 0\nhigh 0\nmax 34016\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.stat": "anon 699367424\nfile 6161981440\nkernel 554151936\nkernel_stack 6373376\npagetables 20525056\nsec_pagetables 0\npercpu 18788\nsock 0\nvmalloc 69632\nshmem 152727552\nfile_mapped 20160512\nfile_dirty 1208320\nfile_writeback 0\nswapcached 0\nanon_thp 29360128\nfile_thp 503316480\nshmem_thp 0\ninactive_anon 776376320\nactive_anon 75374592\ninactive_file 433893376\nactive_file 5575364608\nunevictable 0\nslab_reclaimable 511247632\nslab_unreclaimable 15222264\nslab 526469896\nworkingset_refault_anon 0\nworkingset_refault_file 904766\nworkingset_activate_anon 0\nworkingset_activate_file 630848\nworkingset_restore_anon 0\nworkingset_restore_file 59109\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 2346978\npgsteal 2150446\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 2346978\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2150446\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 257638557\npgmajfault 94\npgrefill 935298\npgactivate 6450019\npgdeactivate 935298\npglazyfree 2\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 3672\nthp_collapse_alloc 21\nthp_swpout 0\nthp_swpout_fallback 0",
+            "budget_v3_observation": {
+              "memory_events": {
+                "low": 0,
+                "high": 0,
+                "max": 34016,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "reclaim_and_fault_counters": {
+                "workingset_refault_anon": 0,
+                "workingset_refault_file": 904766,
+                "workingset_activate_anon": 0,
+                "workingset_activate_file": 630848,
+                "workingset_restore_anon": 0,
+                "workingset_restore_file": 59109,
+                "workingset_nodereclaim": 0,
+                "pgscan": 2346978,
+                "pgsteal": 2150446,
+                "pgscan_kswapd": 0,
+                "pgscan_direct": 2346978,
+                "pgscan_khugepaged": 0,
+                "pgscan_proactive": 0,
+                "pgsteal_kswapd": 0,
+                "pgsteal_direct": 2150446,
+                "pgsteal_khugepaged": 0,
+                "pgsteal_proactive": 0,
+                "pgfault": 257638557,
+                "pgmajfault": 94,
+                "pgrefill": 935298,
+                "pgactivate": 6450019,
+                "pgdeactivate": 935298
+              },
+              "memory_PSI": {
+                "path": "/sys/fs/cgroup/memory.pressure",
+                "available": false,
+                "error_type": "FileNotFoundError",
+                "error": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.pressure'"
+              },
+              "counter_scope": "This visiblememorycgroup memory.stat/events and memory.pressure only; no hostglobalorhiddenancestor inference"
+            }
+          },
+          "owned_engines": [
+            {
+              "pid": 207184,
+              "rss": 93827072
+            }
+          ],
+          "budget": {
+            "schema": "conservative-memory-budget-v3",
+            "raw": 1173135360,
+            "memory_current": 7416799232,
+            "memory_max": 8589934592,
+            "inactive_file": 433893376,
+            "excluded_from_inactive_file": {
+              "shmem": 152727552,
+              "file_dirty": 1208320,
+              "file_writeback": 0,
+              "file_mapped": 20160512
+            },
+            "exclusion_sum": 174096384,
+            "eligible_inactive_file": 259796992,
+            "file_credit_50pct_uncapped": 129898496,
+            "slab_reclaimable": 511247632,
+            "slab_credit25pct_capped128MiB": 127811908,
+            "slab_credit_cap": 134217728,
+            "uncredited_categories_informational": {
+              "anon": 699367424,
+              "active_anon": 75374592,
+              "inactive_anon": 776376320,
+              "active_file": 5575364608,
+              "kernel": 554151936,
+              "slab_unreclaimable": 15222264,
+              "kernel_stack": 6373376,
+              "pagetables": 20525056,
+              "sock": 0,
+              "unevictable": 0
+            },
+            "effective": 1430845764,
+            "scope": "Conservative estimate, not promisedavailableRAM. Excluded categories may overlap; all are subtracted conservatively. Noactivefile/anon/nonreclaimablekernelcredit."
+          }
+        },
+        {
+          "seconds": 0.4307157709990861,
+          "memory": {
+            "memory.current": "7422406656",
+            "memory.max": "8589934592",
+            "memory.events": "low 0\nhigh 0\nmax 34016\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.stat": "anon 704974848\nfile 6161997824\nkernel 554180608\nkernel_stack 6373376\npagetables 20549632\nsec_pagetables 0\npercpu 18964\nsock 0\nvmalloc 69632\nshmem 152727552\nfile_mapped 20160512\nfile_dirty 1224704\nfile_writeback 0\nswapcached 0\nanon_thp 29360128\nfile_thp 503316480\nshmem_thp 0\ninactive_anon 782008320\nactive_anon 75374592\ninactive_file 431923200\nactive_file 5577334784\nunevictable 0\nslab_reclaimable 511243208\nslab_unreclaimable 15227800\nslab 526471008\nworkingset_refault_anon 0\nworkingset_refault_file 904766\nworkingset_activate_anon 0\nworkingset_activate_file 630848\nworkingset_restore_anon 0\nworkingset_restore_file 59109\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 2346978\npgsteal 2150446\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 2346978\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2150446\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 257643140\npgmajfault 94\npgrefill 935298\npgactivate 6450500\npgdeactivate 935298\npglazyfree 2\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 3672\nthp_collapse_alloc 21\nthp_swpout 0\nthp_swpout_fallback 0",
+            "budget_v3_observation": {
+              "memory_events": {
+                "low": 0,
+                "high": 0,
+                "max": 34016,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "reclaim_and_fault_counters": {
+                "workingset_refault_anon": 0,
+                "workingset_refault_file": 904766,
+                "workingset_activate_anon": 0,
+                "workingset_activate_file": 630848,
+                "workingset_restore_anon": 0,
+                "workingset_restore_file": 59109,
+                "workingset_nodereclaim": 0,
+                "pgscan": 2346978,
+                "pgsteal": 2150446,
+                "pgscan_kswapd": 0,
+                "pgscan_direct": 2346978,
+                "pgscan_khugepaged": 0,
+                "pgscan_proactive": 0,
+                "pgsteal_kswapd": 0,
+                "pgsteal_direct": 2150446,
+                "pgsteal_khugepaged": 0,
+                "pgsteal_proactive": 0,
+                "pgfault": 257643140,
+                "pgmajfault": 94,
+                "pgrefill": 935298,
+                "pgactivate": 6450500,
+                "pgdeactivate": 935298
+              },
+              "memory_PSI": {
+                "path": "/sys/fs/cgroup/memory.pressure",
+                "available": false,
+                "error_type": "FileNotFoundError",
+                "error": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.pressure'"
+              },
+              "counter_scope": "This visiblememorycgroup memory.stat/events and memory.pressure only; no hostglobalorhiddenancestor inference"
+            }
+          },
+          "owned_engines": [
+            {
+              "pid": 207184,
+              "rss": 99987456
+            }
+          ],
+          "budget": {
+            "schema": "conservative-memory-budget-v3",
+            "raw": 1167527936,
+            "memory_current": 7422406656,
+            "memory_max": 8589934592,
+            "inactive_file": 431923200,
+            "excluded_from_inactive_file": {
+              "shmem": 152727552,
+              "file_dirty": 1224704,
+              "file_writeback": 0,
+              "file_mapped": 20160512
+            },
+            "exclusion_sum": 174112768,
+            "eligible_inactive_file": 257810432,
+            "file_credit_50pct_uncapped": 128905216,
+            "slab_reclaimable": 511243208,
+            "slab_credit25pct_capped128MiB": 127810802,
+            "slab_credit_cap": 134217728,
+            "uncredited_categories_informational": {
+              "anon": 704974848,
+              "active_anon": 75374592,
+              "inactive_anon": 782008320,
+              "active_file": 5577334784,
+              "kernel": 554180608,
+              "slab_unreclaimable": 15227800,
+              "kernel_stack": 6373376,
+              "pagetables": 20549632,
+              "sock": 0,
+              "unevictable": 0
+            },
+            "effective": 1424243954,
+            "scope": "Conservative estimate, not promisedavailableRAM. Excluded categories may overlap; all are subtracted conservatively. Noactivefile/anon/nonreclaimablekernelcredit."
+          }
+        }
+      ]
+    },
+    "status": "actual_failed_not_source_only_pass"
+  },
+  "source_root_cause": "Q3 initializer overrides original Ink initializer without calling super; actor remains neutral HP1 and rules hash empty",
+  "predicted_first_reason": "source_binding_mismatch",
+  "first_reason_status": "source_inferred_until_main_runs_new_diagnostic",
+  "only_runtime_edit": "insert super._init() before original director replacement",
+  "author_engine_invocations": 0,
+  "shared_guards_edited": false
+}

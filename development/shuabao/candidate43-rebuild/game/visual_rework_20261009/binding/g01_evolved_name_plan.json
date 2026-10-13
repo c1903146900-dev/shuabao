@@ -1,0 +1,31 @@
+{
+  "status": "SOURCE_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "1f24e38f9eac48d841d732857739bbaa1c7fe5ac423d7a2ee95588cec7a9119f",
+  "target_candidate": "candidate36",
+  "changed": [
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "07112cb15eaeb78e06ad1c99eba65de23289da4380c6e9dc957945457529cd4e",
+      "after": "ae6d4b2e9ff90a7bc0438ba2c0c859c97fb69cb104daa3bd94fce58720103e89",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_display_prepare/runtime_host.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "ae83894bbf01e4bf2cbb7fe9720c977f62771f1e2387adca748e776243aadedf",
+      "after": "a2a894791be81049b1a28f111ad89cd46e454326caffbb5f8f3dc1cc4c34d114",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_display_prepare/live_binding.gd"
+    }
+  ],
+  "new": [],
+  "new_plan_path": "res://visual_rework_20261009/binding/g01_evolved_name_plan.json",
+  "history_prefix": "res://visual_rework_20261009/binding/history_g01_evolved_name_base01/",
+  "scope": "Only held G01 authoritative completed name projection; base catalog and transactions unchanged. No total CDR layout.",
+  "authority": {
+    "path": "res://docs/equipment_source_20261004/correction_0959/equipment_system_extracted.json",
+    "sha256": "fc8cd1fc1a739ff1cd6704f8c80bec210f0daddf4c84a8a6fdd2509543a79c76",
+    "line": 3453,
+    "text": "完成后永久进化为“无尽学录·终卷”：AP70→110；CDR15%→22%。"
+  },
+  "parent_ancestor_replacements_preserved": 19,
+  "engine_run": false
+}

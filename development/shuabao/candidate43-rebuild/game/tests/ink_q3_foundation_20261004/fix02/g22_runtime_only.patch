@@ -1,0 +1,24 @@
+--- tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd
++++ tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd
+@@ -96,6 +96,13 @@
+ func _q3_damage_segment(state:Dictionary,segment:String,origin:Vector3,direction:Vector3,length:float,width:float,amount:float,collapse:bool)->void:
+  var shape:Dictionary={"kind":"rectangle","circle_rectangle":true,"direction":direction,"length":length,"width":width}
+  var targets:Array=shape_targets(origin,direction,shape)
++ # Each raise/collapse is one simultaneous area batch. Re-evaluate for the next
++ # independent segment, but never let this batch's first kill change later hits.
++ # These are the existing Wind R1/common/Ink damage-pipeline snapshot interfaces.
++ common.refresh_stats()
++ var live:Array=common.runtime._enemies(common.context())
++ var mode:String="horde" if live.size()>=int(common.runtime.parameter("g22",1)) else "duel" if live.size()==1 and not ordinary(live[0]) else "none"
++ var impact:Dictionary={"g22_mode_snapshot":mode,"impact_penetration":float(hero.stats.penetration),"impact_lifesteal_rate":hero.lifesteal()}
+  var hit_count:int=0
+  for enemy in targets:
+   if not effect_is_current(state):return
+@@ -105,6 +112,7 @@
+   var event_id:String=str(state.terrain_id)+":"+segment+":"+str(enemy.actor_id)
+   var receipt:Dictionary={"source_event_id":event_id,"effect_id":event_id,"terrain_id":state.terrain_id,"cast_id":state.cast_id,"segment_id":segment,"target_id":enemy.actor_id,"generation":state.generation,"room_id":state.room_id,"source_time":hero_time,"origin":origin,"direction":direction,"length":length,"width":width,"nominal_damage":amount,"target_position":enemy.position,"target_radius":enemy.radius}
+   var metadata:Dictionary={"effect_id":event_id,"generation":state.generation,"room_id":state.room_id,"position":origin,"cast_origin":state.origin,"direction":direction,"saved_aim":direction,"active_skill":true,"area":true,"direct":true,"basic_attack":false,"cast_damage_share":1.0/maxi(1,targets.size()),"replay_segment":{"target_mode":"spatial","segment_id":segment,"shape":shape,"relative_time":hero_time-float(state.born_at)}}
++  metadata.merge(impact,false)
+   damage_enemy(enemy,amount,"q3",int(state.cast_id),false,false,metadata)
+   if not effect_is_current(state):return
+   if collapse and not enemy.dead:

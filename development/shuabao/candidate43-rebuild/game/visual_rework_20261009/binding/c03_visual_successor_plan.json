@@ -1,0 +1,17 @@
+{
+  "base_source_sha256": "eaebe120d3abf32397bcef4cedbe5c0afc0895c6276ffe6646e14013592a8a54",
+  "approved_c03_plan_sha256": "1ea8767407599d4299940ae6946c320e663e7fc56bfd351cffc0af27a13d7432",
+  "changes": {
+    "tests/ink_q3_gesture_runtime_20261004/fix01/hero_view.gd": {
+      "before": "6ce09d2ea50d45f2fb2d8ec8a1dbf9c9759619eb1cf5055963b37e0018a1361c",
+      "after": "4bd81d57ae5bacb6439b6010a8dc47919e12c78e87ac19804a6e9cecbe1857e4"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "53e338182f6044a1845dfa4d4c036f0b81969c857fc8a3852e8ce008358cc476",
+      "after": "4a9decaa21f500d38aa5170e9029497f1ea187a359c7c2c65d495fc6428b3754"
+    }
+  },
+  "new_files": {
+    "visual_rework_20261009/binding/c03_visual_source_successor.gd": "93d8196e19dc9dfbf1d21753f49e4fffb36f55b1e72f5248e9f550f8f9cee2f9"
+  }
+}

@@ -1,0 +1,28 @@
+--- /workspace/scratch/73ebae91a474/ink_live_integration_20261009/overlay_v89/six-hero-current-wip/tests/ink_first_floor_boss_20261008/live02/lifecycle_gate.gd
++++ /workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/integration_checks/boss_lifecycle_successor.gd
+@@ -2,21 +2,21 @@
+ ## PREPARED ONLY: run after explicit application of the reviewed live02 patch.
+ ## Real ordinary Host factories, Session, source actors and authenticated events.
+ ## Lethal source packets are bounded fixtures, never a natural-play claim.
+-const Host = preload("res://tests/ink_ordinary_visuals_20261007/candidate01/host.gd")
++const Host = preload("res://visual_rework_20261009/runtime_host.gd")
+ const Session = preload("res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd")
+-const Binding = preload("res://tests/ink_first_floor_boss_20261008/live02/live_binding.gd")
++const Binding = preload("res://visual_rework_20261009/binding/live_binding.gd")
+ const Room = preload("res://tests/ink_first_floor_room_art_20261004/room_layout.gd")
+ const HOME := "res://tests/ink_first_floor_user_route_20261005/runtime01/"
+ const SIM_PATH := "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+ const SESSION_PATH := "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd"
+ const MODEL_PATH := "res://tests/ink_equipment_live_20261008/content01/model.gd"
+-const BRIDGE_PATH := "res://tests/ink_first_floor_boss_20261008/live02/bridge.gd"
++const BRIDGE_PATH := "res://visual_rework_20261009/binding/bridge.gd"
+ const DIRECTOR_PATH := "res://tests/ink_first_floor_boss_20261008/source01/enemy_director.gd"
+ const PARENT_DIRECTOR_PATH := "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd"
+ const CLOCK_PATH := "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/clock_facade.gd"
+ const FROZEN_PARENT := "res://tests/ink_equipment_live_20261008/content01/source_binding.json"
+ const FROZEN_PARENT_SHA := "6883687b1149125ea70e92302d111c85aa5d925617c3ae835a9b00c657df3498"
+-const GATE_PATH := "res://tests/ink_first_floor_boss_20261008/live02/lifecycle_gate.gd"
++const GATE_PATH := "res://integration_checks/boss_lifecycle_successor.gd"
+ const ROUTE := ["r01a", "r02a", "r03a", "r04a", "r05a", "r06a", "r07a", "r08a", "r09a", "r10a", "r11a", "r12boss"]
+ const REQUIRED_GROUPS = ["factory_zero_start_and_single_owners", "initial_row_and_ordinary_delegation", "authentic_room_end_and_next_room_cleanup", "authored_boss_scope_and_owner_death", "authored_boss_close_and_new_run_isolation", "authored_boss_hero_death"]
+ const MAX_TERMINAL_TICKS := 1000

@@ -1,0 +1,83 @@
+postboss_contract_gate.gd
+
+Preparation status: source reviewed; this worker did not launch Godot, Blender,
+or a GUI. No runtime pass is claimed by this document. The JSON output is only
+created by an actual future execution of the gate.
+
+Run after the candidate's source binding has been resealed and verified:
+
+godot --headless --path /workspace/scratch/73ebae91a474/loot_resume_1115/candidate03 --script res://integration_checks/postboss_contract_gate.gd -- --postboss-result=/tmp/postboss_contract_gate.json
+
+Use the environment's verified Godot executable in place of "godot" if needed.
+The report directory must already exist. Exit 0 requires all five groups and
+every assertion to pass; any failure returns 1. Check raw stderr as well as the
+JSON because engine parse errors can prevent the gate/report from starting.
+
+Scope and fixture boundaries
+
+- Extends the existing boss_lifecycle_successor.gd and reuses its authenticated
+  event handlers, source stepping, roster-bounded lethal packets, route and
+  terminal helpers, and seven-owner integrity checks.
+- Instantiates the genuine runtime_host.gd only for its Sim/Session/router/HUD
+  factories; never adds the GUI Host to the tree or invokes its _ready.
+- Instantiates the genuine growth Control in the headless tree and drives its
+  original Controller, Adapter and button signals. The modal signal is wired
+  to the actual InputGuard and Session API in the harness. This is not native
+  pointer/keyboard, GUI Host/audio, screenshot, art or performance acceptance.
+- Factory checks require the exact successor postboss_model.gd, exactly one
+  inheritance layer over the original content01/model.gd, and original SHA
+  af679ebb5a07f5896e69f8a5708d518b341e5eef86118fd47e5048f419a3cb37.
+  The existing Bridge/Sim/Session/clock/Director paths and frozen parent binding
+  remain checked. No identity assertion is simply removed.
+- Follows twelve real authored rows. Only the prior gate's r10a is changed to
+  r10b: 839 total XP before Boss, 999 after its original 160 XP; Lv6/89 becomes
+  Lv7/24, leaving a real mandatory Lv7 Hex choice at Session=completed.
+- Enemy deaths use explicitly logged lethal source packets. One logged 40 HP
+  or smaller nonlethal source packet makes potion healing measurable. No direct
+  HP, gold, XP, SP, skill rank, room status or terminal snapshot assignments.
+- All spending uses authenticated authored-kill rewards. The first five rows
+  earn 725 gold; two original potion:1 bottles cost 400. No funding injection.
+- Loops are bounded by the inherited actor/terminal/warning budgets and the
+  fixed twelve-row route. Native play and natural full-floor completion remain
+  explicitly false in the report.
+
+Required groups
+
+1. exact_factory_and_single_owner
+   Zero-resource ordinary startup, exact one-layer Model successor, unchanged
+   original Model SHA, and original single Sim/Session/ledger/hero/clock/Director
+   identities plus health/passive/potion owner bindings.
+
+2. safe_potion_next_combat
+   Earn money through five real rows, buy two stacked bottles, consume one in
+   settled safe state, verify combat-clock recovery freezes during safe time
+   and a real training-node transition, then advances and heals in row7 combat.
+
+3. authentic_boss_lv7_modal
+   Settle r10b-route Boss using the original kill/terminal/reward/row pipeline.
+   Original Controller opens the actual pending Lv7 Hex offer; modal open and
+   close are accepted, repeated calls are idempotent, HUD/InputGuard/Session
+   state agrees, and a held Q release is drained. World/hero clocks remain
+   frozen in victory; explicit resume and a new room remain refused.
+
+4. completed_growth_and_commerce
+   Original Q1 growth button spends one earned point and projects the new rank
+   to the same Sim; original undo button reverses that allocation. Original
+   Session shop buys base:B02 and updates actual AP, preserves its transaction
+   journal across close/reopen, and undoes that equipment purchase exactly.
+
+5. completed_potion_rejection_and_replay
+   With no panel/modal/pause blocker, a new terminal potion request must fail
+   specifically with potion_run_finished. Repeated rejection cannot alter
+   inventory, effects, undo, revision, HP or source status. The earlier successful
+   safe-use command still replays accepted/replayed/unchanged with no new event,
+   debit or effect. Reusing that successful command for another UID remains a
+   command_id_conflict. Original owners and Model parent SHA are checked again.
+
+Expected baseline behavior
+
+An untouched predecessor will fail the exact successor identity requirement,
+completed Lv7 modal acceptance/state agreement, and finished-run potion denial.
+The new gate does not claim it was run against either baseline or patched build.
+Retain the existing broader Boss lifecycle gate; this gate adds the specific
+post-completion branches that its r10a/Lv6 route did not exercise.

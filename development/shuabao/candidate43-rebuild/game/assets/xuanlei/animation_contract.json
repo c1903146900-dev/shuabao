@@ -1,0 +1,484 @@
+{
+  "revision": 3,
+  "asset": "res://assets/xuanlei/xuanlei.glb",
+  "meters_per_unit": 1,
+  "up_axis": "+Y",
+  "forward_axis": "-Z",
+  "root_motion": false,
+  "height_m": 3.17,
+  "run_reference_speed_mps": 5.2,
+  "clips": {
+    "idle": {
+      "duration_s": 2.4,
+      "frames": 120,
+      "fps": 50,
+      "loop_recommended": true,
+      "events": {},
+      "phases": {}
+    },
+    "run": {
+      "duration_s": 0.72,
+      "frames": 36,
+      "fps": 50,
+      "loop_recommended": true,
+      "events": {
+        "foot_L": {
+          "frame": 0,
+          "time_s": 0
+        },
+        "foot_R": {
+          "frame": 18,
+          "time_s": 0.36
+        }
+      },
+      "phases": {
+        "stance_per_foot_s": 0.2,
+        "steps_per_second": 2.7777777777777777,
+        "root_translation_mps": 5.2
+      }
+    },
+    "attack_1": {
+      "duration_s": 0.48,
+      "frames": 24,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 8,
+          "time_s": 0.16
+        },
+        "trail_start": {
+          "frame": 5,
+          "time_s": 0.1
+        },
+        "trail_end": {
+          "frame": 12,
+          "time_s": 0.23
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.1,
+        "settle_s": 0.36,
+        "movement_release_s": 0.0,
+        "follow_through_end_s": 0.23
+      }
+    },
+    "attack_2": {
+      "duration_s": 0.44,
+      "frames": 22,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 7,
+          "time_s": 0.14
+        },
+        "trail_start": {
+          "frame": 4,
+          "time_s": 0.08
+        },
+        "trail_end": {
+          "frame": 10,
+          "time_s": 0.2
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.08,
+        "settle_s": 0.32,
+        "movement_release_s": 0.0,
+        "follow_through_end_s": 0.2
+      }
+    },
+    "attack_3": {
+      "duration_s": 0.52,
+      "frames": 26,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 9,
+          "time_s": 0.18
+        },
+        "trail_start": {
+          "frame": 6,
+          "time_s": 0.12
+        },
+        "trail_end": {
+          "frame": 13,
+          "time_s": 0.255
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.12,
+        "settle_s": 0.39,
+        "movement_release_s": 0.0,
+        "follow_through_end_s": 0.255
+      }
+    },
+    "dash": {
+      "duration_s": 0.26,
+      "frames": 13,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "dash_start": {
+          "frame": 0,
+          "time_s": 0
+        },
+        "dash_end": {
+          "frame": 10,
+          "time_s": 0.2
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.04,
+        "movement_release_s": 0.2
+      }
+    },
+    "hit": {
+      "duration_s": 0.18,
+      "frames": 9,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "recoil": {
+          "frame": 2,
+          "time_s": 0.04
+        }
+      },
+      "phases": {
+        "settle_s": 0.12
+      }
+    },
+    "q1": {
+      "duration_s": 0.64,
+      "frames": 32,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 13,
+          "time_s": 0.26
+        },
+        "ground_impact": {
+          "frame": 13,
+          "time_s": 0.26
+        },
+        "trail_start": {
+          "frame": 9,
+          "time_s": 0.18
+        },
+        "trail_end": {
+          "frame": 15,
+          "time_s": 0.3
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.18,
+        "settle_s": 0.44,
+        "movement_release_s": 0.3
+      }
+    },
+    "q2": {
+      "duration_s": 0.52,
+      "frames": 26,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "chain_release": {
+          "frame": 9,
+          "time_s": 0.18
+        },
+        "chain_retract": {
+          "frame": 18,
+          "time_s": 0.36
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.12,
+        "settle_s": 0.42,
+        "movement_release_s": 0.22
+      }
+    },
+    "q3": {
+      "duration_s": 0.6,
+      "frames": 30,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 11,
+          "time_s": 0.22
+        },
+        "trail_start": {
+          "frame": 7,
+          "time_s": 0.14
+        },
+        "trail_end": {
+          "frame": 15,
+          "time_s": 0.3
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.14,
+        "settle_s": 0.44,
+        "movement_release_s": 0.26
+      }
+    },
+    "e1_guard": {
+      "duration_s": 1.2,
+      "frames": 60,
+      "fps": 50,
+      "loop_recommended": true,
+      "events": {
+        "guard_active": {
+          "frame": 0,
+          "time_s": 0
+        }
+      },
+      "phases": {}
+    },
+    "e1_release": {
+      "duration_s": 0.38,
+      "frames": 19,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 6,
+          "time_s": 0.12
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.04,
+        "settle_s": 0.27,
+        "movement_release_s": 0.16
+      }
+    },
+    "e2": {
+      "duration_s": 0.8,
+      "frames": 40,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "charge_start": {
+          "frame": 0,
+          "time_s": 0
+        },
+        "release": {
+          "frame": 33,
+          "time_s": 0.66
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.06,
+        "settle_s": 0.74
+      }
+    },
+    "e3": {
+      "duration_s": 0.48,
+      "frames": 24,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "field_spawn": {
+          "frame": 10,
+          "time_s": 0.2
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.14,
+        "settle_s": 0.36,
+        "movement_release_s": 0.24
+      }
+    },
+    "r1_start": {
+      "duration_s": 0.66,
+      "frames": 33,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "invulnerable_start": {
+          "frame": 0,
+          "time_s": 0
+        },
+        "fortress_active": {
+          "frame": 17,
+          "time_s": 0.34
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.24,
+        "settle_s": 0.5
+      }
+    },
+    "r1_loop": {
+      "duration_s": 2.0,
+      "frames": 100,
+      "fps": 50,
+      "loop_recommended": true,
+      "events": {},
+      "phases": {}
+    },
+    "r1_end": {
+      "duration_s": 0.78,
+      "frames": 39,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 16,
+          "time_s": 0.32
+        },
+        "pressure_release": {
+          "frame": 16,
+          "time_s": 0.32
+        },
+        "shield_start": {
+          "frame": 19,
+          "time_s": 0.38
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.24,
+        "settle_s": 0.56,
+        "movement_release_s": 0.38
+      }
+    },
+    "r2_charge": {
+      "duration_s": 0.72,
+      "frames": 36,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "charge_start": {
+          "frame": 0,
+          "time_s": 0
+        },
+        "ram_contact": {
+          "frame": 6,
+          "time_s": 0.12
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.06,
+        "settle_s": 0.66
+      }
+    },
+    "r2_end": {
+      "duration_s": 0.7,
+      "frames": 35,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 15,
+          "time_s": 0.3
+        },
+        "final_slam": {
+          "frame": 15,
+          "time_s": 0.3
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.22,
+        "settle_s": 0.54,
+        "movement_release_s": 0.36
+      }
+    },
+    "turn_left": {
+      "duration_s": 0.24,
+      "frames": 12,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {},
+      "phases": {}
+    },
+    "turn_right": {
+      "duration_s": 0.24,
+      "frames": 12,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {},
+      "phases": {}
+    },
+    "death": {
+      "duration_s": 2.0,
+      "frames": 100,
+      "loop_recommended": false,
+      "events": {
+        "collapse": {
+          "frame": 67,
+          "time_s": 1.34
+        }
+      },
+      "fps": 50
+    },
+    "dash_attack": {
+      "duration_s": 0.44,
+      "frames": 22,
+      "fps": 50,
+      "loop_recommended": false,
+      "events": {
+        "contact": {
+          "frame": 3,
+          "time_s": 0.06
+        },
+        "trail_start": {
+          "frame": 2,
+          "time_s": 0.035
+        },
+        "trail_end": {
+          "frame": 12,
+          "time_s": 0.24
+        }
+      },
+      "phases": {
+        "anticipation_end_s": 0.035,
+        "settle_s": 0.38,
+        "movement_release_s": 0.0,
+        "follow_through_end_s": 0.32
+      }
+    }
+  },
+  "bone_attachments": {
+    "socket_gate_edge": "socket_gate_edge",
+    "socket_gate_grip": "socket_gate_grip",
+    "socket_gate_top": "socket_gate_top",
+    "socket_chain": "socket_chain",
+    "socket_chest": "socket_chest",
+    "socket_ground": "socket_ground",
+    "socket_back": "socket_back",
+    "socket_chain_tip": "socket_chain_tip",
+    "socket_gate_cut_low": "socket_gate_cut_low",
+    "socket_gate_cut_high": "socket_gate_cut_high",
+    "socket_gate_crown_L": "socket_gate_crown_L",
+    "socket_gate_crown_R": "socket_gate_crown_R"
+  },
+  "passive_vfx": {
+    "p1": "four jade seal segments, one per stack",
+    "p2": "amber chest seal and gauntlet charge, consumed on contact",
+    "p3": "red fissure light intensity driven by missing-health strength"
+  },
+  "event_authority": "Animation markers are visual sync metadata only; gameplay owns hit resolution and timings.",
+  "source_fps": 50,
+  "motion_revision": "responsive_pose_authoring_v3",
+  "gait": "0.72s combat jog, 0.20s constant-speed stance, quiet gate, analytic swing",
+  "q1_sample_revision": "grounded_siege_contact_v1",
+  "dash_attack_revision": "lifted_diagonal_gate_breach_v3",
+  "final_design_motion_revision": "v03_sweep_reel_field_brace_grounded_releases",
+  "skill_visual_semantics": {
+    "q2": "360 degree multi-target sweep and reel; planted hero",
+    "q3": "240 degree broad gate sweep",
+    "e1": "forward rectangular shield shove",
+    "e3": "moving ally shield field brace",
+    "r2": "charge gait only during active charge"
+  },
+  "basic_attack_revision": "weighted_crosscut_hook_crusher_v2",
+  "basic_visual_semantics": {
+    "attack_1": "gate cross-cut; crown pressure wake follows actual exposed socket history",
+    "attack_2": "right hooked knuckle and short physical chain whip",
+    "attack_3": "diagonal gate crusher with compression and weighted overshoot",
+    "dash_attack": "raised side load, forward diagonal gate breach and held asymmetric follow-through; 60ms contact; no root travel"
+  }
+}

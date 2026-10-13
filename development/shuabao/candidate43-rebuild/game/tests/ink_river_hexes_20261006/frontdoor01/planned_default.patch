@@ -1,0 +1,16 @@
+--- a/scripts/integration/yanguizhou_first_floor.gd
++++ b/scripts/integration/yanguizhou_first_floor.gd
+@@ -1,3 +1,3 @@
+-extends "res://tests/ink_r2_ordinary_20261006/candidate01/host.gd"
++extends "res://tests/ink_river_hexes_20261006/frontdoor01/host.gd"
+ ## Front-door lifecycle adapter only. The frozen ordinary host owns all gameplay.
+ ## Evidence files are diagnostics, never a resumable/global progress save.
+--- a/scripts/ui/hero_chooser.gd
++++ b/scripts/ui/hero_chooser.gd
+@@ -4,5 +4,5 @@
+ signal resume_requested
+ const Design = preload("res://data/final_design/catalog.gd")
+-const InkRuntimeText = preload("res://tests/ink_r2_ordinary_20261006/candidate01/runtime_text.gd")
++const InkRuntimeText = preload("res://tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd")
+ const INK := Color("11181d")
+ const PANEL := Color("1b242b")

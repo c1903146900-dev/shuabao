@@ -1,0 +1,85 @@
+{
+  "schema": "C02-rebuild-original-release-packet-1",
+  "identity": "candidate43_public_rebuild_20261013",
+  "parent_source_sha256": "45f0a7080bd4bf671b2a165af8211d23f003c4983bb27e48b49a3e0a933f34c3",
+  "parent_visual_sha256": "e24ec5b3453024d9cf97aaf072974561f9277b7509e50024368274734af48347",
+  "changed": [
+    {
+      "path": "res://scripts/combat/hero_combat_core.gd",
+      "before": "2431e9d682c1e6a1871a78cfb8feeae7552c021f7c6d6eecc49456cea731a69e",
+      "after": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285"
+    },
+    {
+      "path": "res://tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "before": "9a284ff7c331dca5e21bd7ade2054f1e0e6ce625c0cc2d04d95e04718bd791b2",
+      "after": "0f669b66f0dd5a68b4baf2848a8f5bf7117e875b1ae6f3f2558be1b3c72ada68"
+    },
+    {
+      "path": "res://tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "before": "0d73ef26a98202075a266d7f6d2a1dc1376f6cd0f648eaba56461d8e9d2cdcc4",
+      "after": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762"
+    },
+    {
+      "path": "res://tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "before": "4eec03a8b144dfcdf3540d122f98f497c80e1a7db08e3791b137eed361720567",
+      "after": "c1f33223444d40b49a95ca4373f9ce539992097a2f8daefef78e434ad5ca1cbe"
+    },
+    {
+      "path": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "before": "3d5d328b62bc6520b90b010bcfaa2e293418dec1d5599fbaa2868df44ffa538f",
+      "after": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8"
+    },
+    {
+      "path": "res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "before": "bdf7e8c2600e208892c92feea8d78b9356c6a3536db13003dcf2e2597f08ed69",
+      "after": "80da2a5a16b5eb6d73c8cb1227a1a075ad85a7ddc5a8ce26e6aa7533a077d677"
+    },
+    {
+      "path": "res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "before": "33c0be66bab86c7fd635e90219fc38ff590ec58b06568525c6fdfdd7f158fc9b",
+      "after": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "22354079e5e9f4327f4fc0025be417320066011f226a4f291da8771081c3ceac",
+      "after": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/bridge.gd",
+      "before": "f45dd0b79d7bd3961a9374e4317898819a210681f5c39cc62485bb1fcc7fe4f3",
+      "after": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "eb19b3fc120c889fdf12c0bdebd474450c1a083381ae15656f93d3caaba9899f",
+      "after": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "e4b7434c9eefe72901b2862509410132acada4f5931be206306c1d6b1a558769",
+      "after": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "67b2a70da3d0c78be60d85a9c1e274c1b8e96bf3d4bed9ef159f70ee84914385",
+      "after": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b"
+    }
+  ],
+  "new": [
+    "equipment_prism_20261011/adapter.gd",
+    "equipment_prism_20261011/model.gd",
+    "equipment_prism_20261011/passive10.gd",
+    "equipment_prism_20261011/decision09.json",
+    "visual_rework_20261009/binding/equipment48_plan.json",
+    "visual_rework_20261009/binding/c02_source_transition.json",
+    "visual_rework_20261009/binding/c02_visual_transition.json",
+    "visual_rework_20261009/binding/c02_visual_source_transition.json"
+  ],
+  "passive": "same-name once; root release snapshot; every original skill packet final multiplier",
+  "runtime_candidates": "unchanged",
+  "permissions": "unchanged",
+  "historical_841_inherited": false,
+  "status": "STATIC_DERIVATIVE_NOT_RUNTIME_VERIFIED",
+  "source_snapshot_commit": "059dcc742c99ccb107429c164a39a33f03b9434a",
+  "historical_1968_59_inherited": false
+}

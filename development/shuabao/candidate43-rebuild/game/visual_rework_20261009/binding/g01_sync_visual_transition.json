@@ -1,0 +1,14 @@
+{
+  "schema": "g01-sync-two-source-visual-successor-1",
+  "predecessor_source": "d4306ee71215d51bc0a5a9f6a15943837cab3aa925a3ef65fde86df9962a66f4",
+  "changes": {
+    "scripts/combat/hero_combat_core.gd": {
+      "before": "72cbf6832044092bcd6b9c6c8e3a75010bf764bcdd7acb5cf081f82d6c3d8462",
+      "after": "2431e9d682c1e6a1871a78cfb8feeae7552c021f7c6d6eecc49456cea731a69e"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "before": "e58f59f267c1513232aa308fc5527c6a2c314febaf2af6ccf36197161406978a",
+      "after": "3d5d328b62bc6520b90b010bcfaa2e293418dec1d5599fbaa2868df44ffa538f"
+    }
+  }
+}

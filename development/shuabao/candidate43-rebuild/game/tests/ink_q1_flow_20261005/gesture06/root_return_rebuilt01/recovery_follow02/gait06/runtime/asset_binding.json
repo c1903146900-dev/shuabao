@@ -1,0 +1,39 @@
+{
+  "schema": "ink-gait06-asset-binding-1",
+  "asset_sha256": "1aec676cb4f145e39c38ed4ca49e6f134fea866574c021cd16ace129c10ba2b5",
+  "base_asset_sha256": "a95932dd0fe3fd5c485f6c6b74b4e3e3ab5d66a4e5964dfeb345dc1ce9c53d63",
+  "boundaries_sha256": "2a3167de1f40e2190dcb6e67f48e115d523e21a61e10cb692b75f57680b52742",
+  "gait_runtime_copy_bones": [
+    "pelvis",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "copy_fields": {
+    "pelvis": "translation",
+    "six_legs": "rotation"
+  },
+  "preservation": {
+    "original_model_json_exact": true,
+    "old_animations_json_exact": true,
+    "old_animation_count": 25,
+    "original_binary_prefix_exact": true,
+    "only_pelvis_translation_six_rotations": true,
+    "added_bin_bytes": 27328
+  },
+  "blender_receipt_sha256": "c0b4c5c6ac7f4e104e5c188541f0aa150b1f80ac1a0ca33f137a044196f3e7c5",
+  "gait_contract_sha256": "3156a769ab58ff0663481d6721781c3a8ee7f13494d5b8a5af650ba7392a7596",
+  "actual_baseline_global_pose_checks": 10736,
+  "actual_max_baseline_position_error": 2.5885165632496434e-06,
+  "actual_min_baseline_abs_dot": 0.9999999403953552,
+  "source_author_sha256": "1e40051fab0e51250197454054ac3bc83d2363f7f25c902350004443b368dbeb",
+  "source_curves_sha256": "6874c6542cad4d0ba1bcf6f25029968089e3e805264fa2ff1ac7bf770f15d6f1",
+  "cycle_seconds": 0.5,
+  "contact_seconds": 0.13333333333333333,
+  "base_normalized_cycle": 0.6,
+  "godot_imported_at_binding": false,
+  "art_accepted": false
+}

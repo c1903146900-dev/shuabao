@@ -1,0 +1,11 @@
+--- loot_resume_1115/candidate15/natural_route_r06_prepare/visible_route_r06.gd
++++ loot_resume_1115/candidate15/natural_route_r09_prepare/visible_route_r09.gd
+@@ -320,7 +320,7 @@
+  _record("Host:_request_next_room",{"row":row,"node":node_id},host.shop_session.last_receipt)
+  if not host.shop_session.last_receipt.get("accepted",false):return host.shop_session.last_receipt.duplicate(true)
+  var entered_flow: Dictionary=host.shop_session.snapshot()
+- var expected_status: String="service" if row in [3,4,6] else "combat"
++ var expected_status: String="service" if row in [3,4,6,9] else "combat"
+  if entered_flow.status!=expected_status or entered_flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","")!=node_id:
+   return {"accepted":false,"reason":"original_next_entry_scope_not_established"}
+  return {"accepted":true,"node_id":node_id,"row":row,"upgrade":upgrade_result,"before_entry":before_entry,"entry_result":host.shop_session.last_receipt.duplicate(true)}

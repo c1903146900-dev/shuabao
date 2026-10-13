@@ -1,0 +1,23 @@
+{
+  "preserved_failed_binding": "5e402668816c85244071dd5077ba85dcf7a5c84d0d5c020ff7579057677176bb",
+  "source_fixes": [
+    "pause_callback_preserves_undelivered_contacts",
+    "river_and_basic_share_local_chronological_queue",
+    "enemy_direct_hit_and_impact_join_queue",
+    "independent_pull_and_h02_segments",
+    "h02_true_subinterval_contact_time",
+    "paused_local_motion_remainder_resumes_before_next_global_step",
+    "resume_scope_checked_across_room_callbacks",
+    "q2_explicit_commands_reject_other_candidates",
+    "finite_step_uses_existing_0.02_source_constant"
+  ],
+  "engine": "NOT_RUN",
+  "source_review": "2026-10-05T04:10Z independent reviewer found previous concrete blockers addressed in source; may freeze as NOT_RUN candidate",
+  "unsupported_projectile_families": [
+    "common_g11",
+    "common_g16",
+    "other_heroes_and_allies"
+  ],
+  "ordinary_entry_ready": false,
+  "art": "NOT_CREATED"
+}

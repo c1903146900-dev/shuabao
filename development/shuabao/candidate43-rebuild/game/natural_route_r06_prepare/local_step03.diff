@@ -1,0 +1,46 @@
+--- visible_route_r06.before_local_step03.gd
++++ visible_route_r06.gd
+@@ -226,13 +226,9 @@
+  if visible.is_empty():_release_left();_move(Vector3.ZERO);return
+  var target: Dictionary=visible[0]
+  var away: Vector3=(host.sim.hero.position-Vector3(target.position)).normalized()
+- var desired: float=clampf(float(host.sim.hero.stats.attack_range)*0.60,3.5,6.5)
+- var direction: Vector3=(Vector3(-away.z,0.0,away.x)*orbit_sign+away*clampf((desired-float(target.distance))/2.0,-1.0,1.0)).normalized()
+- # One local step check and one tangent reversal, never global path planning.
+- if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,float(host.sim.hero_radius)) or _visible_ground(host.sim.hero.position+direction).is_empty():
+-  orbit_sign=-orbit_sign
+-  direction=Vector3(-away.z,0.0,away.x)*orbit_sign
+-  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,float(host.sim.hero_radius)) or _visible_ground(host.sim.hero.position+direction).is_empty():direction=Vector3.ZERO
++ var desired: float=maxf(1.0,float(host.sim.hero.stats.attack_range)-1.0)
++ var preferred: Vector3=(Vector3(-away.z,0.0,away.x)*orbit_sign+away*clampf((desired-float(target.distance))/2.0,-1.0,1.0)).normalized()
++ var direction: Vector3=_choose_visible_local_step(visible,desired,preferred)
+  _move(direction)
+  if float(host.sim.hero.cooldowns.q)<=0.00001 and float(host.sim.hero.lock_time)<=0.00001:
+   var plan: Dictionary=_plan_q1(visible)
+@@ -419,3 +415,26 @@
+  var result: Dictionary={"accepted":visible and closed and int(shown.get("price",0))==900 and before.body==after.body and before.gold==after.gold,"row":row,"paid":false,"visible_training":shown,"pay_button_disabled":disabled,"insufficient_actual_gold":int(before.gold)<900,"before":before,"after":after,"hp_before":hp_before,"hp_after":host.sim.hero.hp,"reason":"original_training_optional_no_payment"}
+  training_skips.append(result.duplicate(true));_record("UI:inspect_training_then_close",{"row":row},result)
+  return result
++
++func _choose_visible_local_step(visible: Array, desired: float, preferred: Vector3) -> Vector3:
++ # Ordinary eight-key directions, one visible local step only. No enemy source
++ # state, future trajectories, global route search or source-position writes.
++ var here: Vector3=host.sim.hero.position
++ var chosen: Vector3=Vector3.ZERO
++ var best: float=-INF
++ var candidates: Array=[]
++ for raw: Vector3 in [Vector3.FORWARD,Vector3(1,0,-1),Vector3.RIGHT,Vector3(1,0,1),Vector3.BACK,Vector3(-1,0,1),Vector3.LEFT,Vector3(-1,0,-1)]:
++  var direction: Vector3=raw.normalized()
++  var next: Vector3=here+direction
++  if not _ground_clear(here,next,float(host.sim.hero_radius)) or _visible_ground(next).is_empty():continue
++  var gap: float=INF
++  for enemy: Dictionary in visible:gap=minf(gap,next.distance_to(enemy.position))
++  var openness: int=0
++  for side: Vector3 in [Vector3.FORWARD,Vector3.RIGHT,Vector3.BACK,Vector3.LEFT]:
++   var near: Vector3=next+side
++   if _ground_clear(next,near,float(host.sim.hero_radius)) and not _visible_ground(near).is_empty():openness+=1
++  var score: float=-absf(gap-desired)+float(openness)*0.20+direction.dot(preferred)*0.10
++  candidates.append({"direction":direction,"visible_step":next,"nearest_visible_gap":gap,"open_local_sides":openness,"score":score})
++  if score>best:best=score;chosen=direction
++ visibility_log.back()["local_movement"]={"hero_position":here,"desired_range":desired,"candidates":candidates,"chosen":chosen}
++ return chosen

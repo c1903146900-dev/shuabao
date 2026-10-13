@@ -1,0 +1,17 @@
+{
+  "classification": "test_helper_cadence_bug_predicted_from_source_requires_actual_refusal_probe",
+  "source_attack_speed": 0.85,
+  "source_cooldown_seconds": 1.1764705882352942,
+  "old_observed_wait_seconds": 1.1,
+  "old_basic_poststep_seconds": 0.02,
+  "predicted_remaining_cooldown": 0.05647058823529405,
+  "failed_result_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink_initial_hex_stage_1756/tests/ink_initial_hex_runtime_20261004/sink_result.json",
+  "failed_result_sha256": "c56b40293f1bb29891c81c5ebc7cbeb8e8455b9b6d261082bfeda94a66180987",
+  "failed_raw_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink28_hex_retry_1804/hex_sinks/raw.log",
+  "failed_raw_sha256": "8664de0aa9bace7b5cb94962411baa84ee5d957fe7e851fff4bb919b4e454d18",
+  "failed_checks": 467,
+  "failed_assertions": 137,
+  "old_observations_warning": "G05/G30 summaries were expected constants, not observed successful outcomes; passed=false and failing assertions are authoritative",
+  "new_probe": "first real kill, exact previous1.1 spacing, require actual cooldown refusal/no new event, naturally step remaining cooldown, same target real kill",
+  "scope": "test script only; no mechanism, actor value, progression, selector, capability, live_binding, old stage, or old failure mutation"
+}

@@ -1,0 +1,8 @@
+--- equipment40_b02_threshold_gate.gd
++++ equipment41_b02_threshold_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment40_g02_threshold_regression_gate.gd"
++extends "res://integration_checks/equipment41_g02_threshold_regression_gate.gd"
+ ## Same separately bound production Model/Sim/Bridge fixture as frozen G02.
+ ## No Host or Session is ever created. No rejected Session event is retried.
+ var b02_threshold_deaths: Array=[]

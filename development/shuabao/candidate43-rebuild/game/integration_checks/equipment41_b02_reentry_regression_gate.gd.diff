@@ -1,0 +1,8 @@
+--- equipment40_b02_reentry_gate.gd
++++ equipment41_b02_reentry_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment40_source_gate.gd"
++extends "res://integration_checks/equipment41_b02_regression_gate.gd"
+ ## Exact original Session notification reentry plus original rest/new-run edges.
+ ## No extra actors, fake owner, direct Model fallback, or state-field setup.
+ var reentry_completed: bool=false

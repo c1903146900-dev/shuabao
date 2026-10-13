@@ -1,0 +1,58 @@
+{
+  "schema": "g01-synchronous-q2-source-plan-1",
+  "parent_source_sha256": "d4306ee71215d51bc0a5a9f6a15943837cab3aa925a3ef65fde86df9962a66f4",
+  "parent_visual_sha256": "7b8200386601a72db1aab3fe21fcfcd5e2154193fd653f8daed34584e6b8e8cf",
+  "source_review02_sha256": "a70e1c4e3fe6de09bcf92a9f061e34bc9d880567b6492418c4e1808a4c3d32f8",
+  "inherited_equipment47_plan_sha256": "3a648ceb17c3f73aca9c4dfdc8fc908361e2038225f4e0db9898b5da27faefce",
+  "changed": [
+    {
+      "path": "res://scripts/combat/hero_combat_core.gd",
+      "before": "72cbf6832044092bcd6b9c6c8e3a75010bf764bcdd7acb5cf081f82d6c3d8462",
+      "after": "2431e9d682c1e6a1871a78cfb8feeae7552c021f7c6d6eecc49456cea731a69e",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/scripts/combat/hero_combat_core.gd"
+    },
+    {
+      "path": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "before": "e58f59f267c1513232aa308fc5527c6a2c314febaf2af6ccf36197161406978a",
+      "after": "3d5d328b62bc6520b90b010bcfaa2e293418dec1d5599fbaa2868df44ffa538f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd"
+    },
+    {
+      "path": "res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "before": "ad9019e4a44767b0924658bfc7739d7cee005e17cde2fb662159da2cda56170c",
+      "after": "bdf7e8c2600e208892c92feea8d78b9356c6a3536db13003dcf2e2597f08ed69",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "8c1645ebda88f117610b2e126d25a06707f925ab0f53ad74e7ea6c61c7a2ebc9",
+      "after": "22354079e5e9f4327f4fc0025be417320066011f226a4f291da8771081c3ceac",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "75d3170cad7824e01f1664c49231c8a320f630d66beb6960de0f5c7cfbccb839",
+      "after": "eb19b3fc120c889fdf12c0bdebd474450c1a083381ae15656f93d3caaba9899f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/visual_rework_20261009/binding/c03_visual_source_successor.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "49eac1978c55b17d5d2c4f12eb316372ede69e0b59349e034e997423b8a12127",
+      "after": "ae83894bbf01e4bf2cbb7fe9720c977f62771f1e2387adca748e776243aadedf",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/visual_rework_20261009/binding/live_binding.gd"
+    }
+  ],
+  "new": [
+    {
+      "path": "res://visual_rework_20261009/binding/g01_sync_visual_transition.json",
+      "sha256": "7a060e10892d62e8afb9dc8571b2b5107bc6747d46fde791fbcd083cf6dba483",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_sync_prepare/final_inputs/visual_rework_20261009/binding/g01_sync_visual_transition.json"
+    }
+  ],
+  "new_plan_path": "res://visual_rework_20261009/binding/g01_sync_plan.json",
+  "ancestor_original_count": 19,
+  "ancestor_final_count": 19,
+  "new_ancestor_paths": [],
+  "history_prefix": "res://visual_rework_20261009/binding/history_g01_sync_base01/",
+  "scope": "Authenticate only two original synchronous Q2 enhancement settlement causes. No gameplay values or other effect eligibility changes. Candidate34 finite893 remains separate; candidate35 runtime unverified."
+}

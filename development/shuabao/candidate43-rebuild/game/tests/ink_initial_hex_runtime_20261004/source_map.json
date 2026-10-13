@@ -1,0 +1,442 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "id": "common_g01",
+      "description": "主动技能造成的普通伤害可以按自身暴击率与暴击伤害规则暴击。真实伤害不因此获得暴击；已拥有技能暴击资格的伤害不会重复判定。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 307
+      },
+      "parameters": {}
+    },
+    {
+      "id": "common_g05",
+      "description": "立即获得12%冷却缩减；之后每参与击杀40名普通敌人、或击败精英或Boss，分别增加1%、2%、3%冷却缩减。本效果计入全局冷却缩减上限。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 315
+      },
+      "parameters": {
+        "G05-1": {
+          "token": "G05-1",
+          "label": "初始冷却缩减",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 23,
+            "cells": [
+              "E23"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-2": {
+          "token": "G05-2",
+          "label": "普通怪计数阈值",
+          "unit": "名",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 24,
+            "cells": [
+              "E24"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-3": {
+          "token": "G05-3",
+          "label": "每组普通怪增加冷却缩减",
+          "unit": "%",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 25,
+            "cells": [
+              "E25"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-4": {
+          "token": "G05-4",
+          "label": "每精英增加冷却缩减",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 26,
+            "cells": [
+              "E26"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-5": {
+          "token": "G05-5",
+          "label": "每Boss增加冷却缩减",
+          "unit": "%",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 27,
+            "cells": [
+              "E27"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      }
+    },
+    {
+      "id": "common_g06",
+      "description": "自身移动速度属性高于目标时，每高出1米/秒，对其造成的最终伤害提高5%，最多提高30%。比较双方移动速度属性，不使用当前实际位移速度。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 317
+      },
+      "parameters": {
+        "G06-1": {
+          "token": "G06-1",
+          "label": "速度差计算单位",
+          "unit": "米/秒",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 28,
+            "cells": [
+              "E28"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-2": {
+          "token": "G06-2",
+          "label": "每单位速度差最终增伤",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 29,
+            "cells": [
+              "E29"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-3": {
+          "token": "G06-3",
+          "label": "最终增伤上限",
+          "unit": "%",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 30,
+            "cells": [
+              "E30"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      }
+    },
+    {
+      "id": "common_g15",
+      "description": "每拥有5%冷却缩减，获得2%移动速度；只按实际生效、未溢出的冷却缩减计算。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 335
+      },
+      "parameters": {
+        "G15-1": {
+          "token": "G15-1",
+          "label": "冷却缩减计算单位",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 77,
+            "cells": [
+              "E77"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G15-2": {
+          "token": "G15-2",
+          "label": "每单位对应移速增幅",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 78,
+            "cells": [
+              "E78"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      }
+    },
+    {
+      "id": "common_g24",
+      "description": "每空置一个装备槽，最终伤害提高8%，最大生命值提高6%；最多计算4个空槽。装备栏变化后立即重算，锻体不占用装备槽。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 354
+      },
+      "parameters": {
+        "G24-1": {
+          "token": "G24-1",
+          "label": "每空槽最终伤害提高",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 110,
+            "cells": [
+              "E110"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-2": {
+          "token": "G24-2",
+          "label": "每空槽最大生命提高",
+          "unit": "%",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 111,
+            "cells": [
+              "E111"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-3": {
+          "token": "G24-3",
+          "label": "计入空槽上限",
+          "unit": "个",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 112,
+            "cells": [
+              "E112"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      }
+    },
+    {
+      "id": "common_g30",
+      "description": "每持有500金币，获得4点防御力与35点最大生命值，最多计算5000金币。不消耗金币，花费或获得金币后立即重算。",
+      "mechanics": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 366
+      },
+      "parameters": {
+        "G30-1": {
+          "token": "G30-1",
+          "label": "金币计算单位",
+          "unit": "金币",
+          "values": [
+            500
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 131,
+            "cells": [
+              "E131"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-2": {
+          "token": "G30-2",
+          "label": "每单位防御力",
+          "unit": "点",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 132,
+            "cells": [
+              "E132"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-3": {
+          "token": "G30-3",
+          "label": "每单位最大生命",
+          "unit": "点",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 133,
+            "cells": [
+              "E133"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-4": {
+          "token": "G30-4",
+          "label": "计入金币上限",
+          "unit": "金币",
+          "values": [
+            5000
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 134,
+            "cells": [
+              "E134"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      }
+    }
+  ],
+  "sinks": {
+    "G01": "common.before_hit -> runtime.before_damage -> guarded actual Q1 damage",
+    "G05": "actual kill -> runtime.enemy_died -> cdr -> effective_cd -> Q1 cooldown",
+    "G06": "hero.speed and enemy speed/slow -> before_damage -> actual BASIC/Q1",
+    "G15": "capped cdr -> common.project_stats move_speed -> hero.speed -> locomotion",
+    "G24": "same ledger inventory count -> common_damage_multiplier and max_hp -> damage/HP observer",
+    "G30": "same ledger gold -> defence/max_hp -> incoming mitigation/HP observer"
+  },
+  "scope": "source mapping, finite runtime scripts pending main execution"
+}

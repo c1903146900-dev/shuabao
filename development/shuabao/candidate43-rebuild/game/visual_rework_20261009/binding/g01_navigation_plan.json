@@ -1,0 +1,48 @@
+{
+  "status": "SOURCE_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "7d072e7ab87e48b074d859608489de386e673afa4df76b5a2cfbc9404c27a55b",
+  "target_candidate": "candidate37",
+  "changed": [
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+      "before": "c71ae70e05623bbd7bb4c0fafd454b0ec8bee6ad5a9860b14633ad748af0e116",
+      "after": "4700e763a4ac8e21cc182f85fb83eac552673d574c1f70161f14a733baf4f85c",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_navigation_prepare/navigation_host.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "ae6d4b2e9ff90a7bc0438ba2c0c859c97fb69cb104daa3bd94fce58720103e89",
+      "after": "67b2a70da3d0c78be60d85a9c1e274c1b8e96bf3d4bed9ef159f70ee84914385",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_navigation_prepare/runtime_host.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "a2a894791be81049b1a28f111ad89cd46e454326caffbb5f8f3dc1cc4c34d114",
+      "after": "e4b7434c9eefe72901b2862509410132acada4f5931be206306c1d6b1a558769",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_navigation_prepare/live_binding.gd"
+    }
+  ],
+  "new": [
+    {
+      "path": "res://visual_rework_20261009/binding/g01_navigation_transition.json",
+      "after": "91ec28957ea7796049ccb2c017f0db84f3eb78d34c8ac84fe4df0d14a88f5a98",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_navigation_prepare/navigation_transition.json"
+    }
+  ],
+  "new_plan_path": "res://visual_rework_20261009/binding/g01_navigation_plan.json",
+  "history_prefix": "res://visual_rework_20261009/binding/history_g01_navigation_base01/",
+  "authority": {
+    "plan_path": "res://visual_rework_20261009/binding/equipment47_plan.json",
+    "plan_sha256": "3a648ceb17c3f73aca9c4dfdc8fc908361e2038225f4e0db9898b5da27faefce",
+    "path": "res://tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd",
+    "before": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea",
+    "after": "e35db36237772a3ba1ef6ed149869d61e9d5340ec96ecab37ab1055be352f21f"
+  },
+  "ancestor_original_count": 19,
+  "ancestor_final_count": 20,
+  "new_ancestor_paths": [
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd"
+  ],
+  "scope": "Exact navigation director pin and sole root_return navigation constructor successor; all other errors and checks unchanged. Old GUI36 HOLD retained.",
+  "engine_run": false
+}

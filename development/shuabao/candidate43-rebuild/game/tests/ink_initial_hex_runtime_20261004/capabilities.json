@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "hero_id": "yanguizhou",
+  "version": "ink-initial-hex-runtime-v1",
+  "runtime_candidates": [
+    "Q1"
+  ],
+  "source_implemented_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "runtime_verified_hooks": [],
+  "source_binding_id": "c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a",
+  "common_pool_full_validation": false,
+  "ink_g18_capture": false,
+  "ordinary_entry_ready": false,
+  "scope": "Lv1 candidate8, source gates only until main serial Godot and native HexUI acceptance",
+  "required_finite_results": [
+    "selector_result.json",
+    "sink_result.json",
+    "hp_result.json"
+  ]
+}

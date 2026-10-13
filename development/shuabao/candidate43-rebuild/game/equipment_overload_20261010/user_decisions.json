@@ -1,0 +1,55 @@
+{
+  "schema": "equipment-authorized-decisions-20261010-1",
+  "status": "USER_APPROVED_NOT_ALL_IMPLEMENTED",
+  "assistant_message_id": "Sentinel_8b50d48732408191a070bee3efbffbd8",
+  "user_message_id": "Sentinel_121087547b848191adb409cdf14958ae",
+  "user_verbatim": "1.可以。2.对。3.对。4.对。5.对。6.对",
+  "scope": "Only six formerly unspecified decisions; original numeric tables/prices/recipes/caps/lifetimes otherwise unchanged",
+  "decisions": [
+    {
+      "number": 1,
+      "owner": "final:D01",
+      "name": "巨像心核",
+      "rule": "额外最大生命按比例换算，不满100也计入，最多计算1200；来源仍为装备、锻体及局内效果，不含人物基础最大生命。",
+      "example": {
+        "bonus_hp": 590,
+        "AD": 11.8,
+        "AP": 17.7
+      }
+    },
+    {
+      "number": 2,
+      "owner": "final:C03",
+      "name": "过载矩阵",
+      "rule": "Q/E成功释放时加一层；开始蓄力不算，不必等持续伤害结束。原10AP/2%MS/4秒/最多6层/再次获得刷新全部不变。"
+    },
+    {
+      "number": 3,
+      "owner": "final:C03",
+      "rule": "卖掉最后一件时立即清除已有层数。"
+    },
+    {
+      "number": 4,
+      "owner": "final:C03",
+      "rule": "战斗结束时清除层数。"
+    },
+    {
+      "number": 5,
+      "owner": "elixir:05",
+      "name": "疾行合剂",
+      "rule": "再次闪避结束，只刷新1.5秒，不叠层。"
+    },
+    {
+      "number": 6,
+      "owner": "elixir:05",
+      "rule": "该合剂常驻15%与闪避后15%移速相加，合计30%。"
+    }
+  ],
+  "approved_source_sha256": "51bce01660980f55d66bff7a06aa80d817ac2e7ea5e0a36ca951e7610df6c052",
+  "implementation_order": [
+    "final:D01",
+    "final:C03",
+    "elixir:05"
+  ],
+  "no_other_rules_resolved": true
+}

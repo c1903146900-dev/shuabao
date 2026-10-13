@@ -1,0 +1,90 @@
+--- ../natural_first_room_prepare/natural_first_room_monitor.gd
++++ natural_first_room_replay_prepare/natural_first_room_replay.gd
+@@ -1,6 +1,7 @@
+ extends SceneTree
+-## External GUI observer. Only startup actions: instantiate the actual entry,
+-## then request_start("yanguizhou"). All gameplay comes from native CUA input.
++## External source-input replay plus read-only original first-room observer.
++## Synthetic player inputs, never native GUI/CUA completion evidence.
++## Original Host alone owns held-basic updates and simulation time.
+ const ENTRY := "res://visual_rework_20261009/entry.tscn"
+ const SOURCE_BINDING := "res://visual_rework_20261009/binding/source_binding.json"
+ const SOURCE_SHA := "da26defba5cbdcf2ca2b0a7e51d03ed0345f2525336d3543598df5090c001360"
+@@ -27,6 +28,7 @@
+ var checkpoints: Array=[]
+ var last_observed: Dictionary={}
+ var finishing: bool=false
++var driver: RefCounted
+ 
+ func _initialize() -> void:
+  started_ms=Time.get_ticks_msec()
+@@ -108,7 +110,7 @@
+ func latch_original_roster(state: Dictionary) -> void:
+  if not roster_ids.is_empty() or state.phase!="combat":return
+  var selected: Dictionary=state.flow.row_state.selected_node
+- if not check(selected.get("node_id","")=="r01a" and int(selected.get("row_number",-1))==1,"native entry is exactly authored first row r01a"):return
++ if not check(selected.get("node_id","")=="r01a" and int(selected.get("row_number",-1))==1,"source replay enters exactly authored first row r01a"):return
+  first_room=str(state.room_id);first_generation=int(state.generation)
+  roster_ids=session.expected_enemies.duplicate(true)
+  roster=state.actors.duplicate(true)
+@@ -161,9 +163,9 @@
+  if reason=="first_room_settled":successful=verify_first_room_success(state)
+  else:check(false,"natural first room incomplete: "+reason)
+  await capture("final_"+reason,state)
+- var report: Dictionary={"passed":successful and failures.is_empty() and io_errors.is_empty(),"reason":reason,"checks":check_records,"failures":failures,"io_errors":io_errors,"initial":initial,"pre_exit":state,"original_roster":roster,"expected_roster_ids":roster_ids,"events":events,"terminals":terminals,"checkpoints":checkpoints,"automatic_gameplay_actions":[],"startup_actions":["load actual entry","request_start yanguizhou"],"wallet_HP_AI_enemy_clock_fixtures":false,"extra_sim_steps":false,"source_input_injection":false,"native_input_provenance":"Official CUA operator evidence is separate; this observer cannot attest the origin of OS input.","natural_first_room_only":true,"full_floor_victory":false,"selected_hex_may_affect_economy_or_xp":true,"hardcoded_gold_xp_total":false,"wall_limit_ms":WALL_MS,"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"source_binding_sha256":loaded_source_sha}
++ var report: Dictionary={"passed":successful and failures.is_empty() and io_errors.is_empty(),"reason":reason,"checks":check_records,"failures":failures,"io_errors":io_errors,"initial":initial,"pre_exit":state,"original_roster":roster,"expected_roster_ids":roster_ids,"events":events,"terminals":terminals,"checkpoints":checkpoints,"automatic_gameplay_actions":driver.receipts.duplicate(true) if driver!=null else [],"replay_visibility":driver.visibility_log.duplicate(true) if driver!=null else [],"input_replay":true,"native_input":false,"startup_actions":["load actual entry","request_start yanguizhou"],"wallet_HP_AI_enemy_clock_fixtures":false,"extra_sim_steps":false,"source_input_injection":true,"native_input_provenance":"Synthetic events through the original HUD/Controller and input router; not OS input, native CUA, or a manual-clear claim.","natural_first_room_only":true,"full_floor_victory":false,"selected_hex_may_affect_economy_or_xp":true,"hardcoded_gold_xp_total":false,"wall_limit_ms":WALL_MS,"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"source_binding_sha256":loaded_source_sha}
+  save_json("report.json",report)
+- print("NATURAL_FIRST_ROOM ",JSON.stringify({"passed":report.passed,"reason":reason,"gold":state.get("model_state",{}).get("gold",-1),"xp":state.get("model_state",{}).get("xp",-1),"result":output.path_join("report.json")}))
++ print("NATURAL_FIRST_ROOM_REPLAY ",JSON.stringify({"passed":report.passed,"reason":reason,"gold":state.get("model_state",{}).get("gold",-1),"xp":state.get("model_state",{}).get("xp",-1),"result":output.path_join("report.json")}))
+  if is_instance_valid(entry):entry.free()
+  await process_frame
+  quit(0 if report.passed and io_errors.is_empty() else 2)
+@@ -171,7 +173,7 @@
+ func run() -> void:
+  if output.is_empty() or not output.is_absolute_path():push_error("absolute --natural-evidence directory required");quit(2);return
+  if DirAccess.make_dir_recursive_absolute(output)!=OK:push_error("cannot create natural evidence directory");quit(2);return
+- if DisplayServer.get_name()=="headless":save_json("report.json",{"passed":false,"reason":"native_GUI_renderer_required"});quit(2);return
++ if DisplayServer.get_name()=="headless":save_json("report.json",{"passed":false,"reason":"original_GUI_renderer_required_for_camera_visibility"});quit(2);return
+  loaded_source_sha=FileAccess.get_sha256(SOURCE_BINDING)
+  if not check(loaded_source_sha==SOURCE_SHA,"exact sealed training12 production source is loaded"):
+   save_json("report.json",{"passed":false,"failures":failures});quit(2);return
+@@ -198,10 +200,18 @@
+  check(initial.model_state.inventory.is_empty() and initial.model_state.body.is_empty() and initial.model_state.selected_hex.is_empty() and initial.model_state.pending_milestones==[1],"no equipment, training or automated initial Hex choice")
+  check(initial.ai_enabled and not initial.auto_finish,"original preparation retains AI flag and intentionally disables combat auto-finish")
+  check(initial.phase=="preparation" and initial.flow.status=="preparation" and int(initial.generation)==0 and initial.actors.is_empty(),"original preparation before any selected or entered battle")
+- for skill: Dictionary in initial.model_state.skills.values():check(int(skill.rank)==0,"fresh skills remain unlearned before native CUA")
++ for skill: Dictionary in initial.model_state.skills.values():check(int(skill.rank)==0,"fresh skills remain unlearned before source input replay")
+  await capture("initial_zero_start",initial)
+- save_json("ready.json",{"ready":failures.is_empty(),"native_actions_required":["choose initial Hex","learn Q1","select r01a","enter selected node","WASD and native basic/Q1 combat"],"deadline_wall_ms_from_script_start":WALL_MS,"remaining_ms":maxi(0,WALL_MS-(Time.get_ticks_msec()-started_ms)),"identities":identities,"initial_snapshot":"00_initial_zero_start.json","do_not_press_F10":"The observer saves the real pre-exit state and releases automatically. F10 would abort the unfinished12-row run."})
+  if not failures.is_empty():await finish("startup_contract_failed",initial);return
++ var driver_script: Script=load(get_script().resource_path.get_base_dir().path_join("visible_player_replay.gd"))
++ if driver_script==null:await finish("replay_driver_missing",initial);return
++ driver=driver_script.new()
++ driver.bind_existing(host,started_ms+WALL_MS)
++ save_json("ready.json",{"ready":true,"input_replay":true,"native_input":false,"automatic_actions":["visible offered initial Hex slot1","original1SP Q1 learning","original r01a selection/entry","visible-target WASD, held BASIC and Q1 gesture"],"deadline_wall_ms_from_script_start":WALL_MS,"identities":identities,"initial_snapshot":"00_initial_zero_start.json"})
++ var prepared: Dictionary=await driver.prepare_first_room()
++ save_json("replay_preparation.json",prepared)
++ if not check(prepared.get("accepted",false),"legal original Hex/Q1/r01a replay preparation"):
++  await finish("replay_preparation_failed",observe());return
+  var last_key: String=""
+  var last_save: int=0
+  while Time.get_ticks_msec()-started_ms<WALL_MS:
+@@ -213,7 +223,7 @@
+   if not state.ai_enabled or (state.phase=="combat" and not state.auto_finish):check(false,"original AI or terminal authority disabled");await finish("source_authority_changed",state);return
+   latch_original_roster(state)
+   var selected: Dictionary=state.flow.row_state.get("selected_node",{})
+-  if not selected.is_empty() and (selected.get("node_id","")!="r01a" or int(selected.get("row_number",-1))!=1):await finish("wrong_native_route_selection",state);return
++  if not selected.is_empty() and (selected.get("node_id","")!="r01a" or int(selected.get("row_number",-1))!=1):await finish("wrong_replay_route_selection",state);return
+   if not state.flow.fault.is_empty() or not state.host_floor_error.is_empty():await finish("original_flow_fault",state);return
+   if state.hero_dead or state.flow.status=="defeated":await finish("natural_death",state);return
+   if state.flow.status in ["aborted","faulted"]:await finish("original_run_"+str(state.flow.status),state);return
+@@ -222,6 +232,9 @@
+   if key!=last_key:
+    last_key=key
+    await capture("phase_"+str(state.phase)+"_kills_"+str(state.source_kills_seen),state)
++  driver.advance_inputs()
++  if not driver.failure.is_empty():check(false,driver.failure);await finish("replay_input_contract_failed",observe());return
+   if Time.get_ticks_msec()-last_save>=500:
+    last_save=Time.get_ticks_msec();save_json("last_observed.json",state)
++   save_json("replay_input_receipts.json",{"actions":driver.receipts,"visibility":driver.visibility_log})
+  await finish("wall_limit100seconds",observe())

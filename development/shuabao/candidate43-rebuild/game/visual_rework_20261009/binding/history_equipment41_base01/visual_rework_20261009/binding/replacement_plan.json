@@ -1,0 +1,37 @@
+{
+  "parent_path": "res://tests/ink_first_floor_boss_20261008/live02/source_binding.json",
+  "parent_sha256": "783f9670e8bd01ec7c0d720d25f6a444c38d48726d591e6d9aa6f16601838680",
+  "replacements": {
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "fe08ed0285188ca51bc75ddf73c261f656d4ab718135df83a8f8cbba7a598e0a",
+      "after": "a16562542d5138c63c7ba726bed4bf8198d4af69ffae2f4058b4679a5804e7c4",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "2b40a46134b29778f1320a68bc017a0514388e8f4092ed3690cc86b9e4bafd68",
+      "after": "7da1cb4b83e602081c99b7b38008ebe1ba79661aabd77e208c3be2c4596fe8f8",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate03/tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd": {
+      "before": "996001b4467c4a0b605f16b0f8217d6467048c8cf3f3d24141d8e5c3dfce2c00",
+      "after": "a82936ba5f2e81079e2f833b3cf570e060f3671c554b01435a8541a3d1344859",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/host.gd": {
+      "before": "75e9fc1a8db2033c309854885bc1af2a68bd8924be74850fd20a78b410f41ab6",
+      "after": "b2620751585f69c5bde67954141eef10ceaa1f7da9c67b8f92c04a321b90a864",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/host.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/frontdoor01/host.gd"
+    }
+  },
+  "original_runtime_pin_count": 1078,
+  "restored_ancestor": {
+    "resource": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+    "sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+    "instruction": "Must equal frozen working_live02 source byte-for-byte. No ancestor override remains."
+  },
+  "revision": "equipment40-b02-authenticated-death-buff-successor"
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "equipment43-explicit-successor-1",
+  "previous_source_binding_sha256": "49f07b47c35c4ee13f4f2a5ad79ae64ba0a38d2b9ffb97a89de287cccba3ca54",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "b020edf0408994b18e464d1a98d9e24991f37b1880ccf6c0292f9412341c2807",
+      "after": "cc32d4d9c550bf5036657c144aa1e7ed81fb89d565bdab9e106103e255af5fd0"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "6a377cd31fab406f064049eb44844c016ceb20afad6cc2ed4d138a4af591c207",
+      "after": "31ee15b2fa58506951d8ce315668ffaf0deb0b924da2fcbe6cf74cc59c9576c7"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "f09f92a6b40d5562b7ca605f3c598b6552739d2d228e13b41f62f45916551c59",
+      "after": "dd2f88aaaab8ca8f2ade615351345018d0c421dcf2f4ba41488850541aa51448"
+    }
+  },
+  "new_files": {
+    "equipment_regeneration_20261009/adapter.gd": "ecee303eeb7c2b873cf0b10e3cabafc7507e56a90747820a0fd600416a5c7d69",
+    "equipment_regeneration_20261009/passive24.gd": "2e335e8a33199191356d982c2ca0bfaeb25122afe7a10aa7c0edd0c3206ee562",
+    "equipment_regeneration_20261009/model.gd": "69d107021223b9a9e3716114e95e7761acdfde6a80ba23d3c75b893a39f212b4",
+    "equipment_regeneration_20261009/common_bridge.gd": "89b2679a3e842285cdf2dbcdf966fa7ef283826e0b9c36b0d7fe381ca7bf6f5b"
+  },
+  "source_rules": "original E03 passive24: while continuously in combat for6 world/owner combat seconds, increase natural base regeneration by100percent, ends immediately at combat end; unique passive, original regen heal channel only; no active healing/lifesteal amplification; original per5seconds stat conversion preserved",
+  "admitted_item": "final:E03",
+  "previous_item_count": 42,
+  "new_item_count": 43,
+  "earlier_equipment_and_terminal_inherited": true
+}

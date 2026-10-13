@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "passed": true,
+      "label": "exact verified r06 observer baseline",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "exact verified safe-step04 r06 driver baseline",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "driver has only the r09 service-status extension",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "all inherited observer functions except run/finish remain byte-for-byte identical",
+      "detail": [
+        "_initialize",
+        "check",
+        "json_value",
+        "save_json",
+        "identity",
+        "selected_hex_definitions",
+        "observe",
+        "kill_count",
+        "on_source_event",
+        "on_source_terminal",
+        "capture",
+        "latch_original_roster",
+        "verify_combat_success",
+        "verify_rest_success",
+        "complete_entered_training",
+        "enter_and_complete_training",
+        "verify_r06_success"
+      ]
+    },
+    {
+      "passed": true,
+      "label": "only three new observer/helper functions",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "protected first-room, r03, r06, route and source-binding files unchanged",
+      "detail": []
+    },
+    {
+      "passed": true,
+      "label": "exact sealed production source binding",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "all sealed production runtime-map paths match",
+      "detail": {
+        "count": 1550,
+        "mismatches": []
+      }
+    },
+    {
+      "passed": true,
+      "label": "only original connected r01a through r09a",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "all eight transitions are original authored route edges",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "all five expected rosters match the original route",
+      "detail": {
+        "1": [
+          "minion",
+          "minion",
+          "minion",
+          "minion"
+        ],
+        "2": [
+          "armored",
+          "armored",
+          "minion",
+          "minion"
+        ],
+        "5": [
+          "elite",
+          "minion",
+          "minion",
+          "minion"
+        ],
+        "7": [
+          "minion",
+          "minion",
+          "minion",
+          "minion"
+        ],
+        "8": [
+          "armored",
+          "armored",
+          "minion",
+          "minion"
+        ]
+      }
+    },
+    {
+      "passed": true,
+      "label": "service statuses match original route payloads",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "single unchanged100-second observer deadline, including final observation",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "unchanged120ms input interval",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "original r06 success gate precedes any new action",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "later optional upgrade retains actual outcome/rank/SP",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "later earned upgrade follows original required visible-Hex resolution",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "potion course retains actual/left and discloses absent terminal total",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "five scoped combat records and exact r09 service evidence required",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "scope and provenance remain explicit",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "observer: balanced delimiters and closed strings (not engine syntax validation)",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "observer: no extra tick/damage/heal/potion/training/restore direct calls",
+      "detail": []
+    },
+    {
+      "passed": true,
+      "label": "observer: no direct gameplay-authority state assignments",
+      "detail": []
+    },
+    {
+      "passed": true,
+      "label": "observer: no RNG control",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "driver: balanced delimiters and closed strings (not engine syntax validation)",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "driver: no extra tick/damage/heal/potion/training/restore direct calls",
+      "detail": []
+    },
+    {
+      "passed": true,
+      "label": "driver: no direct gameplay-authority state assignments",
+      "detail": []
+    },
+    {
+      "passed": true,
+      "label": "driver: no RNG control",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "driver never reads hidden source enemy lists or actors",
+      "detail": null
+    },
+    {
+      "passed": true,
+      "label": "first-room input sequence unchanged",
+      "detail": null
+    }
+  ],
+  "engine_started": false,
+  "engine_parser_run": false,
+  "production_runtime_map_count": 1550
+}

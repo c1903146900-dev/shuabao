@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "hero_id": "yanguizhou",
+  "table_version": "existing-fixture-20261004-v1",
+  "provisional": true,
+  "mode": "pinned_existing_fixture",
+  "notice": "Temporary existing items only. The user will provide the final shop table; no new prices, stats or recipes are approved here.",
+  "sources": [
+    {
+      "path": "res://data/progression/prototype/catalog.json",
+      "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28"
+    },
+    {
+      "path": "res://data/final_design/equipment_tasks.json",
+      "sha256": "006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea"
+    }
+  ]
+}

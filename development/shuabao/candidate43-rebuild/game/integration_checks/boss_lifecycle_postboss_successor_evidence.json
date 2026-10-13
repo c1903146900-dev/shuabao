@@ -1,0 +1,21 @@
+{
+  "source": "integration_checks/boss_lifecycle_successor.gd",
+  "source_sha256": "9a1699f7d5dca360bed35c1bc73eb2f37a8adb18735e42d11f0c1b91f2a988f6",
+  "successor": "integration_checks/boss_lifecycle_postboss_successor.gd",
+  "successor_sha256": "c8274761f90741788d96acce0b3c525c53fe971fe278fb43bc33c01685e52ebd",
+  "original_model_path": "res://tests/ink_equipment_live_20261008/content01/model.gd",
+  "original_model_sha256": "af679ebb5a07f5896e69f8a5708d518b341e5eef86118fd47e5048f419a3cb37",
+  "new_model_path": "res://visual_rework_20261009/binding/postboss_model.gd",
+  "edits": [
+    "MODEL_PATH points to the new one-layer postboss Model",
+    "GATE_PATH identifies the independent successor test file",
+    "two exact original Model path/SHA constants",
+    "two additional Model-parent assertions at the original model identity check"
+  ],
+  "roundtrip_equals_original": true,
+  "every_original_check_expression_preserved": true,
+  "original_978_runtime_checks_retained_not_rerun": true,
+  "additional_check_calls_per_fresh": 2,
+  "engine_run": false,
+  "scope": "Original authored r10a route and all lethal fixtures/groups remain byte-identical after reversing only declared edits; adds exact one-layer original Model identity, does not claim natural gameplay."
+}

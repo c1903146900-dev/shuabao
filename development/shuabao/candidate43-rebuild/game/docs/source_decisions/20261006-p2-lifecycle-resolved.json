@@ -1,0 +1,24 @@
+{
+  "schema": "p2-lifecycle-resolved-1",
+  "status": "USER_APPROVED_EFFECTIVE",
+  "supersedes": "20261006-p2-lifecycle-pending.json",
+  "question_message_id": "Sentinel_f018da0c7d788191bdec8385b1a9a7d3",
+  "question_verbatim": "P2还有3个持续时间细节，原表没写，我建议这样定：\n- 叠满后继续交替施法，可以刷新5秒持续时间，但不再增加层数\n- 层数到期或强化消耗后，仍记住上次技能，用于判断下一招是否交替；休息、换房、死亡时全部清掉\n- 升级P2保留当前层数和剩余时间，只更新倍率，不额外刷新持续时间\n这三条按这个来可以吗？其余已定部分继续做，不等这几条停工",
+  "user_message_id": "Sentinel_82e8c35682408191bfe568f9fd1eb998",
+  "user_reply_verbatim": "这三条都可以。",
+  "rules": {
+    "full_stack_alternating_use": "refresh_shared_five_second_duration_without_extra_stack",
+    "expiry_or_consumption": "clear_buff_and_ready_entitlements_keep_last_completed_skill_history",
+    "rest_room_change_death": "clear_stacks_history_ready_pending_and_old_root_entitlements",
+    "p2_rank_upgrade": "retain_current_stack_count_and_remaining_duration_update_rank_factors_without_duration_refresh"
+  },
+  "retained_prior": "20261006-ink-five-resolutions.json",
+  "implementation_constraints": {
+    "same_family_use_no_refresh": true,
+    "complete_use_order_not_cast_birth": true,
+    "new_use_after_ready_only_not_filling_cast_or_old_river_boat": true,
+    "linear_stack_percent_into_existing_dynamic_common_additive_pool": true,
+    "ordinary_selection_requires_full_integration_and_validation": true
+  },
+  "implementation_note": "同池增量是按现有正式common投影层沿用；不将跨系统数学细节冒充以上用户原话。"
+}

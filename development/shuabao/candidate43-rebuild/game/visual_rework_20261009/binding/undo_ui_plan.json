@@ -1,0 +1,13 @@
+{
+  "schema": "sealed-shop-undo-UI-successor-1",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "8fe5741c84d848dc76539abf27f48dc3d38b725bc88b97b4c4e6eb538b30de1a",
+      "after": "b68bf39fb797aaa0005241fa8ae564e79dc2c8629a837ec4006e2f3436e4824b"
+    }
+  },
+  "new_files": {
+    "visual_rework_20261009/transaction_panel.gd": "29f308c8c90aade3ed35f93d3da0262a3350330864b70c6baff37a091bcc00fc"
+  },
+  "scope": "Only current-visit empty/all-sealed UI undo disabling; all real commerce, reversal ordering, source receipts and irreversible training remain inherited"
+}

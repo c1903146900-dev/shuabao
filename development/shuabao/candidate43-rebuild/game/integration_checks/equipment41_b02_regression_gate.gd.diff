@@ -1,0 +1,17 @@
+--- equipment40_source_gate.gd
++++ equipment41_b02_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment40_g02_regression_gate.gd"
++extends "res://integration_checks/equipment41_g02_regression_gate.gd"
+ ## Original Host/Session and admitted roster. Parent alone runs the engine.
+ const B02Prior = preload("res://equipment_training_20261009/adapter.gd")
+ const B02_GROUPS := ["definitions_and_commerce", "actual_birth_refresh_expiry", "sale_rebuy_unequipped", "crossroom_safe_pause_rest", "source_and_command_replays"]
+@@ -116,7 +116,7 @@
+  var model = f.session.ledger.model
+  var prior: Dictionary = B02Prior.build(JSON.parse_string(FileAccess.get_file_as_string(B01_NUMERIC)))
+  if not check(prior.get("accepted",false),"original39 adapter accepts original source"): dispose(f); return
+- check(model.runtime_stat_definitions.size() == prior.definitions.size()+1,"B02 adds exactly one runtime definition")
++ check(model.runtime_stat_definitions.size() == prior.definitions.size()+2,"B02 and D04 add exactly two runtime definitions")
+  for id: String in prior.definitions: check(var_to_bytes(prior.definitions[id]) == var_to_bytes(model.runtime_stat_definitions[id]),"prior39 definition byte-equivalent "+id)
+  var item: Dictionary = model.equipment_runtime_status("final:B02")
+  check(item.stats == {"AD":50.0,"penetration":14.0,"move_speed":0.14} and item.passive28 == {"move_bonus":12.0,"attack_speed_bonus":20.0,"duration":4.0},"exact original B02 stats and passive parameters")

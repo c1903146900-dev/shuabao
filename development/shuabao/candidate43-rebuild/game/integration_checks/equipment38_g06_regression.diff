@@ -1,0 +1,45 @@
+--- equipment37_source_gate.gd
++++ equipment38_g06_regression_gate.gd
+@@ -34,7 +34,7 @@
+ 
+ func check_model_successor(f: Dictionary, label: String) -> void:
+  var script: Script = f.session.ledger.model.get_script()
+- for path: String in [G06_MODEL, B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
++ for path: String in ["res://equipment_basic_cycle_20261009/model.gd", G06_MODEL, B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
+   if not check(script != null and script.resource_path == path, label + ": exact equipment37 Model ancestor " + path): return
+   script = script.get_base_script()
+  check(FileAccess.get_sha256(POSTBOSS_BASE_MODEL_PATH) == POSTBOSS_BASE_MODEL_SHA, label + ": frozen original Model SHA retained")
+@@ -53,7 +53,7 @@
+  f["g06_attack_records"] = []
+  evidence.wallet_fixtures.append({"case":label, "run_id":f.session.run_id, "before":model.state.gold, "after":60000, "test_only":true, "production_default_unchanged":true})
+  model.state.gold = 60000 # The inherited explicit wallet fixture only.
+- if not check(model.get_script().resource_path == G06_MODEL and f.sim.has_method("verify_g06_damage_attribution"), "exact G06 Model/source bridge") or not check(model.equipment_runtime_status("final:G06").get("runtime_complete", false), "G06 runtime bound through original factory") or not check(f.session.open_panel().get("accepted", false), label + ": original safe shop opens"):
++ if not check(model.get_script().resource_path == "res://equipment_basic_cycle_20261009/model.gd" and model.get_script().get_base_script().resource_path == G06_MODEL and f.sim.has_method("verify_g06_damage_attribution"), "exact G06 Model/source bridge") or not check(model.equipment_runtime_status("final:G06").get("runtime_complete", false), "G06 runtime bound through original factory") or not check(f.session.open_panel().get("accepted", false), label + ": original safe shop opens"):
+   dispose(f); return {}
+  return f
+ 
+@@ -221,13 +221,13 @@
+  if not check(numeric is Dictionary, "original numeric source readable"): dispose(f); return
+  var prior: Dictionary = G06Prior.build(numeric)
+  if not check(prior.get("accepted", false), "original36 adapter accepts original source"): dispose(f); return
+- check(model.runtime_stat_definitions.size() == prior.definitions.size() + 1, "only G06 extends prior36 definitions")
++ check(model.runtime_stat_definitions.size() == prior.definitions.size() + 2, "G06 and B04 extend prior36 definitions")
+  for item_id: String in prior.definitions:
+   check(var_to_bytes(prior.definitions[item_id]) == var_to_bytes(model.runtime_stat_definitions.get(item_id, {})), "prior36 definition deeply unchanged: " + item_id)
+  var supported: int = 0
+  for definition: Dictionary in model.runtime_stat_definitions.values():
+   if definition.get("supported", false): supported += 1
+- check(supported == 37 and model.snapshot().content_profile == "ordinary_equipment37_potions3", "truthful supported37 profile")
++ check(supported == 38 and model.snapshot().content_profile == "ordinary_equipment38_potions3", "truthful supported38 profile during G06 regression")
+  var g06: Dictionary = model.equipment_runtime_status("final:G06")
+  check(g06.stats == {"AD":45.0, "AP":65.0, "penetration":20.0} and g06.passives == ["passive:18"], "G06 authored AD45/AP65/penetration20 and giant-hunter identity")
+  check(int(model.commerce_definitions.items["final:G06"].price) == 3400, "G06 original price3400")
+@@ -643,7 +643,7 @@
+ func finish() -> void:
+  check(g06_groups == G06_GROUPS, "all seven G06 source and declared fixture groups reached")
+  check(check_records.size() == checks, "every assertion retained")
+- var report: Dictionary = {"suite":"equipment37_g06_actual_elite_damage_source_gate", "passed":failures.is_empty() and g06_groups == G06_GROUPS, "runtime_status":"EXECUTED", "checks":checks, "failures":failures, "check_records":check_records, "completed_groups":g06_groups, "required_groups":G06_GROUPS, "evidence":evidence, "source_binding_sha256":FileAccess.get_sha256(Binding.BINDING_PATH), "original_factory_session":true, "testwallet_fixture":true, "source_API_packet_fixture":true, "extra_spawned_targets_fixture":true, "original_route_lethal_fixtures":fixture_packets, "actual_q1_p1_input_case_included":true, "isolated_evolved_commerce_fixture":true, "evolved_sale_in_same_combat_Session":false, "actual_g18_runtime_exercised":false, "natural_play":false, "natural_full_floor":false, "native_gui_input":false, "production_ready":false}
++ var report: Dictionary = {"suite":"equipment38_g06_regression_source_gate", "passed":failures.is_empty() and g06_groups == G06_GROUPS, "runtime_status":"EXECUTED", "checks":checks, "failures":failures, "check_records":check_records, "completed_groups":g06_groups, "required_groups":G06_GROUPS, "evidence":evidence, "source_binding_sha256":FileAccess.get_sha256(Binding.BINDING_PATH), "original_factory_session":true, "testwallet_fixture":true, "source_API_packet_fixture":true, "extra_spawned_targets_fixture":true, "original_route_lethal_fixtures":fixture_packets, "actual_q1_p1_input_case_included":true, "isolated_evolved_commerce_fixture":true, "evolved_sale_in_same_combat_Session":false, "actual_g18_runtime_exercised":false, "natural_play":false, "natural_full_floor":false, "native_gui_input":false, "production_ready":false}
+  var file: FileAccess = FileAccess.open(output_path, FileAccess.WRITE)
+  if file == null:
+   push_error("Unable to write equipment37 result: " + output_path); quit(2); return

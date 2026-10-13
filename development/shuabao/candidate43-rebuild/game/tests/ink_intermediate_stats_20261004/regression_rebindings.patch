@@ -1,0 +1,73 @@
+--- tests/ink_initial_hex_runtime_20261004/fix01/sink_gate.gd
++++ tests/ink_intermediate_stats_20261004/common_regression_gate.gd
+@@ -1,6 +1,6 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd")
+-const Bridge=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_bridge.gd")
++const Sim=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd")
++const Bridge=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_bridge.gd")
+ const Catalog=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_catalog.gd")
+ const SHOP="res://tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json"
+ const FIXTURE="res://tests/equipment_shop_transactions_20261004/fixtures/source_prices.json"
+@@ -20,7 +20,7 @@
+ func caps()->Dictionary:
+  var hooks: Array=Catalog.FIRST_SLICE_HEX_HOOKS.duplicate()+["stats.v1","equipment.task_completion.v1"]
+  for stat in ["AD","AP","attack_speed","max_hp","defense","move_speed","crit_chance","cooldown_reduction","lifesteal","tenacity","penetration","hp_regen"]:hooks.append("stat."+stat+".v1")
+- return {"schema_version":1,"hero_id":"yanguizhou","source_binding_id":FileAccess.get_sha256("res://tests/ink_initial_hex_runtime_20261004/fix01/source_binding.json"),"runtime_candidates":["Q1"],"supported_hooks":hooks}
++ return {"schema_version":1,"hero_id":"yanguizhou","source_binding_id":FileAccess.get_sha256("res://tests/ink_intermediate_stats_20261004/source_binding.json"),"runtime_candidates":["Q1"],"supported_hooks":hooks}
+ func fresh(id: String)->Dictionary:
+  var sim=Sim.new();root.add_child(sim)
+  var bridge=Bridge.new();var owner=RefCounted.new()
+@@ -132,8 +132,8 @@
+  if case_status.get("personal",{}).get("passed",false):verified_hooks.append_array(Catalog.FIRST_SLICE_HEX_HOOKS.slice(0,2))
+  for id in ["G01","G05","G06","G15","G24","G30"]:
+   if case_status.get(id,{}).get("passed",false):verified_hooks.append("hex.final_design.common_"+id.to_lower()+".v1")
+- var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_initial_hex_runtime_20261004/fix01/source_binding.json"),"hooks_tested":verified_hooks,"case_status":case_status,"command_evidence":command_evidence,"kill_evidence":kill_evidence,"runtime_source_binding_id":"c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a","scope":"finite actual Ink consumers via ordinary Lv1 choice and paid Q1; not native UI, later milestones or full hero"}
+- var file=FileAccess.open("res://tests/ink_initial_hex_runtime_20261004/fix01/sink_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
++ var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"observations":observations,"source_binding_id":FileAccess.get_sha256("res://tests/ink_intermediate_stats_20261004/source_binding.json"),"hooks_tested":verified_hooks,"case_status":case_status,"command_evidence":command_evidence,"kill_evidence":kill_evidence,"upstream_runtime_source_binding_id":"c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a","scope":"finite actual Ink consumers via ordinary Lv1 choice and paid Q1; not native UI, later milestones or full hero"}
++ var file=FileAccess.open("res://tests/ink_intermediate_stats_20261004/common_regression_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
+  print("INK_INITIAL_SINK_REPORT ",JSON.stringify(result));quit(0 if failures.is_empty() else 1)
+ func test_personal()->void:
+  var failed_before: int=failures.size()
+--- tests/ink_initial_hex_runtime_20261004/hp_regression_gate.gd
++++ tests/ink_intermediate_stats_20261004/hp_regression_gate.gd
+@@ -1,6 +1,6 @@
+ extends SceneTree
+-const Sim=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd")
+-const Bridge=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_bridge.gd")
++const Sim=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd")
++const Bridge=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_bridge.gd")
+ const SHOP="res://tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json"
+ const FIXTURE="res://tests/equipment_shop_transactions_20261004/fixtures/source_prices.json"
+ const NUMERIC="res://tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json"
+@@ -53,9 +53,9 @@
+  return f
+ func run() -> void:
+  _exact_restore();_unchanged_refresh();_rebuy_not_heal();_health_dependencies();_consumption_dependencies();_body_dependency();_rooms();_stats_and_aim()
+- var result: Dictionary={"suite":"ink_same_visit_exact_hp_clamp_undo","checks":checks,"failures":failures,"observed":observed,"scope":"real-source finite health projection and dependency fixtures; no UI/native/final-balance pass","ordinary_consumable_healing_implemented":false,"old_531_binding_unchanged":true}
++ var result: Dictionary={"suite":"ink_same_visit_exact_hp_clamp_undo","source_binding_id":FileAccess.get_sha256("res://tests/ink_intermediate_stats_20261004/source_binding.json"),"checks":checks,"failures":failures,"observed":observed,"scope":"real-source finite health projection and dependency fixtures; no UI/native/final-balance pass","ordinary_consumable_healing_implemented":false,"old_531_binding_unchanged":true}
+  print("INK_HP_UNDO_REPORT ",JSON.stringify(result))
+- var file=FileAccess.open("res://tests/ink_initial_hex_runtime_20261004/hp_result.json",FileAccess.WRITE)
++ var file=FileAccess.open("res://tests/ink_intermediate_stats_20261004/hp_regression_result.json",FileAccess.WRITE)
+  file.store_string(JSON.stringify(result,"  "));file.close()
+  quit(0 if failures.is_empty() else 1)
+ func _exact_restore() -> void:
+--- tests/ink_initial_hex_runtime_20261004/selector_gate.gd
++++ tests/ink_intermediate_stats_20261004/selector_regression_gate.gd
+@@ -1,6 +1,6 @@
+ extends SceneTree
+ const Catalog=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_catalog.gd")
+-const Model=preload("res://tests/ink_initial_hex_runtime_20261004/ink_initial_model.gd")
++const Model=preload("res://tests/ink_intermediate_stats_20261004/ink_intermediate_model.gd")
+ const Design=preload("res://data/final_design/catalog.gd")
+ const SHOP="res://tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json"
+ var checks: int=0
+@@ -73,6 +73,6 @@
+  small.set_supported_hooks(Catalog.FIRST_SLICE_HEX_HOOKS.slice(0,1))
+  check(call_model(small,"hex_open",{"milestone":1}).reason=="pool_exhausted","insufficient pool fails")
+  check(small.state==before and not small._reserve_personal_refresh,"failed open restores RNG/seen/context")
+- var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"runs":runs,"orders_per_pool":24,"pool_sizes":[8,22],"complete_pool_runtime_claim":false,"source_binding_id":FileAccess.get_sha256("res://tests/ink_initial_hex_runtime_20261004/source_binding.json"),"scope":"real GDScript allocator and ledger contract; expanded personal pool is model-only"}
+- var file=FileAccess.open("res://tests/ink_initial_hex_runtime_20261004/selector_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
++ var result: Dictionary={"passed":failures.is_empty(),"checks":checks,"failures":failures,"runs":runs,"orders_per_pool":24,"pool_sizes":[8,22],"complete_pool_runtime_claim":false,"source_binding_id":FileAccess.get_sha256("res://tests/ink_intermediate_stats_20261004/source_binding.json"),"scope":"real GDScript allocator and ledger contract; expanded personal pool is model-only"}
++ var file=FileAccess.open("res://tests/ink_intermediate_stats_20261004/selector_regression_result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result,"  "));file.close()
+  print("INK_INITIAL_SELECTOR_REPORT ",JSON.stringify(result));quit(0 if failures.is_empty() else 1)

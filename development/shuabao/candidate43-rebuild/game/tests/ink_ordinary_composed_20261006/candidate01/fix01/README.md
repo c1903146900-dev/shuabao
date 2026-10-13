@@ -1,0 +1,13 @@
+# Combined ordinary fixture fix01: real Host transition publication
+
+Original candidate01 parsed clean and ran352/four groups with one failure: actual live P2 upgrade retains stacks. No independent group failed, but the aggregate was correctly RED. Original candidate/source_checkpoint02, failed raw/results and the three independent green leaves remain untouched.
+
+The original read-only learning observation confirmed request.state_revision10 versus authoritative Model14 after the fixture entered r01a directly through Session. P2's three stacks and deadline5 remained intact, points remained1 and rank remained1. The command was correctly rejected as stale_state. This was not an accepted upgrade losing stacks or a changed game rule.
+
+The actual Host already handles this lifecycle in runtime01/host.gd:_transition_result: consume the real Session result, update pending authoritative projection, record the action, refresh the Controller/Adapter from Model, and refresh controls. The finite helper now calls that exact method after its real select_node and enter_selected_node results. It does not manually modify Adapter state, weaken revision checks or call enter twice. The more graphical _request_next_room also invokes this same method but additionally requires enemy/stage views intentionally absent from finite_host; those graphical calls are not necessary for the retained real Session-result publication.
+
+The fixed test immediately asserts the Host published current revision, retains an old pre-room request as an explicit negative case, verifies it still receives stale_state without spending SP or changing rank/stacks/deadline, and then emits a fresh real P2 button press. The original rank2/points0/stacks3 assertion remains unchanged. Learning request/results and revisions are captured in the final report.
+
+Only test/parse/source-check scripts change under this distinct fix01 path. Runtime composition stays bound to b9f793bcf444150a170c573b70768ad888a17fe089fb8661167c14dc664f0e6e; its production, growth, pause and revision protection code is unchanged. The same four cross-component groups remain mandatory; no independent matrix is rerun. Native input, natural progression, full floor, final animation and real multiplayer are still not claimed.
+
+Coordinator: verify_source.py → stage_delta.py --dest <stage> --apply --receipt <receipt> → fix01/parse_gate.gd → fix01/finite_gate.gd -- --composed-result=<fresh-report> → fix01/raw_error_gate.py. Both test and runtime binding hashes must match. This author starts no engine. Actual process reaping/empty-group/terminal/CUA evidence must come from the coordinator's same desktop guard namespace; source-side process listings are not a substitute.

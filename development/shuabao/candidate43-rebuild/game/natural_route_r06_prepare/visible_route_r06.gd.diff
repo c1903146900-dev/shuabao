@@ -1,0 +1,147 @@
+--- /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/visible_route_replay.gd
++++ /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/visible_route_r06.gd
+@@ -14,6 +14,9 @@
+ var orbit_sign: float=1.0
+ var gesture: Dictionary={}
+ var wall_boxes: Array=[]
++var potion_purchase: Dictionary={}
++var potion_uses: Array=[]
++var training_skips: Array=[]
+ 
+ func bind_existing(actual_host, absolute_deadline_ms: int) -> void:
+  host=actual_host;deadline_ms=absolute_deadline_ms
+@@ -202,6 +205,7 @@
+  if Time.get_ticks_msec()>=deadline_ms or Time.get_ticks_msec()<next_input_ms:return
+  next_input_ms=Time.get_ticks_msec()+INPUT_INTERVAL_MS
+  if host.finished or host._mainprep_required or host.sim.phase!="combat" or host.sim.paused or host.sim.hero.dead or host.shop_session.panel_open or host.initial_hud.blocks_gameplay_input():return
++ _use_visible_potion_when_needed()
+  var visible: Array=_visible_enemies()
+  visibility_log.append({"wall_ms":Time.get_ticks_msec(),"hero_time":host.sim.hero_time,"camera_transform":str(host.stage.camera.global_transform),"viewport_size":host.get_viewport().get_visible_rect().size,"visible_targets":visible.duplicate(true)})
+  if not gesture.is_empty():
+@@ -265,9 +269,9 @@
+   await host.get_tree().process_frame
+  return {"accepted":true,"reason":"original_required_hexes_resolved"}
+ 
+-func upgrade_earned_Q1_once() -> Dictionary:
++func upgrade_earned_Q1_once(expected_rank: int=1) -> Dictionary:
+  var state: Dictionary=host.shop_session.ledger.model.snapshot()
+- if int(state.points)<1 or int(state.skills.Q.rank)!=1 or str(state.skills.Q.candidate)!="Q1":
++ if int(state.points)<1 or int(state.skills.Q.rank)!=expected_rank or str(state.skills.Q.candidate)!="Q1":
+   var skipped: Dictionary={"accepted":true,"upgraded":false,"reason":"earned_Q1_upgrade_not_available","level":state.level,"SP":state.points,"Q":state.skills.Q.duplicate(true)}
+   _record("optional_earned_Q1_upgrade",{},skipped);return skipped
+  if not host._learning_panel_allowed():return {"accepted":false,"reason":"original_safe_learning_not_allowed"}
+@@ -276,10 +280,10 @@
+   _record("Host:_toggle_growth",{}, {"accepted":host.initial_hud.growth_panel.is_visible_in_tree()})
+  var button: Button=host.initial_hud.q_choices.Q1.upgrade
+  if not button.is_visible_in_tree() or button.disabled:return {"accepted":false,"reason":"original_earned_Q1_button_disabled"}
+- var learned: Dictionary=_hud_request("learn",{"slot_id":"Q","candidate_id":"Q1","expected_rank":1})
++ var learned: Dictionary=_hud_request("learn",{"slot_id":"Q","candidate_id":"Q1","expected_rank":expected_rank})
+  if not learned.get("accepted",false):return learned
+  var after: Dictionary=host.shop_session.ledger.model.snapshot()
+- if int(after.skills.Q.rank)!=2 or int(after.points)!=int(state.points)-1 or after.gold!=state.gold or after.xp!=state.xp or after.level!=state.level:
++ if int(after.skills.Q.rank)!=expected_rank+1 or int(after.points)!=int(state.points)-1 or after.gold!=state.gold or after.xp!=state.xp or after.level!=state.level:
+   return {"accepted":false,"reason":"original_earned_Q1_upgrade_accounting_failed"}
+  return {"accepted":true,"upgraded":true,"before":state,"after":after}
+ 
+@@ -321,16 +325,97 @@
+  _record("Host:_request_next_room",{"row":row,"node":node_id},host.shop_session.last_receipt)
+  if not host.shop_session.last_receipt.get("accepted",false):return host.shop_session.last_receipt.duplicate(true)
+  var entered_flow: Dictionary=host.shop_session.snapshot()
+- var expected_status: String="service" if row==3 else "combat"
++ var expected_status: String="service" if row in [3,4,6] else "combat"
+  if entered_flow.status!=expected_status or entered_flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","")!=node_id:
+   return {"accepted":false,"reason":"original_next_entry_scope_not_established"}
+  return {"accepted":true,"node_id":node_id,"row":row,"upgrade":upgrade_result,"before_entry":before_entry,"entry_result":host.shop_session.last_receipt.duplicate(true)}
+ 
+-func complete_original_rest() -> Dictionary:
++func complete_original_service() -> Dictionary:
+  release_between_nodes()
+- if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_rest_readiness"}
++ if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_service_readiness"}
+  if not host.service_continue.is_visible_in_tree() or host.service_continue.disabled:
+-  return {"accepted":false,"reason":"actual_rest_continue_button_unavailable"}
++  return {"accepted":false,"reason":"actual_service_continue_button_unavailable"}
+  host._complete_service()
+  _record("Host:_complete_service",{},host.shop_session.last_receipt)
+  return host.shop_session.last_receipt.duplicate(true)
++
++
++func _potion_count(state: Dictionary) -> int:
++ var count: int=0
++ for item: Dictionary in state.inventory:
++  if str(item.id)=="potion:1":count+=int(item.count)
++ return count
++
++func _close_original_shop() -> bool:
++ if host.shop_session.panel_open:
++  host._shop(false)
++  _record("Host:_shop",{"open":false},host.shop_session.last_receipt)
++ return not host.shop_session.panel_open
++
++func buy_one_original_potion() -> Dictionary:
++ release_between_nodes()
++ if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_original_potion_purchase"}
++ var before: Dictionary=host.shop_session.ledger.model.snapshot()
++ var hp_before: float=host.sim.hero.hp
++ var stats_before: Dictionary=host.sim.hero.stats.duplicate(true)
++ if int(before.gold)<200:
++  potion_purchase={"accepted":true,"purchased":false,"reason":"insufficient_actual_gold","before":before}
++  return potion_purchase
++ host._shop(true)
++ _record("Host:_shop",{"open":true},host.shop_session.last_receipt)
++ if not host.shop_session.panel_open:return {"accepted":false,"reason":"original_safe_shop_unavailable"}
++ host.shop_panel._set_category("consumables")
++ if not host.shop_panel._item_buttons.has("potion:1") or not host.shop_panel._item_buttons["potion:1"].is_visible_in_tree():
++  _close_original_shop();return {"accepted":false,"reason":"original_potion_item_not_visible"}
++ host.shop_panel._select("potion:1")
++ var quote: Dictionary=host.shop_panel._quote.duplicate(true)
++ var shown: Dictionary=host.shop_panel._state.catalog.items["potion:1"].duplicate(true)
++ if int(shown.price)!=200 or not quote.get("accepted",false) or int(quote.get("charge",201))>200 or host.shop_panel._buy.disabled or not host.shop_panel._buy.is_visible_in_tree():
++  _close_original_shop();return {"accepted":false,"reason":"original_potion_quote_or_button_rejected","quote":quote}
++ # Emit the real visible Purchase button signal: original token and Session path.
++ host.shop_panel._buy.pressed.emit()
++ var result: Dictionary=host.shop_session.last_receipt.duplicate(true)
++ var after: Dictionary=host.shop_session.ledger.model.snapshot()
++ _record("UI:original_potion_purchase_button",{"item":"potion:1","quote":quote,"shown":shown},result)
++ var closed: bool=_close_original_shop()
++ potion_purchase={"accepted":result.get("accepted",false) and closed,"purchased":result.get("accepted",false),"item":"potion:1","quote":quote,"receipt":result,"before":before,"after":after,"hp_before":hp_before,"hp_after":host.sim.hero.hp,"stats_before":stats_before,"stats_after":host.sim.hero.stats.duplicate(true),"native_input":false,"button_signal":true}
++ if potion_purchase.accepted and (_potion_count(after)!=_potion_count(before)+1 or int(before.gold)-int(after.gold)!=int(quote.charge)):
++  potion_purchase.accepted=false;potion_purchase["reason"]="original_potion_purchase_accounting_failed"
++ return potion_purchase.duplicate(true)
++
++func _use_visible_potion_when_needed() -> void:
++ if not potion_uses.is_empty() or not potion_purchase.get("purchased",false):return
++ if host.sim.hero.hp>=float(host.sim.hero.stats.max_hp)*0.60:return
++ if not is_instance_valid(host.ordinary_potion_controls) or not host.ordinary_potion_controls.is_visible_in_tree():return
++ for child in host.ordinary_potion_controls.get_children():
++  if not child is Button or child.disabled or not child.is_visible_in_tree() or not child.text.begins_with("药I ×"):continue
++  if not host.get_viewport().get_visible_rect().has_point(child.get_global_rect().get_center()):continue
++  var before: Dictionary=host.shop_session.ledger.model.snapshot()
++  var hp_before: float=host.sim.hero.hp
++  # Real rendered button signal, not a keyboard shortcut or direct consumer API.
++  child.pressed.emit()
++  var result: Dictionary=host.shop_session.last_receipt.duplicate(true)
++  var after: Dictionary=host.shop_session.ledger.model.snapshot()
++  var receipt: Dictionary={"result":result,"before":before,"after":after,"hp_before":hp_before,"hp_after_input":host.sim.hero.hp,"hero_time":host.sim.hero_time,"threshold":0.60,"actual_button_signal":true,"native_input":false}
++  potion_uses.append(receipt)
++  _record("UI:original_visible_potion_use_button",{"threshold":0.60},result)
++  if result.get("accepted",false) and _potion_count(before)-_potion_count(after)!=1:failure="original_potion_consumption_count_failed"
++  return
++
++func inspect_and_skip_original_training(row: int) -> Dictionary:
++ release_between_nodes()
++ if Time.get_ticks_msec()>=deadline_ms:return {"accepted":false,"reason":"deadline_before_training_inspection"}
++ var before: Dictionary=host.shop_session.ledger.model.snapshot()
++ var hp_before: float=host.sim.hero.hp
++ host._shop(true)
++ _record("Host:_shop",{"open":true,"training_row":row},host.shop_session.last_receipt)
++ if not host.shop_session.panel_open:return {"accepted":false,"reason":"original_training_shop_unavailable"}
++ host.shop_panel._set_category("training")
++ var shown: Dictionary=host.shop_panel._training_view.duplicate(true)
++ var visible: bool=host.shop_panel._training_box.is_visible_in_tree()
++ var disabled: bool=host.shop_panel._training_pay.disabled
++ var closed: bool=_close_original_shop()
++ var after: Dictionary=host.shop_session.ledger.model.snapshot()
++ var result: Dictionary={"accepted":visible and closed and int(shown.get("price",0))==900 and before.body==after.body and before.gold==after.gold,"row":row,"paid":false,"visible_training":shown,"pay_button_disabled":disabled,"insufficient_actual_gold":int(before.gold)<900,"before":before,"after":after,"hp_before":hp_before,"hp_after":host.sim.hero.hp,"reason":"original_training_optional_no_payment"}
++ training_skips.append(result.duplicate(true));_record("UI:inspect_training_then_close",{"row":row},result)
++ return result

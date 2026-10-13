@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "hero_id": "yanguizhou",
+  "scope": "source-price transaction fixture; no passive implementation or balance acceptance",
+  "source_path": "docs/equipment_source_20261004/correction_0959/equipment_system_extracted.json",
+  "source_sha256": "fc8cd1fc1a739ff1cd6704f8c80bec210f0daddf4c84a8a6fdd2509543a79c76",
+  "equipment_count": 72,
+  "items": {
+    "base:B01": {
+      "name": "黑铁短刃",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B01"
+    },
+    "base:B02": {
+      "name": "奥术结晶",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B02"
+    },
+    "base:B03": {
+      "name": "微型涡轮",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B03"
+    },
+    "base:B04": {
+      "name": "鹰眼棱镜",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "source_id": "base:B04"
+    },
+    "base:B05": {
+      "name": "冷凝线圈",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "source_id": "base:B05"
+    },
+    "base:B06": {
+      "name": "生命核心",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B06"
+    },
+    "base:B07": {
+      "name": "合金甲板",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B07"
+    },
+    "base:B08": {
+      "name": "矢量推进器",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "source_id": "base:B08"
+    },
+    "base:B09": {
+      "name": "血泵",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "source_id": "base:B09"
+    },
+    "base:B10": {
+      "name": "稳定环",
+      "kind": "equipment",
+      "price": 450,
+      "components": [],
+      "source_id": "base:B10"
+    },
+    "base:B11": {
+      "name": "贯甲钉",
+      "kind": "equipment",
+      "price": 500,
+      "components": [],
+      "source_id": "base:B11"
+    },
+    "base:B12": {
+      "name": "活性凝胶",
+      "kind": "equipment",
+      "price": 400,
+      "components": [],
+      "source_id": "base:B12"
+    },
+    "intermediate:I01": {
+      "name": "双刃核心",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "base:B01",
+        "base:B01"
+      ],
+      "source_id": "intermediate:I01"
+    },
+    "intermediate:I02": {
+      "name": "秘法棱核",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "base:B02",
+        "base:B02"
+      ],
+      "source_id": "intermediate:I02"
+    },
+    "intermediate:I03": {
+      "name": "狂热齿轮",
+      "kind": "equipment",
+      "price": 1500,
+      "components": [
+        "base:B03",
+        "base:B04",
+        "base:B08"
+      ],
+      "source_id": "intermediate:I03"
+    },
+    "intermediate:I04": {
+      "name": "锯齿长刃",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B01",
+        "base:B11"
+      ],
+      "source_id": "intermediate:I04"
+    },
+    "intermediate:I05": {
+      "name": "回响法印",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B02",
+        "base:B05"
+      ],
+      "source_id": "intermediate:I05"
+    },
+    "intermediate:I06": {
+      "name": "血袭刀环",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B01",
+        "base:B09"
+      ],
+      "source_id": "intermediate:I06"
+    },
+    "intermediate:I07": {
+      "name": "生命合金",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "base:B06",
+        "base:B07"
+      ],
+      "source_id": "intermediate:I07"
+    },
+    "intermediate:I08": {
+      "name": "不屈框架",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "base:B06",
+        "base:B10"
+      ],
+      "source_id": "intermediate:I08"
+    },
+    "intermediate:I09": {
+      "name": "相位推进器",
+      "kind": "equipment",
+      "price": 1250,
+      "components": [
+        "base:B08",
+        "base:B05"
+      ],
+      "source_id": "intermediate:I09"
+    },
+    "intermediate:I10": {
+      "name": "狂战泵",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B03",
+        "base:B09"
+      ],
+      "source_id": "intermediate:I10"
+    },
+    "intermediate:I11": {
+      "name": "贯穿镜",
+      "kind": "equipment",
+      "price": 1250,
+      "components": [
+        "base:B04",
+        "base:B11"
+      ],
+      "source_id": "intermediate:I11"
+    },
+    "intermediate:I12": {
+      "name": "回生胚体",
+      "kind": "equipment",
+      "price": 1050,
+      "components": [
+        "base:B06",
+        "base:B12"
+      ],
+      "source_id": "intermediate:I12"
+    },
+    "intermediate:I13": {
+      "name": "战术芯片",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B01",
+        "base:B05"
+      ],
+      "source_id": "intermediate:I13"
+    },
+    "intermediate:I14": {
+      "name": "奥术穿针",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B02",
+        "base:B11"
+      ],
+      "source_id": "intermediate:I14"
+    },
+    "intermediate:I15": {
+      "name": "守心板",
+      "kind": "equipment",
+      "price": 1100,
+      "components": [
+        "base:B07",
+        "base:B10"
+      ],
+      "source_id": "intermediate:I15"
+    },
+    "intermediate:I16": {
+      "name": "轻装护片",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B07",
+        "base:B08"
+      ],
+      "source_id": "intermediate:I16"
+    },
+    "intermediate:I17": {
+      "name": "血肉触媒",
+      "kind": "equipment",
+      "price": 1150,
+      "components": [
+        "base:B06",
+        "base:B02"
+      ],
+      "source_id": "intermediate:I17"
+    },
+    "intermediate:I18": {
+      "name": "猎杀号角",
+      "kind": "equipment",
+      "price": 1200,
+      "components": [
+        "base:B01",
+        "base:B08"
+      ],
+      "source_id": "intermediate:I18"
+    },
+    "final:A01": {
+      "name": "裂星机炮",
+      "kind": "equipment",
+      "price": 3300,
+      "components": [
+        "intermediate:I01",
+        "intermediate:I03",
+        "base:B04"
+      ],
+      "source_id": "final:A01"
+    },
+    "final:A02": {
+      "name": "血潮连刃",
+      "kind": "equipment",
+      "price": 3050,
+      "components": [
+        "intermediate:I06",
+        "intermediate:I10",
+        "base:B01"
+      ],
+      "source_id": "final:A02"
+    },
+    "final:A03": {
+      "name": "雷鸣棱镜",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I01",
+        "intermediate:I11",
+        "base:B04"
+      ],
+      "source_id": "final:A03"
+    },
+    "final:A04": {
+      "name": "游隼引擎",
+      "kind": "equipment",
+      "price": 2950,
+      "components": [
+        "intermediate:I18",
+        "intermediate:I03"
+      ],
+      "source_id": "final:A04"
+    },
+    "final:A05": {
+      "name": "处刑轮机",
+      "kind": "equipment",
+      "price": 3300,
+      "components": [
+        "intermediate:I04",
+        "intermediate:I11",
+        "base:B01"
+      ],
+      "source_id": "final:A05"
+    },
+    "final:A06": {
+      "name": "千刃核",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I01",
+        "intermediate:I10",
+        "base:B05"
+      ],
+      "source_id": "final:A06"
+    },
+    "final:B01": {
+      "name": "断界锋",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I04",
+        "intermediate:I13",
+        "base:B01"
+      ],
+      "source_id": "final:B01"
+    },
+    "final:B02": {
+      "name": "追猎长刃",
+      "kind": "equipment",
+      "price": 2900,
+      "components": [
+        "intermediate:I04",
+        "intermediate:I18"
+      ],
+      "source_id": "final:B02"
+    },
+    "final:B03": {
+      "name": "破军重刃",
+      "kind": "equipment",
+      "price": 3000,
+      "components": [
+        "intermediate:I13",
+        "intermediate:I07"
+      ],
+      "source_id": "final:B03"
+    },
+    "final:B04": {
+      "name": "战术裂片",
+      "kind": "equipment",
+      "price": 3000,
+      "components": [
+        "intermediate:I13",
+        "intermediate:I11"
+      ],
+      "source_id": "final:B04"
+    },
+    "final:B05": {
+      "name": "双相剑核",
+      "kind": "equipment",
+      "price": 3250,
+      "components": [
+        "intermediate:I13",
+        "intermediate:I14",
+        "base:B02"
+      ],
+      "source_id": "final:B05"
+    },
+    "final:B06": {
+      "name": "溢杀号角",
+      "kind": "equipment",
+      "price": 3250,
+      "components": [
+        "intermediate:I04",
+        "intermediate:I18",
+        "base:B11"
+      ],
+      "source_id": "final:B06"
+    },
+    "final:C01": {
+      "name": "回响法典",
+      "kind": "equipment",
+      "price": 3000,
+      "components": [
+        "intermediate:I05",
+        "intermediate:I02"
+      ],
+      "source_id": "final:C01"
+    },
+    "final:C02": {
+      "name": "双相棱镜",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I05",
+        "intermediate:I09",
+        "base:B02"
+      ],
+      "source_id": "final:C02"
+    },
+    "final:C03": {
+      "name": "过载矩阵",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I05",
+        "intermediate:I02",
+        "base:B05"
+      ],
+      "source_id": "final:C03"
+    },
+    "final:C04": {
+      "name": "血术法环",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I17",
+        "intermediate:I05",
+        "base:B09"
+      ],
+      "source_id": "final:C04"
+    },
+    "final:C05": {
+      "name": "寂静法球",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I02",
+        "intermediate:I05",
+        "base:B02"
+      ],
+      "source_id": "final:C05"
+    },
+    "final:C06": {
+      "name": "远星仪",
+      "kind": "equipment",
+      "price": 3250,
+      "components": [
+        "intermediate:I14",
+        "intermediate:I09",
+        "base:B02"
+      ],
+      "source_id": "final:C06"
+    },
+    "final:D01": {
+      "name": "巨像心核",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I17",
+        "intermediate:I01",
+        "base:B06"
+      ],
+      "source_id": "final:D01"
+    },
+    "final:D02": {
+      "name": "逆伤甲胄",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I15",
+        "base:B06"
+      ],
+      "source_id": "final:D02"
+    },
+    "final:D03": {
+      "name": "怒潮胸炉",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I13",
+        "base:B09"
+      ],
+      "source_id": "final:D03"
+    },
+    "final:D04": {
+      "name": "血线引擎",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I06",
+        "intermediate:I07",
+        "base:B06"
+      ],
+      "source_id": "final:D04"
+    },
+    "final:D05": {
+      "name": "群敌堡垒",
+      "kind": "equipment",
+      "price": 3050,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I15",
+        "base:B10"
+      ],
+      "source_id": "final:D05"
+    },
+    "final:D06": {
+      "name": "破阵甲",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I08",
+        "intermediate:I16",
+        "base:B07"
+      ],
+      "source_id": "final:D06"
+    },
+    "final:E01": {
+      "name": "不灭壁垒",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I12",
+        "base:B07"
+      ],
+      "source_id": "final:E01"
+    },
+    "final:E02": {
+      "name": "缓冲装甲",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I15",
+        "base:B07"
+      ],
+      "source_id": "final:E02"
+    },
+    "final:E03": {
+      "name": "再生装置",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I12",
+        "intermediate:I05",
+        "base:B06"
+      ],
+      "source_id": "final:E03"
+    },
+    "final:E04": {
+      "name": "溢生圣杯",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I12",
+        "intermediate:I06",
+        "base:B09"
+      ],
+      "source_id": "final:E04"
+    },
+    "final:E05": {
+      "name": "围城骨架",
+      "kind": "equipment",
+      "price": 3100,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I15",
+        "base:B10"
+      ],
+      "source_id": "final:E05"
+    },
+    "final:E06": {
+      "name": "援护矩阵",
+      "kind": "equipment",
+      "price": 3300,
+      "components": [
+        "intermediate:I08",
+        "intermediate:I09",
+        "base:B06"
+      ],
+      "source_id": "final:E06"
+    },
+    "final:F01": {
+      "name": "时凝棱镜",
+      "kind": "equipment",
+      "price": 3300,
+      "components": [
+        "intermediate:I05",
+        "intermediate:I02",
+        "base:B05"
+      ],
+      "source_id": "final:F01"
+    },
+    "final:F02": {
+      "name": "净界推进靴",
+      "kind": "equipment",
+      "price": 3150,
+      "components": [
+        "intermediate:I08",
+        "intermediate:I09",
+        "base:B10"
+      ],
+      "source_id": "final:F02"
+    },
+    "final:F03": {
+      "name": "引力投射器",
+      "kind": "equipment",
+      "price": 3250,
+      "components": [
+        "intermediate:I17",
+        "intermediate:I05",
+        "base:B06"
+      ],
+      "source_id": "final:F03"
+    },
+    "final:F04": {
+      "name": "相位发生器",
+      "kind": "equipment",
+      "price": 3250,
+      "components": [
+        "intermediate:I18",
+        "intermediate:I14",
+        "base:B08"
+      ],
+      "source_id": "final:F04"
+    },
+    "final:F05": {
+      "name": "同步壁垒",
+      "kind": "equipment",
+      "price": 3300,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I08",
+        "base:B05"
+      ],
+      "source_id": "final:F05"
+    },
+    "final:F06": {
+      "name": "双循环核心",
+      "kind": "equipment",
+      "price": 3400,
+      "components": [
+        "intermediate:I13",
+        "intermediate:I05",
+        "base:B02"
+      ],
+      "source_id": "final:F06"
+    },
+    "final:G01": {
+      "name": "无尽学录",
+      "kind": "equipment",
+      "price": 2800,
+      "components": [
+        "intermediate:I05",
+        "intermediate:I02"
+      ],
+      "source_id": "final:G01"
+    },
+    "final:G02": {
+      "name": "修业徽章",
+      "kind": "equipment",
+      "price": 2750,
+      "components": [
+        "intermediate:I13",
+        "intermediate:I17"
+      ],
+      "source_id": "final:G02"
+    },
+    "final:G03": {
+      "name": "战狂护腕",
+      "kind": "equipment",
+      "price": 2800,
+      "components": [
+        "intermediate:I06",
+        "intermediate:I07"
+      ],
+      "source_id": "final:G03"
+    },
+    "final:G04": {
+      "name": "远征财典",
+      "kind": "equipment",
+      "price": 2800,
+      "components": [
+        "intermediate:I09",
+        "intermediate:I12"
+      ],
+      "source_id": "final:G04"
+    },
+    "final:G05": {
+      "name": "锻体炉心",
+      "kind": "equipment",
+      "price": 3200,
+      "components": [
+        "intermediate:I07",
+        "intermediate:I15",
+        "base:B05"
+      ],
+      "source_id": "final:G05"
+    },
+    "final:G06": {
+      "name": "猎王徽章",
+      "kind": "equipment",
+      "price": 3400,
+      "components": [
+        "intermediate:I04",
+        "intermediate:I14",
+        "base:B11"
+      ],
+      "source_id": "final:G06"
+    },
+    "potion:1": {
+      "name": "生命药剂I",
+      "kind": "potion",
+      "price": 200,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 20,
+        "duration_seconds": 4
+      },
+      "source_id": "potion:1"
+    },
+    "potion:2": {
+      "name": "生命药剂II",
+      "kind": "potion",
+      "price": 420,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 35,
+        "duration_seconds": 4
+      },
+      "source_id": "potion:2"
+    },
+    "potion:3": {
+      "name": "生命药剂III",
+      "kind": "potion",
+      "price": 700,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 50,
+        "duration_seconds": 4
+      },
+      "source_id": "potion:3"
+    },
+    "flask:1": {
+      "name": "循环药壶I",
+      "kind": "flask",
+      "price": 1200,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 12,
+        "duration_seconds": 5
+      },
+      "source_id": "flask:1",
+      "upgrade_from": "",
+      "charges_per_battle": 2
+    },
+    "flask:2": {
+      "name": "循环药壶II",
+      "kind": "flask",
+      "price": 2800,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 20,
+        "duration_seconds": 5
+      },
+      "source_id": "flask:2",
+      "upgrade_from": "flask:1",
+      "charges_per_battle": 2
+    },
+    "flask:3": {
+      "name": "循环药壶III",
+      "kind": "flask",
+      "price": 5200,
+      "components": [],
+      "recovery": {
+        "heal_max_health_pct": 30,
+        "duration_seconds": 5
+      },
+      "source_id": "flask:3",
+      "upgrade_from": "flask:2",
+      "charges_per_battle": 2
+    },
+    "elixir:01": {
+      "name": "战争合剂",
+      "kind": "elixir",
+      "price": 650,
+      "components": [],
+      "source_effect": "下一场战斗：攻击力+35，吸血+8%；参与击杀后攻击速度+10%，持续3秒，刷新不叠加。",
+      "source_id": "elixir:01"
+    },
+    "elixir:02": {
+      "name": "秘法合剂",
+      "kind": "elixir",
+      "price": 650,
+      "components": [],
+      "source_effect": "下一场战斗：法术强度+60，CDR+10%；Q/E每次完整施法第一次造成有效伤害时，追加40+10%AP真实伤害，每次施法最多触发1次。",
+      "source_id": "elixir:02"
+    },
+    "elixir:03": {
+      "name": "钢铁合剂",
+      "kind": "elixir",
+      "price": 650,
+      "components": [],
+      "source_effect": "下一场战斗：最大生命+15%、韧性+25%、防御力+20。连续移动时留下持续1.5秒的先锋路径，队友站在路径上移动速度+10%；自己不获得路径加速。最大生命变化时按原生命百分比同步调整当前生命。",
+      "source_id": "elixir:03"
+    },
+    "elixir:04": {
+      "name": "猎杀号剂",
+      "kind": "elixir",
+      "price": 700,
+      "components": [],
+      "source_effect": "下一场战斗：穿甲+20、暴击率+15%；对精英与Boss最终伤害+10%。",
+      "source_id": "elixir:04"
+    },
+    "elixir:05": {
+      "name": "疾行合剂",
+      "kind": "elixir",
+      "price": 650,
+      "components": [],
+      "source_effect": "下一场战斗：移动速度+15%、攻击速度+15%、CDR+8%；每次Shift结束后再获得15%移动速度，持续1.5秒。",
+      "source_id": "elixir:05"
+    }
+  },
+  "body_price": 900,
+  "slot_limit": 6,
+  "potion_cap": 5,
+  "potion_slot_policy": "unresolved",
+  "consumption_undo_policy": "seal_lineage_candidate",
+  "task_reward_undo_policy": "seal_lineage_candidate",
+  "effective_user_override": {
+    "source_message_id": "sourceSentinel_9f9240f440b88191affffccfc9194cc7",
+    "at_utc": "2026-10-04T10:13:00Z",
+    "undo_scope": "same_shop_area_visit_before_any_next_room",
+    "any_room_commits": true,
+    "ui_close_commits": false,
+    "body_undo": false,
+    "consumables_occupy_equipment_slots": true,
+    "full_slot_elixir": "preflight_then_auto_drink_or_reject_without_charge",
+    "same_name_elixir_reconsume": false
+  },
+  "technical_policy_authorization": {
+    "source": "parent approval 2026-10-04T10:24Z",
+    "scope": "technical candidate, consumed/effect-bearing lineage sealed only; unrelated transactions remain undoable"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "scope": "source-only E1 plus existing Q2; no E2/E3/P chain",
+  "entries": {
+    "rain_layer.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/ink_e1_sim.gd",
+      "source_sha256": "87d2b878354dd201bc661445f4c239236e51780cbce9a37e5c16e59b538366dd",
+      "base_replacement": {
+        "before": "res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+        "after": "res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd"
+      },
+      "sha256": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d",
+      "first_authored_sha256": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d"
+    },
+    "sim.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/fix01/ink_e1_sim.gd",
+      "source_sha256": "7b94f23572947a167cfb44d8f68b1ed79d7302bf09f3f62baf969d34dd4d7ee0",
+      "base_replacement": {
+        "before": "res://tests/ink_e1_rain_foundation_20261005/ink_e1_sim.gd",
+        "after": "res://tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd"
+      },
+      "sha256": "24063049066575efbb919373f106a05dd7288f76dd785f236e39be1e001d6e0e",
+      "first_authored_sha256": "6b5785021978b0a06b84884d0a286fe4e2bd97faacb16aaee190e4ad8a330352"
+    },
+    "input_base.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/input_adapter.gd",
+      "source_sha256": "e07f269a088690ccc487e635e18fd355d8e33f58858cb47aa7d2a99643d78033",
+      "base_replacement": {
+        "before": "res://tests/ink_q3_input_growth_20261004/input_adapter.gd",
+        "after": "res://tests/ink_q2_ordinary_20261005/candidate01/input_adapter.gd"
+      },
+      "sha256": "8a8dc77d4bec778a13de587230367505d4e214f1c94aa1ebc794106ab2f337ca",
+      "first_authored_sha256": "8a8dc77d4bec778a13de587230367505d4e214f1c94aa1ebc794106ab2f337ca"
+    },
+    "input_adapter.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/fix01/input_adapter.gd",
+      "source_sha256": "b71d3f839be886d9560e12d842734fd55816d94a58b98b42a78aec15c38bd77e",
+      "base_replacement": {
+        "before": "res://tests/ink_e1_rain_foundation_20261005/input_adapter.gd",
+        "after": "res://tests/ink_e1_ordinary_20261005/candidate01/input_base.gd"
+      },
+      "sha256": "fc48e5de978166676e0450d0e8cee9fde8cd3c82a49bf2367b077253549d692d",
+      "first_authored_sha256": "b445ebd74476e08bed393742cff96aa74bd38a84fd3b0e170583bad5148b03e0"
+    }
+  }
+}

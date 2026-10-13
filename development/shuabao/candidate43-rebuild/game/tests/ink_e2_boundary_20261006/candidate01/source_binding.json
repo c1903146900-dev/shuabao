@@ -1,0 +1,47 @@
+{
+  "schema": "ink-e2-boundary-candidate01-source-1",
+  "status": "SOURCE_ONLY_NOT_PARSED_OR_RUN",
+  "decision": {
+    "path": "docs/source_decisions/20261006-ink-five-resolutions.json",
+    "sha256": "861528d850389b2b4be2ce7a9ad4461531bbbfbd33de113870f9955b721f3e39"
+  },
+  "implementation_parent": "tests/ink_e2_ordinary_20261005/fix01/sim.gd",
+  "composition_seam": "README.md: Time, contact and pause seam; Limited gates and later integration",
+  "authoring_files": {
+    "tests/ink_e2_boundary_20261006/candidate01/README.md": "feef4d654eb49fc8cf83f7d6727a9acf22e6c351667c5699f86a1cb5eae6e7e2",
+    "tests/ink_e2_boundary_20261006/candidate01/boat_boundary.gd": "cbae6b328a61321d2c42aefbb2e4bf0a8db9ab3aa19679cf282768fb6a799b1e",
+    "tests/ink_e2_boundary_20261006/candidate01/finite_gate.gd": "cccd844e5482e6bb8e270c87443a49a95f72a7525045526b02ae1472706dac5d",
+    "tests/ink_e2_boundary_20261006/candidate01/parse_gate.gd": "b5273665fef59afe00c68cecbe23e65471847409f89638966b5477ec8f0db12e",
+    "tests/ink_e2_boundary_20261006/candidate01/prepare_stage.py": "fad061d6505f4baf19e933acb6d6b3a6abb05889e111459d912a7e79f4c028fb",
+    "tests/ink_e2_boundary_20261006/candidate01/sim.gd": "cef3c3307d7fb38df2ffc83aff22230d5f98da92262abf78a373df14440f8aa6",
+    "tests/ink_e2_boundary_20261006/candidate01/source_audit.py": "638344e4b2ab23ba1705b5273092d3d612d0e02538472ddfcc5009925ee480bf",
+    "tests/ink_e2_boundary_20261006/candidate01/stage_manifest.json": "fd086d7fd36d96fcf02b6058d8ddf7f5a8c11daade999d8bf6dff40c9556a6ca"
+  },
+  "preserved_inputs": {
+    "tests/ink_e2_boat_foundation_20261005/candidate04/runtime_binding.json": "28ededbdd5e8340206c7b06954c3e3eca74bedb92b1bc925d7e7900103ba1ef1",
+    "tests/ink_q2_foundation_20261005/fix01/runtime_binding.json": "76a75bb928f5c9aefd4377a54e03d6ec4fffdeee8aaac76ae9847c4fa0b98ef9",
+    "docs/source_decisions/20261006-ink-five-resolutions.json": "861528d850389b2b4be2ce7a9ad4461531bbbfbd33de113870f9955b721f3e39",
+    "docs/source_decisions/20261006-ink-five-resolutions.md": "f57ed503c32228fcf75504bc90fd2d21c4be37af7c281d2f6799faac54a6b37e",
+    "docs/source_decisions/20261005-ink-six-resolutions.json": "62cbd6c20607748cb4c426abd42d4656d6de1ab922fda179102bd8b8afdf6634",
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894",
+    "tests/ink_e2_boat_foundation_20261005/candidate04/ink_e2_sim.gd": "82accfc5aec21b6e6a048ee844a7966fd6ccecd14d6c6e90a95c7696dc474300",
+    "tests/ink_e2_boat_foundation_20261005/candidate04/source_oracle.json": "8e710f56f88827ffccd21536f9229d9cf98850856afcf55700fa8e6ca1344cde",
+    "tests/ink_e2_ordinary_20261005/candidate01/sim.gd": "e133cc6295e749383e8625f5c6c910bc976376ed16da60bee96ecc3c96f66add",
+    "tests/ink_e2_ordinary_20261005/fix01/sim.gd": "c107086cf333814dc2b34420da6c1e321b24026343529e4ecb074f6b0e89595e"
+  },
+  "production_sentinels": {
+    "scripts/integration/yanguizhou_first_floor.gd": "8509e03edea0bbc5df7f063431ee637713d44673223eeac34869b63be0650801",
+    "scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "scripts/ui/hero_chooser.gd": "b6d272cda4c2a2294aac60d2abdbea9685daa2ce9cf6619a78d20bfb34ec2740",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd": "83e268d33fe02ab5f2adf9a3b062a8cbf63b7b107963ccdb6966ba7544a13403"
+  },
+  "ordinary_E2_enabled": false,
+  "H09_H10_enabled": false,
+  "parse": "NOT_RUN",
+  "finite": "NOT_RUN",
+  "godot": "NOT_RUN",
+  "cua": "NOT_RUN",
+  "blender": "NOT_RUN",
+  "historical_passes_promoted": false
+}

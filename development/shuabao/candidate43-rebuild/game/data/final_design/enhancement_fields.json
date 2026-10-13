@@ -1,0 +1,3300 @@
+{
+  "schema_version": 1,
+  "status": "root_approved_beneficial_output_allowlist",
+  "authority": "User-approved runtime interpretation, confirmed2026-10-02",
+  "source_hex": "common_g20",
+  "floor_event": "major_floor_completed from progression complete_act after same-act verified Boss death",
+  "not_floor_events": [
+    "wave_finished",
+    "encounter_finished",
+    "test_wave",
+    "boss_kill_alone"
+  ],
+  "percent_per_stack": 20,
+  "maximum_stacks_per_hex": 2,
+  "stacking": "additive_against_base:1.20 /1.40",
+  "proposals_remain_ineligible": true,
+  "hexes": {
+    "common_g01": {
+      "source_id": "G01",
+      "name": "法术暴击",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [],
+      "unchanged_fields": [],
+      "source_parameters": {},
+      "exclusion_reason": "No numeric output.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g02": {
+      "source_id": "G02",
+      "name": "舍远求近",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G02-2",
+        "G02-3",
+        "G02-4",
+        "G02-5"
+      ],
+      "unchanged_fields": [
+        "G02-1"
+      ],
+      "source_parameters": {
+        "G02-1": {
+          "token": "G02-1",
+          "label": "远程转近战普攻距离",
+          "unit": "米",
+          "values": [
+            2.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 6,
+            "cells": [
+              "E6"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-2": {
+          "token": "G02-2",
+          "label": "攻击力加成",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 7,
+            "cells": [
+              "E7"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-3": {
+          "token": "G02-3",
+          "label": "最大生命加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 8,
+            "cells": [
+              "E8"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-4": {
+          "token": "G02-4",
+          "label": "攻击速度加成",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 9,
+            "cells": [
+              "E9"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-5": {
+          "token": "G02-5",
+          "label": "吸血",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 10,
+            "cells": [
+              "E10"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g03": {
+      "source_id": "G03",
+      "name": "不稳定实验体",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G03-3",
+        "G03-4",
+        "G03-6",
+        "G03-7"
+      ],
+      "unchanged_fields": [
+        "G03-1",
+        "G03-2",
+        "G03-5"
+      ],
+      "source_parameters": {
+        "G03-1": {
+          "token": "G03-1",
+          "label": "巨型形态概率",
+          "unit": "%",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 11,
+            "cells": [
+              "E11"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-2": {
+          "token": "G03-2",
+          "label": "巨型模型倍率",
+          "unit": "倍",
+          "values": [
+            1.35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 12,
+            "cells": [
+              "E12"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-3": {
+          "token": "G03-3",
+          "label": "巨型生命加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 13,
+            "cells": [
+              "E13"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-4": {
+          "token": "G03-4",
+          "label": "巨型最终增伤",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 14,
+            "cells": [
+              "E14"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-5": {
+          "token": "G03-5",
+          "label": "微型模型倍率",
+          "unit": "倍",
+          "values": [
+            0.75
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 15,
+            "cells": [
+              "E15"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-6": {
+          "token": "G03-6",
+          "label": "微型移速加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 16,
+            "cells": [
+              "E16"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-7": {
+          "token": "G03-7",
+          "label": "微型冷却缩减",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 17,
+            "cells": [
+              "E17"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g04": {
+      "source_id": "G04",
+      "name": "越战越大",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G04-2"
+      ],
+      "unchanged_fields": [
+        "G04-1",
+        "G04-3",
+        "G04-4",
+        "G04-5"
+      ],
+      "source_parameters": {
+        "G04-1": {
+          "token": "G04-1",
+          "label": "每层所需普通怪参与击杀",
+          "unit": "名",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 18,
+            "cells": [
+              "E18"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-2": {
+          "token": "G04-2",
+          "label": "每层生命提高",
+          "unit": "%",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 19,
+            "cells": [
+              "E19"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-3": {
+          "token": "G04-3",
+          "label": "每层模型尺寸提高",
+          "unit": "%",
+          "values": [
+            0.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 20,
+            "cells": [
+              "E20"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-4": {
+          "token": "G04-4",
+          "label": "成长层数上限",
+          "unit": "层",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 21,
+            "cells": [
+              "E21"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-5": {
+          "token": "G04-5",
+          "label": "死亡层数损失",
+          "unit": "%",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 22,
+            "cells": [
+              "E22"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g05": {
+      "source_id": "G05",
+      "name": "无限冷却",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G05-1",
+        "G05-3",
+        "G05-4",
+        "G05-5"
+      ],
+      "unchanged_fields": [
+        "G05-2"
+      ],
+      "source_parameters": {
+        "G05-1": {
+          "token": "G05-1",
+          "label": "初始冷却缩减",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 23,
+            "cells": [
+              "E23"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-2": {
+          "token": "G05-2",
+          "label": "普通怪计数阈值",
+          "unit": "名",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 24,
+            "cells": [
+              "E24"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-3": {
+          "token": "G05-3",
+          "label": "每组普通怪增加冷却缩减",
+          "unit": "%",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 25,
+            "cells": [
+              "E25"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-4": {
+          "token": "G05-4",
+          "label": "每精英增加冷却缩减",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 26,
+            "cells": [
+              "E26"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-5": {
+          "token": "G05-5",
+          "label": "每Boss增加冷却缩减",
+          "unit": "%",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 27,
+            "cells": [
+              "E27"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g06": {
+      "source_id": "G06",
+      "name": "极速杀手",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G06-2"
+      ],
+      "unchanged_fields": [
+        "G06-1",
+        "G06-3"
+      ],
+      "source_parameters": {
+        "G06-1": {
+          "token": "G06-1",
+          "label": "速度差计算单位",
+          "unit": "米/秒",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 28,
+            "cells": [
+              "E28"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-2": {
+          "token": "G06-2",
+          "label": "每单位速度差最终增伤",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 29,
+            "cells": [
+              "E29"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-3": {
+          "token": "G06-3",
+          "label": "最终增伤上限",
+          "unit": "%",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 30,
+            "cells": [
+              "E30"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g07": {
+      "source_id": "G07",
+      "name": "越闪越硬",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G07-2",
+        "G07-3"
+      ],
+      "unchanged_fields": [
+        "G07-1",
+        "G07-4",
+        "G07-5"
+      ],
+      "source_parameters": {
+        "G07-1": {
+          "token": "G07-1",
+          "label": "防护持续",
+          "unit": "秒",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 31,
+            "cells": [
+              "E31"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-2": {
+          "token": "G07-2",
+          "label": "每层防御力",
+          "unit": "点",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 32,
+            "cells": [
+              "E32"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-3": {
+          "token": "G07-3",
+          "label": "每层韧性",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 33,
+            "cells": [
+              "E33"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-4": {
+          "token": "G07-4",
+          "label": "叠层上限",
+          "unit": "层",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 34,
+            "cells": [
+              "E34"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-5": {
+          "token": "G07-5",
+          "label": "每个多段技能层数上限",
+          "unit": "层",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 35,
+            "cells": [
+              "E35"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g08": {
+      "source_id": "G08",
+      "name": "位移专精",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G08-1"
+      ],
+      "unchanged_fields": [],
+      "source_parameters": {
+        "G08-1": {
+          "token": "G08-1",
+          "label": "位移非终极技能基础冷却减少",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 36,
+            "cells": [
+              "E36"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g09": {
+      "source_id": "G09",
+      "name": "最终形态",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G09-1",
+        "G09-2",
+        "G09-3"
+      ],
+      "unchanged_fields": [
+        "G09-4"
+      ],
+      "source_parameters": {
+        "G09-1": {
+          "token": "G09-1",
+          "label": "最大生命护盾比例",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 37,
+            "cells": [
+              "E37"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-2": {
+          "token": "G09-2",
+          "label": "吸血",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 38,
+            "cells": [
+              "E38"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-3": {
+          "token": "G09-3",
+          "label": "移速",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 39,
+            "cells": [
+              "E39"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-4": {
+          "token": "G09-4",
+          "label": "增益持续",
+          "unit": "秒",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 40,
+            "cells": [
+              "E40"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g10": {
+      "source_id": "G10",
+      "name": "战魂",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G10-3"
+      ],
+      "unchanged_fields": [
+        "G10-1",
+        "G10-2",
+        "G10-4",
+        "G10-5",
+        "G10-6"
+      ],
+      "source_parameters": {
+        "G10-1": {
+          "token": "G10-1",
+          "label": "普通怪计数阈值",
+          "unit": "名",
+          "values": [
+            24
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 41,
+            "cells": [
+              "E41"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-2": {
+          "token": "G10-2",
+          "label": "战魂存在",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 42,
+            "cells": [
+              "E42"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-3": {
+          "token": "G10-3",
+          "label": "拾取后移速",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 43,
+            "cells": [
+              "E43"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-4": {
+          "token": "G10-4",
+          "label": "移速持续",
+          "unit": "秒",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 44,
+            "cells": [
+              "E44"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-5": {
+          "token": "G10-5",
+          "label": "生成最短间隔",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 45,
+            "cells": [
+              "E45"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-6": {
+          "token": "G10-6",
+          "label": "拾取半径",
+          "unit": "米",
+          "values": [
+            1.2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 46,
+            "cells": [
+              "E46"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g11": {
+      "source_id": "G11",
+      "name": "飞出去！",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G11-5",
+        "G11-6",
+        "G11-7"
+      ],
+      "unchanged_fields": [
+        "G11-1",
+        "G11-2",
+        "G11-3",
+        "G11-4",
+        "G11-8"
+      ],
+      "source_parameters": {
+        "G11-1": {
+          "token": "G11-1",
+          "label": "处决生命阈值",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 47,
+            "cells": [
+              "E47"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-2": {
+          "token": "G11-2",
+          "label": "尸体炮弹速度",
+          "unit": "米/秒",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 48,
+            "cells": [
+              "E48"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-3": {
+          "token": "G11-3",
+          "label": "尸体炮弹距离",
+          "unit": "米",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 49,
+            "cells": [
+              "E49"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-4": {
+          "token": "G11-4",
+          "label": "爆炸半径",
+          "unit": "米",
+          "values": [
+            2.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 50,
+            "cells": [
+              "E50"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-5": {
+          "token": "G11-5",
+          "label": "爆炸固定伤害",
+          "unit": "点",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 51,
+            "cells": [
+              "E51"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-6": {
+          "token": "G11-6",
+          "label": "爆炸AD系数",
+          "unit": "%AD",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 52,
+            "cells": [
+              "E52"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-7": {
+          "token": "G11-7",
+          "label": "爆炸AP系数",
+          "unit": "%AP",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 53,
+            "cells": [
+              "E53"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-8": {
+          "token": "G11-8",
+          "label": "单链触发上限",
+          "unit": "次",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 54,
+            "cells": [
+              "E54"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g12": {
+      "source_id": "G12",
+      "name": "超远程火力支援",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G12-5",
+        "G12-6",
+        "G12-7"
+      ],
+      "unchanged_fields": [
+        "G12-1",
+        "G12-2",
+        "G12-3",
+        "G12-4",
+        "G12-8"
+      ],
+      "source_parameters": {
+        "G12-1": {
+          "token": "G12-1",
+          "label": "远距离阈值",
+          "unit": "米",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 55,
+            "cells": [
+              "E55"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-2": {
+          "token": "G12-2",
+          "label": "远距离命中任务次数",
+          "unit": "次",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 56,
+            "cells": [
+              "E56"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-3": {
+          "token": "G12-3",
+          "label": "轰炸延迟",
+          "unit": "秒",
+          "values": [
+            0.45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 57,
+            "cells": [
+              "E57"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-4": {
+          "token": "G12-4",
+          "label": "轰炸半径",
+          "unit": "米",
+          "values": [
+            3.2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 58,
+            "cells": [
+              "E58"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-5": {
+          "token": "G12-5",
+          "label": "轰炸固定伤害",
+          "unit": "点",
+          "values": [
+            75
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 59,
+            "cells": [
+              "E59"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-6": {
+          "token": "G12-6",
+          "label": "轰炸AD系数",
+          "unit": "%AD",
+          "values": [
+            45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 60,
+            "cells": [
+              "E60"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-7": {
+          "token": "G12-7",
+          "label": "轰炸AP系数",
+          "unit": "%AP",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 61,
+            "cells": [
+              "E61"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-8": {
+          "token": "G12-8",
+          "label": "触发内置冷却",
+          "unit": "秒",
+          "values": [
+            2.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 62,
+            "cells": [
+              "E62"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g13": {
+      "source_id": "G13",
+      "name": "救援核心",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G13-4",
+        "G13-6"
+      ],
+      "unchanged_fields": [
+        "G13-1",
+        "G13-2",
+        "G13-3",
+        "G13-5",
+        "G13-7",
+        "G13-8"
+      ],
+      "source_parameters": {
+        "G13-1": {
+          "token": "G13-1",
+          "label": "有效治疗护盾转能比例",
+          "unit": "%",
+          "values": [
+            100
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 63,
+            "cells": [
+              "E63"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-2": {
+          "token": "G13-2",
+          "label": "充能目标占自身最大生命",
+          "unit": "%",
+          "values": [
+            45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 64,
+            "cells": [
+              "E64"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-3": {
+          "token": "G13-3",
+          "label": "救援搜索半径",
+          "unit": "米",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 65,
+            "cells": [
+              "E65"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-4": {
+          "token": "G13-4",
+          "label": "治疗目标最大生命比例",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 66,
+            "cells": [
+              "E66"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-5": {
+          "token": "G13-5",
+          "label": "救援群盾半径",
+          "unit": "米",
+          "values": [
+            4.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 67,
+            "cells": [
+              "E67"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-6": {
+          "token": "G13-6",
+          "label": "群盾占自身最大生命",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 68,
+            "cells": [
+              "E68"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-7": {
+          "token": "G13-7",
+          "label": "群盾持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 69,
+            "cells": [
+              "E69"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-8": {
+          "token": "G13-8",
+          "label": "救援内置冷却",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 70,
+            "cells": [
+              "E70"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g14": {
+      "source_id": "G14",
+      "name": "缩小射线",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G14-4",
+        "G14-5"
+      ],
+      "unchanged_fields": [
+        "G14-1",
+        "G14-2",
+        "G14-3",
+        "G14-6"
+      ],
+      "source_parameters": {
+        "G14-1": {
+          "token": "G14-1",
+          "label": "缩小叠层上限",
+          "unit": "层",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 71,
+            "cells": [
+              "E71"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-2": {
+          "token": "G14-2",
+          "label": "缩小持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 72,
+            "cells": [
+              "E72"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-3": {
+          "token": "G14-3",
+          "label": "每层尺寸降低",
+          "unit": "%",
+          "values": [
+            7
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 73,
+            "cells": [
+              "E73"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-4": {
+          "token": "G14-4",
+          "label": "每层伤害降低",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 74,
+            "cells": [
+              "E74"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-5": {
+          "token": "G14-5",
+          "label": "每层击退抗性降低",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 75,
+            "cells": [
+              "E75"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-6": {
+          "token": "G14-6",
+          "label": "精英Boss最高减伤",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 76,
+            "cells": [
+              "E76"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g15": {
+      "source_id": "G15",
+      "name": "冷却即速度",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G15-2"
+      ],
+      "unchanged_fields": [
+        "G15-1"
+      ],
+      "source_parameters": {
+        "G15-1": {
+          "token": "G15-1",
+          "label": "冷却缩减计算单位",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 77,
+            "cells": [
+              "E77"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G15-2": {
+          "token": "G15-2",
+          "label": "每单位对应移速增幅",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 78,
+            "cells": [
+              "E78"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g16": {
+      "source_id": "G16",
+      "name": "火力附肢",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G16-6",
+        "G16-7",
+        "G16-8"
+      ],
+      "unchanged_fields": [
+        "G16-1",
+        "G16-2",
+        "G16-3",
+        "G16-4",
+        "G16-5",
+        "G16-9"
+      ],
+      "source_parameters": {
+        "G16-1": {
+          "token": "G16-1",
+          "label": "导弹搜索半径",
+          "unit": "米",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 79,
+            "cells": [
+              "E79"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-2": {
+          "token": "G16-2",
+          "label": "基础导弹数",
+          "unit": "枚",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 80,
+            "cells": [
+              "E80"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-3": {
+          "token": "G16-3",
+          "label": "额外导弹暴击率阈值",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 81,
+            "cells": [
+              "E81"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-4": {
+          "token": "G16-4",
+          "label": "每阈值额外导弹数",
+          "unit": "枚",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 82,
+            "cells": [
+              "E82"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-5": {
+          "token": "G16-5",
+          "label": "总导弹上限",
+          "unit": "枚",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 83,
+            "cells": [
+              "E83"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-6": {
+          "token": "G16-6",
+          "label": "每弹固定伤害",
+          "unit": "点",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 84,
+            "cells": [
+              "E84"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-7": {
+          "token": "G16-7",
+          "label": "每弹AD系数",
+          "unit": "%AD",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 85,
+            "cells": [
+              "E85"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-8": {
+          "token": "G16-8",
+          "label": "每弹AP系数",
+          "unit": "%AP",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 86,
+            "cells": [
+              "E86"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-9": {
+          "token": "G16-9",
+          "label": "导弹速度",
+          "unit": "米/秒",
+          "values": [
+            22
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 87,
+            "cells": [
+              "E87"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g17": {
+      "source_id": "G17",
+      "name": "修业有成",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [],
+      "unchanged_fields": [
+        "G17-1",
+        "G17-2"
+      ],
+      "source_parameters": {
+        "G17-1": {
+          "token": "G17-1",
+          "label": "不同装备任务要求",
+          "unit": "点",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 88,
+            "cells": [
+              "E88"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G17-2": {
+          "token": "G17-2",
+          "label": "奖励技能点",
+          "unit": "个",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 89,
+            "cells": [
+              "E89"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Explicit integer SP award stays fixed; preserve22SP current-sources budget.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g18": {
+      "source_id": "G18",
+      "name": "杀不完",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G18-3"
+      ],
+      "unchanged_fields": [
+        "G18-1",
+        "G18-2"
+      ],
+      "source_parameters": {
+        "G18-1": {
+          "token": "G18-1",
+          "label": "普通怪击杀计数阈值",
+          "unit": "名",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 90,
+            "cells": [
+              "E90"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G18-2": {
+          "token": "G18-2",
+          "label": "重放延迟",
+          "unit": "秒",
+          "values": [
+            0.3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 91,
+            "cells": [
+              "E91"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G18-3": {
+          "token": "G18-3",
+          "label": "重放伤害治疗比例",
+          "unit": "%",
+          "values": [
+            60
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 92,
+            "cells": [
+              "E92"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g19": {
+      "source_id": "G19",
+      "name": "老板来了",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G19-1",
+        "G19-2"
+      ],
+      "unchanged_fields": [
+        "G19-3"
+      ],
+      "source_parameters": {
+        "G19-1": {
+          "token": "G19-1",
+          "label": "精英Boss房开局攻击力",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 93,
+            "cells": [
+              "E93"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G19-2": {
+          "token": "G19-2",
+          "label": "精英Boss房开局法强",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 94,
+            "cells": [
+              "E94"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G19-3": {
+          "token": "G19-3",
+          "label": "增益持续",
+          "unit": "秒",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 95,
+            "cells": [
+              "E95"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g20": {
+      "source_id": "G20",
+      "name": "越来越离谱",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [],
+      "unchanged_fields": [
+        "G20-1",
+        "G20-2"
+      ],
+      "source_parameters": {
+        "G20-1": {
+          "token": "G20-1",
+          "label": "每次指定参数相对提高",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 96,
+            "cells": [
+              "E96"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G20-2": {
+          "token": "G20-2",
+          "label": "同一海克斯强化次数上限",
+          "unit": "次",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 97,
+            "cells": [
+              "E97"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Cannot strengthen G20 itself.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g21": {
+      "source_id": "G21",
+      "name": "超额投资",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G21-2"
+      ],
+      "unchanged_fields": [
+        "G21-1",
+        "G21-3"
+      ],
+      "source_parameters": {
+        "G21-1": {
+          "token": "G21-1",
+          "label": "每次强化所需锻体金币",
+          "unit": "金币",
+          "values": [
+            1500
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 98,
+            "cells": [
+              "E98"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G21-2": {
+          "token": "G21-2",
+          "label": "成装基础属性提高",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 99,
+            "cells": [
+              "E99"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G21-3": {
+          "token": "G21-3",
+          "label": "每件成装强化上限",
+          "unit": "次",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 100,
+            "cells": [
+              "E100"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g22": {
+      "source_id": "G22",
+      "name": "以多欺少／以少打多",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G22-2",
+        "G22-3",
+        "G22-4",
+        "G22-5"
+      ],
+      "unchanged_fields": [
+        "G22-1"
+      ],
+      "source_parameters": {
+        "G22-1": {
+          "token": "G22-1",
+          "label": "怪海敌人数阈值",
+          "unit": "名",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 101,
+            "cells": [
+              "E101"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-2": {
+          "token": "G22-2",
+          "label": "怪海范围伤害提高",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 102,
+            "cells": [
+              "E102"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-3": {
+          "token": "G22-3",
+          "label": "怪海吸血",
+          "unit": "%",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 103,
+            "cells": [
+              "E103"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-4": {
+          "token": "G22-4",
+          "label": "单Boss最终增伤",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 104,
+            "cells": [
+              "E104"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-5": {
+          "token": "G22-5",
+          "label": "单Boss穿甲",
+          "unit": "点",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 105,
+            "cells": [
+              "E105"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g23": {
+      "source_id": "G23",
+      "name": "血瓶轰炸",
+      "design_status": "accepted_source_direction",
+      "eligible_when_selected_and_approved": true,
+      "approved_fields": [
+        "G23-2",
+        "G23-3",
+        "G23-4"
+      ],
+      "unchanged_fields": [
+        "G23-1"
+      ],
+      "source_parameters": {
+        "G23-1": {
+          "token": "G23-1",
+          "label": "血瓶爆炸半径",
+          "unit": "米",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 106,
+            "cells": [
+              "E106"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-2": {
+          "token": "G23-2",
+          "label": "血瓶爆炸固定伤害",
+          "unit": "点",
+          "values": [
+            180
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 107,
+            "cells": [
+              "E107"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-3": {
+          "token": "G23-3",
+          "label": "血瓶爆炸AD系数",
+          "unit": "%AD",
+          "values": [
+            100
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 108,
+            "cells": [
+              "E108"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-4": {
+          "token": "G23-4",
+          "label": "血瓶爆炸AP系数",
+          "unit": "%AP",
+          "values": [
+            80
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 109,
+            "cells": [
+              "E109"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g24": {
+      "source_id": "G24",
+      "name": "轻装上阵",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G24-1",
+        "G24-2"
+      ],
+      "unchanged_fields": [
+        "G24-3"
+      ],
+      "source_parameters": {
+        "G24-1": {
+          "token": "G24-1",
+          "label": "每空槽最终伤害提高",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 110,
+            "cells": [
+              "E110"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-2": {
+          "token": "G24-2",
+          "label": "每空槽最大生命提高",
+          "unit": "%",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 111,
+            "cells": [
+              "E111"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-3": {
+          "token": "G24-3",
+          "label": "计入空槽上限",
+          "unit": "个",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 112,
+            "cells": [
+              "E112"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g25": {
+      "source_id": "G25",
+      "name": "血铸法器",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G25-2"
+      ],
+      "unchanged_fields": [
+        "G25-1"
+      ],
+      "source_parameters": {
+        "G25-1": {
+          "token": "G25-1",
+          "label": "每次施法消耗当前生命",
+          "unit": "%",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 113,
+            "cells": [
+              "E113"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G25-2": {
+          "token": "G25-2",
+          "label": "每次施法追加最大生命伤害",
+          "unit": "%",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 114,
+            "cells": [
+              "E114"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g26": {
+      "source_id": "G26",
+      "name": "破盾反冲",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G26-2"
+      ],
+      "unchanged_fields": [
+        "G26-1",
+        "G26-3",
+        "G26-4",
+        "G26-5"
+      ],
+      "source_parameters": {
+        "G26-1": {
+          "token": "G26-1",
+          "label": "护盾爆炸半径",
+          "unit": "米",
+          "values": [
+            3.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 115,
+            "cells": [
+              "E115"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-2": {
+          "token": "G26-2",
+          "label": "护盾初始值转伤比例",
+          "unit": "%",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 116,
+            "cells": [
+              "E116"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-3": {
+          "token": "G26-3",
+          "label": "伤害自身最大生命上限",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 117,
+            "cells": [
+              "E117"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-4": {
+          "token": "G26-4",
+          "label": "击退距离",
+          "unit": "米",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 118,
+            "cells": [
+              "E118"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-5": {
+          "token": "G26-5",
+          "label": "同目标触发间隔",
+          "unit": "秒",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 119,
+            "cells": [
+              "E119"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g27": {
+      "source_id": "G27",
+      "name": "组件专家",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G27-1"
+      ],
+      "unchanged_fields": [],
+      "source_parameters": {
+        "G27-1": {
+          "token": "G27-1",
+          "label": "未成装组件基础属性增幅",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 120,
+            "cells": [
+              "E120"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g28": {
+      "source_id": "G28",
+      "name": "断后炮台",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G28-4",
+        "G28-5",
+        "G28-6"
+      ],
+      "unchanged_fields": [
+        "G28-1",
+        "G28-2",
+        "G28-3",
+        "G28-7",
+        "G28-8"
+      ],
+      "source_parameters": {
+        "G28-1": {
+          "token": "G28-1",
+          "label": "炮台持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 121,
+            "cells": [
+              "E121"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-2": {
+          "token": "G28-2",
+          "label": "炮台攻击间隔",
+          "unit": "秒",
+          "values": [
+            0.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 122,
+            "cells": [
+              "E122"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-3": {
+          "token": "G28-3",
+          "label": "炮台射程",
+          "unit": "米",
+          "values": [
+            9
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 123,
+            "cells": [
+              "E123"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-4": {
+          "token": "G28-4",
+          "label": "炮弹固定伤害",
+          "unit": "点",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 124,
+            "cells": [
+              "E124"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-5": {
+          "token": "G28-5",
+          "label": "炮弹AD系数",
+          "unit": "%AD",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 125,
+            "cells": [
+              "E125"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-6": {
+          "token": "G28-6",
+          "label": "炮弹AP系数",
+          "unit": "%AP",
+          "values": [
+            15
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 126,
+            "cells": [
+              "E126"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-7": {
+          "token": "G28-7",
+          "label": "同时炮台上限",
+          "unit": "点",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 127,
+            "cells": [
+              "E127"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-8": {
+          "token": "G28-8",
+          "label": "生成最短间隔",
+          "unit": "秒",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 128,
+            "cells": [
+              "E128"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g29": {
+      "source_id": "G29",
+      "name": "缓伤酒",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G29-1"
+      ],
+      "unchanged_fields": [
+        "G29-2"
+      ],
+      "source_parameters": {
+        "G29-1": {
+          "token": "G29-1",
+          "label": "直接伤害延后比例",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 129,
+            "cells": [
+              "E129"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G29-2": {
+          "token": "G29-2",
+          "label": "延后扣血持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 130,
+            "cells": [
+              "E130"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    },
+    "common_g30": {
+      "source_id": "G30",
+      "name": "囤金战甲",
+      "design_status": "supplementary_proposal",
+      "eligible_when_selected_and_approved": false,
+      "approved_fields": [
+        "G30-2",
+        "G30-3"
+      ],
+      "unchanged_fields": [
+        "G30-1",
+        "G30-4"
+      ],
+      "source_parameters": {
+        "G30-1": {
+          "token": "G30-1",
+          "label": "金币计算单位",
+          "unit": "金币",
+          "values": [
+            500
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 131,
+            "cells": [
+              "E131"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-2": {
+          "token": "G30-2",
+          "label": "每单位防御力",
+          "unit": "点",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 132,
+            "cells": [
+              "E132"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-3": {
+          "token": "G30-3",
+          "label": "每单位最大生命",
+          "unit": "点",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 133,
+            "cells": [
+              "E133"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-4": {
+          "token": "G30-4",
+          "label": "计入金币上限",
+          "unit": "金币",
+          "values": [
+            5000
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 134,
+            "cells": [
+              "E134"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "exclusion_reason": "Proposal requires separate activation approval.",
+      "scaling": "base_value*(1+0.20*stack_count); stack_count0..2; never compound1.20 twice",
+      "postprocessing": "apply existing global hard caps and source effect caps after projection; never enhance threshold/cap/recursion fields"
+    }
+  }
+}

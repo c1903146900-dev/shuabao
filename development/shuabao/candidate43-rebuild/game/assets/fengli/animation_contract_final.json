@@ -1,0 +1,356 @@
+{
+  "revision": 8,
+  "asset": "res://assets/fengli/fengli_final.glb",
+  "status": "all11 source-final Wind skill families integrated stage candidate; whole-room input/performance/human review remains separate",
+  "meters_per_unit": 1,
+  "up_axis": "+Y",
+  "forward_axis": "-Z",
+  "origin": "ground at feet center",
+  "root_motion": false,
+  "run_reference_speed_mps": 3.0,
+  "movement_policy": "WASD remains live during basic, Q1, dash-attack and recovery. Shift alone owns its source forced motion. Clip lengths never create movement locks.",
+  "bone_attachments": {
+    "right_hand": "hand1",
+    "left_hand": "hand-1",
+    "weapon": "weapon",
+    "blade_tip": "socket_blade_tip",
+    "back": "socket_back"
+  },
+  "clips": {
+    "idle": {
+      "duration_s": 2.0,
+      "loop_recommended": true,
+      "phase_markers_s": {
+        "cycle_start": 0,
+        "cycle_end": 2
+      },
+      "timing_basis": "animation tuning; attack cadence comes from catalog ATK-2=1.05/s, never clip length"
+    },
+    "run": {
+      "duration_s": 0.7,
+      "loop_recommended": true,
+      "phase_markers_s": {
+        "right_foot_contact": 0,
+        "left_foot_contact": 0.35,
+        "cycle_end": 0.7
+      },
+      "timing_basis": "animation tuning; attack cadence comes from catalog ATK-2=1.05/s, never clip length"
+    },
+    "attack": {
+      "duration_s": 0.6333333333333333,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "anticipation_end": 0.15,
+        "release": 0.15,
+        "contact": 0.21666666666666667,
+        "trail_start": 0.15,
+        "trail_end": 0.2833333333333333,
+        "recovery_start": 0.2833333333333333,
+        "settle": 0.46,
+        "end": 0.6333333333333333
+      },
+      "timing_basis": "Source ATK-1/2/3 unchanged; loaded slash choreography and 13/60 contact are explicit art tuning"
+    },
+    "dash": {
+      "duration_s": 0.25,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "forced_motion_start": 0,
+        "invulnerability_end": 0.2,
+        "forced_motion_end": 0.25,
+        "end": 0.25
+      },
+      "timing_basis": "catalog D-2 total and D-3 invulnerability; posing is art tuning"
+    },
+    "dash_attack": {
+      "duration_s": 0.4,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "anticipation_end": 0.05,
+        "release": 0.05,
+        "contact": 0.11666666666666667,
+        "trail_start": 0.05,
+        "trail_end": 0.16666666666666666,
+        "recovery_start": 0.16666666666666666,
+        "settle": 0.25,
+        "end": 0.4
+      },
+      "timing_basis": "User-required dash attack. Distinct loaded forward sword lunge with7/60 contact; existing tuning2m geometry/damage/iframe unchanged."
+    },
+    "q1": {
+      "duration_s": 0.25,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "anticipation_end": 0.06666666666666667,
+        "contact": 0.1,
+        "blade_extension_end": 0.13333333333333333,
+        "trail_start": 0.06666666666666667,
+        "trail_end": 0.13333333333333333,
+        "recovery_start": 0.13333333333333333,
+        "end": 0.25
+      },
+      "timing_basis": "catalog Q1-5 total; subphase timing is art tuning"
+    },
+    "q2_entry": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "chain_entry": 0,
+        "loaded": 0.05,
+        "release": 0.15,
+        "trail_start": 0.15,
+        "contact": 0.2,
+        "trail_end": 0.2,
+        "end": 0.2
+      },
+      "timing_basis": "Q2-6 exact .20s first hop including entry. Actual contact supplied at runtime endpoint; no added entry delay."
+    },
+    "q2_strike": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "loaded": 0.05,
+        "release": 0.15,
+        "trail_start": 0.15,
+        "contact": 0.2,
+        "trail_end": 0.2,
+        "end": 0.2
+      },
+      "timing_basis": "Q2-6 exact .20s successive automatic hop. Contact at runtime endpoint."
+    },
+    "q2_exit": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "landing": 0,
+        "recovery_start": 0,
+        "settle": 0.1166667,
+        "end": 0.2
+      },
+      "timing_basis": "Art-only .20s landing recovery; runtime ends forced motion immediately and accepts live movement."
+    },
+    "q3": {
+      "duration_s": 0.5,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "loaded": 0.1,
+        "release": 0.16666666666666666,
+        "contact": 0.16666666666666666,
+        "launch": 0.16666666666666666,
+        "trail_start": 0.1333333,
+        "trail_end": 0.2333333,
+        "recovery_start": 0.16666666666666666,
+        "end": 0.5
+      },
+      "timing_basis": "Normalized authored .50s clock scales to runtime .42s total; authored1/6 launch maps to exact runtime .14s. Both runtime timing values are tuning absent from source; projectile travel uses sourceQ3-7.",
+      "runtime_default_duration_s": 0.42,
+      "runtime_phase_markers_s": {
+        "launch": 0.14,
+        "end": 0.42
+      }
+    },
+    "e1_throw": {
+      "duration_s": 0.3,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "loaded": 0.06666666666666667,
+        "release": 0.1,
+        "launch": 0.1,
+        "contact": 0.1,
+        "recovery_start": 0.15,
+        "end": 0.3
+      },
+      "timing_basis": "Release .10,total .30 explicit approved tuning; E1-2 source25m/s homing and actual contact/mark remain runtime-owned."
+    },
+    "e1_pierce": {
+      "duration_s": 0.15,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "forced_motion_start": 0,
+        "extension": 0.05,
+        "path_middle": 0.075,
+        "forced_motion_end": 0.15,
+        "end": 0.15
+      },
+      "timing_basis": "Normalized .15 source maps to approved tuning .12 forced path; no animation-triggered contacts.",
+      "runtime_default_duration_s": 0.12,
+      "runtime_phase_markers_s": {
+        "forced_motion_start": 0,
+        "path_middle": 0.06,
+        "end": 0.12
+      }
+    },
+    "e1_recover": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "recovery_start": 0,
+        "end": 0.2
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them."
+    },
+    "e2_spin": {
+      "duration_s": 0.5,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "rotation_start": 0,
+        "contact": 0.25,
+        "rotation_end": 0.5,
+        "end": 0.5
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them.",
+      "runtime_default_duration_s": 0.45,
+      "runtime_phase_markers_s": {
+        "contact": 0.225,
+        "blink": 0.45,
+        "end": 0.45
+      }
+    },
+    "e2_spin3": {
+      "duration_s": 0.5,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "rotation_start": 0,
+        "contact_1": 0.08333333333333333,
+        "contact_2": 0.25,
+        "contact_3": 0.4166666666666667,
+        "rotation_end": 0.5,
+        "end": 0.5
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them.",
+      "runtime_default_duration_s": 0.45,
+      "runtime_phase_markers_s": {
+        "contact_1": 0.075,
+        "contact_2": 0.225,
+        "contact_3": 0.375,
+        "blink": 0.45,
+        "end": 0.45
+      }
+    },
+    "e2_blink": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "arrival": 0,
+        "settle": 0.1,
+        "end": 0.2
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them."
+    },
+    "e2_afterspin": {
+      "duration_s": 0.4,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "rotation_start": 0,
+        "contact": 0.2,
+        "rotation_end": 0.4,
+        "end": 0.4
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them.",
+      "runtime_default_duration_s": 0.35,
+      "runtime_phase_markers_s": {
+        "contact": 0.175,
+        "end": 0.35
+      }
+    },
+    "e2_return": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "return_arrival": 0,
+        "settle": 0.1,
+        "end": 0.2
+      },
+      "timing_basis": "Presentation tuning; runtime owns damage and displacement. E2-5 .45 initial / H11-5 .35 extra are exact source total durations; normalized source clock scales to them."
+    },
+    "e3_activate": {
+      "duration_s": 0.3,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "state_onset": 0,
+        "clench": 0.1,
+        "end": 0.3
+      },
+      "timing_basis": "Immediate runtime state onset, .30s interruptible art, no additional source action lock."
+    },
+    "r1": {
+      "duration_s": 1.6,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "gather": 0,
+        "loaded": 0.55,
+        "release": 1.0,
+        "contact": 1.1,
+        "unified_settlement": 1.1,
+        "recovery_start": 1.2,
+        "presentation_end": 1.6,
+        "heal_eligible_after": 1.6,
+        "end": 1.6,
+        "trail_start": 1.0,
+        "trail_end": 1.2
+      },
+      "timing_basis": "R1-5 source1.60s presentation; runtime1.10 unified contact is explicit approved tuning. H16 only after full1.60. Authored stroke starts1.00; source markers never settle damage.",
+      "runtime_wiring_status": "integrated with actual runtime events and travelling snapshots; bounded temporal candidate reviewed"
+    },
+    "r2_throw": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "loaded": 0.05,
+        "release": 0.1,
+        "contact": 0.1,
+        "launch": 0.1,
+        "recovery_start": 0.15,
+        "end": 0.2
+      },
+      "timing_basis": "R2-12 source.20s throw; runtime.10 launch is explicit approved tuning. Real28m/s snapshots own flight and all actual contacts.",
+      "runtime_wiring_status": "integrated with actual runtime events and travelling snapshots; bounded temporal candidate reviewed"
+    },
+    "r2_throw_high": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "loaded": 0.05,
+        "release": 0.1,
+        "contact": 0.1,
+        "launch": 0.1,
+        "recovery_start": 0.15,
+        "end": 0.2
+      },
+      "timing_basis": "R2-12 source.20s throw; runtime.10 launch is explicit approved tuning. Real28m/s snapshots own flight and all actual contacts.",
+      "runtime_wiring_status": "integrated with actual runtime events and travelling snapshots; bounded temporal candidate reviewed"
+    },
+    "hit": {
+      "duration_s": 0.2,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "reaction": 0,
+        "peak": 0.05,
+        "recovery_start": 0.1,
+        "end": 0.2
+      },
+      "timing_basis": "Authored presentation tuning only; no damage or movement rules originate in animation."
+    },
+    "death": {
+      "duration_s": 1.1,
+      "loop_recommended": false,
+      "phase_markers_s": {
+        "lethal_received": 0,
+        "collapse": 0.35,
+        "knees_down": 0.65,
+        "terminal_pose": 1.1,
+        "end": 1.1
+      },
+      "timing_basis": "Authored presentation tuning only; no damage or movement rules originate in animation."
+    }
+  },
+  "authored_run_reference_speed_mps": 2.4,
+  "baseline_visual_scale": 1.25,
+  "visual_scale_provenance": {
+    "original_asset_scale": 1.0,
+    "effective_baseline": 1.25,
+    "basis": "bounded actual-camera readability revision requested by parent after normal19m camera review",
+    "scope": "art only; no source reach, hit radius, world positions, gameplay shape or camera changes",
+    "runtime_rule": "effective_visual_scale=1.25*snapshot.model_scale; gait_reference_mps=2.4*effective_visual_scale"
+  }
+}

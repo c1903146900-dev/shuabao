@@ -1,0 +1,15 @@
+--- visible_route_r06.before_safe_step04.gd
++++ visible_route_r06.gd
+@@ -306,11 +306,10 @@
+   if Time.get_ticks_msec()>=deadline_ms:release_between_nodes();return {"accepted":false,"reason":"deadline_during_safe_entry_movement"}
+   if host.finished or host.sim.hero.dead or host.sim.paused or not host.shop_session.fault.is_empty():release_between_nodes();return {"accepted":false,"reason":"original_safe_movement_unavailable"}
+   var center: Vector3=Vector3.ZERO
+-  if _visible_ground(center).is_empty():return {"accepted":false,"reason":"safe_entry_center_not_visible"}
+   var toward: Vector3=center-host.sim.hero.position
+   if toward.length()<0.30:return {"accepted":false,"reason":"original_preflight_still_rejects_center"}
+   toward=toward.normalized()
+-  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+toward,float(host.sim.hero_radius)):return {"accepted":false,"reason":"safe_entry_local_movement_blocked"}
++  if _visible_ground(host.sim.hero.position+toward).is_empty() or not _ground_clear(host.sim.hero.position,host.sim.hero.position+toward,float(host.sim.hero_radius)):return {"accepted":false,"reason":"safe_entry_local_movement_blocked"}
+   _move(toward)
+   await host.get_tree().process_frame
+   ready=host.shop_session.next_room_preflight()

@@ -1,0 +1,31 @@
+{
+  "status": "ACTUAL_GATE01_RED_PRESERVED_REPAIR02_SOURCE_ONLY_NOT_RERUN",
+  "previous_binding_sha256": "ce7a1899f426a2fb55505bb68f0d6b61fe31bdb7e32bb124f7c408731c4be906",
+  "first_core_checkpoint_sha256": "bc93c3aa770f738b2c4e7649110123f5d08add094178742c5b8fa41237922a76",
+  "preimage_manifest": "preimage_gate01/MANIFEST.json",
+  "preimage_manifest_sha256": "8c6330a765a674c19e8c853cdcbe816965f808965dc8114def2c3b3e59d0a6d6",
+  "source_changes": {
+    "sim.gd": {
+      "before": "09d56cecadd58f787a65a8d5ea8320f1cc1b387124fb66d5c25ef663528e6a9b",
+      "after": "285f6c2360cd003138fb48f733218d115811742b118e87f4aadb054fabfc19ac"
+    },
+    "finite_gate.gd": {
+      "before": "67a8bc0bf5eea28e818a533f6160981f803491646dd9ee989e838dcdb29b5878",
+      "after": "242859abd622b4e968f3425673b991f630993067d48b32c939c3a5d4337400f2"
+    },
+    "verify_source.py": {
+      "before": "7a29e77e0203dfe13a0257b6cf8424505c6da5ee288cb6d0b327a000742ee19d",
+      "after": "a0d76e71736f1d6c3da974f788fdd30ee03bbe54386c8fbeeeb5f216181ff4dd"
+    },
+    "GATE_SCOPE.md": {
+      "before": "74ed21abbae91bb9b363030fb1e54aad8356534577faf44df403ff30d36a72f0",
+      "after": "4a815ff94582c4e58af2ff131c0db832ea60e29b130b92b52f1032d13ec6d489"
+    }
+  },
+  "unchanged_settlement_sha256": "dd0638002d9b6a06ebf2dd80ecd8a78025b734961a1728c8792d3f7821fdc48c",
+  "repair_note_sha256": "5e85fd7b1bcef32886d9ae15c907c0d64a408b634b7326eabc11dd81bbce5926",
+  "patch_sha256": "90ec62be0c5663bd8c6d466247ec9bde9aadab25877dc7ce0e0b465c68f7a8ba",
+  "prior_actual_result_sha256": "98dcb9c02201a327316bc4e2061dd439848acb3bfda16df03267fbe82637ef81",
+  "engine_invocations_by_worker": 0,
+  "production_promotion": false
+}

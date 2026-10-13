@@ -1,0 +1,28 @@
+{
+  "schema": "equipment33-explicit-successor-1",
+  "previous_source_binding_sha256": "e1dd44f953b8a8b31f6c05d384bc25602fdb6749aff962d40f2bc04b9b330389",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "41006d65aeb8705c45f0dbf9f2bb6b3fe2f1a042a4dcf530253e6ae75a2d8124",
+      "after": "5c5b5b7b414ec99993148e2cd08f3cbd5c1c6864ffbf5e9d7105afbfc07f3818"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "69da486e8413a68f2532e962c4ad1b0d65a1bb31e8a43d7bf3c5f0c4171a68b8",
+      "after": "b3218d6dbd688acb44ee8fde4404f65ba1c22ea3ceeca9c312b0652ed3da6ba2"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "e636aa8304ae93f2d9d2c87023b103831a7a8d7e2cb99a1a421ea91427a05951",
+      "after": "8a0f9b1895b8b882412f1fe6c0ee235d1a9ddca830ea83bd775bbe917f9bb823"
+    }
+  },
+  "new_files": {
+    "equipment_expansion_20261009/adapter.gd": "d85bd7f053924d1f47652bb72d12c6c38595072f44a65099bbdb7064dfe9492c",
+    "equipment_expansion_20261009/passive18.gd": "7812b53ced06065fdc990ef5b57bae47fb30c9ffca49ede75b782bf388c19121",
+    "equipment_expansion_20261009/model.gd": "415b07c8cef2654998988dd919bfde481237130d7d05f555f6555bdb01b7f57b"
+  },
+  "source_rules": "original numeric map and equipment source passive18 floor formula",
+  "admitted_item": "final:A05",
+  "previous_item_count": 32,
+  "new_item_count": 33,
+  "inherited_terminal_model_unchanged": "3d8e7f0a0bea45c67e87cf438512b460e58a87a2c2c120cb145c64578481d0ed"
+}

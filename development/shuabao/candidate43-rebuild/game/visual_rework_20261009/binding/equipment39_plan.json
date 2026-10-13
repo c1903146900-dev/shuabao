@@ -1,0 +1,28 @@
+{
+  "schema": "equipment39-explicit-successor-1",
+  "previous_source_binding_sha256": "8033164982004c4994cb18059dc052e94837b8efc0c9ad3328bb2bbd8fd273ce",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "95dfc65030115da1fcb78fbb08d6f34a80b57cc43b03bb45cd80e3b20b4ed371",
+      "after": "45f3c2289581712e5514bb99db41b11781ff8580c7e3c3d249a8c4bf1daed304"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "1064c89f3f6ac566ee553b834f5bbb09d58db2b18c7e06f5d8575b78ede3b5a1",
+      "after": "0f03e5661a0a1718fcef354b71d0646e257dd1726b71b45ecc54aee968d3da13"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "f1ba044a11342541d45c697e051dbfe9af70131548454f50f7a20829225b17e7",
+      "after": "0d8d2cc5ef3e1b52d4a5c63d4070dc03bc9bbb93c362cc55a99dc341b7c08bd1"
+    }
+  },
+  "new_files": {
+    "equipment_training_20261009/adapter.gd": "9fabcf93ca6d9cd39b7063a66448903be78ee3315868cf35b260797dea009f7e",
+    "equipment_training_20261009/task02.gd": "7a8c8b03d2c919805cca2d142142710f5d5dcc356898bf47f7bb6d6c45a2c609",
+    "equipment_training_20261009/model.gd": "60fb4ef2f6e16bb5bcb8d955ad5acb74a46b69fc96dae34cd8a3a5dfa35a105e"
+  },
+  "source_rules": "original task:G02 500 weighted owned-period kills: ordinary1 elite10 boss25, once per player/item/run permanent1SP; source_rules010/055/064 retain progress/reward sold, freeze unequipped, repurchase resumes; current single-player only",
+  "admitted_item": "final:G02",
+  "previous_item_count": 38,
+  "new_item_count": 39,
+  "earlier_equipment_and_terminal_inherited": true
+}

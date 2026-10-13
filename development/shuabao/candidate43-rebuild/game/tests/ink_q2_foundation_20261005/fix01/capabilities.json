@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "hero_id": "yanguizhou",
+  "version": "ink-q2-source-only-v1",
+  "runtime_binding_sha256": "76a75bb928f5c9aefd4377a54e03d6ec4fffdeee8aaac76ae9847c4fa0b98ef9",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "source_implemented_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h03.v1",
+    "hex.final_design.yanguizhou_h04.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "runtime_verified_hooks": [],
+  "ordinary_entry_ready": false,
+  "all_projectile_families_supported": false,
+  "supported_projectile_families": [
+    "ink_basic",
+    "ink_dash_basic"
+  ],
+  "required_engine_result": "q2_result.json"
+}

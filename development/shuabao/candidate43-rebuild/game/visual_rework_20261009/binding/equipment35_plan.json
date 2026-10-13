@@ -1,0 +1,31 @@
+{
+  "schema": "equipment35-explicit-successor-1",
+  "previous_source_binding_sha256": "7050143c7f3720c6e323722cf3e7fe87a67a35659e9eb0aba8ebe880e6c0ade5",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "5c5b5b7b414ec99993148e2cd08f3cbd5c1c6864ffbf5e9d7105afbfc07f3818",
+      "after": "a0999d381bd3413fb0f9927904f00793092128eba77102509fd0bba893749e7b"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "b3218d6dbd688acb44ee8fde4404f65ba1c22ea3ceeca9c312b0652ed3da6ba2",
+      "after": "ae2c7076ab5bcd73fe27c2174952bed162a04a736035f95ff17c44b6e7d9ff9b"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "8a0f9b1895b8b882412f1fe6c0ee235d1a9ddca830ea83bd775bbe917f9bb823",
+      "after": "aad7e102c3401774f4b4234f96d36e40271a9440965788777d0030cc1f12a479"
+    }
+  },
+  "new_files": {
+    "equipment_distance_20261009/adapter.gd": "f414a1df0b61def6e4f82253abb5c2caa637900d58cd430a65b9bd70dbc665d1",
+    "equipment_distance_20261009/passives.gd": "d53036dff8bba376e69605ed71cdb73a41a65c333699f5bf8e049149ff1cf7db",
+    "equipment_distance_20261009/model.gd": "909425b85cc99230d3b7199b4329e20e758d59e594a887e34330a4aa49ecd747"
+  },
+  "source_rules": "original source numeric map; user Sentinel_b0dd479466808191bc09122d95246450 makes extra lifesteal and penetration constant",
+  "admitted_items": [
+    "final:B03",
+    "final:C06"
+  ],
+  "previous_item_count": 33,
+  "new_item_count": 35,
+  "prior_A05_and_terminal_inherited": true
+}

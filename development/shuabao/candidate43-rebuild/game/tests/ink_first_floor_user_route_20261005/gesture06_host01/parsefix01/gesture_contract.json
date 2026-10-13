@@ -1,0 +1,36 @@
+{
+  "schema": "ink-new-route-gesture06-contract-1",
+  "status": "FROZEN_AUTHOR_RUNTIME_PINS",
+  "ready": true,
+  "expected_identity": {
+    "q1_script": "res://tests/ink_q1_flow_20261005/effect05/q1_effect_presenter.gd",
+    "q1_script_sha": "c2c7b96c1855c3e9f3959083fc0d05d49b7943f054b0d7ef6c3bf852f3f81673",
+    "q1_shader": "res://tests/ink_q1_flow_20261005/effect05/ink_belly.gdshader",
+    "q1_shader_sha": "517c94001950db6e257584cc2d0c818e2719eefa4b311a890f5eb3afd826df81",
+    "pigment_sha": "95eebee8b0c7019bf2168d804a3dafc07b5dc39d10299e9279e06704f3474590",
+    "actor_script": "res://tests/ink_q1_flow_20261005/gesture06/runtime/hero_view.gd",
+    "actor_script_sha": "320c7f248b998e1d5e9baf3b376204a7b4879181b51b1a2cd0343908f2573c09",
+    "visible_asset_sha": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+    "flow_asset_sha": "b558f0c56aeacb1d6455b85a474e435921f82b281540c4952f3d474d9abad589",
+    "flow_binding_sha": "961b39f9fa77cd34ce64b4ebce65bb474cb494e7d7cc90507ad611a9ab06bb4a",
+    "intent_asset": "res://tests/ink_q1_flow_20261005/gesture06/runtime/assets/yanguizhou_q1_intent.glb",
+    "intent_asset_sha": "8637ff7ba8e7e22130ca4c5ad1c1d3073fe88cb6b12c1f08f06ec39620d97352",
+    "intent_binding_sha": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+    "intent_boundaries_sha": "bc6a25fac2bce4021ee3f5cb2387674818778e31ff6e3febf90db2b26b3eb0b0",
+    "intent_report_script": "res://tests/ink_q1_flow_20261005/gesture06/runtime/intent_report.gd",
+    "intent_report_sha": "8d080cefe2f8a68f6122d4f968c21473ba56446aec2f262425f0d581fe944516"
+  },
+  "source_pins": {
+    "tests/ink_q1_flow_20261005/gesture06/runtime/hero_view.gd": "320c7f248b998e1d5e9baf3b376204a7b4879181b51b1a2cd0343908f2573c09",
+    "tests/ink_q1_flow_20261005/gesture06/runtime/intent_report.gd": "8d080cefe2f8a68f6122d4f968c21473ba56446aec2f262425f0d581fe944516",
+    "tests/ink_q1_flow_20261005/gesture06/runtime/assets/yanguizhou_q1_intent.glb": "8637ff7ba8e7e22130ca4c5ad1c1d3073fe88cb6b12c1f08f06ec39620d97352",
+    "tests/ink_q1_flow_20261005/gesture06/runtime/asset_binding.json": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+    "tests/ink_q1_flow_20261005/gesture06/runtime/source_boundaries.json": "bc6a25fac2bce4021ee3f5cb2387674818778e31ff6e3febf90db2b26b3eb0b0"
+  },
+  "legacy_q1_flow_proof": "BASE provenance only; actual intent consumption uses IntentReporter private-player alias and window readback",
+  "author_proof01_gate": "1539_ACTUAL_PASSED_UPSTREAM_ONLY",
+  "new_host_engine_run": false,
+  "art_accepted": false,
+  "withdrawn_effect": "brush_handoff rejected after0626 visual review; not constructed, received or presented",
+  "new_effects_added": false
+}

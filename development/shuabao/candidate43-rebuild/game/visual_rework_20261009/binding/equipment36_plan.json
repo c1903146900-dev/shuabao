@@ -1,0 +1,28 @@
+{
+  "schema": "equipment36-explicit-successor-1",
+  "previous_source_binding_sha256": "e8267e39c241aaea252a73af5f2acadbe29a55dbfd0304a257dde1d85e424591",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "a0999d381bd3413fb0f9927904f00793092128eba77102509fd0bba893749e7b",
+      "after": "1d6367f40065f7bde457daf8281dce1dc05f4287f05f805b85b0fbe435208a04"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "ae2c7076ab5bcd73fe27c2174952bed162a04a736035f95ff17c44b6e7d9ff9b",
+      "after": "1d9552bbc26a68594fc8b907c638ebc5d9bd9fb108b70da273853fd1ddf4dae9"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "aad7e102c3401774f4b4234f96d36e40271a9440965788777d0030cc1f12a479",
+      "after": "1457e477d41fc34bd7eddc8b188bdcb3932da1e2fc3b6b93e4b126c4adb9ec29"
+    }
+  },
+  "new_files": {
+    "equipment_kill_20261009/adapter.gd": "1256fd34085c08eff28305a01767c590221946dfeea7fc57e078e2c398133a0c",
+    "equipment_kill_20261009/passive13.gd": "5a7bbf769336c8b8faa47f1c1ab903ee7283a6c097ebcf2eb7a0ad624f8093dc",
+    "equipment_kill_20261009/model.gd": "6020b46a5a9536152b1af8ecf11b60a9b77fe12ec49df5140dca110d8e0e9572"
+  },
+  "source_rules": "original passive13 current remaining cooldown once per complete Q/E cast; task:B01 40 attributed kills +1 permanent SP once/run",
+  "admitted_item": "final:B01",
+  "previous_item_count": 35,
+  "new_item_count": 36,
+  "earlier_equipment_and_terminal_inherited": true
+}

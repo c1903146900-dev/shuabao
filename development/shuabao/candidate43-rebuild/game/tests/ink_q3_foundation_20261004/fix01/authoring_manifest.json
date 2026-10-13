@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "source_only": true,
+  "original_failed_source_binding": "041a5b5bea1c0797308e6a06cbddf4bd27d1bf0bb6d90ee7e99cdeb2fefb1795",
+  "authored_files": {
+    "tests/ink_q3_foundation_20261004/fix01/README.md": {
+      "sha256": "780ececec58a56532bab6ec1d7bba9979cdd9d0478ba127fef5cdf334b51803a",
+      "bytes": 2615
+    },
+    "tests/ink_q3_foundation_20261004/fix01/common_regression_gate.gd": {
+      "sha256": "843765ad69484f8db8305620ac9de73299f976d04c4f5d2582c042e75d992293",
+      "bytes": 20112
+    },
+    "tests/ink_q3_foundation_20261004/fix01/control_regression_gate.gd": {
+      "sha256": "45c3bb022fefcf37760c4cb05dc6cc128b5667976dcdcb242bd5adcd43906366",
+      "bytes": 10543
+    },
+    "tests/ink_q3_foundation_20261004/fix01/diagnosis.json": {
+      "sha256": "e9f3c52eecbfa2707e47d48fea819880ddaebd858ef850e9b69d48a6d62c64f1",
+      "bytes": 25266
+    },
+    "tests/ink_q3_foundation_20261004/fix01/diagnostic_gate.gd": {
+      "sha256": "264af606c091fb8fcbf02b42364839984ba1d34cba9f22adc7d7bfdc7bece05c",
+      "bytes": 7274
+    },
+    "tests/ink_q3_foundation_20261004/fix01/gate_expectations.json": {
+      "sha256": "0f72b8a2edc2aebd82cc33229a639ca5720b762838b28ee16a00b3b8eb0e0593",
+      "bytes": 1821
+    },
+    "tests/ink_q3_foundation_20261004/fix01/h02_regression_gate.gd": {
+      "sha256": "16dd37b8307fd43ea6c907922546775a1ac031077ac254bbff79caf70c4738a4",
+      "bytes": 15103
+    },
+    "tests/ink_q3_foundation_20261004/fix01/hp_regression_gate.gd": {
+      "sha256": "74742d1007167058395760451e2b10e16a480fc467dbf1b3d5cec5c75cda07a7",
+      "bytes": 11657
+    },
+    "tests/ink_q3_foundation_20261004/fix01/ink_q3_bridge.gd": {
+      "sha256": "3b4ce2dc149140f6d551fd9d6b5c6a42653bea1934f7e4b2db8fdd32148e124a",
+      "bytes": 2942
+    },
+    "tests/ink_q3_foundation_20261004/fix01/ink_q3_sim.gd": {
+      "sha256": "122765d79b8a1d712d713b828678b54ec72a4d21370f62904a27e35850038853",
+      "bytes": 15456
+    },
+    "tests/ink_q3_foundation_20261004/fix01/inspect_engine_results.py": {
+      "sha256": "522a87707a3d8284460fa83cacfa80ae9578ddad84485ea7a986dc2b3bb6f269",
+      "bytes": 3710
+    },
+    "tests/ink_q3_foundation_20261004/fix01/minimal_fix.patch": {
+      "sha256": "970485378d20fa902313963226454ea9579704901494aa1a6a4d7e8a3134fa8e",
+      "bytes": 15863
+    },
+    "tests/ink_q3_foundation_20261004/fix01/prepare_stage.py": {
+      "sha256": "87afefe215a1b10aed67ddf6d7cf026b1205c0be1577793b2e6f40936b59b262",
+      "bytes": 2436
+    },
+    "tests/ink_q3_foundation_20261004/fix01/q1_regression_gate.gd": {
+      "sha256": "40045d7f450bc6aae522b817e143c47251af76da452e84c6d64045c03c05e02d",
+      "bytes": 19876
+    },
+    "tests/ink_q3_foundation_20261004/fix01/q3_gate.gd": {
+      "sha256": "8b27aa0ad62978f6268cf1b7f7448d8e2b400c7c581464e768755970570c8390",
+      "bytes": 18758
+    },
+    "tests/ink_q3_foundation_20261004/fix01/verify_source.py": {
+      "sha256": "f646ad2d6501b451511af3649c42df2bd4c57243e2a1a2a23ba1b1a1ba88d2b3",
+      "bytes": 6148
+    }
+  },
+  "only_runtime_delta": "super._init() before original director replacement",
+  "original_q3_and_five_retained_assertions": "unchanged",
+  "author_engine_invocations": 0,
+  "production_host_changes": false,
+  "capability_promotions": false
+}

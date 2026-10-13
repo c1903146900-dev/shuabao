@@ -1,0 +1,28 @@
+{
+  "schema": "ink-p1-supplement-lifesteal-leaf-1",
+  "status": "SOURCE_ONLY_NOT_PARSED_NOT_RUN",
+  "parent_binding_path": "tests/ink_p1_ordinary_20261006/candidate01/source_binding.json",
+  "parent_binding_sha256": "538fbbed186cee63823c81fdea57662c6a2c0a29c187921a54ca1fd66fc7ac2b",
+  "frozen_parent_pins": {
+    "tests/ink_p1_ordinary_20261006/candidate01/source_binding.json": "538fbbed186cee63823c81fdea57662c6a2c0a29c187921a54ca1fd66fc7ac2b",
+    "tests/ink_p1_ordinary_20261006/candidate01/sim.gd": "285f6c2360cd003138fb48f733218d115811742b118e87f4aadb054fabfc19ac",
+    "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd": "dd0638002d9b6a06ebf2dd80ecd8a78025b734961a1728c8792d3f7821fdc48c",
+    "scripts/combat/hero_combat_core.gd": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7",
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd": "288623926cd0b074bec968d62c0e7d78eb4d1b3bc6d711d9369989eafb58ea9a",
+    "tests/ink_intermediate_stats_20261004/source_map.json": "23cf917618ad6f7a2581a6e9887a899cb8d11cca62ef0be2b2a9d4ece2c86f40",
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_stat_consumer.gd": "524471c5ef2742025d9876a40406f84b03c8f93ceccba6a65371ea6da8f2318e"
+  },
+  "candidate_files": {
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd": "83e268d33fe02ab5f2adf9a3b062a8cbf63b7b107963ccdb6966ba7544a13403",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/README.md": "5378a24999fc40310b3971b974482990699a1fcbe844d95d50ad1b8531317a0a"
+  },
+  "extra_reused_sources": {},
+  "original_core_modified": false,
+  "ordinary_promoted": false,
+  "engine_invocations": 0,
+  "previous_binding": {
+    "path": "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/preimage01/source_binding.json",
+    "sha256": "a8bb3532440902fd7614ceefb0b40bb4b6b90d1d271e90608f7402d62f3235d7"
+  }
+}

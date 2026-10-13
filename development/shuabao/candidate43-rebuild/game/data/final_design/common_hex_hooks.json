@@ -1,0 +1,4370 @@
+{
+  "schema_version": 1,
+  "audit_scope": "Existing Xuanlei runtime integration sites plus source-authoritative allhero definitions; existence is not implementation proof",
+  "event_contract": {
+    "damage_packet": [
+      "run_id",
+      "room_id",
+      "encounter_generation",
+      "root_cast_id",
+      "candidate",
+      "slot",
+      "source_kind",
+      "stage_id",
+      "ordinary_or_true",
+      "direct_or_periodic",
+      "area_or_target_bound",
+      "nominal_amount",
+      "actual_amount",
+      "origin",
+      "direction",
+      "target_id",
+      "rank_category",
+      "is_replay",
+      "allow_hex_procs"
+    ],
+    "shield_event": [
+      "provider_id",
+      "holder_id",
+      "source_cast_id",
+      "initial_amount",
+      "actual_absorbed",
+      "break_cause",
+      "expiry"
+    ],
+    "completion_event": [
+      "authored_act_id",
+      "verified_act_boss_id",
+      "boss_defeat_event_id",
+      "coordinator_completion_event_id"
+    ]
+  },
+  "hexes": {
+    "common_g01": {
+      "source_id": "G01",
+      "name": "法术暴击",
+      "description": "主动技能造成的普通伤害可以按自身暴击率与暴击伤害规则暴击。真实伤害不因此获得暴击；已拥有技能暴击资格的伤害不会重复判定。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 307
+      },
+      "parameters": {},
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g01.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "before defence, ordinary active damage only",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "damage_packet_pre_mitigation"
+      ],
+      "owned_state": [
+        "crit_roll_per_damage_packet",
+        "already_crit_eligible"
+      ],
+      "constraints": [
+        "exclude true damage",
+        "no double roll",
+        "use established1.75 crit multiplier"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g02": {
+      "source_id": "G02",
+      "name": "舍远求近",
+      "description": "远程英雄普通攻击距离改为2.8米，攻击力提高35%、最大生命值提高25%、攻击速度提高35%，并获得12%吸血。仅远程英雄进入候选池。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 309
+      },
+      "parameters": {
+        "G02-1": {
+          "token": "G02-1",
+          "label": "远程转近战普攻距离",
+          "unit": "米",
+          "values": [
+            2.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 6,
+            "cells": [
+              "E6"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-2": {
+          "token": "G02-2",
+          "label": "攻击力加成",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 7,
+            "cells": [
+              "E7"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-3": {
+          "token": "G02-3",
+          "label": "最大生命加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 8,
+            "cells": [
+              "E8"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-4": {
+          "token": "G02-4",
+          "label": "攻击速度加成",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 9,
+            "cells": [
+              "E9"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G02-5": {
+          "token": "G02-5",
+          "label": "吸血",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 10,
+            "cells": [
+              "E10"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g02.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "derived stats after gear and base",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "basic attack targeting range",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "loadout_changed",
+        "selected_hex_changed"
+      ],
+      "owned_state": [
+        "ranged_hero_flag"
+      ],
+      "constraints": [
+        "only ranged heroes drafted",
+        "replace attack range2.8m",
+        "apply AD/HP/AS multipliers and lifesteal once"
+      ],
+      "gaps": [
+        "other ranged hero runtime absent"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g03": {
+      "source_id": "G03",
+      "name": "不稳定实验体",
+      "description": "每个战斗房开始时，按50%概率进入巨型形态，否则进入微型形态，本场保持不变。巨型形态的模型尺寸变为1.35倍，最大生命提高25%，最终伤害提高18%；微型形态的模型尺寸变为0.75倍，移动速度提高25%，冷却缩减提高18%。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 311
+      },
+      "parameters": {
+        "G03-1": {
+          "token": "G03-1",
+          "label": "巨型形态概率",
+          "unit": "%",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 11,
+            "cells": [
+              "E11"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-2": {
+          "token": "G03-2",
+          "label": "巨型模型倍率",
+          "unit": "倍",
+          "values": [
+            1.35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 12,
+            "cells": [
+              "E12"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-3": {
+          "token": "G03-3",
+          "label": "巨型生命加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 13,
+            "cells": [
+              "E13"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-4": {
+          "token": "G03-4",
+          "label": "巨型最终增伤",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 14,
+            "cells": [
+              "E14"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-5": {
+          "token": "G03-5",
+          "label": "微型模型倍率",
+          "unit": "倍",
+          "values": [
+            0.75
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 15,
+            "cells": [
+              "E15"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-6": {
+          "token": "G03-6",
+          "label": "微型移速加成",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 16,
+            "cells": [
+              "E16"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G03-7": {
+          "token": "G03-7",
+          "label": "微型冷却缩减",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 17,
+            "cells": [
+              "E17"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g03.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "begin_encounter",
+          "observed_line": 154,
+          "insertion_stage": "one seeded roll per stable battle room",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "room-form derived stats",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_sync_views",
+          "observed_line": 509,
+          "insertion_stage": "display scale from authoritative form",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "battle_room_started"
+      ],
+      "owned_state": [
+        "room_form",
+        "room_id"
+      ],
+      "constraints": [
+        "hold same result entire room",
+        "not per wave",
+        "giant/micro mutually exclusive"
+      ],
+      "gaps": [
+        "current begin_encounter called per wave with same room_id; key by stable room"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g04": {
+      "source_id": "G04",
+      "name": "越战越大",
+      "description": "每参与击杀12名普通敌人，获得一层成长；每层提高1%最大生命值与0.5%模型尺寸，最多30层。真正死亡时失去当前层数的50%，被救起的倒地不扣层。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 313
+      },
+      "parameters": {
+        "G04-1": {
+          "token": "G04-1",
+          "label": "每层所需普通怪参与击杀",
+          "unit": "名",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 18,
+            "cells": [
+              "E18"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-2": {
+          "token": "G04-2",
+          "label": "每层生命提高",
+          "unit": "%",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 19,
+            "cells": [
+              "E19"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-3": {
+          "token": "G04-3",
+          "label": "每层模型尺寸提高",
+          "unit": "%",
+          "values": [
+            0.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 20,
+            "cells": [
+              "E20"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-4": {
+          "token": "G04-4",
+          "label": "成长层数上限",
+          "unit": "层",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 21,
+            "cells": [
+              "E21"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G04-5": {
+          "token": "G04-5",
+          "label": "死亡层数损失",
+          "unit": "%",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 22,
+            "cells": [
+              "E22"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g04.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_credit_kill",
+          "observed_line": 451,
+          "insertion_stage": "after verified ordinary kill credit",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/run_model.gd",
+          "symbol": "_apply",
+          "observed_line": 3,
+          "insertion_stage": "true death penalty branch",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "derived maxHP",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_sync_views",
+          "observed_line": 509,
+          "insertion_stage": "model scale only from stacks",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "credited_ordinary_kill",
+        "true_death"
+      ],
+      "owned_state": [
+        "kill_count",
+        "growth_stacks"
+      ],
+      "constraints": [
+        "cap30stacks",
+        "downed/revived does not remove",
+        "true death removes50%"
+      ],
+      "gaps": [
+        "fractional stack rounding not defined in source"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g05": {
+      "source_id": "G05",
+      "name": "无限冷却",
+      "description": "立即获得12%冷却缩减；之后每参与击杀40名普通敌人、或击败精英或Boss，分别增加1%、2%、3%冷却缩减。本效果计入全局冷却缩减上限。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 315
+      },
+      "parameters": {
+        "G05-1": {
+          "token": "G05-1",
+          "label": "初始冷却缩减",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 23,
+            "cells": [
+              "E23"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-2": {
+          "token": "G05-2",
+          "label": "普通怪计数阈值",
+          "unit": "名",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 24,
+            "cells": [
+              "E24"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-3": {
+          "token": "G05-3",
+          "label": "每组普通怪增加冷却缩减",
+          "unit": "%",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 25,
+            "cells": [
+              "E25"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-4": {
+          "token": "G05-4",
+          "label": "每精英增加冷却缩减",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 26,
+            "cells": [
+              "E26"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G05-5": {
+          "token": "G05-5",
+          "label": "每Boss增加冷却缩减",
+          "unit": "%",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 27,
+            "cells": [
+              "E27"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g05.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_credit_kill",
+          "observed_line": 451,
+          "insertion_stage": "verified kill event by rank_category",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "CDR after accumulated gains",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "credited_kill",
+        "hex_selected"
+      ],
+      "owned_state": [
+        "ordinary_kills",
+        "earned_cdr"
+      ],
+      "constraints": [
+        "ordinary groups40",
+        "elite/boss distinct increments",
+        "global CDR cap0.65"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g06": {
+      "source_id": "G06",
+      "name": "极速杀手",
+      "description": "自身移动速度属性高于目标时，每高出1米/秒，对其造成的最终伤害提高5%，最多提高30%。比较双方移动速度属性，不使用当前实际位移速度。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 317
+      },
+      "parameters": {
+        "G06-1": {
+          "token": "G06-1",
+          "label": "速度差计算单位",
+          "unit": "米/秒",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 28,
+            "cells": [
+              "E28"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-2": {
+          "token": "G06-2",
+          "label": "每单位速度差最终增伤",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 29,
+            "cells": [
+              "E29"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G06-3": {
+          "token": "G06-3",
+          "label": "最终增伤上限",
+          "unit": "%",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 30,
+            "cells": [
+              "E30"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g06.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "final damage modifier before mitigation",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "damage_packet_pre_mitigation"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "compare movement-speed attributes not actual velocity",
+        "max30% output",
+        "do not apply to selfdamage"
+      ],
+      "gaps": [
+        "exact integer-step versus continuous1m/s scaling not stated; use explicit reviewed numeric policy"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g07": {
+      "source_id": "G07",
+      "name": "越闪越硬",
+      "description": "使用Shift或位移技能完成主动位移后，获得一层持续6秒的疾驰防护；每层提高8点防御力和8%韧性，最多4层。一次多段技能最多提供1层，再次获得时刷新持续时间。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 319
+      },
+      "parameters": {
+        "G07-1": {
+          "token": "G07-1",
+          "label": "防护持续",
+          "unit": "秒",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 31,
+            "cells": [
+              "E31"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-2": {
+          "token": "G07-2",
+          "label": "每层防御力",
+          "unit": "点",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 32,
+            "cells": [
+              "E32"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-3": {
+          "token": "G07-3",
+          "label": "每层韧性",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 33,
+            "cells": [
+              "E33"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-4": {
+          "token": "G07-4",
+          "label": "叠层上限",
+          "unit": "层",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 34,
+            "cells": [
+              "E34"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G07-5": {
+          "token": "G07-5",
+          "label": "每个多段技能层数上限",
+          "unit": "层",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 35,
+            "cells": [
+              "E35"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g07.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_step_player_locomotion",
+          "observed_line": 399,
+          "insertion_stage": "dash completion transition",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_finish_e2",
+          "observed_line": 534,
+          "insertion_stage": "completed ability displacement",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "Q1 successful self-step",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/actors/xuanlei_model.gd",
+          "symbol": "defence",
+          "observed_line": 42,
+          "insertion_stage": "temporary defense getter",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/actors/xuanlei_model.gd",
+          "symbol": "tenacity",
+          "observed_line": 50,
+          "insertion_stage": "temporary tenacity getter",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "active_displacement_completed"
+      ],
+      "owned_state": [
+        "expiry",
+        "stacks",
+        "root_cast_ids_seen"
+      ],
+      "constraints": [
+        "once per multi-stage cast",
+        "refresh all-duration",
+        "max4stacks",
+        "enemy forced displacement excluded"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g08": {
+      "source_id": "G08",
+      "name": "位移专精",
+      "description": "带有主动位移效果的非终极主动技能，基础冷却缩短25%。不影响Shift，也不缩短大招冷却。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 321
+      },
+      "parameters": {
+        "G08-1": {
+          "token": "G08-1",
+          "label": "位移非终极技能基础冷却减少",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 36,
+            "cells": [
+              "E36"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g08.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "start_skill_cooldown",
+          "observed_line": 138,
+          "insertion_stage": "base cooldown before globalCDR",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "ability_cooldown_start"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "nonultimate active voluntary-movement skills only",
+        "excludeShift/R",
+        "classify from source movement not enemy knockback"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g09": {
+      "source_id": "G09",
+      "name": "最终形态",
+      "description": "大招启动演出结束后，获得25%最大生命值的护盾、12%吸血与20%移动速度，持续10秒。一次大招的多次续放不重复触发。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 323
+      },
+      "parameters": {
+        "G09-1": {
+          "token": "G09-1",
+          "label": "最大生命护盾比例",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 37,
+            "cells": [
+              "E37"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-2": {
+          "token": "G09-2",
+          "label": "吸血",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 38,
+            "cells": [
+              "E38"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-3": {
+          "token": "G09-3",
+          "label": "移速",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 39,
+            "cells": [
+              "E39"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G09-4": {
+          "token": "G09-4",
+          "label": "增益持续",
+          "unit": "秒",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 40,
+            "cells": [
+              "E40"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g09.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_fixed_step",
+          "observed_line": 722,
+          "insertion_stage": "ultimate presentation ends",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "add_shield",
+          "observed_line": 630,
+          "insertion_stage": "issue timed shield",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/actors/xuanlei_model.gd",
+          "symbol": "speed",
+          "observed_line": 48,
+          "insertion_stage": "timed move buff",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/actors/xuanlei_model.gd",
+          "symbol": "lifesteal",
+          "observed_line": 53,
+          "insertion_stage": "timed lifesteal",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "ultimate_start_presentation_completed"
+      ],
+      "owned_state": [
+        "root_ultimate_cast_id",
+        "expiry"
+      ],
+      "constraints": [
+        "once per full ultimate",
+        "recasts do not grant again"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g10": {
+      "source_id": "G10",
+      "name": "战魂",
+      "description": "每参与击杀24名普通敌人，或击败精英，在对应敌人死亡位置生成持续8秒的战魂；触碰后重置已学习的非终极主动技能，并获得25%移动速度，持续3秒。战魂生成间隔不低于8秒，拾取半径1.2米。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 325
+      },
+      "parameters": {
+        "G10-1": {
+          "token": "G10-1",
+          "label": "普通怪计数阈值",
+          "unit": "名",
+          "values": [
+            24
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 41,
+            "cells": [
+              "E41"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-2": {
+          "token": "G10-2",
+          "label": "战魂存在",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 42,
+            "cells": [
+              "E42"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-3": {
+          "token": "G10-3",
+          "label": "拾取后移速",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 43,
+            "cells": [
+              "E43"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-4": {
+          "token": "G10-4",
+          "label": "移速持续",
+          "unit": "秒",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 44,
+            "cells": [
+              "E44"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-5": {
+          "token": "G10-5",
+          "label": "生成最短间隔",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 45,
+            "cells": [
+              "E45"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G10-6": {
+          "token": "G10-6",
+          "label": "拾取半径",
+          "unit": "米",
+          "values": [
+            1.2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 46,
+            "cells": [
+              "E46"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g10.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_credit_kill",
+          "observed_line": 451,
+          "insertion_stage": "verified ordinary-group/elite death location",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_fixed_step",
+          "observed_line": 722,
+          "insertion_stage": "world-time orb expiry/pickup",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "credited_kill",
+        "hero_position_changed"
+      ],
+      "owned_state": [
+        "kill_counter",
+        "last_spawn_time",
+        "world_orbs"
+      ],
+      "constraints": [
+        "ordinary24 or elite",
+        "Boss not listed as trigger",
+        "ICD8",
+        "reset learned Q/E only"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g11": {
+      "source_id": "G11",
+      "name": "飞出去！",
+      "description": "直接伤害命中生命低于最大生命10%的普通敌人时，将其处决并沿攻击方向发射为尸体炮弹。炮弹以18米/秒飞行，最大距离10米；撞到敌人、墙壁或到达终点时，在半径2.8米内造成50+35%AD+30%AP普通伤害。爆炸命中符合处决条件的普通敌人可以继续连锁，同一链最多触发6次。精英与Boss不被处决或发射，但可以受到爆炸伤害。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 327
+      },
+      "parameters": {
+        "G11-1": {
+          "token": "G11-1",
+          "label": "处决生命阈值",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 47,
+            "cells": [
+              "E47"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-2": {
+          "token": "G11-2",
+          "label": "尸体炮弹速度",
+          "unit": "米/秒",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 48,
+            "cells": [
+              "E48"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-3": {
+          "token": "G11-3",
+          "label": "尸体炮弹距离",
+          "unit": "米",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 49,
+            "cells": [
+              "E49"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-4": {
+          "token": "G11-4",
+          "label": "爆炸半径",
+          "unit": "米",
+          "values": [
+            2.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 50,
+            "cells": [
+              "E50"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-5": {
+          "token": "G11-5",
+          "label": "爆炸固定伤害",
+          "unit": "点",
+          "values": [
+            50
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 51,
+            "cells": [
+              "E51"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-6": {
+          "token": "G11-6",
+          "label": "爆炸AD系数",
+          "unit": "%AD",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 52,
+            "cells": [
+              "E52"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-7": {
+          "token": "G11-7",
+          "label": "爆炸AP系数",
+          "unit": "%AP",
+          "values": [
+            30
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 53,
+            "cells": [
+              "E53"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G11-8": {
+          "token": "G11-8",
+          "label": "单链触发上限",
+          "unit": "次",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 54,
+            "cells": [
+              "E54"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g11.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "direct-hit execute decision and ordinary death handling",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_step_projectiles",
+          "observed_line": 951,
+          "insertion_stage": "dedicated corpse projectiles",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "circle_targets",
+          "observed_line": 225,
+          "insertion_stage": "explosion query",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "direct_damage_hit",
+        "corpse_projectile_impact"
+      ],
+      "owned_state": [
+        "chain_id",
+        "chain_depth",
+        "projectiles"
+      ],
+      "constraints": [
+        "ordinary execute only",
+        "elites/Boss receive explosion only",
+        "same chain max6",
+        "never use generic onkill to recursively restart chain"
+      ],
+      "gaps": [
+        "threshold before/after incoming direct damage not explicit"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g12": {
+      "source_id": "G12",
+      "name": "超远程火力支援",
+      "description": "任务：从距离至少8米处，用主动技能命中敌人累计40次。完成后，满足距离要求的技能命中会在目标位置呼叫轰炸；延迟0.45秒后，对半径3.2米内敌人造成75+45%AD+40%AP普通伤害。每2.5秒最多触发一次。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 329
+      },
+      "parameters": {
+        "G12-1": {
+          "token": "G12-1",
+          "label": "远距离阈值",
+          "unit": "米",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 55,
+            "cells": [
+              "E55"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-2": {
+          "token": "G12-2",
+          "label": "远距离命中任务次数",
+          "unit": "次",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 56,
+            "cells": [
+              "E56"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-3": {
+          "token": "G12-3",
+          "label": "轰炸延迟",
+          "unit": "秒",
+          "values": [
+            0.45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 57,
+            "cells": [
+              "E57"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-4": {
+          "token": "G12-4",
+          "label": "轰炸半径",
+          "unit": "米",
+          "values": [
+            3.2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 58,
+            "cells": [
+              "E58"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-5": {
+          "token": "G12-5",
+          "label": "轰炸固定伤害",
+          "unit": "点",
+          "values": [
+            75
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 59,
+            "cells": [
+              "E59"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-6": {
+          "token": "G12-6",
+          "label": "轰炸AD系数",
+          "unit": "%AD",
+          "values": [
+            45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 60,
+            "cells": [
+              "E60"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-7": {
+          "token": "G12-7",
+          "label": "轰炸AP系数",
+          "unit": "%AP",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 61,
+            "cells": [
+              "E61"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G12-8": {
+          "token": "G12-8",
+          "label": "触发内置冷却",
+          "unit": "秒",
+          "values": [
+            2.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 62,
+            "cells": [
+              "E62"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g12.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "successful active-skill hit with castorigin distance",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "delayed bombing impact",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "active_skill_effective_hit",
+        "delayed_bomb_due"
+      ],
+      "owned_state": [
+        "quest_count",
+        "quest_complete",
+        "last_trigger_time"
+      ],
+      "constraints": [
+        "40hits at>=8m",
+        "0.45delay",
+        "2.5ICD",
+        "bomb cannot recursively count own hit"
+      ],
+      "gaps": [
+        "source distance measured from cast origin versus current caster needs explicit consistent convention"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g13": {
+      "source_id": "G13",
+      "name": "救援核心",
+      "description": "对自身或队友产生有效治疗，以及所提供护盾实际吸收伤害时，按有效数值的100%积累救援能量。能量达到自身最大生命值45%时消耗全部能量，治疗18米内生命比例最低的友方12%该目标最大生命值，并为其半径4.5米内的友方提供相当于施法者最大生命10%的护盾，持续4秒。触发内置冷却8秒，本效果不为自身再次充能。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 331
+      },
+      "parameters": {
+        "G13-1": {
+          "token": "G13-1",
+          "label": "有效治疗护盾转能比例",
+          "unit": "%",
+          "values": [
+            100
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 63,
+            "cells": [
+              "E63"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-2": {
+          "token": "G13-2",
+          "label": "充能目标占自身最大生命",
+          "unit": "%",
+          "values": [
+            45
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 64,
+            "cells": [
+              "E64"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-3": {
+          "token": "G13-3",
+          "label": "救援搜索半径",
+          "unit": "米",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 65,
+            "cells": [
+              "E65"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-4": {
+          "token": "G13-4",
+          "label": "治疗目标最大生命比例",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 66,
+            "cells": [
+              "E66"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-5": {
+          "token": "G13-5",
+          "label": "救援群盾半径",
+          "unit": "米",
+          "values": [
+            4.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 67,
+            "cells": [
+              "E67"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-6": {
+          "token": "G13-6",
+          "label": "群盾占自身最大生命",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 68,
+            "cells": [
+              "E68"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-7": {
+          "token": "G13-7",
+          "label": "群盾持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 69,
+            "cells": [
+              "E69"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G13-8": {
+          "token": "G13-8",
+          "label": "救援内置冷却",
+          "unit": "秒",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 70,
+            "cells": [
+              "E70"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g13.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "heal",
+          "observed_line": 635,
+          "insertion_stage": "actual non-overheal healing",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_hero",
+          "observed_line": 656,
+          "insertion_stage": "shield absorption per provider",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_ally",
+          "observed_line": 1018,
+          "insertion_stage": "ally shield absorption per provider",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "add_shield",
+          "observed_line": 630,
+          "insertion_stage": "owned shield provenance",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "effective_heal",
+        "shield_absorbed"
+      ],
+      "owned_state": [
+        "energy",
+        "icd_until",
+        "provider_ids"
+      ],
+      "constraints": [
+        "self/ally effective amount only",
+        "exclude energy generated byG13 itself",
+        "lowestHP-fraction ally in18m",
+        "consume all energy at trigger"
+      ],
+      "gaps": [
+        "healing emits no source-tagged event currently; shields lack full provider/source-origin metadata"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g14": {
+      "source_id": "G14",
+      "name": "缩小射线",
+      "description": "普通攻击命中普通敌人时，施加一层缩小，最多4层，持续4秒。每层使模型与碰撞尺寸降低7%、造成伤害降低5%、抗击退能力降低10%。对精英与Boss不改变尺寸与位移抗性，只降低伤害，最高降低12%。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 333
+      },
+      "parameters": {
+        "G14-1": {
+          "token": "G14-1",
+          "label": "缩小叠层上限",
+          "unit": "层",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 71,
+            "cells": [
+              "E71"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-2": {
+          "token": "G14-2",
+          "label": "缩小持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 72,
+            "cells": [
+              "E72"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-3": {
+          "token": "G14-3",
+          "label": "每层尺寸降低",
+          "unit": "%",
+          "values": [
+            7
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 73,
+            "cells": [
+              "E73"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-4": {
+          "token": "G14-4",
+          "label": "每层伤害降低",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 74,
+            "cells": [
+              "E74"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-5": {
+          "token": "G14-5",
+          "label": "每层击退抗性降低",
+          "unit": "%",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 75,
+            "cells": [
+              "E75"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G14-6": {
+          "token": "G14-6",
+          "label": "精英Boss最高减伤",
+          "unit": "%",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 76,
+            "cells": [
+              "E76"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g14.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "ordinary basic-hit confirmed",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/enemy_director.gd",
+          "symbol": "step_enemy",
+          "observed_line": 105,
+          "insertion_stage": "outgoing damage and effective collision size",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "push_enemy",
+          "observed_line": 709,
+          "insertion_stage": "resistance-adjusted ordinary displacement",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/room.gd",
+          "symbol": "_sync_views",
+          "observed_line": 509,
+          "insertion_stage": "model-size projection",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "basic_attack_effective_hit"
+      ],
+      "owned_state": [
+        "target_stacks",
+        "target_expiry",
+        "base_size"
+      ],
+      "constraints": [
+        "ordinary max4",
+        "refresh4s",
+        "elite/Boss size/resistance unchanged and damage reduction cap12%"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g15": {
+      "source_id": "G15",
+      "name": "冷却即速度",
+      "description": "每拥有5%冷却缩减，获得2%移动速度；只按实际生效、未溢出的冷却缩减计算。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 335
+      },
+      "parameters": {
+        "G15-1": {
+          "token": "G15-1",
+          "label": "冷却缩减计算单位",
+          "unit": "%",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 77,
+            "cells": [
+              "E77"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G15-2": {
+          "token": "G15-2",
+          "label": "每单位对应移速增幅",
+          "unit": "%",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 78,
+            "cells": [
+              "E78"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g15.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "after clamping actual effective CDR",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "derived_stats_recomputed"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "use nonoverflow effectiveCDR",
+        "prevent cyclical selfprojection"
+      ],
+      "gaps": [
+        "discrete5% steps versus continuous proportional conversion not explicit"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g16": {
+      "source_id": "G16",
+      "name": "火力附肢",
+      "description": "非终极主动技能首次造成有效伤害时，自动向12米内敌人发射2枚追踪弹；每拥有25%暴击率，额外发射1枚，最多6枚。单枚造成18+12%AD+10%AP普通伤害，飞行速度22米/秒。每次完整施法最多触发一次，导弹不递归触发本效果。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 337
+      },
+      "parameters": {
+        "G16-1": {
+          "token": "G16-1",
+          "label": "导弹搜索半径",
+          "unit": "米",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 79,
+            "cells": [
+              "E79"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-2": {
+          "token": "G16-2",
+          "label": "基础导弹数",
+          "unit": "枚",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 80,
+            "cells": [
+              "E80"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-3": {
+          "token": "G16-3",
+          "label": "额外导弹暴击率阈值",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 81,
+            "cells": [
+              "E81"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-4": {
+          "token": "G16-4",
+          "label": "每阈值额外导弹数",
+          "unit": "枚",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 82,
+            "cells": [
+              "E82"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-5": {
+          "token": "G16-5",
+          "label": "总导弹上限",
+          "unit": "枚",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 83,
+            "cells": [
+              "E83"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-6": {
+          "token": "G16-6",
+          "label": "每弹固定伤害",
+          "unit": "点",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 84,
+            "cells": [
+              "E84"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-7": {
+          "token": "G16-7",
+          "label": "每弹AD系数",
+          "unit": "%AD",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 85,
+            "cells": [
+              "E85"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-8": {
+          "token": "G16-8",
+          "label": "每弹AP系数",
+          "unit": "%AP",
+          "values": [
+            10
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 86,
+            "cells": [
+              "E86"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G16-9": {
+          "token": "G16-9",
+          "label": "导弹速度",
+          "unit": "米/秒",
+          "values": [
+            22
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 87,
+            "cells": [
+              "E87"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g16.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "first effective nonultimate active damage per cast",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_step_projectiles",
+          "observed_line": 951,
+          "insertion_stage": "owned homing missiles",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "active_skill_effective_hit"
+      ],
+      "owned_state": [
+        "root_cast_ids_triggered",
+        "missiles"
+      ],
+      "constraints": [
+        "one trigger per fullcast",
+        "cap6missiles",
+        "missiles never recurse",
+        "crit25% steps"
+      ],
+      "gaps": [
+        "valid target assignment when fewer enemies than missiles must be deterministic without new targeting rule"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g17": {
+      "source_id": "G17",
+      "name": "修业有成",
+      "description": "任务：本局累计完成3种不同装备的技能点任务。完成后额外获得1个本局技能点；此前已完成的不同装备任务计入进度，同一任务只统计一次，奖励仍受本局技能点总上限限制。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 339
+      },
+      "parameters": {
+        "G17-1": {
+          "token": "G17-1",
+          "label": "不同装备任务要求",
+          "unit": "点",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 88,
+            "cells": [
+              "E88"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G17-2": {
+          "token": "G17-2",
+          "label": "奖励技能点",
+          "unit": "个",
+          "values": [
+            1
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 89,
+            "cells": [
+              "E89"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "partial_progression_receiver_not_room_wired",
+      "required_hook": [
+        "hex.final_design.common_g17.v1",
+        "equipment.task_completion.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "record_battle_event",
+          "observed_line": 230,
+          "insertion_stage": "verify real sim event",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "_record_battle_progress",
+          "observed_line": 255,
+          "insertion_stage": "authored held-equipment condition counters",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "_settle_g17_bonus",
+          "observed_line": 338,
+          "insertion_stage": "third distinct completed task or laterHexselection",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "verified_battle_event",
+        "equipment_task_completed",
+        "hex_selected"
+      ],
+      "owned_state": [
+        "equipment_task_progress",
+        "completed_equipment_tasks",
+        "bonus_awards"
+      ],
+      "constraints": [
+        "three authored tasks, each1SP once; G17one extra",
+        "18base nothardcap",
+        "sell/reacquire never resets",
+        "testmode excluded"
+      ],
+      "gaps": [
+        "room coordinator must call event adapter and advertise implemented capability"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g18": {
+      "source_id": "G18",
+      "name": "杀不完",
+      "description": "每参与击杀18名普通敌人，获得一次重放机会。下一次可重放的非终极主动技能在原施法完成后0.3秒追加释放，重放伤害与治疗为原效果的60%，不消耗资源、不重新触发施法类海克斯。只重放可独立执行的伤害或治疗段，不复制场地物件、召唤物、角色分身或持续形态。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 341
+      },
+      "parameters": {
+        "G18-1": {
+          "token": "G18-1",
+          "label": "普通怪击杀计数阈值",
+          "unit": "名",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 90,
+            "cells": [
+              "E90"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G18-2": {
+          "token": "G18-2",
+          "label": "重放延迟",
+          "unit": "秒",
+          "values": [
+            0.3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 91,
+            "cells": [
+              "E91"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G18-3": {
+          "token": "G18-3",
+          "label": "重放伤害治疗比例",
+          "unit": "%",
+          "values": [
+            60
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 92,
+            "cells": [
+              "E92"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g18.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "capture pure original damage segments",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_guard",
+          "observed_line": 523,
+          "insertion_stage": "pure release capture",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_finish_e2",
+          "observed_line": 534,
+          "insertion_stage": "pure original landing damage capture",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "heal",
+          "observed_line": 635,
+          "insertion_stage": "pure authored healing capture",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_fixed_step",
+          "observed_line": 722,
+          "insertion_stage": "dispatch only approved replay packets",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "credited_ordinary_kill",
+        "pure_segment_resolved",
+        "full_cast_completed",
+        "replay_due"
+      ],
+      "owned_state": [
+        "kill_counter",
+        "replay_tokens",
+        "cast_segments",
+        "pending_replays"
+      ],
+      "constraints": [
+        "see replay_segments.json for all66skills",
+        "noHexrecursion/control/movement/resources/terrain",
+        "room+generation+cast validation"
+      ],
+      "gaps": [
+        "pure segment factors not yetwired in sim"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g19": {
+      "source_id": "G19",
+      "name": "老板来了",
+      "description": "进入精英或Boss战、战斗正式开始时，重置已学习的非终极主动技能，并获得25%攻击力与25%法术强度，持续12秒。普通战斗房不触发。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 343
+      },
+      "parameters": {
+        "G19-1": {
+          "token": "G19-1",
+          "label": "精英Boss房开局攻击力",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 93,
+            "cells": [
+              "E93"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G19-2": {
+          "token": "G19-2",
+          "label": "精英Boss房开局法强",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 94,
+            "cells": [
+              "E94"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G19-3": {
+          "token": "G19-3",
+          "label": "增益持续",
+          "unit": "秒",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 95,
+            "cells": [
+              "E95"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g19.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "begin_encounter",
+          "observed_line": 154,
+          "insertion_stage": "combat officially starts with encounter rank metadata",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "timed AD/AP stats",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "elite_or_boss_battle_started"
+      ],
+      "owned_state": [
+        "encounter_id",
+        "buff_expiry"
+      ],
+      "constraints": [
+        "reset learnedQ/E",
+        "ordinaryroom doesnottrigger",
+        "buff12s"
+      ],
+      "gaps": [
+        "current mixed-wave roster is not an authored elite/Boss battle classifier"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g20": {
+      "source_id": "G20",
+      "name": "越来越离谱",
+      "description": "每通关一个大层，从已选择且具有可强化参数的其他通用海克斯中随机选择一个，使其指定强化参数提升20%。同一海克斯最多被强化2次；不得改变已禁用的规则、触发递归限制或全局属性硬上限。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 345
+      },
+      "parameters": {
+        "G20-1": {
+          "token": "G20-1",
+          "label": "每次指定参数相对提高",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 96,
+            "cells": [
+              "E96"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G20-2": {
+          "token": "G20-2",
+          "label": "同一海克斯强化次数上限",
+          "unit": "次",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 97,
+            "cells": [
+              "E97"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "partial_progression_receiver_not_room_wired",
+      "required_hook": [
+        "hex.final_design.common_g20.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "complete_act",
+          "observed_line": 321,
+          "insertion_stage": "completed authored act after verified sameBoss",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "_complete_act",
+          "observed_line": 325,
+          "insertion_stage": "deduplicated majorfloor event",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "sync_stats",
+          "observed_line": 13,
+          "insertion_stage": "consume effective enhanced values",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "major_floor_completed"
+      ],
+      "owned_state": [
+        "consumed_act_event_ids",
+        "per_hex_stacks",
+        "seeded_rng"
+      ],
+      "constraints": [
+        "see enhancement_fields.json",
+        "additive1.2/1.4",
+        "max2 perHex",
+        "other selected commonHex only",
+        "no proposals"
+      ],
+      "gaps": [
+        "single-room wave runner has no authored campaign_acts until coordinator supplies them"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g21": {
+      "source_id": "G21",
+      "name": "超额投资",
+      "description": "装备栏持有满槽成装后，每在锻体中累计消耗1500金币，随机选择一件当前成装，使其提供的基础属性提高8%，同一件最多强化3次。只提高该成装已有的基础属性，不增加随机词条或新被动。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 347
+      },
+      "parameters": {
+        "G21-1": {
+          "token": "G21-1",
+          "label": "每次强化所需锻体金币",
+          "unit": "金币",
+          "values": [
+            1500
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 98,
+            "cells": [
+              "E98"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G21-2": {
+          "token": "G21-2",
+          "label": "成装基础属性提高",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 99,
+            "cells": [
+              "E99"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G21-3": {
+          "token": "G21-3",
+          "label": "每件成装强化上限",
+          "unit": "次",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 100,
+            "cells": [
+              "E100"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "progression_projection_implemented",
+      "required_hook": [
+        "hex.final_design.common_g21.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "_apply",
+          "observed_line": 80,
+          "insertion_stage": "accepted body gold spend",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "equipment_effects",
+          "observed_line": 151,
+          "insertion_stage": "instance-specific stat enhancement",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "body_gold_spent",
+        "inventory_changed"
+      ],
+      "owned_state": [
+        "eligible_body_spend",
+        "item_uid_stacks"
+      ],
+      "constraints": [
+        "full6completeitems required",
+        "1500gold groups",
+        "max3per instance",
+        "existingbasicstats only",
+        "no passive or randomaffix"
+      ],
+      "gaps": [
+        "main coordinator must expose restored body purchase UI; model projection is implemented",
+        "enhancement belongs to stable itemUID; sell/undo preserves sameUID, newpurchase getsnewUID"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g22": {
+      "source_id": "G22",
+      "name": "以多欺少／以少打多",
+      "description": "场上存活敌人不少于8名时，范围伤害提高25%，吸血提高6%；场上仅剩单个精英或Boss时，改为对其最终伤害提高20%，并获得20点穿甲。两种状态不同时生效。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 349
+      },
+      "parameters": {
+        "G22-1": {
+          "token": "G22-1",
+          "label": "怪海敌人数阈值",
+          "unit": "名",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 101,
+            "cells": [
+              "E101"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-2": {
+          "token": "G22-2",
+          "label": "怪海范围伤害提高",
+          "unit": "%",
+          "values": [
+            25
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 102,
+            "cells": [
+              "E102"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-3": {
+          "token": "G22-3",
+          "label": "怪海吸血",
+          "unit": "%",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 103,
+            "cells": [
+              "E103"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-4": {
+          "token": "G22-4",
+          "label": "单Boss最终增伤",
+          "unit": "%",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 104,
+            "cells": [
+              "E104"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G22-5": {
+          "token": "G22-5",
+          "label": "单Boss穿甲",
+          "unit": "点",
+          "values": [
+            20
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 105,
+            "cells": [
+              "E105"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g22.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "dynamic area/singleBoss final modifier and penetration",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/actors/xuanlei_model.gd",
+          "symbol": "lifesteal",
+          "observed_line": 53,
+          "insertion_stage": "dynamic crowd-state lifesteal",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "damage_packet_pre_mitigation",
+        "living_enemy_count_changed"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "crowd>=8",
+        "singleelite/Boss alternative",
+        "mutuallyexclusive",
+        "area tag explicit"
+      ],
+      "gaps": [],
+      "proposal_activation_allowed": true
+    },
+    "common_g23": {
+      "source_id": "G23",
+      "name": "血瓶轰炸",
+      "description": "战斗中使用血瓶时，在自身半径5米内引发冲击，造成180+100%AD+80%AP普通伤害。血瓶仍保留原治疗效果，非战斗状态使用不产生攻击。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 351
+      },
+      "parameters": {
+        "G23-1": {
+          "token": "G23-1",
+          "label": "血瓶爆炸半径",
+          "unit": "米",
+          "values": [
+            5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 106,
+            "cells": [
+              "E106"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-2": {
+          "token": "G23-2",
+          "label": "血瓶爆炸固定伤害",
+          "unit": "点",
+          "values": [
+            180
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 107,
+            "cells": [
+              "E107"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-3": {
+          "token": "G23-3",
+          "label": "血瓶爆炸AD系数",
+          "unit": "%AD",
+          "values": [
+            100
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 108,
+            "cells": [
+              "E108"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G23-4": {
+          "token": "G23-4",
+          "label": "血瓶爆炸AP系数",
+          "unit": "%AP",
+          "values": [
+            80
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 109,
+            "cells": [
+              "E109"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "accepted_source_direction",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g23.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/integration/consumers.gd",
+          "symbol": "use_recovery",
+          "observed_line": 29,
+          "insertion_stage": "after accepted combat potion consumption and healing",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "circle_targets",
+          "observed_line": 225,
+          "insertion_stage": "5m burstquery",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "burst normal damage",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "combat_potion_consumed"
+      ],
+      "owned_state": [
+        "consumption_receipt_ids"
+      ],
+      "constraints": [
+        "originalheal preserved",
+        "safe-use noattack",
+        "same receipt no duplicate blast"
+      ],
+      "gaps": [
+        "copied catalog permits safe/combat use; main consumer must enforce alive/unpaused and validated consumption before blast"
+      ],
+      "proposal_activation_allowed": true
+    },
+    "common_g24": {
+      "source_id": "G24",
+      "name": "轻装上阵",
+      "description": "每空置一个装备槽，最终伤害提高8%，最大生命值提高6%；最多计算4个空槽。装备栏变化后立即重算，锻体不占用装备槽。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 354
+      },
+      "parameters": {
+        "G24-1": {
+          "token": "G24-1",
+          "label": "每空槽最终伤害提高",
+          "unit": "%",
+          "values": [
+            8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 110,
+            "cells": [
+              "E110"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-2": {
+          "token": "G24-2",
+          "label": "每空槽最大生命提高",
+          "unit": "%",
+          "values": [
+            6
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 111,
+            "cells": [
+              "E111"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G24-3": {
+          "token": "G24-3",
+          "label": "计入空槽上限",
+          "unit": "个",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 112,
+            "cells": [
+              "E112"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g24.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "aggregate_effects",
+          "observed_line": 175,
+          "insertion_stage": "inventory empty-slot count projection",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "final output modifier",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "inventory_changed"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "proposalnotapproved",
+        "max4emptyslots",
+        "body notslot"
+      ],
+      "gaps": [
+        "proposal activation pending"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g25": {
+      "source_id": "G25",
+      "name": "血铸法器",
+      "description": "非终极主动技能每次完整施法额外消耗3%当前生命值，并使该次技能伤害额外增加自身最大生命值的4%。一次持续或多段技能按完整施法分配追加伤害，不按每次跳伤重复追加。该生命消耗不会致死，不触发承伤与反伤效果。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 356
+      },
+      "parameters": {
+        "G25-1": {
+          "token": "G25-1",
+          "label": "每次施法消耗当前生命",
+          "unit": "%",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 113,
+            "cells": [
+              "E113"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G25-2": {
+          "token": "G25-2",
+          "label": "每次施法追加最大生命伤害",
+          "unit": "%",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 114,
+            "cells": [
+              "E114"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g25.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_request_action",
+          "observed_line": 250,
+          "insertion_stage": "accepted full Q/E cast only",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_enemy",
+          "observed_line": 639,
+          "insertion_stage": "allocate onecast additionaldamage budget",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "full_nonultimate_cast_started",
+        "cast_damage_segment"
+      ],
+      "owned_state": [
+        "root_cast_budget",
+        "allocated_damage"
+      ],
+      "constraints": [
+        "proposalnotapproved",
+        "3%currentHP nonlethalcost",
+        "notdamage event",
+        "one4%maxHP budget percast no perTickrepeat"
+      ],
+      "gaps": [
+        "proposal activation pending",
+        "multi-segment budget allocation requires explicit implementation policy"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g26": {
+      "source_id": "G26",
+      "name": "破盾反冲",
+      "description": "由自己提供的护盾被敌方伤害完全打破时，以护盾持有者为中心引发半径3.5米的冲击，造成该护盾初始数值40%的普通伤害，最多造成施法者最大生命值18%的伤害，并击退普通敌人2米。同一持有者每2秒最多触发一次；自然到期与替换护盾不触发。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 358
+      },
+      "parameters": {
+        "G26-1": {
+          "token": "G26-1",
+          "label": "护盾爆炸半径",
+          "unit": "米",
+          "values": [
+            3.5
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 115,
+            "cells": [
+              "E115"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-2": {
+          "token": "G26-2",
+          "label": "护盾初始值转伤比例",
+          "unit": "%",
+          "values": [
+            40
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 116,
+            "cells": [
+              "E116"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-3": {
+          "token": "G26-3",
+          "label": "伤害自身最大生命上限",
+          "unit": "%",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 117,
+            "cells": [
+              "E117"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-4": {
+          "token": "G26-4",
+          "label": "击退距离",
+          "unit": "米",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 118,
+            "cells": [
+              "E118"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G26-5": {
+          "token": "G26-5",
+          "label": "同目标触发间隔",
+          "unit": "秒",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 119,
+            "cells": [
+              "E119"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g26.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "add_shield",
+          "observed_line": 630,
+          "insertion_stage": "retainprovider+initialamount",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_hero",
+          "observed_line": 656,
+          "insertion_stage": "enemy fully breaks shield",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_ally",
+          "observed_line": 1018,
+          "insertion_stage": "ally shieldbreak",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "circle_targets",
+          "observed_line": 225,
+          "insertion_stage": "breakburst query",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "owned_shield_broken_by_enemy"
+      ],
+      "owned_state": [
+        "holder_icd",
+        "shield_initial_amount",
+        "provider"
+      ],
+      "constraints": [
+        "proposalnotapproved",
+        "expiry/replacement excluded",
+        "2s perholder",
+        "18%castermaxHP cap"
+      ],
+      "gaps": [
+        "proposal activation pending"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g27": {
+      "source_id": "G27",
+      "name": "组件专家",
+      "description": "未合成为最终装备的基础与中级组件，其提供的基础属性提高35%。只强化最外层持有的组件，不重复计算其合成树内的材料；合成成装后对应增益消失。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 360
+      },
+      "parameters": {
+        "G27-1": {
+          "token": "G27-1",
+          "label": "未成装组件基础属性增幅",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 120,
+            "cells": [
+              "E120"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "progression_projection_implemented_proposal_gated",
+      "required_hook": [
+        "hex.final_design.common_g27.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "equipment_effects",
+          "observed_line": 151,
+          "insertion_stage": "held noncompleteitems only",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "inventory_changed"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "proposalnotapproved",
+        "no recursive recipe-tree material stats",
+        "removebonus oncompletecraft"
+      ],
+      "gaps": [
+        "proposal activation pending"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g28": {
+      "source_id": "G28",
+      "name": "断后炮台",
+      "description": "Shift结束时，在冲刺起点留下自动炮台，存在4秒，每隔0.8秒向9米内最近敌人发射炮弹，造成12+18%AD+15%AP普通伤害。最多同时存在2座，生成间隔不低于3秒；炮台不复制英雄技能，不触发施法、普攻次数与召唤递归效果。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 362
+      },
+      "parameters": {
+        "G28-1": {
+          "token": "G28-1",
+          "label": "炮台持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 121,
+            "cells": [
+              "E121"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-2": {
+          "token": "G28-2",
+          "label": "炮台攻击间隔",
+          "unit": "秒",
+          "values": [
+            0.8
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 122,
+            "cells": [
+              "E122"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-3": {
+          "token": "G28-3",
+          "label": "炮台射程",
+          "unit": "米",
+          "values": [
+            9
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 123,
+            "cells": [
+              "E123"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-4": {
+          "token": "G28-4",
+          "label": "炮弹固定伤害",
+          "unit": "点",
+          "values": [
+            12
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 124,
+            "cells": [
+              "E124"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-5": {
+          "token": "G28-5",
+          "label": "炮弹AD系数",
+          "unit": "%AD",
+          "values": [
+            18
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 125,
+            "cells": [
+              "E125"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-6": {
+          "token": "G28-6",
+          "label": "炮弹AP系数",
+          "unit": "%AP",
+          "values": [
+            15
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 126,
+            "cells": [
+              "E126"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-7": {
+          "token": "G28-7",
+          "label": "同时炮台上限",
+          "unit": "点",
+          "values": [
+            2
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 127,
+            "cells": [
+              "E127"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G28-8": {
+          "token": "G28-8",
+          "label": "生成最短间隔",
+          "unit": "秒",
+          "values": [
+            3
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 128,
+            "cells": [
+              "E128"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g28.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_step_player_locomotion",
+          "observed_line": 399,
+          "insertion_stage": "Shift completion at recorded startpoint",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_fixed_step",
+          "observed_line": 722,
+          "insertion_stage": "turret timedticks",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "shift_completed"
+      ],
+      "owned_state": [
+        "turrets",
+        "spawn_icd",
+        "dash_origin"
+      ],
+      "constraints": [
+        "proposalnotapproved",
+        "max2",
+        "3sICD",
+        "no hero skill/attackcount/summonrecursion"
+      ],
+      "gaps": [
+        "proposal activation pending"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g29": {
+      "source_id": "G29",
+      "name": "缓伤酒",
+      "description": "受到直接伤害时，将其中35%延后至4秒内均匀扣除，其余立即结算。延后伤害不再次减伤、不再次延后、不触发承伤反伤；战斗结束后未扣完的伤害随战斗状态冻结，下一场继续结算。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 364
+      },
+      "parameters": {
+        "G29-1": {
+          "token": "G29-1",
+          "label": "直接伤害延后比例",
+          "unit": "%",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 129,
+            "cells": [
+              "E129"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G29-2": {
+          "token": "G29-2",
+          "label": "延后扣血持续",
+          "unit": "秒",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 130,
+            "cells": [
+              "E130"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g29.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "damage_hero",
+          "observed_line": 656,
+          "insertion_stage": "after directdamage mitigation beforeHP loss",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_fixed_step",
+          "observed_line": 722,
+          "insertion_stage": "world-time deferredHP deductions",
+          "symbol_existence_is_not_implementation": true
+        },
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "end_encounter",
+          "observed_line": 190,
+          "insertion_stage": "freeze remaining debt, do notclear",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "incoming_direct_damage",
+        "combat_time_tick"
+      ],
+      "owned_state": [
+        "deferred_debt_segments"
+      ],
+      "constraints": [
+        "proposalnotapproved",
+        "never remitigate/redefer/reflect",
+        "freezeacrosssafeinterval",
+        "nextbattle resumes"
+      ],
+      "gaps": [
+        "proposal activation pending",
+        "shield versus deferral ordering needs exact damage-pipeline contract"
+      ],
+      "proposal_activation_allowed": false
+    },
+    "common_g30": {
+      "source_id": "G30",
+      "name": "囤金战甲",
+      "description": "每持有500金币，获得4点防御力与35点最大生命值，最多计算5000金币。不消耗金币，花费或获得金币后立即重算。",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 366
+      },
+      "parameters": {
+        "G30-1": {
+          "token": "G30-1",
+          "label": "金币计算单位",
+          "unit": "金币",
+          "values": [
+            500
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 131,
+            "cells": [
+              "E131"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-2": {
+          "token": "G30-2",
+          "label": "每单位防御力",
+          "unit": "点",
+          "values": [
+            4
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 132,
+            "cells": [
+              "E132"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-3": {
+          "token": "G30-3",
+          "label": "每单位最大生命",
+          "unit": "点",
+          "values": [
+            35
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 133,
+            "cells": [
+              "E133"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        },
+        "G30-4": {
+          "token": "G30-4",
+          "label": "计入金币上限",
+          "unit": "金币",
+          "values": [
+            5000
+          ],
+          "rank_count": 1,
+          "source": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "通用海克斯",
+            "row": 134,
+            "cells": [
+              "E134"
+            ]
+          },
+          "notes": "",
+          "balance_status": "source_v03_initial_unvalidated",
+          "overrides": []
+        }
+      },
+      "design_status": "supplementary_proposal",
+      "implementation_status": "not_wired_audit_only",
+      "required_hook": [
+        "hex.final_design.common_g30.v1"
+      ],
+      "handler_sites": [
+        {
+          "path": "scripts/progression/catalog_model.gd",
+          "symbol": "project_stats",
+          "observed_line": 187,
+          "insertion_stage": "currentgold-based statprojection",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "required_events": [
+        "gold_changed"
+      ],
+      "owned_state": [],
+      "constraints": [
+        "proposalnotapproved",
+        "500gold steps max5000",
+        "no goldconsumption"
+      ],
+      "gaps": [
+        "proposal activation pending"
+      ],
+      "proposal_activation_allowed": false
+    }
+  }
+}

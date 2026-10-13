@@ -1,0 +1,101 @@
+{
+  "adapter_version": "first_floor_reward_adapter_v01",
+  "schema_version": 2,
+  "table_version": "authored_trial_v01",
+  "hero_id": "yanguizhou",
+  "floor_id": "first_floor",
+  "status": "authored_numeric_trial",
+  "provisional": true,
+  "runtime_wired": false,
+  "balanced_pass": false,
+  "topology_status": "developer_proposal",
+  "topology_approved": false,
+  "input_sha256": "6db7878df90b8bd642a1405c2b7f9279e9d45195f99173e1ee7d4a7272103895",
+  "metadata_sha256": "3e4b4a3884edc4d8c7b90fb2c600aa5a7bdfee144e3101233a28e827e9979fc5",
+  "route_sha256": "559c977b6a10dc8caa08be12de43b462c961af6ba4985ef6da5e44531b43c0f6",
+  "reward_units": {
+    "gold": "integer_gold_per_verified_kill",
+    "xp": "integer_xp_per_verified_kill"
+  },
+  "unknown_kind_policy": "reject_no_fallback",
+  "rewards": {
+    "minion": {
+      "gold": 45,
+      "xp": 27
+    },
+    "ranged": {
+      "gold": 45,
+      "xp": 27
+    },
+    "pouncer": {
+      "gold": 45,
+      "xp": 27
+    },
+    "pitcher": {
+      "gold": 45,
+      "xp": 27
+    },
+    "support": {
+      "gold": 45,
+      "xp": 27
+    },
+    "armored": {
+      "gold": 70,
+      "xp": 40
+    },
+    "elite": {
+      "gold": 180,
+      "xp": 140
+    },
+    "boss": {
+      "gold": 320,
+      "xp": 160
+    }
+  },
+  "original_source_rewards": {
+    "minion": {
+      "gold": 20,
+      "xp": 12
+    },
+    "ranged": {
+      "gold": 20,
+      "xp": 12
+    },
+    "pouncer": {
+      "gold": 20,
+      "xp": 12
+    },
+    "pitcher": {
+      "gold": 20,
+      "xp": 12
+    },
+    "support": {
+      "gold": 20,
+      "xp": 12
+    },
+    "armored": {
+      "gold": 35,
+      "xp": 20
+    },
+    "elite": {
+      "gold": 100,
+      "xp": 80
+    },
+    "boss": {
+      "gold": 300,
+      "xp": 160
+    }
+  },
+  "excluded_overrides": [
+    "xp_curve",
+    "r_gate",
+    "sp_budget",
+    "gear_prices",
+    "mechanics",
+    "roster",
+    "topology",
+    "free_grants",
+    "drops"
+  ],
+  "verification_scope": "static_source_and_numeric_only"
+}

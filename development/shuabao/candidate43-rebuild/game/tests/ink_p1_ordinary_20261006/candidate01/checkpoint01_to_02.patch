@@ -1,0 +1,102 @@
+--- preimage_gate01/sim.gd
++++ sim.gd
+@@ -59,6 +59,16 @@
+  if milestone != 0: p1.leave(milestone); _p1_flush(milestone)
+ 
+ func _settle_motion_interval(before: Dictionary, tick_start: float, tick_end: float) -> void:
++ # The actual gate01 exposed legacy dispatch claiming contacts after a pause.
++ # For a live P1-owned Q1, use the inherited resumable interval solver. This is
++ # the REAL start cursor of this already-admitted interval, not a fake river,
++ # hit, elapsed step or saved remainder. Q2 consumes _q2_resume_from to -1 at
++ # entry; only an actual callback pause then creates _q2_motion_resume.
++ if _q2_resume_from < 0.0 and ink_rivers.is_empty() and _q2_enemy_hits.is_empty():
++  for wave in ink_waves:
++   if not bool(wave.get("retired",false)) and _p1_q1_owned_wave(wave) and not bool(p1.roots[int(wave.cast_id)].settled):
++    _q2_resume_from = tick_start
++    break
+  # Only the pinned legacy fallback has the unequal arithmetic forms diagnosed
+  # in actual Godot. The existing Q2 ordered solver already shares its end time.
+  var legacy: bool = ink_rivers.is_empty() and _q2_enemy_hits.is_empty() and _q2_resume_from < 0.0
+--- preimage_gate01/finite_gate.gd
++++ finite_gate.gd
+@@ -119,17 +119,42 @@
+  near(pulled.hp,10000,"pure pull contributes no extra Q1 hit")
+  sim.free()
+  sim = fresh("q1"); target(sim,Vector3(.51,0,.2)); target(sim,Vector3(.51,0,-.2))
+- var pause_probe: Dictionary = {"done":false}
++ var pause_probe: Dictionary = {"done":false,"second_hero_time":-1.0,"second_core_steps":-1}
+  sim.combat_event.connect(func(event: Dictionary):
+   if event.kind == "damage" and event.get("source","") == "q1" and not pause_probe.done:
+    pause_probe.done = true; sim.paused = true
++  elif event.kind == "damage" and event.get("source","") == "q1":
++   pause_probe.second_hero_time = sim.hero_time; pause_probe.second_core_steps = sim.ink_core_steps
+  )
+  q1(sim,[Vector3.ZERO,Vector3(.26,0,0)]); sim.step(.02)
+  check(pause_probe.done and damage(sim,"q1").size() == 1,"first exact endpoint Q1 callback actually pauses")
+  check(not sim.ink_waves.is_empty() and sim.ink_p1_receipts.is_empty(),"paused Q1 retains unfinished wave and cannot truncate target union")
++ check(sim.ink_rivers.is_empty() and sim._q2_enemy_hits.is_empty(),"Q1 resumable dispatch uses no fabricated river or hostile-hit placeholder")
++ check(not sim._q2_motion_resume.is_empty() and sim._q2_resume_from == -1.0,"real pause stores remainder after consuming fresh interval cursor")
++ var paused_time: float = sim.hero_time; var paused_core_steps: int = sim.ink_core_steps
++ near(paused_time,.02,"pause happens after exactly the admitted source step")
++ check(paused_core_steps == 1,"one source core step before pause")
++ if not sim._q2_motion_resume.is_empty():
++  near(sim._q2_motion_resume.start,0.0,"saved original interval start")
++  near(sim._q2_motion_resume.end,.02,"saved original interval end")
++  near(sim._q2_motion_resume.cursor,.26/24.0,"saved cursor is actual terminal-contact source time")
++ sim.step(.5)
++ near(sim.hero_time,paused_time,"paused public step cannot advance source time")
++ check(sim.ink_core_steps == paused_core_steps,"paused public step cannot execute core")
+  sim.paused = false; sim.step(.02)
+  check(damage(sim,"q1").size() == 2,"resumed Q1 applies the second original endpoint contact")
+  check(receipt(sim).distinct_targets == 2 and supplements(sim).is_empty(),"Q1 pause cannot fabricate single-target P1")
++ near(pause_probe.second_hero_time,paused_time,"resumed second contact completes old interval before new hero-time step")
++ check(pause_probe.second_core_steps == paused_core_steps,"resumed second contact runs before any new core step")
++ near(sim.hero_time,.04,"resume adds only the requested next fixed step")
++ check(sim.ink_core_steps == 2,"two public active steps execute exactly two core steps total")
++ check(sim._q2_motion_resume.is_empty() and sim._q2_resume_from == -1.0,"completed continuation clears both saved remainder and cursor")
++ var resumed_contacts: Array = sim.ink_receipts.filter(func(item): return item.source == "q1")
++ check(resumed_contacts.size() == 2,"both original contact receipts retained")
++ if resumed_contacts.size() == 2 and sim.ink_finished.size() == 1:
++  var end_bits: String = PackedFloat64Array([float(sim.ink_finished[0].finished_at)]).to_byte_array().hex_encode()
++  for contact in resumed_contacts: check(PackedFloat64Array([float(contact.contact_time)]).to_byte_array().hex_encode() == end_bits,"pause-resumed endpoint contact retains exact original terminal timestamp")
++ observations["q1_pause_resume"] = {"second_contact_hero_time":pause_probe.second_hero_time,"second_contact_core_steps":pause_probe.second_core_steps,"final_hero_time":sim.hero_time,"final_core_steps":sim.ink_core_steps,"contact_count":resumed_contacts.size(),"remainder_cleared":sim._q2_motion_resume.is_empty()}
+  observations["q1_endpoint"] = "Known exact endpoint bug correction intentionally also active with P1 unlearned; baseline equality excludes that bugcase"
+  sim.free(); completed.append("q1_endpoint_and_h02")
+ 
+--- preimage_gate01/verify_source.py
++++ verify_source.py
+@@ -18,7 +18,19 @@
+ pre=json.loads((D/'preimage_manifest.json').read_text())
+ for relative,expected in pre['files'].items(): check(sha(R/relative)==expected,'current frozen preimage '+relative)
+ checkpoint=json.loads((D/'core_checkpoint01.json').read_text())
+-for name,expected in checkpoint['candidate_files'].items(): check(sha(D/name)==expected,'first saved core unchanged '+name)
++repair=json.loads((D/'core_checkpoint02.json').read_text())
++for name,expected in checkpoint['candidate_files'].items():
++    if name in repair['source_changes']:
++        change=repair['source_changes'][name]
++        check(expected==change['before'] and sha(D/'preimage_gate01'/name)==expected and sha(D/name)==change['after'],'first saved source preserved and exact repaired successor '+name)
++    else: check(sha(D/name)==expected,'first saved core unchanged '+name)
++archive=D/'preimage_gate01'
++manifest=json.loads((archive/'MANIFEST.json').read_text())
++check(sha(archive/'MANIFEST.json')==repair['preimage_manifest_sha256'],'actual red preimage manifest identity')
++for relative,expected in manifest['files'].items(): check(sha(archive/relative)==expected,'preserved source and actual-red evidence '+relative)
++actual=json.loads((archive/'actual/result.json').read_text())
++check(actual['checks']==325 and len(actual['failures'])==3 and not actual['passed'] and actual['source_binding_sha256']=='ce7a1899f426a2fb55505bb68f0d6b61fe31bdb7e32bb124f7c408731c4be906','original actual three-red result retained')
++check('_q2_resume_from = tick_start' in (D/'sim.gd').read_text(),'narrow real interval cursor admission authored')
+ for name in ['sim.gd','settlement.gd','finite_gate.gd']:
+     text=(D/name).read_text(); names=re.findall(r'^func (\w+)\(',text,re.M)
+     check(len(names)==len(set(names)),'no duplicate method names '+name)
+@@ -32,4 +44,4 @@
+ check('paused Q1 retains unfinished wave' in gate,'known source-review Q1 pause risk included as real public-step counterexample')
+ check('var sim_script: GDScript' in gate and 'var previous_script: GDScript' in gate,'typed reflection resources')
+ check(not b['production_promotion'],'no production P1 promotion')
+-print(json.dumps({'status':'SOURCE_TEXT_IDENTITY_PASS','passed':True,'checks':len(checks),'source_binding_sha256':sha(D/'source_binding.json'),'engine_invocations':0,'GDScript_parse':'NOT_RUN','runtime':'NOT_RUN','known_source_review_risk':'Q1 legacy pause may truncate later contacts; actual public-step gate includes the counterexample'},ensure_ascii=False,indent=2))
++print(json.dumps({'status':'SOURCE_TEXT_IDENTITY_PASS','passed':True,'checks':len(checks),'source_binding_sha256':sha(D/'source_binding.json'),'engine_invocations':0,'GDScript_parse':'NOT_RUN','runtime':'NOT_RUN','original_actual_gate':'325 checks, exactly 3 Q1 pause failures preserved','repair_runtime':'NOT_RUN'},ensure_ascii=False,indent=2))
+--- preimage_gate01/GATE_SCOPE.md
++++ GATE_SCOPE.md
+@@ -1,3 +1,5 @@
++Current checkpoint02 supersedes this historical gate01 description; see REPAIR02.md. Gate01 actually ran with 3 failures, all preserved. The same gate is now authored for the narrow repair, not yet rerun.
++
+ # One bounded current-chain P1 gate
+ 
+ Nine finite groups, all explicit mechanics fixtures on the exact current R1 parent. No ordinary player rewards, natural leveling, production P1 learning/UI, native input, full floor/Boss or art/audio claim. The source gate does not parse GDScript. Parent owns actual parser/finite execution and exact resource admission.

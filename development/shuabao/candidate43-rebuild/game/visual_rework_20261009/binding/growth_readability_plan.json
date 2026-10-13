@@ -1,0 +1,46 @@
+{
+  "status": "SOURCE_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "4731b92e9c61933950e249412c579f32004cae681410d1c052a12b13d9a78c4c",
+  "target_candidate": "candidate31",
+  "changed": [
+    {
+      "path": "res://visual_rework_20261009/entry.gd",
+      "before": "7f2b463bf64d388d9ee66d2e757cec17eb9a1d34e5539c6a9bc3ee27b97e22a2",
+      "after": "c1d3c78f355d3fe5f25c80351b2843a4be6d8f8e58e92638c7f98a3628561f9f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_prepare/entry.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "c3874eac635abde87f2b0a666d01483c685eae1018d77b7dcd6c219881e16049",
+      "after": "14ab5590ec2ff78a9371e1026daef99e0061348bba2dde664676ccc4316eb21a",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_prepare/runtime_host.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "0ffdc5bc38c759445198512179a72f58eb8dfe285a8754361372b45bd271cb64",
+      "after": "e8a9de3c947d1d56ee53ca77d5eec23bc3d1e2db076847b4f65aab956942a16a",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/growth_layout_prepare/live_binding.gd"
+    }
+  ],
+  "new": [
+    {
+      "path": "res://visual_rework_20261009/readable_layout.gd",
+      "sha256": "227460c5dad582ee62e15cd5a8a120a69030db625ea661ac8e5c51d03f9da927"
+    }
+  ],
+  "preserve_13_ancestor_replacements": true,
+  "source_maps_require_actual_intersection_equality": true,
+  "sealed_parent_unmodified": true,
+  "engine_run": false,
+  "tests_required": [
+    "exact three labels all-or-nothing including duplicate/missing/wrong pin refusals",
+    "same original button references Callable flags disabled visible",
+    "same Model Session hero receipt before/after display apply",
+    "actual postdraw return_button/growth_panel rectangles incl theme minimum",
+    "other hero original170x38 restoration",
+    "original session summary readable; no other labels/icons/buttons changed",
+    "K and shop open/close; original renderer/cache and guard conditions"
+  ],
+  "note": "No backdrop; no respec action or authority change.",
+  "map_membership": "entry remains visual-only; Host updates both existing maps; live_binding core-only; helper/plan core mandatory"
+}

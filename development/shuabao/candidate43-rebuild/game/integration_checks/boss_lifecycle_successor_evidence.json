@@ -1,0 +1,17 @@
+{
+  "original": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/overlay_v89/six-hero-current-wip/tests/ink_first_floor_boss_20261008/live02/lifecycle_gate.gd",
+  "original_sha256": "edbd8b19740cf5981eb748d941ad44a1fce1d552b8c1965d32dc9f7fed5a3ab1",
+  "successor_sha256": "9a1699f7d5dca360bed35c1bc73eb2f37a8adb18735e42d11f0c1b91f2a988f6",
+  "references_changed": {
+    "res://tests/ink_ordinary_visuals_20261007/candidate01/host.gd": "res://visual_rework_20261009/runtime_host.gd",
+    "res://tests/ink_first_floor_boss_20261008/live02/live_binding.gd": "res://visual_rework_20261009/binding/live_binding.gd",
+    "res://tests/ink_first_floor_boss_20261008/live02/bridge.gd": "res://visual_rework_20261009/binding/bridge.gd",
+    "res://tests/ink_first_floor_boss_20261008/live02/lifecycle_gate.gd": "res://integration_checks/boss_lifecycle_successor.gd"
+  },
+  "roundtrip_equals_original": true,
+  "all_assertions_fixtures_unchanged": true,
+  "engine_run": false,
+  "damage_fixture": "Explicit lethal source packets, never natural combat. Original twelve-row Session route and seven owner checks retained.",
+  "BRIDGE_PATH_reason": "Actual successor Session ledger uses successor Bridge; reference updated while exact identity assertion stays intact.",
+  "GATE_PATH_reason": "Self-hash must identify the actual independent gate."
+}

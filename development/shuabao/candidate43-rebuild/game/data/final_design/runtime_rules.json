@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "version": "confirmed-runtime-semantics-20261002",
+  "amendments": [
+    {
+      "id": "xuanlei_e3_shield_entry_policy",
+      "hero_id": "xuanlei",
+      "candidate": "E3",
+      "amends_source_comment_ids": [
+        "6"
+      ],
+      "status": "user_confirmed",
+      "rules": {
+        "shield_issue": "first_entry_once_per_friendly_hero_per_cast",
+        "leave_aura": "retain_issued_shield_until_natural_expiry",
+        "reentry_same_cast": "no_refresh_no_second_grant",
+        "self_multiplier": 2,
+        "self_multiplier_parameter": "E3-4",
+        "shield_duration_new_value": null,
+        "shield_expiry": "current_cast_original_end",
+        "late_entry_duration": "remaining_current_cast_duration",
+        "description_append": "每名友方每次施法首次入阵获得一次护盾；离阵保留至本次防御阵结束，重入不刷新；晚入阵仅保留剩余时长。"
+      },
+      "authority": {
+        "user_message_id": "Sentinel_c7f588116b488191a43dbb34ff082825",
+        "user_quote": "18级不变，我和你说的都不变，就是让玩家学不全技能或者养不到最高技能，让玩家取舍。你那个机制问题，按你的来",
+        "accepted_question_id": "Sentinel_8935ed1cb9888191b2411a54e42290a6",
+        "accepted_question": "文档里还有一处会影响第一位英雄制作的机制空白：玄垒「合垒」的护盾，是否按“每名队友首次进入时获得一次，离开后保留到护盾到期，再次进入不刷新；玄垒自己的护盾数值翻倍”处理？我建议这样，避免反复进出阵地刷盾。",
+        "expiry_confirmation": "User-confirmed shared current-cast expiry; late entries receive remaining duration (2026-10-02)"
+      },
+      "preserves_original_source": true,
+      "notes": "Entry/exit/reentry policy and shared current-cast expiry confirmed. Late entry receives only remaining duration; no new duration parameter."
+    },
+    {
+      "id": "approve_g24_g30_formal_pool",
+      "status": "user_confirmed",
+      "rules": {
+        "enabled_common_hexes": [
+          "common_g24",
+          "common_g25",
+          "common_g26",
+          "common_g27",
+          "common_g28",
+          "common_g29",
+          "common_g30"
+        ],
+        "activation": "formal_pool_with_normal_hook_and_eligibility_checks"
+      },
+      "authority": {
+        "user_message_id": "Sentinel_c2c2b5caac7081919f15300d065626e2",
+        "user_quote": "可以",
+        "accepted_question_id": "Sentinel_233cf2c790408191a03ba232be67d62e",
+        "accepted_scope": "Include the seven supplied G24–G30 proposals in the formal common-Hex pool; numerically balance alongside the others"
+      },
+      "preserves_original_source": true
+    }
+  ]
+}

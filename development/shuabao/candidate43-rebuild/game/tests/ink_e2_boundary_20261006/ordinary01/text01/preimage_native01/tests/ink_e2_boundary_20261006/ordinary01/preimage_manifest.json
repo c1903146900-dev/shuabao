@@ -1,0 +1,33 @@
+{
+  "schema": "ink-e2-ordinary-preimage-1",
+  "production_files": {
+    "scripts/integration/yanguizhou_first_floor.gd": "8509e03edea0bbc5df7f063431ee637713d44673223eeac34869b63be0650801",
+    "scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "scripts/ui/hero_chooser.gd": "b6d272cda4c2a2294aac60d2abdbea9685daa2ce9cf6619a78d20bfb34ec2740"
+  },
+  "unchanged_parents": {
+    "tests/ink_rest_service_20261006/candidate01/ordinary01/source_binding.json": "e32a9951aa51f970ce85b84d956f4da9ca3f9f10c1997ffed9a8af89c4e971fc",
+    "tests/ink_e2_boundary_20261006/candidate01/source_binding.json": "c91e4c0ba04d2c4bf50387249a1074b20d2b188b031ec7f50b4e2e9da34cbe01",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/source_binding.json": "3d8f4ac79fe83d2804010a3eca89089999eae50be2b27ad3c49b270cc402828f"
+  },
+  "transplants": [
+    {
+      "source": "tests/ink_e2_ordinary_20261005/candidate01/sim.gd",
+      "destination": "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "parent": "res://tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd",
+      "allowed_delta": "first extends line only"
+    },
+    {
+      "source": "tests/ink_e2_ordinary_20261005/fix01/sim.gd",
+      "destination": "tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd",
+      "parent": "res://tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "allowed_delta": "first extends line only"
+    },
+    {
+      "source": "tests/ink_e2_boundary_20261006/candidate01/sim.gd",
+      "destination": "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd",
+      "parent": "res://tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd",
+      "allowed_delta": "first extends line only"
+    }
+  ]
+}

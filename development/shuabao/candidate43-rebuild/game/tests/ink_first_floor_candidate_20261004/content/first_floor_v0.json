@@ -1,0 +1,699 @@
+{
+  "schema_version": 3,
+  "hero_id": "yanguizhou",
+  "floor_id": "first_floor",
+  "version": "developer-first-floor-v0",
+  "title": "晏归舟第一层 · 开发者12行候选（未定稿）",
+  "content_status": "developer_proposal",
+  "candidate": true,
+  "release": false,
+  "production_ready": false,
+  "row_count": 12,
+  "selection_rule": "one_node_per_row",
+  "completion_rule": "boss_defeated_and_coordinator_completed",
+  "authority": {
+    "type": "developer_reversible_proposal",
+    "source_report": "tests/ink_first_floor_next_plan_20261004/REPORT.md",
+    "original_user_topology_approval": null,
+    "topology_approved": false,
+    "node_frequency_approved": false,
+    "fixed_user_scope": [
+      "yanguizhou",
+      "12_rows",
+      "one_selected_node_per_row",
+      "boss_last"
+    ]
+  },
+  "authoring_observations": {
+    "node_count": 14,
+    "complete_path_count": 4,
+    "widths": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "selected_nodes_per_path": 12,
+    "combat_nodes_per_path": 9,
+    "service_nodes_per_path": 3,
+    "maximum_roster_this_proposal": 6,
+    "source_authorized_capacity": null,
+    "performance_capacity_claim": false,
+    "topology_frequency_rosters_and_positions_are_reversible": true
+  },
+  "readiness": {
+    "live_lv4_hex_pool": "HOLD",
+    "normal_full_floor_boss_settlement": "HOLD",
+    "floor_session": "NOT_IMPLEMENTED",
+    "host_ui": "NOT_IMPLEMENTED",
+    "no_artificial_progression": true
+  },
+  "spatial_review": {
+    "stage_source": "tests/ink_style_specimen_20261004/stage.gd",
+    "nominal_player_position": [
+      0,
+      0,
+      4
+    ],
+    "source_extent": 18,
+    "source_obstacles": [
+      {
+        "position": [
+          -7,
+          0,
+          -4
+        ],
+        "half": [
+          0.9,
+          0,
+          0.9
+        ]
+      },
+      {
+        "position": [
+          7,
+          0,
+          -4
+        ],
+        "half": [
+          0.9,
+          0,
+          0.9
+        ]
+      }
+    ],
+    "scope": "static geometry at nominal player position only; source AI radii; no runtime safety proof",
+    "runtime_entry_position_recheck_required": true,
+    "camera_and_live_danger_review": "MAIN_OWNED_NOT_RUN"
+  },
+  "rows": [
+    {
+      "number": 1,
+      "nodes": [
+        {
+          "id": "r01",
+          "payload_ref": "r01",
+          "next": [
+            "r02a",
+            "r02b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "nodes": [
+        {
+          "id": "r02a",
+          "payload_ref": "r02a",
+          "next": [
+            "r03"
+          ]
+        },
+        {
+          "id": "r02b",
+          "payload_ref": "r02b",
+          "next": [
+            "r03"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "nodes": [
+        {
+          "id": "r03",
+          "payload_ref": "r03",
+          "next": [
+            "r04"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "nodes": [
+        {
+          "id": "r04",
+          "payload_ref": "r04",
+          "next": [
+            "r05"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "nodes": [
+        {
+          "id": "r05",
+          "payload_ref": "r05",
+          "next": [
+            "r06"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "nodes": [
+        {
+          "id": "r06",
+          "payload_ref": "r06",
+          "next": [
+            "r07a",
+            "r07b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "nodes": [
+        {
+          "id": "r07a",
+          "payload_ref": "r07a",
+          "next": [
+            "r08"
+          ]
+        },
+        {
+          "id": "r07b",
+          "payload_ref": "r07b",
+          "next": [
+            "r08"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "nodes": [
+        {
+          "id": "r08",
+          "payload_ref": "r08",
+          "next": [
+            "r09"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "nodes": [
+        {
+          "id": "r09",
+          "payload_ref": "r09",
+          "next": [
+            "r10"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "nodes": [
+        {
+          "id": "r10",
+          "payload_ref": "r10",
+          "next": [
+            "r11"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "nodes": [
+        {
+          "id": "r11",
+          "payload_ref": "r11",
+          "next": [
+            "r12"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "nodes": [
+        {
+          "id": "r12",
+          "payload_ref": "r12",
+          "next": []
+        }
+      ]
+    }
+  ],
+  "payloads": {
+    "r01": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "minion",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r02a": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "armored",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "armored",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r02b": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "ranged",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "pouncer",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -3,
+            0,
+            10
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            3,
+            0,
+            10
+          ]
+        }
+      ]
+    },
+    "r03": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "minion",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            -3,
+            0,
+            10
+          ]
+        }
+      ]
+    },
+    "r04": {
+      "node_type": "combat",
+      "kind": "elite",
+      "roster": [
+        {
+          "kind": "elite",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r07a": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "armored",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r07b": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "pitcher",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -3,
+            0,
+            10
+          ]
+        }
+      ]
+    },
+    "r08": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "armored",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "armored",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "pouncer",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r09": {
+      "node_type": "combat",
+      "kind": "elite",
+      "roster": [
+        {
+          "kind": "elite",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r10": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "armored",
+          "position": [
+            -4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -9
+          ]
+        },
+        {
+          "kind": "pitcher",
+          "position": [
+            -10,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            10,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "r12": {
+      "node_type": "combat",
+      "kind": "boss",
+      "roster": [
+        {
+          "kind": "boss",
+          "position": [
+            0,
+            0,
+            -10
+          ]
+        }
+      ]
+    },
+    "r05": {
+      "node_type": "service",
+      "kind": "shop",
+      "service": {
+        "type": "shop",
+        "area_id": "proposal-shop-r05",
+        "completion_rule": "explicit_owner_exit",
+        "optional_actions": true
+      }
+    },
+    "r06": {
+      "node_type": "service",
+      "kind": "training",
+      "service": {
+        "type": "training",
+        "area_id": "proposal-training-r06",
+        "completion_rule": "explicit_owner_exit",
+        "optional_actions": true
+      }
+    },
+    "r11": {
+      "node_type": "service",
+      "kind": "shop",
+      "service": {
+        "type": "shop",
+        "area_id": "proposal-shop-r11",
+        "completion_rule": "explicit_owner_exit",
+        "optional_actions": true
+      }
+    }
+  }
+}

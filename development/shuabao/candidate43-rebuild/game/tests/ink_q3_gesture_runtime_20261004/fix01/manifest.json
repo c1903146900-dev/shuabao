@@ -1,0 +1,68 @@
+{
+  "schema": "q3-gesture-parse-fix01-1",
+  "status": "SOURCE_ONLY_ACTUAL_ORIGINAL_PARSE_FAILURE_CONFIRMED",
+  "new_files": [
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/README.md",
+      "sha256": "6514c25f23b78982f10c7267ff6db1d2671cc031433baa22f260064ec3d15ace"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/actor_view_seam.gd",
+      "sha256": "a41a6a3e149950b9b3d7a40eb02de4ce644dc202b5fb2b99de52cb12c2570769"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/capture_sequence.gd",
+      "sha256": "32db1323981383a415a95e67a172929deb2bd5c57a4265c0a3ad781e53c87417"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/capture_sequence.tscn",
+      "sha256": "3579007f444a049c402deb6f8422df5ced16b354db283eca816bac305aa3fae8"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/hero_view.gd",
+      "sha256": "6ce09d2ea50d45f2fb2d8ec8a1dbf9c9759619eb1cf5055963b37e0018a1361c"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/import_pose_gate.gd",
+      "sha256": "98531ac9f6f97e84f80e598e5a35699b6909da9bb63fb03e9d1c18575d9d491b"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/indentation_delta.patch",
+      "sha256": "82d336925503c95be4009a26d0929d6ade6228b71721a84da2980ec1d7cb4656"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/source_inspection.json",
+      "sha256": "ff03724a497ca37e61f46fc3ee00a9b102e8a4e0f57bf2d82e433d61de764ebe"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/fix01/verify_source.py",
+      "sha256": "6b0e89b358c48c2065c43212c1bf5bda3faba8779f7b880a4733dc3dd93c866c"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/hero_view.gd",
+      "sha256": "f4ff477170accfb3fd99b630b98a6bc2a9901685eab83fb64e69fbc85b6186f1"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/actor_view_seam.gd",
+      "sha256": "48ad1d27d8d06156f6578f9c4ac2efc55dfd2db0859911d65aaccfc01ac24709"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/import_pose_gate.gd",
+      "sha256": "17f97f82164303c247005533ad41e89d38dfea327766911e44c166072ac908b0"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/capture_sequence.gd",
+      "sha256": "226e37d71fb06a031e4ce91be84bd51b9a4518a28a7e30fafa101fa066da5daa"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/capture_sequence.tscn",
+      "sha256": "fbbf9cea2ae9200982357e2971d25acdc3b0512074ed1417add1968caf4010bf"
+    },
+    {
+      "path": "tests/ink_q3_gesture_runtime_20261004/manifest.json",
+      "sha256": "231e788730a5730f552fb58b35fed0ecaa92bcd71971285042a91e947be48b1b"
+    }
+  ]
+}

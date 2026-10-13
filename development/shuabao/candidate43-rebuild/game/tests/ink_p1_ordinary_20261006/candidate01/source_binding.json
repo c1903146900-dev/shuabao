@@ -1,0 +1,51 @@
+{
+  "schema": "ink-p1-current-core-candidate01",
+  "status": "ACTUAL_GATE01_3_RED_REPAIR02_SOURCE_ONLY_NOT_RERUN",
+  "candidate_files": {
+    "tests/ink_p1_ordinary_20261006/candidate01/sim.gd": "285f6c2360cd003138fb48f733218d115811742b118e87f4aadb054fabfc19ac",
+    "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd": "dd0638002d9b6a06ebf2dd80ecd8a78025b734961a1728c8792d3f7821fdc48c",
+    "tests/ink_p1_ordinary_20261006/candidate01/README.md": "875f66c3ea8d14c3bd967ed0d704db4ab7ee56f91d4e63e97e5b7e3d9cc6664d",
+    "tests/ink_p1_ordinary_20261006/candidate01/source_origin.json": "1a76509a009618548ae0300bd44ffe1358204aa8c0d006511479a43ca6740f5d",
+    "tests/ink_p1_ordinary_20261006/candidate01/preimage_manifest.json": "81b355abb32fd2d0024981b6a899cf56fe34f4294b639519c1be32bd4a2be7c0",
+    "tests/ink_p1_ordinary_20261006/candidate01/core_checkpoint01.json": "bc93c3aa770f738b2c4e7649110123f5d08add094178742c5b8fa41237922a76",
+    "tests/ink_p1_ordinary_20261006/candidate01/finite_gate.gd": "242859abd622b4e968f3425673b991f630993067d48b32c939c3a5d4337400f2",
+    "tests/ink_p1_ordinary_20261006/candidate01/parse_gate.gd": "d60ed89e79c208c4a792c8bce171d1c75b87db72e85881cfb8be3b71dad5cb67",
+    "tests/ink_p1_ordinary_20261006/candidate01/stage_delta.py": "ad477002a182ed3551bfbdd222d0edb53fd028a409bdf2ed408e7ee34a8239c7",
+    "tests/ink_p1_ordinary_20261006/candidate01/verify_source.py": "a0d76e71736f1d6c3da974f788fdd30ee03bbe54386c8fbeeeb5f216181ff4dd",
+    "tests/ink_p1_ordinary_20261006/candidate01/GATE_SCOPE.md": "4a815ff94582c4e58af2ff131c0db832ea60e29b130b92b52f1032d13ec6d489",
+    "tests/ink_p1_ordinary_20261006/candidate01/core_checkpoint02.json": "e0f332e75351f75faf0fd1daa005b38ae19828722ebb47741c4a67c44434a5eb",
+    "tests/ink_p1_ordinary_20261006/candidate01/REPAIR02.md": "5e85fd7b1bcef32886d9ae15c907c0d64a408b634b7326eabc11dd81bbce5926",
+    "tests/ink_p1_ordinary_20261006/candidate01/checkpoint01_to_02.patch": "90ec62be0c5663bd8c6d466247ec9bde9aadab25877dc7ce0e0b465c68f7a8ba"
+  },
+  "parent_bindings": {
+    "tests/ink_e1_ordinary_20261005/candidate01/stage_receipt.json": "751e645059033cd4287bd01a0893e8bb013ce8d80e115a476a9afb76c69dd375",
+    "tests/ink_r1_ordinary_20261005/candidate01/source_binding.json": "56dac25470e45f9de8bd3c62667c1160a8af3aad02a2d59e14bf6ae220fb5456",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/source_binding.json": "cc0a3ef4fa909011a73f1a5acea55dd3427cead39ec6fdbc8d87a58356ce878b"
+  },
+  "extra_reused_sources": {
+    "tests/ink_p1_settlement_20261005/candidate03/p1_collector.gd": "762cf889fb57d3af52dc02dffdc314f894d30fd72780374c2987e07ff08daa89"
+  },
+  "required_groups": [
+    "current_chain_and_ranks",
+    "q1_endpoint_and_h02",
+    "q2_marker_and_lifetime",
+    "q2_distinct_targets_and_roots",
+    "q2_pause_and_resume",
+    "q2_scope_and_callbacks",
+    "actual_identity_and_once",
+    "q3_e1_r1_composition",
+    "ordinary_baseline_and_common"
+  ],
+  "production_promotion": false,
+  "known_source_review_risk": "Actual Q1 callback pause truncation preserved; checkpoint02 minimal cursor-entry repair not yet run",
+  "engine_invocations": 0,
+  "previous_binding": {
+    "path": "tests/ink_p1_ordinary_20261006/candidate01/preimage_gate01/source_binding.json",
+    "sha256": "ce7a1899f426a2fb55505bb68f0d6b61fe31bdb7e32bb124f7c408731c4be906"
+  },
+  "core_checkpoint": "core_checkpoint02.json",
+  "preserved_actual_gate": {
+    "path": "tests/ink_p1_ordinary_20261006/candidate01/preimage_gate01/MANIFEST.json",
+    "sha256": "8c6330a765a674c19e8c853cdcbe816965f808965dc8114def2c3b3e59d0a6d6"
+  }
+}

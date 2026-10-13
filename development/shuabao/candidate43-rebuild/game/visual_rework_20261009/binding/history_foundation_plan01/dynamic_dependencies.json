@@ -1,0 +1,9 @@
+{
+  "schema": "explicit-dynamic-dependencies-1",
+  "dependencies": {
+    "res://tests/ink_first_floor_user_route_20261005/runtime01/reward_table.json": "5ff699caeaf1d1085ccc4aa677562f8805f4a573d5a7db3388811d81e1a5b78d",
+    "res://tests/ink_first_floor_user_route_20261005/runtime01/rewards.csv": "6db7878df90b8bd642a1405c2b7f9279e9d45195f99173e1ee7d4a7272103895",
+    "res://tests/ink_first_floor_user_route_20261005/runtime01/validation_result.json": "59ea4e61954be976449380a944c9f9911064c1f80839bba87671fc179ad2630d"
+  },
+  "evidence": "dynamic_reward_restoration01.json; original reward receipt paired hashes verified; no numeric changes"
+}

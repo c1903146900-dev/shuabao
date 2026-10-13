@@ -1,0 +1,11 @@
+; Explicit ImageTexture runtime conversion; not editor cache.
+[remap]
+importer="texture"
+type="ImageTexture"
+path="res://runtime_converted_assets/hostile_textures/spark.res"
+[deps]
+source_file="res://assets/xuanlei/vfx/cuicheng/spark.png"
+dest_files=["res://runtime_converted_assets/hostile_textures/spark.res"]
+[params]
+process/fix_alpha_border=true
+mipmaps/generate=false

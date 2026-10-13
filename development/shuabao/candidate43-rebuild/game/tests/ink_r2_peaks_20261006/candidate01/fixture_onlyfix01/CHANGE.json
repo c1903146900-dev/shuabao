@@ -1,0 +1,35 @@
+{
+  "schema": "ink-r2-fixture-onlyfix01-before-after-1",
+  "original_actual_directory": "/workspace/scratch/73ebae91a474/loot_recovery_1041/r2_peaks01_gate01_actual",
+  "original_parse": "FAIL",
+  "original_finite": "NOT_RUN",
+  "fixed_parse": "NOT_RUN",
+  "fixed_finite": "NOT_RUN",
+  "before": {
+    "finite_gate.gd": "517f938bf098da3dedd507c8b6b0690785f19817fbdfffe5751c445af7705855",
+    "source_binding.json": "f0ce732d4fe1cc966464738de0fb4fd7b51a11729662f96200deebab51aa8490"
+  },
+  "after": {
+    "finite_gate.gd": "01fb6015544d9fda58e8dfbaa58bcd52d28101e294f1444e4cb51e9ab6c9e724"
+  },
+  "unchanged_mechanism_sha256": {
+    "sim.gd": "416856e5b362cceccdff88743c531f05152b7b8f0cecf07812750aa75facb06b",
+    "tuning.gd": "6a034458fdbd876918851b18bc5581080b0c51bc0ce4d9e2063ede87132b09a6",
+    "peak_geometry.gd": "134a7cea49908c19b54783b5606ab17b06c0c753f61c4df4a0267f3fcacc090f"
+  },
+  "evidence_sha256": {
+    "evidence_before/COMPLETED.json": "dff77b1e66c477bcddb826e55b85e9380ed752fe9399d2433a11775976421358",
+    "evidence_before/parse_exit.json": "35e3f2c8026c4a020cfc1d312a39331c1c5457083a8a3fe330c91f4921acdd45",
+    "evidence_before/strict_result.json": "eb5e2d15cebc809853f25e2db40913ee64f64e9bd27a40f3636c6c57bd671d31",
+    "evidence_before/parse_raw.log": "6e3f333cf760169146a6bf8128b53fd2140ab338f8ab20d0f1781b4eefdbaa4b"
+  },
+  "changes": [
+    "Expand the three retirement match cases into separate multiline blocks.",
+    "Dedent the connect closing parenthesis onto its own line after the match.",
+    "Apply the same standalone closing-parenthesis form to both other multiline signal lambdas.",
+    "Bind the unchanged four-group fixture to this new isolated source binding."
+  ],
+  "assertions_removed": 0,
+  "required_groups_unchanged": true,
+  "ordinary_scope_changed": false
+}

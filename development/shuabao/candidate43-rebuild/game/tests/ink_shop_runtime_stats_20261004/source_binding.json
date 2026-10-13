@@ -1,0 +1,259 @@
+{
+  "schema": 1,
+  "scope": "source-only base equipment runtime candidate",
+  "upstream_bindings": {
+    "tests/ink_shop_ledger_bridge_20261004/fix01/source_binding.json": "97f9b3a2f399125c49e1aa88e9a12034a175e0b271543986d928db0f9c030bcc",
+    "tests/ink_q1_foundation_20261004/revision02/source_binding.json": "f927e5d7c75cb6b2e660310a85dbc1c5dad0a68ad724faa0c4cf7a081085bf1a"
+  },
+  "runtime_map": {
+    "data/combat/tuning.gd": {
+      "source": "data/combat/tuning.gd",
+      "sha256": "15a9ffeafdafa024a4dacaaed6fc9c1c8785b66d8ced202e2916ae8658b0a06f"
+    },
+    "data/final_design/catalog.gd": {
+      "source": "data/final_design/catalog.gd",
+      "sha256": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9"
+    },
+    "data/final_design/catalog.json": {
+      "source": "data/final_design/catalog.json",
+      "sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3"
+    },
+    "data/final_design/common_hex_hooks.json": {
+      "source": "data/final_design/common_hex_hooks.json",
+      "sha256": "d20052456f280347a07560b120377108588b3f34a2c70a91b3ecddda67ea867a"
+    },
+    "data/final_design/effective_overrides.json": {
+      "source": "data/final_design/effective_overrides.json",
+      "sha256": "bfaed238edfd723a3d4aa8d363acfe8e46dab14feec64388666fde457a80a72d"
+    },
+    "data/final_design/effective_rule_resolutions.json": {
+      "source": "data/final_design/effective_rule_resolutions.json",
+      "sha256": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53"
+    },
+    "data/final_design/enhancement_fields.json": {
+      "source": "data/final_design/enhancement_fields.json",
+      "sha256": "3c0ca6283ad7c3c6c9e16ca3c7143280e74d0d3d967692bece86c709f49e5bb5"
+    },
+    "data/final_design/equipment_tasks.json": {
+      "source": "data/final_design/equipment_tasks.json",
+      "sha256": "006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea"
+    },
+    "data/final_design/event_adapter.gd": {
+      "source": "data/final_design/event_adapter.gd",
+      "sha256": "26cabe7542bc0480c643d8b4e9eeda474e48d798f0135df97393c4cc88e96c4f"
+    },
+    "data/final_design/replay_segments.json": {
+      "source": "data/final_design/replay_segments.json",
+      "sha256": "25e9a0fd4f45f221fbaee040c4a66e797208e35aeaa214ecbf6bba37a2c0b51d"
+    },
+    "data/final_design/runtime_rules.json": {
+      "source": "data/final_design/runtime_rules.json",
+      "sha256": "bbd12695b85288a0c242e21b1f27ee2eed86954cc95cc92d65dd3901f04009bb"
+    },
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": {
+      "source": "data/final_design/sources/heroes_balance_values_v03(1).xlsx",
+      "sha256": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894"
+    },
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": {
+      "source": "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx",
+      "sha256": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb"
+    },
+    "data/progression/prototype/catalog.json": {
+      "source": "data/progression/prototype/catalog.json",
+      "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28"
+    },
+    "scripts/actors/hero_model_core.gd": {
+      "source": "scripts/actors/hero_model_core.gd",
+      "sha256": "6e215466428cc7569f7b734d99dcb9bb5aaca04aa5bcad6b469e41f53a805b48"
+    },
+    "scripts/combat/common_hex_bridge.gd": {
+      "source": "scripts/combat/common_hex_bridge.gd",
+      "sha256": "3bf945cf040051295e496617cef7c52bec35c7c0ae5fab73d9234961c75b88dd"
+    },
+    "scripts/combat/common_hex_runtime.gd": {
+      "source": "scripts/combat/common_hex_runtime.gd",
+      "sha256": "df1ab138c5c3dec7ccf0e0e548e10881d5fa9b9300f9b0778cdab50f5361ac4c"
+    },
+    "scripts/combat/enemy_director.gd": {
+      "source": "scripts/combat/enemy_director.gd",
+      "sha256": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52"
+    },
+    "scripts/combat/hero_combat_core.gd": {
+      "source": "scripts/combat/hero_combat_core.gd",
+      "sha256": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b"
+    },
+    "scripts/combat/loadout_fixture.gd": {
+      "source": "scripts/combat/loadout_fixture.gd",
+      "sha256": "4702e3777e3dda2f5535fbf015ede0ed575c2109f7b84714c5317c70fe4adb26"
+    },
+    "scripts/combat/swept_rectangle_geometry.gd": {
+      "source": "scripts/combat/swept_rectangle_geometry.gd",
+      "sha256": "d6dc1e04335f4935bab9f11eb070d1e6b249517f2977bc54600ddba66b6d7e05"
+    },
+    "scripts/combat/world_clock.gd": {
+      "source": "scripts/combat/world_clock.gd",
+      "sha256": "9c0cfebcc981b2f2d193bd7d3a3bc13867ab0cb61df9ebed9bdb370d573cd77d"
+    },
+    "scripts/integration/run_model.gd": {
+      "source": "scripts/integration/run_model.gd",
+      "sha256": "998895d71819da0d8ac792007cfd94b0710cb680c9c87167aa1a8769dc717818"
+    },
+    "scripts/progression/catalog_model.gd": {
+      "source": "scripts/progression/catalog_model.gd",
+      "sha256": "a7fa622cfd77a79fd0f8bf4e0199491a95616d4f6bb9ad4a52d52419c43bea64"
+    },
+    "scripts/progression/catalog_validation.gd": {
+      "source": "scripts/progression/catalog_validation.gd",
+      "sha256": "138a6bac0ccfb23897440ef50ffe18c8d0efff68fdcb81228680ad1f493fa978"
+    },
+    "scripts/progression/model.gd": {
+      "source": "scripts/progression/model.gd",
+      "sha256": "c7707af3ae8c411ea31e78a19ace74545d1f5850068cfa5b07d79e057da03c68"
+    },
+    "tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json": {
+      "source": "tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json",
+      "sha256": "cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f"
+    },
+    "tests/equipment_editable_tables_20261004/proof/one_value_change_converted/equipment_numeric_config.json": {
+      "source": "tests/equipment_editable_tables_20261004/proof/one_value_change_converted/equipment_numeric_config.json",
+      "sha256": "7ca493efebe261d93b86d978eb919f17119b46edb01bc696419dc9e6a414a536"
+    },
+    "tests/equipment_shop_transactions_20261004/fixtures/source_prices.json": {
+      "source": "tests/equipment_shop_transactions_20261004/fixtures/source_prices.json",
+      "sha256": "56703090c0e45516d18ff5808afb514de5032ffa46d23179abe400d91e9f6ba1"
+    },
+    "tests/equipment_shop_transactions_20261004/numeric_table_adapter.gd": {
+      "source": "tests/equipment_shop_transactions_20261004/numeric_table_adapter.gd",
+      "sha256": "e5af2e38509c37b2ce0ab8a76aa975a8ba485cc6123aa689eec7ee4d1d1d67ac"
+    },
+    "tests/equipment_shop_transactions_20261004/shop_visit_model.gd": {
+      "source": "tests/equipment_shop_transactions_20261004/shop_visit_model.gd",
+      "sha256": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52"
+    },
+    "tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json": {
+      "source": "tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json",
+      "sha256": "b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369"
+    },
+    "tests/ink_first_floor_flow_20261004/ink_catalog.gd": {
+      "source": "tests/ink_first_floor_flow_20261004/ink_catalog.gd",
+      "sha256": "1f97a65c518e8873bada661937f3e42bf7a770fcfad59b586ac63c3dc35a5bb8"
+    },
+    "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd": {
+      "source": "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd",
+      "sha256": "21fa0c61f0279d557e13e9863a312ab50cfe9233090bb8fbac9bbb920e9532cc"
+    },
+    "tests/ink_first_floor_flow_20261004/ink_run_model.gd": {
+      "source": "tests/ink_first_floor_flow_20261004/ink_run_model.gd",
+      "sha256": "50fc161192fdb5c60eee0e92c26a87f62c13f64cb216f3e686e74cce2b89482f"
+    },
+    "tests/ink_first_floor_flow_20261004/shop_table.gd": {
+      "source": "tests/ink_first_floor_flow_20261004/shop_table.gd",
+      "sha256": "39703c673d379c21715fb074477886dc6a85306f053c40c4c2bd3f2b2bff245d"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/data/runtime_tuning.json": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/data/runtime_tuning.json",
+      "sha256": "e07931d0af791839a10cea42e154e4e970efe03705379e2be124aa9f262bfa5c"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_control.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/run_control.gd",
+      "sha256": "a670e130a80a1724d65a8ba489e84dbfa9c155e858e8df87e627e85a6e6e05a3"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_original_control_probe.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/run_original_control_probe.gd",
+      "sha256": "f73f7389f72231166e64b24316724141a1a8485784084466fadd3d992df4454b"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_regression.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/run_regression.gd",
+      "sha256": "2345f54166dcb68d52af1ac3f0b00e224d529cd1e9c06187625ad312e9e632c5"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd",
+      "sha256": "2980ce2a7bc8585199b949f1cf2974b68eeac05e314093293c192551d72d9285"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "sha256": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd",
+      "sha256": "29c25fb50857005db11d3804c8a306ccfb2f4ef61fb29c092ddaa80386299cdb"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd",
+      "sha256": "ca9770bf80e45f5776adfb26ee326a9e9aad9218acda729ea94a4b4f6497f078"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd",
+      "sha256": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e"
+    },
+    "tests/ink_shop_ledger_bridge_20261004/commerce_projection.gd": {
+      "source": "tests/ink_shop_ledger_bridge_20261004/commerce_projection.gd",
+      "sha256": "6491853cb7825b7b6fe54f035b1f4c07dd37010b4d83c29f3bb0d569c65bfd29"
+    },
+    "tests/ink_shop_ledger_bridge_20261004/engine_contract_gate.gd": {
+      "source": "tests/ink_shop_ledger_bridge_20261004/fix01/engine_contract_gate.gd",
+      "sha256": "a272d7066aac9a98d5b6fd53620a94da2e21d3bb4f0df1a0194460ccf438fc65"
+    },
+    "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd": {
+      "source": "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd",
+      "sha256": "9e4a06c7915bfcc842402c4c9b6e26f4efa88e45582a678dd7bd6304828c7ff7"
+    },
+    "tests/ink_shop_ledger_bridge_20261004/ink_shop_ledger_bridge.gd": {
+      "source": "tests/ink_shop_ledger_bridge_20261004/ink_shop_ledger_bridge.gd",
+      "sha256": "0642d9e21705e8d7d997cd1db3b08762443bafd8f8e95e3c17d0831cad36f7d8"
+    },
+    "tests/ink_shop_ledger_bridge_20261004/ink_shop_run_model.gd": {
+      "source": "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd",
+      "sha256": "9e4a06c7915bfcc842402c4c9b6e26f4efa88e45582a678dd7bd6304828c7ff7"
+    },
+    "tests/ink_shop_runtime_stats_20261004/base_stat_adapter.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/base_stat_adapter.gd",
+      "sha256": "f7ccc58e55cd13c1786cb772d9292073f24c6aa5c3b3f05f7cee7327ed71d7e0"
+    },
+    "tests/ink_shop_runtime_stats_20261004/engine_contract_gate.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/engine_contract_gate.gd",
+      "sha256": "8a04f34c7e8399aab10a8d14ec878cf56831abc32f0c721519c9eddcb69dfbb4"
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd",
+      "sha256": "f417f81e2fcb32c06d1581a5cf29013adb0134932bebb21547b530dfaad05f12"
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_consumer.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/ink_stat_consumer.gd",
+      "sha256": "0bdff7f8d6ef1c47078c960ae6965f1c586d8d55bae33b9885be65621d2ce3a8"
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "sha256": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac"
+    }
+  },
+  "files": {
+    "data/progression/prototype/catalog.json": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28",
+    "docs/equipment_source_20261004/correction_0959/equipment_system_extracted.json": "fc8cd1fc1a739ff1cd6704f8c80bec210f0daddf4c84a8a6fdd2509543a79c76",
+    "docs/equipment_source_20261004/correction_0959/extraction_report.md": "68aee21e3a677256e259afd1ef024199fc10df4fa070815e911093abcdf18d6d",
+    "docs/equipment_source_20261004/source_text.txt": "cba4ae7501898794ca7a2c9e1f644ba33c4ef1aa77c68bf52fb8108741de11d5",
+    "docs/equipment_source_20261004/游戏装备系统_v0.2_重新发送(1).docx": "8d938390725bdc07387ba2999ca77487cfcec15751d4ba396b9df69adfd10045",
+    "docs/source_decisions/20261004-equipment-table-crosscheck.md": "b2e6de3be68efabb0740cff1d4c3b2cc5403e450004907ed046ad91dbdf35300",
+    "docs/source_decisions/20261004-shop-visit-undo-consumable-slot-override.md": "081bbb2a3c74d7db85865c28b1229228dfad2438845661f191bec4334c23e2f4",
+    "scripts/integration/consumers.gd": "858b13999c73b3dda35c10028ff1128926cd73bc120c2e4c2646aba9ccd55ade",
+    "scripts/progression/catalog_validation.gd": "138a6bac0ccfb23897440ef50ffe18c8d0efff68fdcb81228680ad1f493fa978",
+    "tests/ink_q1_foundation_20261004/revision02/source_binding.json": "f927e5d7c75cb6b2e660310a85dbc1c5dad0a68ad724faa0c4cf7a081085bf1a",
+    "tests/ink_shop_ledger_bridge_20261004/fix01/source_binding.json": "97f9b3a2f399125c49e1aa88e9a12034a175e0b271543986d928db0f9c030bcc",
+    "tests/ink_shop_runtime_stats_20261004/.gdignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/ink_shop_runtime_stats_20261004/README.md": "3f633a0fd395b7da43ebf7611fa7ef2565a64133cdc91bf9a83e0eba423cc1c9",
+    "tests/ink_shop_runtime_stats_20261004/base_stat_adapter.gd": "f7ccc58e55cd13c1786cb772d9292073f24c6aa5c3b3f05f7cee7327ed71d7e0",
+    "tests/ink_shop_runtime_stats_20261004/engine_contract_gate.gd": "8a04f34c7e8399aab10a8d14ec878cf56831abc32f0c721519c9eddcb69dfbb4",
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd": "f417f81e2fcb32c06d1581a5cf29013adb0134932bebb21547b530dfaad05f12",
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_consumer.gd": "0bdff7f8d6ef1c47078c960ae6965f1c586d8d55bae33b9885be65621d2ce3a8",
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+    "tests/ink_shop_runtime_stats_20261004/stage_gate.py": "7ef01785aadf1431c4ea681c127b6c88b284a8f746eff3642c1a0d7016868434",
+    "tests/ink_shop_runtime_stats_20261004/stat_contract.json": "a1cb6e73024bca22afa289c779ab8d7da79630e89bbb432f33c06965a0eea56e",
+    "tests/ink_shop_runtime_stats_20261004/verify_source.py": "6e5a6a34cfefe3de8f19068ac2f24ba748b8b751796ea0bc44126823394a1bcb"
+  },
+  "engine_invocations": 0,
+  "production_shared_edits": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "beacon-actor-readability-1",
+  "parent_source_binding_sha256": "7050143c7f3720c6e323722cf3e7fe87a67a35659e9eb0aba8ebe880e6c0ade5",
+  "changes": {
+    "visual_rework_20261009/controller.gd": {
+      "before": "166ef0932f7914b020aacfeaf9d71e2560634a0485658335b1741b194c89cd92",
+      "after": "8830631bdf2e9ad227ac867979a01a6fd16a1b9b5ff13c6e993364f6ae9bac47"
+    },
+    "visual_rework_20261009/views/q2_beacon.gd": {
+      "before": "37b312122609d354f3668f663b86947146564c45c6ccc71502b58796d5ab5ed6",
+      "after": "7beca61f605c929743132dbcf60e99e0fd6272b94fea212c28480ce1885916cc"
+    },
+    "visual_rework_20261009/views/q2_beacon_stone.gdshader": {
+      "before": "c9c9d417997dd229e55a0889ccac01808d3e58712ea64e02a01ff705163f3073",
+      "after": "9b19c2844a230f409a00ec835c09a5dd06fab40779cc398b4540c2e5c670eda2"
+    },
+    "visual_rework_20261009/views/q2_source_river_view.gd": {
+      "before": "85790713d68f5058bf107f116cbb4875a4eca872f0d7ce76535b4049032ec790",
+      "after": "90637eb7e66607b83ed03519008bde7c1d8fd8e4d6d407266910bd62a60bffb8"
+    }
+  },
+  "new_files": {
+    "visual_rework_20261009/views/q2_beacon_occlusion.gd": "576acc36a5bc0a551141c70b87fb90eb1d7901b29c779f068fdc3f4e1cda450b"
+  },
+  "scope": "stone alpha only when camera rays to living actor overlap authored stone bounds",
+  "gameplay_mutation": false,
+  "river_smoke_sun_changed": false,
+  "danger_overlay_implemented": false
+}

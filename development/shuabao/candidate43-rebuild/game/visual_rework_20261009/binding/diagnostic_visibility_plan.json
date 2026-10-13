@@ -1,0 +1,13 @@
+{
+  "schema": "h02-existing-F1-visibility-successor-1",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "7e2b89062237ab9935df5038eeb91f014ad9b8206acda2f640cae5c6d95f66d1",
+      "after": "f3e240a566fb81cbdac9949dd705e1fcdc0823a646d6a04d68b9cadd70a4a60d"
+    }
+  },
+  "preserved_ancestor": "res://tests/ink_initial_vortex_host_20261004/host.gd",
+  "preserved_ancestor_sha256": "4f1c61f48c818d85458574c639570034e07e1a9f8cca7d955f11a08413bd7829",
+  "scope": "Only H02 diagnostic Label and backdrop CanvasItems follow inherited diagnostic; no presenter/input/gameplay changes",
+  "default_diagnostic": false
+}

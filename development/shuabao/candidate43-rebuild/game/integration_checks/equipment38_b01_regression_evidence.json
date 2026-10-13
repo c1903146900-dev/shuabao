@@ -1,0 +1,32 @@
+{
+  "original_sha256": "d169a463bd60b4ff447b0a9badeab72414287571ede38ee648d9c9204e75bf78",
+  "after_sha256": "1a5288d1114ed3dad688a88999141ce5c80132d4cfa9f50567d8a9dd269eda63",
+  "changes": [
+    [
+      "[B01_MODEL, DISTANCE_MODEL_PATH,",
+      "[\"res://equipment_basic_cycle_20261009/model.gd\", \"res://equipment_elite_damage_20261009/model.gd\", B01_MODEL, DISTANCE_MODEL_PATH,"
+    ],
+    [
+      "f.session.ledger.model.get_script().resource_path == B01_MODEL",
+      "f.session.ledger.model.get_script().resource_path == \"res://equipment_basic_cycle_20261009/model.gd\""
+    ],
+    [
+      "model.runtime_stat_definitions.size() == prior.definitions.size() + 1",
+      "model.runtime_stat_definitions.size() == prior.definitions.size() + 3"
+    ],
+    [
+      "only one new runtime definition",
+      "exact B01/G06/B04 additions to prior35"
+    ],
+    [
+      "supported == 36 and model.snapshot().content_profile == \"ordinary_equipment36_potions3\"",
+      "supported == 38 and model.snapshot().content_profile == \"ordinary_equipment38_potions3\""
+    ],
+    [
+      "exact supported36 and truthful profile",
+      "exact supported38 and truthful profile"
+    ]
+  ],
+  "other_logic_identical": true,
+  "engine_run": false
+}

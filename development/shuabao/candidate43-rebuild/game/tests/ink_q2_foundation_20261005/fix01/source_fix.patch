@@ -1,0 +1,482 @@
+--- tests/ink_q2_foundation_20261005/ink_q2_sim.gd
++++ tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd
+@@ -1,6 +1,6 @@
+ extends "res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd"
+ ## Isolated Q2/H03/H04 source candidate. No ordinary-host capability promotion.
+-const RiverGeometry = preload("res://tests/ink_q2_foundation_20261005/river_geometry.gd")
++const RiverGeometry = preload("res://tests/ink_q2_foundation_20261005/fix01/river_geometry.gd")
+ const Q2_DECISIONS_PATH = "res://docs/source_decisions/20261005-ink-six-resolutions.json"
+ const EXPECTED_Q2_DECISIONS_HASH = "62cbd6c20607748cb4c426abd42d4656d6de1ab922fda179102bd8b8afdf6634"
+ var q2_decisions_hash: String = ""
+@@ -14,6 +14,13 @@
+ var _q2_tick_active: bool = false
+ var _q2_move_depth: int = 0
+ var _q2_motion_traces: Array = []
++var _q2_deferred_contacts: Array = []
++var _q2_pull_context: Dictionary = {}
++var _q2_enemy_context: Dictionary = {}
++var _q2_enemy_hits: Array = []
++var _q2_last_enemy_hit: Dictionary = {}
++var _q2_motion_resume: Dictionary = {}
++var _q2_resume_from: float = -1.0
+ 
+ func _init() -> void:
+  super._init()
+@@ -69,6 +76,8 @@
+   emit_event("ink_q2_corner_placed", _q2_pending_public())
+   return {"accepted":true, "consumed":true, "cast_id":preview.cast_id}
+  if action in ["q2_first", "q2_second"]:
++  var reason: String = _q2_input_reason()
++  if not reason.is_empty(): return {"accepted":false, "reason":reason}
+   if action == "q2_first" and not ink_q2_pending.is_empty(): return {"accepted":false, "reason":"marker_already_pending"}
+   if action == "q2_second" and ink_q2_pending.is_empty(): return {"accepted":false, "reason":"first_marker_required"}
+   action = "q"
+@@ -118,8 +127,10 @@
+  if _q2_current(state): _settle_motion_interval(_enemy_motion_snapshot(), hero_time, hero_time)
+  return {"accepted":true, "phase":"river", "river_id":state.river_id, "release_completed":true}
+ 
++func _q2_valid(state: Dictionary) -> bool:
++ return not state.is_empty() and effect_is_current(state) and not bool(state.get("retired", false)) and not hero.dead
+ func _q2_current(state: Dictionary) -> bool:
+- return not state.is_empty() and effect_is_current(state) and not bool(state.get("retired", false)) and not hero.dead
++ return not paused and _q2_valid(state)
+ func _q2_target_current(enemy: Dictionary, state: Dictionary) -> bool:
+  return _q2_current(state) and not enemy.is_empty() and not bool(enemy.dead) and enemy.state != "spawn" and is_same(enemy, enemy_by_id(str(enemy.actor_id))) and int(enemy.generation) == encounter_generation and str(enemy.room_id) == room_id
+ func _q2_impact_snapshot() -> Dictionary:
+@@ -128,10 +139,22 @@
+  var mode: String = "horde" if live.size() >= int(common.runtime.parameter("g22", 1)) else "duel" if live.size() == 1 and not ordinary(live[0]) else "none"
+  return {"g22_mode_snapshot":mode, "impact_penetration":float(hero.stats.penetration), "impact_lifesteal_rate":hero.lifesteal()}
+ func _q2_birth_contacts(state: Dictionary) -> void:
++ var contacts: Array = []
+  var impact: Dictionary = _q2_impact_snapshot()
+  for enemy in enemies.duplicate():
+-  if not _q2_current(state): return
+-  if _q2_target_current(enemy, state) and RiverGeometry.overlaps(enemy.position, enemy.radius, state.path, state.width): _q2_damage(state, enemy, hero_time, "river", 0, enemy.position, impact)
++  if _q2_target_current(enemy, state) and RiverGeometry.overlaps(enemy.position, enemy.radius, state.path, state.width):
++   contacts.append({"state":state, "enemy":enemy, "time":hero_time, "kind":"river", "tick":0, "position":enemy.position, "impact":impact})
++ _q2_dispatch_contacts(contacts)
++func _q2_dispatch_contacts(contacts: Array) -> void:
++ var scope: Dictionary = _ink_scope()
++ while not contacts.is_empty():
++  if not _ink_scope_current(scope): return
++  if paused:
++   _q2_deferred_contacts.append_array(contacts)
++   return
++  var hit: Dictionary = contacts.pop_front()
++  if not _q2_current(hit.state): continue
++  _q2_damage(hit.state, hit.enemy, hit.time, hit.kind, hit.tick, hit.position, _q2_hit_impact(hit))
+ func _q2_damage(state: Dictionary, enemy: Dictionary, at: float, kind: String, tick: int, position: Vector3, impact: Dictionary) -> void:
+  if not _q2_target_current(enemy, state): return
+  var id: String = str(enemy.actor_id)
+@@ -142,7 +165,7 @@
+  if not claim_hit(int(state.cast_id), id, segment): return
+  var effect_id: String = str(state.river_id) + ":" + segment + ":" + id
+  var receipt: Dictionary = {"river_id":state.river_id, "cast_id":state.cast_id, "generation":state.generation, "room_id":state.room_id, "target_id":id, "kind":kind, "tick":tick, "source_time":at, "target_position":position, "effect_id":effect_id}
+- var metadata: Dictionary = {"effect_id":effect_id, "generation":state.generation, "room_id":state.room_id, "position":position, "active_skill":true, "basic_attack":false, "area":true, "direct":kind == "river", "hex_generated":kind != "river", "q2_receipt":receipt}
++ var metadata: Dictionary = {"effect_id":effect_id, "generation":state.generation, "room_id":state.room_id, "position":RiverGeometry.closest_point(position, state.path) if kind == "river" else state.path.back(), "active_skill":true, "basic_attack":false, "area":true, "direct":kind == "river", "hex_generated":kind != "river", "q2_receipt":receipt}
+  if kind == "river": metadata["replay_segment"] = {"target_mode":"bound", "segment_id":"realized_river_crossing_damage", "relative_time":at - float(state.born_at)}
+  metadata.merge(impact, false)
+  damage_enemy(enemy, float(state.damage if kind == "river" else state.sunset_damage), "q2" if kind == "river" else "hex_yanguizhou_h04", int(state.cast_id), false, false, metadata)
+@@ -156,12 +179,29 @@
+  emit_event("ink_q2_crossing" if receipt.kind == "river" else "ink_h04_contact", receipt)
+ 
+ func _fixed_step(real_dt: float) -> void:
++ # A callback can pause partway through local settlement after the one shared
++ # clock already advanced. Resume exactly that remainder before a new world
++ # step; never replay AI/common/RNG or discard already-admitted simulation time.
++ if not _q2_motion_resume.is_empty() and not paused:
++  var resume_scope: Dictionary = _ink_scope()
++  var resume: Dictionary = _q2_motion_resume
++  _q2_motion_resume = {}; _q2_resume_from = float(resume.cursor)
++  _settle_motion_interval(resume.before, resume.start, resume.end)
++  if not _ink_scope_current(resume_scope): return
++  if paused:
++   real_accumulator += real_dt
++   return
++  _q2_settle(resume.before, resume.start, resume.end)
++  if not _ink_scope_current(resume_scope): return
++  if paused:
++   real_accumulator += real_dt
++   return
+  var scope: Dictionary = _ink_scope()
+  var before: Dictionary = _enemy_motion_snapshot()
+  _q2_tick_start = hero_time; _q2_tick_active = true; _q2_motion_traces.clear()
+  super._fixed_step(real_dt) # Exactly one shared clock/AI/common/RNG step.
+  _q2_tick_active = false
+- if not _ink_scope_current(scope): return
++ if not _ink_scope_current(scope) or paused: return
+  _q2_settle(before, _q2_tick_start, hero_time)
+  if not _ink_scope_current(scope): return
+  if not ink_q2_pending.is_empty() and hero_time >= float(ink_q2_pending.expires_at) - TIME_EPS:
+@@ -173,29 +213,79 @@
+   if effect_is_current(pending): finish_cast(int(pending.cast_id))
+  if _ink_scope_current(scope): _check_victory()
+ 
+-func _q2_record_motion(enemy: Dictionary, origin: Vector3) -> void:
+- if _q2_tick_active and _q2_move_depth == 0 and origin.distance_squared_to(enemy.position) > Geometry.EPS * Geometry.EPS:
+-  _q2_motion_traces.append({"enemy":enemy, "from":origin, "to":enemy.position})
++func _q2_record_motion(enemy: Dictionary, origin: Vector3, destination: Vector3, begin: float = -1.0, end: float = -1.0) -> void:
++ if _q2_tick_active and origin.distance_squared_to(destination) > Geometry.EPS * Geometry.EPS:
++  _q2_motion_traces.append({"enemy":enemy, "from":origin, "to":destination, "start":_q2_tick_start if begin < 0.0 else begin, "end":hero_time if end < 0.0 else end})
+ func _step_pull(enemy: Dictionary, dt: float) -> void:
+- var origin: Vector3 = enemy.position
+- _q2_move_depth += 1; super._step_pull(enemy, dt); _q2_move_depth -= 1
+- _q2_record_motion(enemy, origin)
++ var previous: Dictionary = _q2_pull_context
++ _q2_pull_context = {"enemy":enemy, "cursor":enemy.position}
++ super._step_pull(enemy, dt)
++ _q2_record_motion(enemy, _q2_pull_context.cursor, enemy.position)
++ _q2_pull_context = previous
+ func _step_push(enemy: Dictionary, dt: float) -> void:
+  var origin: Vector3 = enemy.position
+- _q2_move_depth += 1; super._step_push(enemy, dt); _q2_move_depth -= 1
+- _q2_record_motion(enemy, origin)
++ super._step_push(enemy, dt)
++ _q2_record_motion(enemy, origin, enemy.position)
+ func _step_enemy(enemy: Dictionary, dt: float) -> void:
+  var origin: Vector3 = enemy.position
+- _q2_move_depth += 1; super._step_enemy(enemy, dt); _q2_move_depth -= 1
+- _q2_record_motion(enemy, origin)
++ var previous: Dictionary = _q2_enemy_context
++ _q2_enemy_context = {"enemy":enemy, "origin":origin, "state":enemy.state, "timer":enemy.timer, "dt":dt}
++ _q2_last_enemy_hit = {}
++ super._step_enemy(enemy, dt)
++ _q2_enemy_context = previous; _q2_last_enemy_hit = {}
++ _q2_record_motion(enemy, origin, enemy.position)
++
++func damage_hero(amount: float, direction: Vector3 = Vector3.ZERO, control: float = 0.0, is_true: bool = false, mandatory: bool = false, metadata: Dictionary = {}) -> void:
++ if _q2_tick_active and not _q2_enemy_context.is_empty() and (not ink_rivers.is_empty() or not _q2_enemy_hits.is_empty()):
++  var enemy: Dictionary = _q2_enemy_context.enemy
++  var fraction: float = 1.0
++  if _q2_enemy_context.state == "pounce":
++   var origin: Vector3 = _q2_enemy_context.origin
++   var offset: Vector3 = Geometry.ground(origin - hero.position)
++   var motion: Vector3 = Geometry.ground(Vector3(enemy.position) - origin)
++   fraction = Geometry._circle_entry(Vector2(offset.x, offset.z), Vector2(motion.x, motion.z), Vector2.ZERO, float(enemy.radius) + enemy_director.HERO_RADIUS)
++   if not is_finite(fraction): fraction = 1.0
++  elif _q2_enemy_context.state == "warning":
++   fraction = clampf(float(_q2_enemy_context.timer) / maxf(TIME_EPS, float(_q2_enemy_context.dt)), 0.0, 1.0)
++  var hit: Dictionary = {"kind":"enemy_hit", "enemy":enemy, "time":lerpf(_q2_tick_start, hero_time, fraction), "amount":amount, "direction":direction, "control":control, "is_true":is_true, "mandatory":mandatory, "metadata":metadata.duplicate(true), "generation":encounter_generation, "room_id":room_id, "impacts":[]}
++  _q2_enemy_hits.append(hit); _q2_last_enemy_hit = hit
++  return
++ super.damage_hero(amount, direction, control, is_true, mandatory, metadata)
++
++func emit_event(kind: String, data: Dictionary = {}) -> void:
++ # Keep the original AI's impact event tied to its actual damage transaction.
++ # If an earlier river/projectile kills the attacker, no false hit is emitted.
++ if kind == "enemy_impact" and not _q2_enemy_context.is_empty() and not _q2_last_enemy_hit.is_empty() and str(data.get("actor_id", "")) == str(_q2_enemy_context.enemy.actor_id):
++  _q2_last_enemy_hit.impacts.append({"kind":kind, "data":data.duplicate(true)})
++  return
++ super.emit_event(kind, data)
++
++func _q2_enemy_hit_current(hit: Dictionary) -> bool:
++ return phase == "combat" and int(hit.generation) == encounter_generation and str(hit.room_id) == room_id and not hero.dead and not bool(hit.enemy.dead) and is_same(hit.enemy, enemy_by_id(str(hit.enemy.actor_id)))
++func _q2_deliver_enemy_hit(hit: Dictionary) -> void:
++ if paused or not _q2_enemy_hit_current(hit): return
++ var scope: Dictionary = _ink_scope()
++ super.damage_hero(hit.amount, hit.direction, hit.control, hit.is_true, hit.mandatory, hit.metadata)
++ if not _ink_scope_current(scope): return
++ for impact in hit.impacts:
++  super.emit_event(impact.kind, impact.data)
++  if not _ink_scope_current(scope): return
++
+ func _h02_move_target(vortex: Dictionary, enemy: Dictionary, from_time: float, to_time: float, hold_for_ai: bool) -> void:
+  var origin: Vector3 = enemy.position
++ var actual_start: float = maxf(maxf(from_time, float(vortex.born_at)), float(vortex.sampled_until.get(str(enemy.actor_id), vortex.born_at)))
++ var actual_end: float = minf(to_time, float(vortex.expires_at))
++ var nested: bool = not _q2_pull_context.is_empty() and is_same(_q2_pull_context.enemy, enemy)
++ # Capture inherited pull before H02 starts, then H02 separately. A round trip
++ # is real two-leg movement, never its zero-length start/end chord.
++ if nested: _q2_record_motion(enemy, _q2_pull_context.cursor, origin)
+  super._h02_move_target(vortex, enemy, from_time, to_time, hold_for_ai)
+- _q2_record_motion(enemy, origin)
+-
+-func _q2_settle(before: Dictionary, start: float, end: float) -> void:
+- var scope: Dictionary = _ink_scope()
+- var contacts: Array = []
++ _q2_record_motion(enemy, origin, enemy.position, actual_start, actual_end)
++ if nested: _q2_pull_context.cursor = enemy.position
++
++func _q2_collect_contacts(before: Dictionary, start: float, end: float) -> Array:
++ var contacts: Array = _q2_deferred_contacts.duplicate()
++ _q2_deferred_contacts.clear()
+  for state in ink_rivers.duplicate():
+   if not _q2_current(state): continue
+   for enemy in enemies:
+@@ -205,11 +295,13 @@
+    var paths: Array = _q2_motion_traces.filter(func(trace): return is_same(trace.enemy, enemy))
+    if paths.is_empty(): paths = [{"from":enemy.position, "to":enemy.position}]
+    var best: float = INF
++   var best_position: Vector3 = enemy.position
+    for path in paths:
+     var fraction: float = RiverGeometry.entry(path.from, path.to, enemy.radius, state.path, state.width)
+-    var at: float = lerpf(start, end, fraction) if is_finite(fraction) else INF
+-    if at < float(state.expires_at) - TIME_EPS and at >= float(state.born_at) - TIME_EPS: best = minf(best, at)
+-   if is_finite(best): contacts.append({"state":state, "enemy":enemy, "time":best, "kind":"river", "tick":0, "position":enemy.position})
++    var at: float = lerpf(float(path.get("start", start)), float(path.get("end", end)), fraction) if is_finite(fraction) else INF
++    if at < float(state.expires_at) - TIME_EPS and at >= float(state.born_at) - TIME_EPS and at < best:
++     best = at; best_position = Vector3(path.from).lerp(path.to, fraction)
++   if is_finite(best): contacts.append({"state":state, "enemy":enemy, "time":best, "kind":"river", "tick":0, "position":best_position})
+   if bool(state.h04_at_completion):
+    var interval: float = T.hex_parameter("H04-4")
+    var maximum: int = int(round(T.hex_parameter("H04-1") / interval))
+@@ -225,21 +317,31 @@
+      var position: Vector3 = enemy.position
+      if before.has(id) and is_same(before[id].identity, enemy): position = Vector3(before[id].position).lerp(enemy.position, clampf((at - start) / maxf(TIME_EPS, end - start), 0.0, 1.0))
+      if Geometry.ground(position - Vector3(state.path.back())).length() <= radius + float(enemy.radius) + Geometry.EPS: contacts.append({"state":state, "enemy":enemy, "time":at, "kind":"sunset", "tick":tick, "position":position})
+- contacts.sort_custom(func(a, b): return str(a.state.river_id) + str(a.kind) + str(a.enemy.actor_id) < str(b.state.river_id) + str(b.kind) + str(b.enemy.actor_id) if a.time == b.time else a.time < b.time)
+- var batch_key: String = ""
+- var impact: Dictionary = {}
++ contacts.sort_custom(_q2_event_before)
++ var batches: Dictionary = {}
+  for hit in contacts:
+-  if not _q2_current(hit.state): continue
++  if hit.has("impact") or hit.has("batch"): continue
+   var key: String = str(hit.state.river_id) + ":" + str(hit.kind) + ":" + str(hit.time)
+-  if key != batch_key: impact = _q2_impact_snapshot(); batch_key = key
+-  _q2_damage(hit.state, hit.enemy, hit.time, hit.kind, hit.tick, hit.position, impact)
+-  if not _ink_scope_current(scope): return
++  if not batches.has(key): batches[key] = {}
++  hit["batch"] = batches[key]
++ return contacts
++
++func _q2_hit_impact(hit: Dictionary) -> Dictionary:
++ if hit.has("impact"): return hit.impact
++ if not hit.batch.has("impact"): hit.batch["impact"] = _q2_impact_snapshot()
++ return hit.batch.impact
++
++func _q2_settle(before: Dictionary, start: float, end: float) -> void:
++ if paused: return
++ var scope: Dictionary = _ink_scope()
++ _q2_dispatch_contacts(_q2_collect_contacts(before, start, end))
++ if not _ink_scope_current(scope) or paused: return
+  for state in ink_rivers.duplicate():
+   if not _q2_current(state): continue
+   state.river_expired = end >= float(state.expires_at) - TIME_EPS
+   var finish_at: float = maxf(float(state.expires_at), float(state.sunset_expires_at) if state.h04_at_completion else float(state.expires_at))
+   if end >= finish_at - TIME_EPS: _q2_finish(state, "expired", finish_at)
+- ink_rivers = ink_rivers.filter(func(state): return _q2_current(state))
++ ink_rivers = ink_rivers.filter(func(state): return _q2_valid(state))
+ 
+ func _q2_finish(state: Dictionary, reason: String, at: float) -> void:
+  if bool(state.get("retired", false)): return
+@@ -263,9 +365,10 @@
+  for state in ink_rivers:
+   if int(state.cast_id) == id: state.retired = true
+  ink_rivers = ink_rivers.filter(func(state): return int(state.cast_id) != id)
++ _q2_deferred_contacts = _q2_deferred_contacts.filter(func(hit): return int(hit.state.cast_id) != id)
+  super.cancel_cast(id)
+ func _hero_clear_transients() -> void:
+- ink_q2_pending = {}; ink_rivers.clear(); ink_q2_receipts.clear(); ink_q2_finished.clear(); _q2_motion_traces.clear(); _q2_tick_active = false
++ ink_q2_pending = {}; ink_rivers.clear(); ink_q2_receipts.clear(); ink_q2_finished.clear(); _q2_motion_traces.clear(); _q2_deferred_contacts.clear(); _q2_enemy_hits.clear(); _q2_motion_resume = {}; _q2_resume_from = -1.0; _q2_tick_active = false
+  super._hero_clear_transients()
+ func _hero_victory_pending() -> bool:
+  return super._hero_victory_pending() or not ink_q2_pending.is_empty() or not ink_rivers.is_empty()
+@@ -364,30 +467,54 @@
+  return {"events":candidates, "advances":advances}
+ 
+ func _q2_motion_before(a: Dictionary, b: Dictionary) -> bool:
++ return _q2_event_before(a, b)
++func _q2_event_before(a: Dictionary, b: Dictionary) -> bool:
+  if float(a.time) != float(b.time): return float(a.time) < float(b.time)
+- var priority: Dictionary = {"enhance":0, "contact":1, "terminal":2}
++ var priority: Dictionary = {"enhance":0, "river":1, "sunset":2, "contact":3, "enemy_hit":4, "terminal":5}
+  if a.kind != b.kind: return priority[a.kind] < priority[b.kind]
++ if a.kind == "enemy_hit": return str(a.enemy.actor_id) < str(b.enemy.actor_id)
++ if a.kind in ["river", "sunset"]:
++  return str(a.state.river_id) + ":" + str(a.enemy.actor_id) < str(b.state.river_id) + ":" + str(b.enemy.actor_id)
+  return _contact_before(a, b)
+ 
+ func _settle_motion_interval(before: Dictionary, tick_start: float, tick_end: float) -> void:
+- if ink_rivers.is_empty(): super._settle_motion_interval(before, tick_start, tick_end); return
++ var resuming: bool = _q2_resume_from >= 0.0
++ if ink_rivers.is_empty() and _q2_enemy_hits.is_empty() and not resuming: super._settle_motion_interval(before, tick_start, tick_end); return
+  var scope: Dictionary = _ink_scope()
+- var cursor: float = tick_start
++ var cursor: float = maxf(tick_start, _q2_resume_from) if resuming else tick_start
++ _q2_resume_from = -1.0
++ var river_contacts: Array = _q2_collect_contacts(before, tick_start, tick_end)
+  # Replan after each enhancement/contact/callback. Do not advance a whole tick
+  # at old speed, temporarily move targets, or execute extra world/AI ticks.
+  # Every zero-time event consumes a target, projectile, or lifetime buff bit.
+  while _ink_scope_current(scope):
++  if paused:
++   _q2_deferred_contacts.append_array(river_contacts)
++   _q2_motion_resume = {"before":before, "start":tick_start, "end":tick_end, "cursor":cursor}
++   return
++  river_contacts = river_contacts.filter(func(hit): return _q2_valid(hit.state) and _q2_target_current(hit.enemy, hit.state) and (hit.kind != "river" or not hit.state.hits.has(str(hit.enemy.actor_id))))
++  _q2_enemy_hits = _q2_enemy_hits.filter(func(hit): return _q2_enemy_hit_current(hit))
++  _q2_enemy_hits.sort_custom(_q2_event_before)
+   var plan: Dictionary = _q2_motion_events(before, tick_start, tick_end, cursor)
+-  var at: float = tick_end if plan.events.is_empty() else minf(tick_end, float(plan.events[0].time))
++  if not river_contacts.is_empty() and (plan.events.is_empty() or _q2_event_before(river_contacts[0], plan.events[0])):
++   plan.events.push_front(river_contacts.pop_front())
++  if not _q2_enemy_hits.is_empty() and (plan.events.is_empty() or _q2_event_before(_q2_enemy_hits[0], plan.events[0])):
++   # A river popped for comparison must stay queued if an earlier hostile hit wins.
++   if not plan.events.is_empty() and plan.events[0].kind in ["river", "sunset"]: river_contacts.push_front(plan.events.pop_front())
++   plan.events.push_front(_q2_enemy_hits.pop_front())
++  var at: float = tick_end if plan.events.is_empty() else maxf(cursor, minf(tick_end, float(plan.events[0].time)))
+   for advance in plan.advances:
+    var state: Dictionary = advance.state
+    if effect_is_current(state) and not bool(state.get("retired", false)):
+     _set_front(state, minf(float(advance.to), float(advance.from) + float(state.speed) * maxf(0.0, at - float(advance.begin))))
+   if plan.events.is_empty(): break
+   var event: Dictionary = plan.events[0]
+-  var state: Dictionary = event.state
++  var state: Dictionary = event.get("state", {})
+   cursor = at
+-  if event.kind == "enhance": _q2_enhance_projectile(state, event.river, at)
++  if event.kind == "enemy_hit": _q2_deliver_enemy_hit(event)
++  elif event.kind in ["river", "sunset"]:
++   _q2_damage(state, event.enemy, event.time, event.kind, event.tick, event.position, _q2_hit_impact(event))
++  elif event.kind == "enhance": _q2_enhance_projectile(state, event.river, at)
+   elif event.kind == "terminal": _retire_motion(state, at, event.reason)
+   else:
+    var enemy: Dictionary = event.enemy
+--- tests/ink_q2_foundation_20261005/river_geometry.gd
++++ tests/ink_q2_foundation_20261005/fix01/river_geometry.gd
+@@ -23,3 +23,15 @@
+  return result
+ static func overlaps(at: Vector3, radius: float, path: Array, width: float) -> bool:
+  return is_finite(entry(at, at, radius, path, width))
++
++static func closest_point(at: Vector3, path: Array) -> Vector3:
++ var best: Vector3 = path[0]
++ var distance: float = INF
++ for i in range(1, path.size()):
++  var a: Vector3 = Base.ground(path[i - 1])
++  var delta: Vector3 = Base.ground(Vector3(path[i]) - a)
++  var u: float = clampf(Base.ground(at - a).dot(delta) / maxf(EPS * EPS, delta.length_squared()), 0.0, 1.0)
++  var candidate: Vector3 = a + delta * u
++  var squared: float = candidate.distance_squared_to(Base.ground(at))
++  if squared < distance: best = candidate; distance = squared
++ return best
+--- tests/ink_q2_foundation_20261005/q2_gate.gd
++++ tests/ink_q2_foundation_20261005/fix01/q2_gate.gd
+@@ -1,8 +1,8 @@
+ extends SceneTree
+ ## Finite main-owned actual-engine gate. Authored assertions are NOT test passes.
+-const Sim = preload("res://tests/ink_q2_foundation_20261005/ink_q2_sim.gd")
++const Sim = preload("res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd")
+ const Before = preload("res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd")
+-const Geo = preload("res://tests/ink_q2_foundation_20261005/river_geometry.gd")
++const Geo = preload("res://tests/ink_q2_foundation_20261005/fix01/river_geometry.gd")
+ var checks: int = 0
+ var failures: Array = []
+ var completed: Array = []
+@@ -31,11 +31,11 @@
+  return second
+ func events(sim, kind: String) -> Array: return sim.event_log.filter(func(event): return event.kind == kind)
+ func run() -> void:
+- test_source_ranks(); test_partial_cd(); test_input_and_h03(); test_activation_and_sweep(); test_h04(); test_projectiles(); test_lifecycle(); test_callbacks(); test_retained()
+- var required: Array = ["source_ranks", "partial_cd", "input_h03", "activation_sweep", "h04", "projectiles", "lifecycle", "callbacks", "retained"]
++ test_source_ranks(); test_partial_cd(); test_input_and_h03(); test_activation_and_sweep(); test_h04(); test_projectiles(); test_lifecycle(); test_callbacks(); test_pause_and_order(); test_retained()
++ var required: Array = ["source_ranks", "partial_cd", "input_h03", "activation_sweep", "h04", "projectiles", "lifecycle", "callbacks", "pause_and_order", "retained"]
+  for name in required: check(name in completed, "case completed " + name)
+- var result: Dictionary = {"suite":"ink_q2_foundation_finite", "passed":failures.is_empty(), "checks":checks, "failures":failures, "completed":completed, "source_binding_sha256":FileAccess.get_sha256("res://tests/ink_q2_foundation_20261005/source_binding.json"), "engine_run":true, "normal_input":false, "ordinary_entry":false, "visual_acceptance":false, "scope":"finite isolated Q2/H03/H04 and BASIC/Shift projectile mechanics only"}
+- var output = FileAccess.open("res://tests/ink_q2_foundation_20261005/q2_result.json", FileAccess.WRITE)
++ var result: Dictionary = {"suite":"ink_q2_foundation_finite", "passed":failures.is_empty(), "checks":checks, "failures":failures, "completed":completed, "source_binding_sha256":FileAccess.get_sha256("res://tests/ink_q2_foundation_20261005/fix01/source_binding.json"), "engine_run":true, "normal_input":false, "ordinary_entry":false, "visual_acceptance":false, "scope":"finite isolated Q2/H03/H04 and BASIC/Shift projectile mechanics only"}
++ var output = FileAccess.open("res://tests/ink_q2_foundation_20261005/fix01/q2_result.json", FileAccess.WRITE)
+  output.store_string(JSON.stringify(result, "  ")); output.close()
+  print("INK_Q2_FOUNDATION_REPORT ", JSON.stringify(result)); quit(0 if failures.is_empty() else 1)
+ func test_source_ranks() -> void:
+@@ -72,6 +72,11 @@
+  sim.request_q2("second", Vector3(3, 0, 0)); near(sim.hero.cooldowns.q, 10.5, "successful B after delay starts full CD")
+  sim.free(); completed.append("partial_cd")
+ func test_input_and_h03() -> void:
++ for choice in ["q1", "q3"]:
++  var other = fresh(); other.hero.loadout.q = choice
++  check(not other.request_q2("first", Vector3(4, 0, 0)).accepted, "Q2 logical command cannot become " + choice)
++  check(other.cast_serial == 0 and other.ink_mountain.is_empty() and other.ink_input.phase == "idle", "wrong-candidate Q2 command has no side effects")
++  other.free()
+  var sim = fresh(1, ["yanguizhou_h03"])
+  check(not sim.request_q2("first", Vector3.INF).accepted, "nonfinite A rejected")
+  check(not sim.request_q2("first", Vector3(10.001, 0, 0)).accepted, "outside source A range rejected")
+@@ -111,6 +116,13 @@
+  sim.hero.cooldowns.q = 0 # Explicit fixture: permit second simultaneous river.
+  make_river(sim, Vector3(7, 0, -3), Vector3(7, 0, 3))
+  check(enemy.hp < hp, "distinct river may hit same target once")
++ sim.free()
++ sim = fresh(); make_river(sim, Vector3.ZERO, Vector3(0, 0, 3))
++ enemy = target(sim, Vector3(2, 0, 1)); before = sim._enemy_motion_snapshot()
++ enemy.position = Vector3(0, 0, 1)
++ sim._q2_motion_traces = [{"enemy":enemy, "from":Vector3(2, 0, 1), "to":enemy.position, "start":.018, "end":.020}]
++ sim._q2_settle(before, 0.0, .020)
++ near(events(sim, "ink_q2_crossing")[0].source_time, .019, "short H02 remainder keeps actual contact source time")
+  sim.free(); completed.append("activation_sweep")
+ func test_h04() -> void:
+  var sim = fresh(1, ["yanguizhou_h04"])
+@@ -161,7 +173,7 @@
+  sim.step(1.0); near(sim.hero_time, at, "pause freezes source clock")
+  sim.paused = false
+  var steps: int = sim.ink_core_steps
+- sim.step(1.0 / 60.0)
++ sim.step(sim.FIXED_TICK)
+  check(sim.ink_core_steps == steps + 1, "one shared inherited fixed step per real tick")
+  var snapshot: Dictionary = sim.ink_presenter_snapshot(); snapshot.rivers[0].path[0] = Vector3(999, 0, 999)
+  check(sim.ink_rivers[0].path[0] != Vector3(999, 0, 999), "presenter snapshot immutable copy")
+@@ -178,6 +190,64 @@
+  check(events(sim, "damage").size() == 1, "synchronous first damage cancellation stops next enemy")
+  check(sim.ink_rivers.is_empty(), "callback cleanup never respawns stale river")
+  sim.free(); completed.append("callbacks")
++func test_pause_and_order() -> void:
++ var sim = fresh()
++ var a: Dictionary = target(sim, Vector3(2, 0, 0))
++ var b: Dictionary = target(sim, Vector3(2, 0, 1))
++ var hp: float = b.hp
++ var pause_birth = func(event: Dictionary):
++  if event.kind == "damage" and event.source == "q2" and event.target == a.actor_id: sim.paused = true
++ sim.combat_event.connect(pause_birth)
++ make_river(sim)
++ check(sim.paused and not sim.ink_rivers[0].hits.has(b.actor_id), "paused callback does not consume next target claim")
++ near(b.hp, hp, "paused second target waits")
++ sim.combat_event.disconnect(pause_birth); sim.paused = false
++ sim.step(sim.FIXED_TICK)
++ near(hp - b.hp, 150.0, "resume delivers deferred birth contact once")
++ sim.free()
++ sim = fresh(1, ["yanguizhou_h04"])
++ a = target(sim, Vector3(2, 0, 3)); b = target(sim, Vector3(2, 0, 3.2))
++ make_river(sim); hp = b.hp
++ var pause_sunset = func(event: Dictionary):
++  if event.kind == "damage" and event.source == "hex_yanguizhou_h04" and event.target == a.actor_id: sim.paused = true
++ sim.combat_event.connect(pause_sunset); sim.step(.5)
++ sim.combat_event.disconnect(pause_sunset); sim.paused = false; sim.step(sim.FIXED_TICK)
++ near(hp - b.hp, 38.0, "resume delivers deferred H04 same tick once")
++ sim.free()
++ sim = fresh(); make_river(sim)
++ var enemy: Dictionary = target(sim, Vector3(3.02, 0, 0))
++ enemy.hp = 1.0; enemy.timer = 10.0
++ check(sim.request_action("attack", Vector3(10, 0, 0)).accepted, "order regression uses real BASIC")
++ sim._set_front(sim.ink_basics[0], 2.5) # Explicit real-projectile position fixture.
++ sim.ai_enabled = true; sim.step(sim.FIXED_TICK)
++ var damage: Array = events(sim, "damage").filter(func(event): return event.target == enemy.actor_id)
++ check(not damage.is_empty() and damage[0].source == "q2", "early river crossing kills before later BASIC in one actual tick")
++ check(events(sim, "ink_q2_crossing").size() == 1, "early crossing receipt survives later projectile plan")
++ sim.free()
++ sim = fresh(); make_river(sim, Vector3(0, 0, -3), Vector3(0, 0, 3))
++ var pouncer: Dictionary = target(sim, Vector3(1.02, 0, 0), "pouncer")
++ pouncer.hp = 1.0; pouncer.state = "pounce"; pouncer.aim = Vector3.LEFT; pouncer.timer = .4; pouncer.did_hit = false
++ var hero_hp: float = sim.hero.hp
++ sim.ai_enabled = true; sim.step(sim.FIXED_TICK)
++ check(pouncer.dead, "pouncer crosses into lethal river")
++ near(sim.hero.hp, hero_hp, "earlier river death suppresses later pounce hero damage")
++ check(events(sim, "enemy_impact").filter(func(event): return event.actor_id == pouncer.actor_id and event.hit).is_empty(), "no false later pounce impact after earlier death")
++ sim.free()
++ var reference = fresh(); make_river(reference)
++ reference.request_action("attack", Vector3(10, 0, 0)); reference.step(.08)
++ var expected_front: float = reference.ink_basics[0].front_distance
++ var expected_steps: int = reference.ink_core_steps
++ sim = fresh(); make_river(sim); sim.request_action("attack", Vector3(10, 0, 0))
++ sim.step(.04)
++ var pause_enhance = func(event: Dictionary):
++  if event.kind == "ink_q2_projectile_enhanced": sim.paused = true
++ sim.combat_event.connect(pause_enhance); sim.step(.02)
++ check(sim.paused, "enhancement callback actually pauses within local interval")
++ sim.combat_event.disconnect(pause_enhance); sim.paused = false; sim.step(.02)
++ near(sim.hero_time, reference.hero_time, "paused remainder compare uses equal source time")
++ near(sim.ink_basics[0].front_distance, expected_front, "resume never loses remaining projectile movement")
++ check(sim.ink_core_steps == expected_steps, "resumed remainder adds no shared AI/RNG step")
++ reference.free(); sim.free(); completed.append("pause_and_order")
+ func test_retained() -> void:
+  var after = Sim.new(); var before = Before.new()
+  root.add_child(after); root.add_child(before)

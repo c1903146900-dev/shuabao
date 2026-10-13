@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "preserved_fix01_binding": "9ea60f4fdc07d0b868ea2d903790f6a95a7d301f30743b8afd96d5581d9c3d42",
+  "fix01_actual_log": "/workspace/scratch/73ebae91a474/recovery_2309/ink_q3_fix01_actual_2112/q3_gate/raw.log",
+  "fix01_log_sha256": "056b4e4ab6ff44e4091f7dd72d13d0023765d1be70360c61463aa96bffd9468e",
+  "fix01_actual_status": "Q3_FAILED_after_initialization_diagnostic_passed",
+  "test_only_faults": [
+    {
+      "id": "persistent_walk",
+      "predicted_reason": "outside_placement_range",
+      "predicted_position_x": 21.35,
+      "source_range_m": 9,
+      "reason_status": "awaiting_actual_fixture_diagnostic"
+    },
+    {
+      "id": "callback_transaction",
+      "predicted_reason": "invalid_phase",
+      "reason_status": "awaiting_actual_fixture_diagnostic"
+    }
+  ],
+  "production_delta": {
+    "id": "q3_same_batch_g22_snapshot",
+    "interfaces": [
+      "g22_mode_snapshot",
+      "impact_penetration",
+      "impact_lifesteal_rate"
+    ],
+    "local_only": true,
+    "source_reference": "scripts/combat/fengli_ultimates.gd:_r1_contact",
+    "reference_sha256": "e3171c5a4f4d098a070f9b28b604b7fb93cc9404ea73382b408ec7bddd47283c"
+  },
+  "author_engine_invocations": 0
+}

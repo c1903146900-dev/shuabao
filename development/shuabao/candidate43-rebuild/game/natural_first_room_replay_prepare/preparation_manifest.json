@@ -1,0 +1,46 @@
+{
+  "status": "PREPARED_NOT_ENGINE_PARSED_NOT_RUN",
+  "source_root": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15",
+  "pck": "/workspace/scratch/73ebae91a474/loot_resume_1115/pack_training12_01/游戏.pck",
+  "pck_sha256": "2934333a98a9add2ecd608cd401f27319809a318551c69c593eb49471b369dee",
+  "source_binding_sha256": "da26defba5cbdcf2ca2b0a7e51d03ed0345f2525336d3543598df5090c001360",
+  "original_monitor_sha256": "2af6fe81082486e5a28ce42d7638b463763372f5328b8b69dda46f675a6017df",
+  "files": [
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_first_room_replay_prepare/README.md",
+      "sha256": "35a13c2a85d7449be998576e83944c507bdbd6002b32771739264e3e61821e55",
+      "bytes": 8504
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_first_room_replay_prepare/natural_first_room_replay.gd",
+      "sha256": "6a5fdabc45768a0390f78661cf880573193fb0cdbe43b195847565781c2032a6",
+      "bytes": 17792
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_first_room_replay_prepare/observer_minimal.diff",
+      "sha256": "cebe3c50cd78b650037aa7cf299459836c43e8ea2b22db2f4ecf5d011386d351",
+      "bytes": 9400
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_first_room_replay_prepare/visible_player_replay.gd",
+      "sha256": "602beed44e01d238ac4df5453a2a0ea11edde87f7d20599ab465ff5fc71fac11",
+      "bytes": 13933
+    }
+  ],
+  "static_checks": {
+    "no_extra_tick_or_damage_calls": true,
+    "no_direct_gameplay_assignments": true,
+    "driver_never_reads_source_enemy_arrays": true,
+    "success_checker_unchanged": true,
+    "original_wall_100s": true,
+    "original_monitor_unchanged": true,
+    "original_source_binding_unchanged": true,
+    "no_lethal_replay_helper_loaded": true
+  },
+  "engine_started": false,
+  "engine_parser_run": false,
+  "production_files_edited": [],
+  "observation_wall_ms": 100000,
+  "external_guard_seconds": 110,
+  "scope": "Zero-resource natural first-room source-input replay only; native_input=false; no combat result yet."
+}

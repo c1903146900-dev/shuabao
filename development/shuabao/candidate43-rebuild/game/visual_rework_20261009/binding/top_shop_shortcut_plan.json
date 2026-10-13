@@ -1,0 +1,13 @@
+{
+  "schema": "top-shop-shortcut-label-successor-1",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "8f13bc60e818f7c463001c589b5aceab97d5881cf78e07fa13797bfea73571b5",
+      "after": "7dd3a7105d68bf3ba4097f2b96a75c52700f1bdc7e586761b34323501e163cba"
+    }
+  },
+  "new_files": {
+    "visual_rework_20261009/top_shop_shortcut.gd": "bc341b351ab3c8aeac5164f197a37b50073bca4c0537396612cca89e2d7827da"
+  },
+  "behavior": "One-time after inherited ready, exact original top Button structure and pressed callback unchanged; text only B to P."
+}

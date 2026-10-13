@@ -1,0 +1,18 @@
+{
+  "status": "FROZEN_NO_ENGINE_RUN_BY_PREPARER",
+  "changes": [
+    "If original rest Continue rejects, classify as r03_original_rest_readiness_incomplete instead of a settled reason.",
+    "After next-room callback, require actual original Session status and entered node identity before reporting accepted."
+  ],
+  "preimages": {
+    "natural_route_replay.gd": "c45c182ecd5d589fb36c57499000138c61e3cabc5af31d2dcfb3486fae3a8abd",
+    "visible_route_replay.gd": "5a73aae355b674bf1f7e778d5b283639b787f858e90ccdda40b7c8069e8a6b7b"
+  },
+  "frozen_code": {
+    "natural_route_replay.gd": "4c1119a219b1bbb8604a817d6ebe35c35ab4709c5a94f893b118beb40e016f86",
+    "visible_route_replay.gd": "7e65266739a9de5a687a8badd838116ae632f63c2ae1497de90401528e3404b2"
+  },
+  "minimal_diff_sha256": "64ed4ab6440c8c4185c644c3ca97cbc7e5683df3a96a00c5d2443ff6aa20d69e",
+  "preparation_manifest_sha256": "00fbe303b6959c74b32e4b07c94a6be1f74783a9ea654c6529d375ca88329801",
+  "engine_run_artifact_rule": "Record actual SHA loaded by each parser and GUI process; do not relabel reviewed01 parser evidence as frozen02."
+}

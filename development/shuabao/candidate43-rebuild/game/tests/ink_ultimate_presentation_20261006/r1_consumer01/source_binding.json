@@ -1,0 +1,384 @@
+{
+  "schema": "r1-presentation-consumer-source-1",
+  "status": "SOURCE_ONLY_NOT_PARSED_OR_RUN",
+  "parent_binding": {
+    "path": "tests/ink_e3_ordinary_20261006/ordinary01/source_binding.json",
+    "sha256": "9a0c1e1c5a57d041fb443ce96190dbd5d113de2e1e0d5be1c16da188b3cafb1c"
+  },
+  "domain_binding": {
+    "path": "tests/ink_ultimate_presentation_20261006/candidate01/source_binding.json",
+    "sha256": "cd7b1ea4f67e8a7e1a1e2d22d21d4c8ee8b77e9b2f2aeb7ba1baaf1fd93e6070"
+  },
+  "decision": {
+    "path": "docs/source_decisions/20261006-ultimate-presentation-groups.json",
+    "sha256": "9c3f309f1b8f4364d607872c3b59913376e77f1870bfa74044946880c8c1682e"
+  },
+  "explicit_parent_map_supplement": {
+    "tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea"
+  },
+  "runtime_map": {
+    "data/combat/tuning.gd": {
+      "source": "data/combat/tuning.gd",
+      "sha256": "15a9ffeafdafa024a4dacaaed6fc9c1c8785b66d8ced202e2916ae8658b0a06f",
+      "bytes": 3663
+    },
+    "data/combat/ultimate_presentation_authoring.json": {
+      "source": "data/combat/ultimate_presentation_authoring.json",
+      "sha256": "bfb3968ffb608184234335600ec1d5e5be69fc922627e9389fca7b4b758e7608",
+      "bytes": 890
+    },
+    "data/final_design/catalog.gd": {
+      "source": "data/final_design/catalog.gd",
+      "sha256": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+      "bytes": 14669
+    },
+    "data/final_design/catalog.json": {
+      "source": "data/final_design/catalog.json",
+      "sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+      "bytes": 1963837
+    },
+    "data/final_design/common_hex_hooks.json": {
+      "source": "data/final_design/common_hex_hooks.json",
+      "sha256": "d20052456f280347a07560b120377108588b3f34a2c70a91b3ecddda67ea867a",
+      "bytes": 129909
+    },
+    "data/final_design/effective_overrides.json": {
+      "source": "data/final_design/effective_overrides.json",
+      "sha256": "bfaed238edfd723a3d4aa8d363acfe8e46dab14feec64388666fde457a80a72d",
+      "bytes": 3999
+    },
+    "data/final_design/effective_rule_resolutions.json": {
+      "source": "data/final_design/effective_rule_resolutions.json",
+      "sha256": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53",
+      "bytes": 28146
+    },
+    "data/final_design/enhancement_fields.json": {
+      "source": "data/final_design/enhancement_fields.json",
+      "sha256": "3c0ca6283ad7c3c6c9e16ca3c7143280e74d0d3d967692bece86c709f49e5bb5",
+      "bytes": 92103
+    },
+    "data/final_design/equipment_tasks.json": {
+      "source": "data/final_design/equipment_tasks.json",
+      "sha256": "006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea",
+      "bytes": 2490
+    },
+    "data/final_design/replay_segments.json": {
+      "source": "data/final_design/replay_segments.json",
+      "sha256": "25e9a0fd4f45f221fbaee040c4a66e797208e35aeaa214ecbf6bba37a2c0b51d",
+      "bytes": 149431
+    },
+    "data/final_design/runtime_rules.json": {
+      "source": "data/final_design/runtime_rules.json",
+      "sha256": "bbd12695b85288a0c242e21b1f27ee2eed86954cc95cc92d65dd3901f04009bb",
+      "bytes": 2774
+    },
+    "data/progression/prototype/catalog.json": {
+      "source": "data/progression/prototype/catalog.json",
+      "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28",
+      "bytes": 51478
+    },
+    "docs/source_decisions/20261005-ink-six-resolutions.json": {
+      "source": "docs/source_decisions/20261005-ink-six-resolutions.json",
+      "sha256": "62cbd6c20607748cb4c426abd42d4656d6de1ab922fda179102bd8b8afdf6634",
+      "bytes": 1570
+    },
+    "docs/source_decisions/20261006-ink-five-resolutions.json": {
+      "source": "docs/source_decisions/20261006-ink-five-resolutions.json",
+      "sha256": "861528d850389b2b4be2ce7a9ad4461531bbbfbd33de113870f9955b721f3e39",
+      "bytes": 11887
+    },
+    "docs/source_decisions/20261006-ultimate-presentation-groups.json": {
+      "source": "docs/source_decisions/20261006-ultimate-presentation-groups.json",
+      "sha256": "9c3f309f1b8f4364d607872c3b59913376e77f1870bfa74044946880c8c1682e",
+      "bytes": 2500
+    },
+    "scripts/actors/hero_model_core.gd": {
+      "source": "scripts/actors/hero_model_core.gd",
+      "sha256": "6e215466428cc7569f7b734d99dcb9bb5aaca04aa5bcad6b469e41f53a805b48",
+      "bytes": 3627
+    },
+    "scripts/combat/common_hex_bridge.gd": {
+      "source": "scripts/combat/common_hex_bridge.gd",
+      "sha256": "3bf945cf040051295e496617cef7c52bec35c7c0ae5fab73d9234961c75b88dd",
+      "bytes": 17836
+    },
+    "scripts/combat/common_hex_runtime.gd": {
+      "source": "scripts/combat/common_hex_runtime.gd",
+      "sha256": "df1ab138c5c3dec7ccf0e0e548e10881d5fa9b9300f9b0778cdab50f5361ac4c",
+      "bytes": 46680
+    },
+    "scripts/combat/enemy_director.gd": {
+      "source": "scripts/combat/enemy_director.gd",
+      "sha256": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+      "bytes": 27726
+    },
+    "scripts/combat/hero_combat_core.gd": {
+      "source": "scripts/combat/hero_combat_core.gd",
+      "sha256": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+      "bytes": 46758
+    },
+    "scripts/combat/loadout_fixture.gd": {
+      "source": "scripts/combat/loadout_fixture.gd",
+      "sha256": "4702e3777e3dda2f5535fbf015ede0ed575c2109f7b84714c5317c70fe4adb26",
+      "bytes": 3843
+    },
+    "scripts/combat/swept_rectangle_geometry.gd": {
+      "source": "scripts/combat/swept_rectangle_geometry.gd",
+      "sha256": "d6dc1e04335f4935bab9f11eb070d1e6b249517f2977bc54600ddba66b6d7e05",
+      "bytes": 3063
+    },
+    "scripts/combat/ultimate_presentation_clock.gd": {
+      "source": "scripts/combat/ultimate_presentation_clock.gd",
+      "sha256": "1654efffd7f26babb16c1a3ab8eea168fb9950e5fa93bca131f437448ad83e18",
+      "bytes": 7360
+    },
+    "scripts/combat/world_clock.gd": {
+      "source": "scripts/combat/world_clock.gd",
+      "sha256": "9c0cfebcc981b2f2d193bd7d3a3bc13867ab0cb61df9ebed9bdb370d573cd77d",
+      "bytes": 1011
+    },
+    "tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd": {
+      "source": "tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "sha256": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d",
+      "bytes": 20196
+    },
+    "tests/ink_e1_ordinary_20261005/candidate01/sim.gd": {
+      "source": "tests/ink_e1_ordinary_20261005/candidate01/sim.gd",
+      "sha256": "24063049066575efbb919373f106a05dd7288f76dd785f236e39be1e001d6e0e",
+      "bytes": 3582
+    },
+    "tests/ink_e1_rain_foundation_20261005/rain_actor.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/rain_actor.gd",
+      "sha256": "1abc4791f8a3c6d5a068915189861a13d93ad638275c54bc953a19a8292cb5ea",
+      "bytes": 311
+    },
+    "tests/ink_e1_rain_foundation_20261005/rain_common_bridge.gd": {
+      "source": "tests/ink_e1_rain_foundation_20261005/rain_common_bridge.gd",
+      "sha256": "e9d929a261569c0839f50fc25f1a9a154308ac91a38863d135b74f7f7a87fd17",
+      "bytes": 1101
+    },
+    "tests/ink_e2_boat_foundation_20261005/candidate04/boat_common_bridge.gd": {
+      "source": "tests/ink_e2_boat_foundation_20261005/candidate04/boat_common_bridge.gd",
+      "sha256": "c66c4e6cc741c4a567ad4f156e8562c722ad83bf0c8279df056f1ffabd633517",
+      "bytes": 874
+    },
+    "tests/ink_e2_boundary_20261006/candidate01/boat_boundary.gd": {
+      "source": "tests/ink_e2_boundary_20261006/candidate01/boat_boundary.gd",
+      "sha256": "cbae6b328a61321d2c42aefbb2e4bf0a8db9ab3aa19679cf282768fb6a799b1e",
+      "bytes": 2503
+    },
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd": {
+      "source": "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "sha256": "21172268b92fa0ac7afebe174aced154e43205768e1db3cd48fb03ad75c4fd30",
+      "bytes": 25036
+    },
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd": {
+      "source": "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd",
+      "sha256": "37801af006d8295288d6c5e209303987ea45bde87621271a13b25d89d1651786",
+      "bytes": 4171
+    },
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd": {
+      "source": "tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd",
+      "sha256": "45222cd344c1352d3a6b20356b0ca7b41087cb10a27a889be76d5ee1644e9955",
+      "bytes": 5280
+    },
+    "tests/ink_e2_boundary_20261006/ordinary01/sim.gd": {
+      "source": "tests/ink_e2_boundary_20261006/ordinary01/sim.gd",
+      "sha256": "e4e380b798fc20c609bd25eb6e560cb63e1a0fbd4ab76dae4a6ce63386f6d107",
+      "bytes": 5927
+    },
+    "tests/ink_e3_exchange_foundation_20261005/candidate03/exchange_common_bridge.gd": {
+      "source": "tests/ink_e3_exchange_foundation_20261005/candidate03/exchange_common_bridge.gd",
+      "sha256": "1c171b70e1dd5c40acdc36b0388a0ea3a579d090b2ee2b014ea619d6f3655ca8",
+      "bytes": 890
+    },
+    "tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd": {
+      "source": "tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "sha256": "e786cc01dbf3a41ede0f25f3f7cfcca4fe65e7044256162700245c334034fab9",
+      "bytes": 22926
+    },
+    "tests/ink_e3_ordinary_20261006/ordinary01/e3_boundary.gd": {
+      "source": "tests/ink_e3_ordinary_20261006/ordinary01/e3_boundary.gd",
+      "sha256": "f53b38a3e5f93ee4e1148c4a85412524fd3d6211a182902e2cae11c2046b9209",
+      "bytes": 3581
+    },
+    "tests/ink_e3_ordinary_20261006/ordinary01/q2_jump_seams.gd": {
+      "source": "tests/ink_e3_ordinary_20261006/ordinary01/q2_jump_seams.gd",
+      "sha256": "459b89c6da4de380c69cf3b10799df6e9a260e9538e8c1d4e065b3a68a7163a2",
+      "bytes": 17954
+    },
+    "tests/ink_e3_ordinary_20261006/ordinary01/sim.gd": {
+      "source": "tests/ink_e3_ordinary_20261006/ordinary01/sim.gd",
+      "sha256": "a95a2132bac217f07fe88d3289a7a43e8fc42073d77be65b6472ba55e4a2d9e9",
+      "bytes": 7708
+    },
+    "tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd": {
+      "source": "tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd",
+      "sha256": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea",
+      "bytes": 8015
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd": {
+      "source": "tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd",
+      "sha256": "5ae1211603dfdf4a81b07c9c201c0e701eac66cf7c7ae558b155d2b4f42b35a3",
+      "bytes": 221
+    },
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd": {
+      "source": "tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd",
+      "sha256": "3380769d0a38058e6e9b5461f6f9beb5bda643d37846644a70851696157b2482",
+      "bytes": 228
+    },
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd": {
+      "source": "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd",
+      "sha256": "83e268d33fe02ab5f2adf9a3b062a8cbf63b7b107963ccdb6966ba7544a13403",
+      "bytes": 4787
+    },
+    "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd": {
+      "source": "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd",
+      "sha256": "dd0638002d9b6a06ebf2dd80ecd8a78025b734961a1728c8792d3f7821fdc48c",
+      "bytes": 9290
+    },
+    "tests/ink_p1_ordinary_20261006/candidate01/sim.gd": {
+      "source": "tests/ink_p1_ordinary_20261006/candidate01/sim.gd",
+      "sha256": "285f6c2360cd003138fb48f733218d115811742b118e87f4aadb054fabfc19ac",
+      "bytes": 12075
+    },
+    "tests/ink_p1_settlement_20261005/candidate03/p1_collector.gd": {
+      "source": "tests/ink_p1_settlement_20261005/candidate03/p1_collector.gd",
+      "sha256": "762cf889fb57d3af52dc02dffdc314f894d30fd72780374c2987e07ff08daa89",
+      "bytes": 1822
+    },
+    "tests/ink_q1_foundation_20261004/revision02/data/runtime_tuning.json": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/data/runtime_tuning.json",
+      "sha256": "e07931d0af791839a10cea42e154e4e970efe03705379e2be124aa9f262bfa5c",
+      "bytes": 2470
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd",
+      "sha256": "2980ce2a7bc8585199b949f1cf2974b68eeac05e314093293c192551d72d9285",
+      "bytes": 270
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "sha256": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7",
+      "bytes": 5641
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd",
+      "sha256": "29c25fb50857005db11d3804c8a306ccfb2f4ef61fb29c092ddaa80386299cdb",
+      "bytes": 3697
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+      "bytes": 26039
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "source": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd",
+      "sha256": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e",
+      "bytes": 902
+    },
+    "tests/ink_q1_h02_20261004/ink_h02_sim.gd": {
+      "source": "tests/ink_q1_h02_20261004/ink_h02_sim.gd",
+      "sha256": "283d1d0f386ca4dad42f4646aa69e49e8646d899006dae7eae75c2ae6c23ac81",
+      "bytes": 12456
+    },
+    "tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd": {
+      "source": "tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "sha256": "cc981a8cf3e884157dcaee0d7082dde0d2a80828de9453d58348a43cd0ae1825",
+      "bytes": 36091
+    },
+    "tests/ink_q2_foundation_20261005/fix01/river_geometry.gd": {
+      "source": "tests/ink_q2_foundation_20261005/fix01/river_geometry.gd",
+      "sha256": "a116a963a1492192292b6e1ba27213590a9ddf6f0b64544fb5e4949b325ac2b6",
+      "bytes": 1938
+    },
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": {
+      "source": "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "sha256": "91897e8af75292259012a4a7a85f6e83702fa52e9b0ebe8c1659d35369c669f5",
+      "bytes": 16102
+    },
+    "tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd": {
+      "source": "tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd",
+      "sha256": "d4c5a5795a78231091d751b591c341bd5cac946f20dd242dc62404f7164325ef",
+      "bytes": 2329
+    },
+    "tests/ink_q3_foundation_20261004/ink_q3_geometry.gd": {
+      "source": "tests/ink_q3_foundation_20261004/ink_q3_geometry.gd",
+      "sha256": "b70e577e181da309db8d67ecd02d65d04fffcd3f7266daeef91301763a9c60cc",
+      "bytes": 2748
+    },
+    "tests/ink_r1_ordinary_20261005/candidate01/enemy_director.gd": {
+      "source": "tests/ink_r1_ordinary_20261005/candidate01/enemy_director.gd",
+      "sha256": "9f720442bca2727d492d24f1689257705dcd7e71c919bd2c455c9d8c2f583e80",
+      "bytes": 5954
+    },
+    "tests/ink_r1_ordinary_20261005/candidate01/sim.gd": {
+      "source": "tests/ink_r1_ordinary_20261005/candidate01/sim.gd",
+      "sha256": "3cc2948a55dbe9f1d6796b07f0a993f6f69794bdca0551b464a1cdf41d92ddf7",
+      "bytes": 8399
+    },
+    "tests/ink_r1_ordinary_20261005/candidate01/tuning.gd": {
+      "source": "tests/ink_r1_ordinary_20261005/candidate01/tuning.gd",
+      "sha256": "3a87e61ad0eef8c93efc7dfccfe93f476a4f444f00d54ef6e7b6dcda45bd770c",
+      "bytes": 768
+    },
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd": {
+      "source": "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd",
+      "sha256": "288623926cd0b074bec968d62c0e7d78eb4d1b3bc6d711d9369989eafb58ea9a",
+      "bytes": 3482
+    },
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/clock_facade.gd": {
+      "source": "tests/ink_ultimate_presentation_20261006/r1_consumer01/clock_facade.gd",
+      "sha256": "e7a8e39ad19cbf28005b9821160d5ee2b06dc0e03a0d30be88d9ac2985b0ec56",
+      "bytes": 2576
+    },
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/finite_gate.gd": {
+      "source": "tests/ink_ultimate_presentation_20261006/r1_consumer01/finite_gate.gd",
+      "sha256": "603feb3151d0fea872063f86ca38319e701c350c23e615047d01268f98d25c96",
+      "bytes": 18418
+    },
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/parse_gate.gd": {
+      "source": "tests/ink_ultimate_presentation_20261006/r1_consumer01/parse_gate.gd",
+      "sha256": "6139c364a647b92407c54b14463b90e39ea8d1c557fa0aead9aac0f32e66cd34",
+      "bytes": 1086
+    },
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/sim.gd": {
+      "source": "tests/ink_ultimate_presentation_20261006/r1_consumer01/sim.gd",
+      "sha256": "baa324bdd23b6708b68019a0973a5532dcbe8b7967ef8e0644d31dcee67603de",
+      "bytes": 14005
+    },
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd": {
+      "source": "tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd",
+      "sha256": "591d0487c776e17f79abd9d4de4eab243a5fcb11793e3034f6cad803a8adb3fd",
+      "bytes": 6426
+    }
+  },
+  "required_groups": [
+    "r1_commit_and_world_channels",
+    "actor_overlap_and_shift",
+    "hostile_event_endpoints",
+    "pause_remainder_and_reentry",
+    "cast_and_room_retirement",
+    "baseline_and_world_projectiles"
+  ],
+  "authoring_files": {
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/sim.gd": "baa324bdd23b6708b68019a0973a5532dcbe8b7967ef8e0644d31dcee67603de",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/clock_facade.gd": "e7a8e39ad19cbf28005b9821160d5ee2b06dc0e03a0d30be88d9ac2985b0ec56",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd": "591d0487c776e17f79abd9d4de4eab243a5fcb11793e3034f6cad803a8adb3fd",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/finite_gate.gd": "603feb3151d0fea872063f86ca38319e701c350c23e615047d01268f98d25c96",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/parse_gate.gd": "6139c364a647b92407c54b14463b90e39ea8d1c557fa0aead9aac0f32e66cd34",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/source_gate.py": "8b93413c3a482e63391b5c85de2b88fc0af47070976075f2dafcd4fbc29995cf",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/prepare_stage.py": "1af30f13b0ecb9d3f50f28c30bf1c697deeba87186cf40687670dea2941729d2",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/raw_error_gate.py": "789b27ad415d283d17e471ea4398b37b330d217151cc3147929721457837e0eb",
+    "tests/ink_ultimate_presentation_20261006/r1_consumer01/README.md": "d2697fb5d91fcc7c789cc0c35fb2d40e720fc5d56d5c08bbb77cc5d31670f77f"
+  },
+  "stage_manifest_sha256": "c036c4deb80d2f19973aa3487e5a3f3374c3fbc4754a0fcd214f1218fd1206d5",
+  "minimum_checks": 187,
+  "minimum_consumer_checks": 120,
+  "godot_parse": "NOT_RUN",
+  "finite_runtime": "NOT_RUN",
+  "production_integration": false,
+  "real_multiplayer": false,
+  "art_acceptance": false,
+  "old_full_matrices_rerun": false
+}

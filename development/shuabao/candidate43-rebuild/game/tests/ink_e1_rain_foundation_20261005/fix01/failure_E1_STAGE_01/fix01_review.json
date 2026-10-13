@@ -1,0 +1,136 @@
+{
+  "status": "SOURCE_MECHANIC_FIXES_REVIEWED_STAGING_DEPENDENCY_BLOCKED",
+  "findings_addressed_by_source_inspection": [
+    "E1-INPUT-01",
+    "E1-GATE-01",
+    "E1-MOTION-01"
+  ],
+  "new_blocking_source_findings": [
+    {
+      "id": "E1-STAGE-01",
+      "path": "tests/ink_e1_rain_foundation_20261005/fix01/finite_gate.gd:7",
+      "finding": "NormalBinding preload tests/ink_q3_input_growth_20261004/live_binding.gd is absent from the declared stage map; its BINDING_PATH also requires the exact current runtime_binding.json as explicit read-only fixture dependency. Freeze will reject the unmapped dependency before engine."
+    }
+  ],
+  "static_checks_passed": false,
+  "check_count": 24,
+  "checks": [
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/README.md",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/finite_gate.gd",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/freeze_source.py",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/ink_e1_sim.gd",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/input_adapter.gd",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/prepare_stage.py",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/rain_actor.gd",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/rain_common_bridge.gd",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/source_audit.py",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/source_basis.md",
+      "passed": true
+    },
+    {
+      "label": "preserved original tests/ink_e1_rain_foundation_20261005/source_result.json",
+      "passed": true
+    },
+    {
+      "label": "Python syntax source_audit.py",
+      "passed": true
+    },
+    {
+      "label": "Python syntax freeze_source.py",
+      "passed": true
+    },
+    {
+      "label": "Python syntax prepare_stage.py",
+      "passed": true
+    },
+    {
+      "label": "ink_e1_sim.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/ink_e1_sim.gd",
+      "passed": true
+    },
+    {
+      "label": "input_adapter.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/input_adapter.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/fix01/ink_e1_sim.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/fix01/input_adapter.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_q3_input_growth_20261004/catalog.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_q3_input_growth_20261004/live_binding.gd",
+      "passed": false
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency scripts/actors/hero_model_core.gd",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/fix01/source_binding.json",
+      "passed": true
+    },
+    {
+      "label": "finite_gate.gd declared mapped dependency tests/ink_e1_rain_foundation_20261005/fix01/finite_result.json",
+      "passed": true
+    }
+  ],
+  "reviewed_fix01_sha256": {
+    "README.md": "fe289d30da257a5c5df1dc3e12825f7d268fa551aa5a791d70b875ead842a5b6",
+    "authoring_manifest.json": "4859a28b9126c2a5c319f4d1a5c647ddba46d99d938f8496a91a584c7bbacea9",
+    "authoring_manifest.sha256": "4c16c9e0b7555c160089148005d1216d989e71a716f371b2455130e53832d149",
+    "failed_parent_pins.json": "056ef99aee7023f07041e751caa07e05f23a1b75e39425ebd25a1c160c211d97",
+    "finite_gate.gd": "732ef487059bd2299c20d03f9d809ca2a2e1ee4c47527d36893571978b7b3321",
+    "finite_gate.gd.patch": "b2bdb094638f82c989476358ef6b0e473d0614df90cd645b698b43ac72f3fce1",
+    "freeze_source.py": "95cc6c9831b9ec9ff1ceb7c9917110ee634d1149d5e3f561cab652be0d47087b",
+    "ink_e1_sim.gd": "7b94f23572947a167cfb44d8f68b1ed79d7302bf09f3f62baf969d34dd4d7ee0",
+    "input_adapter.gd": "b71d3f839be886d9560e12d842734fd55816d94a58b98b42a78aec15c38bd77e",
+    "prepare_stage.py": "74be752e7f06605a9b299f17dc99522d09d8c159ffc6dbb635d075d62d4f9a44",
+    "source_audit.py": "4c67f8c67360a5c0dc2faca4d1cc8c2aa7b3217819f05ca49ee71456d63607d7",
+    "source_audit.py.patch": "4bd480c4be718af1032610cdb3b824ae3adf6d4d9be6ba8657377a65d640feca",
+    "source_basis.md": "743c255a7de24a04394fcf3250f5ff583bb0ef81c0939e7d7b191f86495c1214",
+    "source_result.json": "ae6918d407e7bdc4c2bbb93c5c0e077ca4ee5da32f266393a721e89a7747f118"
+  },
+  "Godot_parse": "NOT_RUN",
+  "engine": "NOT_RUN",
+  "native_input": "NOT_RUN",
+  "full_E1_acceptance": false,
+  "ordinary_only_phasing_distinction": "NOT_PASSED_PENDING_TECHNICAL_REVIEW"
+}

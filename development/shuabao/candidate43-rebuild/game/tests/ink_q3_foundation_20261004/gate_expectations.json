@@ -1,0 +1,49 @@
+{
+  "q1_regression_gate.gd": {
+    "expected_checks": 156,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/regression_result.json",
+    "result": "q1_regression_result.json",
+    "marker": "INK_FOUNDATION_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "control_regression_gate.gd": {
+    "expected_checks": 81,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/control_result.json",
+    "result": "control_regression_result.json",
+    "marker": "INK_CONTROL_REV02_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "h02_regression_gate.gd": {
+    "expected_checks": 115,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/engine_result.json",
+    "result": "h02_regression_result.json",
+    "marker": "INK_H02_FINITE_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "common_regression_gate.gd": {
+    "expected_checks": 905,
+    "result": "common_regression_result.json",
+    "marker": "INK_INITIAL_SINK_REPORT"
+  },
+  "hp_regression_gate.gd": {
+    "expected_checks": 185,
+    "result": "hp_regression_result.json",
+    "marker": "INK_HP_UNDO_REPORT"
+  },
+  "q3_gate.gd": {
+    "result": "q3_result.json",
+    "marker": "INK_Q3_FOUNDATION_REPORT",
+    "completed": [
+      "source_ranks",
+      "manual_admission",
+      "recast_controls",
+      "geometry_categories",
+      "actual_projectiles",
+      "lifecycle_clocks",
+      "root_proc_budget",
+      "callbacks",
+      "q3_admission_guard",
+      "retained_before_after"
+    ]
+  }
+}

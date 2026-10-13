@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "hero_id": "yanguizhou",
+  "version": "ink-base11-intermediate17-source-v1",
+  "runtime_candidates": [
+    "Q1"
+  ],
+  "source_implemented_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "runtime_verified_hooks": [],
+  "source_binding_id": "a79fc889f1cb028099c9baf2882b44f84a3345179b6415ef6113304a8901720e",
+  "common_pool_full_validation": false,
+  "ink_g18_capture": false,
+  "ordinary_entry_ready": false,
+  "scope": "exact source candidate; all engine/native acceptance separate",
+  "required_finite_results": [
+    "intermediate_result.json",
+    "common_regression_result.json",
+    "hp_regression_result.json",
+    "selector_regression_result.json"
+  ],
+  "supported_intermediate_ids": [
+    "intermediate:I01",
+    "intermediate:I02",
+    "intermediate:I03",
+    "intermediate:I04",
+    "intermediate:I05",
+    "intermediate:I06",
+    "intermediate:I07",
+    "intermediate:I08",
+    "intermediate:I09",
+    "intermediate:I10",
+    "intermediate:I11",
+    "intermediate:I13",
+    "intermediate:I14",
+    "intermediate:I15",
+    "intermediate:I16",
+    "intermediate:I17",
+    "intermediate:I18"
+  ],
+  "held_equipment_ids": [
+    "base:B12",
+    "intermediate:I12"
+  ]
+}

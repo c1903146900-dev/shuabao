@@ -1,0 +1,72 @@
+{
+  "schema": "ink-rest-ordinary-overlay-1",
+  "status": "SOURCE_ONLY_ENGINE_NOT_RUN",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1",
+    "P1",
+    "R1"
+  ],
+  "supported_hex_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "parent_bindings": {
+    "tests/ink_rest_service_20261006/candidate01/source_binding.json": "b1221ac30a31d93fec19c0b102fa765e1d742270786b238a49cff1e1555acf8a",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/source_binding.json": "77108825151b5c4e0c5454d3bdad36c8ff59b569ffce7008576924c03c41fe12",
+    "tests/ink_p1_ordinary_20261006/candidate01/source_binding.json": "538fbbed186cee63823c81fdea57662c6a2c0a29c187921a54ca1fd66fc7ac2b",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/source_binding.json": "3d8f4ac79fe83d2804010a3eca89089999eae50be2b27ad3c49b270cc402828f",
+    "tests/ink_r1_ordinary_20261005/candidate01/source_binding.json": "56dac25470e45f9de8bd3c62667c1160a8af3aad02a2d59e14bf6ae220fb5456",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/source_binding.json": "cc0a3ef4fa909011a73f1a5acea55dd3427cead39ec6fdbc8d87a58356ce878b",
+    "tests/ink_e1_ordinary_20261005/candidate01/source_binding.json": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+    "tests/ink_e1_ordinary_20261005/candidate01/stage_receipt.json": "751e645059033cd4287bd01a0893e8bb013ce8d80e115a476a9afb76c69dd375",
+    "tests/ink_q2_ordinary_20261005/candidate01/source_binding.json": "c702df4e5b10b2a424f0ca3f0b860fd2d0b7171208965e696c8be72db1bc6cd3"
+  },
+  "runtime_map": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": "8509e03edea0bbc5df7f063431ee637713d44673223eeac34869b63be0650801",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/README.md": "13afed29f09d8010393b7849e54a4541714a8506b5c9e707142cbad2b199c841",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/bridge.gd": "38e0166264d98a7c53b4de732bfa46e8827c221763936b26cdb80983c7feb723",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/finite_gate.gd": "a030f09d104802497dc0b5e7db45b70bf1b3e1688ea3f3a023eb95e6828104a3",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/finite_host.gd": "511142692eec4ded64dfc7d9378fdf731e0bfc491ad6f88032acff8eab479264",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/floor_session.gd": "15af5192f271aa1f5263cde2ce1cb8162f18d177a12fc52f6775bb1cceae194e",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/host.gd": "8cc7d9893ad4e6c22c09418d51bb61e549b797093b0abea908d537fc209ee1da",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/live_binding.gd": "82e09e94374e180612ddd60a9b0d5395b772dc7eb861942af0dda82c316fa51c",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/navigation_install.gd": "9f63e8757494a42adf15275937bcefc23cd4e650f4bdf7e0de7dd33edde8bfbd",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/parse_gate.gd": "e26f374fd126f3b19b5e9895834d437f1a249c23994d92adf7c28f4c120d3ebd",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/preimage_manifest.json": "174d38315751c4e6508434afb36ca0e7ceb261c26f09a99fb036015f0cff759a",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/preimage_production/scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/preimage_production/scripts/integration/yanguizhou_first_floor.gd": "12792a8dff0c34f780b5191451ac9f40bb677600ae2fb20c122d26765d3089c7",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/preimage_production/scripts/ui/hero_chooser.gd": "b6d272cda4c2a2294aac60d2abdbea9685daa2ce9cf6619a78d20bfb34ec2740",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/source_checkpoint01/host.gd": "5b7c0df4a7e1fef64dba88d9596b0a5c31ddd58162995e96aa1ae2025bbdf855",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/stage_delta.py": "152b3f981449445b00d5ab9b842ca0777fcea07214c6863ddfb7c73998774652",
+    "res://tests/ink_rest_service_20261006/candidate01/ordinary01/verify_source.py": "f11f4d82539e04ec4c59920b90131ed43d5795dfcd66aaf516103a2285a9f795"
+  },
+  "ancestor_pin_replacements": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": {
+      "before": "12792a8dff0c34f780b5191451ac9f40bb677600ae2fb20c122d26765d3089c7",
+      "after": "8509e03edea0bbc5df7f063431ee637713d44673223eeac34869b63be0650801",
+      "scope": "Only first-line extends to exact Rest ordinary host"
+    }
+  },
+  "required_groups": [
+    "exact_rest_production_factories_and_complete_admission",
+    "legal_rest_entry_and_actual_visible_prompt",
+    "production_menu_continue_and_service_departure_no_refill"
+  ],
+  "service_85_matrix_rerun": false,
+  "native_input": false,
+  "natural_progression": false,
+  "full_floor": false,
+  "flask_consumer_opened": false,
+  "old_r1_review_requires_original_closure": true
+}

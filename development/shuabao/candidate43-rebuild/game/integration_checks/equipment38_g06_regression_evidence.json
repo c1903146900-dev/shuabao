@@ -1,0 +1,36 @@
+{
+  "original_sha256": "61e5581f24b2e60ac09b88f8f8a37afe0f3d1754f64286b1acefde6fce97a5a5",
+  "adapted_sha256": "8c262348f8fda5fc4f0c41109550bf1ddb9e01fc417837fe80f62ce2459485ab",
+  "changes": [
+    [
+      "[G06_MODEL, B01_MODEL,",
+      "[\"res://equipment_basic_cycle_20261009/model.gd\", G06_MODEL, B01_MODEL,"
+    ],
+    [
+      "model.get_script().resource_path == G06_MODEL",
+      "model.get_script().resource_path == \"res://equipment_basic_cycle_20261009/model.gd\" and model.get_script().get_base_script().resource_path == G06_MODEL"
+    ],
+    [
+      "model.runtime_stat_definitions.size() == prior.definitions.size() + 1",
+      "model.runtime_stat_definitions.size() == prior.definitions.size() + 2"
+    ],
+    [
+      "only G06 extends prior36 definitions",
+      "G06 and B04 extend prior36 definitions"
+    ],
+    [
+      "supported == 37 and model.snapshot().content_profile == \"ordinary_equipment37_potions3\"",
+      "supported == 38 and model.snapshot().content_profile == \"ordinary_equipment38_potions3\""
+    ],
+    [
+      "truthful supported37 profile",
+      "truthful supported38 profile during G06 regression"
+    ],
+    [
+      "\"suite\":\"equipment37_g06_actual_elite_damage_source_gate\"",
+      "\"suite\":\"equipment38_g06_regression_source_gate\""
+    ]
+  ],
+  "all_other_logic_identical": true,
+  "engine_run": false
+}

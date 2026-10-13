@@ -1,0 +1,73 @@
+{
+  "command": [
+    "/usr/local/bin/godot",
+    "--headless",
+    "--rendering-method",
+    "gl_compatibility",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/gltf_runtime_conversion01",
+    "--script",
+    "res://convert.gd",
+    "--",
+    "2"
+  ],
+  "profile": {
+    "name": "import",
+    "rss_limit_bytes": 939524096,
+    "wall_seconds": 60.0,
+    "sample_interval_seconds": 0.05,
+    "scope": "controller plus owned descendants",
+    "memory_enforcement": "sampled RSS, not a kernel hard limit",
+    "cgroup_or_OOM_guarantee": false
+  },
+  "started": true,
+  "reason": "",
+  "peak_total_rss": 143572992,
+  "max_sample_gap": 0.052542280000125174,
+  "recovery_note": "Archived strict rss_reread01 tree; narrow held terminal omission restored; proc_exit adapter not reconstructed; pair profiles disabled",
+  "pid": 22,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "reaps": [
+      {
+        "pid": 22,
+        "start_ticks": 1135884,
+        "si_code": 1,
+        "si_status": 0
+      }
+    ],
+    "errors": [],
+    "seconds": 0.025344030000269413
+  },
+  "exit": 0,
+  "signals": [],
+  "cancellation_requests": [],
+  "elapsed_seconds": 0.933149376000074,
+  "local_subreaper_restored": true,
+  "passed": true,
+  "rss_resolution_evidence": [
+    {
+      "pid": 22,
+      "start_ticks": 1135884,
+      "original_error": "missing_live_VmRSS:22",
+      "attempts": 59,
+      "resolved": true,
+      "reaped_by_probe": false,
+      "sample_retry_started": 11359.746803626,
+      "deadline": 11359.756803626,
+      "proof": "same_identity_Z",
+      "final_state": "Z",
+      "finished": 11359.749268696,
+      "shared_elapsed": 0.0024650699997437187
+    }
+  ],
+  "inventory_evidence": [],
+  "proc_exit_adapter_evidence": [],
+  "held_exit_evidence": [],
+  "pair_terminal_evidence": []
+}

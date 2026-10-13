@@ -1,0 +1,17 @@
+{
+  "schema": "ultimate-presentation-authoring-1",
+  "status": "AUTHORING_START_VALUES_NOT_ORIGINAL_WORKBOOK",
+  "world_slow_factor": 0.25,
+  "presentation_seconds": {
+    "yanguizhou_r1": 1.0,
+    "yanguizhou_r2": 1.2
+  },
+  "rationale": "Short configurable effect-reveal windows; tune after actual visual playback. R2 starts slightly longer for the scroll reveal. These are production starting values, not recovered source values.",
+  "decision_path": "docs/source_decisions/20261006-ultimate-presentation-groups.json",
+  "decision_sha256": "9c3f309f1b8f4364d607872c3b59913376e77f1870bfa74044946880c8c1682e",
+  "exclusions": [
+    "Do not substitute field lifetime or later damage phases for presentation_seconds.",
+    "Do not attribute Fengli 1.6 seconds or legacy test_initial 0.20 to Yanguizhou.",
+    "No ordinary R1/R2, host, P2, or networking integration in this candidate."
+  ]
+}

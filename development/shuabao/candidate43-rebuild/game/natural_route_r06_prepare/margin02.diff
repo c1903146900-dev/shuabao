@@ -1,0 +1,24 @@
+--- visible_route_r06.before_margin02.gd
++++ visible_route_r06.gd
+@@ -229,10 +229,10 @@
+  var desired: float=clampf(float(host.sim.hero.stats.attack_range)*0.60,3.5,6.5)
+  var direction: Vector3=(Vector3(-away.z,0.0,away.x)*orbit_sign+away*clampf((desired-float(target.distance))/2.0,-1.0,1.0)).normalized()
+  # One local step check and one tangent reversal, never global path planning.
+- if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,0.75) or _visible_ground(host.sim.hero.position+direction).is_empty():
++ if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,float(host.sim.hero_radius)) or _visible_ground(host.sim.hero.position+direction).is_empty():
+   orbit_sign=-orbit_sign
+   direction=Vector3(-away.z,0.0,away.x)*orbit_sign
+-  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,0.75) or _visible_ground(host.sim.hero.position+direction).is_empty():direction=Vector3.ZERO
++  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+direction,float(host.sim.hero_radius)) or _visible_ground(host.sim.hero.position+direction).is_empty():direction=Vector3.ZERO
+  _move(direction)
+  if float(host.sim.hero.cooldowns.q)<=0.00001 and float(host.sim.hero.lock_time)<=0.00001:
+   var plan: Dictionary=_plan_q1(visible)
+@@ -314,7 +314,7 @@
+   var toward: Vector3=center-host.sim.hero.position
+   if toward.length()<0.30:return {"accepted":false,"reason":"original_preflight_still_rejects_center"}
+   toward=toward.normalized()
+-  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+toward,0.75):return {"accepted":false,"reason":"safe_entry_local_movement_blocked"}
++  if not _ground_clear(host.sim.hero.position,host.sim.hero.position+toward,float(host.sim.hero_radius)):return {"accepted":false,"reason":"safe_entry_local_movement_blocked"}
+   _move(toward)
+   await host.get_tree().process_frame
+   ready=host.shop_session.next_room_preflight()

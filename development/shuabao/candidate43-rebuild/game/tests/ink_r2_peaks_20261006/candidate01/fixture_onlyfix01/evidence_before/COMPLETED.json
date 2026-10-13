@@ -1,0 +1,23 @@
+{
+  "status": "PARSE_FAILED_FINITE_NOT_RUN",
+  "cause": "finite_gate.gd:278 match/lambda closing syntax",
+  "cua_reset": true,
+  "desktop_terminal_title_absent": "LOOT_R2_PEAKS_GATE01",
+  "desktop_inventory_evidence": "desktop_windows_after.json",
+  "production_changed": false,
+  "process": {
+    "pid": 184006,
+    "exit": 1,
+    "reaped": true,
+    "desktop_pid_namespace": "pid:[4026532200]",
+    "cleanup_group_empty": true,
+    "group_final": [],
+    "reason": "",
+    "elapsed": 0.8336336590000428,
+    "peak_rss": 135471104,
+    "errors": [
+      "SCRIPT ERROR: Parse Error: Expected expression for match pattern.",
+      "ERROR: Failed to load script \"res://tests/ink_r2_peaks_20261006/candidate01/finite_gate.gd\" with error \"Parse error\"."
+    ]
+  }
+}

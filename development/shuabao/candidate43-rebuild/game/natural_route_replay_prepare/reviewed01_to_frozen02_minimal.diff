@@ -1,0 +1,23 @@
+--- natural_route_replay_prepare/reviewed01_preimages/natural_route_replay.gd
++++ natural_route_replay_prepare/natural_route_replay.gd
+@@ -283,6 +283,7 @@
+     await process_frame
+     rest_completion=driver.complete_original_rest()
+     await process_frame
++    if not rest_completion.get("accepted",false):check(false,"original rest readiness: "+str(rest_completion.get("reason","")));await finish("r03_original_rest_readiness_incomplete",observe());return
+     await finish("r03_original_rest_settled",observe());return
+    combat_row=next_row
+    continue
+--- natural_route_replay_prepare/reviewed01_preimages/visible_route_replay.gd
++++ natural_route_replay_prepare/visible_route_replay.gd
+@@ -320,6 +320,10 @@
+  host._request_next_room()
+  _record("Host:_request_next_room",{"row":row,"node":node_id},host.shop_session.last_receipt)
+  if not host.shop_session.last_receipt.get("accepted",false):return host.shop_session.last_receipt.duplicate(true)
++ var entered_flow: Dictionary=host.shop_session.snapshot()
++ var expected_status: String="service" if row==3 else "combat"
++ if entered_flow.status!=expected_status or entered_flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","")!=node_id:
++  return {"accepted":false,"reason":"original_next_entry_scope_not_established"}
+  return {"accepted":true,"node_id":node_id,"row":row,"upgrade":upgrade_result,"before_entry":before_entry,"entry_result":host.shop_session.last_receipt.duplicate(true)}
+ 
+ func complete_original_rest() -> Dictionary:

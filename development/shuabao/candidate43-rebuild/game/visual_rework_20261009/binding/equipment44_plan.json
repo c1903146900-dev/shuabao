@@ -1,0 +1,21 @@
+{
+  "schema": "equipment44-rage-original-consumers-successor-1",
+  "base_source_sha256": "de22c0e61e64ab506e867f7de009d2e00d9c1f92bd7622a93ae4b16ad2d502f7",
+  "changes": {
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "b86c79aa8122b4da31133e472e89daa20c034a5456edf614eb9b11fc8c86a10e",
+      "after": "53cea04c8e0cae5f35d55988f14bc779cc557a5d695faa0aeeba1911d8112489"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "c94a0c058046712015efb10a7e020511c19d7ca148681592911cf38b93d9169e",
+      "after": "04d9de57a208b1dca09ae98ae1a9f9a790ba800eea7c91329e90bd8c65de326a"
+    }
+  },
+  "new_files": {
+    "equipment_rage_20261010/distance_selection.gd": "2c4f87c246153a540f552cae67e1a102009f2fe9ab8cc6a388a41852caa9ebea",
+    "equipment_rage_20261010/model.gd": "f7a6740f8da28fb303e1b23e16b0c649bef74daabcf30bcbc395b8e5640f53b4",
+    "equipment_rage_20261010/regen_selection.gd": "844e15628d7cc2a4b71919f37bd2bbd69adf45edc9e7515b4fc5a6cb08944882",
+    "equipment_rage_20261010/adapter.gd": "c3a0ac50f8ad6104adc75510bb98a6bb123168664b5d98343dbd18ac0e53e8b5"
+  },
+  "scope": "D03 only; original distance and regeneration consumers and Sim/Common unchanged; previous 43 and elixir01/04 retained"
+}

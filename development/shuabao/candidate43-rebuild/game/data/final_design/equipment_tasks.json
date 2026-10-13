@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "version": "authored-equipment-tasks-20261002",
+  "authority": {
+    "user_message_id": "Sentinel_a5df666687a0819196a1feebe41699e0",
+    "user_quote": "两个事情，都按你的建议",
+    "scope": "Design selected completed-equipment one-time SP tasks with visible conditions/rewards, no sell/reacquire farming; completed acts with their Boss defeated are major-floor events"
+  },
+  "policy": {
+    "held_item_required_for_progress": true,
+    "progress_persists_when_sold": true,
+    "completion_once_per_equipment_per_run": true,
+    "duplicate_copies_multiply_progress": false,
+    "test_mode_counts": false,
+    "equipment_stats_and_recipes_unchanged": true,
+    "base_sp": 18,
+    "authored_task_bonus_sp_total": 3,
+    "g17_additional_bonus_sp": 1,
+    "maximum_current_sources_sp": 22,
+    "full_build_sp_cost": 23
+  },
+  "tasks": {
+    "rapid_blade_basic_hits": {
+      "equipment_id": "rapid_blade", "name": "疾攻薄刃·百炼快刃",
+      "description": "持有疾攻薄刃时，累计完成80次有效普通攻击目标命中，奖励1技能点。每次普攻对同一目标只计一次；不计冲刺攻击、技能、海克斯追加伤害或测试模式。换装保留进度，本局只能完成一次。",
+      "metric": "basic_attack_target_hit", "threshold": 80, "reward_sp": 1,
+      "dedupe": "run+encounter+cast_id+target", "status": "authored_initial_balance"
+    },
+    "bastion_shell_absorption": {
+      "equipment_id": "bastion_shell", "name": "坚壁战壳·实战承压",
+      "description": "持有坚壁战壳时，护盾累计实际吸收500点敌方攻击伤害，奖励1技能点。不计护盾生成值、自然到期、自伤或测试模式。换装保留进度，本局只能完成一次。",
+      "metric": "enemy_damage_absorbed_by_shield", "threshold": 500, "reward_sp": 1,
+      "dedupe": "run+encounter+event_sequence", "status": "authored_initial_balance"
+    },
+    "duelist_edge_ordinary_kills": {
+      "equipment_id": "duelist_edge", "name": "决斗锋刃·破阵历练",
+      "description": "持有决斗锋刃时，累计完成24次有真实战斗击杀凭据的普通敌人击杀，奖励1技能点。按敌人普通／精英／Boss等级分类，精英、Boss与测试模式不计。换装保留进度，本局只能完成一次。",
+      "metric": "ordinary_enemy_kill", "threshold": 24, "reward_sp": 1,
+      "dedupe": "run+encounter+enemy_actor_id", "status": "authored_initial_balance"
+    }
+  }
+}

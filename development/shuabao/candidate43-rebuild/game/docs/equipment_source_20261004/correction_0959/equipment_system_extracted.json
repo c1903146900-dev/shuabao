@@ -1,0 +1,4004 @@
+{
+  "source": {
+    "library_file_id": "libfile_8e7db4b8c22481918feb77f909e3dacf",
+    "file_id": "file_00000000b30c82309a7503067fcbf6c0",
+    "name": "游戏装备系统_v0.2_重新发送(1).docx",
+    "size_bytes": 51072,
+    "version_id": null,
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "created_at": "2026-10-04T09:50:21.941238Z",
+    "source": "Library complete read",
+    "original_download_status": "Official prepare_materialize succeeded via conversation-scoped workspace; original binary retained with Library identity xattrs.",
+    "scope": "Read-only faithful extraction; prices and quantities unchanged; namespace added to disambiguate reused source IDs.",
+    "original_path": "/workspace/shared/equipment_document_20261004/游戏装备系统_v0.2_重新发送(1).docx",
+    "current_version_number": 0,
+    "sha256": "8d938390725bdc07387ba2999ca77487cfcec15751d4ba396b9df69adfd10045",
+    "render_status": "10 pages successfully rendered; all page contact sheets inspected, page 10 blank except footer (matches original content).",
+    "content_verification": "All 72 equipment rows, all 30 passive rows, and all 6 active rows exactly match original DOCX tables after whitespace normalization."
+  },
+  "equipment": [
+    {
+      "id": "base:B01",
+      "source_code": "B01",
+      "tier": "base",
+      "name": "黑铁短刃",
+      "source_price": 450,
+      "source_tail": "攻击力+12",
+      "source_exact_compact": "B01黑铁短刃450攻击力+12",
+      "components": [],
+      "attributes_and_effects_source": "攻击力+12",
+      "source_attributes": "攻击力+12",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 12.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "base:B02",
+      "source_code": "B02",
+      "tier": "base",
+      "name": "奥术结晶",
+      "source_price": 450,
+      "source_tail": "法术强度+20",
+      "source_exact_compact": "B02奥术结晶450法术强度+20",
+      "components": [],
+      "attributes_and_effects_source": "法术强度+20",
+      "source_attributes": "法术强度+20",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "法术强度",
+          "value": 20.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "base:B03",
+      "source_code": "B03",
+      "tier": "base",
+      "name": "微型涡轮",
+      "source_price": 450,
+      "source_tail": "攻击速度+15%",
+      "source_exact_compact": "B03微型涡轮450攻击速度+15%",
+      "components": [],
+      "attributes_and_effects_source": "攻击速度+15%",
+      "source_attributes": "攻击速度+15%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻击速度",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B04",
+      "source_code": "B04",
+      "tier": "base",
+      "name": "鹰眼棱镜",
+      "source_price": 500,
+      "source_tail": "暴击率+10%",
+      "source_exact_compact": "B04鹰眼棱镜500暴击率+10%",
+      "components": [],
+      "attributes_and_effects_source": "暴击率+10%",
+      "source_attributes": "暴击率+10%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击率",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B05",
+      "source_code": "B05",
+      "tier": "base",
+      "name": "冷凝线圈",
+      "source_price": 500,
+      "source_tail": "冷却缩减+8%",
+      "source_exact_compact": "B05冷凝线圈500冷却缩减+8%",
+      "components": [],
+      "attributes_and_effects_source": "冷却缩减+8%",
+      "source_attributes": "冷却缩减+8%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "cdr_pct",
+          "source_label": "冷却缩减",
+          "value": 8.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B06",
+      "source_code": "B06",
+      "tier": "base",
+      "name": "生命核心",
+      "source_price": 450,
+      "source_tail": "生命值+140",
+      "source_exact_compact": "B06生命核心450生命值+140",
+      "components": [],
+      "attributes_and_effects_source": "生命值+140",
+      "source_attributes": "生命值+140",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命值",
+          "value": 140.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "base:B07",
+      "source_code": "B07",
+      "tier": "base",
+      "name": "合金甲板",
+      "source_price": 450,
+      "source_tail": "防御力+14",
+      "source_exact_compact": "B07合金甲板450防御力+14",
+      "components": [],
+      "attributes_and_effects_source": "防御力+14",
+      "source_attributes": "防御力+14",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "defense",
+          "source_label": "防御力",
+          "value": 14.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "base:B08",
+      "source_code": "B08",
+      "tier": "base",
+      "name": "矢量推进器",
+      "source_price": 500,
+      "source_tail": "移动速度+7%",
+      "source_exact_compact": "B08矢量推进器500移动速度+7%",
+      "components": [],
+      "attributes_and_effects_source": "移动速度+7%",
+      "source_attributes": "移动速度+7%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移动速度",
+          "value": 7.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B09",
+      "source_code": "B09",
+      "tier": "base",
+      "name": "血泵",
+      "source_price": 500,
+      "source_tail": "吸血+4%",
+      "source_exact_compact": "B09血泵500吸血+4%",
+      "components": [],
+      "attributes_and_effects_source": "吸血+4%",
+      "source_attributes": "吸血+4%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 4.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B10",
+      "source_code": "B10",
+      "tier": "base",
+      "name": "稳定环",
+      "source_price": 450,
+      "source_tail": "韧性+15%",
+      "source_exact_compact": "B10稳定环450韧性+15%",
+      "components": [],
+      "attributes_and_effects_source": "韧性+15%",
+      "source_attributes": "韧性+15%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "base:B11",
+      "source_code": "B11",
+      "tier": "base",
+      "name": "贯甲钉",
+      "source_price": 500,
+      "source_tail": "穿甲+10",
+      "source_exact_compact": "B11贯甲钉500穿甲+10",
+      "components": [],
+      "attributes_and_effects_source": "穿甲+10",
+      "source_attributes": "穿甲+10",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 10.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "base:B12",
+      "source_code": "B12",
+      "tier": "base",
+      "name": "活性凝胶",
+      "source_price": 400,
+      "source_tail": "基础生命恢复+3",
+      "source_exact_compact": "B12活性凝胶400基础生命恢复+3",
+      "components": [],
+      "attributes_and_effects_source": "基础生命恢复+3",
+      "source_attributes": "基础生命恢复+3",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "health_regen",
+          "source_label": "基础生命恢复",
+          "value": 3.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I01",
+      "source_code": "I01",
+      "tier": "intermediate",
+      "name": "双刃核心",
+      "source_price": 1100,
+      "source_tail": "黑铁短刃×2攻击力+28",
+      "source_exact_compact": "I01双刃核心1100黑铁短刃×2攻击力+28",
+      "components": [
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 2
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "攻击力+28",
+      "source_attributes": "攻击力+28",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 28.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I02",
+      "source_code": "I02",
+      "tier": "intermediate",
+      "name": "秘法棱核",
+      "source_price": 1100,
+      "source_tail": "奥术结晶×2法术强度+48",
+      "source_exact_compact": "I02秘法棱核1100奥术结晶×2法术强度+48",
+      "components": [
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 2
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "法术强度+48",
+      "source_attributes": "法术强度+48",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "法术强度",
+          "value": 48.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I03",
+      "source_code": "I03",
+      "tier": "intermediate",
+      "name": "狂热齿轮",
+      "source_price": 1500,
+      "source_tail": "微型涡轮+鹰眼棱镜+矢量推进器攻速+20%，暴击+10%，移速+5%",
+      "source_exact_compact": "I03狂热齿轮1500微型涡轮+鹰眼棱镜+矢量推进器攻速+20%，暴击+10%，移速+5%",
+      "components": [
+        {
+          "item_id": "base:B03",
+          "name": "微型涡轮",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B04",
+          "name": "鹰眼棱镜",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B08",
+          "name": "矢量推进器",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 1450,
+      "source_combine_fee": 50,
+      "attributes_and_effects_source": "攻速+20%，暴击+10%，移速+5%",
+      "source_attributes": "攻速+20%，暴击+10%，移速+5%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 20.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 10.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 5.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I04",
+      "source_code": "I04",
+      "tier": "intermediate",
+      "name": "锯齿长刃",
+      "source_price": 1200,
+      "source_tail": "黑铁短刃+贯甲钉攻击力+20，穿甲+14",
+      "source_exact_compact": "I04锯齿长刃1200黑铁短刃+贯甲钉攻击力+20，穿甲+14",
+      "components": [
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B11",
+          "name": "贯甲钉",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "攻击力+20，穿甲+14",
+      "source_attributes": "攻击力+20，穿甲+14",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 20.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 14.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I05",
+      "source_code": "I05",
+      "tier": "intermediate",
+      "name": "回响法印",
+      "source_price": 1200,
+      "source_tail": "奥术结晶+冷凝线圈法强+32，冷却缩减+10%",
+      "source_exact_compact": "I05回响法印1200奥术结晶+冷凝线圈法强+32，冷却缩减+10%",
+      "components": [
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "法强+32，冷却缩减+10%",
+      "source_attributes": "法强+32，冷却缩减+10%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "法强",
+          "value": 32.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "冷却缩减",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I06",
+      "source_code": "I06",
+      "tier": "intermediate",
+      "name": "血袭刀环",
+      "source_price": 1200,
+      "source_tail": "黑铁短刃+血泵攻击力+18，吸血+6%",
+      "source_exact_compact": "I06血袭刀环1200黑铁短刃+血泵攻击力+18，吸血+6%",
+      "components": [
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B09",
+          "name": "血泵",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "攻击力+18，吸血+6%",
+      "source_attributes": "攻击力+18，吸血+6%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 18.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 6.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I07",
+      "source_code": "I07",
+      "tier": "intermediate",
+      "name": "生命合金",
+      "source_price": 1100,
+      "source_tail": "生命核心+合金甲板生命+220，防御+18",
+      "source_exact_compact": "I07生命合金1100生命核心+合金甲板生命+220，防御+18",
+      "components": [
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "生命+220，防御+18",
+      "source_attributes": "生命+220，防御+18",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 220.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 18.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I08",
+      "source_code": "I08",
+      "tier": "intermediate",
+      "name": "不屈框架",
+      "source_price": 1100,
+      "source_tail": "生命核心+稳定环生命+200，韧性+22%",
+      "source_exact_compact": "I08不屈框架1100生命核心+稳定环生命+200，韧性+22%",
+      "components": [
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B10",
+          "name": "稳定环",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "生命+200，韧性+22%",
+      "source_attributes": "生命+200，韧性+22%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 200.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 22.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I09",
+      "source_code": "I09",
+      "tier": "intermediate",
+      "name": "相位推进器",
+      "source_price": 1250,
+      "source_tail": "矢量推进器+冷凝线圈移速+9%，冷却缩减+9%",
+      "source_exact_compact": "I09相位推进器1250矢量推进器+冷凝线圈移速+9%，冷却缩减+9%",
+      "components": [
+        {
+          "item_id": "base:B08",
+          "name": "矢量推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 1000,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "移速+9%，冷却缩减+9%",
+      "source_attributes": "移速+9%，冷却缩减+9%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 9.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "冷却缩减",
+          "value": 9.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I10",
+      "source_code": "I10",
+      "tier": "intermediate",
+      "name": "狂战泵",
+      "source_price": 1200,
+      "source_tail": "微型涡轮+血泵攻速+22%，吸血+6%",
+      "source_exact_compact": "I10狂战泵1200微型涡轮+血泵攻速+22%，吸血+6%",
+      "components": [
+        {
+          "item_id": "base:B03",
+          "name": "微型涡轮",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B09",
+          "name": "血泵",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "攻速+22%，吸血+6%",
+      "source_attributes": "攻速+22%，吸血+6%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 22.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 6.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I11",
+      "source_code": "I11",
+      "tier": "intermediate",
+      "name": "贯穿镜",
+      "source_price": 1250,
+      "source_tail": "鹰眼棱镜+贯甲钉暴击+15%，穿甲+14",
+      "source_exact_compact": "I11贯穿镜1250鹰眼棱镜+贯甲钉暴击+15%，穿甲+14",
+      "components": [
+        {
+          "item_id": "base:B04",
+          "name": "鹰眼棱镜",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B11",
+          "name": "贯甲钉",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 1000,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "暴击+15%，穿甲+14",
+      "source_attributes": "暴击+15%，穿甲+14",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 15.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 14.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I12",
+      "source_code": "I12",
+      "tier": "intermediate",
+      "name": "回生胚体",
+      "source_price": 1050,
+      "source_tail": "生命核心+活性凝胶生命+190，基础生命恢复+5",
+      "source_exact_compact": "I12回生胚体1050生命核心+活性凝胶生命+190，基础生命恢复+5",
+      "components": [
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B12",
+          "name": "活性凝胶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 850,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "生命+190，基础生命恢复+5",
+      "source_attributes": "生命+190，基础生命恢复+5",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 190.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "health_regen",
+          "source_label": "基础生命恢复",
+          "value": 5.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I13",
+      "source_code": "I13",
+      "tier": "intermediate",
+      "name": "战术芯片",
+      "source_price": 1200,
+      "source_tail": "黑铁短刃+冷凝线圈攻击力+18，冷却缩减+10%",
+      "source_exact_compact": "I13战术芯片1200黑铁短刃+冷凝线圈攻击力+18，冷却缩减+10%",
+      "components": [
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "攻击力+18，冷却缩减+10%",
+      "source_attributes": "攻击力+18，冷却缩减+10%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 18.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "冷却缩减",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I14",
+      "source_code": "I14",
+      "tier": "intermediate",
+      "name": "奥术穿针",
+      "source_price": 1200,
+      "source_tail": "奥术结晶+贯甲钉法强+30，穿甲+13",
+      "source_exact_compact": "I14奥术穿针1200奥术结晶+贯甲钉法强+30，穿甲+13",
+      "components": [
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B11",
+          "name": "贯甲钉",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "法强+30，穿甲+13",
+      "source_attributes": "法强+30，穿甲+13",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "法强",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 13.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I15",
+      "source_code": "I15",
+      "tier": "intermediate",
+      "name": "守心板",
+      "source_price": 1100,
+      "source_tail": "合金甲板+稳定环防御+18，韧性+22%",
+      "source_exact_compact": "I15守心板1100合金甲板+稳定环防御+18，韧性+22%",
+      "components": [
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B10",
+          "name": "稳定环",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "防御+18，韧性+22%",
+      "source_attributes": "防御+18，韧性+22%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 18.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 22.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I16",
+      "source_code": "I16",
+      "tier": "intermediate",
+      "name": "轻装护片",
+      "source_price": 1200,
+      "source_tail": "合金甲板+矢量推进器防御+14，移速+9%",
+      "source_exact_compact": "I16轻装护片1200合金甲板+矢量推进器防御+14，移速+9%",
+      "components": [
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B08",
+          "name": "矢量推进器",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "防御+14，移速+9%",
+      "source_attributes": "防御+14，移速+9%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 14.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 9.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I17",
+      "source_code": "I17",
+      "tier": "intermediate",
+      "name": "血肉触媒",
+      "source_price": 1150,
+      "source_tail": "生命核心+奥术结晶生命+190，法强+28",
+      "source_exact_compact": "I17血肉触媒1150生命核心+奥术结晶生命+190，法强+28",
+      "components": [
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 900,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "生命+190，法强+28",
+      "source_attributes": "生命+190，法强+28",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 190.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "法强",
+          "value": 28.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "intermediate:I18",
+      "source_code": "I18",
+      "tier": "intermediate",
+      "name": "猎杀号角",
+      "source_price": 1200,
+      "source_tail": "黑铁短刃+矢量推进器攻击力+18，移速+9%",
+      "source_exact_compact": "I18猎杀号角1200黑铁短刃+矢量推进器攻击力+18，移速+9%",
+      "components": [
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B08",
+          "name": "矢量推进器",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 950,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "攻击力+18，移速+9%",
+      "source_attributes": "攻击力+18，移速+9%",
+      "source_effects": "",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "攻击力",
+          "value": 18.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 9.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:A01",
+      "source_code": "A01",
+      "tier": "final",
+      "name": "裂星机炮",
+      "source_price": 3300,
+      "source_tail": "双刃核心+狂热齿轮+鹰眼棱镜AD+45，攻速+35%，暴击+20%连击；三连破",
+      "source_exact_compact": "A01裂星机炮3300双刃核心+狂热齿轮+鹰眼棱镜AD+45，攻速+35%，暴击+20%连击；三连破",
+      "components": [
+        {
+          "item_id": "intermediate:I01",
+          "name": "双刃核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I03",
+          "name": "狂热齿轮",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B04",
+          "name": "鹰眼棱镜",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 3100,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "AD+45，攻速+35%，暴击+20%连击；三连破",
+      "source_attributes": "AD+45，攻速+35%，暴击+20%",
+      "source_effects": "连击；三连破",
+      "mechanism_ids": [
+        "passive:01",
+        "passive:02"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 35.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 20.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:A02",
+      "source_code": "A02",
+      "tier": "final",
+      "name": "血潮连刃",
+      "source_price": 3050,
+      "source_tail": "血袭刀环+狂战泵+黑铁短刃AD+40，攻速+30%，吸血+9%鲜血狂热；任务：血液循环",
+      "source_exact_compact": "A02血潮连刃3050血袭刀环+狂战泵+黑铁短刃AD+40，攻速+30%，吸血+9%鲜血狂热；任务：血液循环",
+      "components": [
+        {
+          "item_id": "intermediate:I06",
+          "name": "血袭刀环",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I10",
+          "name": "狂战泵",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 200,
+      "attributes_and_effects_source": "AD+40，攻速+30%，吸血+9%鲜血狂热；任务：血液循环",
+      "source_attributes": "AD+40，攻速+30%，吸血+9%",
+      "source_effects": "鲜血狂热；任务：血液循环",
+      "mechanism_ids": [
+        "passive:07"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 40.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 30.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 9.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:A03",
+      "source_code": "A03",
+      "tier": "final",
+      "name": "雷鸣棱镜",
+      "source_price": 3150,
+      "source_tail": "双刃核心+贯穿镜+鹰眼棱镜AD+50，暴击+25%，攻速+15%暴击扩散",
+      "source_exact_compact": "A03雷鸣棱镜3150双刃核心+贯穿镜+鹰眼棱镜AD+50，暴击+25%，攻速+15%暴击扩散",
+      "components": [
+        {
+          "item_id": "intermediate:I01",
+          "name": "双刃核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I11",
+          "name": "贯穿镜",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B04",
+          "name": "鹰眼棱镜",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 300,
+      "attributes_and_effects_source": "AD+50，暴击+25%，攻速+15%暴击扩散",
+      "source_attributes": "AD+50，暴击+25%，攻速+15%",
+      "source_effects": "暴击扩散",
+      "mechanism_ids": [
+        "passive:04"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 50.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 25.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:A04",
+      "source_code": "A04",
+      "tier": "final",
+      "name": "游隼引擎",
+      "source_price": 2950,
+      "source_tail": "猎杀号角+狂热齿轮AD+38，攻速+30%，移速+12%动能射击",
+      "source_exact_compact": "A04游隼引擎2950猎杀号角+狂热齿轮AD+38，攻速+30%，移速+12%动能射击",
+      "components": [
+        {
+          "item_id": "intermediate:I18",
+          "name": "猎杀号角",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I03",
+          "name": "狂热齿轮",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2700,
+      "source_combine_fee": 250,
+      "attributes_and_effects_source": "AD+38，攻速+30%，移速+12%动能射击",
+      "source_attributes": "AD+38，攻速+30%，移速+12%",
+      "source_effects": "动能射击",
+      "mechanism_ids": [
+        "passive:06"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 38.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 30.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:A05",
+      "source_code": "A05",
+      "tier": "final",
+      "name": "处刑轮机",
+      "source_price": 3300,
+      "source_tail": "锯齿长刃+贯穿镜+黑铁短刃AD+55，暴击+20%，穿甲+20巨物猎手",
+      "source_exact_compact": "A05处刑轮机3300锯齿长刃+贯穿镜+黑铁短刃AD+55，暴击+20%，穿甲+20巨物猎手",
+      "components": [
+        {
+          "item_id": "intermediate:I04",
+          "name": "锯齿长刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I11",
+          "name": "贯穿镜",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "AD+55，暴击+20%，穿甲+20巨物猎手",
+      "source_attributes": "AD+55，暴击+20%，穿甲+20",
+      "source_effects": "巨物猎手",
+      "mechanism_ids": [
+        "passive:18"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 55.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 20.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 20.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:A06",
+      "source_code": "A06",
+      "tier": "final",
+      "name": "千刃核",
+      "source_price": 3100,
+      "source_tail": "双刃核心+狂战泵+冷凝线圈AD+45，攻速+35%，CDR+12%顺劈；清场节奏",
+      "source_exact_compact": "A06千刃核3100双刃核心+狂战泵+冷凝线圈AD+45，攻速+35%，CDR+12%顺劈；清场节奏",
+      "components": [
+        {
+          "item_id": "intermediate:I01",
+          "name": "双刃核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I10",
+          "name": "狂战泵",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 300,
+      "attributes_and_effects_source": "AD+45，攻速+35%，CDR+12%顺劈；清场节奏",
+      "source_attributes": "AD+45，攻速+35%，CDR+12%",
+      "source_effects": "顺劈；清场节奏",
+      "mechanism_ids": [
+        "passive:03",
+        "passive:19"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "attack_speed_pct",
+          "source_label": "攻速",
+          "value": 35.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:B01",
+      "source_code": "B01",
+      "tier": "final",
+      "name": "断界锋",
+      "source_price": 3200,
+      "source_tail": "锯齿长刃+战术芯片+黑铁短刃AD+60，CDR+18%，穿甲+16追命回流；任务：断界试炼",
+      "source_exact_compact": "B01断界锋3200锯齿长刃+战术芯片+黑铁短刃AD+60，CDR+18%，穿甲+16追命回流；任务：断界试炼",
+      "components": [
+        {
+          "item_id": "intermediate:I04",
+          "name": "锯齿长刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B01",
+          "name": "黑铁短刃",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AD+60，CDR+18%，穿甲+16追命回流；任务：断界试炼",
+      "source_attributes": "AD+60，CDR+18%，穿甲+16",
+      "source_effects": "追命回流；任务：断界试炼",
+      "mechanism_ids": [
+        "passive:13"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 60.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 18.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 16.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:B02",
+      "source_code": "B02",
+      "tier": "final",
+      "name": "追猎长刃",
+      "source_price": 2900,
+      "source_tail": "锯齿长刃+猎杀号角AD+50，穿甲+14，移速+14%猎杀余势",
+      "source_exact_compact": "B02追猎长刃2900锯齿长刃+猎杀号角AD+50，穿甲+14，移速+14%猎杀余势",
+      "components": [
+        {
+          "item_id": "intermediate:I04",
+          "name": "锯齿长刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I18",
+          "name": "猎杀号角",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2400,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "AD+50，穿甲+14，移速+14%猎杀余势",
+      "source_attributes": "AD+50，穿甲+14，移速+14%",
+      "source_effects": "猎杀余势",
+      "mechanism_ids": [
+        "passive:28"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 50.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 14.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 14.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:B03",
+      "source_code": "B03",
+      "tier": "final",
+      "name": "破军重刃",
+      "source_price": 3000,
+      "source_tail": "战术芯片+生命合金AD+45，生命+320，CDR+12%近身压制",
+      "source_exact_compact": "B03破军重刃3000战术芯片+生命合金AD+45，生命+320，CDR+12%近身压制",
+      "components": [
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2300,
+      "source_combine_fee": 700,
+      "attributes_and_effects_source": "AD+45，生命+320，CDR+12%近身压制",
+      "source_attributes": "AD+45，生命+320，CDR+12%",
+      "source_effects": "近身压制",
+      "mechanism_ids": [
+        "passive:14"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 320.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:B04",
+      "source_code": "B04",
+      "tier": "final",
+      "name": "战术裂片",
+      "source_price": 3000,
+      "source_tail": "战术芯片+贯穿镜AD+42，CDR+18%，暴击+15%战技循环",
+      "source_exact_compact": "B04战术裂片3000战术芯片+贯穿镜AD+42，CDR+18%，暴击+15%战技循环",
+      "components": [
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I11",
+          "name": "贯穿镜",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2450,
+      "source_combine_fee": 550,
+      "attributes_and_effects_source": "AD+42，CDR+18%，暴击+15%战技循环",
+      "source_attributes": "AD+42，CDR+18%，暴击+15%",
+      "source_effects": "战技循环",
+      "mechanism_ids": [
+        "passive:08"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 42.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 18.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "crit_chance_pct",
+          "source_label": "暴击",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:B05",
+      "source_code": "B05",
+      "tier": "final",
+      "name": "双相剑核",
+      "source_price": 3250,
+      "source_tail": "战术芯片+奥术穿针+奥术结晶AD+32，AP+60，CDR+18%咒刃",
+      "source_exact_compact": "B05双相剑核3250战术芯片+奥术穿针+奥术结晶AD+32，AP+60，CDR+18%咒刃",
+      "components": [
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I14",
+          "name": "奥术穿针",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "AD+32，AP+60，CDR+18%咒刃",
+      "source_attributes": "AD+32，AP+60，CDR+18%",
+      "source_effects": "咒刃",
+      "mechanism_ids": [
+        "passive:05"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 32.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 60.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 18.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:B06",
+      "source_code": "B06",
+      "tier": "final",
+      "name": "溢杀号角",
+      "source_price": 3250,
+      "source_tail": "锯齿长刃+猎杀号角+贯甲钉AD+55，穿甲+22，移速+10%溢杀",
+      "source_exact_compact": "B06溢杀号角3250锯齿长刃+猎杀号角+贯甲钉AD+55，穿甲+22，移速+10%溢杀",
+      "components": [
+        {
+          "item_id": "intermediate:I04",
+          "name": "锯齿长刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I18",
+          "name": "猎杀号角",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B11",
+          "name": "贯甲钉",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AD+55，穿甲+22，移速+10%溢杀",
+      "source_attributes": "AD+55，穿甲+22，移速+10%",
+      "source_effects": "溢杀",
+      "mechanism_ids": [
+        "passive:17"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 55.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 22.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C01",
+      "source_code": "C01",
+      "tier": "final",
+      "name": "回响法典",
+      "source_price": 3000,
+      "source_tail": "回响法印+秘法棱核AP+95，CDR+20%法术回响；任务：术式积累",
+      "source_exact_compact": "C01回响法典3000回响法印+秘法棱核AP+95，CDR+20%法术回响；任务：术式积累",
+      "components": [
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I02",
+          "name": "秘法棱核",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2300,
+      "source_combine_fee": 700,
+      "attributes_and_effects_source": "AP+95，CDR+20%法术回响；任务：术式积累",
+      "source_attributes": "AP+95，CDR+20%",
+      "source_effects": "法术回响；任务：术式积累",
+      "mechanism_ids": [
+        "passive:09"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 95.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 20.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C02",
+      "source_code": "C02",
+      "tier": "final",
+      "name": "双相棱镜",
+      "source_price": 3200,
+      "source_tail": "回响法印+相位推进器+奥术结晶AP+80，CDR+15%，移速+12%交替施法",
+      "source_exact_compact": "C02双相棱镜3200回响法印+相位推进器+奥术结晶AP+80，CDR+15%，移速+12%交替施法",
+      "components": [
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I09",
+          "name": "相位推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 300,
+      "attributes_and_effects_source": "AP+80，CDR+15%，移速+12%交替施法",
+      "source_attributes": "AP+80，CDR+15%，移速+12%",
+      "source_effects": "交替施法",
+      "mechanism_ids": [
+        "passive:10"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 80.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C03",
+      "source_code": "C03",
+      "tier": "final",
+      "name": "过载矩阵",
+      "source_price": 3200,
+      "source_tail": "回响法印+秘法棱核+冷凝线圈AP+90，CDR+25%施法热机",
+      "source_exact_compact": "C03过载矩阵3200回响法印+秘法棱核+冷凝线圈AP+90，CDR+25%施法热机",
+      "components": [
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I02",
+          "name": "秘法棱核",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "AP+90，CDR+25%施法热机",
+      "source_attributes": "AP+90，CDR+25%",
+      "source_effects": "施法热机",
+      "mechanism_ids": [
+        "passive:11"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 90.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 25.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C04",
+      "source_code": "C04",
+      "tier": "final",
+      "name": "血术法环",
+      "source_price": 3200,
+      "source_tail": "血肉触媒+回响法印+血泵AP+75，生命+300，吸血+7%技能汲取",
+      "source_exact_compact": "C04血术法环3200血肉触媒+回响法印+血泵AP+75，生命+300，吸血+7%技能汲取",
+      "components": [
+        {
+          "item_id": "intermediate:I17",
+          "name": "血肉触媒",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B09",
+          "name": "血泵",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AP+75，生命+300，吸血+7%技能汲取",
+      "source_attributes": "AP+75，生命+300，吸血+7%",
+      "source_effects": "技能汲取",
+      "mechanism_ids": [
+        "passive:12"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 75.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 300.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 7.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C05",
+      "source_code": "C05",
+      "tier": "final",
+      "name": "寂静法球",
+      "source_price": 3100,
+      "source_tail": "秘法棱核+回响法印+奥术结晶AP+110，CDR+12%蓄势；任务：静默爆发",
+      "source_exact_compact": "C05寂静法球3100秘法棱核+回响法印+奥术结晶AP+110，CDR+12%蓄势；任务：静默爆发",
+      "components": [
+        {
+          "item_id": "intermediate:I02",
+          "name": "秘法棱核",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2750,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AP+110，CDR+12%蓄势；任务：静默爆发",
+      "source_attributes": "AP+110，CDR+12%",
+      "source_effects": "蓄势；任务：静默爆发",
+      "mechanism_ids": [
+        "passive:16"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 110.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:C06",
+      "source_code": "C06",
+      "tier": "final",
+      "name": "远星仪",
+      "source_price": 3250,
+      "source_tail": "奥术穿针+相位推进器+奥术结晶AP+90，穿甲+18，移速+10%远距校准",
+      "source_exact_compact": "C06远星仪3250奥术穿针+相位推进器+奥术结晶AP+90，穿甲+18，移速+10%远距校准",
+      "components": [
+        {
+          "item_id": "intermediate:I14",
+          "name": "奥术穿针",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I09",
+          "name": "相位推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AP+90，穿甲+18，移速+10%远距校准",
+      "source_attributes": "AP+90，穿甲+18，移速+10%",
+      "source_effects": "远距校准",
+      "mechanism_ids": [
+        "passive:15"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 90.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 18.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:D01",
+      "source_code": "D01",
+      "tier": "final",
+      "name": "巨像心核",
+      "source_price": 3150,
+      "source_tail": "血肉触媒+双刃核心+生命核心生命+500，AD+30，AP+35血肉铸兵",
+      "source_exact_compact": "D01巨像心核3150血肉触媒+双刃核心+生命核心生命+500，AD+30，AP+35血肉铸兵",
+      "components": [
+        {
+          "item_id": "intermediate:I17",
+          "name": "血肉触媒",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I01",
+          "name": "双刃核心",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2700,
+      "source_combine_fee": 450,
+      "attributes_and_effects_source": "生命+500，AD+30，AP+35血肉铸兵",
+      "source_attributes": "生命+500，AD+30，AP+35",
+      "source_effects": "血肉铸兵",
+      "mechanism_ids": [
+        "passive:26"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 500.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 35.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:D02",
+      "source_code": "D02",
+      "tier": "final",
+      "name": "逆伤甲胄",
+      "source_price": 3100,
+      "source_tail": "生命合金+守心板+生命核心生命+480，防御+35，韧性+25%百折；任务：百折试炼",
+      "source_exact_compact": "D02逆伤甲胄3100生命合金+守心板+生命核心生命+480，防御+35，韧性+25%百折；任务：百折试炼",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I15",
+          "name": "守心板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2650,
+      "source_combine_fee": 450,
+      "attributes_and_effects_source": "生命+480，防御+35，韧性+25%百折；任务：百折试炼",
+      "source_attributes": "生命+480，防御+35，韧性+25%",
+      "source_effects": "百折；任务：百折试炼",
+      "mechanism_ids": [
+        "passive:22"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 480.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 35.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 25.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:D03",
+      "source_code": "D03",
+      "tier": "final",
+      "name": "怒潮胸炉",
+      "source_price": 3200,
+      "source_tail": "生命合金+战术芯片+血泵生命+420，AD+20，CDR+12%，吸血+6%近身压制；战斗再生",
+      "source_exact_compact": "D03怒潮胸炉3200生命合金+战术芯片+血泵生命+420，AD+20，CDR+12%，吸血+6%近身压制；战斗再生",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B09",
+          "name": "血泵",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+420，AD+20，CDR+12%，吸血+6%近身压制；战斗再生",
+      "source_attributes": "生命+420，AD+20，CDR+12%，吸血+6%",
+      "source_effects": "近身压制；战斗再生",
+      "mechanism_ids": [
+        "passive:14",
+        "passive:24"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 420.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 20.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 12.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 6.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:D04",
+      "source_code": "D04",
+      "tier": "final",
+      "name": "血线引擎",
+      "source_price": 3150,
+      "source_tail": "血袭刀环+生命合金+生命核心生命+450，AD+40，吸血+7%生命线",
+      "source_exact_compact": "D04血线引擎3150血袭刀环+生命合金+生命核心生命+450，AD+40，吸血+7%生命线",
+      "components": [
+        {
+          "item_id": "intermediate:I06",
+          "name": "血袭刀环",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2750,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+450，AD+40，吸血+7%生命线",
+      "source_attributes": "生命+450，AD+40，吸血+7%",
+      "source_effects": "生命线",
+      "mechanism_ids": [
+        "passive:20"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 450.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 40.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 7.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:D05",
+      "source_code": "D05",
+      "tier": "final",
+      "name": "群敌堡垒",
+      "source_price": 3050,
+      "source_tail": "生命合金+守心板+稳定环生命+520，防御+38，韧性+25%身陷重围",
+      "source_exact_compact": "D05群敌堡垒3050生命合金+守心板+稳定环生命+520，防御+38，韧性+25%身陷重围",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I15",
+          "name": "守心板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B10",
+          "name": "稳定环",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2650,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+520，防御+38，韧性+25%身陷重围",
+      "source_attributes": "生命+520，防御+38，韧性+25%",
+      "source_effects": "身陷重围",
+      "mechanism_ids": [
+        "passive:23"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 520.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 38.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 25.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:D06",
+      "source_code": "D06",
+      "tier": "final",
+      "name": "破阵甲",
+      "source_price": 3150,
+      "source_tail": "不屈框架+轻装护片+合金甲板生命+400，防御+30，韧性+35%，移速+8%受控反扑",
+      "source_exact_compact": "D06破阵甲3150不屈框架+轻装护片+合金甲板生命+400，防御+30，韧性+35%，移速+8%受控反扑",
+      "components": [
+        {
+          "item_id": "intermediate:I08",
+          "name": "不屈框架",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I16",
+          "name": "轻装护片",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2750,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+400，防御+30，韧性+35%，移速+8%受控反扑",
+      "source_attributes": "生命+400，防御+30，韧性+35%，移速+8%",
+      "source_effects": "受控反扑",
+      "mechanism_ids": [
+        "passive:27"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 400.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 35.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 8.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:E01",
+      "source_code": "E01",
+      "tier": "final",
+      "name": "不灭壁垒",
+      "source_price": 3100,
+      "source_tail": "生命合金+回生胚体+合金甲板生命+550，防御+45，生命恢复+4生命线；过量治疗",
+      "source_exact_compact": "E01不灭壁垒3100生命合金+回生胚体+合金甲板生命+550，防御+45，生命恢复+4生命线；过量治疗",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I12",
+          "name": "回生胚体",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2600,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "生命+550，防御+45，生命恢复+4生命线；过量治疗",
+      "source_attributes": "生命+550，防御+45，生命恢复+4",
+      "source_effects": "生命线；过量治疗",
+      "mechanism_ids": [
+        "passive:20",
+        "passive:25"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 550.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "health_regen",
+          "source_label": "生命恢复",
+          "value": 4.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:E02",
+      "source_code": "E02",
+      "tier": "final",
+      "name": "缓冲装甲",
+      "source_price": 3100,
+      "source_tail": "生命合金+守心板+合金甲板生命+500，防御+50缓伤",
+      "source_exact_compact": "E02缓冲装甲3100生命合金+守心板+合金甲板生命+500，防御+50缓伤",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I15",
+          "name": "守心板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B07",
+          "name": "合金甲板",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2650,
+      "source_combine_fee": 450,
+      "attributes_and_effects_source": "生命+500，防御+50缓伤",
+      "source_attributes": "生命+500，防御+50",
+      "source_effects": "缓伤",
+      "mechanism_ids": [
+        "passive:21"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 500.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 50.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:E03",
+      "source_code": "E03",
+      "tier": "final",
+      "name": "再生装置",
+      "source_price": 3100,
+      "source_tail": "回生胚体+回响法印+生命核心生命+420，生命恢复+8，CDR+15%战斗再生",
+      "source_exact_compact": "E03再生装置3100回生胚体+回响法印+生命核心生命+420，生命恢复+8，CDR+15%战斗再生",
+      "components": [
+        {
+          "item_id": "intermediate:I12",
+          "name": "回生胚体",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2700,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+420，生命恢复+8，CDR+15%战斗再生",
+      "source_attributes": "生命+420，生命恢复+8，CDR+15%",
+      "source_effects": "战斗再生",
+      "mechanism_ids": [
+        "passive:24"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 420.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "health_regen",
+          "source_label": "生命恢复",
+          "value": 8.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:E04",
+      "source_code": "E04",
+      "tier": "final",
+      "name": "溢生圣杯",
+      "source_price": 3150,
+      "source_tail": "回生胚体+血袭刀环+血泵生命+420，吸血+8%，生命恢复+6过量治疗",
+      "source_exact_compact": "E04溢生圣杯3150回生胚体+血袭刀环+血泵生命+420，吸血+8%，生命恢复+6过量治疗",
+      "components": [
+        {
+          "item_id": "intermediate:I12",
+          "name": "回生胚体",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I06",
+          "name": "血袭刀环",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B09",
+          "name": "血泵",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2750,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "生命+420，吸血+8%，生命恢复+6过量治疗",
+      "source_attributes": "生命+420，吸血+8%，生命恢复+6",
+      "source_effects": "过量治疗",
+      "mechanism_ids": [
+        "passive:25"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 420.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 8.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "health_regen",
+          "source_label": "生命恢复",
+          "value": 6.0,
+          "unit": "flat"
+        }
+      ]
+    },
+    {
+      "id": "final:E05",
+      "source_code": "E05",
+      "tier": "final",
+      "name": "围城骨架",
+      "source_price": 3100,
+      "source_tail": "生命合金+守心板+稳定环生命+520，防御+40，韧性+40%身陷重围",
+      "source_exact_compact": "E05围城骨架3100生命合金+守心板+稳定环生命+520，防御+40，韧性+40%身陷重围",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I15",
+          "name": "守心板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B10",
+          "name": "稳定环",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2650,
+      "source_combine_fee": 450,
+      "attributes_and_effects_source": "生命+520，防御+40，韧性+40%身陷重围",
+      "source_attributes": "生命+520，防御+40，韧性+40%",
+      "source_effects": "身陷重围",
+      "mechanism_ids": [
+        "passive:23"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 520.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 40.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 40.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:E06",
+      "source_code": "E06",
+      "tier": "final",
+      "name": "援护矩阵",
+      "source_price": 3300,
+      "source_tail": "不屈框架+相位推进器+生命核心生命+450，CDR+20%，韧性+30%救援装甲；任务：守护记录",
+      "source_exact_compact": "E06援护矩阵3300不屈框架+相位推进器+生命核心生命+450，CDR+20%，韧性+30%救援装甲；任务：守护记录",
+      "components": [
+        {
+          "item_id": "intermediate:I08",
+          "name": "不屈框架",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I09",
+          "name": "相位推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "生命+450，CDR+20%，韧性+30%救援装甲；任务：守护记录",
+      "source_attributes": "生命+450，CDR+20%，韧性+30%",
+      "source_effects": "救援装甲；任务：守护记录",
+      "mechanism_ids": [
+        "passive:29"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 450.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 20.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 30.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F01",
+      "source_code": "F01",
+      "tier": "final",
+      "name": "时凝棱镜",
+      "source_price": 3300,
+      "source_tail": "回响法印+秘法棱核+冷凝线圈AP+80，CDR+20%主动：停滞；被动：蓄势",
+      "source_exact_compact": "F01时凝棱镜3300回响法印+秘法棱核+冷凝线圈AP+80，CDR+20%主动：停滞；被动：蓄势",
+      "components": [
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I02",
+          "name": "秘法棱核",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "AP+80，CDR+20%主动：停滞；被动：蓄势",
+      "source_attributes": "AP+80，CDR+20%",
+      "source_effects": "主动：停滞；被动：蓄势",
+      "mechanism_ids": [
+        "passive:16",
+        "active:A01"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 80.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 20.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F02",
+      "source_code": "F02",
+      "tier": "final",
+      "name": "净界推进靴",
+      "source_price": 3150,
+      "source_tail": "不屈框架+相位推进器+稳定环移速+15%，韧性+40%，CDR+15%主动：净化推进；被动：受控反扑",
+      "source_exact_compact": "F02净界推进靴3150不屈框架+相位推进器+稳定环移速+15%，韧性+40%，CDR+15%主动：净化推进；被动：受控反扑",
+      "components": [
+        {
+          "item_id": "intermediate:I08",
+          "name": "不屈框架",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I09",
+          "name": "相位推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B10",
+          "name": "稳定环",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "移速+15%，韧性+40%，CDR+15%主动：净化推进；被动：受控反扑",
+      "source_attributes": "移速+15%，韧性+40%，CDR+15%",
+      "source_effects": "主动：净化推进；被动：受控反扑",
+      "mechanism_ids": [
+        "passive:27",
+        "active:A02"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 15.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "tenacity_pct",
+          "source_label": "韧性",
+          "value": 40.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F03",
+      "source_code": "F03",
+      "tier": "final",
+      "name": "引力投射器",
+      "source_price": 3250,
+      "source_tail": "血肉触媒+回响法印+生命核心AP+70，生命+300，CDR+15%主动：引力核心；被动：清场节奏",
+      "source_exact_compact": "F03引力投射器3250血肉触媒+回响法印+生命核心AP+70，生命+300，CDR+15%主动：引力核心；被动：清场节奏",
+      "components": [
+        {
+          "item_id": "intermediate:I17",
+          "name": "血肉触媒",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B06",
+          "name": "生命核心",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2800,
+      "source_combine_fee": 450,
+      "attributes_and_effects_source": "AP+70，生命+300，CDR+15%主动：引力核心；被动：清场节奏",
+      "source_attributes": "AP+70，生命+300，CDR+15%",
+      "source_effects": "主动：引力核心；被动：清场节奏",
+      "mechanism_ids": [
+        "passive:19",
+        "active:A03"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 70.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 300.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F04",
+      "source_code": "F04",
+      "tier": "final",
+      "name": "相位发生器",
+      "source_price": 3250,
+      "source_tail": "猎杀号角+奥术穿针+矢量推进器AD+40，AP+50，移速+12%主动：相位跃迁；被动：猎杀余势",
+      "source_exact_compact": "F04相位发生器3250猎杀号角+奥术穿针+矢量推进器AD+40，AP+50，移速+12%主动：相位跃迁；被动：猎杀余势",
+      "components": [
+        {
+          "item_id": "intermediate:I18",
+          "name": "猎杀号角",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I14",
+          "name": "奥术穿针",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B08",
+          "name": "矢量推进器",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 350,
+      "attributes_and_effects_source": "AD+40，AP+50，移速+12%主动：相位跃迁；被动：猎杀余势",
+      "source_attributes": "AD+40，AP+50，移速+12%",
+      "source_effects": "主动：相位跃迁；被动：猎杀余势",
+      "mechanism_ids": [
+        "passive:28",
+        "active:A04"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 40.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 50.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F05",
+      "source_code": "F05",
+      "tier": "final",
+      "name": "同步壁垒",
+      "source_price": 3300,
+      "source_tail": "生命合金+不屈框架+冷凝线圈生命+500，防御+30，CDR+15%主动：救援屏障；被动：救援装甲",
+      "source_exact_compact": "F05同步壁垒3300生命合金+不屈框架+冷凝线圈生命+500，防御+30，CDR+15%主动：救援屏障；被动：救援装甲",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I08",
+          "name": "不屈框架",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2700,
+      "source_combine_fee": 600,
+      "attributes_and_effects_source": "生命+500，防御+30，CDR+15%主动：救援屏障；被动：救援装甲",
+      "source_attributes": "生命+500，防御+30，CDR+15%",
+      "source_effects": "主动：救援屏障；被动：救援装甲",
+      "mechanism_ids": [
+        "passive:29",
+        "active:A05"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 500.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:F06",
+      "source_code": "F06",
+      "tier": "final",
+      "name": "双循环核心",
+      "source_price": 3400,
+      "source_tail": "战术芯片+回响法印+奥术结晶AD+55，AP+75，CDR+20%主动：超载电容；被动：交替施法",
+      "source_exact_compact": "F06双循环核心3400战术芯片+回响法印+奥术结晶AD+55，AP+75，CDR+20%主动：超载电容；被动：交替施法",
+      "components": [
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B02",
+          "name": "奥术结晶",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2850,
+      "source_combine_fee": 550,
+      "attributes_and_effects_source": "AD+55，AP+75，CDR+20%主动：超载电容；被动：交替施法",
+      "source_attributes": "AD+55，AP+75，CDR+20%",
+      "source_effects": "主动：超载电容；被动：交替施法",
+      "mechanism_ids": [
+        "passive:10",
+        "active:A06"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 55.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 75.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 20.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G01",
+      "source_code": "G01",
+      "tier": "final",
+      "name": "无尽学录",
+      "source_price": 2800,
+      "source_tail": "回响法印+秘法棱核AP+70，CDR+15%任务：无尽书写",
+      "source_exact_compact": "G01无尽学录2800回响法印+秘法棱核AP+70，CDR+15%任务：无尽书写",
+      "components": [
+        {
+          "item_id": "intermediate:I05",
+          "name": "回响法印",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I02",
+          "name": "秘法棱核",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2300,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "AP+70，CDR+15%任务：无尽书写",
+      "source_attributes": "AP+70，CDR+15%",
+      "source_effects": "任务：无尽书写",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 70.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 15.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G02",
+      "source_code": "G02",
+      "tier": "final",
+      "name": "修业徽章",
+      "source_price": 2750,
+      "source_tail": "战术芯片+血肉触媒AD+30，AP+45，生命+250，CDR+10%任务：百战修业",
+      "source_exact_compact": "G02修业徽章2750战术芯片+血肉触媒AD+30，AP+45，生命+250，CDR+10%任务：百战修业",
+      "components": [
+        {
+          "item_id": "intermediate:I13",
+          "name": "战术芯片",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I17",
+          "name": "血肉触媒",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2350,
+      "source_combine_fee": 400,
+      "attributes_and_effects_source": "AD+30，AP+45，生命+250，CDR+10%任务：百战修业",
+      "source_attributes": "AD+30，AP+45，生命+250，CDR+10%",
+      "source_effects": "任务：百战修业",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 250.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G03",
+      "source_code": "G03",
+      "tier": "final",
+      "name": "战狂护腕",
+      "source_price": 2800,
+      "source_tail": "血袭刀环+生命合金AD+40，生命+350，吸血+6%任务：血战修业",
+      "source_exact_compact": "G03战狂护腕2800血袭刀环+生命合金AD+40，生命+350，吸血+6%任务：血战修业",
+      "components": [
+        {
+          "item_id": "intermediate:I06",
+          "name": "血袭刀环",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2300,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "AD+40，生命+350，吸血+6%任务：血战修业",
+      "source_attributes": "AD+40，生命+350，吸血+6%",
+      "source_effects": "任务：血战修业",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 40.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 350.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "lifesteal_pct",
+          "source_label": "吸血",
+          "value": 6.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G04",
+      "source_code": "G04",
+      "tier": "final",
+      "name": "远征财典",
+      "source_price": 2800,
+      "source_tail": "相位推进器+回生胚体移速+12%，生命恢复+5，CDR+12%任务：财源滚滚（3阶段）",
+      "source_exact_compact": "G04远征财典2800相位推进器+回生胚体移速+12%，生命恢复+5，CDR+12%任务：财源滚滚（3阶段）",
+      "components": [
+        {
+          "item_id": "intermediate:I09",
+          "name": "相位推进器",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I12",
+          "name": "回生胚体",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2300,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "移速+12%，生命恢复+5，CDR+12%任务：财源滚滚（3阶段）",
+      "source_attributes": "移速+12%，生命恢复+5，CDR+12%",
+      "source_effects": "任务：财源滚滚（3阶段）",
+      "mechanism_ids": [],
+      "source_attributes_parsed": [
+        {
+          "stat": "move_speed_pct",
+          "source_label": "移速",
+          "value": 12.0,
+          "unit": "percent_points"
+        },
+        {
+          "stat": "health_regen",
+          "source_label": "生命恢复",
+          "value": 5.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 12.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G05",
+      "source_code": "G05",
+      "tier": "final",
+      "name": "锻体炉心",
+      "source_price": 3200,
+      "source_tail": "生命合金+守心板+冷凝线圈生命+400，防御+30，CDR+10%锻体共鸣；任务：千锤百炼（4阶段）",
+      "source_exact_compact": "G05锻体炉心3200生命合金+守心板+冷凝线圈生命+400，防御+30，CDR+10%锻体共鸣；任务：千锤百炼（4阶段）",
+      "components": [
+        {
+          "item_id": "intermediate:I07",
+          "name": "生命合金",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I15",
+          "name": "守心板",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B05",
+          "name": "冷凝线圈",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2700,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "生命+400，防御+30，CDR+10%锻体共鸣；任务：千锤百炼（4阶段）",
+      "source_attributes": "生命+400，防御+30，CDR+10%",
+      "source_effects": "锻体共鸣；任务：千锤百炼（4阶段）",
+      "mechanism_ids": [
+        "passive:30"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "max_health",
+          "source_label": "生命",
+          "value": 400.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "defense",
+          "source_label": "防御",
+          "value": 30.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "cdr_pct",
+          "source_label": "CDR",
+          "value": 10.0,
+          "unit": "percent_points"
+        }
+      ]
+    },
+    {
+      "id": "final:G06",
+      "source_code": "G06",
+      "tier": "final",
+      "name": "猎王徽章",
+      "source_price": 3400,
+      "source_tail": "锯齿长刃+奥术穿针+贯甲钉AD+45，AP+65，穿甲+20巨物猎手；任务：王血试炼",
+      "source_exact_compact": "G06猎王徽章3400锯齿长刃+奥术穿针+贯甲钉AD+45，AP+65，穿甲+20巨物猎手；任务：王血试炼",
+      "components": [
+        {
+          "item_id": "intermediate:I04",
+          "name": "锯齿长刃",
+          "quantity": 1
+        },
+        {
+          "item_id": "intermediate:I14",
+          "name": "奥术穿针",
+          "quantity": 1
+        },
+        {
+          "item_id": "base:B11",
+          "name": "贯甲钉",
+          "quantity": 1
+        }
+      ],
+      "source_component_total": 2900,
+      "source_combine_fee": 500,
+      "attributes_and_effects_source": "AD+45，AP+65，穿甲+20巨物猎手；任务：王血试炼",
+      "source_attributes": "AD+45，AP+65，穿甲+20",
+      "source_effects": "巨物猎手；任务：王血试炼",
+      "mechanism_ids": [
+        "passive:18"
+      ],
+      "source_attributes_parsed": [
+        {
+          "stat": "AD",
+          "source_label": "AD",
+          "value": 45.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "AP",
+          "source_label": "AP",
+          "value": 65.0,
+          "unit": "flat"
+        },
+        {
+          "stat": "penetration",
+          "source_label": "穿甲",
+          "value": 20.0,
+          "unit": "flat"
+        }
+      ]
+    }
+  ],
+  "passives": [
+    {
+      "id": "passive:01",
+      "name": "连击",
+      "source_effect": "连续普通攻击同一目标时，每次获得6%攻击速度，持续2.5秒，最多5层；切换攻击目标或2.5秒未命中该目标后清空。"
+    },
+    {
+      "id": "passive:02",
+      "name": "三连破",
+      "source_effect": "对同一目标每完成第3次普通攻击，追加60+25%AD普通伤害，并获得10点穿甲，持续2秒。"
+    },
+    {
+      "id": "passive:03",
+      "name": "顺劈",
+      "source_effect": "普通攻击命中时，对目标周围3.2米内其他敌人造成本次普通攻击35%的普通伤害。"
+    },
+    {
+      "id": "passive:04",
+      "name": "暴击扩散",
+      "source_effect": "普通攻击暴击时，对目标周围3米内其他敌人造成本次暴击实际伤害40%的普通伤害。"
+    },
+    {
+      "id": "passive:05",
+      "name": "咒刃",
+      "source_effect": "释放Q或E后4秒内，下一次普通攻击额外造成50+35%AD+25%AP普通伤害。内置冷却1.5秒。"
+    },
+    {
+      "id": "passive:06",
+      "name": "动能射击",
+      "source_effect": "两次普通攻击之间累计移动4米后，下一次普通攻击额外造成40+35%AD普通伤害，并获得20%攻击距离。"
+    },
+    {
+      "id": "passive:07",
+      "name": "鲜血狂热",
+      "source_effect": "通过吸血实际恢复生命后获得5%攻击速度，持续3秒，最多4层；再次触发刷新持续时间。"
+    },
+    {
+      "id": "passive:08",
+      "name": "战技循环",
+      "source_effect": "每完成5次普通攻击，使Q、E当前剩余冷却分别减少10%。"
+    },
+    {
+      "id": "passive:09",
+      "name": "法术回响",
+      "source_effect": "Q或E每次完整施法第一次造成伤害时，0.6秒后在命中位置产生半径3米的回响，造成45+20%AP普通伤害。每个技能每次施法最多触发1次。"
+    },
+    {
+      "id": "passive:10",
+      "name": "交替施法",
+      "source_effect": "使用Q后3秒内使用E，或使用E后3秒内使用Q，第二个技能造成的最终伤害提高18%。"
+    },
+    {
+      "id": "passive:11",
+      "name": "施法热机",
+      "source_effect": "每次释放Q或E获得10点法术强度与2%移动速度，持续4秒，最多6层；再次获得刷新全部持续时间。"
+    },
+    {
+      "id": "passive:12",
+      "name": "技能汲取",
+      "source_effect": "Q/E/R造成有效伤害时恢复生命。单目标伤害按实际伤害8%回复；同时命中2名及以上敌人的伤害按3.5%回复。"
+    },
+    {
+      "id": "passive:13",
+      "name": "追命回流",
+      "source_effect": "Q或E完成击杀时，返还该技能35%当前冷却。一次完整施法最多触发1次。"
+    },
+    {
+      "id": "passive:14",
+      "name": "近身压制",
+      "source_effect": "对距离自身4.5米以内的敌人造成最终伤害提高12%，并获得5%吸血。"
+    },
+    {
+      "id": "passive:15",
+      "name": "远距校准",
+      "source_effect": "对距离自身9米及以上的敌人造成最终伤害提高15%，并额外获得12点穿甲。"
+    },
+    {
+      "id": "passive:16",
+      "name": "蓄势",
+      "source_effect": "连续4秒未释放Q/E后进入蓄势。下一次Q/E最终伤害提高25%，有效范围提高15%，施法后重新计时。"
+    },
+    {
+      "id": "passive:17",
+      "name": "溢杀",
+      "source_effect": "直接伤害击杀普通敌人时，将超过其剩余生命的伤害量60%传递给5米内最近的另一名敌人。传递伤害不会再次触发溢杀。"
+    },
+    {
+      "id": "passive:18",
+      "name": "巨物猎手",
+      "source_effect": "对精英与Boss造成最终伤害提高12%。目标每损失25%最大生命，该加成额外提高2%，最高20%。"
+    },
+    {
+      "id": "passive:19",
+      "name": "清场节奏",
+      "source_effect": "一次Q或E命中至少5名不同敌人时，攻击力与法术强度分别提高12%，移动速度提高10%，持续5秒。"
+    },
+    {
+      "id": "passive:20",
+      "name": "生命线",
+      "source_effect": "每场战斗第一次生命降至30%以下时，获得相当于最大生命18%的护盾，持续4秒。"
+    },
+    {
+      "id": "passive:21",
+      "name": "缓伤",
+      "source_effect": "受到直接伤害时，其中25%不会立即扣除，而是在之后4秒内均匀扣除。延后伤害不能再次减伤、再次延后。"
+    },
+    {
+      "id": "passive:22",
+      "name": "百折",
+      "source_effect": "3秒内累计损失至少18%最大生命值后，下一次普通攻击或Q/E额外造成80+自身最大生命4%的普通伤害，并恢复5%已损失生命。内置冷却8秒。"
+    },
+    {
+      "id": "passive:23",
+      "name": "身陷重围",
+      "source_effect": "自身5米内每存在1名敌人，获得5点防御力和5%韧性，最多计算5名敌人。"
+    },
+    {
+      "id": "passive:24",
+      "name": "战斗再生",
+      "source_effect": "持续处于战斗状态6秒后，基础生命恢复效果提高100%。战斗结束立即失效。"
+    },
+    {
+      "id": "passive:25",
+      "name": "过量治疗",
+      "source_effect": "满生命时产生的治疗与吸血，其溢出部分50%转化为临时护盾。护盾最多达到最大生命15%。"
+    },
+    {
+      "id": "passive:26",
+      "name": "血肉铸兵",
+      "source_effect": "每拥有100点由装备、锻体及局内效果提供的额外最大生命，获得2点攻击力和3点法术强度。最多计算1200额外生命。"
+    },
+    {
+      "id": "passive:27",
+      "name": "受控反扑",
+      "source_effect": "眩晕、定身等可受韧性影响的控制结束后，获得20%移动速度、15%最终伤害和30%韧性，持续3秒。"
+    },
+    {
+      "id": "passive:28",
+      "name": "猎杀余势",
+      "source_effect": "参与击杀后获得12%移动速度与20%攻击速度，持续4秒；再次参与击杀刷新时间。"
+    },
+    {
+      "id": "passive:29",
+      "name": "救援装甲",
+      "source_effect": "8米内队友生命首次下降至25%以下时，为其提供相当于装备持有者最大生命10%的护盾，持续4秒；每名队友独立25秒冷却。单人游戏时改为自己触发7%最大生命护盾。"
+    },
+    {
+      "id": "passive:30",
+      "name": "锻体共鸣",
+      "source_effect": "持有该装备期间，每完成1次付费锻体，使该装备自身提供的所有基础属性提高4%，最多5层。"
+    }
+  ],
+  "actives": [
+    {
+      "id": "active:A01",
+      "name": "停滞",
+      "source_effect": "进入2秒停滞：不可选中、无敌，但不能移动、攻击、释放技能、Shift或使用其他主动装备；停滞期间自身技能与装备冷却暂停。主动CD75秒。"
+    },
+    {
+      "id": "active:A02",
+      "name": "净化推进",
+      "source_effect": "立即解除自身所有可净化控制效果；获得100%韧性和30%移动速度，持续2.5秒。主动CD60秒。"
+    },
+    {
+      "id": "active:A03",
+      "name": "引力核心",
+      "source_effect": "在10米内指定位置投放引力核心，持续3秒。半径5米；普通敌人以3米/秒向中心牵引，精英1米/秒，Boss不受位移。主动CD65秒。"
+    },
+    {
+      "id": "active:A04",
+      "name": "相位跃迁",
+      "source_effect": "瞬间传送到鼠标方向最多7米的位置；不能传出竞技场或进入非法区域。主动CD45秒。"
+    },
+    {
+      "id": "active:A05",
+      "name": "救援屏障",
+      "source_effect": "为自己及8米内所有友方提供相当于使用者最大生命10%的护盾，持续4秒。主动CD60秒。"
+    },
+    {
+      "id": "active:A06",
+      "name": "超载电容",
+      "source_effect": "立即重置当前已学习Q和E的剩余冷却；不影响R、Shift、装备主动或血瓶。主动CD90秒。"
+    }
+  ],
+  "tasks": [
+    {
+      "equipment_id": "final:A02",
+      "source_task": "A02血潮连刃｜血液循环装备期间，通过吸血累计实际恢复相当于自身最大生命250%的生命。完成后：吸血9%→11%；“鲜血狂热”最大层数4→5。",
+      "name": "血液循环",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:B01",
+      "source_task": "B01断界锋｜断界试炼装备期间，用Q或E完成40次击杀。完成后：永久获得1技能点；本任务本局不可再次完成。",
+      "name": "断界试炼",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:C01",
+      "source_task": "C01回响法典｜术式积累装备期间，Q/E有效命中敌人的完整施法累计60次。完成后：AP95→115；CDR20%→25%；“法术回响”伤害提高25%。",
+      "name": "术式积累",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:C05",
+      "source_task": "C05寂静法球｜静默爆发使用完整“蓄势”状态的Q/E有效命中敌人20次。完成后：永久获得1技能点。",
+      "name": "静默爆发",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:D02",
+      "source_task": "D02逆伤甲胄｜百折试炼装备期间累计承受相当于自身最大生命500%的减伤前伤害，并且期间完成至少3场战斗且没有真正死亡。完成后：永久获得1技能点。",
+      "name": "百折试炼",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:E06",
+      "source_task": "E06援护矩阵｜守护记录装备期间，由自己提供的护盾累计实际吸收相当于自身最大生命200%的伤害。完成后：“救援装甲”单目标冷却25秒→20秒；护盾比例10%→12%。",
+      "name": "守护记录",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:G01",
+      "source_task": "G01无尽学录｜无尽书写装备期间累计完成80次有效Q/E施法。一次完整施法只计数1次；无有效伤害、治疗、护盾或其他战斗效果的空放不计。完成后永久进化为“无尽学录·终卷”：AP70→110；CDR15%→22%。本任务只能完成1次。",
+      "name": "无尽书写",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:G02",
+      "source_task": "G02修业徽章｜百战修业装备期间累计获得500个“普通敌人击杀当量”。参与击杀1名普通敌人计1；参与击杀1名精英计10；击败1名Boss计25。达到500后永久获得1技能点。本任务只能完成1次。",
+      "name": "百战修业",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:G03",
+      "source_task": "G03战狂护腕｜血战修业生命值低于35%最大生命期间造成的有效伤害计入任务。每次有效伤害按“本次有效伤害÷造成伤害时自身最大生命值”折算任务比例，累计达到500倍自身最大生命值（即50000%）后完成。生命恢复至35%及以上时进度不清零，只暂停累计。完成后永久获得1技能点。本任务只能完成1次。",
+      "name": "血战修业",
+      "stage_count": 1
+    },
+    {
+      "equipment_id": "final:G04",
+      "source_task": "G04远征财典｜财源滚滚装备期间累计获得金币，金币支出不降低进度。任务共3阶段：累计获得5000/10000/15000金币。每完成1阶段，装备永久获得：移动速度+2%，基础生命恢复+1，CDR+2%。初始属性为移速+12%、生命恢复+5、CDR+12%；三阶段完成后为移速+18%、生命恢复+8、CDR+18%。出售后阶段与进度保留。",
+      "name": "财源滚滚",
+      "stage_count": 3
+    },
+    {
+      "equipment_id": "final:G05",
+      "source_task": "G05锻体炉心｜千锤百炼只统计实际支付金币完成的锻体。任务共4阶段：累计付费锻体5/10/15/20次。每完成1阶段，立即获得2次免费锻体。免费锻体正常提供属性选择与永久属性，但不计入本任务次数。锻体本身没有次数上限；任务最多完成4阶段。出售后阶段与进度保留。",
+      "name": "千锤百炼",
+      "stage_count": 4
+    },
+    {
+      "equipment_id": "final:G06",
+      "source_task": "G06猎王徽章｜王血试炼装备期间，对精英敌人与Boss累计造成100000点有效伤害；只统计装备持有者本人实际造成的伤害，溢出伤害按目标实际损失生命计算。完成后：“巨物猎手”对精英/Boss基础最终伤害加成12%→15%，最高总增伤20%→25%。本任务不奖励技能点，只能完成1次。",
+      "name": "王血试炼",
+      "stage_count": 1
+    }
+  ],
+  "rules_verbatim_compact": {
+    "global": "装备栏固定6格；基础装备、一级合成装备、最终成装均占1格。药品、战斗合剂和锻体不占6格装备栏。装备可以重复购买，但同名被动无论来源于多少件装备，只生效1次；同名主动同样只能生效1次。若同名效果存在不同强度版本，优先生效层级更高的版本；同层级取数值更高者。单件装备允许：纯属性、1个被动、2个被动、1个主动、1个主动+1个被动；禁止单件装备同时拥有2个主动。出售返还该件装备实际投入金币的90%。自上一场战斗结束后，只要尚未进入下一场战斗，玩家可以撤回该阶段全部购买、出售与合成操作；进入下一场战斗后交易历史锁定。商店不是地图节点。任意战斗结束后及所有非战斗节点均可按P打开商店。装备任务按“玩家+装备名称”记录；同一任务本局只能按规则完成一次或规定阶段数。出售后已完成阶段、任务进度、永久奖励与进化状态均保留。装备主动冷却属于战斗状态；战斗结束后剩余冷却锁定，非战斗阶段不会自然恢复。最终成装后不设置统一的三级金币合成。六神装后的金币继续用于换装、药品、战斗合剂与无限锻体。",
+    "tiers_and_synthesis": "层级数量定位基础装备12单一基础属性；最低成本即时补强一级合成18属性组合与过渡；不承担复杂机制最终成装42核心被动、主动、任务与Build方向三级合成0不建立统一超级成装层总装备72不含药品、合剂、锻体标准合成：基础件+基础件/一级件+合成费→一级合成或最终成装；已拥有组件自动抵扣对应价格并被消耗。",
+    "task_supplement": "任务进度仅在装备持有期间继续累计；出售后进度与已完成阶段冻结并永久保留，重新购买后继续。所有“永久技能点”均只对当前远征生效，并受本局技能点总上限约束。",
+    "recovery": "恢复药品使用独立药品栏，不占6格装备栏。普通生命药剂与循环药壶为互斥的两套恢复方案：选择循环药壶后不能携带普通生命药剂；更换恢复方案只能在非战斗状态进行。药品价格恢复规则生命药剂I2004秒内恢复20%最大生命值单次消耗；总携带上限5瓶生命药剂II4204秒内恢复35%最大生命值单次消耗；总携带上限5瓶生命药剂III7004秒内恢复50%最大生命值单次消耗；总携带上限5瓶普通生命药剂三档可以混合携带，但三档合计最多5瓶。使用不会因受到伤害而中断；恢复按持续时间均匀结算。药壶总价每次恢复规则循环药壶I1200每次5秒恢复12%最大生命每个战斗房开始恢复至2次使用循环药壶II2800每次5秒恢复20%最大生命由I升级时仅补差价；每战2次循环药壶III5200每次5秒恢复30%最大生命由II升级时仅补差价；每战2次循环药壶买入后本局永久持有；每个战斗房正式开始时重置为2次可用次数。仅能在战斗中使用，防止战后先喝完再进下一房刷新。升级只支付总价差额。循环药壶不可通过出售、重新购买刷新当前战斗次数。",
+    "training": "锻体为商店中的即时成长项目，不占装备格或药品栏。每次锻体固定价格900金币，价格永不递增，购买次数没有上限。每次随机展示3个不同的纯属性选项，选择1个永久获得；达到属性硬上限后不再出现无效选项。锻体选项永久增益攻击锻体攻击力+8秘法锻体法术强度+14极速锻体攻击速度+8%锐眼锻体暴击率+5%冷凝锻体冷却缩减+4%生命锻体最大生命+90装甲锻体防御力+7疾行锻体移动速度+3%血疗锻体吸血+2%定心锻体韧性+6%破甲锻体穿甲+5再生锻体基础生命恢复+1.5免费锻体与付费锻体使用完全相同的3选1池；免费锻体不消耗金币，也不计入“千锤百炼”的付费次数。",
+    "elixirs": "战斗合剂不占6格装备栏。饮用后只对下一场战斗生效，战斗结束立即清除。同一场战斗最多生效1种战斗合剂；饮用新合剂会替换尚未进入战斗的旧合剂。合剂价格下一场战斗效果战争合剂650下一场战斗：攻击力+35，吸血+8%；参与击杀后攻击速度+10%，持续3秒，刷新不叠加。秘法合剂650下一场战斗：法术强度+60，CDR+10%；Q/E每次完整施法第一次造成有效伤害时，追加40+10%AP真实伤害，每次施法最多触发1次。钢铁合剂650下一场战斗：最大生命+15%、韧性+25%、防御力+20。连续移动时留下持续1.5秒的先锋路径，队友站在路径上移动速度+10%；自己不获得路径加速。最大生命变化时按原生命百分比同步调整当前生命。猎杀号剂700下一场战斗：穿甲+20、暴击率+15%；对精英与Boss最终伤害+10%。疾行合剂650下一场战斗：移动速度+15%、攻击速度+15%、CDR+8%；每次Shift结束后再获得15%移动速度，持续1.5秒。",
+    "summary": "项目规模/规则装备槽6格基础装备12件一级合成18件最终成装42件总商店装备72件独立被动机制30种独立主动机制6种带主动成装6件普通生命药剂3档；合计最多携带5瓶循环药壶3档；每战重置2次使用；与普通生命药互斥战斗合剂5种；一场战斗只生效1种锻体900金币/次；无限购买；3选1；价格固定统一三级成装无"
+  },
+  "recovery_items": [
+    {
+      "id": "potion:1",
+      "name": "生命药剂I",
+      "source_price": 200,
+      "heal_max_health_pct": 20,
+      "duration_seconds": 4,
+      "consumable": true,
+      "shared_capacity": 5
+    },
+    {
+      "id": "potion:2",
+      "name": "生命药剂II",
+      "source_price": 420,
+      "heal_max_health_pct": 35,
+      "duration_seconds": 4,
+      "consumable": true,
+      "shared_capacity": 5
+    },
+    {
+      "id": "potion:3",
+      "name": "生命药剂III",
+      "source_price": 700,
+      "heal_max_health_pct": 50,
+      "duration_seconds": 4,
+      "consumable": true,
+      "shared_capacity": 5
+    },
+    {
+      "id": "flask:1",
+      "name": "循环药壶I",
+      "source_total_price": 1200,
+      "heal_max_health_pct": 12,
+      "duration_seconds": 5,
+      "charges_per_battle": 2,
+      "run_permanent": true,
+      "upgrade_from": null,
+      "upgrade_cost": 1200
+    },
+    {
+      "id": "flask:2",
+      "name": "循环药壶II",
+      "source_total_price": 2800,
+      "heal_max_health_pct": 20,
+      "duration_seconds": 5,
+      "charges_per_battle": 2,
+      "run_permanent": true,
+      "upgrade_from": "flask:1",
+      "upgrade_cost": 1600
+    },
+    {
+      "id": "flask:3",
+      "name": "循环药壶III",
+      "source_total_price": 5200,
+      "heal_max_health_pct": 30,
+      "duration_seconds": 5,
+      "charges_per_battle": 2,
+      "run_permanent": true,
+      "upgrade_from": "flask:2",
+      "upgrade_cost": 2400
+    }
+  ],
+  "training_options": [
+    {
+      "id": "training:01",
+      "name": "攻击锻体",
+      "stat": "AD",
+      "source_value": 8,
+      "source_price": 900
+    },
+    {
+      "id": "training:02",
+      "name": "秘法锻体",
+      "stat": "AP",
+      "source_value": 14,
+      "source_price": 900
+    },
+    {
+      "id": "training:03",
+      "name": "极速锻体",
+      "stat": "attack_speed_pct",
+      "source_value": 8,
+      "source_price": 900
+    },
+    {
+      "id": "training:04",
+      "name": "锐眼锻体",
+      "stat": "crit_chance_pct",
+      "source_value": 5,
+      "source_price": 900
+    },
+    {
+      "id": "training:05",
+      "name": "冷凝锻体",
+      "stat": "cdr_pct",
+      "source_value": 4,
+      "source_price": 900
+    },
+    {
+      "id": "training:06",
+      "name": "生命锻体",
+      "stat": "max_health",
+      "source_value": 90,
+      "source_price": 900
+    },
+    {
+      "id": "training:07",
+      "name": "装甲锻体",
+      "stat": "defense",
+      "source_value": 7,
+      "source_price": 900
+    },
+    {
+      "id": "training:08",
+      "name": "疾行锻体",
+      "stat": "move_speed_pct",
+      "source_value": 3,
+      "source_price": 900
+    },
+    {
+      "id": "training:09",
+      "name": "血疗锻体",
+      "stat": "lifesteal_pct",
+      "source_value": 2,
+      "source_price": 900
+    },
+    {
+      "id": "training:10",
+      "name": "定心锻体",
+      "stat": "tenacity_pct",
+      "source_value": 6,
+      "source_price": 900
+    },
+    {
+      "id": "training:11",
+      "name": "破甲锻体",
+      "stat": "penetration",
+      "source_value": 5,
+      "source_price": 900
+    },
+    {
+      "id": "training:12",
+      "name": "再生锻体",
+      "stat": "health_regen",
+      "source_value": 1.5,
+      "source_price": 900
+    }
+  ],
+  "elixirs": [
+    {
+      "id": "elixir:01",
+      "name": "战争合剂",
+      "source_price": 650,
+      "source_effect": "下一场战斗：攻击力+35，吸血+8%；参与击杀后攻击速度+10%，持续3秒，刷新不叠加。"
+    },
+    {
+      "id": "elixir:02",
+      "name": "秘法合剂",
+      "source_price": 650,
+      "source_effect": "下一场战斗：法术强度+60，CDR+10%；Q/E每次完整施法第一次造成有效伤害时，追加40+10%AP真实伤害，每次施法最多触发1次。"
+    },
+    {
+      "id": "elixir:03",
+      "name": "钢铁合剂",
+      "source_price": 650,
+      "source_effect": "下一场战斗：最大生命+15%、韧性+25%、防御力+20。连续移动时留下持续1.5秒的先锋路径，队友站在路径上移动速度+10%；自己不获得路径加速。最大生命变化时按原生命百分比同步调整当前生命。"
+    },
+    {
+      "id": "elixir:04",
+      "name": "猎杀号剂",
+      "source_price": 700,
+      "source_effect": "下一场战斗：穿甲+20、暴击率+15%；对精英与Boss最终伤害+10%。"
+    },
+    {
+      "id": "elixir:05",
+      "name": "疾行合剂",
+      "source_price": 650,
+      "source_effect": "下一场战斗：移动速度+15%、攻击速度+15%、CDR+8%；每次Shift结束后再获得15%移动速度，持续1.5秒。"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "namespace",
+      "title": "源编号重用",
+      "detail": "基础B01—B12与成装B01—B06重名；主动A01—A06与成装A01—A06重名。提取仅加类型命名空间，未改原编号。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "hard_caps",
+      "title": "硬上限未定义",
+      "detail": "锻体排除达到硬上限的属性，但各属性上限、攻速/冷却/韧性/移速计算和叠加公式均未在本文定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "damage_model",
+      "title": "伤害与生命恢复计量",
+      "detail": "普通伤害、防御/穿甲公式、生命恢复+N时间单位、吸血适用范围未给出；需对齐既有战斗规范。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "task_max_health",
+      "title": "动态最大生命分母",
+      "detail": "血液循环250%、百折500%减伤前、守护200%护盾吸收，在最大生命改变时的分母处理未定义；血战修业则明确每次伤害除当时自身最大生命。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "task_death",
+      "title": "真正死亡与重置",
+      "detail": "百折试炼要求期间至少3场且无真正死亡，但真正死亡定义、死亡后是否重置哪些进度、已完成战斗如何计数未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "same_effect",
+      "title": "进化效果优先级",
+      "detail": "同名效果取更高层级/数值；需明确进化效果的层级，以及多参数各有高低时如何选唯一版本。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "duplicates_task",
+      "title": "重复装备任务共用",
+      "detail": "旧equipment_tasks.json policy已明确同名副本不乘进度、出售进度保留、装备每局一次；新文档兼容。进化改名后的键需保持稳定装备ID，是实现保真要求；多副本属性进化的数值应用可在数据层统一，不能当成允许重复奖励。",
+      "status": "partly_resolved_by_existing_policy"
+    },
+    {
+      "id": "rescue_solo",
+      "title": "守护记录单人进化",
+      "detail": "源仅明确团队盾10%→12%，单人初始7%。可建议按同倍率×1.2将单人进化盾设8.4%；这是我们的数值配比建议，非源文档事实。阈值/冷却采用既定战斗规范。",
+      "status": "numeric_tuning_suggestion_not_source"
+    },
+    {
+      "id": "rescue_first",
+      "title": "救援装甲首次与重复",
+      "detail": "首次下降25%以下且每目标25秒冷却，是否CD后需先回到阈值以上才能再次触发未写清。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "shield_lifetime",
+      "title": "护盾细节",
+      "detail": "过量治疗临时护盾没有持续时间；多个不同名护盾的叠加、覆盖、吸收顺序和任务归属未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "cooldown",
+      "title": "非战斗锁冷却覆盖",
+      "detail": "明确装备主动剩余CD战后锁定；被动内置CD、每目标CD、装备重购/重复副本CD共享及任务进化是否保持CD未明确。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "stasis",
+      "title": "停滞计时",
+      "detail": "停滞暂停自身技能和装备CD；其他持续效果、药剂治疗、延后伤害、任务计时是否继续未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "delayed_damage",
+      "title": "缓伤跨战斗",
+      "detail": "缓伤4秒延后伤害是否在战斗结束后继续、是否可致死、计入受伤触发与任务的时点未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "transaction",
+      "title": "实际投入与撤回范围",
+      "detail": "原Q11已确认锻体不可撤销/洗点/刷新，普通装备按新文档战间撤回，两者须分账。其余实际投入90%售价的组件成本继承/取整与金币任务来源定义需沿用已有规范或列实现口径，不自动变成用户机制冲突。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "economy_quest",
+      "title": "金币任务来源",
+      "detail": "远征财典累计获得金币未区分出售返还/撤回返还/奖励金币；与交易撤回联动需明确，不能擅自排除。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "training_ownership",
+      "title": "炉心进度归属",
+      "detail": "锻体共鸣写持有期间付费每次+4%最多5层；出售后该被动层数保留与否未像任务进度一样明确。千锤百炼按补充规则应仅持有期间计数。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "training_pool",
+      "title": "随机池不足3项",
+      "detail": "每次3个不同有效属性；如果达到上限后有效池不足3项，如何展示/是否能继续购买未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "effect_triggers",
+      "title": "伤害触发传播",
+      "detail": "装备被动追加伤害是否再触发吸血/被动/任务、Q/E多段伤害归属、击杀参与定义未全定义；只有溢杀明确禁止二次溢杀。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "timing",
+      "title": "完整施法和交替施法",
+      "detail": "完整施法、引导、多段、召唤/持续伤害的归属和交替施法强化第二技能全段还是部分未定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "potion",
+      "title": "药品重复使用",
+      "detail": "普通药持续期间再用、药壶重复使用、恢复之间叠加/刷新/共享CD与普通药战外使用未完整定义。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "flask",
+      "title": "恢复方案切换",
+      "detail": "买入药壶永久持有且方案非战斗可换，但切回普通药时药壶封存方式、两类药品栏状态和未用药处理未明确。",
+      "status": "requires_existing_spec_or_user_decision"
+    },
+    {
+      "id": "duplicate_design",
+      "title": "近似重复成装",
+      "detail": "群敌堡垒D05与围城骨架E05同配方、同被动但属性/价格不同，允许作为两个独立装备保留；不属于冲突，不合并。",
+      "status": "valid_distinct_items_preserve"
+    },
+    {
+      "id": "giant_hunter",
+      "title": "巨物猎手边界",
+      "detail": "按min(基础增伤+floor(已损失生命比例/25%)*2%,上限)实现合法。原版存活目标常见最大18%，进化版常见21%；100%生命损失边界分别20%和23%，均不超过源上限。因此上限不可达不构成机制矛盾，只是数值设计松弛；是否调整步长属于授权数值配比。保留源值，无需仅为此返问用户。",
+      "status": "numeric_tuning_allowed_no_mechanism_conflict"
+    },
+    {
+      "id": "project_scope",
+      "title": "首层纵向切片可达性",
+      "detail": "多场战斗、40/500击杀当量、100000精英伤害、50000%低血伤害、20次付费锻体等任务未必在晏归舟+第一层Boss切片内可达。应保留完整规范，由父任务定首层验证范围。",
+      "status": "requires_existing_spec_or_user_decision"
+    }
+  ],
+  "audit": {
+    "equipment_total": 72,
+    "recipe_total": 60,
+    "component_edges": 152,
+    "component_quantity_total": 154,
+    "passive_total": 30,
+    "active_total": 6,
+    "task_total": 12,
+    "task_stages_total": 17,
+    "permanent_skill_point_reward_tasks": 5,
+    "recovery_items": 6,
+    "training_options": 12,
+    "elixirs": 5,
+    "all_recipe_references_resolve": true,
+    "recipe_cycles": false,
+    "all_source_combine_fees_positive": true,
+    "unused_passive_ids": [],
+    "mechanism_usage": {
+      "passive:01": 1,
+      "passive:02": 1,
+      "passive:07": 1,
+      "passive:04": 1,
+      "passive:06": 1,
+      "passive:18": 2,
+      "passive:03": 1,
+      "passive:19": 2,
+      "passive:13": 1,
+      "passive:28": 2,
+      "passive:14": 2,
+      "passive:08": 1,
+      "passive:05": 1,
+      "passive:17": 1,
+      "passive:09": 1,
+      "passive:10": 2,
+      "passive:11": 1,
+      "passive:12": 1,
+      "passive:16": 2,
+      "passive:15": 1,
+      "passive:26": 1,
+      "passive:22": 1,
+      "passive:24": 2,
+      "passive:20": 2,
+      "passive:23": 2,
+      "passive:27": 2,
+      "passive:25": 2,
+      "passive:21": 1,
+      "passive:29": 2,
+      "active:A01": 1,
+      "active:A02": 1,
+      "active:A03": 1,
+      "active:A04": 1,
+      "active:A05": 1,
+      "active:A06": 1,
+      "passive:30": 1
+    },
+    "source_docx_equipment_exact_match": true,
+    "source_docx_mechanisms_exact_match": true
+  },
+  "project_rule_crosscheck": [
+    {
+      "id": "six_slots",
+      "severity": "aligned_narrow_scope",
+      "source": "装备栏固定6格",
+      "prior_rule_from_parent": "6个装备槽",
+      "assessment": "仅装备栏数量一致。不可据此推断药品/合剂是否占格一致。"
+    },
+    {
+      "id": "consumable_slots",
+      "severity": "confirmed_mechanism_conflict_pending_user",
+      "source_location": "第1页全局规则第1条；第8页恢复药品；第9页战斗合剂",
+      "source": "药品、战斗合剂和锻体不占6格装备栏；恢复药品有独立药品栏",
+      "prior_rule_from_parent": "旧规则中药品、合剂占装备槽；锻体不占装备槽",
+      "assessment": "普通药/药壶/战斗合剂是否占6装备格为真实机制差异。root已向用户集中询问，待答；不要重复问或静默选边。锻体不占格本身一致。"
+    },
+    {
+      "id": "shop_undo",
+      "severity": "compatible_scope_corrected",
+      "source_location": "第1页全局规则第5条",
+      "source": "战斗结束后至下一场开始前可撤回该阶段购买、出售与合成操作",
+      "prior_rule_from_parent": "Sept30 Q11仅确认锻体不可撤销；没有全商店不可撤销规则",
+      "assessment": "撤回此前全商店禁撤销冲突判断。按父协调已明确口径：普通装备按新文档允许战间撤回，锻体不可撤回。新文档并未明确说明锻体随机选择可撤回，不能把宽泛购买措辞用于覆盖锻体专门旧决策。"
+    },
+    {
+      "id": "potion_capacity",
+      "severity": "aligned_narrow_scope",
+      "source": "普通生命药剂I/II/III可混携，三档合计最多5瓶",
+      "prior_rule_from_parent": "普通药5瓶上限",
+      "assessment": "数量一致。是否占6格另列消耗品槽位冲突，不包含在本项一致结论。"
+    },
+    {
+      "id": "flask_count_and_exclusivity",
+      "severity": "aligned_narrow_scope",
+      "source": "循环药壶每次刷新2次，与普通生命药剂互斥；恢复方案只能非战斗更换",
+      "prior_rule_from_parent": "特殊药每关2次且与普通药互斥",
+      "assessment": "2次与互斥一致；刷新单位见下一项，携带占格见消耗品槽位冲突。旧规则未提供方案切换时机，不能声称切换规则一致。"
+    },
+    {
+      "id": "flask_refresh_boundary",
+      "severity": "unknown_term_alignment",
+      "source": "每个战斗房正式开始时重置为2次",
+      "prior_rule_from_parent": "每关2次",
+      "assessment": "旧“关”究竟指战斗房还是整层，当前转述不足以判断。若指整层才构成机制差异；在取得已核验旧定义前标未知，不另行零碎询问用户。"
+    },
+    {
+      "id": "base_skill_points",
+      "severity": "base_18_aligned_old_source_total_not_cap",
+      "source": "5个不同任务各奖励1技能点；仅当前远征永久，并受本局技能点总上限约束；没有写18或任何上限数字",
+      "prior_rule_from_parent": "旧equipment_tasks.json policy：base_sp18，旧3任务+3SP，G17+1，maximum_current_sources_sp22；coordinator明确18基础不含合法额外任务点",
+      "assessment": "18基础与新文档兼容。旧22是18+3+1的当前来源合计，不是已证用户硬上限；新文档5个+1任务意味着任务目录与理论来源合计变动。不能自动把旧22写死，也不能自动把18+5+1=24变为有效上限。新文档受总上限约束的具体数字仍未知，交由主协调按既定进度设计收口。",
+      "verified_source": "data/final_design/equipment_tasks.json: policy"
+    },
+    {
+      "id": "skill_reward_tasks_once",
+      "severity": "aligned_verified_policy",
+      "source": "断界、静默、百折、百战、血战五个技能点任务每局一次；任务按玩家+装备名，出售不清进度",
+      "prior_rule_from_parent": "旧equipment_tasks.json明确held_item_required_for_progress、progress_persists_when_sold、completion_once_per_equipment_per_run为true；duplicate_copies_multiply_progress和test_mode_counts为false",
+      "assessment": "持有才累积、出售保留、每装备每局一次与新文档兼容；同名副本不乘进度/测试不计为既有明确政策，新文档没有否定。继续沿用。",
+      "verified_source": "data/final_design/equipment_tasks.json: policy"
+    },
+    {
+      "id": "multi_stage_non_skill_tasks",
+      "severity": "interpretation_unknown_not_confirmed_conflict",
+      "source": "远征财典3阶段；锻体炉心4阶段；全局明确一次或规定阶段数。两者均不是重复奖励技能点的任务",
+      "prior_rule_from_parent": "每件装备任务一次完成",
+      "assessment": "一次任务包含规定阶段可以兼容，但旧规则是否禁止任务内多阶段未知。不能擅自删阶段，也不能将这两件说成可无限完成；遵从新文档固定3/4阶段。"
+    },
+    {
+      "id": "training_slots",
+      "severity": "aligned_narrow_scope",
+      "source": "锻体不占装备格或药品栏",
+      "prior_rule_from_parent": "锻体不占6装备槽",
+      "assessment": "锻体不占装备格一致。旧药品栏规则未知。"
+    },
+    {
+      "id": "equipment_task_catalog",
+      "severity": "migration_difference_not_new_user_mechanism_conflict",
+      "source": "新五个+1任务为断界锋/寂静法球/逆伤甲胄/修业徽章/战狂护腕，另有7项非SP任务",
+      "prior_rule_from_parent": "旧三项任务为rapid_blade_basic_hits、bastion_shell_absorption、duelist_edge_ordinary_kills，均标authored_initial_balance",
+      "assessment": "新完整目录替换旧占位任务目录的迁移差异。不得静默保留三旧任务再额外叠加五新任务；需主协调制定替换/旧存档映射，保留原作者记录。不是用户固定3任务硬约束，不为此单独向用户抛问题。",
+      "verified_source": "data/final_design/equipment_tasks.json: tasks"
+    },
+    {
+      "id": "other_mechanisms",
+      "severity": "not_compared_missing_old_rule",
+      "source": "同名效果唯一、售出90%、主动战后CD锁定、任务保留、药壶永久且战中使用、无限固定价3选1锻体、合剂下一战单种、无三级成装等完整机制见提取主表",
+      "prior_rule_from_parent": "本轮未提供这些机制的完整旧决策文本",
+      "assessment": "未做旧新一致性结论；原文已完整提取。范围内只发现消耗品占6格这一已确认直接冲突，其余上述有限项已分别标一致范围、兼容或未知。"
+    }
+  ],
+  "analysis_corrections": [
+    {
+      "timestamp_utc": "2026-10-04T10:00:00Z",
+      "reason": "Parent supplied corrected scope for prior Sep30 Q11 and consumable-slot decision",
+      "withdrawn_claim": "旧规则为全商店不可撤销，故新文档撤回机制冲突",
+      "replacement": "旧不可撤销仅锻体；普通装备按新文档可战间撤回、锻体不可。真正待答冲突为药品/药壶/合剂占6格与新文档独立栏不占格。",
+      "scope_warning": "先前仅6槽数量一致不代表消耗品占槽一致；已拆分验证。未知规则不作一致结论。",
+      "source_integrity": "原DOCX及其源机制/数值/配方未改；仅修正分析和跨版本对照。"
+    }
+  ],
+  "verified_prior_sources": [
+    {
+      "path": "/workspace/scratch/73ebae91a474/recovery_2309/restored_v22/six-hero-current-wip/docs/source_decisions/20260930-training-undo-body-refresh-scopes.md",
+      "sha256": "cc2e6e71ad4c7469022243fa98500278493c53778805c1e5103f117f87031726"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/recovery_2309/restored_v22/six-hero-current-wip/data/final_design/runtime_rules.json",
+      "sha256": "bbd12695b85288a0c242e21b1f27ee2eed86954cc95cc92d65dd3901f04009bb"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/recovery_2309/restored_v22/six-hero-current-wip/data/final_design/effective_rule_resolutions.json",
+      "sha256": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/recovery_2309/restored_v22/six-hero-current-wip/data/final_design/effective_overrides.json",
+      "sha256": "bfaed238edfd723a3d4aa8d363acfe8e46dab14feec64388666fde457a80a72d"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/recovery_2309/restored_v22/six-hero-current-wip/data/final_design/equipment_tasks.json",
+      "sha256": "006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema": "user-rule-overlay-v1",
+  "overlay_id": "20261006-ink-five-resolutions",
+  "effective_rules": true,
+  "source_message_id": "Sentinel_0a6789080ce48191abd8a74885876fd3",
+  "source_question_message_id": "Sentinel_f9211b7ae7188191863ae3f876b83bfc",
+  "source_time_utc": null,
+  "source_time_note": "Exact source message timestamp was not supplied; recorded_utc is file authoring time, not message time.",
+  "recorded_utc": "2026-10-06T03:39:04Z",
+  "source_quote": "1.休息点只回复全部生命，清除全部buff，结束全部冷却，基础血瓶不补充，每关重置血瓶正常重置。墨舟不能出房间，会停留在边界。可以。可以。跟转60°没关系，你听说过风暴英雄雷诺的休伯利安号王者荣耀的鲁班七号大招吗，就是这样的感觉，笔墨山峰从下方顶上来，优先找人多的地方出现，与角度无关，数值改一下，按照7、9、13、20道算伤害你可以酌情降低",
+  "authority_note": "User reply supplied verbatim by the root coordinator. The two 可以 answers map in order to question 3 P2 and question 4 E3, as explicitly clarified by the root coordinator.",
+  "runtime_status": "authoritative_rules_not_yet_implemented_or_verified_by_this_overlay",
+  "supersedes": {
+    "document": "docs/source_decisions/20261006-pending-user-mechanics.json",
+    "sha256": "c307b4503884f7b5ade3f11545dbc773517a4de42152623e4cdf06603bce480d",
+    "topic_ids": [
+      "rest_function",
+      "e2_arena_edge",
+      "p2_count_and_consume",
+      "e3_obstacle_and_illegal_destination",
+      "r2_stroke_layout_and_first_beat"
+    ],
+    "scope": "Closes the five user-design questions. Does not rewrite historical pending records, original uploaded documents, frozen candidates, or their runtime evidence.",
+    "rejected_r2_proposals": [
+      "60_degree_rotating_axes",
+      "centered_18m_by_4m_rectangle_as_new_mountain_default",
+      "old_3_3_5_7_or_4_4_6_8_base_stroke_counts",
+      "old_interval_as_authority_for_new_total_count"
+    ]
+  },
+  "rules": {
+    "rest_function": {
+      "provenance": "explicit_user_decision",
+      "restore_health": "full",
+      "clear_buffs": "all",
+      "finish_cooldowns": "all",
+      "refill_basic_flask": false,
+      "per_floor_flask_reset": "retain_existing_per_floor_reset",
+      "no_new_other_resource_grants": true
+    },
+    "ink_e2_arena_edge": {
+      "provenance": "explicit_user_decision_with_prior_effective_wall_rule_preserved",
+      "boat_may_leave_room": false,
+      "on_reaching_room_boundary": "stop_and_remain_at_boundary",
+      "boat_crosses_solid_walls": true,
+      "landing_must_be_legal": true,
+      "illegal_landing_consumes_boat": false,
+      "earlier_wall_rule_source": "20261005-ink-six-resolutions",
+      "does_not_authorize_other_skills_wall_traversal": true
+    },
+    "ink_p2_count_and_consume": {
+      "provenance": "explicit_user_approval_of_preceding_question_3_proposal",
+      "first_eligible_use": "record_history_without_adding_stacks",
+      "count_unit": "one_complete_skill_cast_not_each_input_or_damage_packet",
+      "use_milestones": {
+        "q1": "successful_line_release",
+        "q2": "successful_second_point_completion",
+        "q3": "accepted_mountain_start",
+        "e1": "accepted_rain_start",
+        "e2": "accepted_boat_launch",
+        "e3": "successful_second_frame_completion"
+      },
+      "recasts_add_another_use": false,
+      "consume_eligible_cast": "newly_cast_damaging_Q_or_E_after_ready",
+      "consume_event": "first_committed_damage_hit_of_an_eligible_cast",
+      "ready_forming_cast_may_consume": false,
+      "effects_cast_before_ready_may_consume": false,
+      "consume_all_stacks_once": true,
+      "original_stack_cap_duration_and_per_rank_values": "preserved"
+    },
+    "ink_e3_obstacles": {
+      "provenance": "explicit_user_approval_of_preceding_question_4_proposal",
+      "cross_wall_exchange_allowed": true,
+      "any_required_destination_inside_wall_or_outside_room": "reject_entire_current_exchange_before_any_movement",
+      "skip_only_illegal_participants": false,
+      "h12_return": "same_cross_wall_and_all_required_destinations_legal_policy_for_current_return",
+      "boss_exchange_immunity_and_other_original_participant_exceptions": "preserved",
+      "h11_friend_and_self_eligibility": "retain_original_only_when_H11_enabled"
+    },
+    "ink_r2_mountain_eruptions": {
+      "provenance": "explicit_user_decision",
+      "presentation": "ink_mountain_peaks_rise_from_below",
+      "automatic_selection": "continuously_seek_denser_enemy_groups_in_the_domain",
+      "angle_driven_placement": false,
+      "base_peak_count_by_rank": [
+        7,
+        9,
+        13,
+        20
+      ],
+      "per_peak_damage_tuning_authorized": true,
+      "old_18m_by_4m_stroke_is_new_peak_geometry_default": false,
+      "old_line_damage_is_new_peak_damage_default": false,
+      "references": "User supplied a feel reference to Raynor Hyperion and Luban No.7 ultimate; no external reference-game numeric/mechanic rule is imported."
+    }
+  },
+  "retained_nonconflicting_source": {
+    "provenance": "production_continuity_interpretation_not_new_exact_user_numbers",
+    "ink_r2": {
+      "cast_range_m": 12,
+      "domain": "fixed_circle_at_selected_ground_center",
+      "radius_m_by_rank": [
+        10,
+        10.54,
+        11.5,
+        13
+      ],
+      "duration_s_by_rank": [
+        5,
+        5.5,
+        6.5,
+        8
+      ],
+      "peak_lifetime_s": 0.3,
+      "solid_mountain_collider": false,
+      "end_rollup": "retain_original_region_end_damage_and_H16_definition",
+      "cooldown_s_by_rank": [
+        145,
+        136,
+        121,
+        101
+      ],
+      "source": "Original DOCX paragraph 87; XLSX 晏归舟技能 E87:H98; step01/SOURCE_AND_SCOPE.md",
+      "h15": "Retain original interval reduction and peak final-damage increase intent; define its exact interaction with the new base count in a separate production version before implementation."
+    },
+    "other_rules": "All previously effective decisions and source values survive where not contradicted by this overlay."
+  },
+  "implementation_conventions": {
+    "status": "explicit_production_plan_not_literal_user_quote_not_runtime_acceptance",
+    "rest": [
+      "Clear the live buff/state layer without deleting learned skills, equipment, or other permanent build ownership.",
+      "No new mana, consumable, money, experience, skill-point or other resource reward is inferred from the rest decision.",
+      "Keep a room visit separate from the existing floor transition so resting cannot invoke the floor flask reset."
+    ],
+    "e2": [
+      "Clip boat motion to its first room-boundary contact and park there; do not refuse launch solely because its projected full route would leave the room.",
+      "Keep the original cast clock running while parked. Do not reset or extend the source voyage lifetime, create an early burst, or invent indefinite persistence.",
+      "Until the original boarding deadline, apply the existing exact-current-point landing legality check at the parked point. Illegal boarding preserves the boat and does not project the hero inward.",
+      "At the original natural voyage deadline use the actual parked endpoint for the original burst or H10 lure branch; preserve the original H10 duration and closed boarding window.",
+      "H09 follows only the actual already travelled route back; wall traversal and original per-target ledgers remain, with no new periodic parked damage.",
+      "Boundary footprint/tolerance details belong to the production geometry implementation and are not stated as exact user instructions."
+    ],
+    "p2": [
+      "Use an explicit successful-use milestone and cast identity to separate counting, becoming ready and one atomic later consumption.",
+      "Do not count previews, rejected inputs, incomplete timeouts, Q3 collapse, E2 boarding, or H12 return as additional completed casts.",
+      "AP snapshot timing, same-time tie-breaks, capped-stack refresh, history after expiry, and Hex-derived damage attribution need explicit production conventions; this approval does not pretend the user specified those details."
+    ],
+    "e3": [
+      "Build the actual eligible participant set under existing Boss/H11/H12 rules, compute every required destination with the appropriate actor footprint, then validate the complete set before committing any movement.",
+      "The same all-or-none legality rule applies to H12 current return; a rejected return does not retroactively undo the already completed original exchange.",
+      "Retain the original live A or H12 window after a rejected attempt and do not start an extra cooldown; this is a production continuity choice, not a quoted new timing rule."
+    ],
+    "r2_candidate_plan": {
+      "status": "proposed_production_values_to_be_explicitly_versioned_before_use",
+      "fixed_domain": "Preserve original fixed domain/range for now; recalculate targets at each peak event instead of making the domain chase an enemy.",
+      "peak_footprint": "Start with a compact circular footprint candidate of radius 2m, independent of the old 18x4m line; tune after concrete balance/readability work.",
+      "targeting": "For each event, evaluate legal points in the original domain and room, using enemy centers plus pair midpoints as candidates; maximize the number of currently living hostile bodies overlapped by the candidate peak footprint. Equal counts use deterministic actor/coordinate order. Recompute every event. Do not add a Boss weighting.",
+      "empty_domain": "Consume the scheduled peak event and show a non-damaging peak at a legal domain point; do not bank unspent events for later or increase the total.",
+      "base_schedule": "Candidate: N events at t=k*D/N for k=0..N-1, first at activation, all before original expiry. N is exactly 7/9/13/20 and D retains the original rank duration. First beat and formula are production proposals, not exact user numbers.",
+      "new_damage_table": "Author a separate four-rank per-peak flat/AP table under the granted balancing discretion; no implicit fallback to old line values and no claim of balanced damage before that table is set and evaluated.",
+      "h15": "Do not use the base N assertion to silently disable interval reduction or to invent a new H15 result; explicitly version the modifier schedule and new total count before opening it."
+    }
+  },
+  "validation": {
+    "performed": [
+      "JSON syntax/structure readback",
+      "five-topic coverage",
+      "new-file SHA256",
+      "preserved-input SHA256 comparison"
+    ],
+    "godot": "NOT_RUN",
+    "cua": "NOT_RUN",
+    "blender": "NOT_RUN",
+    "runtime_tests": "NOT_RUN",
+    "runtime_source_changed": false,
+    "sandbox_project_accessed": false,
+    "new_test_framework_created": false,
+    "historical_passes_promoted_to_current_implementation": false
+  },
+  "preserved_inputs_sha256": {
+    "docs/source_decisions/20261006-pending-user-mechanics.json": "c307b4503884f7b5ade3f11545dbc773517a4de42152623e4cdf06603bce480d",
+    "docs/source_decisions/20261005-pending-user-mechanics.json": "0259d7d6e2df20588537261c67e937f9cfac90c29abea451f94fb83d351350be",
+    "docs/source_decisions/20261005-ink-six-resolutions.md": "dac38d27cbe829280fa70c3fa0b718b67eda0ff89487d2b99d2b269562f9d8a3",
+    "docs/source_decisions/20261005-ink-six-resolutions.json": "62cbd6c20607748cb4c426abd42d4656d6de1ab922fda179102bd8b8afdf6634",
+    "docs/CURRENT_STATE_20261006T0058Z.md": "96538a992fb5fc10b779cd4a2ea91d07e7031dc7ddd8b9746d06a87d77983a1a",
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894"
+  }
+}

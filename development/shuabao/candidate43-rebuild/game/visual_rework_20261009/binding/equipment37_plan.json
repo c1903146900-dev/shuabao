@@ -1,0 +1,28 @@
+{
+  "schema": "equipment37-explicit-successor-1",
+  "previous_source_binding_sha256": "baa7a9298aa10472da33e4d689b7c186506fb5f57e74bd386044b0f61fb19060",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "1d6367f40065f7bde457daf8281dce1dc05f4287f05f805b85b0fbe435208a04",
+      "after": "dccb987964339d37ae90a7a6e14605b4de0b4736e6072a7d2a22e28a04e6ce4d"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "1d9552bbc26a68594fc8b907c638ebc5d9bd9fb108b70da273853fd1ddf4dae9",
+      "after": "9182778f7b0fb55fa7db08f8981d756dd1743181a257ebd4d519601b8b648a2b"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "1457e477d41fc34bd7eddc8b188bdcb3932da1e2fc3b6b93e4b126c4adb9ec29",
+      "after": "6a067eb9d2ed15f6c610a1e6ed6a8de38f70babbf0d440541f4e2c1d99df790a"
+    }
+  },
+  "new_files": {
+    "equipment_elite_damage_20261009/adapter.gd": "898ba66ba06cdf7ced2e29ee39655e0df749621f46ba1fad584fc8bdd64b23c6",
+    "equipment_elite_damage_20261009/passive18.gd": "02fd7037bcaecd321010dcd7d296c821817e82e4dcd3553ce1f21e6422d4189d",
+    "equipment_elite_damage_20261009/model.gd": "d60716a6361242f78bdfae9d1d0a693fa95d42c49b37b1378087a9abe4533e18"
+  },
+  "source_rules": "original passive18 unique highest version; task:G06 100000 actual elite/boss HP loss evolves base12 to15 and cap20 to25; no SP reward",
+  "admitted_item": "final:G06",
+  "previous_item_count": 36,
+  "new_item_count": 37,
+  "earlier_equipment_and_terminal_inherited": true
+}

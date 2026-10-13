@@ -1,0 +1,34 @@
+{
+  "schema": "war-elixir01-successor-1",
+  "base_source_sha256": "c6f713ae35e2bc543f24047f475928e26ede6fe6a72de72d216c7f4615b40f11",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "65e77cd3d25ada83ee66907c4d9c0c3063900d03b1b4820a860dcb3799f8bc07",
+      "after": "a931bfd2ceeea58d7ac1e32d6050836ed7335d30b0d822b08ca835f561933d31"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "7e12d9fe9a9faa2b861ff966492739a76244ff49ac2fe65a400f3fb8387ad567",
+      "after": "c94a0c058046712015efb10a7e020511c19d7ca148681592911cf38b93d9169e"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "708b5197363cd0bcc39813177be39015cb34b72e9403bdbc9c370f5b729425fb",
+      "after": "b86c79aa8122b4da31133e472e89daa20c034a5456edf614eb9b11fc8c86a10e"
+    },
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "860b484fe1e165c2802e8253f294425b43db92b3913824703f74ba2c7888eab0",
+      "after": "a5c1d9484f77054aa51dd5e3be6f5599eb2ce8e6883ec48df62aa79b35201238"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "71f489aaaf61235a0af65fb363eed6f8be552c8ea7eee42b9bb56c51e2561245",
+      "after": "b8ce1e2cb51d0e1ba5fb965676295925d90f05a9d2c6de1879071a86f3975908"
+    }
+  },
+  "new_files": {
+    "elixir_war_20261009/session.gd": "c94488b435cda23e3895ba2fc679f281e1095d4c6eb2843dc07ba0f0508dbdb5",
+    "elixir_war_20261009/model.gd": "ae94927e07778044aaf10fbb59fbaea66f284a6a34cec72d3048489153a0113c",
+    "elixir_war_20261009/common_bridge.gd": "4e8a4f4018067be3b77cbf90feb175e69a3338a180875082ad64b80862913e02",
+    "elixir_war_20261009/panel.gd": "2e3dccdae038949d47ea96aec553f0a557f67c79ce7a843c4944e7462a97c8a6",
+    "elixir_war_20261009/runtime.gd": "34141311185f5e46797364ff2e30ebe27e41ba5137d09c3f14e1aaf7e783a35f"
+  },
+  "scope": "Only war01 plus existing hunter04; original commerce, authenticated solo deaths, owner actor clock; no multiplayer assistance support"
+}

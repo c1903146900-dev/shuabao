@@ -1,0 +1,29 @@
+{
+  "schema": "equipment41-explicit-successor-1",
+  "previous_source_binding_sha256": "14b06d65f00d263459dc6022ee382342de33be80abfa9b15e8e840bc71171fdb",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "a16562542d5138c63c7ba726bed4bf8198d4af69ffae2f4058b4679a5804e7c4",
+      "after": "33c178934959b5933eb01b71a58df34f1ecf3b81304a050a184a8fe5b13c9302"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "323f681b2f058e221f22880e12e0619f60d7ca75447f0e9dde4bd24b907faa82",
+      "after": "912fcbd7908f1ba4efe2c8b7303df609e2fe4dd454788a8d0e4e3f60cbf76a9b"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "9aecf329d95310ff24d968e5bd003bac646b0b35fcb581bdb2e2c9269c97aafb",
+      "after": "7ce55d608222550aebf5d0a436c82f388e6ce9595ef56dc5321deef464568887"
+    }
+  },
+  "new_files": {
+    "equipment_lifeline_20261009/adapter.gd": "6b868a5962f0604b6f23bf229aece545836d4e62314f75c2e3d331b70613b444",
+    "equipment_lifeline_20261009/source_adapter.gd": "0b106829efb744468c5082be2afa5eeb9d8c3cf7da4112177f2de7f05092825f",
+    "equipment_lifeline_20261009/passive20.gd": "518d8ad6c213c10157b7eb0864de5d88f3914e373d2718ef013de81c2d02919b",
+    "equipment_lifeline_20261009/model.gd": "8346aecda4aa7217b711a5bd4bcf75f628a70ffa45a9a25de498c76d2ab8b600"
+  },
+  "source_rules": "original D04 passive20: actual nonlethal damage with resulting HP strictly below30percent grants18percent current final maxHP shield for4 original shield seconds; approved once per real room, low-HP entry first actual hurt eligible, already-granted shield retained on sale; no cost/debt reinterpretation; source HP-commit hooks and original add_shield",
+  "admitted_item": "final:D04",
+  "previous_item_count": 40,
+  "new_item_count": 41,
+  "earlier_equipment_and_terminal_inherited": true
+}

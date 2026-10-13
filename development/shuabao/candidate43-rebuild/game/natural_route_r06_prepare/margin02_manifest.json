@@ -1,0 +1,44 @@
+{
+  "scope": "test driver local movement clearance only",
+  "before_sha256": "6b0676588cd0b5cdf437d3ce62dcb3bdc99f960fe2409bc3780ad0b26cb961ca",
+  "after_sha256": "581463afac2c8e81c87a5ffde04cc312d183dc871c31780d8a038ad23c2dd309",
+  "monitor_sha256": "69aa48269d746c4321a10053d2aa4ba02eab39242292f472bf31b3eb001d845e",
+  "changes": 3,
+  "source_radius_path": "scripts/combat/hero_combat_core.gd:46",
+  "source_radius_default": 0.65,
+  "core_movement_path": "scripts/combat/hero_combat_core.gd:323,329",
+  "original_gameplay_unchanged": true,
+  "evidence": [
+    {
+      "run": "natural_route_replay_gui01",
+      "entry_source_time": 14.4999999999998,
+      "position": [
+        -2.25337958335876,
+        0.0,
+        9.83424663543701
+      ],
+      "HP_second_room_start": 265.431818181811,
+      "old_margin_contains": [
+        "south_west_wing"
+      ],
+      "actual_radius_contains": [],
+      "WASD_actions_after_second_entry": []
+    },
+    {
+      "run": "natural_route_r06_gui01",
+      "entry_source_time": 9.51999999999989,
+      "position": [
+        2.2679398059845,
+        0.0,
+        11.3591117858887
+      ],
+      "HP_second_room_start": 190.214545454541,
+      "old_margin_contains": [
+        "south_east_wing"
+      ],
+      "actual_radius_contains": [],
+      "WASD_actions_after_second_entry": []
+    }
+  ],
+  "limitation": "Pure geometric counterexample; new gameplay outcome not run"
+}

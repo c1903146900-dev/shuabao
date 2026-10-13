@@ -1,0 +1,25 @@
+--- equipment39_source_gate.gd
++++ equipment40_g02_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment39_b04_regression_gate.gd"
++extends "res://integration_checks/equipment40_b04_regression_gate.gd"
+ ## PREPARED ONLY: original Host/Session gate. Threshold500 belongs to a
+ ## separate standalone source/Model gate; no rejected Session event is retried
+ ## directly against this Model. Parent owns all engine execution.
+@@ -74,14 +74,14 @@
+  var model = f.session.ledger.model
+  var prior: Dictionary = G02Prior.build(JSON.parse_string(FileAccess.get_file_as_string(B01_NUMERIC)))
+  if not check(prior.get("accepted", false), "original38 adapter accepts original numeric source"): dispose(f); return
+- check(model.runtime_stat_definitions.size() == prior.definitions.size() + 1, "G02 adds exactly one original runtime entry")
++ check(model.runtime_stat_definitions.size() == prior.definitions.size() + 2, "G02 B02 add exactly two original runtime entries")
+  for id: String in prior.definitions:
+   check(var_to_bytes(prior.definitions[id]) == var_to_bytes(model.runtime_stat_definitions.get(id, {})), "every prior38 definition remains byte-equivalent " + id)
+  var admitted: int = 0
+  for definition: Dictionary in model.runtime_stat_definitions.values():
+   if definition.get("supported", false): admitted += 1
+  var g02: Dictionary = model.equipment_runtime_status("final:G02")
+- check(admitted == 39 and model.snapshot().content_profile == "ordinary_equipment39_potions3", "truthful equipment39 content profile")
++ check(admitted == 40 and model.snapshot().content_profile == "ordinary_equipment40_potions3", "truthful equipment40 content profile")
+  check(g02.stats == {"AD":30.0, "AP":45.0, "max_hp":250.0, "cooldown_reduction":0.10} and g02.passives.is_empty() and g02.actives.is_empty(), "original G02 base attributes and task-only mechanism")
+  check(g02.taskG02 == {"threshold":500, "normal_weight":1, "elite_weight":10, "boss_weight":25, "stage_id":"task:G02:1", "reward_skill_points":1}, "original500 and1/10/25 task authority")
+  check(int(g02.commerce.price) == 2750 and int(g02.commerce.component_total) == 2350 and int(g02.commerce.combine_fee) == 400, "original2750 full price and400 fee")

@@ -1,0 +1,8 @@
+--- equipment40_b02_cap_gate.gd
++++ equipment41_b02_cap_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment40_source_gate.gd"
++extends "res://integration_checks/equipment41_b02_regression_gate.gd"
+ ## Attack-speed saturation comes only from original legal purchases and offered
+ ## irreversible body outcomes. No actor stat, projected base or buff is written.
+ var cap_completed: bool=false

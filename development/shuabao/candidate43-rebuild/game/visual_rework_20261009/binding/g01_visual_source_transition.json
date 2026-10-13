@@ -1,0 +1,30 @@
+{
+  "schema": "g01-six-source-visual-successor-1",
+  "predecessor_source": "95c9a89a9b5a70a81332d868ac31907ae712a862950b934a52fff4390c74a152",
+  "changes": {
+    "scripts/combat/enemy_director.gd": {
+      "before": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+      "after": "c976d33436bb26dc4e5df725d1123ecdad14584973461fc7c46c6198d2ae626e"
+    },
+    "scripts/combat/hero_combat_core.gd": {
+      "before": "20a6768441aeab8ea6ac3103e3fe94043bdc5322ce6e4620943ce327fc24cfa6",
+      "after": "72cbf6832044092bcd6b9c6c8e3a75010bf764bcdd7acb5cf081f82d6c3d8462"
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "before": "e40c0702565720e601aa3587ba466cf3ac174d5a10c17ea20663f5e684367172",
+      "after": "e58f59f267c1513232aa308fc5527c6a2c314febaf2af6ccf36197161406978a"
+    },
+    "tests/ink_q1_h02_20261004/ink_h02_sim.gd": {
+      "before": "283d1d0f386ca4dad42f4646aa69e49e8646d899006dae7eae75c2ae6c23ac81",
+      "after": "796247e96a2edd211d025878fe6d99decdf27ba435104b5fa9562e75b376f3df"
+    },
+    "tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd": {
+      "before": "d4c5a5795a78231091d751b591c341bd5cac946f20dd242dc62404f7164325ef",
+      "after": "9c2194a564419b2778f6dc82f293eca6c099d03da3a2ee7c5cd461c668c24558"
+    },
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": {
+      "before": "fd5e68c9805739111b82a3e4e17981069a62ba6d030259944887cca7bb853e6b",
+      "after": "33c0be66bab86c7fd635e90219fc38ff590ec58b06568525c6fdfdd7f158fc9b"
+    }
+  }
+}

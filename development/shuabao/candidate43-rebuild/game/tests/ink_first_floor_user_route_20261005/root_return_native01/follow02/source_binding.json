@@ -1,0 +1,51 @@
+{
+  "schema": "q1-follow02-native-leaf-1",
+  "status": "SOURCE_FROZEN_NATIVE_ENGINE_UNRUN",
+  "expected_identity": {
+    "q1_script": "res://tests/ink_q1_flow_20261005/effect05/q1_effect_presenter.gd",
+    "q1_script_sha": "c2c7b96c1855c3e9f3959083fc0d05d49b7943f054b0d7ef6c3bf852f3f81673",
+    "q1_shader": "res://tests/ink_q1_flow_20261005/effect05/ink_belly.gdshader",
+    "q1_shader_sha": "517c94001950db6e257584cc2d0c818e2719eefa4b311a890f5eb3afd826df81",
+    "pigment_sha": "95eebee8b0c7019bf2168d804a3dafc07b5dc39d10299e9279e06704f3474590",
+    "actor_script": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/hero_view.gd",
+    "actor_script_sha": "e541fb196e3daa9460d56eecf93d04e58ef34e1e7c9449ff6319a97b90090b72",
+    "visible_asset_sha": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+    "flow_asset_sha": "b558f0c56aeacb1d6455b85a474e435921f82b281540c4952f3d474d9abad589",
+    "flow_binding_sha": "961b39f9fa77cd34ce64b4ebce65bb474cb494e7d7cc90507ad611a9ab06bb4a",
+    "intent_asset": "res://tests/ink_q1_flow_20261005/gesture06/runtime/assets/yanguizhou_q1_intent.glb",
+    "intent_asset_sha": "8637ff7ba8e7e22130ca4c5ad1c1d3073fe88cb6b12c1f08f06ec39620d97352",
+    "intent_binding_sha": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+    "intent_boundaries_sha": "bc6a25fac2bce4021ee3f5cb2387674818778e31ff6e3febf90db2b26b3eb0b0",
+    "intent_report_script": "res://tests/ink_q1_flow_20261005/gesture06/runtime/intent_report.gd",
+    "intent_report_sha": "8d080cefe2f8a68f6122d4f968c21473ba56446aec2f262425f0d581fe944516",
+    "root_return_helper_path": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/root_return.gd",
+    "root_return_helper_sha": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+    "root_return_helper_exact": true,
+    "recovery_follow_helper_path": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/recovery_follow.gd",
+    "recovery_follow_helper_sha": "90129923c7b537b601c7115b70d512635a4fd7b7f1c183feeccbfaafad4256e6",
+    "recovery_follow_helper_exact": true,
+    "recovery_follow_instance_exact": true
+  },
+  "ancestor_identity_error_allowlist": [
+    "actor_script_mismatch",
+    "actor_script_sha_mismatch"
+  ],
+  "files": {
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/source_binding.json": "082782bf7b5126a87bc2b1acd5a0aa7af15ad3ce437232a1bd9b79a19d247082",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/host.gd": "92967c0de5f9dfb829ad5a0428a5fea748957172b5f766f5505b0a9079a72bf5",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/hero_view.gd": "e541fb196e3daa9460d56eecf93d04e58ef34e1e7c9449ff6319a97b90090b72",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/recovery_follow.gd": "90129923c7b537b601c7115b70d512635a4fd7b7f1c183feeccbfaafad4256e6",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/hero_view.gd": "8856e856563d463dd816ebe068cb4d2c357870bf8d4ee18d58b23c263abef0a6",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/root_return.gd": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/host.gd": "e3b423aa18fda08a4590dd218fa31f1e9b710a9ff8e6b0eb1830946e0ce31926",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/host.tscn": "12138fd7c9e92682399dadf78ae74239a24d6b35c142b0d1751b8b10a984f37c",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/parse_gate.gd": "213dec837039e963f72e2272ae26a7e6b5c7faf782acd077d4e49eb335edf077"
+  },
+  "parent_guard_policy": "all native01 non-actor guards and original RootReturn helper remain; only exact actor identity changes are readmitted with new frozen actor and actual RecoveryFollow Script/instance pins",
+  "constructor_policy": "complete native01 and its accepted identity/source seals first; append one actor replacement at fresh paused source zero; seal source ledger Session RNG/director",
+  "normal_entry_and_F8_F10_inherited": true,
+  "new_clip_or_asset_import": false,
+  "continuous102_frame_driver_created": false,
+  "native_input_passed": false,
+  "art_accepted": false
+}

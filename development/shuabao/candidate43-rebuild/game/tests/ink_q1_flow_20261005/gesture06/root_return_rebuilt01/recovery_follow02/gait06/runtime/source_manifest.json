@@ -1,0 +1,23 @@
+{
+  "schema": "gait06-runtime-source-1",
+  "status": "SOURCE_FROZEN_ENGINE_UNRUN",
+  "files": {
+    "hero_view.gd": "17d5dfe046a45b47daaf7e6f650a9bf3f8ca36ab8739997ed79471a3fc54a1c6",
+    "gait_report.gd": "d3fb391d6d26a96f5dd1278f45cf3ce79ceb0153938d2dbee7b5b9a320d2170c",
+    "phase.gd": "6e10debf1774aa735b6728ead59d7f3f85922434db4c64e620670af4b4a379f5",
+    "walking_lower.gd": "73fafd76ac84971dd8911fba22dbab3f01889f6477a10a363adfa53af9e5ceb9",
+    "parse_gate.gd": "1743c5f89037ab3bbd51bd63bb4ac91c982fb73e9769a75474f64d0208924685",
+    "asset_binding.json": "7cf8f33ace6a268c4e21c674f1f11ef762eccfe86e82b04bc46dbeafa9372c80",
+    "source_boundaries.json": "2a3167de1f40e2190dcb6e67f48e115d523e21a61e10cb692b75f57680b52742"
+  },
+  "asset_sha256": "1aec676cb4f145e39c38ed4ca49e6f134fea866574c021cd16ace129c10ba2b5",
+  "parent_actor": {
+    "path": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/recovery_follow02/side_carry04/runtime/hero_view.gd",
+    "sha256": "df264a8f68d3329def34fe0cee0d7c542dbf67a32255ff362c8586b56d3626fc"
+  },
+  "animation_phase": "new_phase/.50*.60 for full original base/carry; new7fields use new_phase",
+  "contact_phase": "new.50 cycle/.133333 support; original anchor and IK body",
+  "stopping_phase": "piecewise new toe-off -> original toe-off, separate from animation mapping",
+  "source_clock_and_speed_changed": false,
+  "art_accepted": false
+}

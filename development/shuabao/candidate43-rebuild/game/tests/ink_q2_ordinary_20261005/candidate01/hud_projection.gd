@@ -1,0 +1,31 @@
+extends RefCounted
+## Reuses the frozen selected-Q card, then replaces Q2 text with source readback.
+const PriorProjection = preload("res://tests/ink_selected_q_hud_20261005/projection.gd")
+const PriorHUD = preload("res://tests/ink_selected_q_hud_20261005/fix01/hud_patch.gd")
+const Design = preload("res://data/final_design/catalog.gd")
+const Binding = preload("res://tests/ink_q2_ordinary_20261005/candidate01/live_binding.gd")
+
+static func capture_context(source: Node) -> Dictionary:
+ if not is_instance_valid(source) or source.get_script().resource_path != Binding.SIM_PATH: return {}
+ var mountain: Dictionary = source.ink_mountain
+ return {"schema":PriorProjection.SCHEMA,"source_instance":source.get_instance_id(),"generation":source.encounter_generation,"room_id":source.room_id,"hero_time":source.hero_time,"revision":source.revision,"candidate":str(source.hero.loadout.q),"rank":int(source.hero.ranks.q),"paused":source.paused,"dead":source.hero.dead,"phase":source.phase,"epsilon":source.TIME_EPS,"rules_match":source.source_rules_hash==source.EXPECTED_RULES_HASH,"controlled":source._ink_action_controlled("q"),"transaction_active":source.transaction_active,"lock_time":source.hero.lock_time,"dash_left":source.hero.dash_left,"mountain_current":not mountain.is_empty() and source.effect_is_current(mountain) and not bool(mountain.get("retired",false)),"terrain_id":str(mountain.get("terrain_id","")),"cast_id":int(mountain.get("cast_id",0)),"expires_at":float(mountain.get("expires_at",-1.0))}
+
+static func apply_to(hud: Control, source: Node) -> Dictionary:
+ var context: Dictionary = capture_context(source)
+ var shown: Dictionary = PriorHUD.apply_to(hud,source.snapshot(),source.ink_presenter_snapshot(),context)
+ hud.footer.text = str(hud.INPUT_HELP).replace("Q预备→左键拖线/松开释放","Q→左键放孤烟；再Q→左键放落日") if source.hero.loadout.q == "q2" and int(source.hero.ranks.q) > 0 else str(hud.INPUT_HELP)
+ if source.hero.loadout.q != "q2" or int(source.hero.ranks.q) <= 0: return shown
+ var rank: int = int(source.hero.ranks.q)
+ var pending: Dictionary = source.ink_q2_pending
+ var live: bool = not pending.is_empty() and source.effect_is_current(pending) and source.hero_time < float(pending.expires_at)-source.TIME_EPS
+ var remaining: float = maxf(0.0,float(pending.get("expires_at",source.hero_time))-source.hero_time) if live else 0.0
+ var cooldown: float = float(source.hero.cooldowns.q)
+ var detail: String = Design.description("yanguizhou","q2",rank)
+ detail += "\n\nQ → 左键放孤烟；再 Q → 左键放落日。首标窗口5秒，放置首标不开始冷却；窗口到期消标，或合法完成二段时开始冷却。右键/Esc/失焦仅取消瞄准，不删除已放孤烟。\n河生成时已在河内的敌人立即受伤；后来首次触碰立即受伤，每河每敌一次。同一己方BASIC/Shift弹体跨所有河合计只增强一次。\n首标剩余 %.3f 秒；技能冷却 %.3f 秒（源英雄时间；暂停冻结）\nQ2临时功能显示，美术/音频未实现；实机未验。H03/H04未开放" % [remaining,cooldown]
+ shown = {"candidate":"q2","name":"长河落日","rank":rank,"rank_text":"%d级"%rank,"learned":true,"icon":"unlearned","cooldown":cooldown,"cooldown_text":"续 %.1fs"%remaining if live else "CD %.1fs"%cooldown,"q3_live":false,"recast_ready":live and source._q2_input_reason().is_empty(),"q2_marker_live":live,"marker_remaining":remaining,"tooltip":detail,"temporary_art":true,"q2_audio_implemented":false}
+ var patch: Control = hud.get_node_or_null(NodePath(PriorHUD.PATCH_NAME))
+ if patch != null:
+  patch.projected = shown.duplicate(true); patch.tooltip_text = detail; patch.queue_redraw()
+ hud.q_label.text = "长河落日"; hud.q_rank_label.text = shown.rank_text; hud.q_cooldown.text = shown.cooldown_text
+ hud.source_model["q_rank"] = shown.rank_text; hud.source_model["q_learned"] = true; hud.source_model["q_cooldown"] = shown.cooldown_text; hud.source_model["selected_q"] = shown.duplicate(true)
+ return shown

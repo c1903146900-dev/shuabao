@@ -1,0 +1,14 @@
+{
+  "schema": "user-rule-overlay-v1",
+  "source_message_id": "Sentinel_58891f6c400481918ae8be5a3771f473",
+  "source_time_utc": "2026-10-05T03:13:00Z",
+  "runtime_status": "authoritative_rules_not_yet_all_implemented_or_verified",
+  "rules": {
+    "ink_q2_e3": {"cooldown_on_first_marker": false, "incomplete_expiry": "remove_marker_then_start_cooldown", "valid_completion": "start_cooldown_on_valid_completion", "completion_policy_provenance": "explicit_implementation_interpretation"},
+    "ink_q2_river": {"already_inside_on_activation": "hit_immediately", "enter_after_activation": "hit_on_first_touch", "hits_per_enemy_per_river": 1, "enhancements_per_projectile_across_all_rivers": 1},
+    "ink_e2": {"boat_crosses_interposed_walls": true, "teleport_landing_must_be_legal": true, "illegal_teleport_consumes_boat": false},
+    "consumables": {"ordinary_potion_stack": "same_grade_one_slot_different_grades_separate", "ordinary_potion_total_max": 5, "flask_slots": 1, "undrunk_elixir_slots_each": 1},
+    "first_floor": {"rows": 12, "traversal": "explicit_next_row_edges_with_forks_and_rejoins", "nodes_per_path_per_row": 1, "boss": {"count": 1, "row": 12}, "elite_per_path": [1, 2], "rest_per_path": [2, 3], "training_per_path": [1, 2], "remaining_type": "ordinary", "allowed_types": ["ordinary", "elite", "rest", "training", "boss"]},
+    "shop": {"is_map_node": false, "availability": "after_combat_and_all_noncombat_nodes", "document_key": "P", "same_room_reopen_preserves_undo": true, "next_room_commits_previous_visit": true, "body_training_undo": false}
+  }
+}

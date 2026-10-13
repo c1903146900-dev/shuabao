@@ -1,0 +1,76 @@
+{
+  "schema": "ink-e1-q2-ordinary-overlay-1",
+  "status": "SOURCE_COMPOSITION_ENGINE_NATIVE_NOT_RUN",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1"
+  ],
+  "supported_hex_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "runtime_map": {
+    "res://scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "res://scripts/integration/yanguizhou_first_floor.gd": "2702d28318bc8af8b03dce99d7160e7263e5017872abf64f49e3b79159e3377f",
+    "res://scripts/ui/hero_chooser.gd": "894a104f5ccbf3d75dab2de5aed3ea1845dad93ff0127d640aaf7c8ed2e91ff2",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/bridge.gd": "144ae84ab70136c30ae8ba3da7e867eb7be62fec6dd198ad9dc56d745056ce8d",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/catalog.gd": "c948f8cb47c2d1c3f1aec9cc58a8595d89489095c28e7d6c46547616d321e335",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/e1_hud.gd": "fa76bde0b9d4186296ece95853520eb6d1283b4fa977a1e947a409b1d201f82d",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/floor_session.gd": "2c8f071c78db83626c5feca7fbaaa498d7e6e092baf339232c77f1b613ddc3c4",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/growth_hud.gd": "5de5d6ca59c00a094993a79efb707b8b98b67abf3f865e88597d132ff9ee440a",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/host.gd": "d0c1d2a4670898e1b40aeaba0b0f8d296e5513c1f69596ffe95dfd47b5e4a12b",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/hud_projection.gd": "92d8fd74ebf7c17a3549b801ac9127055f05440117f0a74d6e10d30e50663b61",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/input_adapter.gd": "fc48e5de978166676e0450d0e8cee9fde8cd3c82a49bf2367b077253549d692d",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/input_base.gd": "8a8dc77d4bec778a13de587230367505d4e214f1c94aa1ebc794106ab2f337ca",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/live_binding.gd": "18caab4864281211677ff589f07c747e67d80311a1a1cd36b1e67a89bead2bc8",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/navigation_install.gd": "bf2fdf028fb242d095329d242de9dc93413cc2c4e745625f2153a4fb390f65fb",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d",
+    "res://tests/ink_e1_ordinary_20261005/candidate01/sim.gd": "24063049066575efbb919373f106a05dd7288f76dd785f236e39be1e001d6e0e"
+  },
+  "parent_runtime_maps": {
+    "res://tests/ink_e1_rain_foundation_20261005/fix01/runtime_binding.json": "462117c2a7922167a95d2c6fca667e972cfa8590265f0d73960d5b3eb646bf37",
+    "res://tests/ink_q2_foundation_20261005/fix01/runtime_binding.json": "76a75bb928f5c9aefd4377a54e03d6ec4fffdeee8aaac76ae9847c4fa0b98ef9",
+    "res://tests/ink_q3_input_growth_20261004/runtime_binding.json": "ba92830cf08fb056a23e831e1b86f1ab398feb81e5f36680d7cf97aa90c06504"
+  },
+  "ancestor_pin_replacements": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": {
+      "before": "ed6cd6437170dc0872009867faeeb3be0732e48b09b8dc1552d130a15275c665",
+      "after": "2702d28318bc8af8b03dce99d7160e7263e5017872abf64f49e3b79159e3377f",
+      "scope": "exact leaf extends only"
+    },
+    "res://scripts/ui/hero_chooser.gd": {
+      "before": "e00330b3431953cbe16d90ce6f154fcbb823b7cb33b6546362a65f4696df2101",
+      "after": "894a104f5ccbf3d75dab2de5aed3ea1845dad93ff0127d640aaf7c8ed2e91ff2",
+      "scope": "Ink-only chooser string replacements"
+    }
+  },
+  "entrypoint_changes": {
+    "scripts/integration/yanguizhou_first_floor.gd": {
+      "before": "ed6cd6437170dc0872009867faeeb3be0732e48b09b8dc1552d130a15275c665",
+      "after": "2702d28318bc8af8b03dce99d7160e7263e5017872abf64f49e3b79159e3377f"
+    },
+    "scripts/integration/hero_entry.gd": {
+      "before": "4e93d56931149d0d50818218927c2795c217916a54a73bd498ba0abf956556a9",
+      "after": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61"
+    },
+    "scripts/ui/hero_chooser.gd": {
+      "before": "e00330b3431953cbe16d90ce6f154fcbb823b7cb33b6546362a65f4696df2101",
+      "after": "894a104f5ccbf3d75dab2de5aed3ea1845dad93ff0127d640aaf7c8ed2e91ff2"
+    }
+  },
+  "H07_H08_offered": false,
+  "engine_passed": false,
+  "native_passed": false,
+  "art_audio_implemented": false,
+  "ordinary_only_collision_verified": false
+}

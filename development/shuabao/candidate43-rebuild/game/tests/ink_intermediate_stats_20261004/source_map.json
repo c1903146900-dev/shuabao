@@ -1,0 +1,1006 @@
+{
+  "schema": 1,
+  "scope": "11 base +17 intermediate exact source stat slice; I12/B12 all-or-nothing HOLD; final and consumable effects HOLD",
+  "rows": [
+    {
+      "id": "base:B01",
+      "name": "黑铁短刃",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B01黑铁短刃450攻击力+12",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B01.stat.AD",
+          "value": 12,
+          "unit": "attack_points",
+          "source_value": 12,
+          "source_ref": "DOCX table 2, row 2",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AD": 12.0
+      }
+    },
+    {
+      "id": "base:B02",
+      "name": "奥术结晶",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B02奥术结晶450法术强度+20",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B02.stat.AP",
+          "value": 20,
+          "unit": "ability_points",
+          "source_value": 20,
+          "source_ref": "DOCX table 2, row 3",
+          "runtime_stat": "AP",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AP": 20.0
+      }
+    },
+    {
+      "id": "base:B03",
+      "name": "微型涡轮",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B03微型涡轮450攻击速度+15%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B03.stat.attack_speed_pct",
+          "value": 15,
+          "unit": "percent_points",
+          "source_value": 15,
+          "source_ref": "DOCX table 2, row 4",
+          "runtime_stat": "attack_speed",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "attack_speed": 0.15
+      }
+    },
+    {
+      "id": "base:B04",
+      "name": "鹰眼棱镜",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B04鹰眼棱镜500暴击率+10%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 500,
+      "combine_fee": 500,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B04.stat.crit_chance_pct",
+          "value": 10,
+          "unit": "percent_points",
+          "source_value": 10,
+          "source_ref": "DOCX table 2, row 5",
+          "runtime_stat": "crit_chance",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "crit_chance": 0.1
+      }
+    },
+    {
+      "id": "base:B05",
+      "name": "冷凝线圈",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B05冷凝线圈500冷却缩减+8%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 500,
+      "combine_fee": 500,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B05.stat.cdr_pct",
+          "value": 8,
+          "unit": "percent_points",
+          "source_value": 8,
+          "source_ref": "DOCX table 2, row 6",
+          "runtime_stat": "cooldown_reduction",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "cooldown_reduction": 0.08
+      }
+    },
+    {
+      "id": "base:B06",
+      "name": "生命核心",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B06生命核心450生命值+140",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B06.stat.max_health",
+          "value": 140,
+          "unit": "health_points",
+          "source_value": 140,
+          "source_ref": "DOCX table 2, row 7",
+          "runtime_stat": "max_hp",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "max_hp": 140.0
+      }
+    },
+    {
+      "id": "base:B07",
+      "name": "合金甲板",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B07合金甲板450防御力+14",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B07.stat.defense",
+          "value": 14,
+          "unit": "defense_points",
+          "source_value": 14,
+          "source_ref": "DOCX table 2, row 8",
+          "runtime_stat": "defense",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "defense": 14.0
+      }
+    },
+    {
+      "id": "base:B08",
+      "name": "矢量推进器",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B08矢量推进器500移动速度+7%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 500,
+      "combine_fee": 500,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B08.stat.move_speed_pct",
+          "value": 7,
+          "unit": "percent_points",
+          "source_value": 7,
+          "source_ref": "DOCX table 2, row 9",
+          "runtime_stat": "move_speed",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "move_speed": 0.07
+      }
+    },
+    {
+      "id": "base:B09",
+      "name": "血泵",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B09血泵500吸血+4%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 500,
+      "combine_fee": 500,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B09.stat.lifesteal_pct",
+          "value": 4,
+          "unit": "percent_points",
+          "source_value": 4,
+          "source_ref": "DOCX table 2, row 10",
+          "runtime_stat": "lifesteal",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "lifesteal": 0.04
+      }
+    },
+    {
+      "id": "base:B10",
+      "name": "稳定环",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B10稳定环450韧性+15%",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 450,
+      "combine_fee": 450,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B10.stat.tenacity_pct",
+          "value": 15,
+          "unit": "percent_points",
+          "source_value": 15,
+          "source_ref": "DOCX table 2, row 11",
+          "runtime_stat": "tenacity",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "tenacity": 0.15
+      }
+    },
+    {
+      "id": "base:B11",
+      "name": "贯甲钉",
+      "tier": "base",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "B11贯甲钉500穿甲+10",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 500,
+      "combine_fee": 500,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B11.stat.penetration",
+          "value": 10,
+          "unit": "penetration_points",
+          "source_value": 10,
+          "source_ref": "DOCX table 2, row 12",
+          "runtime_stat": "penetration",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "penetration": 10.0
+      }
+    },
+    {
+      "id": "base:B12",
+      "name": "活性凝胶",
+      "tier": "base",
+      "supported": false,
+      "hold_reason": "regen_time_unit_unresolved",
+      "source_exact_compact": "B12活性凝胶400基础生命恢复+3",
+      "mechanism_ids": [],
+      "components": [],
+      "price": 400,
+      "combine_fee": 400,
+      "parameter_mapping": [
+        {
+          "parameter": "base:B12.stat.health_regen",
+          "value": 3,
+          "unit": "health_regen_source_units",
+          "source_value": 3,
+          "source_ref": "DOCX table 2, row 13",
+          "runtime_stat": "",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {}
+    },
+    {
+      "id": "intermediate:I01",
+      "name": "双刃核心",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I01双刃核心1100黑铁短刃×2攻击力+28",
+      "mechanism_ids": [],
+      "components": [
+        "base:B01",
+        "base:B01"
+      ],
+      "price": 1100,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I01.stat.AD",
+          "value": 28,
+          "unit": "attack_points",
+          "source_value": 28,
+          "source_ref": "DOCX table 3, row 2",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AD": 28.0
+      }
+    },
+    {
+      "id": "intermediate:I02",
+      "name": "秘法棱核",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I02秘法棱核1100奥术结晶×2法术强度+48",
+      "mechanism_ids": [],
+      "components": [
+        "base:B02",
+        "base:B02"
+      ],
+      "price": 1100,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I02.stat.AP",
+          "value": 48,
+          "unit": "ability_points",
+          "source_value": 48,
+          "source_ref": "DOCX table 3, row 3",
+          "runtime_stat": "AP",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AP": 48.0
+      }
+    },
+    {
+      "id": "intermediate:I03",
+      "name": "狂热齿轮",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I03狂热齿轮1500微型涡轮+鹰眼棱镜+矢量推进器攻速+20%，暴击+10%，移速+5%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B03",
+        "base:B04",
+        "base:B08"
+      ],
+      "price": 1500,
+      "combine_fee": 50,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I03.stat.attack_speed_pct",
+          "value": 20,
+          "unit": "percent_points",
+          "source_value": 20,
+          "source_ref": "DOCX table 3, row 4",
+          "runtime_stat": "attack_speed",
+          "scale": 0.01
+        },
+        {
+          "parameter": "intermediate:I03.stat.crit_chance_pct",
+          "value": 10,
+          "unit": "percent_points",
+          "source_value": 10,
+          "source_ref": "DOCX table 3, row 4",
+          "runtime_stat": "crit_chance",
+          "scale": 0.01
+        },
+        {
+          "parameter": "intermediate:I03.stat.move_speed_pct",
+          "value": 5,
+          "unit": "percent_points",
+          "source_value": 5,
+          "source_ref": "DOCX table 3, row 4",
+          "runtime_stat": "move_speed",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "attack_speed": 0.2,
+        "crit_chance": 0.1,
+        "move_speed": 0.05
+      }
+    },
+    {
+      "id": "intermediate:I04",
+      "name": "锯齿长刃",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I04锯齿长刃1200黑铁短刃+贯甲钉攻击力+20，穿甲+14",
+      "mechanism_ids": [],
+      "components": [
+        "base:B01",
+        "base:B11"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I04.stat.AD",
+          "value": 20,
+          "unit": "attack_points",
+          "source_value": 20,
+          "source_ref": "DOCX table 3, row 5",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I04.stat.penetration",
+          "value": 14,
+          "unit": "penetration_points",
+          "source_value": 14,
+          "source_ref": "DOCX table 3, row 5",
+          "runtime_stat": "penetration",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AD": 20.0,
+        "penetration": 14.0
+      }
+    },
+    {
+      "id": "intermediate:I05",
+      "name": "回响法印",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I05回响法印1200奥术结晶+冷凝线圈法强+32，冷却缩减+10%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B02",
+        "base:B05"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I05.stat.AP",
+          "value": 32,
+          "unit": "ability_points",
+          "source_value": 32,
+          "source_ref": "DOCX table 3, row 6",
+          "runtime_stat": "AP",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I05.stat.cdr_pct",
+          "value": 10,
+          "unit": "percent_points",
+          "source_value": 10,
+          "source_ref": "DOCX table 3, row 6",
+          "runtime_stat": "cooldown_reduction",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "AP": 32.0,
+        "cooldown_reduction": 0.1
+      }
+    },
+    {
+      "id": "intermediate:I06",
+      "name": "血袭刀环",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I06血袭刀环1200黑铁短刃+血泵攻击力+18，吸血+6%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B01",
+        "base:B09"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I06.stat.AD",
+          "value": 18,
+          "unit": "attack_points",
+          "source_value": 18,
+          "source_ref": "DOCX table 3, row 7",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I06.stat.lifesteal_pct",
+          "value": 6,
+          "unit": "percent_points",
+          "source_value": 6,
+          "source_ref": "DOCX table 3, row 7",
+          "runtime_stat": "lifesteal",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "AD": 18.0,
+        "lifesteal": 0.06
+      }
+    },
+    {
+      "id": "intermediate:I07",
+      "name": "生命合金",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I07生命合金1100生命核心+合金甲板生命+220，防御+18",
+      "mechanism_ids": [],
+      "components": [
+        "base:B06",
+        "base:B07"
+      ],
+      "price": 1100,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I07.stat.max_health",
+          "value": 220,
+          "unit": "health_points",
+          "source_value": 220,
+          "source_ref": "DOCX table 3, row 8",
+          "runtime_stat": "max_hp",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I07.stat.defense",
+          "value": 18,
+          "unit": "defense_points",
+          "source_value": 18,
+          "source_ref": "DOCX table 3, row 8",
+          "runtime_stat": "defense",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "max_hp": 220.0,
+        "defense": 18.0
+      }
+    },
+    {
+      "id": "intermediate:I08",
+      "name": "不屈框架",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I08不屈框架1100生命核心+稳定环生命+200，韧性+22%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B06",
+        "base:B10"
+      ],
+      "price": 1100,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I08.stat.max_health",
+          "value": 200,
+          "unit": "health_points",
+          "source_value": 200,
+          "source_ref": "DOCX table 3, row 9",
+          "runtime_stat": "max_hp",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I08.stat.tenacity_pct",
+          "value": 22,
+          "unit": "percent_points",
+          "source_value": 22,
+          "source_ref": "DOCX table 3, row 9",
+          "runtime_stat": "tenacity",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "max_hp": 200.0,
+        "tenacity": 0.22
+      }
+    },
+    {
+      "id": "intermediate:I09",
+      "name": "相位推进器",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I09相位推进器1250矢量推进器+冷凝线圈移速+9%，冷却缩减+9%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B08",
+        "base:B05"
+      ],
+      "price": 1250,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I09.stat.move_speed_pct",
+          "value": 9,
+          "unit": "percent_points",
+          "source_value": 9,
+          "source_ref": "DOCX table 3, row 10",
+          "runtime_stat": "move_speed",
+          "scale": 0.01
+        },
+        {
+          "parameter": "intermediate:I09.stat.cdr_pct",
+          "value": 9,
+          "unit": "percent_points",
+          "source_value": 9,
+          "source_ref": "DOCX table 3, row 10",
+          "runtime_stat": "cooldown_reduction",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "move_speed": 0.09,
+        "cooldown_reduction": 0.09
+      }
+    },
+    {
+      "id": "intermediate:I10",
+      "name": "狂战泵",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I10狂战泵1200微型涡轮+血泵攻速+22%，吸血+6%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B03",
+        "base:B09"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I10.stat.attack_speed_pct",
+          "value": 22,
+          "unit": "percent_points",
+          "source_value": 22,
+          "source_ref": "DOCX table 3, row 11",
+          "runtime_stat": "attack_speed",
+          "scale": 0.01
+        },
+        {
+          "parameter": "intermediate:I10.stat.lifesteal_pct",
+          "value": 6,
+          "unit": "percent_points",
+          "source_value": 6,
+          "source_ref": "DOCX table 3, row 11",
+          "runtime_stat": "lifesteal",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "attack_speed": 0.22,
+        "lifesteal": 0.06
+      }
+    },
+    {
+      "id": "intermediate:I11",
+      "name": "贯穿镜",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I11贯穿镜1250鹰眼棱镜+贯甲钉暴击+15%，穿甲+14",
+      "mechanism_ids": [],
+      "components": [
+        "base:B04",
+        "base:B11"
+      ],
+      "price": 1250,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I11.stat.crit_chance_pct",
+          "value": 15,
+          "unit": "percent_points",
+          "source_value": 15,
+          "source_ref": "DOCX table 3, row 12",
+          "runtime_stat": "crit_chance",
+          "scale": 0.01
+        },
+        {
+          "parameter": "intermediate:I11.stat.penetration",
+          "value": 14,
+          "unit": "penetration_points",
+          "source_value": 14,
+          "source_ref": "DOCX table 3, row 12",
+          "runtime_stat": "penetration",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "crit_chance": 0.15,
+        "penetration": 14.0
+      }
+    },
+    {
+      "id": "intermediate:I12",
+      "name": "回生胚体",
+      "tier": "intermediate",
+      "supported": false,
+      "hold_reason": "regen_time_unit_unresolved",
+      "source_exact_compact": "I12回生胚体1050生命核心+活性凝胶生命+190，基础生命恢复+5",
+      "mechanism_ids": [],
+      "components": [
+        "base:B06",
+        "base:B12"
+      ],
+      "price": 1050,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I12.stat.max_health",
+          "value": 190,
+          "unit": "health_points",
+          "source_value": 190,
+          "source_ref": "DOCX table 3, row 13",
+          "runtime_stat": "max_hp",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I12.stat.health_regen",
+          "value": 5,
+          "unit": "health_regen_source_units",
+          "source_value": 5,
+          "source_ref": "DOCX table 3, row 13",
+          "runtime_stat": "",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {}
+    },
+    {
+      "id": "intermediate:I13",
+      "name": "战术芯片",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I13战术芯片1200黑铁短刃+冷凝线圈攻击力+18，冷却缩减+10%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B01",
+        "base:B05"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I13.stat.AD",
+          "value": 18,
+          "unit": "attack_points",
+          "source_value": 18,
+          "source_ref": "DOCX table 3, row 14",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I13.stat.cdr_pct",
+          "value": 10,
+          "unit": "percent_points",
+          "source_value": 10,
+          "source_ref": "DOCX table 3, row 14",
+          "runtime_stat": "cooldown_reduction",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "AD": 18.0,
+        "cooldown_reduction": 0.1
+      }
+    },
+    {
+      "id": "intermediate:I14",
+      "name": "奥术穿针",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I14奥术穿针1200奥术结晶+贯甲钉法强+30，穿甲+13",
+      "mechanism_ids": [],
+      "components": [
+        "base:B02",
+        "base:B11"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I14.stat.AP",
+          "value": 30,
+          "unit": "ability_points",
+          "source_value": 30,
+          "source_ref": "DOCX table 3, row 15",
+          "runtime_stat": "AP",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I14.stat.penetration",
+          "value": 13,
+          "unit": "penetration_points",
+          "source_value": 13,
+          "source_ref": "DOCX table 3, row 15",
+          "runtime_stat": "penetration",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "AP": 30.0,
+        "penetration": 13.0
+      }
+    },
+    {
+      "id": "intermediate:I15",
+      "name": "守心板",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I15守心板1100合金甲板+稳定环防御+18，韧性+22%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B07",
+        "base:B10"
+      ],
+      "price": 1100,
+      "combine_fee": 200,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I15.stat.defense",
+          "value": 18,
+          "unit": "defense_points",
+          "source_value": 18,
+          "source_ref": "DOCX table 3, row 16",
+          "runtime_stat": "defense",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I15.stat.tenacity_pct",
+          "value": 22,
+          "unit": "percent_points",
+          "source_value": 22,
+          "source_ref": "DOCX table 3, row 16",
+          "runtime_stat": "tenacity",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "defense": 18.0,
+        "tenacity": 0.22
+      }
+    },
+    {
+      "id": "intermediate:I16",
+      "name": "轻装护片",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I16轻装护片1200合金甲板+矢量推进器防御+14，移速+9%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B07",
+        "base:B08"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I16.stat.defense",
+          "value": 14,
+          "unit": "defense_points",
+          "source_value": 14,
+          "source_ref": "DOCX table 3, row 17",
+          "runtime_stat": "defense",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I16.stat.move_speed_pct",
+          "value": 9,
+          "unit": "percent_points",
+          "source_value": 9,
+          "source_ref": "DOCX table 3, row 17",
+          "runtime_stat": "move_speed",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "defense": 14.0,
+        "move_speed": 0.09
+      }
+    },
+    {
+      "id": "intermediate:I17",
+      "name": "血肉触媒",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I17血肉触媒1150生命核心+奥术结晶生命+190，法强+28",
+      "mechanism_ids": [],
+      "components": [
+        "base:B06",
+        "base:B02"
+      ],
+      "price": 1150,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I17.stat.max_health",
+          "value": 190,
+          "unit": "health_points",
+          "source_value": 190,
+          "source_ref": "DOCX table 3, row 18",
+          "runtime_stat": "max_hp",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I17.stat.AP",
+          "value": 28,
+          "unit": "ability_points",
+          "source_value": 28,
+          "source_ref": "DOCX table 3, row 18",
+          "runtime_stat": "AP",
+          "scale": 1.0
+        }
+      ],
+      "expected_stats": {
+        "max_hp": 190.0,
+        "AP": 28.0
+      }
+    },
+    {
+      "id": "intermediate:I18",
+      "name": "猎杀号角",
+      "tier": "intermediate",
+      "supported": true,
+      "hold_reason": "",
+      "source_exact_compact": "I18猎杀号角1200黑铁短刃+矢量推进器攻击力+18，移速+9%",
+      "mechanism_ids": [],
+      "components": [
+        "base:B01",
+        "base:B08"
+      ],
+      "price": 1200,
+      "combine_fee": 250,
+      "parameter_mapping": [
+        {
+          "parameter": "intermediate:I18.stat.AD",
+          "value": 18,
+          "unit": "attack_points",
+          "source_value": 18,
+          "source_ref": "DOCX table 3, row 19",
+          "runtime_stat": "AD",
+          "scale": 1.0
+        },
+        {
+          "parameter": "intermediate:I18.stat.move_speed_pct",
+          "value": 9,
+          "unit": "percent_points",
+          "source_value": 9,
+          "source_ref": "DOCX table 3, row 19",
+          "runtime_stat": "move_speed",
+          "scale": 0.01
+        }
+      ],
+      "expected_stats": {
+        "AD": 18.0,
+        "move_speed": 0.09
+      }
+    }
+  ]
+}

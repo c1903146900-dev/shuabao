@@ -1,0 +1,11 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Expected expression for match pattern.
+          at: GDScript::reload (res://tests/ink_r2_peaks_20261006/candidate01/finite_gate.gd:278)
+          GDScript backtrace (most recent call first):
+              [0] _initialize (res://tests/ink_r2_peaks_20261006/candidate01/parse_gate.gd:6)
+ERROR: Failed to load script "res://tests/ink_r2_peaks_20261006/candidate01/finite_gate.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/ink_r2_peaks_20261006/candidate01/parse_gate.gd:6)
+INK_R2_PEAKS_PARSE {"failures":["res://tests/ink_r2_peaks_20261006/candidate01/finite_gate.gd"],"passed":false,"runtime_pass":false,"scripts":["res://tests/ink_r2_peaks_20261006/candidate01/tuning.gd","res://tests/ink_r2_peaks_20261006/candidate01/peak_geometry.gd","res://tests/ink_r2_peaks_20261006/candidate01/sim.gd","res://tests/ink_r2_peaks_20261006/candidate01/finite_gate.gd"],"source_binding_sha256":"f0ce732d4fe1cc966464738de0fb4fd7b51a11729662f96200deebab51aa8490"}

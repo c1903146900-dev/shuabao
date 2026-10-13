@@ -1,0 +1,39 @@
+ var requested_delta: float=0.25
+ var source_before: Dictionary={"source_time":sim.hero_time,"world_time":sim.clock.world_time,"accumulator":sim.real_accumulator,"core_steps":sim.ink_core_steps,"clock_steps":sim.clock.advances}
+ check(sim.clock.domain.snapshot().presentations.is_empty(),"clock fixture has no presentation time scale")
+ sim.step(0.25);session.update_after_source_step();snapshot=sim.ink_presenter_snapshot()
+ var source_after: Dictionary={"source_time":sim.hero_time,"world_time":sim.clock.world_time,"accumulator":sim.real_accumulator,"core_steps":sim.ink_core_steps,"clock_steps":sim.clock.advances}
+ var admitted_steps: int=int(floor((float(source_before.accumulator)+requested_delta)/sim.FIXED_TICK))
+ check(int(source_after.core_steps)-int(source_before.core_steps)==admitted_steps,"only complete fixed budgets enter core")
+ check(int(source_after.clock_steps)-int(source_before.clock_steps)==admitted_steps,"one authority advance per admitted core budget")
+ near(float(source_after.source_time)-float(source_before.source_time),float(admitted_steps)*sim.FIXED_TICK,"source time reflects admitted whole steps")
+ near(float(source_after.world_time)-float(source_before.world_time),float(admitted_steps)*sim.FIXED_TICK,"world time reflects the same admitted whole steps")
+ near(float(source_after.accumulator),float(source_before.accumulator)+requested_delta-float(admitted_steps)*sim.FIXED_TICK,"unadmitted real budget remains in original accumulator")
+ check(float(source_after.accumulator)>=0.0 and float(source_after.accumulator)<sim.FIXED_TICK,"positive substep remainder is retained without an extra step")
+ var sunset: Dictionary=snapshot.h04_sunsets[0]
+ near(float(sunset.source_time),float(source_after.source_time),"functional snapshot uses actual accepted source time")
+ var source_age: float=float(sunset.source_time)-float(sunset.born_at)
+ check(source_age>=0.0 and source_age<4.0,"H04 age remains within formal four-second lifetime")
+ # Independent formal arithmetic: lose 2.5 metres evenly over four source
+ # seconds, and show the fractional completed half-second. No observed .24,
+ # 3.35 or .48 is installed as a new expected constant.
+ var expected_radius: float=3.5-(3.5-1.0)*source_age/4.0
+ var half_seconds: float=source_age/0.5
+ var expected_progress: float=half_seconds-floor(half_seconds)
+ near(sunset.radius,expected_radius,"formal linear radius follows actual source age")
+ near(sunset.tick_progress,expected_progress,"formal half-second phase follows actual source age")
+ near(sunset.remaining,4.0-source_age,"remaining duration follows the same accepted source age")
+ observations["first_step_timing"]={"requested_delta":requested_delta,"admitted_steps":admitted_steps,"fixed_tick":sim.FIXED_TICK,"before":source_before,"after":source_after,"source_age":source_age,"expected_radius":expected_radius,"expected_progress":expected_progress,"sunset":sunset.duplicate(true)}
+ room.frontdoor_suspend();sim.step(0.3)
+ var frozen: Dictionary=sim.ink_presenter_snapshot()
+ near(frozen.h04_sunsets[0].radius,snapshot.h04_sunsets[0].radius,"pause freezes authoritative radius without hiding circle")
+ near(frozen.h04_sunsets[0].tick_progress,snapshot.h04_sunsets[0].tick_progress,"pause freezes half-second phase")
+ near(sim.real_accumulator,float(source_after.accumulator),"paused request preserves the existing unadmitted remainder")
+ room.q2_river_view.present_source(frozen,{})
+ check(room.q2_river_view.sunset_samples.size()==1,"paused actual circle remains visible")
+ room.frontdoor_resume();sim.step(0.25);session.update_after_source_step();snapshot=sim.ink_presenter_snapshot()
+ near(sim.hero_time-float(source_before.source_time),2.0*requested_delta,"resume admits original remainder and second unchanged request")
+ near(sim.real_accumulator,0.0,"two unchanged requests leave no full-step remainder")
+ near(snapshot.h04_sunsets[0].radius,3.1875,"first scheduled half-second radius")
+ check(snapshot.h04_sunsets[0].scheduled_ticks==1,"exact first source tick observed in functional data")
+ observations.h04_functional=snapshot.h04_sunsets.duplicate(true)

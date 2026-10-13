@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "version": "responsive-baseline-20261002",
+  "mechanics_changes": false,
+  "heroes": {
+    "xuanlei": {
+      "ATK-5": {
+        "values": [
+          1.4285714285714286
+        ],
+        "source_values": [
+          0.82
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 36,
+          "cells": [
+            "F36"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      },
+      "ATK-2": {
+        "values": [
+          57.4
+        ],
+        "source_values": [
+          100
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 33,
+          "cells": [
+            "F33"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      },
+      "ATK-3": {
+        "values": [
+          68.88
+        ],
+        "source_values": [
+          120
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 34,
+          "cells": [
+            "F34"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      },
+      "D-2": {
+        "values": [
+          0.18
+        ],
+        "source_values": [
+          0.28
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 40,
+          "cells": [
+            "F40"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      },
+      "D-3": {
+        "values": [
+          0.18
+        ],
+        "source_values": [
+          0.2
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 41,
+          "cells": [
+            "F41"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      },
+      "D-4": {
+        "values": [
+          3.2
+        ],
+        "source_values": [
+          4
+        ],
+        "source": {
+          "source": "numbers",
+          "file": "heroes_balance_values_v03(1).xlsx",
+          "sheet": "基础与资源",
+          "row": 42,
+          "cells": [
+            "F42"
+          ]
+        },
+        "reason": "Preserve approved responsive basic-attack/dash pacing; basic damage scales with cadence to preserve source basic DPS.",
+        "basis": "Existing responsive test baseline, coordinator request 2026-10-02",
+        "status": "numeric_test_override_pending_live_balance"
+      }
+    }
+  },
+  "hexes": {}
+}

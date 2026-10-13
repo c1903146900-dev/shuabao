@@ -1,0 +1,29 @@
+{
+  "schema": "equipment38-explicit-successor-1",
+  "previous_source_binding_sha256": "96d1ffb2f52d8f1b4d4872bec1912ed3aee13040bdc082d150397fd0e99e907e",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "dccb987964339d37ae90a7a6e14605b4de0b4736e6072a7d2a22e28a04e6ce4d",
+      "after": "95dfc65030115da1fcb78fbb08d6f34a80b57cc43b03bb45cd80e3b20b4ed371"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "9182778f7b0fb55fa7db08f8981d756dd1743181a257ebd4d519601b8b648a2b",
+      "after": "1064c89f3f6ac566ee553b834f5bbb09d58db2b18c7e06f5d8575b78ede3b5a1"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "6a067eb9d2ed15f6c610a1e6ed6a8de38f70babbf0d440541f4e2c1d99df790a",
+      "after": "f1ba044a11342541d45c697e051dbfe9af70131548454f50f7a20829225b17e7"
+    }
+  },
+  "new_files": {
+    "equipment_basic_cycle_20261009/adapter.gd": "fa7cf5550b628e1b0a2a8cff160efaa0d40a96390262e3e69ff3be82adf18a44",
+    "equipment_basic_cycle_20261009/passive08.gd": "9e339e37131ab1f7dc8cbdeb4a6f26428ca583cfc42ad3774bd2442930e4df1a",
+    "equipment_basic_cycle_20261009/model.gd": "16ed297782011d1aede11d34669f14f34419ed29fd62631efbae58f1bc559409",
+    "equipment_basic_cycle_20261009/source_adapter.gd": "d15291fe23fee1129c7329fc914ac5f56b72514b32edd9b17977f52825e52d6b"
+  },
+  "source_rules": "original passive08 every5 true completed basics reduces current Q/E by10%; user confirmed remainder retained across rooms and last-copy sale freeze/repurchase resume; no unequipped accumulation",
+  "admitted_item": "final:B04",
+  "previous_item_count": 37,
+  "new_item_count": 38,
+  "earlier_equipment_and_terminal_inherited": true
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "ink-navigation-independent-source-1",
+  "candidate_id": "ink_enemy_navigation_fix01_20261005",
+  "base_runtime_binding_sha256": "fdd4e20f4f7bc95a345ee2ce9c26ddf50cfdfc810190733f9c88e4d9078b6719",
+  "frozen_source_pins": {
+    "scripts/combat/enemy_director.gd": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+    "scripts/combat/hero_combat_core.gd": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+    "tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd": "d4c5a5795a78231091d751b591c341bd5cac946f20dd242dc62404f7164325ef",
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": "91897e8af75292259012a4a7a85f6e83702fa52e9b0ebe8c1659d35369c669f5",
+    "tests/ink_first_floor_room_art_20261004/room_layout.gd": "58e633cc12bdba40a524b0edc94b8818bb1cfb64c9ba58f562f13d7ab1eabd89",
+    "tests/ink_first_floor_room_art_20261004/room_layout.json": "0eb81dacfc66a1117f4a1c1647309c37980bcf72f4de3d50e88a909cd4d1946b",
+    "tests/ink_first_floor_user_route_20261005/runtime01/host.gd": "df527547711f7b872e2723e27c2dd2b018e9cc7c7f4ebdcbfd6e2649da6865c4",
+    "tests/ink_first_floor_user_route_20261005/runtime01/source_binding.json": "fdd4e20f4f7bc95a345ee2ce9c26ddf50cfdfc810190733f9c88e4d9078b6719",
+    "tests/ink_q3_input_growth_20261004/runtime_binding.json": "ba92830cf08fb056a23e831e1b86f1ab398feb81e5f36680d7cf97aa90c06504",
+    "tests/ink_q3_input_growth_20261004/live_binding.gd": "81baec0cc1f3da7aae8346d0391764286ab572735a378d192b8657b6a3b5f6a7",
+    "tests/ink_first_floor_user_route_20261005/runtime01/bridge.gd": "f9320180ecc6dce9ba63dc31c1074e5ef477a87a87adc0dba5c6871da114f4bc"
+  },
+  "candidate_pins": {
+    "README.md": "41e409bb0ec14097720708a218f9c367aa7b00c0637db1d5211d13ddd7babc36",
+    "checker_self_test.py": "6b411c3d37cc04bf512eceeb670a7e525f441cb1208a80f7a04a3adad6a3af52",
+    "enemy_director.gd": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea",
+    "host.gd": "c71baa11cd3b365d18bc1dfdc262f264532be953bc6d17f8c1335f58a47d2a3a",
+    "host.tscn": "634cb5d98c0aa4599a601e4df16b3cf478eb4e070222752c2ed5c249e4920826",
+    "inspect_result.py": "c1922e86876d0ec3868adb72a085558c50c9c937df1cee33b87803d1562c36ca",
+    "install.gd": "0e283319f8aed01a9f8342e4cc95aa995cc94b7576d45c1c296ec7866f16c469",
+    "navigation_gate.gd": "3116a1bfdb4914ddfd4cc946a652f51b4d48b24758cde8fa8ce5a3b6bf1ba0d4",
+    "parse_gate.gd": "16d735698ddddc09481c102852cea105b962130edf40d1777ca124ff69113959",
+    "prepare_stage.py": "8fb2d077f54d262d9d120e492e23af542f40231205abc779b4a21b5d2effa457",
+    "source_check.py": "eeb189167add62031ba3698095defa386ba70705da31e9b072a78b9e551eba9a"
+  },
+  "expected_cases": [
+    "baseline_counterexample",
+    "direct_ab",
+    "actual_forecourt_stale_recovery",
+    "single_wall_negative",
+    "single_wall_positive",
+    "overlap_other_side",
+    "boundary_other_side",
+    "sealed_boundary",
+    "install_scope"
+  ],
+  "chase_cases": [
+    "actual_forecourt_stale_recovery",
+    "single_wall_negative",
+    "single_wall_positive",
+    "overlap_other_side",
+    "boundary_other_side"
+  ],
+  "actual_engine_runs": 0,
+  "gdscript_parse_passed": false,
+  "runtime_navigation_passed": false,
+  "host_scene_tested": false,
+  "production_promoted": false
+}

@@ -1,0 +1,2 @@
+ sim.begin_encounter("river-ownership-next-room",[])
+ check(sim.p1.roots.is_empty() and sim.p2.uses.is_empty() and sim._p2_pending.is_empty() and sim._river_hex_packet_frames.is_empty(),"room generation retires collector and old use entitlements")

@@ -1,0 +1,75 @@
+{
+  "status": "FROZEN_PREPARED_NOT_ENGINE_PARSED_NOT_RUN",
+  "route": [
+    "r01a",
+    "r02a",
+    "r03a",
+    "r04a",
+    "r05a",
+    "r06a"
+  ],
+  "source_binding_sha256": "da26defba5cbdcf2ca2b0a7e51d03ed0345f2525336d3543598df5090c001360",
+  "pck_sha256": "2934333a98a9add2ecd608cd401f27319809a318551c69c593eb49471b369dee",
+  "baselines": {
+    "natural_route_replay.gd": "4c1119a219b1bbb8604a817d6ebe35c35ab4709c5a94f893b118beb40e016f86",
+    "visible_route_replay.gd": "7e65266739a9de5a687a8badd838116ae632f63c2ae1497de90401528e3404b2"
+  },
+  "files": [
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/README.md",
+      "sha256": "267026b70681cc01c9951e7b5eb8d999fa4f9bf1d12c39d8ec230aaddc35ecc7",
+      "bytes": 7089
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/natural_route_r06.gd",
+      "sha256": "69aa48269d746c4321a10053d2aa4ba02eab39242292f472bf31b3eb001d845e",
+      "bytes": 30283
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/natural_route_r06.gd.diff",
+      "sha256": "8be3882c23e363456f5322ceeebad0a380d878a8e5b5bbb518d183048b54a364",
+      "bytes": 18928
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/visible_route_r06.gd",
+      "sha256": "6b0676588cd0b5cdf437d3ce62dcb3bdc99f960fe2409bc3780ad0b26cb961ca",
+      "bytes": 26580
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/visible_route_r06.gd.diff",
+      "sha256": "9400171a2eb2805c6fcf58c865a9b2083409defc831325b0cefc04e4dcf0f8ee",
+      "bytes": 10615
+    }
+  ],
+  "static_checks": {
+    "no_extra_tick_damage_heal_restore_or_direct_potion_calls": true,
+    "no_direct_source_state_assignments": true,
+    "driver_no_hidden_source_enemy_reads": true,
+    "no_training_payment_or_selection_request": true,
+    "original100s_budget": true,
+    "potion_threshold_strictly_below60pct": true,
+    "potion_uses_actual_button_signal": true,
+    "r03_observer_unchanged": true,
+    "r03_driver_unchanged": true,
+    "source_binding_unchanged": true
+  },
+  "engine_started": false,
+  "engine_parser_run": false,
+  "production_files_edited": [],
+  "previously_verified_files_edited": [],
+  "observation_wall_ms": 100000,
+  "external_guard_seconds": 110,
+  "checkpoint_restored": false,
+  "potion_policy": {
+    "item": "potion:1",
+    "displayed_price": 200,
+    "maximum_purchase_charge": 200,
+    "quantity": 1,
+    "use_threshold_fraction_strictly_below": 0.6,
+    "actual_visible_enabled_button_signal": true,
+    "maximum_button_attempts": 1,
+    "original_character_combat_duration_seconds": 4,
+    "native_input": false
+  },
+  "scope": "Continuous original new-run source-input replay through r06 only; actual optional upgrade/purchase/use must be reported separately."
+}

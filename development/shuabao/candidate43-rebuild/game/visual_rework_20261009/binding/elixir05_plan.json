@@ -1,0 +1,50 @@
+{
+  "schema": "swift05-approved-additive-successor-1",
+  "base_source_sha256": "0e6d73df3145d7681b59a5e99d20f20ab5287552a94d506269997a0219872432",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "efef125dc9b27e32887da42e0358b4151322ad89a8458e7413c9037d5920d91c",
+      "after": "f74c4669527e20e58def0438cc8d85db8c657b358ee0994e4b415cedcfdbac1b"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "77c3136ae407d0dadd434554e3ed0e45c09d64024eb05b6d5960b42886144847",
+      "after": "badd7fe46324e92d6c0b12bbe39dc98213de6308dc7cc732cbbfd0c4959d77c2"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "47ee92185a66f19b42ca5a8ace56a84b4c9573354802af1f33a4ecd5191729fb",
+      "after": "c3874eac635abde87f2b0a666d01483c685eae1018d77b7dcd6c219881e16049"
+    },
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "a5c1d9484f77054aa51dd5e3be6f5599eb2ce8e6883ec48df62aa79b35201238",
+      "after": "099709d17edbaad474a1fc826383f37592cc71908c2471d9f9afd77a2d3cf2a8"
+    },
+    "scripts/combat/common_hex_bridge.gd": {
+      "before": "3bf945cf040051295e496617cef7c52bec35c7c0ae5fab73d9234961c75b88dd",
+      "after": "006058789a60df858b21d7fb04269d8849859b14ef35b1cc203ea8921b7e9763"
+    },
+    "equipment_overload_20261010/common_bridge.gd": {
+      "before": "36501dffee31a72734f8b67d44cd368bc1607b2bb05c6474ed40296b64e5bd88",
+      "after": "bc6306cb1eb8a8a92740fe69a7b3b0c4a372676b59368831db16c31a5d0a313d"
+    },
+    "visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "before": "93d8196e19dc9dfbf1d21753f49e4fffb36f55b1e72f5248e9f550f8f9cee2f9",
+      "after": "b8ed1d4c8ff9868cf4a8f97c768dac1fecefee3f1b9e99b709d476ab14736ee0"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "4a9decaa21f500d38aa5170e9029497f1ea187a359c7c2c65d495fc6428b3754",
+      "after": "0ffdc5bc38c759445198512179a72f58eb8dfe285a8754361372b45bd271cb64"
+    }
+  },
+  "new_files": {
+    "elixir_swift_20261010/runtime.gd": "28b77e33915231035c7bb7c6b991f7dfa6498ca43536754fc64dd2e68a7a2f45",
+    "elixir_swift_20261010/decision07.json": "527791463ffc3a247b95a34a0e1fc81dfb37faec685d78a262751b92e4a927fe",
+    "elixir_swift_20261010/common_bridge.gd": "9b31899ae30107eea394fea3b3c78f43a229999816d83580c79ff82946ec2412",
+    "elixir_swift_20261010/session.gd": "2ef50ecf9377706f33c312a490ffe386401386e0213a4753bef6b94de1f76273",
+    "elixir_swift_20261010/model.gd": "fdfe930f6a9c559925568124b5f9c1f07c22ba38f0b3d48e0433f1bd88e06f4b",
+    "elixir_swift_20261010/panel.gd": "f0bfc3de085652b035f2a87301235c99d9dd04f52f63fddc66135634d695483b",
+    "elixir_swift_20261010/user_decisions.json": "ab3137db2a25003ff71a1e08f05459f691660fa96533c42bdc246c92c4f95375",
+    "visual_rework_20261009/binding/swift05_projection_transition.json": "a45b51aeaa9851d1a0e38270e6136e4269a1028485155dbc1b1771c5f8e0b478"
+  },
+  "decision07_applied": true,
+  "original_P2_B02_War_bridges_unchanged": true
+}

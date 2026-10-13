@@ -1,0 +1,56 @@
+{
+  "schema": "ink-q2-ordinary-overlay-1",
+  "status": "SOURCE_WIRING_ENGINE_NATIVE_NOT_RUN",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3"
+  ],
+  "supported_hex_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "source_foundation_binding": "da6975313e69a66ebe55a82f4367612cb2639fc9935ed874468bc3e74a0ae7d9",
+  "runtime_map": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": "ed6cd6437170dc0872009867faeeb3be0732e48b09b8dc1552d130a15275c665",
+    "res://scripts/ui/hero_chooser.gd": "e00330b3431953cbe16d90ce6f154fcbb823b7cb33b6546362a65f4696df2101",
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd": "c71ae70e05623bbd7bb4c0fafd454b0ec8bee6ad5a9860b14633ad748af0e116",
+    "res://tests/ink_first_floor_user_route_20261005/runtime01/bootstrap_session.gd": "e928d08b268ee4ba828073c685e7588aeafabcff6461c0d87a8bbac9830541f3",
+    "res://tests/ink_first_floor_user_route_20261005/runtime01/host.gd": "d07dd99fe16bfa0e30c11f07177c35b8866506c9a0dae455f6afcb8ee1bf001f",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/bridge.gd": "32e456bdc062480084d0b2c0fc4c5c459027fc694d1fe4164187b78115c41880",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/catalog.gd": "fbf8c1992b9bab2de1c61cd0e2c15340a4c86580b697108f3c2ad9aca9eb2975",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/floor_session.gd": "f289ce492c7ce4824996f9f91b18e706c7c7ca3bbc97037e599c33fa4ffe2649",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/growth_hud.gd": "1acaa173108d80464988e5d661b5aea901bd1ff443c5d66863b0a5c7970f1216",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/host.gd": "792223ab90dd9a88eeff2970eca19e90560b40844ab070a965d3ee810ef84230",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/hud_projection.gd": "c022b4d42d2acd7955eca8ab8bdbea100f66854befc38bacd312475a1d9b64d3",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/input_adapter.gd": "627d2877860e9ce69f902f1213231fe17d521485864086eebb353ccc1c78b275",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/live_binding.gd": "b947ee6c884c931e6df691b09a990a24a0bb0b566731d2c35715fef1e842bc9d",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/navigation_install.gd": "3c374c78a43cf9e305a6f4fb59e3f7dfd0b7288b85fd73825d88b80dd246efc9",
+    "res://tests/ink_q2_ordinary_20261005/candidate01/river_view.gd": "82e27bc3fe2ed3a01852080b69b884c682218d2bb79d7f1b39d4af2dff9cf3ee"
+  },
+  "ancestor_pin_replacements": {
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd": {
+      "before": "a6f0b5055712845ce3f0c1e0daadb22002f313de7e1c3644b313b32b31c5ef90",
+      "after": "c71ae70e05623bbd7bb4c0fafd454b0ec8bee6ad5a9860b14633ad748af0e116",
+      "scope": "exact default factory extraction; original navigation director and all other ancestor pins retained"
+    }
+  },
+  "engine_passed": false,
+  "native_passed": false,
+  "art_audio_implemented": false,
+  "ui_only_revision": {
+    "change": "Selected learned Q2 footer says Q/click A then Q/click B; non-Q2 restores original INPUT_HELP",
+    "prior_actual_native_binding_sha256": "1e7cdb93243fe6289a977a432d194d6e4879c98c3968849d6d1a6d072ba3bb72",
+    "only_production_file_changed": "tests/ink_q2_ordinary_20261005/candidate01/hud_projection.gd",
+    "source_sim_input_session_actor_navigation_unchanged": true,
+    "new_UI_revision_engine_native_verified": false
+  }
+}

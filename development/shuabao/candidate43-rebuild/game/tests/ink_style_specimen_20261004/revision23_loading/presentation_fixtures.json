@@ -1,0 +1,359 @@
+{
+  "schema": "ink-main-viewport-presentation-fixtures-1",
+  "scope": "Detached exact JSON snapshots from original first positive unpaused interval; visual-only replay, no live source mutation or source action",
+  "original_source_log_size": 52576463,
+  "samples": [
+    {
+      "name": "preview",
+      "source_record_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink_timing06_native_retry_1353/session/source_frames.jsonl",
+      "source_line": 4275,
+      "original_line_sha256": "09b81de4ec8ea4f06a41abd1edb505044701ef2ae35dcc8c811b4f05f5a31a78",
+      "source_draw_index": 4273,
+      "original_wall_usec": 77890349,
+      "snapshot": {
+        "basics": [],
+        "finished": [],
+        "hero": {
+          "dash_left": 0.0,
+          "facing": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "move_intent": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            4.0
+          ]
+        },
+        "hero_time": 1.22,
+        "input": {
+          "admitted_hero_position": [
+            0.0,
+            0.0,
+            4.0
+          ],
+          "armed_at": 0.36,
+          "cancel_reason": "",
+          "committed_corners": 0,
+          "corner_cap": 0,
+          "draw_elapsed": 0.02,
+          "draw_fraction": 0.0266666666666667,
+          "draw_limit": 0.75,
+          "freeze_reason": "",
+          "frozen_at": -1.0,
+          "gesture_id": "1:ink-style-specimen-0:gesture:1",
+          "length_cap": 11.0,
+          "path": [
+            [
+              1.9073486328125e-06,
+              0.0,
+              1.19125175476074
+            ],
+            [
+              1.9073486328125e-06,
+              0.0,
+              0.811119079589844
+            ]
+          ],
+          "phase": "drawing",
+          "placement_range": 10.0,
+          "placement_range_status": "provisional_independent_test_value_not_source",
+          "rank": 1,
+          "start": [
+            1.9073486328125e-06,
+            0.0,
+            1.19125175476074
+          ],
+          "started_at": 1.2,
+          "width": 1.6
+        },
+        "receipts": [],
+        "revision": 68,
+        "rules_hash": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53",
+        "schema": "ink-q1-presenter-1",
+        "scope": {
+          "generation": 1,
+          "room_id": "ink-style-specimen-0"
+        },
+        "source_time": 1.22,
+        "waves": [],
+        "world_time": 1.22
+      }
+    },
+    {
+      "name": "wave_contact",
+      "source_record_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink_timing06_native_retry_1353/session/source_frames.jsonl",
+      "source_line": 4276,
+      "original_line_sha256": "e6459bda3b67fbd6481e85c900dabc3f4f79ff4e591a3b72b61f69b654771aae",
+      "source_draw_index": 4274,
+      "original_wall_usec": 78115898,
+      "snapshot": {
+        "basics": [],
+        "finished": [],
+        "hero": {
+          "dash_left": 0.0,
+          "facing": [
+            2.18684832020699e-07,
+            0.0,
+            -1.0
+          ],
+          "move_intent": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            4.0
+          ]
+        },
+        "hero_time": 1.36,
+        "input": {
+          "cancel_reason": "",
+          "draw_elapsed": 0.0,
+          "draw_fraction": 0.0,
+          "draw_limit": 0.75,
+          "freeze_reason": "",
+          "gesture_id": "",
+          "path": [],
+          "phase": "idle",
+          "placement_range": 10.0,
+          "placement_range_status": "provisional_independent_test_value_not_source",
+          "start": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "width": 1.6
+        },
+        "receipts": [
+          {
+            "actual_damage": 65.0,
+            "cast_id": 1,
+            "contact_position": [
+              1.9073486328125e-06,
+              0.0,
+              -2.11630177497864
+            ],
+            "contact_time": 1.35781473088706,
+            "critical": false,
+            "direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "generation": 1,
+            "path_length": 5.91315841674805,
+            "receipt_id": "1:ink-style-specimen-0:motion:1:contact:enemy_1",
+            "released_at": 1.22,
+            "room_id": "ink-style-specimen-0",
+            "segment_id": "1:ink-style-specimen-0:motion:1:segment:0",
+            "segment_index": 0,
+            "settled_at": 1.36,
+            "source": "q1",
+            "target_contact_position": [
+              0.0,
+              0.0,
+              -2.57630181312561
+            ],
+            "target_id": "enemy_1",
+            "wave_id": "1:ink-style-specimen-0:motion:1"
+          }
+        ],
+        "revision": 78,
+        "rules_hash": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53",
+        "schema": "ink-q1-presenter-1",
+        "scope": {
+          "generation": 1,
+          "room_id": "ink-style-specimen-0"
+        },
+        "source_time": 1.36,
+        "waves": [
+          {
+            "cast_id": 1,
+            "front_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "front_distance": 3.36,
+            "front_position": [
+              1.9073486328125e-06,
+              0.0,
+              -2.16874814033508
+            ],
+            "generation": 1,
+            "hit_target_ids": [
+              "enemy_1"
+            ],
+            "path": [
+              [
+                1.9073486328125e-06,
+                0.0,
+                1.19125175476074
+              ],
+              [
+                1.9073486328125e-06,
+                0.0,
+                -4.7219066619873
+              ]
+            ],
+            "path_length": 5.91315841674805,
+            "released_at": 1.22,
+            "room_id": "ink-style-specimen-0",
+            "segment_index": 0,
+            "source": "q1",
+            "speed": 24.0,
+            "travel_fraction": 0.568224248902813,
+            "wave_id": "1:ink-style-specimen-0:motion:1",
+            "width": 1.6
+          }
+        ],
+        "world_time": 1.36
+      }
+    },
+    {
+      "name": "residue",
+      "source_record_path": "/workspace/scratch/73ebae91a474/recovery_2309/ink_timing06_native_retry_1353/session/source_frames.jsonl",
+      "source_line": 4277,
+      "original_line_sha256": "5d226c5caf65e96a9058894fff5c128501b5921d65a85eabf9f96bbfb167369b",
+      "source_draw_index": 4275,
+      "original_wall_usec": 78479114,
+      "snapshot": {
+        "basics": [],
+        "finished": [
+          {
+            "cast_id": 1,
+            "finished_at": 1.46638160069784,
+            "front_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "front_distance": 5.91315841674805,
+            "front_position": [
+              1.9073486328125e-06,
+              0.0,
+              -4.7219066619873
+            ],
+            "generation": 1,
+            "hit_target_ids": [
+              "enemy_1"
+            ],
+            "path": [
+              [
+                1.9073486328125e-06,
+                0.0,
+                1.19125175476074
+              ],
+              [
+                1.9073486328125e-06,
+                0.0,
+                -4.7219066619873
+              ]
+            ],
+            "path_length": 5.91315841674805,
+            "reason": "path_end",
+            "released_at": 1.22,
+            "room_id": "ink-style-specimen-0",
+            "segment_index": 0,
+            "settled_at": 1.48,
+            "source": "q1",
+            "speed": 24.0,
+            "travel_fraction": 1.0,
+            "wave_id": "1:ink-style-specimen-0:motion:1",
+            "width": 1.6
+          }
+        ],
+        "hero": {
+          "dash_left": 0.0,
+          "facing": [
+            2.18684832020699e-07,
+            0.0,
+            -1.0
+          ],
+          "move_intent": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0,
+            0.0,
+            4.0
+          ]
+        },
+        "hero_time": 1.48,
+        "input": {
+          "cancel_reason": "",
+          "draw_elapsed": 0.0,
+          "draw_fraction": 0.0,
+          "draw_limit": 0.75,
+          "freeze_reason": "",
+          "gesture_id": "",
+          "path": [],
+          "phase": "idle",
+          "placement_range": 10.0,
+          "placement_range_status": "provisional_independent_test_value_not_source",
+          "start": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "width": 1.6
+        },
+        "receipts": [
+          {
+            "actual_damage": 65.0,
+            "cast_id": 1,
+            "contact_position": [
+              1.9073486328125e-06,
+              0.0,
+              -2.11630177497864
+            ],
+            "contact_time": 1.35781473088706,
+            "critical": false,
+            "direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "generation": 1,
+            "path_length": 5.91315841674805,
+            "receipt_id": "1:ink-style-specimen-0:motion:1:contact:enemy_1",
+            "released_at": 1.22,
+            "room_id": "ink-style-specimen-0",
+            "segment_id": "1:ink-style-specimen-0:motion:1:segment:0",
+            "segment_index": 0,
+            "settled_at": 1.36,
+            "source": "q1",
+            "target_contact_position": [
+              0.0,
+              0.0,
+              -2.57630181312561
+            ],
+            "target_id": "enemy_1",
+            "wave_id": "1:ink-style-specimen-0:motion:1"
+          }
+        ],
+        "revision": 84,
+        "rules_hash": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53",
+        "schema": "ink-q1-presenter-1",
+        "scope": {
+          "generation": 1,
+          "room_id": "ink-style-specimen-0"
+        },
+        "source_time": 1.48,
+        "waves": [],
+        "world_time": 1.48
+      }
+    }
+  ]
+}

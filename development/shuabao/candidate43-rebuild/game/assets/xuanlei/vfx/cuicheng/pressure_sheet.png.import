@@ -1,0 +1,11 @@
+; Explicit ImageTexture runtime conversion; not editor cache.
+[remap]
+importer="texture"
+type="ImageTexture"
+path="res://runtime_converted_assets/hostile_textures/pressure_sheet.res"
+[deps]
+source_file="res://assets/xuanlei/vfx/cuicheng/pressure_sheet.png"
+dest_files=["res://runtime_converted_assets/hostile_textures/pressure_sheet.res"]
+[params]
+process/fix_alpha_border=true
+mipmaps/generate=false

@@ -1,0 +1,678 @@
+{
+  "schema_version": 1,
+  "version": "user-rule-resolutions-20261004-ink-q1-mouse-input",
+  "scope": "effective_semantics_and_presentation_only_not_implementation_or_acceptance",
+  "authority": {
+    "decision_record": "docs/source_decisions/20261003-eight-user-resolutions.md",
+    "decision_record_sha256": "604cfe9c5205a38197ce5e59b33fff2a6b443f89bb7516a10eb7786d4c988f3f",
+    "accepted_question_id": "Sentinel_4d8e626c88b08191a1c3f65932f781b2",
+    "user_message_id": "Sentinel_b6695ddb7f0481919ea5b555858fa107",
+    "user_quote": "第一点可以穿墙只要落点不是墙就行中间路径是墙没有关系第二点没问题。第3点没问题。第4点没问题。第5点没问题，按基础伤害增伤。六6点没问题。第7天没问题。第8点确实说的对，我没法判断什么是最后一次。那么我们就全面改成第一次开大招以后，第一次普攻强化。"
+  },
+  "immutable_source_anchors": {
+    "data/final_design/catalog.json": {
+      "sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+      "bytes": 1963837
+    },
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": {
+      "sha256": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+      "bytes": 67438
+    },
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": {
+      "sha256": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894",
+      "bytes": 122336
+    }
+  },
+  "numeric_parameters": "unchanged_original_workbook_tokens_and_existing_numeric_overrides",
+  "resolutions": [
+    {
+      "id": "fengli_q2_e1_legal_landing",
+      "decision_number": 1,
+      "status": "user_confirmed",
+      "implementation_status": "approval_only_requires_separate_runtime_verification",
+      "rules": {
+        "intervening_walls": "allowed_for_Q2_assault_and_whole_E1_targeted_pierce",
+        "landing": "must_be_collision_legal",
+        "excluded": [
+          "Shift",
+          "ordinary_BASIC_projectiles",
+          "Q3_wave",
+          "other_skills"
+        ],
+        "E1_positioning_dagger": "crosses_intervening_walls_to_locked_target"
+      },
+      "targets": [
+        {
+          "hero_id": "fengli",
+          "kind": "skill",
+          "key": "Q2",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 16
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "突袭位移可穿过中途墙体；每次落点必须合法，不能落在墙内。"
+          }
+        },
+        {
+          "hero_id": "fengli",
+          "kind": "skill",
+          "key": "E1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 20
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "首段定位匕首与二段穿刺均可穿过中途墙体；穿刺落点必须合法，不能落在墙内。此规则只适用于本技能。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fengli_p3_upgrade_remainder",
+      "decision_number": 2,
+      "status": "user_confirmed",
+      "implementation_status": "approval_only_requires_separate_runtime_verification",
+      "rules": {
+        "rank_change": "preserve_unredeemed_kill_progress_and_redeem_immediately_at_new_threshold",
+        "redeemed_historical_kills": "never_reward_again"
+      },
+      "targets": [
+        {
+          "hero_id": "fengli",
+          "kind": "skill",
+          "key": "P3",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 30
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "升级时保留尚未兑换的击杀进度，并按新门槛立即结算；已兑换过奖励的历史击杀不会再次获得奖励。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fengli_h13_triggering_hit_debt",
+      "decision_number": 3,
+      "status": "user_confirmed",
+      "implementation_status": "approval_only_requires_separate_runtime_verification",
+      "rules": {
+        "triggering_hit": "negate_immediate_and_new_deferred_damage",
+        "preexisting_G29_debt": "preserved"
+      },
+      "targets": [
+        {
+          "hero_id": "fengli",
+          "kind": "hex",
+          "key": "H13",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 48
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "触发这一击的即时伤害与新产生的延后伤害一并免除；此前已欠下的延后伤害保留。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_q2_legal_assignment_cap",
+      "decision_number": 4,
+      "status": "user_confirmed",
+      "implementation_status": "approval_only_requires_separate_runtime_verification",
+      "rules": {
+        "missile_count": "min_nominal_salvo_and_actual_legal_assignment_capacity",
+        "single_lock": "emit_up_to_target_cap_and_allow_H04",
+        "surplus": "not_emitted_not_stored",
+        "empty_assignment": "no_missiles"
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "Q2",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 119
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "松开后发射[Q2-5]枚",
+                "to": "松开后最多发射[Q2-5]枚"
+              }
+            ],
+            "append": "实际发射数量不超过已锁定目标可承受的总数；超过上限的微弹不发射、不储存。仅锁定一个目标时也按其承受上限发射；没有可分配目标时不发射。"
+          }
+        },
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H04",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 142
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "仅锁定一个目标时，实际发射数量仍遵守该目标的微弹承受上限；多余微弹不发射、不储存。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_q3_additive_original_base_bonus",
+      "decision_number": 5,
+      "status": "user_confirmed",
+      "implementation_status": "approval_only_requires_separate_runtime_verification",
+      "rules": {
+        "each_reflection_bonus": "Q3-8_percent_of_original_Q3_base_damage",
+        "stacking": "additive_until_next_valid_contact_then_consume_once",
+        "H05_return": "H05-2_percent_original_base_plus_unhalved_original_base_reflection_bonus",
+        "subsequent_pipeline": "preserve_crit_and_other_modifiers",
+        "G25_budget": "separate"
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "Q3",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 121
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "每次墙壁反弹使下一次命中最终伤害提高[Q3-8]%。",
+                "to": "每次墙壁反弹为下一次命中追加相当于本次技能原始基础伤害[Q3-8]%的伤害；连续未命中的反弹按百分比相加，下一次有效命中后一次清空。"
+              }
+            ]
+          }
+        },
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H05",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 143
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "回程造成原伤害的[H05-2]%，",
+                "to": "回程基础伤害为原始基础伤害的[H05-2]%，"
+              }
+            ],
+            "append": "未消耗的反弹增伤仍按原始基础伤害计算，相加后附加到回程基础伤害上，不再乘以回程伤害比例；下一次有效命中后一次清空。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_e2_unused_expiry",
+      "decision_number": 6,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "rules": {
+        "natural_expiry": "disperse_unreleased_stored_attacks",
+        "automatic_fire": false
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "E2",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 125
+          },
+          "amends_source_comment_ids": [
+            "4"
+          ],
+          "description": {
+            "append": "悬膛时间到期时，尚未手动释放的储存攻击直接消散，不自动开火。",
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_r2_unused_expiry",
+      "decision_number": 7,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "rules": {
+        "window_parameter": "R2-1",
+        "unused_charges_at_expiry": "discard",
+        "other_operations_at_expiry": "restored",
+        "legally_committed_shot": "finishes_normally"
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "R2",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 137
+          },
+          "amends_source_comment_ids": [
+            "5"
+          ],
+          "description": {
+            "replace": [
+              {
+                "from": "全部发射完毕后，六翼归位并恢复攻击与技能。",
+                "to": "全部发射完毕或窗口到期后，六翼归位并恢复攻击与技能。"
+              }
+            ],
+            "append": "窗口到期时未使用的天矛次数作废；到期前已经合法开始发射的一发仍正常完成。",
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_h14_first_basic_each_r1",
+      "decision_number": 8,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "rules": {
+        "trigger": "first_BASIC_after_each_R1_activation",
+        "max_triggers_per_activation": 1,
+        "H13_extension": "does_not_reset_trigger",
+        "last_attack_prediction": false,
+        "once_per_run": false
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H14",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 152
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "「六翼解封」结束前的最后一次普通攻击改为",
+                "to": "每次开启「六翼解封」后的第一次普通攻击改为"
+              }
+            ],
+            "append": "每次大招最多触发一次；「猎杀蜂群」延长持续时间不会重置本次触发次数。",
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        },
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "R1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 135
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "选择「终端过载」后，每次开启本技能后的第一次普通攻击获得其强化，每次大招最多触发一次；延长持续时间不会重置。",
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        },
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H13",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 151
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "append": "延长本次状态不会重置「终端过载」的首发普攻强化次数。",
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_r1_sequential_manual_h13_retarget",
+      "decision_number": 9,
+      "question_number": 1,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "authority": {
+        "decision_record": "docs/source_decisions/20261003-huling-r-resolutions.md",
+        "decision_record_sha256": "beb3fd9a36593ecad81820cf477b9c6aab481f66747ebb97c0b664c703781bc3",
+        "accepted_question_id": "Sentinel_333779053ce88191aabcdbde782516d0",
+        "user_message_id": "Sentinel_2ff9ad394d048191806909f0e3bf825d",
+        "user_message_time_utc": "2026-10-03T08:25:00Z",
+        "user_quote": "1.可以。2.连加"
+      },
+      "rules": {
+        "R1_firing": "six_wings_very_short_sequential_fire",
+        "total_BASIC_interval": "unchanged",
+        "initial_aim": "manual_no_initial_auto_lock",
+        "group_settlement": "one_BASIC_for_total_damage_crit_lifesteal_and_equipment",
+        "H13_requirement": "equipped_and_original_target_killed",
+        "H13_retarget_scope": "remaining_not_yet_fired_wing_guns_only",
+        "H13_retarget_radius_parameter": "H13-1",
+        "already_flying_projectiles": "never_retarget",
+        "normal_gameplay_requirement": "retarget_must_be_reachable_after_target_death_in_ordinary_combat_not_only_synthetic_callbacks_or_precommit_death",
+        "inter_shot_interval_seconds": null,
+        "inter_shot_timing_status": "future_explicit_runtime_tuning_not_original_workbook_value",
+        "original_source_numbers": "unchanged",
+        "H14_per_activation_rule": "unchanged_first_BASIC_once_H13_extension_does_not_reset"
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "skill",
+          "key": "R1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 135
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "每次普通攻击改为[R1-2]发齐射",
+                "to": "每次普通攻击改为[R1-2]发极短先后连射"
+              }
+            ],
+            "append": "总普通攻击间隔不变；起手仍手动瞄准。整组六发保持一次普通攻击结算，不因先后发射而变成六次独立普攻。"
+          }
+        },
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H13",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 151
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "当前目标死亡时尚未射出的翼炮自动转向",
+                "to": "起手手动瞄准的原目标被击杀后，剩余尚未发射的翼炮才自动转向"
+              }
+            ],
+            "append": "已经飞出的弹丸不改向。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "huling_h15_additive_final_bonus",
+      "decision_number": 10,
+      "question_number": 2,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "authority": {
+        "decision_record": "docs/source_decisions/20261003-huling-r-resolutions.md",
+        "decision_record_sha256": "beb3fd9a36593ecad81820cf477b9c6aab481f66747ebb97c0b664c703781bc3",
+        "accepted_question_id": "Sentinel_333779053ce88191aabcdbde782516d0",
+        "user_message_id": "Sentinel_2ff9ad394d048191806909f0e3bf825d",
+        "user_message_time_utc": "2026-10-03T08:25:00Z",
+        "user_quote": "1.可以。2.连加"
+      },
+      "rules": {
+        "stacking": "additive_percentage_points_against_original_final_damage_basis",
+        "per_qualifying_stack_parameter": "H15-2",
+        "formula": "original_final_damage_basis * (1 + qualifying_stacks * H15-2 / 100)",
+        "first_three_qualifying_multipliers": [
+          1.15,
+          1.3,
+          1.45
+        ],
+        "multiplicative_compounding": false,
+        "qualifier": "previous_spear_hit_elite_or_Boss",
+        "next_spear_window_parameter": "H15-1",
+        "qualified_next_spear_windup": "cancelled",
+        "stack_clear": "current_R2_ultimate_end",
+        "original_source_numbers": "unchanged"
+      },
+      "targets": [
+        {
+          "hero_id": "huling",
+          "kind": "hex",
+          "key": "H15",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 153
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "最终伤害提高[H15-2]%；连续满足条件可以叠加",
+                "to": "最终伤害在未叠加本海克斯的基准上增加[H15-2]%；连续满足条件时按同一基准逐层加算，不连乘"
+              }
+            ],
+            "implementation_notice": "规则已确认；该技能及相关海克斯尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yanguizhou_p1_whole_cast_settlement",
+      "decision_number": 11,
+      "question_number": 1,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "authority": {
+        "decision_record": "docs/source_decisions/20261004-ink-user-resolutions.md",
+        "decision_record_sha256": "ff0b32789f89514a7caa1b78a83c3559f9cbd26bd7cece43113949b18e3257d9",
+        "accepted_question_id": "Sentinel_de4a0d1e30588191a1cb2adc02d8a48a",
+        "user_message_id": "Sentinel_4287cd498e008191a0e0d57ccbcd1b9c",
+        "user_message_time_utc": "2026-10-04T00:30:00Z",
+        "user_quote": "1.可以。2.后者"
+      },
+      "rules": {
+        "ordinary_damage": "each_segment_settles_immediately",
+        "qualification_scope": "whole_Q_or_E_cast_distinct_hit_enemies",
+        "qualification_time": "after_all_damage_phases_of_that_cast_end",
+        "qualifying_target_count": 1,
+        "bonus_settlement": "one_supplemental_settlement_after_whole_cast_qualification",
+        "damage_bonus_parameter": "P1-1",
+        "cooldown_refund": "once_on_current_remaining_cooldown_at_settlement",
+        "cooldown_refund_parameter": "P1-2",
+        "per_segment_qualification": false,
+        "retroactive_earlier_kill": false,
+        "original_source_numbers": "unchanged"
+      },
+      "targets": [
+        {
+          "hero_id": "yanguizhou",
+          "kind": "skill",
+          "key": "P1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 79
+          },
+          "amends_source_comment_ids": [
+            "1"
+          ],
+          "description": {
+            "replace": [
+              {
+                "from": "一次Q或E施法只命中单个敌人时，该次技能最终伤害提高[P1-1]%，并返还该技能[P1-2]%当前冷却。",
+                "to": "一次Q或E施法的每段伤害先正常结算；整次施法的伤害阶段结束后，若该次施法只命中过一个敌人，再一次补结算该次技能的[P1-1]%最终增伤，并一次返还该技能当时剩余冷却的[P1-2]%。这部分增伤不能提前击杀。"
+              }
+            ],
+            "implementation_notice": "规则已确认；该技能尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yanguizhou_e1_reform_radius_marks",
+      "decision_number": 12,
+      "question_number": 2,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "authority": {
+        "decision_record": "docs/source_decisions/20261004-ink-user-resolutions.md",
+        "decision_record_sha256": "ff0b32789f89514a7caa1b78a83c3559f9cbd26bd7cece43113949b18e3257d9",
+        "accepted_question_id": "Sentinel_de4a0d1e30588191a1cb2adc02d8a48a",
+        "user_message_id": "Sentinel_4287cd498e008191a0e0d57ccbcd1b9c",
+        "user_message_time_utc": "2026-10-04T00:30:00Z",
+        "user_quote": "1.可以。2.后者"
+      },
+      "rules": {
+        "rain_mark_bonus_targets": "marked_by_this_cast_and_inside_final_reform_explosion_radius",
+        "radius_parameter": "E1-5",
+        "bonus_damage_parameters": [
+          "E1-8",
+          "E1-9"
+        ],
+        "outside_radius_mark_bonus": false,
+        "mark_cleanup": "clear_all_marks_of_this_cast_after_reform_settlement",
+        "new_tracking_range": false,
+        "original_source_numbers": "unchanged"
+      },
+      "targets": [
+        {
+          "hero_id": "yanguizhou",
+          "kind": "skill",
+          "key": "E1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 73
+          },
+          "amends_source_comment_ids": [
+            "2"
+          ],
+          "description": {
+            "replace": [
+              {
+                "from": "带有雨痕的敌人额外受到[E1-8]+[E1-9]%AP普通伤害。",
+                "to": "其中带有本次施法雨痕的敌人额外受到[E1-8]+[E1-9]%AP普通伤害。"
+              }
+            ],
+            "append": "本次聚形结算后清除本次施法留下的全部雨痕；范围外的雨痕目标不受到这次追加伤害。",
+            "implementation_notice": "规则已确认；该技能尚未实现。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yanguizhou_q1_mouse_preview_release",
+      "decision_number": 13,
+      "status": "user_confirmed",
+      "implementation_status": "not_implemented",
+      "authority": {
+        "decision_record": "docs/source_decisions/20261004-ink-q1-input-resolution.md",
+        "decision_record_sha256": "27a7b37b99d6b26530c45043f1e5060528d7e16b446f0d915fb2f3051430aaa5",
+        "preceding_question_id": "Sentinel_21a72368d0d88191a9fa7868ceb6effe",
+        "user_message_id": "Sentinel_bd73c1f5e5488191bf3a331195616129",
+        "user_message_time_utc": "2026-10-04T04:40:00Z",
+        "user_quote": "嗯，首先他有一个施法范围上限，然后呢我要求他的方式就是示范方式为，从按下的那一刻，鼠标所在的位置如果在施法范围之内，则视为生效，鼠标所在的位置为起点，按住不放鼠标。开始移动，那么这条线也开始跟着鼠标移动，直到达到移动的固定时间后。或者说一个这个线条的长度上线后就开始不跟随了，然后松开鼠标开始释放。送人鼠标之前只是预览，没有效果。",
+        "followup_user_message_id": "Sentinel_5a12bb6ea1348191b8e86ca0cfe099c0",
+        "followup_user_quote": "理解吗？"
+      },
+      "rules": {
+        "drawing_input": "held_mouse_button_not_held_Q_key",
+        "initial_admission_event": "mouse_button_down",
+        "initial_position": "mouse_world_ground_point_at_mouse_button_down",
+        "initial_range_origin": "caster_world_ground_position_at_same_mouse_button_down",
+        "initial_position_outside_range": "reject_not_clamp_to_edge",
+        "initial_placement_range": {
+          "required": true,
+          "independent_of_draw_length": true,
+          "source_parameter": null,
+          "source_value_m": null,
+          "value_status": "not_supplied_by_original_DOCX_XLSX_or_this_user_message_requires_separate_explicit_initial_tuning"
+        },
+        "start_anchor": "fixed_world_point_for_this_gesture",
+        "follow_caster_after_mouse_down": false,
+        "reclamp_origin_after_mouse_down": false,
+        "held_mouse_motion": "updates_preview_geometry_until_first_limit",
+        "draw_time_limit_parameter": "Q1-6",
+        "total_draw_length_limit_parameter": "Q1-4",
+        "freeze_trigger": "first_of_draw_time_limit_or_effective_total_draw_length_limit",
+        "freeze_latches_until_mouse_up": true,
+        "release_trigger": "physical_mouse_button_up_only",
+        "limit_auto_release": false,
+        "limit_cancel": false,
+        "before_release": "preview_only_no_gameplay_effects",
+        "H01_source_entitlement": "at_most_H01-1_corners_and_H01-2_percent_total_draw_length_increase_only",
+        "H01_increases_initial_placement_range": false,
+        "original_source_numbers": "unchanged"
+      },
+      "targets": [
+        {
+          "hero_id": "yanguizhou",
+          "kind": "skill",
+          "key": "Q1",
+          "source_ref": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 67
+          },
+          "amends_source_comment_ids": [],
+          "description": {
+            "replace": [
+              {
+                "from": "按住Q在地面拖出墨线，松开后瀑布从起点沿墨线奔向终点",
+                "to": "在施法范围内按下鼠标，以按下时的鼠标地面位置为固定起点；按住鼠标拖出预览墨线，达到最长绘线时间或最大绘线长度任一上限即冻结墨线，不再跟随鼠标。松开鼠标后瀑布从起点沿墨线奔向终点"
+              }
+            ],
+            "append": "按下鼠标时起点必须在施法范围内，范围外不生效且不吸附到边缘；起点不随施法者移动，松手前只有预览、没有技能效果。起点施法范围独立于绘线总长度，原表未给出其数值。",
+            "implementation_notice": "规则已确认；该技能尚未实现。"
+          }
+        }
+      ]
+    }
+  ]
+}

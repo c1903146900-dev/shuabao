@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scope": "exact read-only negative-admission fixture dependencies; no capability additions",
+  "authority": {
+    "path": "tests/ink_normal_floor_host_20261004/source_binding.json",
+    "sha256": "a8caaa02f737908dc5eb48ce5dbecfac9904e2cbd579402b0971e87648f1af4e"
+  },
+  "runtime_map": {
+    "tests/ink_q3_input_growth_20261004/live_binding.gd": {
+      "source": "tests/ink_q3_input_growth_20261004/live_binding.gd",
+      "sha256": "81baec0cc1f3da7aae8346d0391764286ab572735a378d192b8657b6a3b5f6a7",
+      "bytes": 2462
+    },
+    "tests/ink_q3_input_growth_20261004/runtime_binding.json": {
+      "source": "tests/ink_q3_input_growth_20261004/runtime_binding.json",
+      "sha256": "ba92830cf08fb056a23e831e1b86f1ab398feb81e5f36680d7cf97aa90c06504",
+      "bytes": 50162
+    }
+  }
+}

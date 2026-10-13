@@ -1,0 +1,72 @@
+{
+  "parent_path": "res://tests/ink_first_floor_boss_20261008/live02/source_binding.json",
+  "parent_sha256": "783f9670e8bd01ec7c0d720d25f6a444c38d48726d591e6d9aa6f16601838680",
+  "replacements": {
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "fe08ed0285188ca51bc75ddf73c261f656d4ab718135df83a8f8cbba7a598e0a",
+      "after": "efef125dc9b27e32887da42e0358b4151322ad89a8458e7413c9037d5920d91c",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "2b40a46134b29778f1320a68bc017a0514388e8f4092ed3690cc86b9e4bafd68",
+      "after": "a5c1d9484f77054aa51dd5e3be6f5599eb2ce8e6883ec48df62aa79b35201238",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate03/tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd": {
+      "before": "996001b4467c4a0b605f16b0f8217d6467048c8cf3f3d24141d8e5c3dfce2c00",
+      "after": "a82936ba5f2e81079e2f833b3cf570e060f3671c554b01435a8541a3d1344859",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/frontdoor01/navigation_install.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/host.gd": {
+      "before": "75e9fc1a8db2033c309854885bc1af2a68bd8924be74850fd20a78b410f41ab6",
+      "after": "b2620751585f69c5bde67954141eef10ceaa1f7da9c67b8f92c04a321b90a864",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_river_hexes_20261006/frontdoor01/host.gd",
+      "staged_postimage": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/adapter_branch/visual_rework_20261009/binding/postimages/tests/ink_river_hexes_20261006/frontdoor01/host.gd"
+    },
+    "res://scripts/combat/hero_combat_core.gd": {
+      "before": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+      "after": "20a6768441aeab8ea6ac3103e3fe94043bdc5322ce6e4620943ce327fc24cfa6",
+      "preimage": "res://visual_rework_20261009/binding/preimages/scripts/combat/hero_combat_core.gd"
+    },
+    "res://tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd": {
+      "before": "edc57d814e8acf757dfc9f056ba5c77854fa2996481d01bd73cf0eb16d8cb32d",
+      "after": "c78fcb1a0790e7ac26f5d88a44eca064e1c49c732245409f6afe59f32101b700",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd"
+    },
+    "res://tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd": {
+      "before": "21172268b92fa0ac7afebe174aced154e43205768e1db3cd48fb03ad75c4fd30",
+      "after": "dec74b7edd055285dee6752aac9e1f0482058f0f9c9320c7bb20d5eb2fa05109",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd"
+    },
+    "res://tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd": {
+      "before": "e786cc01dbf3a41ede0f25f3f7cfcca4fe65e7044256162700245c334034fab9",
+      "after": "4b65b0a0eed95efc3e99a4e878326c375c8d3eedfff206f9b15eeae79a380118",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd"
+    },
+    "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "before": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+      "after": "e40c0702565720e601aa3587ba466cf3ac174d5a10c17ea20663f5e684367172",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd"
+    },
+    "res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd": {
+      "before": "cc981a8cf3e884157dcaee0d7082dde0d2a80828de9453d58348a43cd0ae1825",
+      "after": "e3b1b5fcdd98c4816bfaaa9969c75bce798faa52ffa1a0fe6c8614475846f020",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd"
+    },
+    "res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": {
+      "before": "91897e8af75292259012a4a7a85f6e83702fa52e9b0ebe8c1659d35369c669f5",
+      "after": "fd5e68c9805739111b82a3e4e17981069a62ba6d030259944887cca7bb853e6b",
+      "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd"
+    }
+  },
+  "original_runtime_pin_count": 1078,
+  "restored_ancestor": {
+    "resource": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+    "sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+    "instruction": "Must equal frozen working_live02 source byte-for-byte. No ancestor override remains."
+  },
+  "revision": "formal-training12-paid-pool-and-shop-ui-successor"
+}

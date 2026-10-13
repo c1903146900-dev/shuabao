@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/usr/local/bin/godot",
+    "--headless",
+    "--rendering-method",
+    "gl_compatibility",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "ink_live_integration_20261009/gltf_runtime_conversion01",
+    "--script",
+    "res://convert.gd",
+    "--",
+    "0"
+  ],
+  "profile": {
+    "name": "import",
+    "rss_limit_bytes": 939524096,
+    "wall_seconds": 60.0,
+    "sample_interval_seconds": 0.05,
+    "scope": "controller plus owned descendants",
+    "memory_enforcement": "sampled RSS, not a kernel hard limit",
+    "cgroup_or_OOM_guarantee": false
+  },
+  "started": true,
+  "reason": "",
+  "peak_total_rss": 139489280,
+  "max_sample_gap": 0.05027565999989747,
+  "recovery_note": "Archived strict rss_reread01 tree; narrow held terminal omission restored; proc_exit adapter not reconstructed; pair profiles disabled",
+  "pid": 6,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "reaps": [
+      {
+        "pid": 6,
+        "start_ticks": 1133340,
+        "si_code": 1,
+        "si_status": 0
+      }
+    ],
+    "errors": [],
+    "seconds": 0.02533993900033238
+  },
+  "exit": 0,
+  "signals": [],
+  "cancellation_requests": [],
+  "elapsed_seconds": 0.8796318229997269,
+  "local_subreaper_restored": true,
+  "passed": true,
+  "rss_resolution_evidence": [],
+  "inventory_evidence": [],
+  "proc_exit_adapter_evidence": [],
+  "held_exit_evidence": [],
+  "pair_terminal_evidence": []
+}

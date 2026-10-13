@@ -1,0 +1,33 @@
+{
+  "schema": "ink-q1-carry-asset-binding-1",
+  "asset_sha256": "06b2f5bb05bef2d3035c151df709c5c60671122bb7cdf3851449199fb0d99049",
+  "base_asset_sha256": "8637ff7ba8e7e22130ca4c5ad1c1d3073fe88cb6b12c1f08f06ec39620d97352",
+  "boundaries_sha256": "85118f4650c3c9277150a5453ba734c0e5b276a37722893d320dc7193a82b899",
+  "preservation": {
+    "original_model_json_exact": true,
+    "old_animations_json_exact": true,
+    "old_animation_count": 17,
+    "original_binary_prefix_exact": true,
+    "appended_upper_rotation_only": true,
+    "old_bin_bytes": 1730504,
+    "added_bin_bytes": 180600
+  },
+  "blender_receipt_sha256": "4e00dc72b91eaa3f9083b75c5565794b916e0f4d1fbadee8ebd6018f53ea2b65",
+  "flow_contract_sha256": "b88cdd1fa40a63e52ced764c7284d11f1b8127f1a449489642ad3366a4aaa325",
+  "carry_runtime_copy_bones": [
+    "clavicle_R",
+    "upper_arm_R",
+    "forearm_R",
+    "hand_R",
+    "sleeve_R",
+    "clavicle_L",
+    "upper_arm_L",
+    "forearm_L",
+    "hand_L",
+    "sleeve_L"
+  ],
+  "source_curve_sha256": "2c6c88f8b8f5dbb2e4dff501e9e42bf4da442bc551b286d443afac594ea47c4c",
+  "source_author_sha256": "ad61af8eb34025b5ed35cd17f306d012f731586fa4b4e11de077d7e6347c5535",
+  "godot_imported_at_binding": false,
+  "art_accepted": false
+}

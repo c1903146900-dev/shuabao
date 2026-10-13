@@ -1,0 +1,89 @@
+{
+  "version": "fengli-v03-stage-initial-20261002",
+  "status": "explicit_initial_values_pending_live_balance",
+  "authority": "Original DOCX/XLSX remain immutable; explicit mechanics resolutions in docs/source_decisions/20261003-eight-user-resolutions.md supersede only their named ambiguities. No new numeric rebalance in this change.",
+  "source_parameters": "All provided skill, Hex, basic-attack and Shift values are read directly from final_design/catalog.gd; no Fengli source override is applied here",
+  "base_stats": {
+    "max_hp": 420.0,
+    "ad": 38.0,
+    "ap": 0.0,
+    "defence": 12.0,
+    "move_speed": 6.0,
+    "crit_chance": 0.0,
+    "cdr": 0.0,
+    "lifesteal": 0.0,
+    "tenacity": 0.0,
+    "penetration": 0.0,
+    "regen": 0.5
+  },
+  "base_stats_basis": "HP/AD/defence are not supplied by the final workbook. Initial evasive-melee baseline for the redesigned enemy cohort, below Xuanlei600HP/30defence; legacy whitebox240HP/32AD/0defence is not silently treated as final source truth. Move6 and regen0.5 retain legacy test values. No automatic level-stat growth is invented",
+  "basic_shape": {
+    "kind": "cone",
+    "degrees": 80.0,
+    "basis": "Melee strike geometry absent from workbook; reach is source ATK-3. Candidate shape is presentation/play tuning, not a copied shield attack"
+  },
+  "dash_attack": {
+    "ad_multiplier": 1.1,
+    "reach": 2.0,
+    "degrees": 100.0,
+    "contact_after": 0.11666666666666667,
+    "recovery": 0.4,
+    "basis": "Additional user-required dash+attack combo. Source workbook has no separate damage/geometry; one sword sweep per dash with basic classification, no added displacement or iframe extension. Authored contact7/60s"
+  },
+  "player_radius": 0.42,
+  "arena_half_extent": 18.0,
+  "attack_speed_cap": 2.5,
+  "cooldown_reduction_cap": 0.65,
+  "critical_multiplier": 1.75,
+  "skills": {
+    "Q1": {
+      "contact_after": 0.1,
+      "duration_from": "Q1-5",
+      "basis": "Authored sword contact6/60s inside the source0.25s total action; zero root displacement"
+    },
+    "Q3": {
+      "contact_after": 0.14,
+      "duration": 0.42,
+      "action_commitment_after_release": 0.04,
+      "basis": "Explicit initial presentation tuning: source supplies no cast-time. Authored release0.14s / total0.42s; walking stays live, action commitment ends0.04s after release, visual recovery may blend. Cast/replay completion follows actual sword-wave expiry, never this presentation duration"
+    },
+    "E1": {
+      "recast_travel_duration": 0.12,
+      "basis": "Artist-approved presentation: throw release .10s, visual total .30s, walking live. Source pierce clip .15s normalized to explicitly labelled runtime .12s; swept actual contacts, no postarrival action/movement lock. Source supplies no animation timings.",
+      "throw_release": 0.1,
+      "throw_duration": 0.3,
+      "throw_action_commitment": 0.1,
+      "landing_policy": "Clamp selected point to source radius around current living marked target; reject illegal arena/obstacle endpoint before consuming recast",
+      "terrain_policy": "User resolution20261003 applies to the whole targeted E1: its real homing positioning dagger and second-stage pierce both cross intervening walls. The dagger retains source flight speed, locked target/contact and arena boundary; every player landing must remain full-body collision-legal. No ordinary projectile/Shift exception."
+    },
+    "E2": {
+      "contact_fraction_per_rotation": 0.5,
+      "target_snapshot": "accepted_cast_mouse_position",
+      "landing_policy": "Clamp range from actual post-spin hero position, legalize destination; explicit teleport crosses intervening terrain",
+      "basis": "Source fixes total durations/counts; evenly-spaced midpoint contacts are explicit initial action timing"
+    },
+    "E3": {
+      "activation": "immediate",
+      "visual_duration": 0.3,
+      "basis": "No added action/movement lock; ordinary damage proportional true addition uses original nominal basic packet once, before target mitigation; no recursive procs"
+    },
+    "R1": {
+      "contact_after": 1.1,
+      "basis": "One unified contact at1.10s within source1.60s real presentation. Authored cast commitment preserved; walking remains live. Own actor clocks real while other combat objects use existing20% world slow. H16 heal at exact presentation end before victory cleanup."
+    },
+    "R2": {
+      "release_after": 0.1,
+      "basis": "Source .20s committed throw; authored .10s release. Each nail has actual28m/s full authored rectangular front and independent per-target claim. Cooldown begins when final throw action ends or recast window expires; remaining nails settle before common cast completion. First count is source base; later count uses cumulative completed basics, including user-required basic-class dash attack."
+    }
+  },
+  "pending_world_rules": {
+    "p2_max_hp_only_changes": "No HP-loss hook is generated by max-HP-only recalculation; actual later HP losses use the then-current maximum. Standalone ratio-only crossing semantics queued if needed."
+  },
+  "resolved_world_rules": {
+    "authority": "docs/source_decisions/20261003-eight-user-resolutions.md rules1–3",
+    "q2_terrain_traversal": "Assault displacements and final behind-target relocation cross intervening solid walls. Reject illegal initial endpoint before cost; skip illegal later endpoints; revalidate moving endpoints and recover to a legal sample if interrupted inside cover. No ordinary Shift/BASIC/Q3 exemption.",
+    "e1_terrain_traversal": "Whole targeted E1 crosses intervening walls: initial25m/s positioning dagger reaches its locked target and creates the real mark on contact, then the swept second-stage pierce travels to an accepted full-body legal endpoint. Old first-dagger cover carve-out is superseded. Arena/target/lifecycle constraints remain; no BASIC/Q3/Shift exemption.",
+    "p3_rank_threshold_carry": "Keep unredeemed kill progress; on actual rank/candidate synchronization immediately redeem at the new source10/9/7/4 threshold. Already redeemed historical kills never pay again.",
+    "h13_g29_same_hit_debt": "When H13 triggers under existing post-mitigation/post-shield/post-deferral lethal check, negate immediate damage and remove only G29 entries generated by this same original hit. Previously committed debt identity/rate/duration/principal remain unchanged; raw deferred loss does not rerun H13."
+  }
+}

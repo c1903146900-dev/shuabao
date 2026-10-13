@@ -1,0 +1,4876 @@
+{
+  "schema_version": 1,
+  "status": "root_approved_policy_and_reviewed_source_segments",
+  "authority": "User-approved runtime interpretation, confirmed2026-10-02",
+  "source_hex": "common_g18",
+  "source_parameters": {
+    "G18-1": {
+      "token": "G18-1",
+      "label": "普通怪击杀计数阈值",
+      "unit": "名",
+      "values": [
+        18
+      ],
+      "rank_count": 1,
+      "source": {
+        "source": "numbers",
+        "file": "heroes_balance_values_v03(1).xlsx",
+        "sheet": "通用海克斯",
+        "row": 90,
+        "cells": [
+          "E90"
+        ]
+      },
+      "notes": "",
+      "balance_status": "source_v03_initial_unvalidated",
+      "overrides": []
+    },
+    "G18-2": {
+      "token": "G18-2",
+      "label": "重放延迟",
+      "unit": "秒",
+      "values": [
+        0.3
+      ],
+      "rank_count": 1,
+      "source": {
+        "source": "numbers",
+        "file": "heroes_balance_values_v03(1).xlsx",
+        "sheet": "通用海克斯",
+        "row": 91,
+        "cells": [
+          "E91"
+        ]
+      },
+      "notes": "",
+      "balance_status": "source_v03_initial_unvalidated",
+      "overrides": []
+    },
+    "G18-3": {
+      "token": "G18-3",
+      "label": "重放伤害治疗比例",
+      "unit": "%",
+      "values": [
+        60
+      ],
+      "rank_count": 1,
+      "source": {
+        "source": "numbers",
+        "file": "heroes_balance_values_v03(1).xlsx",
+        "sheet": "通用海克斯",
+        "row": 92,
+        "cells": [
+          "E92"
+        ]
+      },
+      "notes": "",
+      "balance_status": "source_v03_initial_unvalidated",
+      "overrides": []
+    }
+  },
+  "policy": {
+    "ordinary_kills_per_token": 18,
+    "delay_after_full_cast_seconds": 0.3,
+    "damage_heal_multiplier": 0.6,
+    "only_originally_realized_segments": true,
+    "target_bound": "retain original target IDs; dispatch only to still-alive eligible original targets in the same encounter generation",
+    "spatial": "query current enemies at replay time using recorded original impact location/direction/shape; never use current caster location",
+    "self_heal": "heal original caster only if alive and same encounter generation",
+    "snapshot": "record nominal pre-defence/pre-overheal amount of each original pure segment, including actual original branch; replay at60%; no second resource/stat-trigger evaluation",
+    "multiple_segments": "preserve original realized impact order and relative time offsets, starting0.3s after full cast completion",
+    "context_guard": [
+      "run_id",
+      "room_id",
+      "encounter_generation",
+      "root_cast_id"
+    ],
+    "suppression": [
+      "all_Hex_recursion",
+      "control",
+      "terrain",
+      "summons",
+      "movement",
+      "resource_changes",
+      "buffs",
+      "shields"
+    ],
+    "no_compatible_segment": "retain token; do not consume for form/terrain/shield-only cast"
+  },
+  "skills": {
+    "fengli_q1": {
+      "hero_id": "fengli",
+      "candidate": "Q1",
+      "name": "连杀突刺",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 14
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "thrust",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "Q1-1",
+            "Q1-2"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-3",
+            "Q1-4"
+          ],
+          "source_parameters": {
+            "Q1-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 5,
+              "cells": [
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5"
+              ]
+            },
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 7,
+              "cells": [
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7"
+              ]
+            },
+            "Q1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 8,
+              "cells": [
+                "E8",
+                "F8",
+                "G8",
+                "H8",
+                "I8",
+                "J8"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_q2": {
+      "hero_id": "fengli",
+      "candidate": "Q2",
+      "name": "多目标连续突袭",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 16
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "assault_strike",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_target",
+          "damage_parameter_tokens": [
+            "Q2-2",
+            "Q2-3"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 17,
+              "cells": [
+                "E17",
+                "F17",
+                "G17",
+                "H17",
+                "I17",
+                "J17"
+              ]
+            },
+            "Q2-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 18,
+              "cells": [
+                "E18",
+                "F18",
+                "G18",
+                "H18",
+                "I18",
+                "J18"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_q3": {
+      "hero_id": "fengli",
+      "candidate": "Q3",
+      "name": "长距剑气",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 18
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "sword_wave_contact",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "Q3-1",
+            "Q3-2"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-5",
+            "Q3-6"
+          ],
+          "source_parameters": {
+            "Q3-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            },
+            "Q3-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 25,
+              "cells": [
+                "E25",
+                "F25",
+                "G25",
+                "H25",
+                "I25",
+                "J25"
+              ]
+            },
+            "Q3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 28,
+              "cells": [
+                "E28",
+                "F28",
+                "G28",
+                "H28",
+                "I28",
+                "J28"
+              ]
+            },
+            "Q3-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "Q3-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 31,
+              "cells": [
+                "E31",
+                "F31",
+                "G31",
+                "H31",
+                "I31",
+                "J31"
+              ]
+            }
+          },
+          "capture": "each actually queried travelling-wave swept rectangle at its saved origin, direction, clipped span and width; distinct occurrence and original relative time per slice; retain nominal pre-defence damage and original target-specific critical outcomes",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks",
+          "replay_hit_group": "sword_wave_contact",
+          "replay_hit_limit": 1,
+          "replay_hit_limit_parameter_token": "Q3-8",
+          "replay_hit_limit_scope": "per target per original full cast, shared by all recorded sword_wave_contact sweep occurrences; not a global cap on repeated skill segments",
+          "replay_sampling": "query current eligible actors in each saved swept rectangle at replay time; replay no projectile, travel, push, stun, resource change or Hex reaction; preserve Q3-8 across all slices in this cast"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_e1": {
+      "hero_id": "fengli",
+      "candidate": "E1",
+      "name": "匕首标记·二段穿刺",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 20
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "dagger_hit",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_target",
+          "damage_parameter_tokens": [
+            "E1-3",
+            "E1-4"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E1-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 35,
+              "cells": [
+                "E35",
+                "F35",
+                "G35",
+                "H35",
+                "I35",
+                "J35"
+              ]
+            },
+            "E1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 36,
+              "cells": [
+                "E36",
+                "F36",
+                "G36",
+                "H36",
+                "I36",
+                "J36"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "second_pierce",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "recorded_path",
+          "damage_parameter_tokens": [
+            "E1-8",
+            "E1-9"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-7"
+          ],
+          "source_parameters": {
+            "E1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 40,
+              "cells": [
+                "E40",
+                "F40",
+                "G40",
+                "H40",
+                "I40",
+                "J40"
+              ]
+            },
+            "E1-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 41,
+              "cells": [
+                "E41",
+                "F41",
+                "G41",
+                "H41",
+                "I41",
+                "J41"
+              ]
+            },
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 39,
+              "cells": [
+                "E39",
+                "F39",
+                "G39",
+                "H39",
+                "I39",
+                "J39"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_e2": {
+      "hero_id": "fengli",
+      "candidate": "E2",
+      "name": "旋斩瞬移",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 22
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "initial_spin",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E2-3",
+            "E2-4"
+          ],
+          "geometry_parameter_tokens": [
+            "E2-2"
+          ],
+          "source_parameters": {
+            "E2-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 45,
+              "cells": [
+                "E45",
+                "F45",
+                "G45",
+                "H45",
+                "I45",
+                "J45"
+              ]
+            },
+            "E2-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 46,
+              "cells": [
+                "E46",
+                "F46",
+                "G46",
+                "H46",
+                "I46",
+                "J46"
+              ]
+            },
+            "E2-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "风厉技能",
+              "row": 44,
+              "cells": [
+                "E44",
+                "F44",
+                "G44",
+                "H44",
+                "I44",
+                "J44"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "extra_spin",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "parameter_owner": {
+            "kind": "personal_hex",
+            "id": "H11"
+          },
+          "damage_parameter_tokens": [
+            "H11-2",
+            "H11-3"
+          ],
+          "geometry_parameter_tokens": [
+            "H11-4"
+          ],
+          "source_parameters": {
+            "H11-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "专属海克斯",
+              "row": 22,
+              "cells": [
+                "F22"
+              ]
+            },
+            "H11-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "专属海克斯",
+              "row": 23,
+              "cells": [
+                "F23"
+              ]
+            },
+            "H11-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "专属海克斯",
+              "row": 24,
+              "cells": [
+                "F24"
+              ]
+            }
+          },
+          "source_hex": {
+            "source": "mechanics",
+            "file": "heroes_mechanics_no_values_v03(1).docx",
+            "part": "word/document.xml",
+            "paragraph_all_body_descendants": 46
+          },
+          "capture": "Only an H11 extra rotation actually performed by the original E2 cast; record its independent nominal damage and real circle at its original impact time",
+          "conditional_branch": "requires original_cast_performed_fengli_h11_spin; replay damage only, never trigger H11 or teleport again",
+          "policy_authority": "Parent technical correction2026-10-02: existing performed E2 damage remains skill damage; once-per-full-cast Hex limits span initial and extra phases"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/fengli_sim.gd",
+          "symbol": "_resolve_e2"
+        }
+      ],
+      "runtime_adapter_status": "source_runtime_present_pending_complete_hero_validation",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_e3": {
+      "hero_id": "fengli",
+      "candidate": "E3",
+      "name": "超载",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 24
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Persistent overload form and modified future basic attacks; no independent active-skill damage/heal segment.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_p1": {
+      "hero_id": "fengli",
+      "candidate": "P1",
+      "name": "吸血剑势",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 26
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_p2": {
+      "hero_id": "fengli",
+      "candidate": "P2",
+      "name": "绝境反击",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 28
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_p3": {
+      "hero_id": "fengli",
+      "candidate": "P3",
+      "name": "杀意淬锋",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 30
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_r1": {
+      "hero_id": "fengli",
+      "candidate": "R1",
+      "name": "乱星斩",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 32
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "fengli_r2": {
+      "hero_id": "fengli",
+      "candidate": "R2",
+      "name": "骨钉雨",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 34
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_q1": {
+      "hero_id": "yanguizhou",
+      "candidate": "Q1",
+      "name": "飞流三千",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 67
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "waterfall_contact",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "recorded_polyline",
+          "damage_parameter_tokens": [
+            "Q1-1",
+            "Q1-2"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-4",
+            "Q1-5"
+          ],
+          "source_parameters": {
+            "Q1-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 5,
+              "cells": [
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5"
+              ]
+            },
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 8,
+              "cells": [
+                "E8",
+                "F8",
+                "G8",
+                "H8",
+                "I8",
+                "J8"
+              ]
+            },
+            "Q1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 9,
+              "cells": [
+                "E9",
+                "F9",
+                "G9",
+                "H9",
+                "I9",
+                "J9"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_q2": {
+      "hero_id": "yanguizhou",
+      "candidate": "Q2",
+      "name": "大漠孤烟·长河落日",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 69
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "Persistent river terrain and crossing/projectile modifiers; no independent non-terrain damage/heal segment.",
+      "segments": [
+        {
+          "id": "realized_river_crossing_damage",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_crossing_target",
+          "damage_parameter_tokens": [
+            "Q2-6",
+            "Q2-7"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 18,
+              "cells": [
+                "E18",
+                "F18",
+                "G18",
+                "H18",
+                "I18",
+                "J18"
+              ]
+            },
+            "Q2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 19,
+              "cells": [
+                "E19",
+                "F19",
+                "G19",
+                "H19",
+                "I19",
+                "J19"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_q3": {
+      "hero_id": "yanguizhou",
+      "candidate": "Q3",
+      "name": "溪山行旅",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 71
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "mountain_raise_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "Q3-2",
+            "Q3-3"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-4",
+            "Q3-5"
+          ],
+          "source_parameters": {
+            "Q3-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            },
+            "Q3-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 25,
+              "cells": [
+                "E25",
+                "F25",
+                "G25",
+                "H25",
+                "I25",
+                "J25"
+              ]
+            },
+            "Q3-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 26,
+              "cells": [
+                "E26",
+                "F26",
+                "G26",
+                "H26",
+                "I26",
+                "J26"
+              ]
+            },
+            "Q3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 27,
+              "cells": [
+                "E27",
+                "F27",
+                "G27",
+                "H27",
+                "I27",
+                "J27"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "mountain_collapse",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "Q3-9",
+            "Q3-10"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-7",
+            "Q3-8"
+          ],
+          "source_parameters": {
+            "Q3-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 31,
+              "cells": [
+                "E31",
+                "F31",
+                "G31",
+                "H31",
+                "I31",
+                "J31"
+              ]
+            },
+            "Q3-10": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 32,
+              "cells": [
+                "E32",
+                "F32",
+                "G32",
+                "H32",
+                "I32",
+                "J32"
+              ]
+            },
+            "Q3-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "Q3-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 30,
+              "cells": [
+                "E30",
+                "F30",
+                "G30",
+                "H30",
+                "I30",
+                "J30"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_e1": {
+      "hero_id": "yanguizhou",
+      "candidate": "E1",
+      "name": "一蓑烟雨",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 73
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "reform_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E1-6",
+            "E1-7"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-5"
+          ],
+          "source_parameters": {
+            "E1-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 40,
+              "cells": [
+                "E40",
+                "F40",
+                "G40",
+                "H40",
+                "I40",
+                "J40"
+              ]
+            },
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 41,
+              "cells": [
+                "E41",
+                "F41",
+                "G41",
+                "H41",
+                "I41",
+                "J41"
+              ]
+            },
+            "E1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 39,
+              "cells": [
+                "E39",
+                "F39",
+                "G39",
+                "H39",
+                "I39",
+                "J39"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "rain_mark_bonus",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_marked_target",
+          "damage_parameter_tokens": [
+            "E1-8",
+            "E1-9"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 42,
+              "cells": [
+                "E42",
+                "F42",
+                "G42",
+                "H42",
+                "I42",
+                "J42"
+              ]
+            },
+            "E1-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 43,
+              "cells": [
+                "E43",
+                "F43",
+                "G43",
+                "H43",
+                "I43",
+                "J43"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "2",
+          "source_comment": "原稿未明确雨痕追加伤害是否只作用于聚形爆炸范围内的目标。此处保留原机制表述，不自行增加追踪距离或范围限制。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_e2": {
+      "hero_id": "yanguizhou",
+      "candidate": "E2",
+      "name": "孤帆远影",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 75
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "teleport_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E2-8",
+            "E2-9"
+          ],
+          "geometry_parameter_tokens": [
+            "E2-7"
+          ],
+          "source_parameters": {
+            "E2-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 52,
+              "cells": [
+                "E52",
+                "F52",
+                "G52",
+                "H52",
+                "I52",
+                "J52"
+              ]
+            },
+            "E2-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 53,
+              "cells": [
+                "E53",
+                "F53",
+                "G53",
+                "H53",
+                "I53",
+                "J53"
+              ]
+            },
+            "E2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 51,
+              "cells": [
+                "E51",
+                "F51",
+                "G51",
+                "H51",
+                "I51",
+                "J51"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "unboarded_end_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E2-11",
+            "E2-12"
+          ],
+          "geometry_parameter_tokens": [
+            "E2-10"
+          ],
+          "source_parameters": {
+            "E2-11": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 55,
+              "cells": [
+                "E55",
+                "F55",
+                "G55",
+                "H55",
+                "I55",
+                "J55"
+              ]
+            },
+            "E2-12": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 56,
+              "cells": [
+                "E56",
+                "F56",
+                "G56",
+                "H56",
+                "I56",
+                "J56"
+              ]
+            },
+            "E2-10": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 54,
+              "cells": [
+                "E54",
+                "F54",
+                "G54",
+                "H54",
+                "I54",
+                "J54"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_e3": {
+      "hero_id": "yanguizhou",
+      "candidate": "E3",
+      "name": "咫尺千里",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 77
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "swap_damage",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_moved_target",
+          "damage_parameter_tokens": [
+            "E3-6",
+            "E3-7",
+            "E3-8",
+            "E3-9"
+          ],
+          "geometry_parameter_tokens": [
+            "E3-5",
+            "E3-4"
+          ],
+          "source_parameters": {
+            "E3-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 63,
+              "cells": [
+                "E63",
+                "F63",
+                "G63",
+                "H63",
+                "I63",
+                "J63"
+              ]
+            },
+            "E3-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 64,
+              "cells": [
+                "E64",
+                "F64",
+                "G64",
+                "H64",
+                "I64",
+                "J64"
+              ]
+            },
+            "E3-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 65,
+              "cells": [
+                "E65",
+                "F65",
+                "G65",
+                "H65",
+                "I65",
+                "J65"
+              ]
+            },
+            "E3-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 66,
+              "cells": [
+                "E66",
+                "F66",
+                "G66",
+                "H66",
+                "I66",
+                "J66"
+              ]
+            },
+            "E3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 62,
+              "cells": [
+                "E62",
+                "F62",
+                "G62",
+                "H62",
+                "I62",
+                "J62"
+              ]
+            },
+            "E3-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 61,
+              "cells": [
+                "E61",
+                "F61",
+                "G61",
+                "H61",
+                "I61",
+                "J61"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_p1": {
+      "hero_id": "yanguizhou",
+      "candidate": "P1",
+      "name": "计白当黑",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 79
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "1",
+          "source_comment": "此技能为整次施法的单目标判定。持续、多段技能何时确认只命中一个目标，以及尚未开始冷却时如何结算返还，原稿未定义；本稿未替换为逐段触发。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_p2": {
+      "hero_id": "yanguizhou",
+      "candidate": "P2",
+      "name": "墨分五色",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 81
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_p3": {
+      "hero_id": "yanguizhou",
+      "candidate": "P3",
+      "name": "气韵生动",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 83
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_r1": {
+      "hero_id": "yanguizhou",
+      "candidate": "R1",
+      "name": "独钓寒江雪",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 85
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "yanguizhou_r2": {
+      "hero_id": "yanguizhou",
+      "candidate": "R2",
+      "name": "千里江山",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 87
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_q1": {
+      "hero_id": "huling",
+      "candidate": "Q1",
+      "name": "贯星",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 117
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "rail_contact",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "Q1-2",
+            "Q1-3",
+            "Q1-7",
+            "Q1-8"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-4",
+            "Q1-5"
+          ],
+          "source_parameters": {
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 7,
+              "cells": [
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7"
+              ]
+            },
+            "Q1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 11,
+              "cells": [
+                "E11",
+                "F11",
+                "G11",
+                "H11",
+                "I11",
+                "J11"
+              ]
+            },
+            "Q1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 12,
+              "cells": [
+                "E12",
+                "F12",
+                "G12",
+                "H12",
+                "I12",
+                "J12"
+              ]
+            },
+            "Q1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 8,
+              "cells": [
+                "E8",
+                "F8",
+                "G8",
+                "H8",
+                "I8",
+                "J8"
+              ]
+            },
+            "Q1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 9,
+              "cells": [
+                "E9",
+                "F9",
+                "G9",
+                "H9",
+                "I9",
+                "J9"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_q2": {
+      "hero_id": "huling",
+      "candidate": "Q2",
+      "name": "蜂群锁定",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 119
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "micro_missile_contact",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_locked_target",
+          "damage_parameter_tokens": [
+            "Q2-6",
+            "Q2-7"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 19,
+              "cells": [
+                "E19",
+                "F19",
+                "G19",
+                "H19",
+                "I19",
+                "J19"
+              ]
+            },
+            "Q2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 20,
+              "cells": [
+                "E20",
+                "F20",
+                "G20",
+                "H20",
+                "I20",
+                "J20"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_q3": {
+      "hero_id": "huling",
+      "candidate": "Q3",
+      "name": "折光刃轮",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 121
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "blade_contact",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "recorded_contact_circle",
+          "damage_parameter_tokens": [
+            "Q3-5",
+            "Q3-6"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-1"
+          ],
+          "source_parameters": {
+            "Q3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 28,
+              "cells": [
+                "E28",
+                "F28",
+                "G28",
+                "H28",
+                "I28",
+                "J28"
+              ]
+            },
+            "Q3-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "Q3-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_e1": {
+      "hero_id": "huling",
+      "candidate": "E1",
+      "name": "逆冲",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 123
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "needle_contact",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "E1-4",
+            "E1-5"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-6",
+            "E1-7"
+          ],
+          "source_parameters": {
+            "E1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 36,
+              "cells": [
+                "E36",
+                "F36",
+                "G36",
+                "H36",
+                "I36",
+                "J36"
+              ]
+            },
+            "E1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 37,
+              "cells": [
+                "E37",
+                "F37",
+                "G37",
+                "H37",
+                "I37",
+                "J37"
+              ]
+            },
+            "E1-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 38,
+              "cells": [
+                "E38",
+                "F38",
+                "G38",
+                "H38",
+                "I38",
+                "J38"
+              ]
+            },
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 39,
+              "cells": [
+                "E39",
+                "F39",
+                "G39",
+                "H39",
+                "I39",
+                "J39"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_e2": {
+      "hero_id": "huling",
+      "candidate": "E2",
+      "name": "六翼悬膛",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 125
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "stored_attack_release",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_release_target",
+          "damage_parameter_tokens": [
+            "E2-3"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E2-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弧翎技能",
+              "row": 45,
+              "cells": [
+                "E45",
+                "F45",
+                "G45",
+                "H45",
+                "I45",
+                "J45"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "4",
+          "source_comment": "修订稿未写储存时间耗尽时是自动发射还是失去存弹，本稿未擅自选定。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_e3": {
+      "hero_id": "huling",
+      "candidate": "E3",
+      "name": "六翼闭合",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 127
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Shield/defensive form and later attack-speed buff; no independent damage/heal.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_p1": {
+      "hero_id": "huling",
+      "candidate": "P1",
+      "name": "终端校准",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 129
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_p2": {
+      "hero_id": "huling",
+      "candidate": "P2",
+      "name": "游隼协议",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 131
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_p3": {
+      "hero_id": "huling",
+      "candidate": "P3",
+      "name": "群猎协议",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 133
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_r1": {
+      "hero_id": "huling",
+      "candidate": "R1",
+      "name": "六翼解封",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 135
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "huling_r2": {
+      "hero_id": "huling",
+      "candidate": "R2",
+      "name": "天矛协议·六翼坠射",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 137
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "5",
+          "source_comment": "修订稿确认期间不能攻击或使用其他技能。本稿保留该限制；窗口到期但仍有未发天矛时的处理尚未定义。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_q1": {
+      "hero_id": "xuanlei",
+      "candidate": "Q1",
+      "name": "摧城",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 167
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "gate_smash",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "cone",
+          "damage_parameter_tokens": [
+            "Q1-4",
+            "Q1-5",
+            "Q1-6"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-2",
+            "Q1-3"
+          ],
+          "source_parameters": {
+            "Q1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 8,
+              "cells": [
+                "E8",
+                "F8",
+                "G8",
+                "H8",
+                "I8",
+                "J8"
+              ]
+            },
+            "Q1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 9,
+              "cells": [
+                "E9",
+                "F9",
+                "G9",
+                "H9",
+                "I9",
+                "J9"
+              ]
+            },
+            "Q1-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 10,
+              "cells": [
+                "E10",
+                "F10",
+                "G10",
+                "H10",
+                "I10",
+                "J10"
+              ]
+            },
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 7,
+              "cells": [
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "q1 branch: factor pure cone damage; never repeat forward step/stun/personal-Hex branches",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "requires_factor_pure_segment_from_existing_handler",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_q2": {
+      "hero_id": "xuanlei",
+      "candidate": "Q2",
+      "name": "锁城索",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 169
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "chain_damage",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_ordinary_target",
+          "damage_parameter_tokens": [
+            "Q2-4",
+            "Q2-5"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 17,
+              "cells": [
+                "E17",
+                "F17",
+                "G17",
+                "H17",
+                "I17",
+                "J17"
+              ]
+            },
+            "Q2-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 18,
+              "cells": [
+                "E18",
+                "F18",
+                "G18",
+                "H18",
+                "I18",
+                "J18"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_cast_chain",
+          "observed_line": 427,
+          "insertion_stage": "capture actual ordinary-target damage; never pull or grant shield again",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "requires_factor_pure_segment_from_existing_handler",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_q3": {
+      "hero_id": "xuanlei",
+      "candidate": "Q3",
+      "name": "横关",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 171
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "sweep_damage",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "cone",
+          "damage_parameter_tokens": [
+            "Q3-3",
+            "Q3-4"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-1",
+            "Q3-2"
+          ],
+          "source_parameters": {
+            "Q3-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            },
+            "Q3-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 25,
+              "cells": [
+                "E25",
+                "F25",
+                "G25",
+                "H25",
+                "I25",
+                "J25"
+              ]
+            },
+            "Q3-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 22,
+              "cells": [
+                "E22",
+                "F22",
+                "G22",
+                "H22",
+                "I22",
+                "J22"
+              ]
+            },
+            "Q3-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 23,
+              "cells": [
+                "E23",
+                "F23",
+                "G23",
+                "H23",
+                "I23",
+                "J23"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_pending",
+          "observed_line": 446,
+          "insertion_stage": "q3 direct sweep only; never push or create collisions",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "requires_factor_pure_segment_from_existing_handler",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_e1": {
+      "hero_id": "xuanlei",
+      "candidate": "E1",
+      "name": "镇门",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 173
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "guard_release",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "E1-7",
+            "E1-8"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-5",
+            "E1-6"
+          ],
+          "source_parameters": {
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 38,
+              "cells": [
+                "E38",
+                "F38",
+                "G38",
+                "H38",
+                "I38",
+                "J38"
+              ]
+            },
+            "E1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 39,
+              "cells": [
+                "E39",
+                "F39",
+                "G39",
+                "H39",
+                "I39",
+                "J39"
+              ]
+            },
+            "E1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 36,
+              "cells": [
+                "E36",
+                "F36",
+                "G36",
+                "H36",
+                "I36",
+                "J36"
+              ]
+            },
+            "E1-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 37,
+              "cells": [
+                "E37",
+                "F37",
+                "G37",
+                "H37",
+                "I37",
+                "J37"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_resolve_guard",
+          "observed_line": 523,
+          "insertion_stage": "release rectangle damage only; never guard, step, push or stun",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "requires_factor_pure_segment_from_existing_handler",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_e2": {
+      "hero_id": "xuanlei",
+      "candidate": "E2",
+      "name": "冲垒",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 175
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "charge_release_damage",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_carried_target",
+          "damage_parameter_tokens": [
+            "E2-5",
+            "E2-6"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E2-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 46,
+              "cells": [
+                "E46",
+                "F46",
+                "G46",
+                "H46",
+                "I46",
+                "J46"
+              ]
+            },
+            "E2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 47,
+              "cells": [
+                "E47",
+                "F47",
+                "G47",
+                "H47",
+                "I47",
+                "J47"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "actual_wall_impact_damage",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_wall_impact_target",
+          "damage_parameter_tokens": [
+            "E2-7",
+            "E2-8"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 48,
+              "cells": [
+                "E48",
+                "F48",
+                "G48",
+                "H48",
+                "I48",
+                "J48"
+              ]
+            },
+            "E2-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "玄垒技能",
+              "row": 49,
+              "cells": [
+                "E49",
+                "F49",
+                "G49",
+                "H49",
+                "I49",
+                "J49"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_finish_e2",
+          "observed_line": 534,
+          "insertion_stage": "capture each actual release/wall damage segment; never charge/carry/push again",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "requires_factor_pure_segment_from_existing_handler",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_e3": {
+      "hero_id": "xuanlei",
+      "candidate": "E3",
+      "name": "合垒",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 177
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Shield aura; shield is neither damage nor healing.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "6",
+          "source_comment": "修订稿已由加防御与韧性改为给予护盾。护盾是入阵时获得、离阵后是否保留、反复进入是否刷新，原稿未明确，本稿未追加循环授盾机制。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [
+        {
+          "path": "scripts/combat/xuanlei_sim.gd",
+          "symbol": "_issue_aura_shields",
+          "observed_line": 1006,
+          "insertion_stage": "excluded: shields are not replayable damage/heal",
+          "symbol_existence_is_not_implementation": true
+        }
+      ],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_p1": {
+      "hero_id": "xuanlei",
+      "candidate": "P1",
+      "name": "城骨",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 179
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_p2": {
+      "hero_id": "xuanlei",
+      "candidate": "P2",
+      "name": "百创不折",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 181
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_p3": {
+      "hero_id": "xuanlei",
+      "candidate": "P3",
+      "name": "残城",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 183
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_r1": {
+      "hero_id": "xuanlei",
+      "candidate": "R1",
+      "name": "背城",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 185
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "xuanlei_r2": {
+      "hero_id": "xuanlei",
+      "candidate": "R2",
+      "name": "三叩天关",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 187
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_q1": {
+      "hero_id": "hezi",
+      "candidate": "Q1",
+      "name": "全列齐射",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 217
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "head_volley",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "contact_circle",
+          "damage_parameter_tokens": [
+            "Q1-1",
+            "Q1-2"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-8"
+          ],
+          "source_parameters": {
+            "Q1-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 5,
+              "cells": [
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5"
+              ]
+            },
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 12,
+              "cells": [
+                "E12",
+                "F12",
+                "G12",
+                "H12",
+                "I12",
+                "J12"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "carriage_volley",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "contact_circle",
+          "damage_parameter_tokens": [
+            "Q1-3",
+            "Q1-4"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-8"
+          ],
+          "source_parameters": {
+            "Q1-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 7,
+              "cells": [
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7"
+              ]
+            },
+            "Q1-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 8,
+              "cells": [
+                "E8",
+                "F8",
+                "G8",
+                "H8",
+                "I8",
+                "J8"
+              ]
+            },
+            "Q1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 12,
+              "cells": [
+                "E12",
+                "F12",
+                "G12",
+                "H12",
+                "I12",
+                "J12"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_q2": {
+      "hero_id": "hezi",
+      "candidate": "Q2",
+      "name": "破阵列车",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 219
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "head_runover",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_runover_target",
+          "damage_parameter_tokens": [
+            "Q2-4",
+            "Q2-5"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 17,
+              "cells": [
+                "E17",
+                "F17",
+                "G17",
+                "H17",
+                "I17",
+                "J17"
+              ]
+            },
+            "Q2-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 18,
+              "cells": [
+                "E18",
+                "F18",
+                "G18",
+                "H18",
+                "I18",
+                "J18"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "carriage_runover",
+          "kind": "damage",
+          "selection": "target_bound",
+          "geometry": "original_runover_target",
+          "damage_parameter_tokens": [
+            "Q2-6",
+            "Q2-7"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "Q2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 19,
+              "cells": [
+                "E19",
+                "F19",
+                "G19",
+                "H19",
+                "I19",
+                "J19"
+              ]
+            },
+            "Q2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 20,
+              "cells": [
+                "E20",
+                "F20",
+                "G20",
+                "H20",
+                "I20",
+                "J20"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_q3": {
+      "hero_id": "hezi",
+      "candidate": "Q3",
+      "name": "甩尾",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 221
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "tail_sweep",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "cone",
+          "damage_parameter_tokens": [
+            "Q3-5",
+            "Q3-6",
+            "Q3-7",
+            "Q3-8"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-1",
+            "Q3-3",
+            "Q3-4"
+          ],
+          "source_parameters": {
+            "Q3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 28,
+              "cells": [
+                "E28",
+                "F28",
+                "G28",
+                "H28",
+                "I28",
+                "J28"
+              ]
+            },
+            "Q3-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "Q3-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 30,
+              "cells": [
+                "E30",
+                "F30",
+                "G30",
+                "H30",
+                "I30",
+                "J30"
+              ]
+            },
+            "Q3-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 31,
+              "cells": [
+                "E31",
+                "F31",
+                "G31",
+                "H31",
+                "I31",
+                "J31"
+              ]
+            },
+            "Q3-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            },
+            "Q3-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 26,
+              "cells": [
+                "E26",
+                "F26",
+                "G26",
+                "H26",
+                "I26",
+                "J26"
+              ]
+            },
+            "Q3-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 27,
+              "cells": [
+                "E27",
+                "F27",
+                "G27",
+                "H27",
+                "I27",
+                "J27"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_e1": {
+      "hero_id": "hezi",
+      "candidate": "E1",
+      "name": "断尾",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 223
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "detached_carriage_explosion",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E1-8",
+            "E1-9"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-7"
+          ],
+          "source_parameters": {
+            "E1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 42,
+              "cells": [
+                "E42",
+                "F42",
+                "G42",
+                "H42",
+                "I42",
+                "J42"
+              ]
+            },
+            "E1-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 43,
+              "cells": [
+                "E43",
+                "F43",
+                "G43",
+                "H43",
+                "I43",
+                "J43"
+              ]
+            },
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 41,
+              "cells": [
+                "E41",
+                "F41",
+                "G41",
+                "H41",
+                "I41",
+                "J41"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_e2": {
+      "hero_id": "hezi",
+      "candidate": "E2",
+      "name": "紧急制动",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 225
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "brake_pressure_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E2-5",
+            "E2-6",
+            "E2-7"
+          ],
+          "geometry_parameter_tokens": [
+            "E2-4"
+          ],
+          "source_parameters": {
+            "E2-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 52,
+              "cells": [
+                "E52",
+                "F52",
+                "G52",
+                "H52",
+                "I52",
+                "J52"
+              ]
+            },
+            "E2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 53,
+              "cells": [
+                "E53",
+                "F53",
+                "G53",
+                "H53",
+                "I53",
+                "J53"
+              ]
+            },
+            "E2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 54,
+              "cells": [
+                "E54",
+                "F54",
+                "G54",
+                "H54",
+                "I54",
+                "J54"
+              ]
+            },
+            "E2-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 51,
+              "cells": [
+                "E51",
+                "F51",
+                "G51",
+                "H51",
+                "I51",
+                "J51"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_e3": {
+      "hero_id": "hezi",
+      "candidate": "E3",
+      "name": "战地检修",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 227
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "repair_healing_segment",
+          "kind": "healing",
+          "selection": "self_heal",
+          "geometry": "self",
+          "damage_parameter_tokens": [
+            "E3-2"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E3-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "赫兹技能",
+              "row": 58,
+              "cells": [
+                "E58",
+                "F58",
+                "G58",
+                "H58",
+                "I58",
+                "J58"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_p1": {
+      "hero_id": "hezi",
+      "candidate": "P1",
+      "name": "重载",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 229
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "9",
+          "source_comment": "保留用户新改的“每拥有过车厢永久增加固定最大生命”，不改回按当前车厢计算的百分比加成。重建同一车位是否重复计数、后续升级是否追补历史收益，原稿尚未定义。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_p2": {
+      "hero_id": "hezi",
+      "candidate": "P2",
+      "name": "高速干线",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 231
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_p3": {
+      "hero_id": "hezi",
+      "candidate": "P3",
+      "name": "锅炉过载",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 233
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_r1": {
+      "hero_id": "hezi",
+      "candidate": "R1",
+      "name": "战争列车",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 235
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "hezi_r2": {
+      "hero_id": "hezi",
+      "candidate": "R2",
+      "name": "末日终点站",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 237
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_q1": {
+      "hero_id": "miluo",
+      "candidate": "Q1",
+      "name": "鲸吞",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 267
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "bite_damage",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "cone",
+          "damage_parameter_tokens": [
+            "Q1-5",
+            "Q1-6",
+            "Q1-8",
+            "Q1-9"
+          ],
+          "geometry_parameter_tokens": [
+            "Q1-1",
+            "Q1-2",
+            "Q1-7"
+          ],
+          "source_parameters": {
+            "Q1-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 9,
+              "cells": [
+                "E9",
+                "F9",
+                "G9",
+                "H9",
+                "I9",
+                "J9"
+              ]
+            },
+            "Q1-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 10,
+              "cells": [
+                "E10",
+                "F10",
+                "G10",
+                "H10",
+                "I10",
+                "J10"
+              ]
+            },
+            "Q1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 12,
+              "cells": [
+                "E12",
+                "F12",
+                "G12",
+                "H12",
+                "I12",
+                "J12"
+              ]
+            },
+            "Q1-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 13,
+              "cells": [
+                "E13",
+                "F13",
+                "G13",
+                "H13",
+                "I13",
+                "J13"
+              ]
+            },
+            "Q1-1": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 5,
+              "cells": [
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5"
+              ]
+            },
+            "Q1-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 6,
+              "cells": [
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6"
+              ]
+            },
+            "Q1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 11,
+              "cells": [
+                "E11",
+                "F11",
+                "G11",
+                "H11",
+                "I11",
+                "J11"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_q2": {
+      "hero_id": "miluo",
+      "candidate": "Q2",
+      "name": "反刍炮",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 269
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "food_ball_damage",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "contact_circle",
+          "damage_parameter_tokens": [
+            "Q2-4",
+            "Q2-5",
+            "Q2-8",
+            "Q2-9"
+          ],
+          "geometry_parameter_tokens": [
+            "Q2-3",
+            "Q2-6",
+            "Q2-7"
+          ],
+          "source_parameters": {
+            "Q2-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 18,
+              "cells": [
+                "E18",
+                "F18",
+                "G18",
+                "H18",
+                "I18",
+                "J18"
+              ]
+            },
+            "Q2-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 19,
+              "cells": [
+                "E19",
+                "F19",
+                "G19",
+                "H19",
+                "I19",
+                "J19"
+              ]
+            },
+            "Q2-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 22,
+              "cells": [
+                "E22",
+                "F22",
+                "G22",
+                "H22",
+                "I22",
+                "J22"
+              ]
+            },
+            "Q2-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 23,
+              "cells": [
+                "E23",
+                "F23",
+                "G23",
+                "H23",
+                "I23",
+                "J23"
+              ]
+            },
+            "Q2-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 17,
+              "cells": [
+                "E17",
+                "F17",
+                "G17",
+                "H17",
+                "I17",
+                "J17"
+              ]
+            },
+            "Q2-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 20,
+              "cells": [
+                "E20",
+                "F20",
+                "G20",
+                "H20",
+                "I20",
+                "J20"
+              ]
+            },
+            "Q2-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 21,
+              "cells": [
+                "E21",
+                "F21",
+                "G21",
+                "H21",
+                "I21",
+                "J21"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_q3": {
+      "hero_id": "miluo",
+      "candidate": "Q3",
+      "name": "胃海翻腾",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 271
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "ring_bite",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "Q3-5",
+            "Q3-6"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-3",
+            "Q3-4"
+          ],
+          "source_parameters": {
+            "Q3-5": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "Q3-6": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 30,
+              "cells": [
+                "E30",
+                "F30",
+                "G30",
+                "H30",
+                "I30",
+                "J30"
+              ]
+            },
+            "Q3-3": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 27,
+              "cells": [
+                "E27",
+                "F27",
+                "G27",
+                "H27",
+                "I27",
+                "J27"
+              ]
+            },
+            "Q3-4": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 28,
+              "cells": [
+                "E28",
+                "F28",
+                "G28",
+                "H28",
+                "I28",
+                "J28"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        },
+        {
+          "id": "fed_tide",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "Q3-8",
+            "Q3-9"
+          ],
+          "geometry_parameter_tokens": [
+            "Q3-7"
+          ],
+          "source_parameters": {
+            "Q3-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 32,
+              "cells": [
+                "E32",
+                "F32",
+                "G32",
+                "H32",
+                "I32",
+                "J32"
+              ]
+            },
+            "Q3-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 33,
+              "cells": [
+                "E33",
+                "F33",
+                "G33",
+                "H33",
+                "I33",
+                "J33"
+              ]
+            },
+            "Q3-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 31,
+              "cells": [
+                "E31",
+                "F31",
+                "G31",
+                "H31",
+                "I31",
+                "J31"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_e1": {
+      "hero_id": "miluo",
+      "candidate": "E1",
+      "name": "蜕腹",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 273
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "decoy_end_burst",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "circle",
+          "damage_parameter_tokens": [
+            "E1-8",
+            "E1-9",
+            "E1-12"
+          ],
+          "geometry_parameter_tokens": [
+            "E1-7",
+            "E1-11"
+          ],
+          "source_parameters": {
+            "E1-8": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 43,
+              "cells": [
+                "E43",
+                "F43",
+                "G43",
+                "H43",
+                "I43",
+                "J43"
+              ]
+            },
+            "E1-9": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 44,
+              "cells": [
+                "E44",
+                "F44",
+                "G44",
+                "H44",
+                "I44",
+                "J44"
+              ]
+            },
+            "E1-12": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 47,
+              "cells": [
+                "E47",
+                "F47",
+                "G47",
+                "H47",
+                "I47",
+                "J47"
+              ]
+            },
+            "E1-7": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 42,
+              "cells": [
+                "E42",
+                "F42",
+                "G42",
+                "H42",
+                "I42",
+                "J42"
+              ]
+            },
+            "E1-11": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 46,
+              "cells": [
+                "E46",
+                "F46",
+                "G46",
+                "H46",
+                "I46",
+                "J46"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_e2": {
+      "hero_id": "miluo",
+      "candidate": "E2",
+      "name": "吞害",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 275
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "fed_end_wave",
+          "kind": "damage",
+          "selection": "spatial",
+          "geometry": "rectangle",
+          "damage_parameter_tokens": [
+            "E2-13",
+            "E2-14"
+          ],
+          "geometry_parameter_tokens": [
+            "E2-11",
+            "E2-12"
+          ],
+          "source_parameters": {
+            "E2-13": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 62,
+              "cells": [
+                "E62",
+                "F62",
+                "G62",
+                "H62",
+                "I62",
+                "J62"
+              ]
+            },
+            "E2-14": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 63,
+              "cells": [
+                "E63",
+                "F63",
+                "G63",
+                "H63",
+                "I63",
+                "J63"
+              ]
+            },
+            "E2-11": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 60,
+              "cells": [
+                "E60",
+                "F60",
+                "G60",
+                "H60",
+                "I60",
+                "J60"
+              ]
+            },
+            "E2-12": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 61,
+              "cells": [
+                "E61",
+                "F61",
+                "G61",
+                "H61",
+                "I61",
+                "J61"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_e3": {
+      "hero_id": "miluo",
+      "candidate": "E3",
+      "name": "消化",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 277
+      },
+      "status": "approved_damage_heal_segments",
+      "exclusion_reason": "",
+      "segments": [
+        {
+          "id": "digestion_heal",
+          "kind": "healing",
+          "selection": "self_heal",
+          "geometry": "self",
+          "damage_parameter_tokens": [
+            "E3-2"
+          ],
+          "geometry_parameter_tokens": [],
+          "source_parameters": {
+            "E3-2": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "弥罗技能",
+              "row": 66,
+              "cells": [
+                "E66",
+                "F66",
+                "G66",
+                "H66",
+                "I66",
+                "J66"
+              ]
+            }
+          },
+          "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+          "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+        }
+      ],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_p1": {
+      "hero_id": "miluo",
+      "candidate": "P1",
+      "name": "消化良好",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 279
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_p2": {
+      "hero_id": "miluo",
+      "candidate": "P2",
+      "name": "越撑越凶",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 281
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_p3": {
+      "hero_id": "miluo",
+      "candidate": "P3",
+      "name": "空腹猎食",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 283
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_r1": {
+      "hero_id": "miluo",
+      "candidate": "R1",
+      "name": "暴食天灾",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 285
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "12",
+          "source_comment": "原稿的“所有Q/E不消耗食质”与“消化按消耗格数治疗”需要统一结算口径；本稿保留两条原机制，未假定消化失效或无限无条件回血。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    },
+    "miluo_r2": {
+      "hero_id": "miluo",
+      "candidate": "R2",
+      "name": "吞天",
+      "source": {
+        "source": "mechanics",
+        "file": "heroes_mechanics_no_values_v03(1).docx",
+        "part": "word/document.xml",
+        "paragraph_all_body_descendants": 287
+      },
+      "status": "excluded_no_independent_segment",
+      "exclusion_reason": "Passives and ultimates are outside G18 non-ultimate active scope.",
+      "segments": [],
+      "source_unresolved_comments": [
+        {
+          "comment_id": "11",
+          "source_comment": "原稿未规定吞入胃界的普通敌人最终如何处理、何时确认击杀及结算食质。本稿不增加“直接斩杀”或“吐回敌人”规则。"
+        }
+      ],
+      "effective_runtime_rule_ref": "runtime_rules.json",
+      "handler_sites": [],
+      "runtime_adapter_status": "excluded",
+      "forbidden_replayed_effects": [
+        "movement",
+        "control",
+        "terrain",
+        "summons",
+        "form_state",
+        "shield",
+        "resource_consumption_or_gain",
+        "cooldown_or_charge_mutation",
+        "Hex_recursion"
+      ]
+    }
+  }
+}

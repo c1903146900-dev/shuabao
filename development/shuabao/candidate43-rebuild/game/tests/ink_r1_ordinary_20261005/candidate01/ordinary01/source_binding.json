@@ -1,0 +1,70 @@
+{
+  "schema": "ink-r1-ordinary-overlay-1",
+  "status": "SOURCE_ONLY_COMPOSITION_ENGINE_NOT_RUN",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1",
+    "R1"
+  ],
+  "supported_hex_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "parent_e1_sha256": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+  "parent_core_sha256": "56dac25470e45f9de8bd3c62667c1160a8af3aad02a2d59e14bf6ae220fb5456",
+  "parent_stage_receipt": {
+    "path": "tests/ink_e1_ordinary_20261005/candidate01/stage_receipt.json",
+    "sha256": "751e645059033cd4287bd01a0893e8bb013ce8d80e115a476a9afb76c69dd375"
+  },
+  "runtime_map": {
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/README.md": "64193a8d9407b62675d19228c9f8fcc057f7705a83f1439a925682d056bd55e1",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/admission_checkpoint01.json": "122cd0bd90ec27d9ebf611d3276cc1b8c5985a47bec97b9ac43b4b1c657c995d",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/bridge.gd": "11b3c9611afe9f3dec4db3f9cdf66b9fd10d5663f8ae79f546c36ef9ba31b5c8",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/catalog.gd": "0622f80e015bc966a2ab251c08e91c56179728d9ae434d5367430367a98ea2d6",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/domain_view.gd": "1251d0e8df3d3c455e97311e3ec52d31fa9e57ba515eea539f3d377d5c3cde29",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/finite_gate.gd": "e274ff320ee00c73878d974f2f89ced41cd9144fc43a8b0a88288d8e55273c79",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/floor_session.gd": "d0ce0deacfd69252e20f8eb659a0e378a33dc612df9441b41fc63cd5b196eb64",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/growth_hud.gd": "530f3c23db2101b22dc26bfa62207e0f16d840deb7b0c47ba3157a443ad9b72b",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/host.gd": "8263972dc43ed10e9ab3cf0c308c9db5ccbab5cf46bfea377497a5f1b289ba04",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/hud_projection.gd": "49a7dedf5f48cda6fe9f9efaf1b4a372bcb188d7134f379a8ca531d4906f3db0",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/input_adapter.gd": "9d035d4057c87841e8b30ddd002a19e7a475150b1b42152696ce7fe094d3e809",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/live_binding.gd": "fdf5b96f3007e6917032cb0c2506a2af443d0704e814d615771bb718a18289ff",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/navigation_install.gd": "360e53fbe4e4f0f80e305ade0c88cf351f7ddc721947c9670d5c8576508c9781",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/parse_gate.gd": "19ea894cec690038c51e737cfa617a3115726af500d23849d0063c1f32168c20",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/preimage_manifest.json": "fcdb8c47cdc847c26e2ceebce2cc673cb412cfd2de377101594713116afca940",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/r_hud.gd": "db9c6865c45165755812d9421ccb28648a736edf4b28e707b5fc4b196d66bf34",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/stage_delta.py": "3eb6aa89df55b3ed90cd95c3d6958d26aa1c3ca8a557176eaa9548bfff2162a3",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/verify_source.py": "6b5ba63b374ce1a4c82529c8004210de5348ff2705a4773537503b64f6e8ceb4",
+    "res://scripts/integration/yanguizhou_first_floor.gd": "765f0ee629bc6f64d0cd5755a64cf7865ccf575125f98e5cfe3eb08b96b823f3",
+    "res://scripts/ui/hero_chooser.gd": "3db1d1a7404dd2123bcb9cd9a87a1d1831f30dbffa7b0503d9618d259dbc8792",
+    "res://scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61"
+  },
+  "ancestor_pin_replacements": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": {
+      "before": "2702d28318bc8af8b03dce99d7160e7263e5017872abf64f49e3b79159e3377f",
+      "after": "765f0ee629bc6f64d0cd5755a64cf7865ccf575125f98e5cfe3eb08b96b823f3",
+      "scope": "exact R1 ordinary leaf extends and R latch cleanup"
+    },
+    "res://scripts/ui/hero_chooser.gd": {
+      "before": "894a104f5ccbf3d75dab2de5aed3ea1845dad93ff0127d640aaf7c8ed2e91ff2",
+      "after": "3db1d1a7404dd2123bcb9cd9a87a1d1831f30dbffa7b0503d9618d259dbc8792",
+      "scope": "two Ink-only chooser strings"
+    }
+  },
+  "core_598_source_unchanged": true,
+  "ordinary_XP_SP_granted": false,
+  "natural_level6": false,
+  "R2_H13_H16_available": false,
+  "native_input": false,
+  "art_audio_accepted": false
+}

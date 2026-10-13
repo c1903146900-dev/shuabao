@@ -1,0 +1,37 @@
+--- equipment39_b04_regression_gate.gd
++++ equipment40_b04_regression_gate.gd
+@@ -39,7 +39,7 @@
+ 
+ func check_model_successor(f: Dictionary, label: String) -> void:
+  var script: Script = f.session.ledger.model.get_script()
+- for path: String in ["res://equipment_training_20261009/model.gd", B04_MODEL, G06_MODEL, B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
++ for path: String in ["res://equipment_pursuit_20261009/model.gd", "res://equipment_training_20261009/model.gd", B04_MODEL, G06_MODEL, B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
+   if not check(script != null and script.resource_path == path, label + ": exact equipment38 Model ancestor " + path): return
+   script = script.get_base_script()
+  check(FileAccess.get_sha256(POSTBOSS_BASE_MODEL_PATH) == POSTBOSS_BASE_MODEL_SHA, label + ": frozen original Model SHA retained")
+@@ -68,7 +68,7 @@
+  f["live_kills"] = []
+  evidence.wallet_fixtures.append({"case":label, "run_id":f.session.run_id, "before":model.state.gold, "after":60000, "test_only":true})
+  model.state.gold = 60000 # The sole explicit direct wallet fixture.
+- if not check(model.get_script().resource_path == "res://equipment_training_20261009/model.gd" and model.get_script().get_base_script().resource_path == B04_MODEL and f.sim.has_method("verify_b04_basic_completion"), "exact B04 source/Model bridge") or not check(model.equipment_runtime_status("final:B04").get("runtime_complete", false), "B04 bound by original factory") or not check(f.session.open_panel().get("accepted", false), label + ": original safe shop opens"):
++ if not check(model.get_script().resource_path == "res://equipment_pursuit_20261009/model.gd" and model.get_script().get_base_script().resource_path == "res://equipment_training_20261009/model.gd" and model.get_script().get_base_script().get_base_script().resource_path == B04_MODEL and f.sim.has_method("verify_b04_basic_completion"), "exact B04 source/Model bridge") or not check(model.equipment_runtime_status("final:B04").get("runtime_complete", false), "B04 bound by original factory") or not check(f.session.open_panel().get("accepted", false), label + ": original safe shop opens"):
+   dispose(f); return {}
+  return f
+ 
+@@ -271,14 +271,14 @@
+  var numeric: Variant = JSON.parse_string(FileAccess.get_file_as_string(B01_NUMERIC))
+  var prior: Dictionary = B04Prior.build(numeric)
+  if not check(prior.get("accepted", false), "prior37 original adapter accepts source"): dispose(f); return
+- check(model.runtime_stat_definitions.size() == prior.definitions.size() + 2, "B04 and G02 extend prior37 definitions")
++ check(model.runtime_stat_definitions.size() == prior.definitions.size() + 3, "B04 G02 B02 extend prior37 definitions")
+  for id: String in prior.definitions:
+   check(var_to_bytes(prior.definitions[id]) == var_to_bytes(model.runtime_stat_definitions.get(id, {})), "prior37 definition deeply unchanged: " + id)
+  var supported: int = 0
+  for definition: Dictionary in model.runtime_stat_definitions.values():
+   if definition.get("supported", false): supported += 1
+  var status: Dictionary = model.equipment_runtime_status("final:B04")
+- check(supported == 39 and model.snapshot().content_profile == "ordinary_equipment39_potions3", "truthful supported39 profile during B04 regression")
++ check(supported == 40 and model.snapshot().content_profile == "ordinary_equipment40_potions3", "truthful supported40 profile during B04 regression")
+  check(status.stats == {"AD":42.0, "cooldown_reduction":0.18, "crit_chance":0.15} and status.passives == ["passive:08"], "B04 authored AD42/CDR18%/crit15% and only passive08")
+  check(status.passive08 == {"attack_interval":5, "remaining_cooldown_reduction":10.0}, "original five completions and10% remaining-CD reduction")
+  check(int(model.commerce_definitions.items["final:B04"].price) == 3000 and int(status.recipe.combine_fee) == 550, "original3000 price and550 combine fee")

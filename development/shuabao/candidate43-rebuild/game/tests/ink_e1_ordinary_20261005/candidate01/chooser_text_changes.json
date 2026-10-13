@@ -1,0 +1,18 @@
+{
+  "file": "scripts/ui/hero_chooser.gd",
+  "changes": [
+    {
+      "before": "Q1/Q2/Q3接线候选；Q2临时功能显示，美术/音频未实现，实机未验。",
+      "after": "Q1/Q2/Q3与基础E1接线候选；Q2临时功能显示，E1临时文字显示。E1形态美术/音频未完成，组合实机未验。"
+    },
+    {
+      "before": "其他技能未开放，不代表完整英雄。",
+      "after": "H03/H04/H07/H08及其他技能未开放，不代表完整英雄。"
+    },
+    {
+      "before": "当前候选  ·  Q1 / Q2 / Q3；H03/H04及其余技能未开放",
+      "after": "当前候选  ·  Q1 / Q2 / Q3 / 基础E1；E1临时显示"
+    }
+  ],
+  "old_hero_branches_unchanged": true
+}

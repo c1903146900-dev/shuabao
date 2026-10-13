@@ -1,0 +1,8 @@
+--- equipment40_b02_inputs_gate.gd
++++ equipment41_b02_inputs_regression_gate.gd
+@@ -1,4 +1,4 @@
+-extends "res://integration_checks/equipment40_source_gate.gd"
++extends "res://integration_checks/equipment41_b02_regression_gate.gd"
+ ## Reuses every original G02 actual basic/Q/E and P1 assertion at the40 leaf.
+ ## Additional B02 purchase uses the original shop; observer is inherited intact.
+ var input_partition: String="all"

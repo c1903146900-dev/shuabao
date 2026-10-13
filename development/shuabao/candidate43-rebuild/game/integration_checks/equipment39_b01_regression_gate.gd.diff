@@ -1,0 +1,36 @@
+--- equipment38_b01_regression_gate.gd
++++ equipment39_b01_regression_gate.gd
+@@ -20,7 +20,7 @@
+ 
+ func check_model_successor(f: Dictionary, label: String) -> void:
+  var script: Script = f.session.ledger.model.get_script()
+- for path: String in ["res://equipment_basic_cycle_20261009/model.gd", "res://equipment_elite_damage_20261009/model.gd", B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
++ for path: String in ["res://equipment_training_20261009/model.gd", "res://equipment_basic_cycle_20261009/model.gd", "res://equipment_elite_damage_20261009/model.gd", B01_MODEL, DISTANCE_MODEL_PATH, POSTBOSS_MODEL_PATH, POSTBOSS_PRIOR_MODEL_PATH, POSTBOSS_BASE_MODEL_PATH]:
+   if not check(script != null and script.resource_path == path, label + ": exact equipment36 ancestor " + path): return
+   script = script.get_base_script()
+  check(FileAccess.get_sha256(POSTBOSS_BASE_MODEL_PATH) == POSTBOSS_BASE_MODEL_SHA, label + ": frozen original Model SHA retained")
+@@ -28,7 +28,7 @@
+ func funded_shop(label: String) -> Dictionary:
+  var f: Dictionary = super.funded_shop(label)
+  if f.is_empty(): return {}
+- if not check(f.session.ledger.model.get_script().resource_path == "res://equipment_basic_cycle_20261009/model.gd" and f.sim.has_method("verify_b01_kill_attribution"), "reviewed B01 source bridge exists"):
++ if not check(f.session.ledger.model.get_script().resource_path == "res://equipment_training_20261009/model.gd" and f.sim.has_method("verify_b01_kill_attribution"), "reviewed B01 source bridge exists"):
+   dispose(f); return {}
+  if not check(f.session.ledger.model.equipment_runtime_status("final:B01").get("runtime_complete", false), "B01 runtime bound through real factory"):
+   dispose(f); return {}
+@@ -152,13 +152,13 @@
+  if not check(numeric is Dictionary, "authored numeric table readable"): dispose(f); return
+  var prior: Dictionary = B01Prior.build(numeric)
+  if not check(prior.get("accepted", false), "original35 adapter accepts original table"): dispose(f); return
+- check(model.runtime_stat_definitions.size() == prior.definitions.size() + 3, "exact B01/G06/B04 additions to prior35")
++ check(model.runtime_stat_definitions.size() == prior.definitions.size() + 4, "exact B01/G06/B04/G02 additions to prior35")
+  for item_id: String in prior.definitions:
+   check(var_to_bytes(prior.definitions[item_id]) == var_to_bytes(model.runtime_stat_definitions.get(item_id, {})), "original35 definition deeply unchanged: " + item_id)
+  var supported: int = 0
+  for definition: Dictionary in model.runtime_stat_definitions.values():
+   if definition.get("supported", false): supported += 1
+- check(supported == 38 and model.snapshot().content_profile == "ordinary_equipment38_potions3", "exact supported38 and truthful profile")
++ check(supported == 39 and model.snapshot().content_profile == "ordinary_equipment39_potions3", "exact supported39 and truthful profile")
+  var b01: Dictionary = model.equipment_runtime_status("final:B01")
+  check(b01.stats == {"AD":60.0, "cooldown_reduction":0.18, "penetration":16.0}, "original B01 AD60/CDR18%/penetration16")
+  check(b01.passives == ["passive:13"] and b01.passive13 == {"cooldown_refund":35.0}, "one original passive13 with 35% current-CD refund")

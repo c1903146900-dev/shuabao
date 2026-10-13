@@ -1,0 +1,29 @@
+{
+  "schema": "postboss-boundary-successor-1",
+  "base_binding_sha256": "0519992c2433cf8d5a9423b1658e9e68921a3d28928f84d62b99f53d2e572b34",
+  "changes": {
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "537bdfb1715c8ef82914cee6a151422bf807a83d3a9ba52c9edf0301ac6b0964",
+      "after": "7da1cb4b83e602081c99b7b38008ebe1ba79661aabd77e208c3be2c4596fe8f8"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "97761fb4402645ebd798e18b0cb304ba665a69dcf1dcd1780f027ac1b81b94ce",
+      "after": "69da486e8413a68f2532e962c4ad1b0d65a1bb31e8a43d7bf3c5f0c4171a68b8"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "29ef4b54974865b945a4de226326d3372731cc38ff93c78376d68ebb50898a74",
+      "after": "e636aa8304ae93f2d9d2c87023b103831a7a8d7e2cb99a1a421ea91427a05951"
+    }
+  },
+  "new_files": {
+    "visual_rework_20261009/binding/postboss_model.gd": "3d8e7f0a0bea45c67e87cf438512b460e58a87a2c2c120cb145c64578481d0ed",
+    "visual_rework_20261009/postboss_potion_controls.gd": "651cb6cbb6dee515262c84d2a03da3e6e06f016cb7db1bf7d46dad6cb389c460"
+  },
+  "preserved_model_parent": "res://tests/ink_equipment_live_20261008/content01/model.gd",
+  "preserved_model_parent_sha256": "af679ebb5a07f5896e69f8a5708d518b341e5eef86118fd47e5048f419a3cb37",
+  "scope": [
+    "settled victorious modal only",
+    "terminal new potion debit rejected; existing successful retry retained",
+    "safe predrink and original combat rules preserved"
+  ]
+}

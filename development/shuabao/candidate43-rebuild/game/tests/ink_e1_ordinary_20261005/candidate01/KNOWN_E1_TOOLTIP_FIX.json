@@ -1,0 +1,38 @@
+{
+  "scope": "E1 presentation-only exact tooltip correction and one finite assertion",
+  "native03_original_binding": "494f6d55f1e8aa9a1577a108fb50ed0b4a0e861735df117af4c6a255e9ef25ad",
+  "preimage_directory": "tests/ink_e1_ordinary_20261005/candidate01/preimage_native03_tooltip",
+  "preserved_preimages": {
+    "e1_hud.gd": {
+      "sha256": "741f27d19f7c46c4936a23c8191f994ded46ed926dd267306645512d57f62fc7",
+      "bytes": 3340
+    },
+    "source_binding.json": {
+      "sha256": "494f6d55f1e8aa9a1577a108fb50ed0b4a0e861735df117af4c6a255e9ef25ad",
+      "bytes": 4643
+    },
+    "finite_gate.gd": {
+      "sha256": "588dc2f135b5a78a9945031a1b0dadb3b5c82e41a5f0b63a5634a091903d938f",
+      "bytes": 28195
+    },
+    "source_result.json": {
+      "sha256": "767d9497681e4685b969033d6a66159159ef8a1f1747996ba3555de890b2ada0",
+      "bytes": 4029
+    },
+    "DELIVERY_HASHES.json": {
+      "sha256": "92f3fbdb49ac28080ba41647d1554451a6e45061e158ebfe835cef9b7c430b82",
+      "bytes": 5766
+    }
+  },
+  "old_notice": "规则已确认；该技能尚未实现。",
+  "new_notice": "基础E1机制已接入候选，形态美术/音频未完成",
+  "only_runtime_change": "e1_hud.gd Design.description output exact string replacement",
+  "source_design_files_changed": false,
+  "mechanics_changed": false,
+  "new_assertions": 1,
+  "new_assertion_engine_run": false,
+  "GUI_run": false,
+  "new_binding_sha256": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+  "new_e1_hud_sha256": "fa76bde0b9d4186296ece95853520eb6d1283b4fa977a1e947a409b1d201f82d",
+  "new_finite_gate_sha256": "30e11990c543013827342b1651b35cad1b1ad846707edeeb3cfa70746a6c3df3"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "tests/ink_q1_h02_20261004/run_regression.gd",
+    "gate": "q1_regression_gate.gd",
+    "source_output": "regression_result.json",
+    "output": "q1_regression_result.json"
+  },
+  {
+    "source": "tests/ink_q1_h02_20261004/run_control.gd",
+    "gate": "control_regression_gate.gd",
+    "source_output": "control_result.json",
+    "output": "control_regression_result.json"
+  },
+  {
+    "source": "tests/ink_q1_h02_20261004/run.gd",
+    "gate": "h02_regression_gate.gd",
+    "source_output": "engine_result.json",
+    "output": "h02_regression_result.json"
+  },
+  {
+    "source": "tests/ink_intermediate_stats_20261004/common_regression_gate.gd",
+    "gate": "common_regression_gate.gd",
+    "source_output": "common_regression_result.json",
+    "output": "common_regression_result.json"
+  },
+  {
+    "source": "tests/ink_intermediate_stats_20261004/hp_regression_gate.gd",
+    "gate": "hp_regression_gate.gd",
+    "source_output": "hp_regression_result.json",
+    "output": "hp_regression_result.json"
+  }
+]

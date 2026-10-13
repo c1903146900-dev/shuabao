@@ -1,0 +1,78 @@
+{
+  "q1_regression_gate.gd": {
+    "expected_checks": 156,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/regression_result.json",
+    "result": "q1_regression_result.json",
+    "marker": "INK_FOUNDATION_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "control_regression_gate.gd": {
+    "expected_checks": 81,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/control_result.json",
+    "result": "control_regression_result.json",
+    "marker": "INK_CONTROL_REV02_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "h02_regression_gate.gd": {
+    "expected_checks": 115,
+    "prior_result": "tests/ink_q1_h02_main_evidence_20261004/main_1747/engine_result.json",
+    "result": "h02_regression_result.json",
+    "marker": "INK_H02_FINITE_REPORT",
+    "prior_result_is_not_this_candidate_result": true
+  },
+  "common_regression_gate.gd": {
+    "expected_checks": 905,
+    "result": "common_regression_result.json",
+    "marker": "INK_INITIAL_SINK_REPORT"
+  },
+  "hp_regression_gate.gd": {
+    "expected_checks": 185,
+    "result": "hp_regression_result.json",
+    "marker": "INK_HP_UNDO_REPORT"
+  },
+  "q3_gate.gd": {
+    "result": "q3_result.json",
+    "marker": "INK_Q3_FOUNDATION_REPORT",
+    "completed": [
+      "source_ranks",
+      "manual_admission",
+      "recast_controls",
+      "geometry_categories",
+      "actual_projectiles",
+      "lifecycle_clocks",
+      "root_proc_budget",
+      "callbacks",
+      "q3_admission_guard",
+      "retained_before_after"
+    ]
+  },
+  "diagnostic_gate.gd": {
+    "result": "diagnostic_result.json",
+    "marker": "INK_Q3_INIT_DIAGNOSTIC_REPORT",
+    "completed": [
+      "old_a79fc_q1",
+      "original_bad_q3",
+      "fixed_q1",
+      "fixed_q3",
+      "basic_walk_lifecycle"
+    ]
+  },
+  "g22_batch_gate.gd": {
+    "result": "g22_batch_result.json",
+    "marker": "INK_Q3_G22_BATCH_REPORT",
+    "completed": [
+      "raise_none_to_duel",
+      "collapse_none_to_duel",
+      "raise_horde_to_none",
+      "collapse_horde_to_none"
+    ]
+  },
+  "fixture_diagnostic_gate.gd": {
+    "result": "fixture_diagnostic_result.json",
+    "marker": "INK_Q3_FIXTURE_DIAGNOSTIC_REPORT",
+    "completed": [
+      "persistent_walk_range",
+      "callback_transaction_guard"
+    ]
+  }
+}

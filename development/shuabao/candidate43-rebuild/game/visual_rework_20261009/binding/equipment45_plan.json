@@ -1,0 +1,31 @@
+{
+  "schema": "D01-original-proportional-successor-1",
+  "base_source_sha256": "51bce01660980f55d66bff7a06aa80d817ac2e7ea5e0a36ca951e7610df6c052",
+  "changes": {
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "cea1f5109be86669be96540bf3fb4e9bcb55b83ae2532a6cceb9fa71a9033bbd",
+      "after": "76ce16eaf1bc73f8c299b69da3ea5e2f464caba17d8bc228009c996016c22fc5"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "b8ce1e2cb51d0e1ba5fb965676295925d90f05a9d2c6de1879071a86f3975908",
+      "after": "026d98172344400fb7aee63407d5f77874e011ba64c5f9433e15c3ecbc5baaa6"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "53cea04c8e0cae5f35d55988f14bc779cc557a5d695faa0aeeba1911d8112489",
+      "after": "d30b391d4b0e555e475dd2c30f890741aaca108dd4a8e5c4cc8a913fb9ea6597"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "04d9de57a208b1dca09ae98ae1a9f9a790ba800eea7c91329e90bd8c65de326a",
+      "after": "c6fd1d2279da0232c5d12e266e24282bb2dfbac2a3a4666b5e2559904072975e"
+    }
+  },
+  "new_files": {
+    "equipment_colossus_20261010/adapter.gd": "106e4b05455f850e3a014c61fa1e43300b50b2fd5e5984a75e1ff90e708dd817",
+    "equipment_colossus_20261010/passive26.gd": "7bef18785ca96a15aad62b5c6e0c9c0ca6b1833380c0a8ee9dbabd83cc734abc",
+    "equipment_colossus_20261010/common_bridge.gd": "77c6af5783531e798be621b8043c8d13c7268bdbeefb6bb77007cf0cc1245777",
+    "equipment_colossus_20261010/model.gd": "0363caf4209c4d87d0b8fda82424a7bbb7a400e3754b89bb31d657d2017b3370",
+    "equipment_colossus_20261010/user_decisions.json": "ab3137db2a25003ff71a1e08f05459f691660fa96533c42bdc246c92c4f95375"
+  },
+  "scope": "D01 only; C03/elixir05 decisions recorded but not implemented in this candidate",
+  "source_review_required": true
+}

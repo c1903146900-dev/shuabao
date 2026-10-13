@@ -1,0 +1,40 @@
+{
+  "status": "ACTUAL_141_SINGLE_RED_AND_UNCHANGED_ORIGIN_PROBE_PRESERVED_TEST_ONLY_FIX_NOT_RERUN",
+  "previous_binding_sha256": "d8a1b2580fed80b165e73dfb883a3b9a42bc97cf4e50405c04656302c6d394a1",
+  "previous_gate_sha256": "6e3ea59abc1c4cabd930c63e5d5c61695047ae32fc3185555d455d3562d1cc3e",
+  "new_gate_sha256": "7efbd7ac57aef41bf58bd38e343102912056cd05ca96455543e1a2381eed39cf",
+  "preimage_manifest_sha256": "0d72b3e55b7383a355f622ef3a7d5a85d87ace8f39cd3029f1904c8fc8ebf8e2",
+  "actual_red_result_sha256": "0e089a5b78dba15f694a01f2226c02961d3c5ad91703050d380a96ad448ce85b",
+  "actual_probe_result_sha256": "f9893d45627c43fed1f622298e99e52234464bd13c2c9709218e325204cac23e",
+  "actual_probe_source_sha256": "d16e8a79c3eeb11b2f599769cd322c6e7dd2a79005126e50aabdbfd69257521e",
+  "actual_finding": {
+    "hero_origin": [
+      0,
+      0,
+      5
+    ],
+    "BASIC_original_full_path_contact_finite": false,
+    "target": [
+      -1.3,
+      0,
+      0
+    ],
+    "steps": 6,
+    "duration": 0.12,
+    "source_scope": "readback Godot probe, not inferred timing failure"
+  },
+  "only_behavioral_change": "Set hero.position=Vector3.ZERO only inside concurrent_basic_pause fixture before original targets and original casts",
+  "unchanged": [
+    "all three target positions",
+    "original aim point",
+    "Q1 drawing path",
+    "step .02 + .02 + .08",
+    "all141 assertions",
+    "all11 groups",
+    "production scripts",
+    "lifesteal leaf",
+    "538f mechanism core"
+  ],
+  "engine_invocations_by_worker": 0,
+  "repair_runtime": "NOT_RUN"
+}

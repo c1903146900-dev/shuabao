@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "not_user_approved": false,
+  "production_runtime_enabled": false,
+  "pending": [],
+  "technical_conventions_for_review": {
+    "push_duration": "Original supplies distance but no duration; a declared transport duration may use the existing 0.35-second convention, without inventing a separate stun.",
+    "initial_overlap": "No source-authorized ejection or extra birth control. A movement beginning within the newly raised mountain should be allowed only while monotonically reducing penetration, then ordinary swept blocking resumes.",
+    "collapse_geometry": "Existing reviewed G18 map explicitly binds a rectangle to Q3-7/Q3-8. Its origin is the mountain center and direction is mountain-to-current-manual-mouse; no homing and no H05 width scaling.",
+    "projectile_families": "All actual enemy families (bolt, hex_bolt, lob) are included. Lob height is presentation only; original grants no aerial-projectile exception.",
+    "expiry": "Lifetime expires in inherited hero/actor time; pause/frozen-room time stays frozen, no natural-expiry collapse damage. Existing static arena/obstacle policy remains unchanged."
+  },
+  "source_literal_claim": false,
+  "implementation_conventions": {
+    "authority": "Parent technical direction 2026-10-04 20:36 UTC; implementation/tunable conventions, not verbatim original source or user playtest acceptance",
+    "mountain_orientation": "Long axis perpendicular to caster-to-selected-point; preview shows it. Coincident target uses stable last valid facing.",
+    "cooldown_start": "First actual raise starts CD. Existing-mountain recast reuses root cast and bypasses only that CD.",
+    "H05_scope": "Mountain length only; independent collapse width and length unchanged.",
+    "push_duration_seconds": 0.35,
+    "push_duration_note": "Existing technical transport duration, no extra stun. H06 alone applies source 0.8s stun."
+  }
+}

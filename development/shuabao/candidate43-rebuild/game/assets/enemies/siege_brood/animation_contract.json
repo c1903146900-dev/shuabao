@@ -1,0 +1,457 @@
+{
+  "revision": 4,
+  "forward_axis": "-Z",
+  "up_axis": "+Y",
+  "root_motion": false,
+  "enemies": {
+    "minion": {
+      "asset": "res://assets/enemies/siege_brood/minion/minion.glb",
+      "height_m": 1.16,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.66,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.66,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 1.1400000000000001,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.46,
+            "anticipation_hold": 0.37,
+            "settled": 0.73
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.46,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 0.68,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 8,
+      "meshes": 4,
+      "ground_warning": false,
+      "windup_s": 0.46,
+      "recovery_s": 0.68
+    },
+    "pouncer": {
+      "asset": "res://assets/enemies/siege_brood/pouncer/pouncer.glb",
+      "height_m": 0.82,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.4,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.4,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 1.7200000000000002,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.62,
+            "anticipation_hold": 0.53,
+            "settled": 0.89
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.62,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        },
+        "leap": {
+          "duration_s": 2.12,
+          "loop_recommended": false,
+          "events": {
+            "takeoff": 0.62,
+            "contact": 1.02,
+            "settled": 1.22
+          }
+        }
+      },
+      "bones": 11,
+      "meshes": 4,
+      "ground_warning": false,
+      "windup_s": 0.62,
+      "recovery_s": 1.1
+    },
+    "ranged": {
+      "asset": "res://assets/enemies/siege_brood/ranged/ranged.glb",
+      "height_m": 1.9,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 1.7600000000000002,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.68,
+            "anticipation_hold": 0.5800000000000001,
+            "settled": 0.9500000000000001
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.68,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 1.08,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 10,
+      "meshes": 4,
+      "ground_warning": false,
+      "windup_s": 0.68,
+      "recovery_s": 1.08,
+      "visual_revision": "split_cannon_censer_v2",
+      "cast_socket": "socket_cast"
+    },
+    "armored": {
+      "asset": "res://assets/enemies/siege_brood/armored/armored.glb",
+      "height_m": 1.14,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 1.75,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.65,
+            "anticipation_hold": 0.55,
+            "settled": 0.92
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.65,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 10,
+      "meshes": 4,
+      "ground_warning": false,
+      "windup_s": 0.65,
+      "recovery_s": 1.1
+    },
+    "elite": {
+      "asset": "res://assets/enemies/siege_brood/elite/elite.glb",
+      "height_m": 2.56,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 1.05,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 1.05,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 2.35,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.9,
+            "anticipation_hold": 0.785,
+            "settled": 1.26
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.9,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 1.45,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 12,
+      "meshes": 4,
+      "ground_warning": false,
+      "windup_s": 0.9,
+      "recovery_s": 1.45
+    },
+    "pitcher": {
+      "asset": "res://assets/enemies/siege_brood/pitcher/pitcher.glb",
+      "height_m": 1.97,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 3.0,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.8,
+            "anticipation_hold": 0.7000000000000001,
+            "settled": 1.07
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.8,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 2.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 11,
+      "meshes": 5,
+      "ground_warning": false,
+      "windup_s": 0.8,
+      "recovery_s": 2.2
+    },
+    "support": {
+      "asset": "res://assets/enemies/siege_brood/support/support.glb",
+      "height_m": 2.3,
+      "clips": {
+        "idle": {
+          "duration_s": 1.6,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "run": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "locomotion": {
+          "duration_s": 0.86,
+          "loop_recommended": true,
+          "events": {}
+        },
+        "attack": {
+          "duration_s": 3.16,
+          "loop_recommended": false,
+          "events": {
+            "contact": 0.76,
+            "anticipation_hold": 0.66,
+            "settled": 1.03
+          }
+        },
+        "anticipation": {
+          "duration_s": 0.76,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "recovery": {
+          "duration_s": 2.4,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hit": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "hurt": {
+          "duration_s": 0.2,
+          "loop_recommended": false,
+          "events": {}
+        },
+        "death": {
+          "duration_s": 1.1,
+          "loop_recommended": false,
+          "events": {
+            "collapse": 0.4
+          }
+        }
+      },
+      "bones": 13,
+      "meshes": 5,
+      "ground_warning": false,
+      "windup_s": 0.76,
+      "recovery_s": 2.4
+    }
+  },
+  "combat_upgrade": "weighted_anticipation_snap_contact_textured_layered_vfx",
+  "authoritative_damage": "simulation events only; animation never applies damage",
+  "sample_rate_fps": 60,
+  "role_revision": "body_weapon_telegraphs_six_distinct_roles"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "swift05-common-projection-visual-successor-1",
+  "prior_candidate_source": "0e6d73df3145d7681b59a5e99d20f20ab5287552a94d506269997a0219872432",
+  "changes": {
+    "scripts/combat/common_hex_bridge.gd": {
+      "before": "3bf945cf040051295e496617cef7c52bec35c7c0ae5fab73d9234961c75b88dd",
+      "after": "006058789a60df858b21d7fb04269d8849859b14ef35b1cc203ea8921b7e9763"
+    }
+  },
+  "scope": "Only original external-detection-preserving pure projection getter; no gameplay timing or input mutation"
+}

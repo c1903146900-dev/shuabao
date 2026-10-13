@@ -1,0 +1,195 @@
+--- /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/natural_route_replay.gd
++++ /workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_r06_prepare/natural_route_r06.gd
+@@ -1,5 +1,5 @@
+ extends SceneTree
+-## Continuous new-run source-input replay through r01a, r02a and r03a rest.
++## Continuous new-run source-input replay through r01a, r02a, r03a rest, r04a training, r05a elite and r06a training.
+ ## Synthetic player inputs, never native GUI/CUA completion evidence.
+ ## Original Host alone owns held-basic updates and simulation time.
+ const ENTRY := "res://visual_rework_20261009/entry.tscn"
+@@ -34,7 +34,14 @@
+ var route_preparations: Array=[]
+ var rest_entry: Dictionary={}
+ var rest_completion: Dictionary={}
+-const ROUTE_NODES := ["r01a","r02a","r03a"]
++const ROUTE_NODES := ["r01a","r02a","r03a","r04a","r05a","r06a"]
++const EXPECTED_ROSTERS := {1:["minion","minion","minion","minion"],2:["armored","armored","minion","minion"],5:["elite","minion","minion","minion"]}
++var rest_verified: bool=false
++var rest_observation: Dictionary={}
++var service_records: Array=[]
++var potion_observations: Array=[]
++var last_potion_sample: Dictionary={}
++var rank3_upgrade: Dictionary={}
+ 
+ func _initialize() -> void:
+  started_ms=Time.get_ticks_msec()
+@@ -78,6 +85,11 @@
+  return out
+ 
+ func observe() -> Dictionary:
++ var model_state: Dictionary=model.snapshot()
++ var current_potion: Dictionary=model_state.get("ordinary_potion_recovery",{}).duplicate(true)
++ if int(current_potion.get("committed_effect_count",0))>0 and current_potion!=last_potion_sample:
++  potion_observations.append({"hero_time":sim.hero_time,"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"hero_hp":sim.hero.hp,"max_hp":sim.hero.stats.max_hp,"source_consumer":current_potion})
++  last_potion_sample=current_potion.duplicate(true)
+  var rewards: Dictionary={}
+  for id: Variant in model.state.reward_ids:
+   var key: String="ink-reward:"+str(id)
+@@ -86,7 +98,7 @@
+  for enemy: Dictionary in sim.enemies:
+   actors.append({"actor_id":enemy.actor_id,"kind":enemy.kind,"hp":enemy.hp,"max_hp":enemy.get("max_hp",null),"dead":enemy.dead,"state":enemy.state,"generation":enemy.get("generation",-1),"room_id":enemy.get("room_id",""),"position":enemy.position})
+  return {"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"identities":identity(),"source_binding_sha256":loaded_source_sha,"phase":sim.phase,"paused":sim.paused,"hero_dead":sim.hero.dead,"hero_hp":sim.hero.hp,"hero_stats":sim.hero.stats.duplicate(true),"hero_cooldowns":sim.hero.cooldowns.duplicate(true),"hero_position":sim.hero.position,"hero_time":sim.hero_time,"ai_enabled":sim.ai_enabled,"auto_finish":sim.auto_finish,"generation":sim.encounter_generation,"room_id":sim.room_id,
+-  "model_state":model.snapshot(),"flow":session.snapshot(),"original_reward_receipts":rewards,"reward_binding":model.reward_binding(),"selected_hex_definitions":selected_hex_definitions(),"actors":actors,"source_events_seen":events.size(),"source_kills_seen":kill_count(),"host_inputs":host.inputs.duplicate(true),"host_initial_actions":host.initial_actions.duplicate(true),"host_startup_error":host.startup_session_error,"host_floor_error":host.floor_error}
++  "model_state":model_state,"flow":session.snapshot(),"original_reward_receipts":rewards,"reward_binding":model.reward_binding(),"selected_hex_definitions":selected_hex_definitions(),"actors":actors,"source_events_seen":events.size(),"source_kills_seen":kill_count(),"host_inputs":host.inputs.duplicate(true),"host_initial_actions":host.initial_actions.duplicate(true),"host_startup_error":host.startup_session_error,"host_floor_error":host.floor_error}
+ 
+ func kill_count() -> int:
+  var count: int=0
+@@ -126,8 +138,8 @@
+   kinds.append(str(enemy.kind))
+   check(enemy.actor_id in roster_ids and int(enemy.generation)==first_generation and enemy.room_id==first_room,"original actor identity/scope "+str(enemy.actor_id))
+  kinds.sort()
+- var expected: Array=["minion","minion","minion","minion"] if combat_row==1 else ["armored","armored","minion","minion"]
+- check(kinds==expected,"authored r01a/r02a enemy kinds remain unchanged")
++ var expected: Array=EXPECTED_ROSTERS.get(combat_row,[])
++ check(kinds==expected,"authored combat-row enemy kinds remain unchanged")
+  save_json("row%d_original_roster.json"%combat_row,{"row":combat_row,"room_id":first_room,"generation":first_generation,"expected_ids":roster_ids,"actors_at_first_observation":roster,"selected_node":selected})
+ 
+ func verify_combat_success(state: Dictionary) -> bool:
+@@ -140,8 +152,8 @@
+  if completed.size()==combat_row:
+   var entered: Dictionary=completed.back().entry.payload
+   check(str(entered.get("room_id",""))==first_room and int(entered.get("generation",-1))==first_generation,"completed row entry matches this observed room and generation")
+- check(terminals.size()==combat_row,"one source terminal snapshot per continuously completed combat room")
+- if terminals.size()==combat_row:
++ check(terminals.size()==combat_records.size()+1,"one source terminal snapshot per continuously completed combat room")
++ if terminals.size()==combat_records.size()+1:
+   check(str(terminals.back().get("room_id",""))==first_room and int(terminals.back().get("generation",-1))==first_generation and terminals.back().get("phase","")=="victory","source terminal matches the observed current combat room scope")
+  check(state.flow.fault.is_empty() and state.host_startup_error.is_empty() and state.host_floor_error.is_empty(),"original flow and Host remain fault-free")
+  check(state.identities==identities and roster_ids.size()==4 and state.actors.size()==4 and session.kill_receipts.size()==4,"same owners and four original actors have four authentic Session kill receipts")
+@@ -192,18 +204,68 @@
+  save_json("original_rest_evidence.json",{"entry":rest_entry,"completion":rest_completion,"settlements":settlements,"final_state":state})
+  return failures.is_empty() and io_errors.is_empty()
+ 
++func complete_entered_training(row: int, entered: Dictionary) -> Dictionary:
++ await process_frame
++ var inspection: Dictionary=driver.inspect_and_skip_original_training(row)
++ if not inspection.get("accepted",false):return inspection
++ var completion: Dictionary=driver.complete_original_service()
++ await process_frame
++ var after: Dictionary=observe()
++ var record: Dictionary={"row":row,"entry":entered.duplicate(true),"inspection":inspection,"completion":completion,"after":after}
++ service_records.append(record)
++ save_json("row%d_original_training.json"%row,record)
++ if not completion.get("accepted",false):return completion
++ var rows: Array=after.flow.row_state.get("completed_rows",[])
++ if rows.size()!=row or rows.back().identity.node_id!=ROUTE_NODES[row-1] or rows.back().entry.payload.service_type!="training":return {"accepted":false,"reason":"original_training_completion_scope_failed"}
++ var before: Dictionary=entered.before_entry
++ for key: String in ["gold","xp","level","points","body"]:
++  if before.model[key]!=after.model_state[key]:return {"accepted":false,"reason":"training_skip_changed_resource:"+key}
++ if absf(float(before.hp)-float(after.hero_hp))>0.001:return {"accepted":false,"reason":"training_skip_changed_HP"}
++ await capture("row%d_original_training_ready"%row,after)
++ return {"accepted":true,"row":row,"paid":false}
++
++func enter_and_complete_training(row: int) -> Dictionary:
++ var entered: Dictionary=await driver.prepare_next_original_node(row,ROUTE_NODES[row-1])
++ route_preparations.append(entered.duplicate(true))
++ if not entered.get("accepted",false):return entered
++ return await complete_entered_training(row,entered)
++
++func verify_r06_success(state: Dictionary) -> bool:
++ check(rest_verified,"r03 original rest was verified before any later progression")
++ check(combat_records.size()==3 and terminals.size()==3,"three original combat rooms retain three source terminals")
++ check(service_records.size()==2,"r04 and r06 original training readiness records retained")
++ check(state.identities==identities and not state.hero_dead and state.flow.fault.is_empty() and state.host_floor_error.is_empty(),"same continuous owners remain alive and fault-free")
++ var rows: Array=state.flow.row_state.get("completed_rows",[])
++ check(rows.size()==6 and int(state.flow.node_index)==6 and state.flow.status=="between_rooms","six original route nodes completed to training readiness")
++ for index in range(mini(6,rows.size())):
++  check(rows[index].identity.node_id==ROUTE_NODES[index] and rows[index].identity.run_id==identities.run_id,"original continuous completed node "+ROUTE_NODES[index])
++ for record: Dictionary in combat_records:
++  check(record.get("passed",false) and record.original_receipts.size()==4,"four verified scoped original rewards for "+str(record.node))
++ check(state.model_state.body.is_empty(),"no paid or free training outcome was introduced")
++ check(state.flow.get("rest_settlements",[]).size()==1,"later training never repeats rest settlement")
++ var uses: Array=driver.potion_uses
++ check(uses.size()<=1,"at most one original visible potion-button attempt")
++ if driver.potion_purchase.get("purchased",false):
++  check(driver.potion_purchase.get("accepted",false),"original one-bottle purchase accounting was verified")
++ if not uses.is_empty():
++  check(uses[0].get("actual_button_signal",false) and not uses[0].get("native_input",true),"potion attempt came from the real visible UI button signal")
++  if uses[0].result.get("accepted",false):
++   check(not potion_observations.is_empty(),"accepted potion has original consumer combat-clock observations")
++ save_json("r06_route_evidence.json",{"combat_records":combat_records,"rest_verified":rest_verified,"services":service_records,"potion_purchase":driver.potion_purchase,"potion_uses":uses,"potion_observations":potion_observations,"rank3_upgrade":rank3_upgrade,"final":state})
++ return failures.is_empty() and io_errors.is_empty()
++
+ func finish(reason: String, state: Dictionary) -> void:
+  finishing=true
+  # Freeze the genuine terminal/pre-exit state BEFORE releasing the entry.
+  # Never press F10 or call close_run to manufacture a terminal state.
+  save_json("pre_exit_state.json",state)
+  var successful: bool=false
+- if reason=="r03_original_rest_settled":successful=verify_rest_success(state)
+- else:check(false,"continuous route through r03 incomplete: "+reason)
++ if reason=="r06_original_training_ready":successful=verify_r06_success(state)
++ else:check(false,"continuous route through r06 incomplete: "+reason)
+  await capture("final_"+reason,state)
+- var report: Dictionary={"passed":successful and failures.is_empty() and io_errors.is_empty(),"reason":reason,"checks":check_records,"failures":failures,"io_errors":io_errors,"initial":initial,"pre_exit":state,"original_roster":roster,"expected_roster_ids":roster_ids,"combat_records":combat_records,"route_preparations":route_preparations,"rest_entry":rest_entry,"rest_completion":rest_completion,"events":events,"terminals":terminals,"checkpoints":checkpoints,"automatic_gameplay_actions":driver.receipts.duplicate(true) if driver!=null else [],"replay_visibility":driver.visibility_log.duplicate(true) if driver!=null else [],"input_replay":true,"native_input":false,"startup_actions":["load actual entry","request_start yanguizhou"],"wallet_HP_AI_enemy_clock_fixtures":false,"extra_sim_steps":false,"source_input_injection":true,"native_input_provenance":"Synthetic events through the original HUD/Controller and input router; not OS input, native CUA, or a manual-clear claim.","natural_first_room_only":false,"continuous_new_run":true,"target_route":["r01a","r02a","r03a"],"checkpoint_state_restored":false,"full_floor_victory":false,"selected_hex_may_affect_economy_or_xp":true,"hardcoded_gold_xp_total":false,"wall_limit_ms":WALL_MS,"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"source_binding_sha256":loaded_source_sha}
++ var report: Dictionary={"passed":successful and failures.is_empty() and io_errors.is_empty(),"reason":reason,"checks":check_records,"failures":failures,"io_errors":io_errors,"initial":initial,"pre_exit":state,"original_roster":roster,"expected_roster_ids":roster_ids,"combat_records":combat_records,"route_preparations":route_preparations,"rest_entry":rest_entry,"rest_completion":rest_completion,"rest_verified":rest_verified,"rest_observation":rest_observation,"service_records":service_records,"rank3_upgrade":rank3_upgrade,"potion_purchase":driver.potion_purchase.duplicate(true) if driver!=null else {},"potion_uses":driver.potion_uses.duplicate(true) if driver!=null else [],"potion_observations":potion_observations,"training_skips":driver.training_skips.duplicate(true) if driver!=null else [],"events":events,"terminals":terminals,"checkpoints":checkpoints,"automatic_gameplay_actions":driver.receipts.duplicate(true) if driver!=null else [],"replay_visibility":driver.visibility_log.duplicate(true) if driver!=null else [],"input_replay":true,"native_input":false,"startup_actions":["load actual entry","request_start yanguizhou"],"wallet_HP_AI_enemy_clock_fixtures":false,"extra_sim_steps":false,"source_input_injection":true,"native_input_provenance":"Synthetic events through the original HUD/Controller and input router; not OS input, native CUA, or a manual-clear claim.","natural_first_room_only":false,"continuous_new_run":true,"target_route":ROUTE_NODES,"checkpoint_state_restored":false,"full_floor_victory":false,"selected_hex_may_affect_economy_or_xp":true,"hardcoded_gold_xp_total":false,"wall_limit_ms":WALL_MS,"wall_elapsed_ms":Time.get_ticks_msec()-started_ms,"source_binding_sha256":loaded_source_sha}
+  save_json("report.json",report)
+- print("NATURAL_ROUTE_REPLAY ",JSON.stringify({"passed":report.passed,"reason":reason,"gold":state.get("model_state",{}).get("gold",-1),"xp":state.get("model_state",{}).get("xp",-1),"result":output.path_join("report.json")}))
++ print("NATURAL_ROUTE_R06_REPLAY ",JSON.stringify({"passed":report.passed,"reason":reason,"gold":state.get("model_state",{}).get("gold",-1),"xp":state.get("model_state",{}).get("xp",-1),"result":output.path_join("report.json")}))
+  if is_instance_valid(entry):entry.free()
+  await process_frame
+  quit(0 if report.passed and io_errors.is_empty() else 2)
+@@ -241,11 +303,11 @@
+  for skill: Dictionary in initial.model_state.skills.values():check(int(skill.rank)==0,"fresh skills remain unlearned before source input replay")
+  await capture("initial_zero_start",initial)
+  if not failures.is_empty():await finish("startup_contract_failed",initial);return
+- var driver_script: Script=load(get_script().resource_path.get_base_dir().path_join("visible_route_replay.gd"))
++ var driver_script: Script=load(get_script().resource_path.get_base_dir().path_join("visible_route_r06.gd"))
+  if driver_script==null:await finish("replay_driver_missing",initial);return
+  driver=driver_script.new()
+  driver.bind_existing(host,started_ms+WALL_MS)
+- save_json("ready.json",{"ready":true,"input_replay":true,"native_input":false,"automatic_actions":["visible offered initial Hex slot1","original1SP Q1 learning","original r01a selection/entry","visible-target WASD, held BASIC and Q1 gesture","earned Q1 rank2 when legally available","connected r02a and original r03a rest"],"deadline_wall_ms_from_script_start":WALL_MS,"identities":identities,"initial_snapshot":"00_initial_zero_start.json"})
++ save_json("ready.json",{"ready":true,"input_replay":true,"native_input":false,"automatic_actions":["visible offered initial Hex slot1","original1SP Q1 learning","original r01a selection/entry","visible-target WASD, held BASIC and Q1 gesture","earned Q1 rank2 when legally available","connected r02a and original r03a rest","original earned Q1 rank3 and one200g potion when affordable","original training Continue r04a/r06a","original visible potion button below60% HP in combat"],"deadline_wall_ms_from_script_start":WALL_MS,"identities":identities,"initial_snapshot":"00_initial_zero_start.json"})
+  var prepared: Dictionary=await driver.prepare_first_room()
+  save_json("replay_preparation.json",prepared)
+  route_preparations.append(prepared.duplicate(true))
+@@ -264,7 +326,7 @@
+   var selected: Dictionary=state.flow.row_state.get("selected_node",{})
+   if not selected.is_empty():
+    var selected_row: int=int(selected.get("row_number",-1))
+-   if selected_row<1 or selected_row>3 or selected.get("node_id","")!=ROUTE_NODES[selected_row-1]:await finish("wrong_replay_route_selection",state);return
++   if selected_row<1 or selected_row>6 or selected.get("node_id","")!=ROUTE_NODES[selected_row-1]:await finish("wrong_replay_route_selection",state);return
+   if not state.flow.fault.is_empty() or not state.host_floor_error.is_empty():await finish("original_flow_fault",state);return
+   if state.hero_dead or state.flow.status=="defeated":await finish("natural_death",state);return
+   if state.flow.status in ["aborted","faulted"]:await finish("original_run_"+str(state.flow.status),state);return
+@@ -281,10 +343,28 @@
+    if next_row==3:
+     rest_entry=next_entry.duplicate(true)
+     await process_frame
+-    rest_completion=driver.complete_original_rest()
++    rest_completion=driver.complete_original_service()
+     await process_frame
+     if not rest_completion.get("accepted",false):check(false,"original rest readiness: "+str(rest_completion.get("reason","")));await finish("r03_original_rest_readiness_incomplete",observe());return
+-    await finish("r03_original_rest_settled",observe());return
++    rest_observation=observe()
++    rest_verified=verify_rest_success(rest_observation)
++    if not rest_verified:await finish("r03_original_rest_verification_failed",rest_observation);return
++    await capture("r03_original_rest_verified",rest_observation)
++    rank3_upgrade=driver.upgrade_earned_Q1_once(2)
++    if not rank3_upgrade.get("accepted",false):await finish("original_rank3_upgrade_rejected",observe());return
++    var bought: Dictionary=driver.buy_one_original_potion()
++    if not bought.get("accepted",false):await finish("original_potion_purchase_rejected",observe());return
++    var training4: Dictionary=await enter_and_complete_training(4)
++    if not training4.get("accepted",false):await finish("r04_original_training_incomplete",observe());return
++    var elite_entry: Dictionary=await driver.prepare_next_original_node(5,"r05a")
++    route_preparations.append(elite_entry.duplicate(true))
++    if not elite_entry.get("accepted",false):await finish("r05_original_entry_rejected",observe());return
++    combat_row=5
++    continue
++   if next_row==6:
++    var training6: Dictionary=await complete_entered_training(6,next_entry)
++    if not training6.get("accepted",false):await finish("r06_original_training_incomplete",observe());return
++    await finish("r06_original_training_ready",observe());return
+    combat_row=next_row
+    continue
+   if not state.model_state.pending_milestones.is_empty():

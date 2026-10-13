@@ -1,0 +1,646 @@
+{
+  "hero_id": "yanguizhou",
+  "floor_id": "first_floor",
+  "row_count": 12,
+  "selection_rule": "one_node_per_row",
+  "completion_rule": "boss_defeated_and_coordinator_completed",
+  "candidate": true,
+  "release": false,
+  "production_ready": false,
+  "rows": [
+    {
+      "number": 1,
+      "nodes": [
+        {
+          "id": "r01a",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r02a",
+            "r02b"
+          ]
+        },
+        {
+          "id": "r01b",
+          "payload_ref": "ordinary_b",
+          "next": [
+            "r02a",
+            "r02b",
+            "r02c"
+          ]
+        },
+        {
+          "id": "r01c",
+          "payload_ref": "ordinary_c",
+          "next": [
+            "r02b",
+            "r02c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "nodes": [
+        {
+          "id": "r02a",
+          "payload_ref": "ordinary_b",
+          "next": [
+            "r03a"
+          ]
+        },
+        {
+          "id": "r02b",
+          "payload_ref": "training",
+          "next": [
+            "r03b"
+          ]
+        },
+        {
+          "id": "r02c",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r03c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "nodes": [
+        {
+          "id": "r03a",
+          "payload_ref": "rest",
+          "next": [
+            "r04a"
+          ]
+        },
+        {
+          "id": "r03b",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r04b"
+          ]
+        },
+        {
+          "id": "r03c",
+          "payload_ref": "rest",
+          "next": [
+            "r04c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "nodes": [
+        {
+          "id": "r04a",
+          "payload_ref": "training",
+          "next": [
+            "r05a"
+          ]
+        },
+        {
+          "id": "r04b",
+          "payload_ref": "rest",
+          "next": [
+            "r05a",
+            "r05b"
+          ]
+        },
+        {
+          "id": "r04c",
+          "payload_ref": "ordinary_c",
+          "next": [
+            "r05b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "nodes": [
+        {
+          "id": "r05a",
+          "payload_ref": "elite_a",
+          "next": [
+            "r06a",
+            "r06b"
+          ]
+        },
+        {
+          "id": "r05b",
+          "payload_ref": "elite_c",
+          "next": [
+            "r06b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "nodes": [
+        {
+          "id": "r06a",
+          "payload_ref": "training",
+          "next": [
+            "r07a",
+            "r07b"
+          ]
+        },
+        {
+          "id": "r06b",
+          "payload_ref": "training",
+          "next": [
+            "r07b",
+            "r07c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "nodes": [
+        {
+          "id": "r07a",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r08a",
+            "r08b"
+          ]
+        },
+        {
+          "id": "r07b",
+          "payload_ref": "ordinary_b",
+          "next": [
+            "r08b",
+            "r08c"
+          ]
+        },
+        {
+          "id": "r07c",
+          "payload_ref": "ordinary_c",
+          "next": [
+            "r08c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "nodes": [
+        {
+          "id": "r08a",
+          "payload_ref": "ordinary_b",
+          "next": [
+            "r09a",
+            "r09b"
+          ]
+        },
+        {
+          "id": "r08b",
+          "payload_ref": "elite_b",
+          "next": [
+            "r09a",
+            "r09b"
+          ]
+        },
+        {
+          "id": "r08c",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r09a",
+            "r09b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "nodes": [
+        {
+          "id": "r09a",
+          "payload_ref": "rest",
+          "next": [
+            "r10a",
+            "r10b"
+          ]
+        },
+        {
+          "id": "r09b",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r10b",
+            "r10c"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "nodes": [
+        {
+          "id": "r10a",
+          "payload_ref": "ordinary_a",
+          "next": [
+            "r11a"
+          ]
+        },
+        {
+          "id": "r10b",
+          "payload_ref": "ordinary_b",
+          "next": [
+            "r11a",
+            "r11b"
+          ]
+        },
+        {
+          "id": "r10c",
+          "payload_ref": "ordinary_c",
+          "next": [
+            "r11b"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "nodes": [
+        {
+          "id": "r11a",
+          "payload_ref": "rest",
+          "next": [
+            "r12boss"
+          ]
+        },
+        {
+          "id": "r11b",
+          "payload_ref": "rest",
+          "next": [
+            "r12boss"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "nodes": [
+        {
+          "id": "r12boss",
+          "payload_ref": "boss",
+          "next": []
+        }
+      ]
+    }
+  ],
+  "start_nodes": [
+    "r01a",
+    "r01b",
+    "r01c"
+  ],
+  "path_constraints": {
+    "boss": {
+      "min": 1,
+      "max": 1,
+      "terminal_row": 12
+    },
+    "elite": {
+      "min": 1,
+      "max": 2
+    },
+    "rest": {
+      "min": 2,
+      "max": 3
+    },
+    "training": {
+      "min": 1,
+      "max": 2
+    },
+    "ordinary": "all_remaining_rows"
+  },
+  "presentation": {
+    "progression": "bottom_to_top",
+    "columns_are_visual_only": true,
+    "crossing_edges_are_not_junctions": true,
+    "node_x": {
+      "r01a": 160,
+      "r01b": 380,
+      "r01c": 600,
+      "r02a": 160,
+      "r02b": 380,
+      "r02c": 600,
+      "r03a": 160,
+      "r03b": 380,
+      "r03c": 600,
+      "r04a": 160,
+      "r04b": 380,
+      "r04c": 600,
+      "r05a": 270,
+      "r05b": 490,
+      "r06a": 270,
+      "r06b": 490,
+      "r07a": 160,
+      "r07b": 380,
+      "r07c": 600,
+      "r08a": 160,
+      "r08b": 380,
+      "r08c": 600,
+      "r09a": 270,
+      "r09b": 490,
+      "r10a": 160,
+      "r10b": 380,
+      "r10c": 600,
+      "r11a": 270,
+      "r11b": 490,
+      "r12boss": 380
+    }
+  },
+  "interface_requirements": {
+    "shop_is_map_node": false,
+    "shop_key": "P",
+    "shop_open_when": [
+      "after_any_combat",
+      "all_non_combat_nodes"
+    ],
+    "same_room_close_reopen_preserves_undo": true,
+    "enter_any_next_room_commits": true,
+    "body_training_undo_allowed": false,
+    "rest_effects": "existing_authority_required_no_invented_heal_amount",
+    "safe_node_completion": "explicit_owner_exit",
+    "runtime_content_binding_required": true
+  },
+  "schema_version": 5,
+  "version": "user-route-runtime01",
+  "title": "晏归舟第一层 · 十二行连线路径候选",
+  "content_status": "developer_proposal",
+  "authority": {
+    "topology_approved": false,
+    "node_frequency_approved": true,
+    "user_rule_source": "Sentinel_58891f6c400481918ae8be5a3771f473",
+    "source_route_sha256": "9d568f7700da71afeb637e09d7a24454fc81bb7b544429903969b6f25c1f7b10"
+  },
+  "payloads": {
+    "ordinary_a": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "minion",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            6,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "ordinary_b": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "armored",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "armored",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            6,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "ordinary_c": {
+      "node_type": "combat",
+      "kind": "ordinary",
+      "roster": [
+        {
+          "kind": "ranged",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "pouncer",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            6,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -3,
+            0,
+            8
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            3,
+            0,
+            8
+          ]
+        }
+      ]
+    },
+    "elite_a": {
+      "node_type": "combat",
+      "kind": "elite",
+      "roster": [
+        {
+          "kind": "elite",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        },
+        {
+          "kind": "minion",
+          "position": [
+            6,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "elite_b": {
+      "node_type": "combat",
+      "kind": "elite",
+      "roster": [
+        {
+          "kind": "elite",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "elite_c": {
+      "node_type": "combat",
+      "kind": "elite",
+      "roster": [
+        {
+          "kind": "elite",
+          "position": [
+            -4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "ranged",
+          "position": [
+            4,
+            0,
+            -6
+          ]
+        },
+        {
+          "kind": "support",
+          "position": [
+            -6,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "boss": {
+      "node_type": "combat",
+      "kind": "boss",
+      "roster": [
+        {
+          "kind": "boss",
+          "position": [
+            0,
+            0,
+            -10
+          ]
+        }
+      ]
+    },
+    "rest": {
+      "node_type": "service",
+      "kind": "rest",
+      "service": {
+        "type": "rest",
+        "area_id": "user-route-rest",
+        "completion_rule": "explicit_owner_exit",
+        "optional_actions": true
+      }
+    },
+    "training": {
+      "node_type": "service",
+      "kind": "training",
+      "service": {
+        "type": "training",
+        "area_id": "user-route-training",
+        "completion_rule": "explicit_owner_exit",
+        "optional_actions": true
+      }
+    }
+  }
+}

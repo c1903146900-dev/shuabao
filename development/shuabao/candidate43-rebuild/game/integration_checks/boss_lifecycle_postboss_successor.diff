@@ -1,0 +1,30 @@
+--- integration_checks/boss_lifecycle_successor.gd
++++ integration_checks/boss_lifecycle_postboss_successor.gd
+@@ -9,14 +9,16 @@
+ const HOME := "res://tests/ink_first_floor_user_route_20261005/runtime01/"
+ const SIM_PATH := "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+ const SESSION_PATH := "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd"
+-const MODEL_PATH := "res://tests/ink_equipment_live_20261008/content01/model.gd"
++const MODEL_PATH := "res://visual_rework_20261009/binding/postboss_model.gd"
++const POSTBOSS_BASE_MODEL_PATH := "res://tests/ink_equipment_live_20261008/content01/model.gd"
++const POSTBOSS_BASE_MODEL_SHA := "af679ebb5a07f5896e69f8a5708d518b341e5eef86118fd47e5048f419a3cb37"
+ const BRIDGE_PATH := "res://visual_rework_20261009/binding/bridge.gd"
+ const DIRECTOR_PATH := "res://tests/ink_first_floor_boss_20261008/source01/enemy_director.gd"
+ const PARENT_DIRECTOR_PATH := "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd"
+ const CLOCK_PATH := "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/clock_facade.gd"
+ const FROZEN_PARENT := "res://tests/ink_equipment_live_20261008/content01/source_binding.json"
+ const FROZEN_PARENT_SHA := "6883687b1149125ea70e92302d111c85aa5d925617c3ae835a9b00c657df3498"
+-const GATE_PATH := "res://integration_checks/boss_lifecycle_successor.gd"
++const GATE_PATH := "res://integration_checks/boss_lifecycle_postboss_successor.gd"
+ const ROUTE := ["r01a", "r02a", "r03a", "r04a", "r05a", "r06a", "r07a", "r08a", "r09a", "r10a", "r11a", "r12boss"]
+ const REQUIRED_GROUPS = ["factory_zero_start_and_single_owners", "initial_row_and_ordinary_delegation", "authentic_room_end_and_next_room_cleanup", "authored_boss_scope_and_owner_death", "authored_boss_close_and_new_run_isolation", "authored_boss_hero_death"]
+ const MAX_TERMINAL_TICKS := 1000
+@@ -106,6 +108,8 @@
+   check(int(skill.rank) == 0 and str(skill.candidate).is_empty(), "no automatically learned skill")
+  check(sim.phase == "preparation" and sim.wave == 0 and sim.encounter_generation == 0 and sim.enemies.is_empty(), "factory remains before first combat")
+  check(model.get_script().resource_path == MODEL_PATH and session.ledger.get_script().resource_path == BRIDGE_PATH, "new binding bridge retains exact equipment content model")
++ check(model.get_script().get_base_script() != null and model.get_script().get_base_script().resource_path == POSTBOSS_BASE_MODEL_PATH, "postboss Model is exactly one inheritance layer over original content01 Model")
++ check(FileAccess.get_sha256(POSTBOSS_BASE_MODEL_PATH) == POSTBOSS_BASE_MODEL_SHA, "original content01 Model SHA is unchanged")
+  check(sim.clock.get_script().resource_path == CLOCK_PATH and sim.enemy_director.get_script().resource_path == DIRECTOR_PATH, "one retained clock with source01 Boss Director")
+  check(sim.enemy_director.get_script().get_base_script().resource_path == PARENT_DIRECTOR_PATH, "Boss Director delegates through exact previous timed Director")
+  check(admitted.capabilities.source_binding_id == FileAccess.get_sha256(Binding.BINDING_PATH), "one verified source binding identity")

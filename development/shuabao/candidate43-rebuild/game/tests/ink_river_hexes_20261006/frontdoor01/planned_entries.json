@@ -1,0 +1,23 @@
+{
+  "status": "PLANNED_NOT_APPLIED_TO_R_OR_S",
+  "changes": [
+    {
+      "target": "res://scripts/integration/yanguizhou_first_floor.gd",
+      "before": "55b2863eb27215aa8fd113fdec296b88fa450e297312280fb19a506cd788bc29",
+      "after": "66183f90b6264f8b3f5f24348879968ed931b52c52b7cdb5c9fddb7db0ad2f13",
+      "planned_source": "tests/ink_river_hexes_20261006/frontdoor01/planned_adapter.gd",
+      "before_line": "extends \"res://tests/ink_r2_ordinary_20261006/candidate01/host.gd\"",
+      "after_line": "extends \"res://tests/ink_river_hexes_20261006/frontdoor01/host.gd\"",
+      "changed_lines": 1
+    },
+    {
+      "target": "res://scripts/ui/hero_chooser.gd",
+      "before": "d281f2f909c40e39a432557c1df146717e703426f09a867255dc064e34dc38ad",
+      "after": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+      "planned_source": "tests/ink_river_hexes_20261006/frontdoor01/planned_chooser.gd",
+      "before_line": "const InkRuntimeText = preload(\"res://tests/ink_r2_ordinary_20261006/candidate01/runtime_text.gd\")",
+      "after_line": "const InkRuntimeText = preload(\"res://tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd\")",
+      "changed_lines": 1
+    }
+  ]
+}

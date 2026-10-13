@@ -1,0 +1,1786 @@
+{
+  "schema": 1,
+  "scope": [
+    "Q3",
+    "H05",
+    "H06"
+  ],
+  "source_only": true,
+  "upstream_binding_sha256": "a79fc889f1cb028099c9baf2882b44f84a3345179b6415ef6113304a8901720e",
+  "records": {
+    "Q3": {
+      "catalog": {
+        "source_id": "Q3",
+        "name": "溪山行旅",
+        "template": "在[Q3-1]米内指定位置立起水墨山体，造成[Q3-2]+[Q3-3]%AP普通伤害。山体长度[Q3-4]米、厚度[Q3-5]米，持续[Q3-6]秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长[Q3-7]米、宽[Q3-8]米的路径内敌人造成[Q3-9]+[Q3-10]%AP普通伤害，并击退可位移敌人[Q3-11]米。基础冷却[Q3-12]秒。",
+        "source": {
+          "source": "mechanics",
+          "file": "heroes_mechanics_no_values_v03(1).docx",
+          "part": "word/document.xml",
+          "paragraph_all_body_descendants": 71
+        },
+        "comment_ids": [],
+        "id": "yanguizhou_q3",
+        "slot": "Q",
+        "rank_cap": 6,
+        "parameters": {
+          "Q3-1": {
+            "token": "Q3-1",
+            "label": "立山距离",
+            "unit": "米",
+            "values": [
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 23,
+              "cells": [
+                "E23",
+                "F23",
+                "G23",
+                "H23",
+                "I23",
+                "J23"
+              ]
+            },
+            "notes": "固定参数；不随技能等级变化",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-2": {
+            "token": "Q3-2",
+            "label": "立山固定伤害",
+            "unit": "点",
+            "values": [
+              25,
+              32,
+              42,
+              59,
+              82,
+              110
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 24,
+              "cells": [
+                "E24",
+                "F24",
+                "G24",
+                "H24",
+                "I24",
+                "J24"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-3": {
+            "token": "Q3-3",
+            "label": "立山AP系数",
+            "unit": "%AP",
+            "values": [
+              25,
+              27,
+              29,
+              33,
+              38,
+              45
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 25,
+              "cells": [
+                "E25",
+                "F25",
+                "G25",
+                "H25",
+                "I25",
+                "J25"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-4": {
+            "token": "Q3-4",
+            "label": "山体长度",
+            "unit": "米",
+            "values": [
+              4.5,
+              4.58,
+              4.7,
+              4.9,
+              5.17,
+              5.5
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 26,
+              "cells": [
+                "E26",
+                "F26",
+                "G26",
+                "H26",
+                "I26",
+                "J26"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-5": {
+            "token": "Q3-5",
+            "label": "山体厚度",
+            "unit": "米",
+            "values": [
+              1.4,
+              1.4,
+              1.4,
+              1.4,
+              1.4,
+              1.4
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 27,
+              "cells": [
+                "E27",
+                "F27",
+                "G27",
+                "H27",
+                "I27",
+                "J27"
+              ]
+            },
+            "notes": "固定参数；不随技能等级变化",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-6": {
+            "token": "Q3-6",
+            "label": "山体持续",
+            "unit": "秒",
+            "values": [
+              5,
+              5.12,
+              5.3,
+              5.6,
+              6,
+              6.5
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 28,
+              "cells": [
+                "E28",
+                "F28",
+                "G28",
+                "H28",
+                "I28",
+                "J28"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-7": {
+            "token": "Q3-7",
+            "label": "崩山路径长度",
+            "unit": "米",
+            "values": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 29,
+              "cells": [
+                "E29",
+                "F29",
+                "G29",
+                "H29",
+                "I29",
+                "J29"
+              ]
+            },
+            "notes": "固定参数；不随技能等级变化",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-8": {
+            "token": "Q3-8",
+            "label": "崩山路径宽度",
+            "unit": "米",
+            "values": [
+              4.5,
+              4.58,
+              4.7,
+              4.9,
+              5.17,
+              5.5
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 30,
+              "cells": [
+                "E30",
+                "F30",
+                "G30",
+                "H30",
+                "I30",
+                "J30"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-9": {
+            "token": "Q3-9",
+            "label": "崩山固定伤害",
+            "unit": "点",
+            "values": [
+              95,
+              126,
+              172,
+              249,
+              353,
+              480
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 31,
+              "cells": [
+                "E31",
+                "F31",
+                "G31",
+                "H31",
+                "I31",
+                "J31"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-10": {
+            "token": "Q3-10",
+            "label": "崩山AP系数",
+            "unit": "%AP",
+            "values": [
+              100,
+              106,
+              115,
+              130,
+              150,
+              175
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 32,
+              "cells": [
+                "E32",
+                "F32",
+                "G32",
+                "H32",
+                "I32",
+                "J32"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-11": {
+            "token": "Q3-11",
+            "label": "崩山击退距离",
+            "unit": "米",
+            "values": [
+              2.5,
+              2.62,
+              2.8,
+              3.1,
+              3.5,
+              4
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 33,
+              "cells": [
+                "E33",
+                "F33",
+                "G33",
+                "H33",
+                "I33",
+                "J33"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          },
+          "Q3-12": {
+            "token": "Q3-12",
+            "label": "基础冷却",
+            "unit": "秒",
+            "values": [
+              12,
+              11.8,
+              11.5,
+              11,
+              10.32,
+              9.5
+            ],
+            "rank_count": 6,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "晏归舟技能",
+              "row": 34,
+              "cells": [
+                "E34",
+                "F34",
+                "G34",
+                "H34",
+                "I34",
+                "J34"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          }
+        },
+        "descriptions": [
+          "在9米内指定位置立起水墨山体，造成25+25%AP普通伤害。山体长度4.5米、厚度1.4米，持续5秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽4.5米的路径内敌人造成95+100%AP普通伤害，并击退可位移敌人2.5米。基础冷却12秒。",
+          "在9米内指定位置立起水墨山体，造成32+27%AP普通伤害。山体长度4.58米、厚度1.4米，持续5.12秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽4.58米的路径内敌人造成126+106%AP普通伤害，并击退可位移敌人2.62米。基础冷却11.8秒。",
+          "在9米内指定位置立起水墨山体，造成42+29%AP普通伤害。山体长度4.7米、厚度1.4米，持续5.3秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽4.7米的路径内敌人造成172+115%AP普通伤害，并击退可位移敌人2.8米。基础冷却11.5秒。",
+          "在9米内指定位置立起水墨山体，造成59+33%AP普通伤害。山体长度4.9米、厚度1.4米，持续5.6秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽4.9米的路径内敌人造成249+130%AP普通伤害，并击退可位移敌人3.1米。基础冷却11秒。",
+          "在9米内指定位置立起水墨山体，造成82+38%AP普通伤害。山体长度5.17米、厚度1.4米，持续6秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽5.17米的路径内敌人造成353+150%AP普通伤害，并击退可位移敌人3.5米。基础冷却10.32秒。",
+          "在9米内指定位置立起水墨山体，造成110+45%AP普通伤害。山体长度5.5米、厚度1.4米，持续6.5秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长8米、宽5.5米的路径内敌人造成480+175%AP普通伤害，并击退可位移敌人4米。基础冷却9.5秒。"
+        ],
+        "targeting": {
+          "input_mode": "point_then_direction",
+          "classification": "source_text_interpretation",
+          "declared_clauses": [
+            "山体长度[Q3-4]米、厚度[Q3-5]米，持续[Q3-6]秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。",
+            "山体存在期间再次释放，使其向鼠标方向坍塌，对长[Q3-7]米、宽[Q3-8]米的路径内敌人造成[Q3-9]+[Q3-10]%AP普通伤害，并击退可位移敌人[Q3-11]米。"
+          ],
+          "restrictions": [
+            "山体长度[Q3-4]米、厚度[Q3-5]米，持续[Q3-6]秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。"
+          ],
+          "authority": "Exact source clauses govern inclusion, immunity and stage targeting; input_mode is not a new restriction."
+        },
+        "semantics": {
+          "resolved": [],
+          "unresolved": [],
+          "related_rule_rows": [
+            {
+              "subject": "全体",
+              "topic": "连锁、追加攻击与百分比生命伤害",
+              "question": "叠加收益与触发递归",
+              "source_handling": "未增加正文之外的控制免疫、次数上限或Boss免伤；仍需实机验证组合强度。",
+              "source": {
+                "source": "numbers",
+                "file": "heroes_balance_values_v03(1).xlsx",
+                "sheet": "规则待确认",
+                "row": 20,
+                "cells": [
+                  "A20",
+                  "B20",
+                  "C20",
+                  "D20"
+                ]
+              }
+            }
+          ],
+          "authority": "Source mechanism retained verbatim; unresolved does not authorize a substitute behavior."
+        }
+      },
+      "original_full_paragraph": "在[Q3-1]米内指定位置立起水墨山体，造成[Q3-2]+[Q3-3]%AP普通伤害。山体长度[Q3-4]米、厚度[Q3-5]米，持续[Q3-6]秒，阻挡普通敌人移动与敌方投射物，不阻挡玩家。山体存在期间再次释放，使其向鼠标方向坍塌，对长[Q3-7]米、宽[Q3-8]米的路径内敌人造成[Q3-9]+[Q3-10]%AP普通伤害，并击退可位移敌人[Q3-11]米。基础冷却[Q3-12]秒。",
+      "numeric_cells": {
+        "Q3-1": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E23",
+            "F23",
+            "G23",
+            "H23",
+            "I23",
+            "J23"
+          ],
+          "actual": [
+            {
+              "value": 9,
+              "formula": false
+            },
+            {
+              "value": 9,
+              "formula": false
+            },
+            {
+              "value": 9,
+              "formula": false
+            },
+            {
+              "value": 9,
+              "formula": false
+            },
+            {
+              "value": 9,
+              "formula": false
+            },
+            {
+              "value": 9,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-2": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E24",
+            "F24",
+            "G24",
+            "H24",
+            "I24",
+            "J24"
+          ],
+          "actual": [
+            {
+              "value": 25,
+              "formula": false
+            },
+            {
+              "value": 32,
+              "formula": false
+            },
+            {
+              "value": 42,
+              "formula": false
+            },
+            {
+              "value": 59,
+              "formula": false
+            },
+            {
+              "value": 82,
+              "formula": false
+            },
+            {
+              "value": 110,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-3": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E25",
+            "F25",
+            "G25",
+            "H25",
+            "I25",
+            "J25"
+          ],
+          "actual": [
+            {
+              "value": 25,
+              "formula": false
+            },
+            {
+              "value": 27,
+              "formula": false
+            },
+            {
+              "value": 29,
+              "formula": false
+            },
+            {
+              "value": 33,
+              "formula": false
+            },
+            {
+              "value": 38,
+              "formula": false
+            },
+            {
+              "value": 45,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-4": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E26",
+            "F26",
+            "G26",
+            "H26",
+            "I26",
+            "J26"
+          ],
+          "actual": [
+            {
+              "value": 4.5,
+              "formula": false
+            },
+            {
+              "value": 4.58,
+              "formula": false
+            },
+            {
+              "value": 4.7,
+              "formula": false
+            },
+            {
+              "value": 4.9,
+              "formula": false
+            },
+            {
+              "value": 5.17,
+              "formula": false
+            },
+            {
+              "value": 5.5,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-5": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E27",
+            "F27",
+            "G27",
+            "H27",
+            "I27",
+            "J27"
+          ],
+          "actual": [
+            {
+              "value": 1.4,
+              "formula": false
+            },
+            {
+              "value": 1.4,
+              "formula": false
+            },
+            {
+              "value": 1.4,
+              "formula": false
+            },
+            {
+              "value": 1.4,
+              "formula": false
+            },
+            {
+              "value": 1.4,
+              "formula": false
+            },
+            {
+              "value": 1.4,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-6": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E28",
+            "F28",
+            "G28",
+            "H28",
+            "I28",
+            "J28"
+          ],
+          "actual": [
+            {
+              "value": 5,
+              "formula": false
+            },
+            {
+              "value": 5.12,
+              "formula": false
+            },
+            {
+              "value": 5.3,
+              "formula": false
+            },
+            {
+              "value": 5.6,
+              "formula": false
+            },
+            {
+              "value": 6,
+              "formula": false
+            },
+            {
+              "value": 6.5,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-7": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E29",
+            "F29",
+            "G29",
+            "H29",
+            "I29",
+            "J29"
+          ],
+          "actual": [
+            {
+              "value": 8,
+              "formula": false
+            },
+            {
+              "value": 8,
+              "formula": false
+            },
+            {
+              "value": 8,
+              "formula": false
+            },
+            {
+              "value": 8,
+              "formula": false
+            },
+            {
+              "value": 8,
+              "formula": false
+            },
+            {
+              "value": 8,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-8": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E30",
+            "F30",
+            "G30",
+            "H30",
+            "I30",
+            "J30"
+          ],
+          "actual": [
+            {
+              "value": 4.5,
+              "formula": false
+            },
+            {
+              "value": 4.58,
+              "formula": false
+            },
+            {
+              "value": 4.7,
+              "formula": false
+            },
+            {
+              "value": 4.9,
+              "formula": false
+            },
+            {
+              "value": 5.17,
+              "formula": false
+            },
+            {
+              "value": 5.5,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-9": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E31",
+            "F31",
+            "G31",
+            "H31",
+            "I31",
+            "J31"
+          ],
+          "actual": [
+            {
+              "value": 95,
+              "formula": false
+            },
+            {
+              "value": 126,
+              "formula": false
+            },
+            {
+              "value": 172,
+              "formula": false
+            },
+            {
+              "value": 249,
+              "formula": false
+            },
+            {
+              "value": 353,
+              "formula": false
+            },
+            {
+              "value": 480,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-10": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E32",
+            "F32",
+            "G32",
+            "H32",
+            "I32",
+            "J32"
+          ],
+          "actual": [
+            {
+              "value": 100,
+              "formula": false
+            },
+            {
+              "value": 106,
+              "formula": false
+            },
+            {
+              "value": 115,
+              "formula": false
+            },
+            {
+              "value": 130,
+              "formula": false
+            },
+            {
+              "value": 150,
+              "formula": false
+            },
+            {
+              "value": 175,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-11": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E33",
+            "F33",
+            "G33",
+            "H33",
+            "I33",
+            "J33"
+          ],
+          "actual": [
+            {
+              "value": 2.5,
+              "formula": false
+            },
+            {
+              "value": 2.62,
+              "formula": false
+            },
+            {
+              "value": 2.8,
+              "formula": false
+            },
+            {
+              "value": 3.1,
+              "formula": false
+            },
+            {
+              "value": 3.5,
+              "formula": false
+            },
+            {
+              "value": 4,
+              "formula": false
+            }
+          ]
+        },
+        "Q3-12": {
+          "sheet": "晏归舟技能",
+          "cells": [
+            "E34",
+            "F34",
+            "G34",
+            "H34",
+            "I34",
+            "J34"
+          ],
+          "actual": [
+            {
+              "value": 12,
+              "formula": false
+            },
+            {
+              "value": 11.8,
+              "formula": false
+            },
+            {
+              "value": 11.5,
+              "formula": false
+            },
+            {
+              "value": 11,
+              "formula": false
+            },
+            {
+              "value": 10.32,
+              "formula": false
+            },
+            {
+              "value": 9.5,
+              "formula": false
+            }
+          ]
+        }
+      }
+    },
+    "H05": {
+      "catalog": {
+        "source_id": "H05",
+        "name": "重峦",
+        "template": "「溪山行旅」的山体长度提高[H05-1]%。",
+        "source": {
+          "source": "mechanics",
+          "file": "heroes_mechanics_no_values_v03(1).docx",
+          "part": "word/document.xml",
+          "paragraph_all_body_descendants": 93
+        },
+        "comment_ids": [],
+        "parameters": {
+          "H05-1": {
+            "token": "H05-1",
+            "label": "山体长度提高",
+            "unit": "%",
+            "values": [
+              50
+            ],
+            "rank_count": 1,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "专属海克斯",
+              "row": 48,
+              "cells": [
+                "F48"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          }
+        },
+        "numeric_rows": [
+          {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "专属海克斯",
+            "row": 48,
+            "cells": [
+              "A48",
+              "B48",
+              "C48",
+              "D48",
+              "E48",
+              "F48",
+              "G48"
+            ]
+          }
+        ],
+        "id": "yanguizhou_h05",
+        "hero": "yanguizhou",
+        "rank_cap": 1,
+        "description": "「溪山行旅」的山体长度提高50%。",
+        "skill_dependencies": [
+          "Q3"
+        ],
+        "requires": "Q3",
+        "targeting": {
+          "input_mode": "event_trigger",
+          "classification": "source_text_interpretation",
+          "declared_clauses": [],
+          "restrictions": [],
+          "authority": "Exact source clauses govern inclusion, immunity and stage targeting; input_mode is not a new restriction."
+        },
+        "semantics": {
+          "resolved": [],
+          "unresolved": [],
+          "related_rule_rows": [
+            {
+              "subject": "全体",
+              "topic": "连锁、追加攻击与百分比生命伤害",
+              "question": "叠加收益与触发递归",
+              "source_handling": "未增加正文之外的控制免疫、次数上限或Boss免伤；仍需实机验证组合强度。",
+              "source": {
+                "source": "numbers",
+                "file": "heroes_balance_values_v03(1).xlsx",
+                "sheet": "规则待确认",
+                "row": 20,
+                "cells": [
+                  "A20",
+                  "B20",
+                  "C20",
+                  "D20"
+                ]
+              }
+            }
+          ],
+          "authority": "Source mechanism retained verbatim; unresolved does not authorize a substitute behavior."
+        },
+        "design_status": "accepted_source_direction",
+        "activation_status": "eligible_when_implemented",
+        "ranged_only": false,
+        "required_hooks": [
+          "hex.final_design.yanguizhou_h05.v1"
+        ]
+      },
+      "original_full_paragraph": "H05｜重峦　「溪山行旅」的山体长度提高[H05-1]%。",
+      "numeric_cells": {
+        "H05-1": {
+          "sheet": "专属海克斯",
+          "cells": [
+            "F48"
+          ],
+          "actual": [
+            {
+              "value": 50,
+              "formula": false
+            }
+          ]
+        }
+      }
+    },
+    "H06": {
+      "catalog": {
+        "source_id": "H06",
+        "name": "山崩",
+        "template": "「溪山行旅」坍塌的山体命中敌人时，额外使其眩晕[H06-1]秒。",
+        "source": {
+          "source": "mechanics",
+          "file": "heroes_mechanics_no_values_v03(1).docx",
+          "part": "word/document.xml",
+          "paragraph_all_body_descendants": 94
+        },
+        "comment_ids": [],
+        "parameters": {
+          "H06-1": {
+            "token": "H06-1",
+            "label": "崩山眩晕",
+            "unit": "秒",
+            "values": [
+              0.8
+            ],
+            "rank_count": 1,
+            "source": {
+              "source": "numbers",
+              "file": "heroes_balance_values_v03(1).xlsx",
+              "sheet": "专属海克斯",
+              "row": 49,
+              "cells": [
+                "F49"
+              ]
+            },
+            "notes": "",
+            "balance_status": "source_v03_initial_unvalidated",
+            "overrides": []
+          }
+        },
+        "numeric_rows": [
+          {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "专属海克斯",
+            "row": 49,
+            "cells": [
+              "A49",
+              "B49",
+              "C49",
+              "D49",
+              "E49",
+              "F49",
+              "G49"
+            ]
+          }
+        ],
+        "id": "yanguizhou_h06",
+        "hero": "yanguizhou",
+        "rank_cap": 1,
+        "description": "「溪山行旅」坍塌的山体命中敌人时，额外使其眩晕0.8秒。",
+        "skill_dependencies": [
+          "Q3"
+        ],
+        "requires": "Q3",
+        "targeting": {
+          "input_mode": "event_trigger",
+          "classification": "source_text_interpretation",
+          "declared_clauses": [
+            "「溪山行旅」坍塌的山体命中敌人时，额外使其眩晕[H06-1]秒。"
+          ],
+          "restrictions": [],
+          "authority": "Exact source clauses govern inclusion, immunity and stage targeting; input_mode is not a new restriction."
+        },
+        "semantics": {
+          "resolved": [],
+          "unresolved": [],
+          "related_rule_rows": [
+            {
+              "subject": "全体",
+              "topic": "连锁、追加攻击与百分比生命伤害",
+              "question": "叠加收益与触发递归",
+              "source_handling": "未增加正文之外的控制免疫、次数上限或Boss免伤；仍需实机验证组合强度。",
+              "source": {
+                "source": "numbers",
+                "file": "heroes_balance_values_v03(1).xlsx",
+                "sheet": "规则待确认",
+                "row": 20,
+                "cells": [
+                  "A20",
+                  "B20",
+                  "C20",
+                  "D20"
+                ]
+              }
+            }
+          ],
+          "authority": "Source mechanism retained verbatim; unresolved does not authorize a substitute behavior."
+        },
+        "design_status": "accepted_source_direction",
+        "activation_status": "eligible_when_implemented",
+        "ranged_only": false,
+        "required_hooks": [
+          "hex.final_design.yanguizhou_h06.v1"
+        ]
+      },
+      "original_full_paragraph": "H06｜山崩　「溪山行旅」坍塌的山体命中敌人时，额外使其眩晕[H06-1]秒。",
+      "numeric_cells": {
+        "H06-1": {
+          "sheet": "专属海克斯",
+          "cells": [
+            "F49"
+          ],
+          "actual": [
+            {
+              "value": 0.8,
+              "formula": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "numeric_cell_count": 74,
+  "parameter_count": 14,
+  "direct_effective_resolutions": [],
+  "replay_map": {
+    "hero_id": "yanguizhou",
+    "candidate": "Q3",
+    "name": "溪山行旅",
+    "source": {
+      "source": "mechanics",
+      "file": "heroes_mechanics_no_values_v03(1).docx",
+      "part": "word/document.xml",
+      "paragraph_all_body_descendants": 71
+    },
+    "status": "approved_damage_heal_segments",
+    "exclusion_reason": "",
+    "segments": [
+      {
+        "id": "mountain_raise_burst",
+        "kind": "damage",
+        "selection": "spatial",
+        "geometry": "rectangle",
+        "damage_parameter_tokens": [
+          "Q3-2",
+          "Q3-3"
+        ],
+        "geometry_parameter_tokens": [
+          "Q3-4",
+          "Q3-5"
+        ],
+        "source_parameters": {
+          "Q3-2": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 24,
+            "cells": [
+              "E24",
+              "F24",
+              "G24",
+              "H24",
+              "I24",
+              "J24"
+            ]
+          },
+          "Q3-3": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 25,
+            "cells": [
+              "E25",
+              "F25",
+              "G25",
+              "H25",
+              "I25",
+              "J25"
+            ]
+          },
+          "Q3-4": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 26,
+            "cells": [
+              "E26",
+              "F26",
+              "G26",
+              "H26",
+              "I26",
+              "J26"
+            ]
+          },
+          "Q3-5": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 27,
+            "cells": [
+              "E27",
+              "F27",
+              "G27",
+              "H27",
+              "I27",
+              "J27"
+            ]
+          }
+        },
+        "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+        "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+      },
+      {
+        "id": "mountain_collapse",
+        "kind": "damage",
+        "selection": "spatial",
+        "geometry": "rectangle",
+        "damage_parameter_tokens": [
+          "Q3-9",
+          "Q3-10"
+        ],
+        "geometry_parameter_tokens": [
+          "Q3-7",
+          "Q3-8"
+        ],
+        "source_parameters": {
+          "Q3-9": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 31,
+            "cells": [
+              "E31",
+              "F31",
+              "G31",
+              "H31",
+              "I31",
+              "J31"
+            ]
+          },
+          "Q3-10": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 32,
+            "cells": [
+              "E32",
+              "F32",
+              "G32",
+              "H32",
+              "I32",
+              "J32"
+            ]
+          },
+          "Q3-7": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 29,
+            "cells": [
+              "E29",
+              "F29",
+              "G29",
+              "H29",
+              "I29",
+              "J29"
+            ]
+          },
+          "Q3-8": {
+            "source": "numbers",
+            "file": "heroes_balance_values_v03(1).xlsx",
+            "sheet": "晏归舟技能",
+            "row": 30,
+            "cells": [
+              "E30",
+              "F30",
+              "G30",
+              "H30",
+              "I30",
+              "J30"
+            ]
+          }
+        },
+        "capture": "only a segment actually produced by the original cast; record nominal amount and impact context before defence/overheal clamping",
+        "conditional_branch": "preserve actual original branch; do not synthesize unperformed recasts, fed effects, wall impacts, volleys or stored attacks"
+      }
+    ],
+    "source_unresolved_comments": [],
+    "effective_runtime_rule_ref": "runtime_rules.json",
+    "handler_sites": [],
+    "runtime_adapter_status": "hero_runtime_not_yet_present_in_checkout",
+    "forbidden_replayed_effects": [
+      "movement",
+      "control",
+      "terrain",
+      "summons",
+      "form_state",
+      "shield",
+      "resource_consumption_or_gain",
+      "cooldown_or_charge_mutation",
+      "Hex_recursion"
+    ]
+  },
+  "frozen_inputs": {
+    "assets/ui/NotoSansCJKsc-Regular.otf": {
+      "sha256": "f2cac2db5b5304a895930b9076f27a3f38da20c0d8f804ce6fa44e60efba94db",
+      "bytes": 16437340
+    },
+    "data/combat/tuning.gd": {
+      "sha256": "15a9ffeafdafa024a4dacaaed6fc9c1c8785b66d8ced202e2916ae8658b0a06f",
+      "bytes": 3663
+    },
+    "data/final_design/catalog.gd": {
+      "sha256": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+      "bytes": 14669
+    },
+    "data/final_design/catalog.json": {
+      "sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+      "bytes": 1963837
+    },
+    "data/final_design/common_hex_hooks.json": {
+      "sha256": "d20052456f280347a07560b120377108588b3f34a2c70a91b3ecddda67ea867a",
+      "bytes": 129909
+    },
+    "data/final_design/effective_overrides.json": {
+      "sha256": "bfaed238edfd723a3d4aa8d363acfe8e46dab14feec64388666fde457a80a72d",
+      "bytes": 3999
+    },
+    "data/final_design/effective_rule_resolutions.json": {
+      "sha256": "aef68e35a4becc25fcfa4158cfc2d55ee538a942023f99b7e7cefb07dac7cf53",
+      "bytes": 28146
+    },
+    "data/final_design/enhancement_fields.json": {
+      "sha256": "3c0ca6283ad7c3c6c9e16ca3c7143280e74d0d3d967692bece86c709f49e5bb5",
+      "bytes": 92103
+    },
+    "data/final_design/equipment_tasks.json": {
+      "sha256": "006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea",
+      "bytes": 2490
+    },
+    "data/final_design/event_adapter.gd": {
+      "sha256": "26cabe7542bc0480c643d8b4e9eeda474e48d798f0135df97393c4cc88e96c4f",
+      "bytes": 3455
+    },
+    "data/final_design/replay_segments.json": {
+      "sha256": "25e9a0fd4f45f221fbaee040c4a66e797208e35aeaa214ecbf6bba37a2c0b51d",
+      "bytes": 149431
+    },
+    "data/final_design/runtime_rules.json": {
+      "sha256": "bbd12695b85288a0c242e21b1f27ee2eed86954cc95cc92d65dd3901f04009bb",
+      "bytes": 2774
+    },
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": {
+      "sha256": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894",
+      "bytes": 122336
+    },
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": {
+      "sha256": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+      "bytes": 67438
+    },
+    "data/progression/prototype/catalog.json": {
+      "sha256": "e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28",
+      "bytes": 51478
+    },
+    "docs/equipment_source_20261004/correction_0959/equipment_system_extracted.json": {
+      "sha256": "fc8cd1fc1a739ff1cd6704f8c80bec210f0daddf4c84a8a6fdd2509543a79c76",
+      "bytes": 134624
+    },
+    "scripts/actors/hero_model_core.gd": {
+      "sha256": "6e215466428cc7569f7b734d99dcb9bb5aaca04aa5bcad6b469e41f53a805b48",
+      "bytes": 3627
+    },
+    "scripts/combat/common_hex_bridge.gd": {
+      "sha256": "3bf945cf040051295e496617cef7c52bec35c7c0ae5fab73d9234961c75b88dd",
+      "bytes": 17836
+    },
+    "scripts/combat/common_hex_runtime.gd": {
+      "sha256": "df1ab138c5c3dec7ccf0e0e548e10881d5fa9b9300f9b0778cdab50f5361ac4c",
+      "bytes": 46680
+    },
+    "scripts/combat/enemy_director.gd": {
+      "sha256": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+      "bytes": 27726
+    },
+    "scripts/combat/hero_combat_core.gd": {
+      "sha256": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+      "bytes": 46758
+    },
+    "scripts/combat/loadout_fixture.gd": {
+      "sha256": "4702e3777e3dda2f5535fbf015ede0ed575c2109f7b84714c5317c70fe4adb26",
+      "bytes": 3843
+    },
+    "scripts/combat/swept_rectangle_geometry.gd": {
+      "sha256": "d6dc1e04335f4935bab9f11eb070d1e6b249517f2977bc54600ddba66b6d7e05",
+      "bytes": 3063
+    },
+    "scripts/combat/world_clock.gd": {
+      "sha256": "9c0cfebcc981b2f2d193bd7d3a3bc13867ab0cb61df9ebed9bdb370d573cd77d",
+      "bytes": 1011
+    },
+    "scripts/integration/run_model.gd": {
+      "sha256": "998895d71819da0d8ac792007cfd94b0710cb680c9c87167aa1a8769dc717818",
+      "bytes": 2393
+    },
+    "scripts/progression/catalog_model.gd": {
+      "sha256": "a7fa622cfd77a79fd0f8bf4e0199491a95616d4f6bb9ad4a52d52419c43bea64",
+      "bytes": 25380
+    },
+    "scripts/progression/catalog_validation.gd": {
+      "sha256": "138a6bac0ccfb23897440ef50ffe18c8d0efff68fdcb81228680ad1f493fa978",
+      "bytes": 9139
+    },
+    "scripts/progression/model.gd": {
+      "sha256": "c7707af3ae8c411ea31e78a19ace74545d1f5850068cfa5b07d79e057da03c68",
+      "bytes": 17196
+    },
+    "scripts/ui/combat_hud.gd": {
+      "sha256": "4032250bd3b6451bb19d65153174e6298acca582a844e84162bdfb5bebea0fad",
+      "bytes": 21463
+    },
+    "scripts/ui/content_text.gd": {
+      "sha256": "6952728eb0f1d4a4615c1e7a976b1acc0840e16cca0cb59b0244d5068233385d",
+      "bytes": 3858
+    },
+    "scripts/ui/detail_label.gd": {
+      "sha256": "cb7c2891866b688d20a7826a97181a67339cef8b5e32766113480f2d5d58ea8e",
+      "bytes": 768
+    },
+    "scripts/ui/hud_adapter.gd": {
+      "sha256": "51fe449fdf135c06f7bc9e0aadf04261cd31628da3596f3abc1aca3319ec7752",
+      "bytes": 933
+    },
+    "scripts/ui/progression_controller.gd": {
+      "sha256": "7f0f3756a99ffbb349725a9425d610faf6bff6de887fbce50c6367d02b815ed1",
+      "bytes": 22133
+    },
+    "scripts/ui/skill_slot.gd": {
+      "sha256": "1ba57a34ab85a5bae5230de48cc43cf2fdb10aa6e8fb89d75882b087367e8978",
+      "bytes": 3978
+    },
+    "scripts/ui/status_effect_badge.gd": {
+      "sha256": "c13fc85c90c1812b993d23cbd9bcc7eb57616b32410bd2052338b147e181d5bb",
+      "bytes": 1589
+    },
+    "tests/equipment_editable_tables_20261004/immutable_baseline.json": {
+      "sha256": "e98f7c7137acd85d44fa0176f1531243b98724eff40db2034dbc05223190242b",
+      "bytes": 513944
+    },
+    "tests/equipment_editable_tables_20261004/outputs/equipment_tables/converted/equipment_numeric_config.json": {
+      "sha256": "cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f",
+      "bytes": 277723
+    },
+    "tests/equipment_editable_tables_20261004/proof/one_value_change_converted/equipment_numeric_config.json": {
+      "sha256": "7ca493efebe261d93b86d978eb919f17119b46edb01bc696419dc9e6a414a536",
+      "bytes": 277846
+    },
+    "tests/equipment_editable_tables_20261004/source_lock.json": {
+      "sha256": "c1acce6777beac5a65692b536e68355daf5606f191fb3fafd251beec04ac976a",
+      "bytes": 672
+    },
+    "tests/equipment_shop_transactions_20261004/fixtures/source_prices.json": {
+      "sha256": "56703090c0e45516d18ff5808afb514de5032ffa46d23179abe400d91e9f6ba1",
+      "bytes": 20339
+    },
+    "tests/equipment_shop_transactions_20261004/numeric_table_adapter.gd": {
+      "sha256": "e5af2e38509c37b2ce0ab8a76aa975a8ba485cc6123aa689eec7ee4d1d1d67ac",
+      "bytes": 2369
+    },
+    "tests/equipment_shop_transactions_20261004/shop_visit_model.gd": {
+      "sha256": "81cd336a76fb2436742300c0fb81951f394ae7711bb3e855523ccfec513b2a52",
+      "bytes": 22129
+    },
+    "tests/ink_first_floor_flow_20261004/fixtures/provisional_shop.json": {
+      "sha256": "b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369",
+      "bytes": 641
+    },
+    "tests/ink_first_floor_flow_20261004/ink_catalog.gd": {
+      "sha256": "1f97a65c518e8873bada661937f3e42bf7a770fcfad59b586ac63c3dc35a5bb8",
+      "bytes": 2387
+    },
+    "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd": {
+      "sha256": "21fa0c61f0279d557e13e9863a312ab50cfe9233090bb8fbac9bbb920e9532cc",
+      "bytes": 2832
+    },
+    "tests/ink_first_floor_flow_20261004/ink_progression_controller.gd": {
+      "sha256": "94f4a180a5184a66dd11aec99d590c6a798eab5f649fa9b74642a700fbd2c313",
+      "bytes": 1556
+    },
+    "tests/ink_first_floor_flow_20261004/ink_run_model.gd": {
+      "sha256": "50fc161192fdb5c60eee0e92c26a87f62c13f64cb216f3e686e74cce2b89482f",
+      "bytes": 3711
+    },
+    "tests/ink_first_floor_flow_20261004/shop_table.gd": {
+      "sha256": "39703c673d379c21715fb074477886dc6a85306f053c40c4c2bd3f2b2bff245d",
+      "bytes": 3338
+    },
+    "tests/ink_initial_hex_runtime_20261004/capabilities.json": {
+      "sha256": "874e9926b2a33c2af1365262e24fe049d4d22ff1e3e7ed1854de73606489d7f4",
+      "bytes": 909
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/README.md": {
+      "sha256": "8d0c5e5c26b31ec1f4aa49fd5245c42859d4ab2973d3afa51b03d95b315fe44d",
+      "bytes": 1770
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/diagnosis.json": {
+      "sha256": "75446766614a95434c80bf5ac4ceb2bec573a766d3c3a7b05a6cb3e0cc7543da",
+      "bytes": 1285
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/gate_only.patch": {
+      "sha256": "3ff4cc5ce7fb4f2f3e67767f14a4095a372453e538fd0329dd4c4fecd1ec00ac",
+      "bytes": 18953
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/prepare_stage.py": {
+      "sha256": "04b9026a5c616bc68a38f94d1c0a8f96275f3592dc747a3506e7ed6f27f39a78",
+      "bytes": 1289
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/sink_gate.gd": {
+      "sha256": "8f39a0a51024d8c46711bf335b78ff4197e95cc88dd5bc28188a9c40c6d1a9c3",
+      "bytes": 20118
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/source_binding.json": {
+      "sha256": "912cf86fcfe0a84d8372879f1ce2980768366f64f4a217d7c516e45c69d8a318",
+      "bytes": 32838
+    },
+    "tests/ink_initial_hex_runtime_20261004/fix01/verify_source.py": {
+      "sha256": "0243c2579d06a9bb3d495e3a37c97d3df0da05180e9c6e1af933db41217bf064",
+      "bytes": 4554
+    },
+    "tests/ink_initial_hex_runtime_20261004/hp_regression_gate.gd": {
+      "sha256": "dcd64525962fd053b57d32ac5454a5768d9ceed8a8558415b1e86d098f309e90",
+      "bytes": 11546
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_bridge.gd": {
+      "sha256": "c6ef6ce6ff83744e78554ffbcad3ce1f62cd455e8db0fb2873468d67dee5c66c",
+      "bytes": 2780
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_catalog.gd": {
+      "sha256": "71d6d33872af393f073e5e6c411b9c61b0e2a75ed243d7ee3f2e923004b917d9",
+      "bytes": 2803
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_controller.gd": {
+      "sha256": "d2db83e4710e725d91f8393b4e22f9ade2ef73b65e59a950e57a552b11419a2f",
+      "bytes": 321
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_model.gd": {
+      "sha256": "4d2ebfff0d21360f63b71988ca5f802abeb490d4ea8fe88d1a0113f5c2b204c8",
+      "bytes": 3201
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd": {
+      "sha256": "5ae1211603dfdf4a81b07c9c201c0e701eac66cf7c7ae558b155d2b4f42b35a3",
+      "bytes": 221
+    },
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_stat_consumer.gd": {
+      "sha256": "524471c5ef2742025d9876a40406f84b03c8f93ceccba6a65371ea6da8f2318e",
+      "bytes": 1478
+    },
+    "tests/ink_initial_hex_runtime_20261004/live_binding.gd": {
+      "sha256": "9a834dad56e667f287996112494184614ccfe332f27657ce9098b3e198005bbf",
+      "bytes": 2754
+    },
+    "tests/ink_initial_hex_runtime_20261004/selector_gate.gd": {
+      "sha256": "e1bbb4605d362a62171a9da0ad7fe6055f93ebf738037234026d64b8352274bc",
+      "bytes": 5356
+    },
+    "tests/ink_initial_hex_runtime_20261004/sink_gate.gd": {
+      "sha256": "b4263544e3838a03347896543697896b925f112b062eca5348e2ea442673da91",
+      "bytes": 13616
+    },
+    "tests/ink_initial_hex_runtime_20261004/source_binding.json": {
+      "sha256": "c997eab5df81084d7ca970c76464389e4cf47954ae8271c1b18ae3a8b27cec7a",
+      "bytes": 29582
+    },
+    "tests/ink_initial_hex_runtime_20261004/source_map.json": {
+      "sha256": "154b31b0d884574fb5d3eef54cd31aaea6a3247d262e3a236ac2e7d6db86db76",
+      "bytes": 12925
+    },
+    "tests/ink_initial_hex_runtime_20261004/verify_source.py": {
+      "sha256": "8de27e18b9d36042b6f7e97e83ab66b87c64131a81921d893d1133843ed396e5",
+      "bytes": 8417
+    },
+    "tests/ink_intermediate_stats_20261004/.gdignore": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "tests/ink_intermediate_stats_20261004/README.md": {
+      "sha256": "3d7f6b43ed2149fd99029132c6b1e6adce4ed384dbea593c890411ca04cccbcf",
+      "bytes": 6129
+    },
+    "tests/ink_intermediate_stats_20261004/build_candidate.py": {
+      "sha256": "bd8480bd0b01c2c17eed7076eef94a93229fef0cc8433a8bb6db52e38ce917ab",
+      "bytes": 9833
+    },
+    "tests/ink_intermediate_stats_20261004/common_regression_gate.gd": {
+      "sha256": "229b52ed747481487a3896450a1ad19813796cc9d44b8afe2602c74523fc53c1",
+      "bytes": 20127
+    },
+    "tests/ink_intermediate_stats_20261004/hp_regression_gate.gd": {
+      "sha256": "f212d183992412b5ed42a39bf73625418095d7258cf99ca097178dc11aaa2a99",
+      "bytes": 11673
+    },
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_bridge.gd": {
+      "sha256": "73c71e5beef46e12bfb84965c4ac3ba08f31ebd0de21e7500d874eaaaf071e08",
+      "bytes": 2951
+    },
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_model.gd": {
+      "sha256": "04ada4de7ac9f3de8c5b53b44036861e3ba67689365a6014f4b427ed7f6f5cb0",
+      "bytes": 1207
+    },
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd": {
+      "sha256": "3380769d0a38058e6e9b5461f6f9beb5bda643d37846644a70851696157b2482",
+      "bytes": 228
+    },
+    "tests/ink_intermediate_stats_20261004/inspect_engine_results.py": {
+      "sha256": "4180948ffcb5cf675793e3a8d773517ee5300116df0889ade87f871c77dd72ce",
+      "bytes": 4738
+    },
+    "tests/ink_intermediate_stats_20261004/intermediate_gate.gd": {
+      "sha256": "2d183dba0450386622c5e817eb40b56e73d4cd8a35243edaa8d008f3536520a4",
+      "bytes": 24857
+    },
+    "tests/ink_intermediate_stats_20261004/intermediate_stat_adapter.gd": {
+      "sha256": "95bab5ae8bac6d55633dfeff3085062b7e119e1e8c20844998d9093675929714",
+      "bytes": 5415
+    },
+    "tests/ink_intermediate_stats_20261004/prepare_stage.py": {
+      "sha256": "7cde51078f4cb75ae8913830380df973fe9ee558687382a10808030fdc842d37",
+      "bytes": 1485
+    },
+    "tests/ink_intermediate_stats_20261004/regression_rebindings.patch": {
+      "sha256": "e7e5247843d62c9428c6c0a74fc35a4d28fe74632c323d1acc2dc09d490dbbfa",
+      "bytes": 8016
+    },
+    "tests/ink_intermediate_stats_20261004/selector_regression_gate.gd": {
+      "sha256": "77b5af1f35561fcde50a205cd5ad2c2f9f467c339c9f0b8845f1496dc0b9f557",
+      "bytes": 5369
+    },
+    "tests/ink_intermediate_stats_20261004/source_map.json": {
+      "sha256": "23cf917618ad6f7a2581a6e9887a899cb8d11cca62ef0be2b2a9d4ece2c86f40",
+      "bytes": 27185
+    },
+    "tests/ink_intermediate_stats_20261004/verify_source.py": {
+      "sha256": "1b569d8568e203669acb2f1d9f71ad6b28f2f50c8df11613dfed4cc4f0ae4350",
+      "bytes": 11545
+    },
+    "tests/ink_q1_foundation_20261004/revision02/data/runtime_tuning.json": {
+      "sha256": "e07931d0af791839a10cea42e154e4e970efe03705379e2be124aa9f262bfa5c",
+      "bytes": 2470
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_control.gd": {
+      "sha256": "a670e130a80a1724d65a8ba489e84dbfa9c155e858e8df87e627e85a6e6e05a3",
+      "bytes": 10437
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_original_control_probe.gd": {
+      "sha256": "f73f7389f72231166e64b24316724141a1a8485784084466fadd3d992df4454b",
+      "bytes": 4642
+    },
+    "tests/ink_q1_foundation_20261004/revision02/run_regression.gd": {
+      "sha256": "2345f54166dcb68d52af1ac3f0b00e224d529cd1e9c06187625ad312e9e632c5",
+      "bytes": 19774
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_common_bridge.gd": {
+      "sha256": "2980ce2a7bc8585199b949f1cf2974b68eeac05e314093293c192551d72d9285",
+      "bytes": 270
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd": {
+      "sha256": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7",
+      "bytes": 5641
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_geometry.gd": {
+      "sha256": "29c25fb50857005db11d3804c8a306ccfb2f4ef61fb29c092ddaa80386299cdb",
+      "bytes": 3697
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd": {
+      "sha256": "ca9770bf80e45f5776adfb26ee326a9e9aad9218acda729ea94a4b4f6497f078",
+      "bytes": 4152
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "sha256": "42e4429b87742fb9e508efe9284fad71171cfcc276012990f5fa6ee4c4ed70d2",
+      "bytes": 26039
+    },
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "sha256": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e",
+      "bytes": 902
+    },
+    "tests/ink_q1_h02_20261004/ink_h02_sim.gd": {
+      "sha256": "283d1d0f386ca4dad42f4646aa69e49e8646d899006dae7eae75c2ae6c23ac81",
+      "bytes": 12456
+    },
+    "tests/ink_q1_h02_20261004/run.gd": {
+      "sha256": "cfca6fffc706fecbaa0dd858d7bfbc58a21542c81bacdfd13af752ec21171065",
+      "bytes": 14960
+    },
+    "tests/ink_q1_h02_20261004/run_control.gd": {
+      "sha256": "c89e30015b5d9fe05d6e1e50bcd351bac029b43e9c62a65bff3fffcc2afa01af",
+      "bytes": 10397
+    },
+    "tests/ink_q1_h02_20261004/run_regression.gd": {
+      "sha256": "3b42323d30673bd1aba2dd6fefb21a32720b26f68d43dc3fc38e3c3070b780d1",
+      "bytes": 19738
+    },
+    "tests/ink_shop_ledger_bridge_20261004/commerce_projection.gd": {
+      "sha256": "6491853cb7825b7b6fe54f035b1f4c07dd37010b4d83c29f3bb0d569c65bfd29",
+      "bytes": 4167
+    },
+    "tests/ink_shop_ledger_bridge_20261004/fix01/engine_contract_gate.gd": {
+      "sha256": "a272d7066aac9a98d5b6fd53620a94da2e21d3bb4f0df1a0194460ccf438fc65",
+      "bytes": 22817
+    },
+    "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd": {
+      "sha256": "9e4a06c7915bfcc842402c4c9b6e26f4efa88e45582a678dd7bd6304828c7ff7",
+      "bytes": 10520
+    },
+    "tests/ink_shop_ledger_bridge_20261004/ink_shop_ledger_bridge.gd": {
+      "sha256": "0642d9e21705e8d7d997cd1db3b08762443bafd8f8e95e3c17d0831cad36f7d8",
+      "bytes": 3133
+    },
+    "tests/ink_shop_runtime_stats_20261004/base_stat_adapter.gd": {
+      "sha256": "f7ccc58e55cd13c1786cb772d9292073f24c6aa5c3b3f05f7cee7327ed71d7e0",
+      "bytes": 2375
+    },
+    "tests/ink_shop_runtime_stats_20261004/engine_contract_gate.gd": {
+      "sha256": "8a04f34c7e8399aab10a8d14ec878cf56831abc32f0c721519c9eddcb69dfbb4",
+      "bytes": 17019
+    },
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/engine_gate.gd": {
+      "sha256": "b9dcfc7d07f903c4e8778213b7adc8452a5f201af0f205596387866b80aead2a",
+      "bytes": 11587
+    },
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_bridge.gd": {
+      "sha256": "5b323e6fc6010d49fd066980e1c3a0298007883cabe621e3ade5cb3bbf4ebba2",
+      "bytes": 2544
+    },
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_model.gd": {
+      "sha256": "4040cd64d0c03f15791bd7ad82c6bc5288b39a587ed2d2d1fbca2160cf5af2f6",
+      "bytes": 5086
+    },
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd": {
+      "sha256": "288623926cd0b074bec968d62c0e7d78eb4d1b3bc6d711d9369989eafb58ea9a",
+      "bytes": 3482
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd": {
+      "sha256": "f417f81e2fcb32c06d1581a5cf29013adb0134932bebb21547b530dfaad05f12",
+      "bytes": 4732
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_consumer.gd": {
+      "sha256": "0bdff7f8d6ef1c47078c960ae6965f1c586d8d55bae33b9885be65621d2ce3a8",
+      "bytes": 1395
+    },
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd": {
+      "sha256": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+      "bytes": 3344
+    },
+    "tests/ink_intermediate_stats_20261004/source_binding.json": {
+      "sha256": "a79fc889f1cb028099c9baf2882b44f84a3345179b6415ef6113304a8901720e",
+      "bytes": 40782
+    },
+    "tests/ink_intermediate_stats_20261004/live_binding.gd": {
+      "sha256": "ec74f63fc6d99984b3b47ad109a53e4db7e6df9d51ea4f4ebd7660cd4eda364a",
+      "bytes": 2776
+    },
+    "tests/ink_intermediate_stats_20261004/capabilities.json": {
+      "sha256": "37ffd831294e7d9809ea18c8b2ba6709a1145217743bebbe9a3294caee5ae3bd",
+      "bytes": 1477
+    },
+    "tests/ink_q2_source_contract_20261004/pending_rules.json": {
+      "sha256": "ef7be66e39dab3dc4a3c6554a4d42ad826f92ee12f05bb30a7237a2641fb44d3",
+      "bytes": 12567
+    },
+    "docs/ink_source_preparation/source_index.md": {
+      "sha256": "47ef32c4f22f2a379a082999008fdc74401ea4deae8427caf5de5b801f221edf",
+      "bytes": 23126
+    },
+    "docs/ink_source_preparation/source_contract.json": {
+      "sha256": "95a59af3635ae2c35bd3a406cf50b4cc8a0cd4b679686023546487eb632ed473",
+      "bytes": 288162
+    },
+    "docs/ink_source_preparation/verify_sources.py": {
+      "sha256": "a2888bdb78472b50b81e1c50e9e43639883c1f3df500a9fa300f69d4391bd038",
+      "bytes": 15361
+    }
+  }
+}

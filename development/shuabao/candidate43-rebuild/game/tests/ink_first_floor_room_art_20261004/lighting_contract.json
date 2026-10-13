@@ -1,0 +1,47 @@
+{
+  "schema": "forecourt-lighting-1",
+  "revision": "forecourt01_same_room12_shared_light",
+  "scope": "One WorldEnvironment and one DirectionalLight3D shared by room, hero, minion and all lit effects; material textures/stats/animation/source unchanged.",
+  "background_color": "6F8386",
+  "ambient_color": "B3C6DD",
+  "ambient_energy": 0.4,
+  "key_color": "FFF0DA",
+  "key_energy": 1.1,
+  "key_rotation_degrees": [
+    -52,
+    -25,
+    0
+  ],
+  "key_angular_distance": 12.0,
+  "tonemap": "LINEAR",
+  "glow": false,
+  "fog": false,
+  "software_dynamic_shadows": "explicit candidate flag only, not default",
+  "hardware_shadow_policy": "unchanged from frozen base",
+  "floor_authored_base": "C8B999",
+  "floor_central_warm_pigment": "D4C5A4",
+  "contact_color": "536E86",
+  "contact_peak_alpha": 0.29,
+  "contact_outer_alpha": 0.0,
+  "reference_previous": {
+    "ambient_color": "CAD8D7",
+    "ambient_energy": 0.66,
+    "key_color": "F2E9D4",
+    "key_energy": 0.88
+  },
+  "unchanged": [
+    "key direction",
+    "key angular distance",
+    "camera projection/size/elevation/follow",
+    "source/colliders/arena extent",
+    "no glow/fog/extra lights"
+  ],
+  "acceptance": "Lighting parameters fixed between shadow modes. Pixel softness and performance unverified.",
+  "default_shadow_mode": "static",
+  "shadow_modes": [
+    "none",
+    "static",
+    "dynamic",
+    "both"
+  ]
+}

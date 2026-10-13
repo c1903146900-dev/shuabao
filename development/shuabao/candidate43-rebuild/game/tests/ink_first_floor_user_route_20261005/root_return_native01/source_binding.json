@@ -1,0 +1,58 @@
+{
+  "schema": "q1-root-return-native-leaf-1",
+  "status": "SOURCE_FROZEN_NATIVE_ENGINE_UNRUN",
+  "expected_identity": {
+    "q1_script": "res://tests/ink_q1_flow_20261005/effect05/q1_effect_presenter.gd",
+    "q1_script_sha": "c2c7b96c1855c3e9f3959083fc0d05d49b7943f054b0d7ef6c3bf852f3f81673",
+    "q1_shader": "res://tests/ink_q1_flow_20261005/effect05/ink_belly.gdshader",
+    "q1_shader_sha": "517c94001950db6e257584cc2d0c818e2719eefa4b311a890f5eb3afd826df81",
+    "pigment_sha": "95eebee8b0c7019bf2168d804a3dafc07b5dc39d10299e9279e06704f3474590",
+    "actor_script": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/hero_view.gd",
+    "actor_script_sha": "8856e856563d463dd816ebe068cb4d2c357870bf8d4ee18d58b23c263abef0a6",
+    "visible_asset_sha": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+    "flow_asset_sha": "b558f0c56aeacb1d6455b85a474e435921f82b281540c4952f3d474d9abad589",
+    "flow_binding_sha": "961b39f9fa77cd34ce64b4ebce65bb474cb494e7d7cc90507ad611a9ab06bb4a",
+    "intent_asset": "res://tests/ink_q1_flow_20261005/gesture06/runtime/assets/yanguizhou_q1_intent.glb",
+    "intent_asset_sha": "8637ff7ba8e7e22130ca4c5ad1c1d3073fe88cb6b12c1f08f06ec39620d97352",
+    "intent_binding_sha": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+    "intent_boundaries_sha": "bc6a25fac2bce4021ee3f5cb2387674818778e31ff6e3febf90db2b26b3eb0b0",
+    "intent_report_script": "res://tests/ink_q1_flow_20261005/gesture06/runtime/intent_report.gd",
+    "intent_report_sha": "8d080cefe2f8a68f6122d4f968c21473ba56446aec2f262425f0d581fe944516",
+    "root_return_helper_path": "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/root_return.gd",
+    "root_return_helper_sha": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+    "root_return_helper_exact": true
+  },
+  "ancestor_identity_error_allowlist": [
+    "actor_script_mismatch",
+    "actor_script_sha_mismatch"
+  ],
+  "files": {
+    "res://tests/ink_first_floor_user_route_20261005/diagnostic_compact01_fix01/host.gd": "c07ae9bdef2c501864354f6f26f92b577c1de13a9ad01cfc5cf1477b8889a005",
+    "res://tests/ink_first_floor_user_route_20261005/diagnostic_compact01_fix01/proof_store.gd": "3b5134f7e8154428c045849efebbfc07bd168e23d33f1cef7b6bb7d6bddc9b73",
+    "res://tests/ink_first_floor_user_route_20261005/gesture06_host01/parsefix01/host.gd": "c046faf792bfc2bc0db97ac235d13c67031bb6b15a6a589ba6cdcb2e44f98718",
+    "res://tests/ink_first_floor_user_route_20261005/gesture06_host01/parsefix01/gesture_contract.json": "6106fadc987664144d0c84e13336c791f042f9bf1716e312873a3f69eab430d4",
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd": "a6f0b5055712845ce3f0c1e0daadb22002f313de7e1c3644b313b32b31c5ef90",
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f",
+    "res://tests/ink_q1_flow_20261005/gesture06/runtime/hero_view.gd": "320c7f248b998e1d5e9baf3b376204a7b4879181b51b1a2cd0343908f2573c09",
+    "res://tests/ink_q1_flow_20261005/gesture06/runtime/intent_report.gd": "8d080cefe2f8a68f6122d4f968c21473ba56446aec2f262425f0d581fe944516",
+    "res://tests/ink_q1_flow_20261005/runtime/fix02/parsefix01/hero_view.gd": "d51ffc94edce128039ccf297e8e94fd6b02abc75c4892f2eeebe1abfec26e4ba",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/hero_view.gd": "8856e856563d463dd816ebe068cb4d2c357870bf8d4ee18d58b23c263abef0a6",
+    "res://tests/ink_q1_flow_20261005/gesture06/root_return_rebuilt01/root_return.gd": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/host.gd": "92967c0de5f9dfb829ad5a0428a5fea748957172b5f766f5505b0a9079a72bf5",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/host.tscn": "2b088f9b9f6f9d08d343bf76566f6b77b6d4b05826785e2c15b915237a381186",
+    "res://tests/ink_first_floor_user_route_20261005/root_return_native01/parse_gate.gd": "049de4cf72a22ce8edb37696cc7e2bafc946957e9e0b8be85207d4bc400c333b"
+  },
+  "constructor_policy": "complete compact gesture06/navigation host and original seals first; one additional actor replacement at fresh preparation time zero; preserve source ledger Session RNG and director ID",
+  "unchanged_native_methods": [
+    "input",
+    "F8 compact recording",
+    "normal F10 exit",
+    "main viewport warmup draw and source seals"
+  ],
+  "new_effects": false,
+  "old_host_modified": false,
+  "historical_0756_replay": false,
+  "native_input_passed": false,
+  "art_accepted": false,
+  "known_art_limitation": "root returns sooner; chest remains at -65 degrees during recovery; sleeves and raised pen remain stiff in paired normal-camera review"
+}

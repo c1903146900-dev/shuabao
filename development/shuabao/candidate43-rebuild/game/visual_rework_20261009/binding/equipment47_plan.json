@@ -1,0 +1,180 @@
+{
+  "schema": "G01-first-original-effective-cast-successor-1",
+  "parent_source_sha256": "95c9a89a9b5a70a81332d868ac31907ae712a862950b934a52fff4390c74a152",
+  "parent_visual_sha256": "9ad8edf5a49caebfdabd6a9394bb7ef992ffba2c8f304e46b6b4379b674e91eb",
+  "changed": [
+    {
+      "path": "res://scripts/combat/enemy_director.gd",
+      "before": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+      "after": "c976d33436bb26dc4e5df725d1123ecdad14584973461fc7c46c6198d2ae626e",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/scripts/combat/enemy_director.gd",
+      "review_before_activation": "c976d33436bb26dc4e5df725d1123ecdad14584973461fc7c46c6198d2ae626e"
+    },
+    {
+      "path": "res://scripts/combat/hero_combat_core.gd",
+      "before": "20a6768441aeab8ea6ac3103e3fe94043bdc5322ce6e4620943ce327fc24cfa6",
+      "after": "72cbf6832044092bcd6b9c6c8e3a75010bf764bcdd7acb5cf081f82d6c3d8462",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/scripts/combat/hero_combat_core.gd",
+      "review_before_activation": "72cbf6832044092bcd6b9c6c8e3a75010bf764bcdd7acb5cf081f82d6c3d8462"
+    },
+    {
+      "path": "res://tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "before": "c78fcb1a0790e7ac26f5d88a44eca064e1c49c732245409f6afe59f32101b700",
+      "after": "9a284ff7c331dca5e21bd7ade2054f1e0e6ce625c0cc2d04d95e04718bd791b2",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "review_before_activation": "9a284ff7c331dca5e21bd7ade2054f1e0e6ce625c0cc2d04d95e04718bd791b2"
+    },
+    {
+      "path": "res://tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "before": "dec74b7edd055285dee6752aac9e1f0482058f0f9c9320c7bb20d5eb2fa05109",
+      "after": "0d73ef26a98202075a266d7f6d2a1dc1376f6cd0f648eaba56461d8e9d2cdcc4",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "review_before_activation": "0d73ef26a98202075a266d7f6d2a1dc1376f6cd0f648eaba56461d8e9d2cdcc4"
+    },
+    {
+      "path": "res://tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "before": "4b65b0a0eed95efc3e99a4e878326c375c8d3eedfff206f9b15eeae79a380118",
+      "after": "4eec03a8b144dfcdf3540d122f98f497c80e1a7db08e3791b137eed361720567",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "review_before_activation": "4eec03a8b144dfcdf3540d122f98f497c80e1a7db08e3791b137eed361720567"
+    },
+    {
+      "path": "res://tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd",
+      "before": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea",
+      "after": "e35db36237772a3ba1ef6ed149869d61e9d5340ec96ecab37ab1055be352f21f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd",
+      "review_before_activation": "e35db36237772a3ba1ef6ed149869d61e9d5340ec96ecab37ab1055be352f21f"
+    },
+    {
+      "path": "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "before": "e40c0702565720e601aa3587ba466cf3ac174d5a10c17ea20663f5e684367172",
+      "after": "e58f59f267c1513232aa308fc5527c6a2c314febaf2af6ccf36197161406978a",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "review_before_activation": "e58f59f267c1513232aa308fc5527c6a2c314febaf2af6ccf36197161406978a"
+    },
+    {
+      "path": "res://tests/ink_q1_h02_20261004/ink_h02_sim.gd",
+      "before": "283d1d0f386ca4dad42f4646aa69e49e8646d899006dae7eae75c2ae6c23ac81",
+      "after": "796247e96a2edd211d025878fe6d99decdf27ba435104b5fa9562e75b376f3df",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_q1_h02_20261004/ink_h02_sim.gd",
+      "review_before_activation": "796247e96a2edd211d025878fe6d99decdf27ba435104b5fa9562e75b376f3df"
+    },
+    {
+      "path": "res://tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "before": "e3b1b5fcdd98c4816bfaaa9969c75bce798faa52ffa1a0fe6c8614475846f020",
+      "after": "ad9019e4a44767b0924658bfc7739d7cee005e17cde2fb662159da2cda56170c",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "review_before_activation": "ad9019e4a44767b0924658bfc7739d7cee005e17cde2fb662159da2cda56170c"
+    },
+    {
+      "path": "res://tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "before": "fd5e68c9805739111b82a3e4e17981069a62ba6d030259944887cca7bb853e6b",
+      "after": "33c0be66bab86c7fd635e90219fc38ff590ec58b06568525c6fdfdd7f158fc9b",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "review_before_activation": "33c0be66bab86c7fd635e90219fc38ff590ec58b06568525c6fdfdd7f158fc9b"
+    },
+    {
+      "path": "res://tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd",
+      "before": "d4c5a5795a78231091d751b591c341bd5cac946f20dd242dc62404f7164325ef",
+      "after": "9c2194a564419b2778f6dc82f293eca6c099d03da3a2ee7c5cd461c668c24558",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd",
+      "review_before_activation": "9c2194a564419b2778f6dc82f293eca6c099d03da3a2ee7c5cd461c668c24558"
+    },
+    {
+      "path": "res://tests/ink_r1_ordinary_20261005/candidate01/enemy_director.gd",
+      "before": "9f720442bca2727d492d24f1689257705dcd7e71c919bd2c455c9d8c2f583e80",
+      "after": "246abba58b22def52362f40feee1f21dd6305c0d2d93578c78747c015dd09fc5",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_r1_ordinary_20261005/candidate01/enemy_director.gd",
+      "review_before_activation": "246abba58b22def52362f40feee1f21dd6305c0d2d93578c78747c015dd09fc5"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "f74c4669527e20e58def0438cc8d85db8c657b358ee0994e4b415cedcfdbac1b",
+      "after": "8c1645ebda88f117610b2e126d25a06707f925ab0f53ad74e7ea6c61c7a2ebc9",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "review_before_activation": "c16b910cf149bc27ab3ba28b75a5ebb53ee8081eefdab5eb163c32248a665b85"
+    },
+    {
+      "path": "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd",
+      "before": "591d0487c776e17f79abd9d4de4eab243a5fcb11793e3034f6cad803a8adb3fd",
+      "after": "509da911e3a6131ddea2765752a451cf57f425035b88ed88f81688a84f641e94",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd",
+      "review_before_activation": "509da911e3a6131ddea2765752a451cf57f425035b88ed88f81688a84f641e94"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/bridge.gd",
+      "before": "badd7fe46324e92d6c0b12bbe39dc98213de6308dc7cc732cbbfd0c4959d77c2",
+      "after": "f45dd0b79d7bd3961a9374e4317898819a210681f5c39cc62485bb1fcc7fe4f3",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/visual_rework_20261009/binding/bridge.gd",
+      "review_before_activation": "f45dd0b79d7bd3961a9374e4317898819a210681f5c39cc62485bb1fcc7fe4f3"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "b8ed1d4c8ff9868cf4a8f97c768dac1fecefee3f1b9e99b709d476ab14736ee0",
+      "after": "75d3170cad7824e01f1664c49231c8a320f630d66beb6960de0f5c7cfbccb839",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "review_before_activation": "75d3170cad7824e01f1664c49231c8a320f630d66beb6960de0f5c7cfbccb839"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/live_binding.gd",
+      "before": "00eadad610c9818a4d95aeb35470b53bc2df721fe34a1c8c3a0861d6d5489c36",
+      "after": "49eac1978c55b17d5d2c4f12eb316372ede69e0b59349e034e997423b8a12127",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/visual_rework_20261009/binding/live_binding.gd",
+      "review_before_activation": "49eac1978c55b17d5d2c4f12eb316372ede69e0b59349e034e997423b8a12127"
+    },
+    {
+      "path": "res://visual_rework_20261009/runtime_host.gd",
+      "before": "082904db653662cb75a6cee5b7702af5b6a36b475cdcd8b721202233db742817",
+      "after": "07112cb15eaeb78e06ad1c99eba65de23289da4380c6e9dc957945457529cd4e",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/visual_rework_20261009/runtime_host.gd",
+      "review_before_activation": "07112cb15eaeb78e06ad1c99eba65de23289da4380c6e9dc957945457529cd4e"
+    }
+  ],
+  "new": [
+    {
+      "path": "res://equipment_scholar_20261011/adapter.gd",
+      "sha256": "c85d217661d8209cfe82d790c2cea5b75c7b1a0e675208d3514d4f6ef06c587f",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/equipment_scholar_20261011/adapter.gd"
+    },
+    {
+      "path": "res://equipment_scholar_20261011/decision08.json",
+      "sha256": "451bf312088bbb6f0435717476f0dcdda724528b09e927c476ac487c0aa7a4e7",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/equipment_scholar_20261011/decision08.json"
+    },
+    {
+      "path": "res://equipment_scholar_20261011/model.gd",
+      "sha256": "bc49c2b87de1fd05266aa842eef257969a8c3f77fe6f5c602073f52bcc9f3282",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/equipment_scholar_20261011/model.gd"
+    },
+    {
+      "path": "res://equipment_scholar_20261011/task01.gd",
+      "sha256": "78ded4ae2b54e276710de835adf2a5bbb02a527ba23e7d066e5f60788fba605e",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/equipment_scholar_20261011/task01.gd"
+    },
+    {
+      "path": "res://visual_rework_20261009/binding/g01_visual_source_transition.json",
+      "sha256": "8408501ae0a52ef9a9d6391c542d1cd6ff56b8151875be80c6d9309135b248e8",
+      "candidate_file": "/workspace/scratch/73ebae91a474/loot_resume_1115/g01_prepare/final_inputs/visual_rework_20261009/binding/g01_visual_source_transition.json"
+    }
+  ],
+  "new_plan_path": "res://visual_rework_20261009/binding/equipment47_plan.json",
+  "ancestor_original_count": 13,
+  "ancestor_final_count": 19,
+  "new_ancestor_paths": [
+    "res://scripts/combat/enemy_director.gd",
+    "res://tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd",
+    "res://tests/ink_q1_h02_20261004/ink_h02_sim.gd",
+    "res://tests/ink_q3_foundation_20261004/ink_q3_enemy_director.gd",
+    "res://tests/ink_r1_ordinary_20261005/candidate01/enemy_director.gd",
+    "res://tests/ink_ultimate_presentation_20261006/r1_consumer01/timed_director.gd"
+  ],
+  "ready_activation": {
+    "before": "c16b910cf149bc27ab3ba28b75a5ebb53ee8081eefdab5eb163c32248a665b85",
+    "after": "8c1645ebda88f117610b2e126d25a06707f925ab0f53ad74e7ea6c61c7a2ebc9",
+    "path": "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+    "review_manifest_sha256": "b96c027c55f1e06a4c35ad5b9fe1921fca45e2166b80a83ee23786899f7fa3e8",
+    "status": "EXPLICIT_SOURCE_ACTIVATION_DRAFT_REQUIRES_FINAL_REVIEW_NO_RUNTIME_PASS"
+  },
+  "scope": "G01 only; decision08 first real Q/E root effect once, held-only permanent shared task, 80 -> per-item AP110/CDR.22 before original aggregation; SP0; prior stats and snapshot policies retained. Source activation is not a runtime verification.",
+  "review_manifest04_sha256": "b96c027c55f1e06a4c35ad5b9fe1921fca45e2166b80a83ee23786899f7fa3e8"
+}

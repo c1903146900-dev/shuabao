@@ -1,0 +1,15 @@
+; Explicit runtime successor, not editor import.
+[remap]
+importer="scene"
+importer_version=1
+type="PackedScene"
+path="res://runtime_converted_assets/yanguizhou_r2_presentation.scn"
+[deps]
+source_file="res://tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation.glb"
+dest_files=["res://runtime_converted_assets/yanguizhou_r2_presentation.scn"]
+[params]
+animation/fps=30
+animation/remove_immutable_tracks=true
+animation/trimming=false
+skins/use_named_skins=true
+gltf/embedded_image_handling=3

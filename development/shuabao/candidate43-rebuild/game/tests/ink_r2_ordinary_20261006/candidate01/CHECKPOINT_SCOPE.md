@@ -1,0 +1,3 @@
+# R2 ordinary first source step
+
+The new Sim extends the frozen R2 mechanism and reuses the validated R1 consumer facade/director and complete clock admission body. Only R1/R2 cast-context binding, ability identity and terminal event selection are generalized. R2 context comes from the actual inherited `_hero_cast_skill` argument and is checked against current owner, cast, generation, room and domain before any created callback. One shared presentation domain uses the existing R2 1.2-second authoring value. Ordinary UI, full binding and finite gates are pending. No engine run, stage update or production promotion is performed here.

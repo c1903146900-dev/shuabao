@@ -1,0 +1,31 @@
+{
+  "schema": "equipment40-explicit-successor-1",
+  "previous_source_binding_sha256": "6a86c7c79f258e95e4bf0148ca7dc790f42ef4bf710169e9bbc75c793acb597e",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "45f3c2289581712e5514bb99db41b11781ff8580c7e3c3d249a8c4bf1daed304",
+      "after": "a16562542d5138c63c7ba726bed4bf8198d4af69ffae2f4058b4679a5804e7c4"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "0f03e5661a0a1718fcef354b71d0646e257dd1726b71b45ecc54aee968d3da13",
+      "after": "323f681b2f058e221f22880e12e0619f60d7ca75447f0e9dde4bd24b907faa82"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "0d8d2cc5ef3e1b52d4a5c63d4070dc03bc9bbb93c362cc55a99dc341b7c08bd1",
+      "after": "9aecf329d95310ff24d968e5bd003bac646b0b35fcb581bdb2e2c9269c97aafb"
+    }
+  },
+  "new_files": {
+    "equipment_pursuit_20261009/adapter.gd": "53e9d37cd0d0e79c966e103c4211d2bc9620eed87777c13ea3dcd57e9301dcd0",
+    "equipment_pursuit_20261009/model.gd": "c9bd4b293d7188b9861c17ad55f5f69fb6d81d722a74ad750b610647705dd439",
+    "equipment_pursuit_20261009/source_adapter.gd": "aab613d31c89f2415c0edcdb2714f1d0a8db8e2f1da61344f164466799fa1447",
+    "equipment_pursuit_20261009/passive28.gd": "594d38d74f52cb32d55699c15a94d3ff7c927e2620b0a732c1f489256af7c5c7",
+    "equipment_pursuit_20261009/runtime28.gd": "1d85830a26c47c4c06f49accbfd4c4eeed7fa56fb93cd153c7b2679cb1f083b0",
+    "equipment_pursuit_20261009/common_bridge.gd": "86d35c3ee9566c23bc0d4d5ab7f60e101e9b08dc2a884e43377bcfb733c378f3"
+  },
+  "source_rules": "original B02 passive28: owned authenticated solo death grants12percent movement and20percent attack speed for4 actor combat seconds; repeated valid death refreshes deadline not strength; approved sale keeps granted remainder, repurchase never refreshes; cross-room preserves combat time, safe freezes but movement active, rest clears; no multiplayer assist claim",
+  "admitted_item": "final:B02",
+  "previous_item_count": 39,
+  "new_item_count": 40,
+  "earlier_equipment_and_terminal_inherited": true
+}

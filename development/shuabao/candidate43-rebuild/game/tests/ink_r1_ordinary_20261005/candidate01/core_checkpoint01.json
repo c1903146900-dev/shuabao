@@ -1,0 +1,32 @@
+{
+  "schema": "ink-r1-isolated-core-step01",
+  "status": "SOURCE_ONLY_ENGINE_NOT_RUN",
+  "ordinary_entry_changed": false,
+  "R2_implemented": false,
+  "r_hexes_available": false,
+  "parent_binding_sha256": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+  "core_files": {
+    "sim.gd": "6d087282d7a161d97e0daf5573106738677804efbf39546cffbc7ffc82a04a16",
+    "enemy_director.gd": "9f720442bca2727d492d24f1689257705dcd7e71c919bd2c455c9d8c2f583e80",
+    "tuning.gd": "3a87e61ad0eef8c93efc7dfccfe93f476a4f444f00d54ef6e7b6dcda45bd770c",
+    "README.md": "bc6ec4694d85b122314feac4b1ae678344e7ba30b5cbbb7c90268d25e7c41f94"
+  },
+  "unchanged_source_pins": {
+    "tests/ink_e1_ordinary_20261005/candidate01/sim.gd": "24063049066575efbb919373f106a05dd7288f76dd785f236e39be1e001d6e0e",
+    "tests/ink_e1_ordinary_20261005/candidate01/source_binding.json": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+    "tests/ink_enemy_navigation_fix01_20261005/enemy_director.gd": "fa488d5a3e1f2a677444c369e2b2fb4f22518591736719bec815da5e46064aea",
+    "scripts/combat/enemy_director.gd": "f990978d034374228e477ba9661ef4b5c5b93e06a05f2b74065554524400dc52",
+    "scripts/combat/hero_combat_core.gd": "75e2fc9e4670cdafe2e118bdf2fe87ffd5d21baf10dd11add22b10ec1a09f29b",
+    "scripts/progression/model.gd": "c7707af3ae8c411ea31e78a19ace74545d1f5850068cfa5b07d79e057da03c68",
+    "data/final_design/catalog.gd": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+    "data/final_design/catalog.json": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+    "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+    "data/final_design/sources/heroes_balance_values_v03(1).xlsx": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894",
+    "scripts/integration/yanguizhou_first_floor.gd": "2702d28318bc8af8b03dce99d7160e7263e5017872abf64f49e3b79159e3377f",
+    "scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "scripts/ui/hero_chooser.gd": "894a104f5ccbf3d75dab2de5aed3ea1845dad93ff0127d640aaf7c8ed2e91ff2"
+  },
+  "engine_passed": false,
+  "native_passed": false,
+  "art_audio_accepted": false
+}

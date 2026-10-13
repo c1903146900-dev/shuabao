@@ -1,0 +1,92 @@
+{
+  "schema": "ink-p1-ordinary-overlay-1",
+  "status": "ACTUAL_GATE01_141_ONE_FIXTURE_RED_PRESERVED_FIXTURE_ORIGIN_FIXED_NOT_RERUN",
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1",
+    "P1",
+    "R1"
+  ],
+  "supported_hex_hooks": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "parent_bindings": {
+    "tests/ink_e1_ordinary_20261005/candidate01/stage_receipt.json": "751e645059033cd4287bd01a0893e8bb013ce8d80e115a476a9afb76c69dd375",
+    "tests/ink_r1_ordinary_20261005/candidate01/source_binding.json": "56dac25470e45f9de8bd3c62667c1160a8af3aad02a2d59e14bf6ae220fb5456",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/source_binding.json": "cc0a3ef4fa909011a73f1a5acea55dd3427cead39ec6fdbc8d87a58356ce878b",
+    "tests/ink_p1_ordinary_20261006/candidate01/source_binding.json": "538fbbed186cee63823c81fdea57662c6a2c0a29c187921a54ca1fd66fc7ac2b"
+  },
+  "lifesteal_binding": {
+    "path": "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/source_binding.json",
+    "sha256": "3d8f4ac79fe83d2804010a3eca89089999eae50be2b27ad3c49b270cc402828f"
+  },
+  "runtime_map": {
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/README.md": "8d96c2e0a967e86f312d2797172f6165919e0f26a42a5e7413d416ed36073b60",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/admission_checkpoint01.json": "cf4946da881882c76d7aa64ca1395b9ecc2656ffb8ed98372cd4647618dbc984",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/bridge.gd": "b2e320bd3663168888f37d2e129fc5ac7e34825f06e27a1ce495e7cfc2f16cfd",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/catalog.gd": "9d76ecf4c1dc6cd05b603dc931e30e7eb80ddb205967cf59dee72ab9d4fac16c",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/finite_gate.gd": "7efbd7ac57aef41bf58bd38e343102912056cd05ca96455543e1a2381eed39cf",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/floor_session.gd": "7fe92d1ee360e0a3b521bb87057f19886621ff28067af7e9e20bcd5c8f7abb78",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/growth_hud.gd": "200422f33f7259aab06ebd4aa7df6cde33afc20f1886bb85d501e0d79062d87f",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/host.gd": "0ec8fcfa3de54582d2df20dec9bcedd9b70179a421c7bf813256cdb489490a4a",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/hud_projection.gd": "3a0787d43546b7ff7e1223ce9caf22503e2d9fc32dcd8dfb0c61d560f6e5ed7a",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/live_binding.gd": "f0c180147bc8002361c4a13e3a4d609bb2464aa60d0e2665b2ba95466afe746d",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/navigation_install.gd": "a6405d31c92fd484ef0ae6231c9c2c9a8c8de109836ce4e1e2fe9040026868e7",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/p_hud.gd": "932670bebb041c2353ddf6bc99b40d43b9b4acc34f3b38d45c9a241058ae0a5f",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/parse_gate.gd": "50122d42fb35275303c686cb1393ac502fac82612470a3a4362e17610ef8e0ef",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/preimage_manifest.json": "0419d4cf9e3bf717607790d18d144810baf82de1799b3cd86e056caafe01b1e7",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/stage_delta.py": "7f5029daf7f76262ad7352f7ef8047beb1de44ae02b4d313c260a88b4877eece",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/verify_source.py": "2308bf9bad960b0b2ca668101f1915c1bd7169980c8c366cd8182783d0dcb1a7",
+    "res://scripts/integration/yanguizhou_first_floor.gd": "12792a8dff0c34f780b5191451ac9f40bb677600ae2fb20c122d26765d3089c7",
+    "res://scripts/ui/hero_chooser.gd": "b6d272cda4c2a2294aac60d2abdbea9685daa2ce9cf6619a78d20bfb34ec2740",
+    "res://scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/fixture_origin_fix01.json": "688d9634968d0b6b1c83c9379d2f8400eadbe9d8d3edf46a3acfdee1ae954187",
+    "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/fixture_origin_fix01.patch": "af2c7f35a1a82eee4f6ec8d89a7a86c04665eb51f0c6ea46d5a41727830ea856"
+  },
+  "ancestor_pin_replacements": {
+    "res://scripts/integration/yanguizhou_first_floor.gd": {
+      "before": "765f0ee629bc6f64d0cd5755a64cf7865ccf575125f98e5cfe3eb08b96b823f3",
+      "after": "12792a8dff0c34f780b5191451ac9f40bb677600ae2fb20c122d26765d3089c7",
+      "scope": "P1 exact ordinary host extends only"
+    },
+    "res://scripts/ui/hero_chooser.gd": {
+      "before": "3db1d1a7404dd2123bcb9cd9a87a1d1831f30dbffa7b0503d9618d259dbc8792",
+      "after": "b6d272cda4c2a2294aac60d2abdbea9685daa2ce9cf6619a78d20bfb34ec2740",
+      "scope": "Ink-only readiness sentence"
+    }
+  },
+  "required_groups": [
+    "ordinary_zero_resource_learning_owner_and_exact_caps",
+    "explicit_level6_cost_and_button_fixture_not_natural_progression",
+    "full_tooltip_readback_and_actual_control_rectangles",
+    "R_input_pair_dedup_cooldown_cancel_gui_control",
+    "Q_R_uncommitted_preview_ownership_and_existing_effects",
+    "frontdoor_R_clear_preserves_true_E_up_pending",
+    "temporary_circle_read_only_identity_and_expiry",
+    "P1_original_point_four_ranks_cap_full_descriptions_single_owner",
+    "real_B09_purchase_projection_E1_P1_lifesteal_fixture",
+    "concurrent_BASIC_Q1_pause_resume_attribution_and_single_core",
+    "supplement_lifesteal_cap_lethal_callbacks_scope_and_receipt_identity"
+  ],
+  "ordinary_XP_gold_SP_granted": false,
+  "other_passives_unconsumed_hex_opened": false,
+  "old_r1_review_requires_original_closure": true,
+  "native_input": false,
+  "art_audio_accepted": false,
+  "previous_binding": {
+    "path": "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/preimage_gate01/source_binding.json",
+    "sha256": "d8a1b2580fed80b165e73dfb883a3b9a42bc97cf4e50405c04656302c6d394a1"
+  },
+  "fixture_fix": "fixture_origin_fix01.json"
+}

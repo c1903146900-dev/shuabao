@@ -1,0 +1,41 @@
+{
+  "schema": "ink-r1-core-candidate-01",
+  "status": "SOURCE_REFLECTION_FIX_PARSE_RETRY_NOT_RUN",
+  "parent_binding_sha256": "1b89127da1767a4c57fe790edd8b29be1d624096cd3d4f16fef486753bce88a0",
+  "parent_stage_receipt": {
+    "path": "tests/ink_e1_ordinary_20261005/candidate01/stage_receipt.json",
+    "sha256": "751e645059033cd4287bd01a0893e8bb013ce8d80e115a476a9afb76c69dd375"
+  },
+  "core_checkpoint": "core_checkpoint02.json",
+  "candidate_files": {
+    "sim.gd": "3cc2948a55dbe9f1d6796b07f0a993f6f69794bdca0551b464a1cdf41d92ddf7",
+    "enemy_director.gd": "9f720442bca2727d492d24f1689257705dcd7e71c919bd2c455c9d8c2f583e80",
+    "tuning.gd": "3a87e61ad0eef8c93efc7dfccfe93f476a4f444f00d54ef6e7b6dcda45bd770c",
+    "README.md": "bc6ec4694d85b122314feac4b1ae678344e7ba30b5cbbb7c90268d25e7c41f94",
+    "core_checkpoint01.json": "6ebb872e58af0f97046bda952e9fa337a33f1e59e1b6c930dfef72d75efc4945",
+    "core_checkpoint02.json": "f4d45ceedfc1170769570377124b48799139664931e395e1a298f2eba1967f91",
+    "finite_gate.gd": "519c720a7aece33f4426a0d4854b7abe955a64dceef65720fd5250e16db5ae30",
+    "parse_gate.gd": "d0057154618e71d824a5f7196039af74390ed4890b3e59e1a71624253d037c85",
+    "verify_source.py": "b0b1b8ebea14af30cdfed879061bfacb526474ff9c62dacf3f26739b21651829",
+    "stage_delta.py": "42bc3fc7baff04aae3efe328ad1e079d97172e9c3c182d12bcbcaf93befbc9eb"
+  },
+  "ordinary_runtime_candidates_unchanged": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1"
+  ],
+  "ordinary_hooks_unchanged": 10,
+  "R1_independent_core_only": true,
+  "R2_H13_H16_available": false,
+  "engine_passed": false,
+  "native_input": false,
+  "art_audio_accepted": false,
+  "previous_binding": {
+    "path": "preimage_parse01/source_binding.json",
+    "sha256": "392f664f78835041d7b78bed1cff9edb1780ebd95afece36a1e78a2abbe02d09",
+    "actual_parse_failed": true,
+    "finite_executed": false,
+    "fix": "Typed GDScript variables for all direct resource reflection; assertions and mechanism sources unchanged"
+  }
+}

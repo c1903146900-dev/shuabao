@@ -1,0 +1,65 @@
+{
+  "status": "PREPARED_NOT_ENGINE_PARSED_NOT_RUN",
+  "route": [
+    "r01a",
+    "r02a",
+    "r03a"
+  ],
+  "source_root": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15",
+  "source_binding_sha256": "da26defba5cbdcf2ca2b0a7e51d03ed0345f2525336d3543598df5090c001360",
+  "pck_sha256": "2934333a98a9add2ecd608cd401f27319809a318551c69c593eb49471b369dee",
+  "baselines": {
+    "visible_player_replay.gd": "602beed44e01d238ac4df5453a2a0ea11edde87f7d20599ab465ff5fc71fac11",
+    "natural_first_room_replay.gd": "6a5fdabc45768a0390f78661cf880573193fb0cdbe43b195847565781c2032a6"
+  },
+  "files": [
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/README.md",
+      "bytes": 6583,
+      "sha256": "68cf3860a02812e5de9ce71acabfdf2d53f2cc092adceeac5a147e5f611a730c"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/natural_route_replay.gd",
+      "bytes": 23716,
+      "sha256": "4c1119a219b1bbb8604a817d6ebe35c35ab4709c5a94f893b118beb40e016f86"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/natural_route_replay.gd.diff",
+      "bytes": 21841,
+      "sha256": "3863a148aa6def134c9303ee47b868af73a5355ded4f39d68d0c60277d0cabfb"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/visible_route_replay.gd",
+      "bytes": 20667,
+      "sha256": "7e65266739a9de5a687a8badd838116ae632f63c2ae1497de90401528e3404b2"
+    },
+    {
+      "path": "/workspace/scratch/73ebae91a474/loot_resume_1115/candidate15/natural_route_replay_prepare/visible_route_replay.gd.diff",
+      "bytes": 7732,
+      "sha256": "3538c1c841a9a3a46c2b6fbb92e2cfd4a76284ad6798d0f001558f0e0cef430c"
+    }
+  ],
+  "static_checks": {
+    "no_extra_tick_damage_heal_restore_or_held_basic_calls": true,
+    "no_direct_gameplay_state_assignments": true,
+    "driver_no_source_enemy_reads": true,
+    "original_100s_budget_preserved": true,
+    "first_room_observer_unchanged": true,
+    "first_room_driver_unchanged": true,
+    "source_binding_unchanged": true,
+    "no_fixture_helper_loaded": true,
+    "combat_events_filtered_by_current_room_and_generation": true,
+    "two_original_terminals_required": true
+  },
+  "engine_started": false,
+  "engine_parser_run": false,
+  "production_files_edited": [],
+  "previously_verified_first_room_files_edited": [],
+  "observation_wall_ms": 100000,
+  "external_guard_seconds": 110,
+  "continuous_fresh_run": true,
+  "checkpoint_restored": false,
+  "native_input": false,
+  "full_floor": false,
+  "Q1_upgrade_requires_actual_upgraded_receipt": true
+}

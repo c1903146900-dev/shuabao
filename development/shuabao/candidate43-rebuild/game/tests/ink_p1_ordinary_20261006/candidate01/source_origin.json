@@ -1,0 +1,103 @@
+{
+  "status": "ORIGINAL_SOURCES_AND_EFFECTIVE_DECISION_VERIFIED",
+  "docx": {
+    "path": "data/final_design/sources/heroes_mechanics_no_values_v03(1).docx",
+    "sha256": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+    "paragraph": 79,
+    "text": "一次Q或E施法只命中单个敌人时，该次技能最终伤害提高[P1-1]%，并返还该技能[P1-2]%当前冷却。",
+    "comment_id": "1",
+    "comment": "此技能为整次施法的单目标判定。持续、多段技能何时确认只命中一个目标，以及尚未开始冷却时如何结算返还，原稿未定义；本稿未替换为逐段触发。"
+  },
+  "xlsx": {
+    "path": "data/final_design/sources/heroes_balance_values_v03(1).xlsx",
+    "sha256": "33b3c40ab4417519a4ea412a20fb54fc2bd8995ec148abd19f8e71f29d3ed894",
+    "sheet": "晏归舟技能",
+    "cells": {
+      "E68": 12.0,
+      "F68": 18.0,
+      "G68": 30.0,
+      "H68": 48.0,
+      "E69": 5.0,
+      "F69": 8.0,
+      "G69": 14.0,
+      "H69": 23.0
+    }
+  },
+  "effective_rule": {
+    "id": "yanguizhou_p1_whole_cast_settlement",
+    "decision_number": 11,
+    "question_number": 1,
+    "status": "user_confirmed",
+    "implementation_status": "not_implemented",
+    "authority": {
+      "decision_record": "docs/source_decisions/20261004-ink-user-resolutions.md",
+      "decision_record_sha256": "ff0b32789f89514a7caa1b78a83c3559f9cbd26bd7cece43113949b18e3257d9",
+      "accepted_question_id": "Sentinel_de4a0d1e30588191a1cb2adc02d8a48a",
+      "user_message_id": "Sentinel_4287cd498e008191a0e0d57ccbcd1b9c",
+      "user_message_time_utc": "2026-10-04T00:30:00Z",
+      "user_quote": "1.可以。2.后者"
+    },
+    "rules": {
+      "ordinary_damage": "each_segment_settles_immediately",
+      "qualification_scope": "whole_Q_or_E_cast_distinct_hit_enemies",
+      "qualification_time": "after_all_damage_phases_of_that_cast_end",
+      "qualifying_target_count": 1,
+      "bonus_settlement": "one_supplemental_settlement_after_whole_cast_qualification",
+      "damage_bonus_parameter": "P1-1",
+      "cooldown_refund": "once_on_current_remaining_cooldown_at_settlement",
+      "cooldown_refund_parameter": "P1-2",
+      "per_segment_qualification": false,
+      "retroactive_earlier_kill": false,
+      "original_source_numbers": "unchanged"
+    },
+    "targets": [
+      {
+        "hero_id": "yanguizhou",
+        "kind": "skill",
+        "key": "P1",
+        "source_ref": {
+          "source": "mechanics",
+          "file": "heroes_mechanics_no_values_v03(1).docx",
+          "part": "word/document.xml",
+          "paragraph_all_body_descendants": 79
+        },
+        "amends_source_comment_ids": [
+          "1"
+        ],
+        "description": {
+          "replace": [
+            {
+              "from": "一次Q或E施法只命中单个敌人时，该次技能最终伤害提高[P1-1]%，并返还该技能[P1-2]%当前冷却。",
+              "to": "一次Q或E施法的每段伤害先正常结算；整次施法的伤害阶段结束后，若该次施法只命中过一个敌人，再一次补结算该次技能的[P1-1]%最终增伤，并一次返还该技能当时剩余冷却的[P1-2]%。这部分增伤不能提前击杀。"
+            }
+          ],
+          "implementation_notice": "规则已确认；该技能尚未实现。"
+        }
+      }
+    ]
+  },
+  "ancestor_evidence": [
+    {
+      "binding": "tests/ink_p1_settlement_20261005/candidate03/source_binding.json",
+      "binding_sha256": "7a3959d5a0ffcedd7438c0d7dcfaf7ecad74934446632360a6f0747601055359",
+      "strict_report": "tests/ink_p1_settlement_20261005/main_actual_candidate03_0558/strict_result.json",
+      "strict_report_sha256": "4bb7fe1d63ecbb436a057230fa06947fa6d1a46ec859a1711697b80dd8f10a90",
+      "finite_checks": 209,
+      "finite_groups": 19,
+      "strict_check_count": 270,
+      "scope": "ancestor evidence only; NOT a new combination pass"
+    },
+    {
+      "binding": "tests/ink_p1_q1_wave_20261005/candidate02/source_binding.json",
+      "binding_sha256": "04cfa39fcf1f13d7a0ce6e5154b3ef6dfafcce281b53fc3f7c4629e53e83c738",
+      "strict_report": "tests/ink_p1_q1_wave_20261005/main_actual_candidate02_recovered_1221/strict_result.json",
+      "strict_report_sha256": "90f6d54293e9aea8a2054bb8d5b2df8ee5ffbe98186340f7f7888aa4cd495dea",
+      "finite_checks": 122,
+      "finite_groups": 6,
+      "strict_check_count": 324,
+      "scope": "ancestor evidence only; NOT a new combination pass"
+    }
+  ],
+  "new_combination_engine": "NOT_RUN",
+  "new_combination_native": "NOT_RUN"
+}

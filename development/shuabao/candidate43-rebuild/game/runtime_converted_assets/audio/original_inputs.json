@@ -1,0 +1,2238 @@
+{
+  "inputs": [
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_a.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_a.wav",
+      "sha256": "a1b9738a61b154ec6f942b88bf8a06fbf9fe10ae76b276db0f65e19b07dee5eb",
+      "bytes": 9304,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_a.wav.import",
+      "descriptor_sha256": "c0923f653ca284a5f0595c0d0676b8f42460076aa53429e6fce6138f2864c822",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_contact_a.wav-f719683e5f58c1beae17b6c2a170ee2d.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4630,
+        "pcm_sha256": "57b576e9f4be3538f6af28138dfb6577c87d8e607ab2749dbd0bf5f810cb4fe8"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_a.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_a.wav",
+      "sha256": "0ef9f084a9a32854e2e26597968025975f03fd4751391a2e527b0f931de07cb5",
+      "bytes": 33560,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_a.wav.import",
+      "descriptor_sha256": "653ba0b59215eda2923b2b043f9cd3753f50d92098a90ce25a52863f037feb55",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_expire_a.wav-9354bf2e5b467045950d84b2daced54a.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 16758,
+        "pcm_sha256": "09c3715f069d233ab73c61856d766c0b9cb7e12943eaa412edf2210e4fca4639"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_a.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_a.wav",
+      "sha256": "19eb9eab7c703c3d837bbc444f323f4f63b96c86fd9bae915c3f14a00ab3713e",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_a.wav.import",
+      "descriptor_sha256": "e6bd186d20e3846041b52a7681ccb148351c62d4a9000d771f79a15f2c6a3819",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_board_a.wav-c93c9a4c5022b41ed41de195baf4a2ea.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "97af04745f9e7a4fc2d74813dd0bca06f3e198b318bf061821031d489ee0529e"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_b.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_b.wav",
+      "sha256": "e022b5fab44cd48713d1da357d5b4d900687505cc2b0a8858eb921a5827b0730",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_b.wav.import",
+      "descriptor_sha256": "21ada953f6cb566db18e8277cde3d59faa6e907060a21dbd6fa3a311560d0625",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_board_b.wav-119bb8fa7546f9135bf09b481f756212.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "6fb475e83a9b361069bf2c22af78e628193101b9083459037ef78b69b5bac6c9"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_b.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_b.wav",
+      "sha256": "bd8961982771cad485df765a56fbd6f91b9430229b9b12f5ba44712ec2439b75",
+      "bytes": 9304,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_b.wav.import",
+      "descriptor_sha256": "460036f3c6ba2b78e0d143a724dc5326d7fecfd854a392a6048c6089a8f5eb90",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_contact_b.wav-07177574f9aa0b2857b8a0af98bebcc2.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4630,
+        "pcm_sha256": "db28c3c91c18efad7eb2cb538dd00baa3c7244652d01ebd8a0cfce4fa59d2b79"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_b.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_b.wav",
+      "sha256": "62aed63ee821dc9f6f6b8bc75a2ac0e7031bca9f4f1981a7e376b2a3ec1349d7",
+      "bytes": 26504,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_b.wav.import",
+      "descriptor_sha256": "2a3b66c4b8788163379035b61ac10ab81d407e9b7848da6b388dec6f2f006cb6",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_launch_b.wav-7f5fb16e792d2bb88d50049185bcfbe2.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 13230,
+        "pcm_sha256": "312c0f54f71e750d3e765b2e6f732c848d180f0b5216495c5fe35f9d68a1f32d"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_b.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_b.wav",
+      "sha256": "5a82e38e4dcb0941baafa06e94704ba14a98026a6cd42b4fe2a2de09f32a4cbc",
+      "bytes": 33560,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_b.wav.import",
+      "descriptor_sha256": "5ac934005b07178d876a879917a91d6c256356de35386232f4cc50294e30d5cc",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_expire_b.wav-477c26df1a7720b742ba7c3db72f4b0e.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 16758,
+        "pcm_sha256": "8d891a12715a9661a192d876acd1a3bcbce4f22fdd544b50c00ab98c0a92e6d5"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_a.wav",
+      "resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_a.wav",
+      "sha256": "215f7f88d1c09a16ed8cc9554700306376b383d12bdb6fb1af8abf314cb0febf",
+      "bytes": 26504,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_a.wav.import",
+      "descriptor_sha256": "ccf669aaaa3fd92b09b847207e6f2bab63822fa45e0df005c8ee9c93ee510cfe",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e2_launch_a.wav-6126db5fb65a38ff5e6e90359489a076.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 13230,
+        "pcm_sha256": "80c901a774395dfc8e905cb1d0061553c391b9fefb8a7c5d5609c447a9272ff5"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_b.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_b.wav",
+      "sha256": "e3db46fa00f77509b7ec6b46c4c2f150c434dba5bc0dd6c61eb71cced26af4b4",
+      "bytes": 34442,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_b.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_b.wav.import",
+      "descriptor_sha256": "0d4e57a897de815ffdb2f261328e9d2d2ecd4dd246f6ae7f680d4a3202c0bacd",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_collapse_b.wav-62b0bc64869b970d155619ab1a367f72.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 17199,
+        "pcm_sha256": "d5242b792ba9e7a8413ae7820d34adc537710408a0ca42a4e1c77dacc2191dc4"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_b.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_b.wav",
+      "sha256": "9b080b3861a803c13f8c238b48937cf144a920280138a85f0de9e77e7ad73bad",
+      "bytes": 12392,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_b.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_b.wav.import",
+      "descriptor_sha256": "f694dd5410940f2e50053759262e1028d26f903dba2f170fa29469650670168b",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_sunset_tick_b.wav-a4f941451d35612247d9bc36d418db37.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 6174,
+        "pcm_sha256": "2cf2012388edd39a2b13aa94ddf05a11f9b8e905cfc723099af82cce67c3d874"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_a.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_a.wav",
+      "sha256": "01f1b4ab59076e54fdb2b62815eb41afe3f7a6076831cca7a6f34882c04c7f9e",
+      "bytes": 34442,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_a.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_a.wav.import",
+      "descriptor_sha256": "5c079380fc6c5e0e4a1afafe334115ef49f44ad2d11c3804d492301a9feb5feb",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_collapse_a.wav-9eea1b05bb489e80dd99f1ed112e053f.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 17199,
+        "pcm_sha256": "abb834a0fc3fd575ed70562d839c36942a402c674149d9eb18ae898075936248"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_a.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_a.wav",
+      "sha256": "0896f8ae2ee1972c76236893208f760a1ee3836126879182ba7d9b7c4a063a92",
+      "bytes": 10188,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_a.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_a.wav.import",
+      "descriptor_sha256": "97f5f0d9d1f5678ab9e76224b08e09c2b8165caf8d04f50f16973024928f5782",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_crossing_a.wav-22692647b9d93c854641dfe9f4b459ad.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 5072,
+        "pcm_sha256": "b37272b00fdd5d78228a5c7803085c24fae6cc72944c07a8f57d835fff88d030"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_b.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_b.wav",
+      "sha256": "90d21d73c3cbbaa4e55e9eb9989eb1e5632021fcc3135d2a9022b1a4aa3387ed",
+      "bytes": 28268,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_b.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_b.wav.import",
+      "descriptor_sha256": "ff4e037b519164f3f3691a6a621984bf8d7c322cd973567109766b06e56be0df",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_complete_b.wav-3b2d336a8cef08c736463ef181f76220.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 14112,
+        "pcm_sha256": "a90829153b6d685cef3530523951b17852cdfa35f0eb291df666ed19c824931d"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_b.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_b.wav",
+      "sha256": "58922574bdc796713ee273e715f718bd35d024565401ec6aba9959ecad53824a",
+      "bytes": 7982,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_b.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_b.wav.import",
+      "descriptor_sha256": "3e47c4cd483e31f33556a4f1ffa0e9ada7dbb34c3adc366526ae537d44dd1d22",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_marker_b.wav-3716255c9a0b0094455f44e9c2951662.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 3969,
+        "pcm_sha256": "49919dfc619232cf3a55f96464bc983ac5f8a4ce034f18cadac791c2e5def2dc"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_a.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_a.wav",
+      "sha256": "d14367711bc6cfeea22ade675b2a3cec4b0f44d02f5b8e583850a971efaba01a",
+      "bytes": 28268,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_a.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_a.wav.import",
+      "descriptor_sha256": "9231b8e27c36bab866cf9e2600181f56262dc6978825536778d9171bd69056a4",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_complete_a.wav-c7d5380a0a83a4f96b67452d64999590.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 14112,
+        "pcm_sha256": "69bbef09c45b7436d011129f7bfe0a1c56ea11601f495c8885f87037582ebcb6"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_b.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_b.wav",
+      "sha256": "72402dcf3674d26f41d4016a5cdbf86550418b8f2eb0085bf8440b37627b2ba3",
+      "bytes": 10188,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_b.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_b.wav.import",
+      "descriptor_sha256": "7f51813caa451bbe3a85ded8992516fe96a3506d528c8023c943efb2e382e2a2",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_crossing_b.wav-9f16a221ce3c91f5620e5697063f3871.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 5072,
+        "pcm_sha256": "52683f711a1b4b368adb65e5fd84b3b41a271b12d2a411fc7b7464252f8ef031"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_a.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_a.wav",
+      "sha256": "7a5f2648996633b93d7c61ce30a2fe8bbb29c14e309cfae6587fc49f2957dc9a",
+      "bytes": 7982,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_a.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_a.wav.import",
+      "descriptor_sha256": "1640e6c5f66ded9fe6c3e67e8265859b0fa6e8022136c48a5a15a47f7581a968",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_marker_a.wav-0fb774dba7e66d5f0d0f1853f82b227f.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 3969,
+        "pcm_sha256": "ecdad6caacf0366e51387de3caf3687c59fe07901ae8ec881c3e3f979d3473dc"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_a.wav",
+      "resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_a.wav",
+      "sha256": "638fc04e3853d8a611d3f82957a1c63302ac225002ce912386553ddb6b907836",
+      "bytes": 12392,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_a.wav.import",
+      "descriptor_resource": "res://tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_a.wav.import",
+      "descriptor_sha256": "6d4db7886524be06a0d9df00cef0d4cd2fe0b90eba6176c19f17dcde0f7770c7",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_q2_sunset_tick_a.wav-2d9315bc0a81a9e8bb5b08773617aba2.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 6174,
+        "pcm_sha256": "00e07e1d6f4cb2605fb1e98939cc452de860fab6195c2a4933a9c43e014f3b9c"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_contact.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_contact.wav",
+      "sha256": "0677ac86be734ad59a90f64fe3e25f72ee4df42c64aaf1447c228d25421b97f5",
+      "bytes": 9746,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_contact.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_contact.wav.import",
+      "descriptor_sha256": "2ed8198be38832003faf522841729b7989012e2dd756caf1e5cd8095194b20a2",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r2_contact.wav-594f0aab41b6905c4221dc9d03f5606a.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4851,
+        "pcm_sha256": "9ef1f68ace4229613ff0c9a2ea514c2791542db4de006e5c657343b3e515c4fa"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_create.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_create.wav",
+      "sha256": "c1c0d17acdefbebca6bc4e995d9c910681f06d2d44f9afc1827d411f93abc6ba",
+      "bytes": 40616,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_create.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_create.wav.import",
+      "descriptor_sha256": "10e3daec746ac588ddd0a17d8160c9cd752114e560551109a9f783829c55988a",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r2_create.wav-527aeb16c084ba46fd886ba3473e96f0.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 20286,
+        "pcm_sha256": "da36a0c5e1048a4706d550dc3093da229c5ef94a0792a38b84a1bbc9934287eb"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_create.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_create.wav",
+      "sha256": "a219429dcbef4b90f9e021d6a8b2d234c5548f0310c132d7babe95f6bfecd11f",
+      "bytes": 37088,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_create.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_create.wav.import",
+      "descriptor_sha256": "3d262bb1323e3b838c2c28beb07dfbecaa4621053645807e307bf9d77855253a",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r1_create.wav-f2e315e91609dc8c9666acd0d6a9ee17.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 18522,
+        "pcm_sha256": "b9dda42f151f0c0fc5a6b6e8e652790af825173fe3e8b62db7afc01f703c7b5b"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_field_end.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_field_end.wav",
+      "sha256": "8cbca17f51bd9bc860fbd0a42d2c3d4cd3d093095b7954d22c4aee23c983fe44",
+      "bytes": 33560,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_field_end.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_field_end.wav.import",
+      "descriptor_sha256": "efbafc2e6ac7f4309ea2f5fa13f49cb2d7f1d9cb431c2da765b18569765e609d",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r2_field_end.wav-a7bad339739319021012db64e8d4fb05.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 16758,
+        "pcm_sha256": "6097418e040e00f93ad3ec1114e2cf78a148fc54e129a21a7fc05ea6bd2bda63"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_show_end.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_show_end.wav",
+      "sha256": "8050f1c86425a40196dae829f73e626dfab166b6a7a5411939027dc8d2862d8b",
+      "bytes": 19448,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_show_end.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_show_end.wav.import",
+      "descriptor_sha256": "4377e828a7802ae6ea6e9432dbeca6b8a4a2442f03d1d0642288c6c69fb747ce",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r1_show_end.wav-cd960f094539b59705ba0f78bd9ea75b.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 9702,
+        "pcm_sha256": "e0909f2cec5d1c7a32824dbd244a66a7a05fdd02ab1b063c5c7bb2e7b40ca782"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_field_end.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_field_end.wav",
+      "sha256": "c4d6b8a50f55fa70cbf61fab4d39c99194f46da2d7e210aa2cb21793a673bb2e",
+      "bytes": 31796,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_field_end.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_field_end.wav.import",
+      "descriptor_sha256": "989ddb69862ab8456c52e1c67462d1cf271bcccb59a21571fa69f427a8e24ef7",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r1_field_end.wav-ca635ec9e1300bfbb5eaf0ce86e9c72b.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 15876,
+        "pcm_sha256": "76eada06253a0e49899de489824df6f04ddea6017f4a059a30575beaff7fbdca"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_show_end.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_show_end.wav",
+      "sha256": "b83768806fcf803447e69986937ed3b5667118edb64f10e6a7d147e776a31804",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_show_end.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_show_end.wav.import",
+      "descriptor_sha256": "fbb26d7cc7f13eb66ebc3af28b3d674cc1b3da8ba8a12b7322292d407ba470de",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r2_show_end.wav-f990055cfe748a0576d87905a168a08e.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "294faece5ccec2f3a1228aa941fdd1a685ed5c9dd262f63c8c63b7730ef3eae3"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_peak_rise.wav",
+      "resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_peak_rise.wav",
+      "sha256": "fc4276273ce40a685c43b02103ebce8a43ad18c698c88eab73af27625723ec11",
+      "bytes": 17684,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_peak_rise.wav.import",
+      "descriptor_resource": "res://tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_peak_rise.wav.import",
+      "descriptor_sha256": "474d53b87ebdc1d9eee7423633b22ca3fe01b72cc3c653b0378b24a4488f9b9f",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_r2_peak_rise.wav-013dbec8e4ed57973df874c57645b8a5.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 8820,
+        "pcm_sha256": "17739d4ddf5dd20479ce229c30907c83be52f0b0678c24d8183d0ecca1645e9e"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_b.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_b.wav",
+      "sha256": "11cff2de013912e728350dd46c1f890b7934602d706fa14cd96b318972d70f84",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_b.wav.import",
+      "descriptor_sha256": "4081731b863e0efbf46503b5057169cf0ff5c34dac930b69c43eb54ee08dce34",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_enter_b.wav-b561c874423d9d9ede042ef31633b3a7.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "d39965729ea71c0159f29f87ce1d4961f40d19dd9a1ed5aac4f53e0976af1a61"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_b.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_b.wav",
+      "sha256": "ed745419fd22f549d207800a76ddbf42e9a76351687c071cb005eeff33bfe286",
+      "bytes": 24740,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_b.wav.import",
+      "descriptor_sha256": "af74a930bf0389ea39f2fb9c96c493495b9cad813dd87b37486d48a218b99b77",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_reform_b.wav-3106615592df895ecbf97ac28f32cc37.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 12348,
+        "pcm_sha256": "7fa5773f9434f117a111611905f2db177bc581ee9a3b86bace24972a112d71a0"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_a.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_a.wav",
+      "sha256": "a8e2851eb55f3dafaed229fc55207076f1937964248038b87658c62e8038112c",
+      "bytes": 8864,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_a.wav.import",
+      "descriptor_sha256": "696029e42e28a484d5cfc545e3a1760f5e5e0a5945ced39c72cb92e303a96a3b",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_contact_a.wav-6d9370e1596b46351e6116d8656c7a02.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4410,
+        "pcm_sha256": "eff07f57825d6c9f3b4775c46d015d224d72f04081a52e4bfb64cc3323756d44"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_b.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_b.wav",
+      "sha256": "3283cf66c764c5029b142ab32a7a4ad11785bcce7940ed40b1e067a5c5653459",
+      "bytes": 8864,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_b.wav.import",
+      "descriptor_sha256": "f0e332392fde32999a6dd16a95b91087f43f4e47c5471f3d693985285aa898da",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_contact_b.wav-f7c41acbcbcf9532c528aaf232b8729b.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4410,
+        "pcm_sha256": "00a3540aa01c92eea21118e3ed99084d1b9c3a0951b61d502a2a923a0301a409"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_a.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_a.wav",
+      "sha256": "610000db0910e7494d388cb69d5214791cff0782dffcf4f34d940c643bba9483",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_a.wav.import",
+      "descriptor_sha256": "3f85128056f6589f9a7f053a0c5a9a5988df3a5d55ec5a816bf8e33b892cda4f",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_enter_a.wav-0cd2d6f92a5955ec871cf7265b2d4bd1.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "e9fad1c744f03080328987625c3630e394e6421d069001982bd009d6b16af74b"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_a.wav",
+      "resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_a.wav",
+      "sha256": "4c3ce77b80243bbd68f491966be54d845f571f7fbd5d48488371f3a0998b5cbe",
+      "bytes": 24740,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_a.wav.import",
+      "descriptor_sha256": "07b9eb1e9df595daac2c8ff194997d3fe07fcd9d54cecf9233cf953535266448",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e1_reform_a.wav-5cf080d8acad088fc3f886bf84422694.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 12348,
+        "pcm_sha256": "96021efd888c3b2c96c0bc531d20776332f8b30f1a2dd572b35767ac868a1063"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_anticipation.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_anticipation.wav",
+      "sha256": "a78e8f80d1ee101c8ccd9b9867deec0d6e0fdaf3934ade5f58feb43b7dcd5bef",
+      "bytes": 13004,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_anticipation.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_anticipation.wav.import",
+      "descriptor_sha256": "5e1bb53854e5ac146367b5855650d5a7f402e9545e35e031fbc122400ceebe38",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_b_anticipation.wav-bc025ecef211827f80dcb805c6e173f7.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 6480,
+        "pcm_sha256": "955b056ff019649555774449eda439be99631c7ce47a42ec84b8bd113cc1271e"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_anticipation.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_anticipation.wav",
+      "sha256": "110300b4816d165b33da213d6e0627b0636c6ae1910f42b834c866561577fe95",
+      "bytes": 14444,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_anticipation.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_anticipation.wav.import",
+      "descriptor_sha256": "08a06e8dc81b1237fc2dac120924c31aaf802298e12f92870f2c414d561b3b2b",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_c_anticipation.wav-a6a556f16bc7a1e94211aac24a118bc3.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 7200,
+        "pcm_sha256": "9741e9087ed370231666a330a4c9f789aa1823257bb0d9f3d92a7adc2fa4940c"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_impact.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_impact.wav",
+      "sha256": "c86da44e578b51e8a49b6306d8f71e9b064b618cd771d6a8bcc1b70bb32b82fa",
+      "bytes": 14444,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_impact.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_impact.wav.import",
+      "descriptor_sha256": "aa8036428493cdfcbc1a5b3314d46d555e033aad08547808998d302b13db9b11",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_c_impact.wav-e5ed9344f078425f73473fbd78b5e63f.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 7200,
+        "pcm_sha256": "6f970dec7b18abeea3055a0ef7891bb758b0f191fd143c62ed734ef55b2f332e"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_phase_crack.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_phase_crack.wav",
+      "sha256": "7db94be049f212df9c84eef468d8316179b2edb9444cb7c577da965f27f877a7",
+      "bytes": 20204,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_phase_crack.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_phase_crack.wav.import",
+      "descriptor_sha256": "0a0b33aa94a2528fc539d870e5585d387f2ca79a4f765ffb6be57153a3595389",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_phase_crack.wav-5a8d77b380690a48aa4a8608323c8eb7.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 10080,
+        "pcm_sha256": "10ee101946c2018740b13940f3ff1b0285ff7c6303700ed1c85b2045fd78f1fa"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_impact.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_impact.wav",
+      "sha256": "4df5c3b96f3dce6d2ee7c977f7dea2d010dbc5884d875abb20aaf838b399f9ce",
+      "bytes": 15404,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_impact.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_impact.wav.import",
+      "descriptor_sha256": "31360a2cfc1aba7a72e184641a27cbf6aca5a714769234a9ef0d30865a982cee",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_b_impact.wav-bd47bed5d3c8c4d9310d0328552a623a.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 7680,
+        "pcm_sha256": "619dcf332742a78ab38e8a26297766f3787b4d3102db5e9103c0413efcab4330"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_impact.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_impact.wav",
+      "sha256": "ccde0bb811bcb0925edecf0a60afd714581f9ddf51e8798d7ab11ecfe781f80c",
+      "bytes": 12524,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_impact.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_impact.wav.import",
+      "descriptor_sha256": "1f69c624ed82c61eccd9faae44a7d7c0e8fc200596d22e2ae95382ac219ab866",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_a_impact.wav-58dcc4e42c0946fda5f9ca956a03ba6c.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 6240,
+        "pcm_sha256": "106d34841253218058a856a4dce334ae1ba9eb909887a150de563aa1a76c758e"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_anticipation.wav",
+      "resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_anticipation.wav",
+      "sha256": "16e3700928a824b9caf67800c19e3d125c8f3133ad462723090a5bbc426bfd20",
+      "bytes": 10604,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_anticipation.wav.import",
+      "descriptor_resource": "res://tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_anticipation.wav.import",
+      "descriptor_sha256": "37b0b1a8a2ec6d9a8bc2040b3aadd76605528f0680620445692c5899563e4d18",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/boss_a_anticipation.wav-87d5a0fd132a1f4cb0df8ca3fa8951a6.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 24000,
+        "frames": 5280,
+        "pcm_sha256": "f63aaff535ccfb58a9d34eec4acb7ddf4f96e2396b0f51c648330dd3d467ba22"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_b.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_b.wav",
+      "sha256": "0ab1cffe7313ce6377e411949279718ff75622946e67154d68a84a598b17665e",
+      "bytes": 9304,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_b.wav.import",
+      "descriptor_sha256": "4dd4e58b539aa92c644bd46701473a16a3a11afc74e0344378fb58803502d936",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_contact_b.wav-b68335e37e053e79b873c26620e39e74.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4630,
+        "pcm_sha256": "9f8824faa5df1cfa77719415d8eab5f7d3c65ff0e5c7a3a60f7a5f1fb7e678fd"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_b.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_b.wav",
+      "sha256": "b9942956ea61ade33c3eea6bbf1336358a515d9225db662bca57d9fed3be6b7f",
+      "bytes": 26504,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_b.wav.import",
+      "descriptor_sha256": "291f5cfcfbf28a6492b682dd2d114f28d82737c337488b77aa19f195e0d2a045",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_place_b.wav-9346002c9b5e125345abc087172d7170.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 13230,
+        "pcm_sha256": "d4353af363736cdc94d1fdd44dc69a69939e6ccc1579fb8d1149f4a04fb9a3a8"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_a.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_a.wav",
+      "sha256": "831c64c897f660ea9c0751f9876561852b179083f246a7d5610bfc12d0adde22",
+      "bytes": 9304,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_a.wav.import",
+      "descriptor_sha256": "963b34fc4a3598cf9b8170c2e54cda0bcb9ab6ffb61facaf5ea34f85750d4b49",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_contact_a.wav-b1263f20bb71dce9525f8ba6eef9be11.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 4630,
+        "pcm_sha256": "3c7a922e141f90f560f8005d4ea603d666978c58b7631dfe39a8f7cc29ce3277"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_a.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_a.wav",
+      "sha256": "d648ba8f645bcc4ea009a5522391fce19101b114bc3325faccda9a7238dcf152",
+      "bytes": 33560,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_a.wav.import",
+      "descriptor_sha256": "ee64e24b8c8836cd210facf32f6e730a690d06a91b9242a1d192bbf5ee0fb2f3",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_expire_a.wav-dd361596b09da434fbac61b3a9f86819.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 16758,
+        "pcm_sha256": "aefa7d983211f520d5aac901e909076eaee360058ea1ffba2b7b63df07ba6fea"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_a.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_a.wav",
+      "sha256": "df2be3224fecb8cdae07ca6cfe4730bc31732dd20af4e821a56ffacffacdd1e6",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_a.wav.import",
+      "descriptor_sha256": "ea3ac737de0b919918685e2d4d64054dd4172f4dd1f9814cd7c4914b086b366e",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_complete_a.wav-8ca1ba340d2d3eab0fdcf048ebb522cb.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "fa13165ddafa9e812b6eaae51c36edb4739ac96f1d686c70026370a672cbe88b"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_a.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_a.wav",
+      "sha256": "e27a3aeb434beb283b8ad6a809637be75d3fca107352195f1f12c7cab3bef3fd",
+      "bytes": 26504,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_a.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_a.wav.import",
+      "descriptor_sha256": "c79b0e66b53e7667c540b151eb4243fd71a3de4640adb16a07e2bc00a53d8358",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_place_a.wav-0c0e73d19fac102fee234f2451a6d0b6.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 13230,
+        "pcm_sha256": "5f256af396fad8a328b6c4762bc94d0c6559ce580d72f02af06a278b9533fa57"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_b.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_b.wav",
+      "sha256": "35620175622d5c66f67c1b06fbe5f12592dfca663630a95bc9f4fae31e88b475",
+      "bytes": 33560,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_b.wav.import",
+      "descriptor_sha256": "63d47347d385291f9653f37837f4291217590e135a1101db2572083fec18d8f9",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_expire_b.wav-56a9042c85fa3292f182a31593e13d48.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 16758,
+        "pcm_sha256": "7d6d1dc1f32a87ee43f8f3c8a5cd0d9bc6141136e68dde1913e8c586a3f5a9de"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    },
+    {
+      "source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_b.wav",
+      "resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_b.wav",
+      "sha256": "96749b66bc63316c137671e9229920255c6c03ef38a38085c89db21b5ba6dcd9",
+      "bytes": 21212,
+      "descriptor_source": "/workspace/scratch/73ebae91a474/ink_live_integration_20261009/integrated_candidate02/tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_b.wav.import",
+      "descriptor_resource": "res://tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_b.wav.import",
+      "descriptor_sha256": "fba96da851c932b304435eb781d095a884fb143f636e869032539b6dfe338913",
+      "settings": {
+        "force/8_bit": "false",
+        "force/mono": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "edit/trim": "false",
+        "edit/normalize": "false",
+        "edit/loop_mode": "0",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "compress/mode": "2"
+      },
+      "missing_target": "res://.godot/imported/ink_e3_complete_b.wav-933829d5145320d471e17ddca9a3e77f.sample",
+      "options": {
+        "force/8_bit": false,
+        "force/mono": false,
+        "force/max_rate": false,
+        "force/max_rate_hz": 44100,
+        "edit/trim": false,
+        "edit/normalize": false,
+        "edit/loop_mode": 0,
+        "edit/loop_begin": 0,
+        "edit/loop_end": -1,
+        "compress/mode": 2
+      },
+      "original_pcm": {
+        "channels": 1,
+        "sample_width_bytes": 2,
+        "sample_rate": 44100,
+        "frames": 10584,
+        "pcm_sha256": "a04206d33a3a482744162e545d46bf6d0ab02eb7426f4a7911643fb828cbb46f"
+      },
+      "riff_chunks": [
+        "fmt ",
+        "data"
+      ],
+      "has_smpl_loop_metadata": false
+    }
+  ],
+  "groups": [
+    {
+      "settings": {
+        "compress/mode": "2",
+        "edit/loop_begin": "0",
+        "edit/loop_end": "-1",
+        "edit/loop_mode": "0",
+        "edit/normalize": "false",
+        "edit/trim": "false",
+        "force/8_bit": "false",
+        "force/max_rate": "false",
+        "force/max_rate_hz": "44100",
+        "force/mono": "false"
+      },
+      "count": 47,
+      "resources": [
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_a.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_a.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_a.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_board_b.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_contact_b.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_b.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_expire_b.wav",
+        "tests/ink_e2_audio_20261008/candidate01/wav/ink_e2_launch_a.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_b.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_b.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_collapse_a.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_a.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_b.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_b.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_complete_a.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_crossing_b.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_marker_a.wav",
+        "tests/ink_q2_audio_20261008/candidate01/wav/ink_q2_sunset_tick_a.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_contact.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_create.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_create.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_field_end.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_show_end.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r1_field_end.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_show_end.wav",
+        "tests/ink_ultimate_audio_20261008/candidate01/wav/ink_r2_peak_rise.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_b.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_b.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_a.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_contact_b.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_enter_a.wav",
+        "tests/ink_e1_audio_20261008/candidate01/wav/ink_e1_reform_a.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_anticipation.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_anticipation.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_c_impact.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_phase_crack.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_b_impact.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_impact.wav",
+        "tests/ink_first_floor_boss_20261008/audio01/wav/boss_a_anticipation.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_b.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_b.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_contact_a.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_a.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_a.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_place_a.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_expire_b.wav",
+        "tests/ink_e3_audio_20261008/candidate01/wav/ink_e3_complete_b.wav"
+      ]
+    }
+  ],
+  "official_references": [
+    "https://docs.godotengine.org/en/4.6/classes/class_audiostreamwav.html#class-audiostreamwav-method-load-from-file",
+    "https://docs.godotengine.org/en/4.6/classes/class_resourceimporterwav.html",
+    "https://github.com/godotengine/godot/blob/4.6.3-stable/scene/resources/audio_stream_wav.cpp"
+  ],
+  "validation_note": "Original compression2 QOA is lossy. Compare official decoded same-options AudioStreamWAV.data and metadata before/after ResourceSaver/reload exactly; source PCM is reference provenance, not expected equal to decoded lossy QOA. For runtime PCM use same stream playback/mix comparison separately."
+}

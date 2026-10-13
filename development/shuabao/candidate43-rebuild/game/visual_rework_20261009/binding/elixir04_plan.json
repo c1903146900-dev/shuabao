@@ -1,0 +1,33 @@
+{
+  "schema": "single-hunter-elixir04-successor-1",
+  "previous_source_binding_sha256": "2dc5b772553395c2a7efc751c6f5d9cd1f62d70a4a3108bf8a3aa489f42f58cc",
+  "changes": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "cc32d4d9c550bf5036657c144aa1e7ed81fb89d565bdab9e106103e255af5fd0",
+      "after": "71f489aaaf61235a0af65fb363eed6f8be552c8ea7eee42b9bb56c51e2561245"
+    },
+    "visual_rework_20261009/binding/bridge.gd": {
+      "before": "47172b330992730e414cd297f4635b4f3f35622a1c624ea0f78f6b62b471f701",
+      "after": "708b5197363cd0bcc39813177be39015cb34b72e9403bdbc9c370f5b729425fb"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "beae25237325a54689e657928a0ddba188dca35b038a339c596bebc5ac073299",
+      "after": "7e12d9fe9a9faa2b861ff966492739a76244ff49ac2fe65a400f3fb8387ad567"
+    },
+    "visual_rework_20261009/runtime_host.gd": {
+      "before": "b68bf39fb797aaa0005241fa8ae564e79dc2c8629a837ec4006e2f3436e4824b",
+      "after": "8f13bc60e818f7c463001c589b5aceab97d5881cf78e07fa13797bfea73571b5"
+    },
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "57ff1f30840e4a6ca9c8764b0eb35df39d68a291d7c147c1b4d136441d219f3f",
+      "after": "860b484fe1e165c2802e8253f294425b43db92b3913824703f74ba2c7888eab0"
+    }
+  },
+  "new_files": {
+    "elixir_hunter_20261009/model.gd": "b00d91f37d626b59df172fd344f3f7e605bac18a41bb288c8ece140397498350",
+    "elixir_hunter_20261009/panel.gd": "95dc930fab13883b431249c8147303724095835e9fd2ce9be156b7c19a3c48e9",
+    "elixir_hunter_20261009/session.gd": "a7b12ef6fa3148260eaf9451c2f262db17c6d65a6ac4e9e764fb459e4f4f2553"
+  },
+  "scope": "Only elixir04 admitted. Original six-slot purchase/use/automatic-use/replacement/lifetime kernel and damage ordering retained; no new damage packet. 43 equipment, formal12 training unchanged.",
+  "revision": "session-entry-consume-only-exact-schema-and-original-authority"
+}

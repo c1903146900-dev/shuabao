@@ -1,0 +1,37 @@
+{
+  "schema": "ink-rest-service-source-checkpoint-1",
+  "status": "FIXTURE_ENTITLEMENT_AND_CYCLE_REPAIRED_RUNTIME_NOT_RUN",
+  "recorded_utc": "2026-10-06T04:48:00Z",
+  "candidate_files": {
+    "tests/ink_rest_service_20261006/candidate01/README.md": "d7ba1c35c4344bf04c16bd04855e3dc8b57240c16b7ef7b2a5e438b958bd722b",
+    "tests/ink_rest_service_20261006/candidate01/finite_gate.gd": "1c94aa20c168e325f82092d5837ad4b38c03d5f731f37602c4aa21615b6b11a2",
+    "tests/ink_rest_service_20261006/candidate01/floor_session.gd": "9d8a016475c7b5824c4daaf15ead2205a7bf776c539add5ff156def1a5ffa925",
+    "tests/ink_rest_service_20261006/candidate01/host.gd": "086f0a629c71f0df85c80d1a5c01e0f0154b3c30db859e3dd34537c68099e77e",
+    "tests/ink_rest_service_20261006/candidate01/parse_gate.gd": "f86d98d9598690e8b9d3443e0a91ce985b89fe3c42bf5fe53d3d7896b0f51efe",
+    "tests/ink_rest_service_20261006/candidate01/rest_service.gd": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+    "tests/ink_rest_service_20261006/candidate01/health_callback_fixture.gd": "85b4ce31cec0eec7520820cdfa5ca1240fa906cbd32f0ab98221ed39136dc38a"
+  },
+  "parent_pins": {
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/source_binding.json": "77108825151b5c4e0c5454d3bdad36c8ff59b569ffce7008576924c03c41fe12",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/source_binding.json": "3d8f4ac79fe83d2804010a3eca89089999eae50be2b27ad3c49b270cc402828f",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/floor_session.gd": "7fe92d1ee360e0a3b521bb87057f19886621ff28067af7e9e20bcd5c8f7abb78",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/host.gd": "0ec8fcfa3de54582d2df20dec9bcedd9b70179a421c7bf813256cdb489490a4a",
+    "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd": "bf3784501df0da9ff6006fda87d780e7a288052084aa2150fc9d696a97bf4e1b",
+    "scripts/integration/yanguizhou_first_floor.gd": "12792a8dff0c34f780b5191451ac9f40bb677600ae2fb20c122d26765d3089c7",
+    "scripts/integration/hero_entry.gd": "6a1ce05114e598ee6aceb7d455f6cb9a6f8a6161f26684de94504c8a0783ff61",
+    "docs/source_decisions/20261006-ink-five-resolutions.json": "861528d850389b2b4be2ce7a9ad4461531bbbfbd33de113870f9955b721f3e39"
+  },
+  "production_adapter_changed": false,
+  "godot_started": false,
+  "native_input": false,
+  "full_floor": false,
+  "finite_fixture_status": "WRITTEN_NOT_RUN",
+  "required_groups": [
+    "exact_factory_and_single_owner",
+    "real_committed_rest_hp_cleanup_callback_and_permanent_state",
+    "idempotent_refresh_continue_nonrest_and_original_flask_reset",
+    "existing_flask_entitlement_economic_reset_only"
+  ],
+  "previous_binding_sha256": "433ff7a6ef57ff78cfc26c55765d34d726af403c1dc3203b4459576299797413",
+  "fixture_fix": "Preserve current unowned flask0; separate real old economic flask purchase/reset fixture. Release test observer Session cycle. Production service unchanged."
+}

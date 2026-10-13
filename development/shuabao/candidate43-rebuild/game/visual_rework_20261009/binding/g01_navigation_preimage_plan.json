@@ -1,0 +1,26 @@
+{
+  "status": "STATIC_DRAFT_NOT_APPLIED",
+  "parent_source_sha256": "068918131c84acc3837ed41350fcf88c230b70ee82ffe5ac6c4deb4f936ffa99",
+  "target_candidate": "candidate38",
+  "production_gd_changes": [],
+  "replacement_path": "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+  "original_replacement": {
+    "before": "c71ae70e05623bbd7bb4c0fafd454b0ec8bee6ad5a9860b14633ad748af0e116",
+    "after": "4700e763a4ac8e21cc182f85fb83eac552673d574c1f70161f14a733baf4f85c",
+    "preimage": "res://visual_rework_20261009/binding/history_g01_navigation_base01/tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+    "scope": "Only NAV_DIRECTOR_SHA follows fixed equipment47 before/after; other navigation checks unchanged"
+  },
+  "new_preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+  "new_preimage_sha256": "c71ae70e05623bbd7bb4c0fafd454b0ec8bee6ad5a9860b14633ad748af0e116",
+  "new_plan_path": "res://visual_rework_20261009/binding/g01_navigation_preimage_plan.json",
+  "history_source_path": "res://visual_rework_20261009/binding/history_g01_preimage_base01/source_binding.json",
+  "expected_counts": {
+    "core": 1739,
+    "visual": 71,
+    "intersection": 7,
+    "replacements": 20
+  },
+  "scope": "Only relocate the exact twentieth preimage reference to the existing required preimages namespace; retain original history and old19 rows; validator and all production code unchanged.",
+  "old36_and37_GUI_red_retained": true,
+  "engine_run": false
+}
