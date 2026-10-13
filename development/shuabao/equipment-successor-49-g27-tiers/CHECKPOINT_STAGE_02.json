@@ -1,0 +1,250 @@
+{
+  "schema": "candidate49-limited-validation-stage-2",
+  "state": "SOURCE_BACKUP_READY_VALIDATION_STILL_LIMITED",
+  "as_of_utc": "2026-10-13T14:54:00Z",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "candidate50_created": false,
+  "source_formula_changed_since_copy": false,
+  "candidate": "49_g27_formal_tiers",
+  "source_delta_count": 7,
+  "core": 1772,
+  "visual": 72,
+  "intersection": 8,
+  "ancestors": 22,
+  "all_attempts_green": false,
+  "validation_rows": [
+    {
+      "group": "tiers_old_failed",
+      "checks": 162,
+      "business_passed": false,
+      "joint_passed": false,
+      "receipt_sha256": "6bbfd04912827585de6aca106bc1d549da70216f3aa4130dccb23228e2558bf5",
+      "old_failure_preserved": true,
+      "business_report_sha256": "1283baeff861f739cf0bfa4c6e1d829bd63468415a6c27ed849397f136f8ea66",
+      "completed": [],
+      "resource_failure": "RSS_exit_still_live_or_unproved",
+      "actual_exit": 2,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 1
+    },
+    {
+      "group": "tiers_revision02",
+      "checks": 234,
+      "business_passed": true,
+      "joint_passed": true,
+      "receipt_sha256": "58c2b1bb313b77fcfbfaba66b7c101c448df3bf0a7b85713bbc56f5d65318f17",
+      "old_failure_preserved": false,
+      "business_report_sha256": "25204300ddb182644b2fb33d7809e176611a0f69ca08d1822b42d1d9b38f36c2",
+      "completed": [
+        "formal_g27_tiers_and_uid_growth:tiers"
+      ],
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "g04_earned_growth",
+      "checks": 233,
+      "business_passed": true,
+      "joint_passed": true,
+      "receipt_sha256": "34ac55463ae0224fe3b35bbe73833db616c43bf6a0ed2b94329b16076f555875",
+      "old_failure_preserved": false,
+      "business_report_sha256": "b718296f4a4379872accc8123b5c52e0e21ee21ecfbc80d1aa5cf81826843e68",
+      "completed": [
+        "formal_g27_tiers_and_uid_growth:g04_growth"
+      ],
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "definition_regen",
+      "checks": 449,
+      "business_passed": true,
+      "joint_passed": true,
+      "receipt_sha256": "4e58d1de416c47c357cf22d13caec443700c96f6065b0e34404b717c14c0ee93",
+      "old_failure_preserved": false,
+      "business_report_sha256": "456109cd85adbf49f8d88ab66012d9458a72735b9cecb772fcbd5b35160b3e52",
+      "completed": [
+        "definition_and_regen_consumers:main"
+      ],
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "rollback_third_stage",
+      "checks": 64,
+      "business_passed": true,
+      "joint_passed": false,
+      "receipt_sha256": "3c6dcd38856f850fbb3e9cc8816999c486db3d9251048c1a6d1597182ce01625",
+      "old_failure_preserved": false,
+      "business_report_sha256": "8e0f7be693bf0a3b46d1d54979a362442af6c38b439c59b1b01fd4e0120909f1",
+      "completed": [
+        "reward_command_atomic_rollback:third_stage_conflict"
+      ],
+      "resource_failure": "RSS_exit_still_live_or_unproved",
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 1
+    },
+    {
+      "group": "rollback_progress",
+      "checks": 64,
+      "business_passed": true,
+      "joint_passed": false,
+      "receipt_sha256": "bf859f870513fd98df21fcb717481b1a6277ce1a5c703f8b813acf3350cd2dcb",
+      "old_failure_preserved": false,
+      "business_report_sha256": "7b7b0df88528564f68835f5e9c4bd5bfabd0f1c5a155c83b79cc18d36c0a2a5c",
+      "completed": [
+        "reward_command_atomic_rollback:progress_conflict"
+      ],
+      "resource_failure": "RSS_exit_still_live_or_unproved",
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 1
+    },
+    {
+      "group": "original_kernel_lineage",
+      "checks": 47,
+      "business_passed": true,
+      "joint_passed": false,
+      "receipt_sha256": "3bf250a674b634ae185b37eccbc7450aa47d16ac45fea551fc5491a824f3625b",
+      "old_failure_preserved": false,
+      "business_report_sha256": "07fa53fe290cf26576dce2285a10918d6320b5cabf8640aa7fb11966bd057055",
+      "completed": [
+        "original_kernel_lineage_projection:main"
+      ],
+      "resource_failure": "RSS_exit_still_live_or_unproved",
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 1
+    },
+    {
+      "group": "c02_d06_original_combination",
+      "checks": 189,
+      "business_passed": true,
+      "joint_passed": true,
+      "receipt_sha256": "831b17d0c8523a58f8ea2d05a2ca3b98ede7538f8370e3640279f93fff5387db",
+      "old_failure_preserved": false,
+      "business_report_sha256": "fbd5407ea8c78235f2609f38c0c72cbf56f02764517b44cede84bf4eb5db4788",
+      "completed": [
+        "c02_d06_q1_e1"
+      ],
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "lifecycle_first_incomplete",
+      "checks": null,
+      "business_passed": null,
+      "joint_passed": false,
+      "receipt_sha256": "8ea3754dcc3d00242ab36aed4b7768d0661233613eee946402072e62d8e9d0d5",
+      "old_failure_preserved": true,
+      "resource_failure": "sample_gap_untrusted",
+      "actual_exit": -9,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "lifecycle_stage_observation",
+      "checks": 231,
+      "business_passed": true,
+      "joint_passed": false,
+      "receipt_sha256": "d494af51c3270a6cba3fef31fdec84273190c5ae0bae896b7c8cf3e44e84990b",
+      "old_failure_preserved": false,
+      "business_report_sha256": "29211e37dafdffc0759ef638f622aadb4d8aafb7f62927ad65024a04ca394609",
+      "completed": [
+        "sell_rebuy_cross_room_new_run:main"
+      ],
+      "resource_failure": "RSS_exit_still_live_or_unproved",
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    },
+    {
+      "group": "ordinary_shop_GUI_zero_stage",
+      "checks": 90,
+      "business_passed": true,
+      "joint_passed": true,
+      "receipt_sha256": "f9c3d63c6f03130e13d41931fd4af135964be7fcbce248adf55b0134ac33ed76",
+      "old_failure_preserved": false,
+      "business_report_sha256": "d9af3194d3426f3d1bbaeb649b96127f94fb80a0ec714badd99ac78d8264961d",
+      "completed": [],
+      "actual_exit": 0,
+      "four_exit_confirmations": true,
+      "cleanup_error_count": 0
+    }
+  ],
+  "G27_scope": "原普通入口12项能力清单不包含G27/G21。正向G27只在明确detached能力夹具验证，49修复潜在条件消费者，不证明旧普通入口已错误放大成装，也不表示海克斯已上线。",
+  "G21_scope": "不同原UID的已奖励倍率仅只读fixture，发奖和抽取链未验。",
+  "G01_scope": "进化110AP/22%CDR仅detached原消费者输入投影，任务链未验。",
+  "G04_growth_scope": "两原商店UID经原RewardAdapter/Session真实事件获得三阶段，成长基数投影、原regen消费者通过。",
+  "lifecycle_scope": {
+    "new_business_checks": 231,
+    "diagnostic_stages": 50,
+    "source_reward_task_assignment": false,
+    "covered": [
+      "售一件仍计数",
+      "售空冻结",
+      "撤销出售/购买",
+      "重购续进度",
+      "跨房",
+      "新局隔离"
+    ],
+    "business_passed": true,
+    "resource_passed": false,
+    "resource_failure": "RSS_exit_still_live_or_unproved",
+    "old_first_run_failure_not_overwritten": true
+  },
+  "GUI_scope": {
+    "machine_checks": 90,
+    "business_and_resource_passed": true,
+    "manual_three_state_pixels_accepted": true,
+    "ordinary_entry_and_Host_ready": true,
+    "task_stage": 0,
+    "native_input": false,
+    "natural_play": false,
+    "earned_stage1_to3_GUI_pixels_verified": false,
+    "images_metadata_only": [
+      {
+        "stage": "01_G04_before_purchase",
+        "PNG_sha256": "82f08bad1aec0e47907c01142dc07260896f46ec222e9b23a77acc890513d889",
+        "held": false,
+        "frozen": true,
+        "owned_copies": 0,
+        "task_stage": 0,
+        "manual_original_pixel_review": "root confirmed readable and state-consistent"
+      },
+      {
+        "stage": "02_G04_after_purchase",
+        "PNG_sha256": "dce347143a1b1f96096ea8a0803815e516b49179a8e367cd778bcc9ad44b6d3e",
+        "held": true,
+        "frozen": false,
+        "owned_copies": 1,
+        "task_stage": 0,
+        "manual_original_pixel_review": "root confirmed readable and state-consistent"
+      },
+      {
+        "stage": "03_G04_reopened",
+        "PNG_sha256": "dce347143a1b1f96096ea8a0803815e516b49179a8e367cd778bcc9ad44b6d3e",
+        "held": true,
+        "frozen": false,
+        "owned_copies": 1,
+        "task_stage": 0,
+        "manual_original_pixel_review": "root confirmed readable and state-consistent"
+      }
+    ],
+    "review_correction": "01未持有后缀曾被连续看图误归到02/03，根分别重开original确认后二者无后缀。未产生源修改/后继候选/重跑。",
+    "new_held_consistency_assertions": "仅未来防回归草稿，未运行，不补算进原90检查。"
+  },
+  "remaining": [
+    "49 D06其它生命周期/短长aggregate等仍按既定小组回归",
+    "全自然玩法/原生操作/全首层/全部海克斯没有整体验收",
+    "若需三成长阶段GUI图，应另用真实状态明确验证"
+  ],
+  "old47_48_results_inherited": false,
+  "publication_scope": "7源增量与有限checkpoint；不包含截图、原始日志、采样记录、引擎缓存或试玩包。"
+}

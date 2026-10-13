@@ -1,0 +1,110 @@
+{
+  "schema": "candidate49-seven-file-source-preservation-v1",
+  "state": "SOURCE_BACKUP_READY_VALIDATION_STILL_LIMITED",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "source_delta_count": 7,
+  "parent_before_count": 4,
+  "ancestor_preimages": 22,
+  "Q3_source_files": 177,
+  "old21_ancestor_rows_unchanged": true,
+  "files": [
+    {
+      "path": ".gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "ANCESTOR_PREIMAGE_REFERENCES.json",
+      "bytes": 17132,
+      "sha256": "251f8de65a284fbc1b2772c3c102d0e581a34c0c5fba7c93dcdf58fd395d533b",
+      "git_blob_sha1": "42fbc998ba2a2f26c144f396e1bd34e9a8c67e6f"
+    },
+    {
+      "path": "CHECKPOINT_STAGE_02.json",
+      "bytes": 9638,
+      "sha256": "086ae7eff6f3dfe1099fd8e0e038e0b9306eb12ba4aece62b53ebd027af044cf",
+      "git_blob_sha1": "7edf2e698223f6d73e7d0134b5adaf889e80749d"
+    },
+    {
+      "path": "CHECKPOINT_WORKING_01.json",
+      "bytes": 2412,
+      "sha256": "7f832eff70205b04c089019ea6ed8112912a083f9232c888c73f23c0d68f061f",
+      "git_blob_sha1": "4a4d77551f3de7e829efe92dfb08acf39fcd7000"
+    },
+    {
+      "path": "PARENT_PREIMAGE_REFERENCES.json",
+      "bytes": 2475,
+      "sha256": "91860310f0ae2261e530ef933ce245fb26ebd86852538f01410484fc05456bbf",
+      "git_blob_sha1": "f9ac762e93e2845d8abbb5a2c0b810bbdb0e6cc0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1573,
+      "sha256": "f1cafe497c3c75b2efa64206d7deb7e718e2d89fb4d2a37c15cd4a7bde596972",
+      "git_blob_sha1": "885aa10a645a9272c5d77b5b960bc298ed7950cf"
+    },
+    {
+      "path": "candidate49_prepare/revision01/REVIEW_MANIFEST.json",
+      "bytes": 3378,
+      "sha256": "e6fbe096a2a2f7f2b6c2403b72cdb01b199b0f181bb08b3fb32568804842b6f7",
+      "git_blob_sha1": "9dd9a48236b59753d07460b4d2a6b70563fb4d05"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "bytes": 3475,
+      "sha256": "2ef75965518aa8fe91d78b1c5f804441b0e6c9f05c69b0048620f059ad3a6a22",
+      "git_blob_sha1": "b09232e9d4585784de728fda6e529cd7adadcf5e"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "bytes": 9896,
+      "sha256": "4c2db4b01a123dedffa32433ae2264e58702fa875fd9908bd186ed37df1607ae",
+      "git_blob_sha1": "119cb15f039ca90b243038be906336e59124706f"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/g27_tier_source_transition.json",
+      "bytes": 4589,
+      "sha256": "53425b255e0f1e6d172e48133b9db141604408e3f3fd26a23972c938aa46f8cb",
+      "git_blob_sha1": "f31ce8ee0d996e3298a1f0bd2fc0179687206c3c"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/g27_visual_source_transition.json",
+      "bytes": 595,
+      "sha256": "053da5ff9079837b0a0e6048f86bf370ba6bcdd7c53fa9f892c6dac4021273ef",
+      "git_blob_sha1": "943f19a4a898ab27840c69e295e7aa116a72a310"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 15162,
+      "sha256": "5b797c7d1649e357ec08edbf4ad21c902ea37887ccbc2b04b2c713cbb60e0c11",
+      "git_blob_sha1": "7177ce88790841ea3a1e4a3db53b8105c5378554"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/preimages/tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "bytes": 3344,
+      "sha256": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+      "git_blob_sha1": "d643cc837663f89b29d3ed9b10792ac920aa30d5"
+    },
+    {
+      "path": "candidate49_prepare/revision01/production_draft/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 330549,
+      "sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+      "git_blob_sha1": "b3e74ea24f81292bd241df28bd8d70500aa12e68"
+    }
+  ],
+  "all_green": false,
+  "historical_validation_inherited": false,
+  "excluded": [
+    "full project",
+    "engine/package binaries",
+    "screenshots",
+    "raw execution logs",
+    "sampling traces",
+    "test launchers",
+    "engine caches",
+    "credentials"
+  ],
+  "latest_checkpoint": "CHECKPOINT_STAGE_02.json"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "candidate49-working-preservation-checkpoint-1",
+  "as_of_utc": "2026-10-13T14:27:00Z",
+  "state": "WORK_IN_PROGRESS_NOT_FINAL_ACCEPTANCE",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "core": 1772,
+  "visual": 72,
+  "intersection": 8,
+  "ancestors": 22,
+  "full_candidate_files": 3254,
+  "formal_fix": "G27仅对runtime status tier=base/intermediate提供35%基础属性加成；成装不加。G21/成长/数量顺序保持。",
+  "scope_correction": "普通入口的12项严格能力清单尚不含G27或G21。49修复潜在条件消费者，不代表G27已上线，也未证明旧普通入口发生过成装错误放大。",
+  "confirmed_49_tests": [
+    {
+      "group": "tier与条件消费者",
+      "business_checks": 234,
+      "joint_passed": true,
+      "ordinary_G27": "未准入负例",
+      "positive_G27": "仅显式detached能力夹具"
+    },
+    {
+      "group": "G04真实奖励逐阶与UID投影",
+      "business_checks": 233,
+      "joint_passed": true,
+      "G04_stage_source": "原RewardAdapter/Session真实事件",
+      "G21": "只读已奖励倍率夹具，不验证发奖/抽取"
+    }
+  ],
+  "preserved_49_failure": {
+    "revision": "consumer49_revision01",
+    "checks": 162,
+    "business_passed": false,
+    "resource_passed": false,
+    "causes": [
+      "误把全局正式批准当普通入口能力准入",
+      "测试漏原空间被动输出defense0/tenacity0"
+    ]
+  },
+  "G01_scope": "正式进化110AP/22%CDR只作detached原消费者输入，不验证任务完成链",
+  "pending": [
+    "49定义/交易/原RegenUI独立回归",
+    "49售空重购/跨房/新局",
+    "49两事务回滚与kernel lineage",
+    "49 D06/C02组合及其他已排关键回归",
+    "真实默认entry/Host ready商店GUI与人工像素验收"
+  ],
+  "prior_48_history": "定义449/sequential129/forgery112联合通过；single_three82/overshoot82/reward_phase71仅业务通过、资源红；旧source首次无业务结果且资源红。均保原记录，不继承为49验收。",
+  "prior_47_history": "定义401仅47当时结果；该版存在G04 regeneration UI映射消费者缺陷，48修复。",
+  "historical_results_inherited": false,
+  "all_green": false,
+  "GUI_accepted": false,
+  "engine_logs_or_screenshots_included": false
+}

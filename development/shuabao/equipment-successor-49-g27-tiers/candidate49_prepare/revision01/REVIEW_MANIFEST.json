@@ -1,0 +1,77 @@
+{
+  "status": "SPARSE_REVIEW_DRAFT_NOT_APPLIED_NOT_PARSED_NOT_RUN",
+  "base_candidate": "/workspace/scratch/73ebae91a474/recovery_20261013_c02/candidate48_g04_regen_ui",
+  "proposed_candidate": "candidate49_g27_formal_tiers",
+  "base_source_sha256": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+  "base_visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "source_sha256": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": [
+    {
+      "path": "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "before": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+      "after": "2ef75965518aa8fe91d78b1c5f804441b0e6c9f05c69b0048620f059ad3a6a22",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "1616958b43cfb7cdfd3f30bc617e8da32004dcca6f2da547e35506989b77de52",
+      "after": "4c2db4b01a123dedffa32433ae2264e58702fa875fd9908bd186ed37df1607ae",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g27_tier_source_transition.json",
+      "before": null,
+      "after": "53425b255e0f1e6d172e48133b9db141604408e3f3fd26a23972c938aa46f8cb",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g27_visual_source_transition.json",
+      "before": null,
+      "after": "053da5ff9079837b0a0e6048f86bf370ba6bcdd7c53fa9f892c6dac4021273ef",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "before": "2350397055e0929c6c4a484c4ecb2937e579eeb2d3dcd3238e663f557761758c",
+      "after": "5b797c7d1649e357ec08edbf4ad21c902ea37887ccbc2b04b2c713cbb60e0c11",
+      "kind": "modify"
+    },
+    {
+      "path": "visual_rework_20261009/binding/preimages/tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "before": null,
+      "after": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+      "kind": "new"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+      "after": "7848d6e0f2a16795ecd5030a907fd488d159b7d4a282b15432e6e7860a414f78",
+      "kind": "modify"
+    }
+  ],
+  "modified_count": 4,
+  "new_count": 3,
+  "business_formula_delta_count": 1,
+  "core": 1772,
+  "visual": 72,
+  "intersection": 8,
+  "ancestor": 22,
+  "old_21_ancestor_rows_identical": true,
+  "visual_binding_identical": true,
+  "prior_q3_transitions_preserved": true,
+  "candidate48_source_unchanged": true,
+  "pending_regressions": [
+    "all supported50 tier whitelist completeness",
+    "base/intermediate G27=1.35, ordinary final G27=1",
+    "G04 genuinely earned growth and distinct UID G21 multipliers, with and without G27",
+    "G01 evolved base under distinct UID G21; G27 remains excluded",
+    "missing/unknown tier fail closed for G27 without changing output schema",
+    "original recipe outer-held-only projection and no consumed component double counting",
+    "49 independent core source/regen GUI and pending lifecycle/rollback/D06 groups"
+  ],
+  "engine_run": false,
+  "gdscript_parser_run": false,
+  "full_candidate_copied": false,
+  "applied_to_base": false
+}

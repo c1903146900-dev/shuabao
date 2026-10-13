@@ -1,0 +1,109 @@
+{
+  "schema": "g27-formal-tier-source-successor-1",
+  "status": "PREPARED_NOT_PARSED_NOT_RUN",
+  "source_predecessor_sha256": "1e16431b04060cfb30c010220b7a96a58a98fdeaa3550e12db082b5a29a3ac3c",
+  "visual_unchanged_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "changes": {
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd": {
+      "before": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+      "after": "2ef75965518aa8fe91d78b1c5f804441b0e6c9f05c69b0048620f059ad3a6a22"
+    },
+    "visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "before": "1616958b43cfb7cdfd3f30bc617e8da32004dcca6f2da547e35506989b77de52",
+      "after": "4c2db4b01a123dedffa32433ae2264e58702fa875fd9908bd186ed37df1607ae"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "before": "2350397055e0929c6c4a484c4ecb2937e579eeb2d3dcd3238e663f557761758c",
+      "after": "5b797c7d1649e357ec08edbf4ad21c902ea37887ccbc2b04b2c713cbb60e0c11"
+    }
+  },
+  "formal_mechanic": {
+    "template": "未合成为最终装备的基础与中级组件，其提供的基础属性提高[G27-1]%。只强化最外层持有的组件，不重复计算其合成树内的材料；合成成装后对应增益消失。",
+    "source": {
+      "source": "mechanics",
+      "file": "heroes_mechanics_no_values_v03(1).docx",
+      "part": "word/document.xml",
+      "paragraph_all_body_descendants": 360
+    },
+    "source_sha256": "21cf67cc0ed3d020831d23ef2cb31c5fca5d8fa8ca3f429e1415df608c9405fb",
+    "verified_original_docx_paragraph": 360
+  },
+  "formal_parameter": {
+    "token": "G27-1",
+    "label": "未成装组件基础属性增幅",
+    "unit": "%",
+    "values": [
+      35
+    ],
+    "rank_count": 1,
+    "source": {
+      "source": "numbers",
+      "file": "heroes_balance_values_v03(1).xlsx",
+      "sheet": "通用海克斯",
+      "row": 120,
+      "cells": [
+        "E120"
+      ]
+    },
+    "notes": "",
+    "balance_status": "source_v03_initial_unvalidated",
+    "overrides": []
+  },
+  "formal_pool_approval": {
+    "id": "approve_g24_g30_formal_pool",
+    "status": "user_confirmed",
+    "rules": {
+      "enabled_common_hexes": [
+        "common_g24",
+        "common_g25",
+        "common_g26",
+        "common_g27",
+        "common_g28",
+        "common_g29",
+        "common_g30"
+      ],
+      "activation": "formal_pool_with_normal_hook_and_eligibility_checks"
+    },
+    "authority": {
+      "user_message_id": "Sentinel_c2c2b5caac7081919f15300d065626e2",
+      "user_quote": "可以",
+      "accepted_question_id": "Sentinel_233cf2c790408191a03ba232be67d62e",
+      "accepted_scope": "Include the seven supplied G24–G30 proposals in the formal common-Hex pool; numerically balance alongside the others"
+    },
+    "preserves_original_source": true
+  },
+  "effective_numeric_override": null,
+  "tier_authority": {
+    "base": "tests/ink_shop_runtime_stats_20261004/base_stat_adapter.gd: definitions[].tier=base",
+    "intermediate": "tests/ink_intermediate_stats_20261004/intermediate_stat_adapter.gd: definitions[].tier=intermediate",
+    "final": "Source-validated final adapters, including equipment_scholar_20261011/adapter.gd and equipment_gold_20261013/adapter.gd, emit tier=final",
+    "commerce_items_have_no_tier": true,
+    "legacy_catalog_complete_is_not_current_runtime_tier_name": true
+  },
+  "eligibility": [
+    "base",
+    "intermediate"
+  ],
+  "missing_or_unknown_tier": "no G27 bonus; no invented default; existing supported/holds behavior preserved",
+  "unchanged": [
+    "G27 numeric value 35%",
+    "G21 per-UID multiplier",
+    "grown item base before multipliers",
+    "actual count aggregation",
+    "output fields",
+    "original task and reward authority",
+    "all 21 prior ancestor before/preimage pairs"
+  ],
+  "new_ancestor_replacement": {
+    "path": "res://tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+    "before": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+    "after": "2ef75965518aa8fe91d78b1c5f804441b0e6c9f05c69b0048620f059ad3a6a22",
+    "preimage": "res://visual_rework_20261009/binding/preimages/tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd"
+  },
+  "q3_files_count": 177,
+  "q3_original_binding_unchanged": true,
+  "q3_why_required": "The original 177-file action-source map includes this shared stat consumer; append exact one-file before/after instead of resetting or broadening the historical source map.",
+  "candidate48_defect_preserved": true,
+  "prior_results_inherited": false,
+  "engine_run": false
+}
