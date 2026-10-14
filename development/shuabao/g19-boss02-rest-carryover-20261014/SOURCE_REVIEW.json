@@ -1,0 +1,400 @@
+{
+  "schema": "g19-boss02-two-stage-public-source-review-1",
+  "status": "REPAIRED_SOURCE_SEAL_SNAPSHOT_RUNTIME_EVIDENCE_SEPARATE",
+  "candidate_identity": "candidate_g19_boss02_rest_carryover",
+  "published_base": {
+    "repository": "c1903146900-dev/shuabao",
+    "commit": "9517599119233e0d3c99abcd6700d60382272706",
+    "tree": "e45c7468483993289e018d9dbad69d39cc0dd647",
+    "prefix": "development/shuabao/g28-turret01-20261014",
+    "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+    "archive_manifest": "development/shuabao/g28-turret01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+    "archive_manifest_sha256": "a4293ac141805df34dd1c1af992bfe585abcbc84227ecd1729393655a327e0a4",
+    "source_review": "development/shuabao/g28-turret01-20261014/SOURCE_REVIEW.json",
+    "source_review_sha256": "d938daab3dcb13b941af3e6913881d6da9436b757c5a3e15fffb385ccad02149",
+    "archive_sha256": "466d39733af0ae275824a80d86302f3fd314e351d04c17f2d409650d8ebf0f1a",
+    "archive_bytes": 121330,
+    "parts": [
+      {
+        "sequence": 1,
+        "offset": 0,
+        "path": "source_backup.tar.gz.part01",
+        "bytes": 32768,
+        "sha256": "8b5e07171c59592bb238788949cef2e34ef5074ef988b0ffbd64409be637c1b5",
+        "git_blob_sha1": "41f40233420f4f7a8de0c1d126a2eeafeec1e3d3"
+      },
+      {
+        "sequence": 2,
+        "offset": 32768,
+        "path": "source_backup.tar.gz.part02",
+        "bytes": 32768,
+        "sha256": "6d2e3f7841a03a895cae6ca8d4accb495af35e17d11d0e3e786277eb7235bef6",
+        "git_blob_sha1": "f3655080873511b2b2bed1f4886eab25abf62961"
+      },
+      {
+        "sequence": 3,
+        "offset": 65536,
+        "path": "source_backup.tar.gz.part03",
+        "bytes": 32768,
+        "sha256": "1a246a02ea4aa0187632c82ca1d5f2a8bab686269d66473cf13c74955e3299bf",
+        "git_blob_sha1": "45603a4521f36573ce20030ed9598904ba1ec69f"
+      },
+      {
+        "sequence": 4,
+        "offset": 98304,
+        "path": "source_backup.tar.gz.part04",
+        "bytes": 23026,
+        "sha256": "e8abf9a241ad5aacb31beba9abbdf1bf0a088549aa58ac3a0ebce0a97286d819",
+        "git_blob_sha1": "150434473687a852b8ec852e34ee6d8c4c4ea27c"
+      }
+    ],
+    "prior_recovery_chain": {
+      "repository": "c1903146900-dev/shuabao",
+      "restored50": {
+        "commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+        "tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+        "source_sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+        "next_delta_parent_before_images": [
+          {
+            "path": "visual_rework_20261009/binding/bridge.gd",
+            "sha256": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05",
+            "bytes": 4061,
+            "git_blob_sha1": "6e14ce0a0b5c39aba00b90b4a981d9af92d63e7a",
+            "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+            "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+            "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/bridge.gd"
+          },
+          {
+            "path": "visual_rework_20261009/binding/live_binding.gd",
+            "sha256": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5",
+            "bytes": 15693,
+            "git_blob_sha1": "7d57bdb2cc54060d15d1e93fec06f7c128e15112",
+            "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+            "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+            "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/live_binding.gd"
+          },
+          {
+            "path": "visual_rework_20261009/binding/source_binding.json",
+            "sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+            "bytes": 331113,
+            "git_blob_sha1": "628e889a55b1cc71cac06ef66cc14f8dfdf72f56",
+            "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+            "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+            "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/source_binding.json"
+          }
+        ],
+        "instructions": "Restore published43 baseline and ordered44-50 deltas, validating each before/after; the published G29 SOURCE_REVIEW identifies its exact50 preimages."
+      },
+      "g29_rebuild01": {
+        "commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+        "tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+        "prefix": "development/shuabao/g29-rebuild01-20261014",
+        "source_sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+        "archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+        "archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+        "source_review": "development/shuabao/g29-rebuild01-20261014/SOURCE_REVIEW.json",
+        "source_review_sha256": "085ec5c0342a494fe59a5ddc4c7e0f90235ed38540d3c955aa6ee29e41aa64ec",
+        "archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+        "archive_bytes": 113860,
+        "parts": [
+          {
+            "sequence": 1,
+            "path": "source_delta.tar.gz.part01",
+            "offset": 0,
+            "bytes": 32768,
+            "sha256": "7128668a719e3d7a3db35eebe907247caed601c14052c197816b99a7bf984343",
+            "git_blob_sha1": "969fa04c1abf2ec4596a8a1e004a0e7c29f2c194"
+          },
+          {
+            "sequence": 2,
+            "path": "source_delta.tar.gz.part02",
+            "offset": 32768,
+            "bytes": 32768,
+            "sha256": "10ee6cba6fbc1f3d21e1bc773fb9a76ce0bcd42615a6c3d74a9c371370357491",
+            "git_blob_sha1": "824f917600d4e97319e59f1c3c74c947371eb5c5"
+          },
+          {
+            "sequence": 3,
+            "path": "source_delta.tar.gz.part03",
+            "offset": 65536,
+            "bytes": 32768,
+            "sha256": "478613d909ce97c7c9235ea3b1d793c19c8bfdc69b3c60118a156fd2b6cadc86",
+            "git_blob_sha1": "d3aa04945b070552dab15578dd58fd63435ca2c6"
+          },
+          {
+            "sequence": 4,
+            "path": "source_delta.tar.gz.part04",
+            "offset": 98304,
+            "bytes": 15556,
+            "sha256": "5c510eafa04650ae8b03c8584938b55c6271c404887350382d170b654c004eb4",
+            "git_blob_sha1": "0c958b6524492fdc296a24621adb4ee11ca2ea53"
+          }
+        ],
+        "instructions": "Read the four parts at the fixed commit, verify each and concatenate in sequence; verify complete gzip hash and every safe regular-file member. Apply only the five members after checking their preimages."
+      },
+      "g28_turret01": {
+        "prefix": "development/shuabao/g28-turret01-20261014",
+        "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+        "instructions": "On an independent G29 source copy, check the three parent before hashes and three add paths absent; overlay exactly the six source_delta files. Verify source_binding SHA, its runtime/visual maps and explicit dependencies. Do not overlay this metadata folder into the game root."
+      }
+    }
+  },
+  "source_sha256": "f8eb6edb45456dc42d3a0f0440d098907dcc0483580b63748604076734b87379",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "stages": [
+    {
+      "sequence": 1,
+      "name": "01_admission",
+      "input_source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+      "output_source_sha256": "b11747b38fed1a20093899b131885a535d715eef16403a38232499a5bae28fc5",
+      "input_noncache_file_count": 3063,
+      "output_noncache_file_count": 3066,
+      "delta_files": [
+        {
+          "path": "hex_boss_arrival_20261014/catalog.gd",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "cab12832e3a6bd3c1785a91b5c55c6bb2538d22425f58f1d43c2e9c3fa8898b9",
+          "bytes": 3788,
+          "computed_git_blob_sha1": "5fcc83967d061c0fa7c3e0b787112ddc99d3d106",
+          "stored_path": "stages/01_admission/source_delta/hex_boss_arrival_20261014/catalog.gd"
+        },
+        {
+          "path": "hex_boss_arrival_20261014/user_decision.json",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "0c9d64c247d0d6eb16ee326763cf39dba33acf947a19e9bfccd5eb0bdc30f3a6",
+          "bytes": 2131,
+          "computed_git_blob_sha1": "68593912a1f96611dd94652289ba2676ee1e1989",
+          "stored_path": "stages/01_admission/source_delta/hex_boss_arrival_20261014/user_decision.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/bridge.gd",
+          "operation": "replace",
+          "before_sha256": "a0da3e1e03cbb8b2e4d4b2e65a96d3db05ee3f3c371b6b0d8947d28a28cdb21a",
+          "before_reference": {
+            "storage": "published_G28_archive_member",
+            "commit": "9517599119233e0d3c99abcd6700d60382272706",
+            "archive_manifest": "development/shuabao/g28-turret01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+            "archive_manifest_sha256": "a4293ac141805df34dd1c1af992bfe585abcbc84227ecd1729393655a327e0a4",
+            "archive_sha256": "466d39733af0ae275824a80d86302f3fd314e351d04c17f2d409650d8ebf0f1a",
+            "member_path": "source_delta/visual_rework_20261009/binding/bridge.gd",
+            "sha256": "a0da3e1e03cbb8b2e4d4b2e65a96d3db05ee3f3c371b6b0d8947d28a28cdb21a",
+            "bytes": 4051
+          },
+          "after_sha256": "c86c7bf1f96a7f46895208054dade73b251f0615219afc38b25c8f35a8ad2e9c",
+          "bytes": 4057,
+          "computed_git_blob_sha1": "bb228e14e24a4e2993fab51703565a8ccacba6fe",
+          "stored_path": "stages/01_admission/source_delta/visual_rework_20261009/binding/bridge.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/live_binding.gd",
+          "operation": "replace",
+          "before_sha256": "5b5364869670b7e20c4acc2dcb10c84792fd78b7819d3f637900716a86e73cef",
+          "before_reference": {
+            "storage": "published_G28_archive_member",
+            "commit": "9517599119233e0d3c99abcd6700d60382272706",
+            "archive_manifest": "development/shuabao/g28-turret01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+            "archive_manifest_sha256": "a4293ac141805df34dd1c1af992bfe585abcbc84227ecd1729393655a327e0a4",
+            "archive_sha256": "466d39733af0ae275824a80d86302f3fd314e351d04c17f2d409650d8ebf0f1a",
+            "member_path": "source_delta/visual_rework_20261009/binding/live_binding.gd",
+            "sha256": "5b5364869670b7e20c4acc2dcb10c84792fd78b7819d3f637900716a86e73cef",
+            "bytes": 16199
+          },
+          "after_sha256": "7027bade4e4ed61e2e5065b1021227c90a08c6111b11754e19db0c1a34463945",
+          "bytes": 16480,
+          "computed_git_blob_sha1": "75f6fcfdce73abdfa0248df7457b58b32abedff6",
+          "stored_path": "stages/01_admission/source_delta/visual_rework_20261009/binding/live_binding.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/g19_live_admission_plan.json",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "0760f2d4e4434d11a59ea8846622fef456e61cb65150a50dcba1358ee2496301",
+          "bytes": 10064,
+          "computed_git_blob_sha1": "fff6a37fd1010177a74adcc0f7d06bb63638df2f",
+          "stored_path": "stages/01_admission/source_delta/visual_rework_20261009/binding/g19_live_admission_plan.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "operation": "replace",
+          "before_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+          "before_reference": {
+            "storage": "published_G28_archive_member",
+            "commit": "9517599119233e0d3c99abcd6700d60382272706",
+            "archive_manifest": "development/shuabao/g28-turret01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+            "archive_manifest_sha256": "a4293ac141805df34dd1c1af992bfe585abcbc84227ecd1729393655a327e0a4",
+            "archive_sha256": "466d39733af0ae275824a80d86302f3fd314e351d04c17f2d409650d8ebf0f1a",
+            "member_path": "source_delta/visual_rework_20261009/binding/source_binding.json",
+            "sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+            "bytes": 332493
+          },
+          "after_sha256": "b11747b38fed1a20093899b131885a535d715eef16403a38232499a5bae28fc5",
+          "bytes": 333306,
+          "computed_git_blob_sha1": "ab697ef6a2a438b465d1ea48cf190b7d4778482c",
+          "stored_path": "stages/01_admission/source_delta/visual_rework_20261009/binding/source_binding.json"
+        }
+      ],
+      "runtime_status_at_stage_seal": "HISTORICAL_FAILED_86_OF_90",
+      "publication_role": "intermediate source history, not final acceptance"
+    },
+    {
+      "sequence": 2,
+      "name": "02_rest_fix",
+      "input_source_sha256": "b11747b38fed1a20093899b131885a535d715eef16403a38232499a5bae28fc5",
+      "output_source_sha256": "f8eb6edb45456dc42d3a0f0440d098907dcc0483580b63748604076734b87379",
+      "input_noncache_file_count": 3066,
+      "output_noncache_file_count": 3069,
+      "delta_files": [
+        {
+          "path": "tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+          "operation": "replace",
+          "before_sha256": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+          "before_reference": {
+            "storage": "published_full43_base_Git_blob_retained_through50_and_G28",
+            "commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+            "path": "development/shuabao/candidate43-rebuild/game/tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+            "git_blob_sha1": "4f1c67414f8dae4c44a29ae2f2003c5675d1ab2d",
+            "sha256": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+            "bytes": 5123,
+            "note": "Verified direct Git tree path/blob and inherited byte equality through restored50, G28 and b117; not a G28 delta-archive member."
+          },
+          "after_sha256": "ec76e8cd449d6cddc2f5d039f255bd6f2b6bcf27271cf73175826c8b93bbed3e",
+          "bytes": 6147,
+          "computed_git_blob_sha1": "9fe6f15158a686b995556e6d7a310168be04157a",
+          "stored_path": "stages/02_rest_fix/source_delta/tests/ink_rest_service_20261006/candidate01/rest_service.gd"
+        },
+        {
+          "path": "hex_boss_arrival_20261014/rest_exception_decision.json",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "dc43440d5e2911e4a4df75971dd86f8f9f94900a3c6b67115cda2452f9ea93b4",
+          "bytes": 3971,
+          "computed_git_blob_sha1": "71f9860b0c67548c8afd7d957b26793992b4e2e3",
+          "stored_path": "stages/02_rest_fix/source_delta/hex_boss_arrival_20261014/rest_exception_decision.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/preimages/tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+          "bytes": 5123,
+          "computed_git_blob_sha1": "4f1c67414f8dae4c44a29ae2f2003c5675d1ab2d",
+          "stored_path": "stages/02_rest_fix/source_delta/visual_rework_20261009/binding/preimages/tests/ink_rest_service_20261006/candidate01/rest_service.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/live_binding.gd",
+          "operation": "replace",
+          "before_sha256": "7027bade4e4ed61e2e5065b1021227c90a08c6111b11754e19db0c1a34463945",
+          "before_reference": {
+            "storage": "earlier_stage_afterimage",
+            "path": "stages/01_admission/source_delta/visual_rework_20261009/binding/live_binding.gd",
+            "sha256": "7027bade4e4ed61e2e5065b1021227c90a08c6111b11754e19db0c1a34463945",
+            "bytes": 16480
+          },
+          "after_sha256": "5f17f3e124a7d85e194b9096d52c0eccefdd68841a67407cd28c851ef08ef35d",
+          "bytes": 16967,
+          "computed_git_blob_sha1": "59370b2aa4ee305ff8d41ec858c0319919e3a316",
+          "stored_path": "stages/02_rest_fix/source_delta/visual_rework_20261009/binding/live_binding.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/g19_rest_fix_plan.json",
+          "operation": "add",
+          "before_sha256": null,
+          "before_reference": null,
+          "after_sha256": "1380d9af604600bdce379a4dc26084ea65cce44ce370fc8f0b73887825216f4c",
+          "bytes": 5777,
+          "computed_git_blob_sha1": "47acb566b8c5460c6790f00929ba3f3e8932c687",
+          "stored_path": "stages/02_rest_fix/source_delta/visual_rework_20261009/binding/g19_rest_fix_plan.json"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "operation": "replace",
+          "before_sha256": "b11747b38fed1a20093899b131885a535d715eef16403a38232499a5bae28fc5",
+          "before_reference": {
+            "storage": "earlier_stage_afterimage",
+            "path": "stages/01_admission/source_delta/visual_rework_20261009/binding/source_binding.json",
+            "sha256": "b11747b38fed1a20093899b131885a535d715eef16403a38232499a5bae28fc5",
+            "bytes": 333306
+          },
+          "after_sha256": "f8eb6edb45456dc42d3a0f0440d098907dcc0483580b63748604076734b87379",
+          "bytes": 334711,
+          "computed_git_blob_sha1": "d6645d7f19fbe11bde7c7982173772468d703f3e",
+          "stored_path": "stages/02_rest_fix/source_delta/visual_rework_20261009/binding/source_binding.json"
+        }
+      ],
+      "runtime_status_at_stage_seal": "NOT_RUN",
+      "publication_role": "final repaired source"
+    }
+  ],
+  "restoration_contract": [
+    "Restore only from the fixed published G28 commit and its earlier published recovery chain. Verify ordered archive parts and member hashes before applying its source_delta members.",
+    "Copy the verified G28 project independently. Apply stage01 only after checking its three before hashes and three absent add paths; verify full b117 source_binding and all maps.",
+    "Preserve stage01 as intermediate history. Apply stage02 only after checking its exact three before hashes and three absent add paths; verify full final f8eb source_binding and all maps.",
+    "Stage01 b117 was not committed or ref-published. It is reconstructed entirely from the six archived stage01 afterimages, never fetched from an uncommitted Git tree.",
+    "The package metadata and stages directories are not game-root overlays. Only each ordered stage source_delta is applied to the independent game root."
+  ],
+  "final_counts": {
+    "published_base_files": 3063,
+    "intermediate_files": 3066,
+    "final_noncache_files": 3069,
+    "stage_afterimages": 12,
+    "unique_changed_paths": 10,
+    "net_added_paths": 6,
+    "source_map": 1785,
+    "visual_map": 72,
+    "intersection": 8,
+    "ancestor_replacements": 23,
+    "explicit_successor_dependencies": 301,
+    "ordinary_hex_hooks": 16
+  },
+  "root_cause_and_correction": {
+    "intermediate_b117_result": "86 of90 originalG19 assertions passed; four rest carryover assertions failed.",
+    "failed_assertions": [
+      "rest_retains_remainder",
+      "ordinary_no_refresh_or_reset",
+      "ordinary_remainder_ticks",
+      "expiry_stays_reverted"
+    ],
+    "cause": "Original rest service zeroed boss_until in both cleanup passes. The earlier no-consumer-change static conclusion omitted this service.",
+    "fix": "Capture once, after all old legal-first-entry/replay gates and before callbacks, only when original Model support/selection and runtime activation agree and G19 is unexpired. Restore the identical local deadline after each unchanged cleanup pass and refresh_stats(false).",
+    "prior_test_oracle_and_failed_evidence_unchanged": true,
+    "prior_uncommitted_blob_tree_objects_untouched": true
+  },
+  "rule_scope": {
+    "newer_specific_G19_approval": "Remaining buff freezes between combats; next combat continues; ordinary room does not retrigger.",
+    "older_rest_rule_preserved_except_G19": "All other buffs/debt/ICD/cooldowns clear, full original heal, no basic-flask refill, original per-floor reset.",
+    "old_and_new_authority_records": "Stage02 rest_exception_decision.json pins both frozen old rest rule and approved G19 decision, and preserves original quotes.",
+    "no_new_clock_or_reward_rule": true,
+    "G26_G25_G21_not_admitted": true,
+    "original12second_25percent_AD_AP_and_eliteBoss_trigger_unchanged": true,
+    "old22_ancestors_unchanged_only_rest23_added": true,
+    "Q3_original177_unchanged": true
+  },
+  "final_runtime_status_at_source_seal": {
+    "parser": "NOT_RUN",
+    "engine": "NOT_RUN",
+    "headless_business": "NOT_RUN",
+    "default_Host_ready": "NOT_RUN",
+    "GUI": "NOT_RUN",
+    "native_input": "NOT_RUN",
+    "full_gameplay": "NOT_RUN"
+  },
+  "history_limits": {
+    "parent_G28_business": "52 actual source-business checks; no inherited G19 qualification.",
+    "intermediate_b117": "Actual86/90 failure preserved; not a validated release.",
+    "old_unpublished_generated_cache_not_restored": 198,
+    "old107_receipts_recreated": false,
+    "historical_pass_results_inherited": false
+  },
+  "runtime_evidence_packaged": false,
+  "runtime_note": "NOT_RUN describes the immutable source-seal documents. Subsequent actual test runs are separate evidence; this source snapshot does not assert that no later run occurred.",
+  "contains_execution_logs_screenshots_or_original_attachments": false,
+  "current_remote_HEAD_asserted": false,
+  "remote_write_performed": false
+}
