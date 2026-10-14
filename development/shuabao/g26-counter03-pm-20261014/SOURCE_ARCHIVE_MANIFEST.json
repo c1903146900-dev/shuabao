@@ -1,0 +1,444 @@
+{
+  "acceptance": {
+    "GUI": "NOT_RUN",
+    "Host_ready": "NOT_RUN",
+    "business": "NOT_RUN",
+    "historical107_receipts_recreated": false,
+    "historical198_generated_caches_restored": false,
+    "historical_results_inherited": false,
+    "native_input": "NOT_RUN",
+    "parser": "NOT_RUN"
+  },
+  "append_only_prefix": "development/shuabao/g26-counter03-pm-20261014",
+  "archive": {
+    "bytes": 456921,
+    "compression_level": 9,
+    "format": "USTAR + gzip",
+    "gid": 0,
+    "git_blob_sha1": "dd4c1c3c74f1a43481f4cb4ea8222129f935c1bf",
+    "gname": "",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "member_mode": "0644",
+    "members_bytes": 1530898,
+    "members_count": 32,
+    "mtime": 0,
+    "path": "source_backup.tar.gz",
+    "sha256": "f0d6cf73c067d93f8951b33e30123759e674cf4887a0a19d601e83969d72bf5b",
+    "split_bytes": 32768,
+    "tar_bytes": 1556480,
+    "uid": 0,
+    "uname": ""
+  },
+  "base_complete_file_map_sha256": "898b2d0310a07c4144e8f9c0fa9787106d1cb055fe1576ff5f1fb51e5749fba3",
+  "companion_files": [
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": ".gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2889,
+      "git_blob_sha1": "c461cef691dad0f8c770fda019f3045a4e540150",
+      "path": "README.md",
+      "sha256": "90c397c1269932d3288c8411c1ecc8bcab65be5e75c2286d7f9b09ae90c63e73"
+    },
+    {
+      "bytes": 1329,
+      "git_blob_sha1": "dd18f96968abc20fcca770d9c57265dde5a6f90d",
+      "path": "SOURCE_REVIEW.json",
+      "sha256": "aa643d97edb88a9eb262489d1153fc0210d756eb354c15a1b54d80bae57db803"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "development_tools/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 7692,
+      "git_blob_sha1": "27b06ecd179b012fbfda73ed196b7f06ffe2c63a",
+      "path": "development_tools/ARCHIVE_MANIFEST.json",
+      "sha256": "c78af1018bebaecce2e8255811117c7e051a29111d35b919a082ecf0738e2187"
+    },
+    {
+      "bytes": 4893,
+      "git_blob_sha1": "3690fe0efff4066c78c15e1ff72bf7a82a4a9372",
+      "path": "development_tools/BUNDLE_MANIFEST.json",
+      "sha256": "94b929021c31dd56fa8785ed3f697ee31516374ad8ca3f6174177c6543bf96b7"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "36ccc777845ff01270cf31689ef2776ea9fbf8ff",
+      "path": "development_tools/development_tools_g26_pm03_raw.tar.gz.part01",
+      "sha256": "814bc55aa846df8ae0daa59fcf3a0d066cee34d5458eb041ec4005fda5451b5e"
+    },
+    {
+      "bytes": 18559,
+      "git_blob_sha1": "276a582998c2d9387cba29bddab9c9d3d2e6eccd",
+      "path": "development_tools/development_tools_g26_pm03_raw.tar.gz.part02",
+      "sha256": "81356f6037a62416c04bcf9b11e9afc4c278a095f7c900e81fa1e7b346f49452"
+    }
+  ],
+  "final_complete_file_map_sha256": "75d8dc4c33931f1cd66ab4344ddd23bd95d6a662de25ba574ea01c2a353c6874",
+  "final_file_count": 3078,
+  "historical_results_inherited": false,
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "members": [
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/.gdignore",
+      "path": "source/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9199,
+      "git_blob_sha1": "136ef15b519fca5299ee6d926347fde0d779249d",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/PARENT_PREIMAGE_REFERENCES.json",
+      "path": "source/PARENT_PREIMAGE_REFERENCES.json",
+      "sha256": "da6b9865a4de0a2180ce1d2082b70f9c05276a058a66134aac67b381d84cf8a0"
+    },
+    {
+      "bytes": 2242,
+      "git_blob_sha1": "e1c823c3c3fce6116b0467bd9fea35bc016e5cc6",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/README.md",
+      "path": "source/README.md",
+      "sha256": "63a683de1cd757a949b990682b8e97d35e7b5745f6a711d706a979fab317ad1f"
+    },
+    {
+      "bytes": 23283,
+      "git_blob_sha1": "dbe13e9be41dddc400034669964c5b5c2421a2d8",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/SOURCE_CHAIN_MANIFEST.json",
+      "path": "source/SOURCE_CHAIN_MANIFEST.json",
+      "sha256": "24c62c1f26393d50462442eb5f9ad90c67d9a193edb93bd6cae3218f73d7391a"
+    },
+    {
+      "bytes": 4007,
+      "git_blob_sha1": "ea5a40535cdac355dc39def56705c3141d454127",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/SOURCE_REVIEW.json",
+      "path": "source/SOURCE_REVIEW.json",
+      "sha256": "75cc76d01b64006e354d4a6f732c3600e164d331e0424314adf7c2fbe5111f62"
+    },
+    {
+      "bytes": 3855,
+      "git_blob_sha1": "113ef3e2837c225225709c25da36d3073c7985f8",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/hex_shield_counter_20261014/catalog.gd",
+      "path": "source/stages/01_source_stack/source_delta/hex_shield_counter_20261014/catalog.gd",
+      "sha256": "3470a4806c09c3e8705c2a0ec5f902af8d68787d040e0feb6efdc81349d93a57"
+    },
+    {
+      "bytes": 2220,
+      "git_blob_sha1": "2696979faac830bf308c63c13d3f9a2ef30ad3d9",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/hex_shield_counter_20261014/user_decision.json",
+      "path": "source/stages/01_source_stack/source_delta/hex_shield_counter_20261014/user_decision.json",
+      "sha256": "2edd62abc3aa71ef0f174e7084dd065469478e9da968ae8a1cd5d79f4bb5b281"
+    },
+    {
+      "bytes": 25106,
+      "git_blob_sha1": "e805c0f5f0a8bea25253b98b5f1f439ef1f2b9b0",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/scripts/combat/common_hex_bridge.gd",
+      "path": "source/stages/01_source_stack/source_delta/scripts/combat/common_hex_bridge.gd",
+      "sha256": "12a6128c62ca106750073900f59c39a33ba51464487d5f3901358452efa04d4d"
+    },
+    {
+      "bytes": 47093,
+      "git_blob_sha1": "239b031c12aa9a81b995414d253db0f03b0c4ab6",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/scripts/combat/common_hex_runtime.gd",
+      "path": "source/stages/01_source_stack/source_delta/scripts/combat/common_hex_runtime.gd",
+      "sha256": "3055083820a256611f663ba33c9b7689a593903d5e6088d0a94b5b071fa2ac32"
+    },
+    {
+      "bytes": 56208,
+      "git_blob_sha1": "ce1036e70fcca99138a2628df7291e57f8990847",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/scripts/combat/hero_combat_core.gd",
+      "path": "source/stages/01_source_stack/source_delta/scripts/combat/hero_combat_core.gd",
+      "sha256": "8f45b04803e21bd72a1bad001b69d8a951b10ed139eac94403117add4d9e79c8"
+    },
+    {
+      "bytes": 6141,
+      "git_blob_sha1": "445d0083ae315800ad1482b8a72080a6b1c4352a",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "path": "source/stages/01_source_stack/source_delta/tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "sha256": "bc1661352cd9a920eb22a0b694c5de14258638145b6d2e3e00bb8a0843fba29a"
+    },
+    {
+      "bytes": 4059,
+      "git_blob_sha1": "7714c7192232fb4f8e5bd3591b4bd8b56bc94990",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/bridge.gd",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/bridge.gd",
+      "sha256": "c0b4cba154690d0bff61cc66b88c6c3b49d7c792942b40bdc41f32fe5fc0b8b6"
+    },
+    {
+      "bytes": 11294,
+      "git_blob_sha1": "6e47c3dab6b6a6a806f944ee8b95a1bdf4037cc9",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "sha256": "7a3f8be3542d90f4c290ca5341aecff8f6f9803719ec548602058eb6f0eb1565"
+    },
+    {
+      "bytes": 7560,
+      "git_blob_sha1": "a91049a23db7bfcbdebbf7ba800f9dff5c79c3d7",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/g26_counter_plan.json",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/g26_counter_plan.json",
+      "sha256": "e310b32f888ad54aca68258acc16f14d5978b31212923fee7435d1ea4de58551"
+    },
+    {
+      "bytes": 1232,
+      "git_blob_sha1": "e506e6e85e8a89f36653bfa5041f5a58171ca81b",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/g26_visual_source_transition.json",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/g26_visual_source_transition.json",
+      "sha256": "af849104cdb4b4dce8e123d62c639a124c96cbbcb1fc6d58e578e6b1b215a726"
+    },
+    {
+      "bytes": 17966,
+      "git_blob_sha1": "75ea7f09467403149e5e48d1925b0d00c68f0641",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "c15d84a30cb2f487ac8dd8d4cfed34d3d3bfc5a651980a410f26f796a1ede789"
+    },
+    {
+      "bytes": 46680,
+      "git_blob_sha1": "89e7ad24e087dd1381d4728855bc12f8408495ed",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/preimages/scripts/combat/common_hex_runtime.gd",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/preimages/scripts/combat/common_hex_runtime.gd",
+      "sha256": "df1ab138c5c3dec7ccf0e0e548e10881d5fa9b9300f9b0778cdab50f5361ac4c"
+    },
+    {
+      "bytes": 5641,
+      "git_blob_sha1": "5935e8fb44eecde96daa197388c5a4b41265fef4",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "sha256": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7"
+    },
+    {
+      "bytes": 338180,
+      "git_blob_sha1": "59e23ce82fd2f044adf6f004d0fa459e4cea3c52",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/01_source_stack/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "path": "source/stages/01_source_stack/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "sha256": "fee757fefa67fe6d2c66c257a3fa40bb1e73be95c0aee65361cc67f13862c60c"
+    },
+    {
+      "bytes": 21888,
+      "git_blob_sha1": "a367dd6ba723ba1333acabd90515dc020ec8714e",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/02_boss_enemy_classification/source_delta/tests/ink_first_floor_boss_20261008/source01/boss_controller.gd",
+      "path": "source/stages/02_boss_enemy_classification/source_delta/tests/ink_first_floor_boss_20261008/source01/boss_controller.gd",
+      "sha256": "05207d69d69fcfd3faccf6cbd34a60b68e4243deed0e4a0428055196941de308"
+    },
+    {
+      "bytes": 3233,
+      "git_blob_sha1": "f9998c5567de1eabbb23cf56bd25b010452c5378",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/g26_boss_classification_plan.json",
+      "path": "source/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/g26_boss_classification_plan.json",
+      "sha256": "ffb3d69b9c0c42f38972d02281ed38b99e9caae6c128ad2d4cafc967cf1ed822"
+    },
+    {
+      "bytes": 18427,
+      "git_blob_sha1": "c8924485ed268e0d1762090fbc503ab001e91061",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "path": "source/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "ca6fd5c65f6d5ca1efea5e611448b68ee287b902a407152d5e15d2f053e7541c"
+    },
+    {
+      "bytes": 21892,
+      "git_blob_sha1": "a0b73834fec934c62b8af8190babc93c020ac907",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/preimages/tests/ink_first_floor_boss_20261008/source01/boss_controller.gd",
+      "path": "source/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/preimages/tests/ink_first_floor_boss_20261008/source01/boss_controller.gd",
+      "sha256": "d373aeef46b61f1bc93867747249aee1a919f43ecdd55a630293d1aa5bddb0db"
+    },
+    {
+      "bytes": 339376,
+      "git_blob_sha1": "82b68cfc5738958574869c1e1f4d1ce676be3d77",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "path": "source/stages/02_boss_enemy_classification/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "sha256": "08204eae42eeac8e5aaf05a25fd64a1053bd66eee66858c3fe8c39886eca33a3"
+    },
+    {
+      "bytes": 3851,
+      "git_blob_sha1": "128ce8437b88e974869b5c591be98d53c4c34f75",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/03_formal_catalog_status/source_delta/hex_shield_counter_20261014/catalog.gd",
+      "path": "source/stages/03_formal_catalog_status/source_delta/hex_shield_counter_20261014/catalog.gd",
+      "sha256": "45797edad1e37c543adb39e591c800a48951abbf47ebd87cf3d6167d81f12437"
+    },
+    {
+      "bytes": 3242,
+      "git_blob_sha1": "7fdbecf76b20e0b7de73ad729e78402cf6fe753f",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/g26_formal_catalog_status_plan.json",
+      "path": "source/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/g26_formal_catalog_status_plan.json",
+      "sha256": "330198454064f544e594cecec96ff18cf4a4b131b43ce4c23f00b34f4c2671f5"
+    },
+    {
+      "bytes": 18578,
+      "git_blob_sha1": "234958bc9686758fcfb82d9edc9967baecc33295",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "path": "source/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "d614dbd713505f1bec5c37c7bf07f73e388bef37674241ad6eef81e4d23fa0ae"
+    },
+    {
+      "bytes": 339665,
+      "git_blob_sha1": "0d5912bb8a84ecfed09c18e7227b8e1b019413da",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-20261014/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "path": "source/stages/03_formal_catalog_status/source_delta/visual_rework_20261009/binding/source_binding.json",
+      "sha256": "4d9a1fc00a6a0dbd4a1017816a0ccce617b6f1120e7dcd9e42af0d221d69a266"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-tools-20261014/.gdignore",
+      "path": "tools/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 642,
+      "git_blob_sha1": "6b64c96273fd666c75911077773f6825f0be7b83",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-tools-20261014/README.md",
+      "path": "tools/README.md",
+      "sha256": "200951440ee9e91815040af14f9ef1403f63093b98d158390990c94571a3c83d"
+    },
+    {
+      "bytes": 141680,
+      "git_blob_sha1": "2468e1507baa2c6b0920681659a1985151728f1b",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-tools-20261014/REBUILD_OPERATIONS.json",
+      "path": "tools/REBUILD_OPERATIONS.json",
+      "sha256": "dab69d43e8b743da44d23baf8787166c9909f7cec6f329829aff6f815462d8f6"
+    },
+    {
+      "bytes": 6458,
+      "git_blob_sha1": "3ae44870cef3808da295f99d8a39fa360c6d5a86",
+      "original_raw_path": "development/shuabao/g26-counter03-pm-tools-20261014/rebuild_source.py",
+      "path": "tools/rebuild_source.py",
+      "sha256": "42b07156566cd50b96aa3fd874ff9947c99bff41ce9fbbb80b418c5bd63de858"
+    }
+  ],
+  "parts": [
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "5a8d0cfeff48d6b0d38e4d79a635712bb756efe9",
+      "offset": 0,
+      "path": "source_backup.tar.gz.part01",
+      "sequence": 1,
+      "sha256": "c6dce0c7c31be369d417050755812cb9b7f1e1bc7536ad0f862e184b5dc5c5ab"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "6e67e46686ad1cf355a9ac9a55cf9ad0d940a52d",
+      "offset": 32768,
+      "path": "source_backup.tar.gz.part02",
+      "sequence": 2,
+      "sha256": "1f566ecdab4793eaba6b95f73447ef90bc033a0e358a99ad20743e4c50b258cd"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "9d457b76ec8e8d344c2f9fe114c7d5b71a6379ee",
+      "offset": 65536,
+      "path": "source_backup.tar.gz.part03",
+      "sequence": 3,
+      "sha256": "97b1680fabf803c78c7d6089f720751e1d4fb905a6fcade68c572fcc59f523cd"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "82650b5fbd27518c3be5842531c56bd07c16f110",
+      "offset": 98304,
+      "path": "source_backup.tar.gz.part04",
+      "sequence": 4,
+      "sha256": "7f8caa7a7ae5c62baba508d67534416d92e0cde86e97c2951ee71d9fbada15d2"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "2348ed45103934d2c45dd83a887daddad7112579",
+      "offset": 131072,
+      "path": "source_backup.tar.gz.part05",
+      "sequence": 5,
+      "sha256": "2d62512ee55d7330b85627c878909b6c6dbf2561953015f0d1d0a697c62ef5b1"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "d5a1cb42df30e60c5b37360af2d2ea52eee52164",
+      "offset": 163840,
+      "path": "source_backup.tar.gz.part06",
+      "sequence": 6,
+      "sha256": "1c3459ebd400e62a63b82fa53c572e0fe99669a66df1a7a29ace1d04271000f3"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "e4e105d48fb0fe9d519c30390044a004141b9470",
+      "offset": 196608,
+      "path": "source_backup.tar.gz.part07",
+      "sequence": 7,
+      "sha256": "6fe0bf447bb46d6168e31afc624544151a6cf44dd57822595a72388688740c0f"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "c7df8b4621359d5a8011e0f81e8a44502b854488",
+      "offset": 229376,
+      "path": "source_backup.tar.gz.part08",
+      "sequence": 8,
+      "sha256": "57594d73a58a53b2674166e4b5d9a83873c93976ed36166e032ddff3d95ddd05"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "169a6ac6e65faa9e36d00a7cfece2771c34614c6",
+      "offset": 262144,
+      "path": "source_backup.tar.gz.part09",
+      "sequence": 9,
+      "sha256": "22e0573bc3b47d07383f16cb44611f9be67456f32bdf756ef53ab095187af872"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "cb0b9480d2fe206a32d0c332730f8fe111f95bed",
+      "offset": 294912,
+      "path": "source_backup.tar.gz.part10",
+      "sequence": 10,
+      "sha256": "751f076d10ae6234b7530ac3a512be2667a300c6a63b75f36c021708d09af17d"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "feeba7d24fad3a70b7ec75ab2e2d91792ac2cdd7",
+      "offset": 327680,
+      "path": "source_backup.tar.gz.part11",
+      "sequence": 11,
+      "sha256": "684a45dd81239b3b362656cd41c785bf25a5ba9799aea11d525b36c1a52bb2a4"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "aec2498092d40f90411a7811c15ccd294f506471",
+      "offset": 360448,
+      "path": "source_backup.tar.gz.part12",
+      "sequence": 12,
+      "sha256": "e5b1835faf748864d1460b9b648a865f1f9cdc6b58b854c6cfb2b42336517cd6"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "ae267d6d7f5c571cdd85fb19c4b5762018ec4483",
+      "offset": 393216,
+      "path": "source_backup.tar.gz.part13",
+      "sequence": 13,
+      "sha256": "d40373ce8c877198b713dd2b527c75cde30bdf45aa37eb3c59113c8b66369ed9"
+    },
+    {
+      "bytes": 30937,
+      "git_blob_sha1": "005efc03ae972b8c2be67ca74cc190e21c57ba40",
+      "offset": 425984,
+      "path": "source_backup.tar.gz.part14",
+      "sequence": 14,
+      "sha256": "cf935e243daad96a90a3f4629f159f0cccf098e24d914f26d7ea06ddc8f877c4"
+    }
+  ],
+  "published_recovery_base": {
+    "archive_manifest": "development/shuabao/g19-boss02-rest-carryover-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+    "archive_manifest_sha256": "1ba2e7c372d9692242508dd60d5ddf32e8a7e73f8263a03a44894482c9b7079b",
+    "archive_sha256": "96afa906e9af915db02e5b7e99af5975358f972bb66d6cad137402177f2b44c7",
+    "branch": "checkpoint/c02-revision06-20261011",
+    "commit": "0d03d437acd829a9113a6c300956b50b1a3291a9",
+    "instructions": "Restore published43 baseline and exact44–50 successors, G29, G28, then BOTH G19 archive stages in order. The G19 archive is a delta, not a complete project. Verify every preceding member and before-image; then require the complete3069-file map digest below.",
+    "repository": "c1903146900-dev/shuabao",
+    "tree": "37ebdb895e31a65b671c7151896acea7d2b5b88d"
+  },
+  "repository": "c1903146900-dev/shuabao",
+  "reviewed_input_allowlist_sha256": "cfba02ca48136526a06211c189e54bd0777fe557e319089b4785b8f9efe22827",
+  "schema": "g26-counter03-chunked-cumulative-source-manifest-1",
+  "source_sha256": "4d9a1fc00a6a0dbd4a1017816a0ccce617b6f1120e7dcd9e42af0d221d69a266",
+  "status": "STATIC_SOURCE_RECOVERY_SNAPSHOT_NOT_PARSED_NOT_RUN",
+  "unpublished_intermediates_are_not_remote_bases": true
+}

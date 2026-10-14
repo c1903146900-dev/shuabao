@@ -1,0 +1,37 @@
+{
+  "acceptance": {
+    "GUI": "NOT_RUN",
+    "Host_ready": "NOT_RUN",
+    "business": "NOT_RUN",
+    "historical107_receipts_recreated": false,
+    "historical198_generated_caches_restored": false,
+    "historical_results_inherited": false,
+    "native_input": "NOT_RUN",
+    "parser": "NOT_RUN"
+  },
+  "development_tools_archive_sha256": "b46138da054ebcda0e313ca7c7c61e53b5548b33d0e5474894c4d3055a6540cb",
+  "development_tools_engine_admission": false,
+  "development_tools_manifest_sha256": "94b929021c31dd56fa8785ed3f697ee31516374ad8ca3f6174177c6543bf96b7",
+  "development_tools_preserved_unchanged": true,
+  "expected_complete_file_map_sha256": "75d8dc4c33931f1cd66ab4344ddd23bd95d6a662de25ba574ea01c2a353c6874",
+  "expected_file_count": 3078,
+  "historical_results_inherited": false,
+  "portable_rebuild_tool_members": 4,
+  "raw_member_bytes": 1530898,
+  "reviewed_raw_allowlist_sha256": "cfba02ca48136526a06211c189e54bd0777fe557e319089b4785b8f9efe22827",
+  "schema": "g26-counter03-compact-static-review-1",
+  "source_archive_members": 32,
+  "source_members": 28,
+  "source_sha256": "4d9a1fc00a6a0dbd4a1017816a0ccce617b6f1120e7dcd9e42af0d221d69a266",
+  "stage_after_images": [
+    14,
+    5,
+    4
+  ],
+  "stage_before_images": [
+    8,
+    3,
+    3
+  ],
+  "status": "STATIC_SOURCE_RECOVERY_SNAPSHOT_NOT_PARSED_NOT_RUN"
+}
