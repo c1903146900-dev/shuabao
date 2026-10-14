@@ -1,0 +1,263 @@
+{
+  "append_only_prefix": "development/shuabao/g23-potion-source01-20261014",
+  "archive": {
+    "bytes": 427454,
+    "format": "Deterministic USTAR + gzip",
+    "gid": 0,
+    "git_blob_sha1": "88e24251c5004e16399cc9f6038fb9db3ffd78e9",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "members_bytes": 1400941,
+    "members_count": 17,
+    "mode": "0644",
+    "mtime": 0,
+    "path": "source_delta.tar.gz",
+    "sha256": "30b5462b90e23e94546b7e7f41cad5230720a1f6f51c99a302f691068cd2f605",
+    "split_bytes": 32768,
+    "tar_bytes": 1423360,
+    "uid": 0
+  },
+  "companion_files": [
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": ".gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2215,
+      "git_blob_sha1": "20a01db9913e6cd1e37c26e9ffa29e7ded82bebb",
+      "path": "README.md",
+      "sha256": "03ad8194fa733f2d7b08266beb586528406e09dbea868bc3d7078581bd20383d"
+    },
+    {
+      "bytes": 693,
+      "git_blob_sha1": "327628d5acbd11446133024b374fe758e9b6c1e1",
+      "path": "SOURCE_REVIEW.json",
+      "sha256": "d0974637e0321ae46615ab2dcaefddee5c93b409038fce9f6e6839b4b33abcf5"
+    }
+  ],
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "members": [
+    {
+      "bytes": 2840,
+      "git_blob_sha1": "a7b2419f417cabde44dfa2b44c89f60e2028ddaf",
+      "path": "g23_potion_source_delta/DELTA_MANIFEST.json",
+      "sha256": "cf064d0ceba1d24368bd7ea96611d397cc545e75ce1b28e2bd60f5b558d157ad"
+    },
+    {
+      "bytes": 422481,
+      "git_blob_sha1": "57d3fc00d7345bf2257b6c83eda157b7f4222ba5",
+      "path": "g23_potion_source_delta/EXPECTED_FULLMAP.json",
+      "sha256": "006fba6195b80a3e343c42ffde07decad7d4980e06b0a4a169af4b718973c0bb"
+    },
+    {
+      "bytes": 2658,
+      "git_blob_sha1": "76b6725ef60107898c6ceff547baf18ee5522170",
+      "path": "g23_potion_source_delta/PACKAGE_FILES.json",
+      "sha256": "77104189a1cb715ef2945014647746b129f43cabaaee386734d1dc1242754eb0"
+    },
+    {
+      "bytes": 1066,
+      "git_blob_sha1": "4f282b9a9a632a74a5a6a160268d4a853bc44645",
+      "path": "g23_potion_source_delta/PUBLIC_PARENT_ANCHOR.json",
+      "sha256": "af2f777ceb53f2d0ba3afacf5050547c4c0b83dd8a8e47760519415aefdc7b37"
+    },
+    {
+      "bytes": 1730,
+      "git_blob_sha1": "03bb9b4323bb190b1d9b05c8aaab18f154fad9be",
+      "path": "g23_potion_source_delta/README.md",
+      "sha256": "4901230cccf154ab2f8a30f4bd66c43510ea5d3213d3f307984e80bd596885fc"
+    },
+    {
+      "bytes": 3588,
+      "git_blob_sha1": "9c036167f2bb895831a2cb86272effbd0a461755",
+      "path": "g23_potion_source_delta/after/hex_potion_blast_20261014/catalog.gd",
+      "sha256": "72b7e06e4cd7589da35a1257c94b02b94a49d7bffdd0b7637c5c167ef483ae15"
+    },
+    {
+      "bytes": 3498,
+      "git_blob_sha1": "8eb64a6e91f29572c265457c6c0d4ad878f44ff4",
+      "path": "g23_potion_source_delta/after/hex_potion_blast_20261014/implementation_plan.json",
+      "sha256": "e90a93257643570b8e4b63d5cf960cc85df3dc9e8b4ccf14f242b9474af3261a"
+    },
+    {
+      "bytes": 5763,
+      "git_blob_sha1": "b453ccea0558b719ec419940ad26cd2f573d132e",
+      "path": "g23_potion_source_delta/after/hex_potion_blast_20261014/model.gd",
+      "sha256": "39930418d23ecc5aa73df8b16c9897b2f0abc9cefb9825a16af721bfe547a7f1"
+    },
+    {
+      "bytes": 112654,
+      "git_blob_sha1": "5161e5bf6336ad33d43707352c13216dd54bc3da",
+      "path": "g23_potion_source_delta/after/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "sha256": "1c1b150f8d47063d2342e30ba318c7c3ad7cbc97b60599e13ea072377eb92189"
+    },
+    {
+      "bytes": 4059,
+      "git_blob_sha1": "ecd6ee9f767343f85fef8426bace72a2659be391",
+      "path": "g23_potion_source_delta/after/visual_rework_20261009/binding/bridge.gd",
+      "sha256": "2d16405dac9cd9c2baaa29188c2d9c8c2eb4e112b0fc1b53f33be96118077f23"
+    },
+    {
+      "bytes": 18843,
+      "git_blob_sha1": "228fddada645081a5a4afb6f0d34de324d5621e0",
+      "path": "g23_potion_source_delta/after/visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "8da5878ba97fd14285929944a4f4243e7aaafaf58ae2b7053c8417af363167ac"
+    },
+    {
+      "bytes": 340440,
+      "git_blob_sha1": "679ced2d0f8d0d781afb1a1791bb62e1b0cf2ad6",
+      "path": "g23_potion_source_delta/after/visual_rework_20261009/binding/source_binding.json",
+      "sha256": "d1f88e223594b69d3d8af6a73ea37f588e4b54c0b22393d104d876837f434b57"
+    },
+    {
+      "bytes": 112644,
+      "git_blob_sha1": "e690d5c0c0b400885701213800b7cb0931eafa54",
+      "path": "g23_potion_source_delta/before/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "sha256": "6039535bf3281509eb56b4a5d02267c47c548529078f5b172f93fdbb72bc0524"
+    },
+    {
+      "bytes": 4059,
+      "git_blob_sha1": "7714c7192232fb4f8e5bd3591b4bd8b56bc94990",
+      "path": "g23_potion_source_delta/before/visual_rework_20261009/binding/bridge.gd",
+      "sha256": "c0b4cba154690d0bff61cc66b88c6c3b49d7c792942b40bdc41f32fe5fc0b8b6"
+    },
+    {
+      "bytes": 18578,
+      "git_blob_sha1": "234958bc9686758fcfb82d9edc9967baecc33295",
+      "path": "g23_potion_source_delta/before/visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "d614dbd713505f1bec5c37c7bf07f73e388bef37674241ad6eef81e4d23fa0ae"
+    },
+    {
+      "bytes": 339665,
+      "git_blob_sha1": "0d5912bb8a84ecfed09c18e7227b8e1b019413da",
+      "path": "g23_potion_source_delta/before/visual_rework_20261009/binding/source_binding.json",
+      "sha256": "4d9a1fc00a6a0dbd4a1017816a0ccce617b6f1120e7dcd9e42af0d221d69a266"
+    },
+    {
+      "bytes": 6375,
+      "git_blob_sha1": "e18f504d84c61d904dc898a782bbe9a439f67c2a",
+      "path": "g23_potion_source_delta/restore_source.py",
+      "sha256": "b2357d21e87b5b32d6fa812a8715684312649a9fdf093c530d1f64995c67e95a"
+    }
+  ],
+  "parts": [
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "b98d1853feaf21c9995c8c6bce53899b81966a1c",
+      "offset": 0,
+      "path": "source_delta.tar.gz.part01",
+      "sequence": 1,
+      "sha256": "19b70ba49d3add9934e45c8e04c9b3b361dd8194d584f2acf05e1edfd1c6e750"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "604bd986cbf98b78dec688729e8700886163890d",
+      "offset": 32768,
+      "path": "source_delta.tar.gz.part02",
+      "sequence": 2,
+      "sha256": "7a0c0cf2bf65cb98abe7e21b4a095c9f4f4eed1cb65dc17ea03e588b83748bce"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "f9a0cead2b732bc20d2cd653502f000754792f0f",
+      "offset": 65536,
+      "path": "source_delta.tar.gz.part03",
+      "sequence": 3,
+      "sha256": "b70671c05f6e8153af99e7aa42c098e7eabf557c1a579312c04754025d0c44d5"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "6a25396ae9770a1c41bef8a9b34ad7b13578b24b",
+      "offset": 98304,
+      "path": "source_delta.tar.gz.part04",
+      "sequence": 4,
+      "sha256": "c6cbd413c75b55a817c4d1c84b0df69498bc91d783f4ce7e267822351e0ee9d0"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "7445822652a35424f1f98d3229fbeae9c7c58fac",
+      "offset": 131072,
+      "path": "source_delta.tar.gz.part05",
+      "sequence": 5,
+      "sha256": "c2de12c9a3c170bdc9502f3d42d46bbabb1dc7474a538bde936b4a823938642c"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "40df8b0397afff8f119ec034b4d00c00527ad62c",
+      "offset": 163840,
+      "path": "source_delta.tar.gz.part06",
+      "sequence": 6,
+      "sha256": "5c5466e6e48ead1cd60a85f946821b5c5e96969018b829fe7580a7dd0207b95d"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "08473e5bd38124530c5a01f0131a3e741548fa77",
+      "offset": 196608,
+      "path": "source_delta.tar.gz.part07",
+      "sequence": 7,
+      "sha256": "e6db8ef98fd9445391487c1b892bbb5d80f8d949710768a4a298961b9f845a37"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "0b7f474a7c4bb41ea334f12cc4373b17e22cf830",
+      "offset": 229376,
+      "path": "source_delta.tar.gz.part08",
+      "sequence": 8,
+      "sha256": "db3f22b123ec2544122fb5f8ab69053874a27d38ba9283f01c31bcd8becb57d3"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "b68878a563dfd8a2311ba5f49302fc1d997a9d57",
+      "offset": 262144,
+      "path": "source_delta.tar.gz.part09",
+      "sequence": 9,
+      "sha256": "b3909a8f3cf383ffa02e50229d2de27de223bcbd5a335c2c7d3550f1a9e1eb15"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "9b634f7d7fabc8ff3a1b2a352858f55e7d959fbe",
+      "offset": 294912,
+      "path": "source_delta.tar.gz.part10",
+      "sequence": 10,
+      "sha256": "f6b31102be2ee1ef0e9f6b6f04f36df013950ab1dc3faf7cf900238fa34c5fe3"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "405a1ddc33dabab16188817918319d0edb739a58",
+      "offset": 327680,
+      "path": "source_delta.tar.gz.part11",
+      "sequence": 11,
+      "sha256": "2fdc87d555136db6d4009d037b8a694bfa0cf1aa558f31110fd3264b6fa6c2aa"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "37b9b2d00693f2504d842f4fdea6f61bdccf0364",
+      "offset": 360448,
+      "path": "source_delta.tar.gz.part12",
+      "sequence": 12,
+      "sha256": "65d9fd1cdfbb5d90478bff594758d48de4c1074b4de4bcfa305445feb77493bc"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "678f5913e4836298cc45ddb08c934a6469975f29",
+      "offset": 393216,
+      "path": "source_delta.tar.gz.part13",
+      "sequence": 13,
+      "sha256": "7a26383d4f2114532051efcf3c70e1566d2ecd18696f0478d73f4d9c9fe3813d"
+    },
+    {
+      "bytes": 1470,
+      "git_blob_sha1": "2129edb7929945cd77c934aa246e9c360a6d2d30",
+      "offset": 425984,
+      "path": "source_delta.tar.gz.part14",
+      "sequence": 14,
+      "sha256": "297d1abbd308f1636a8906cde62c81ac80d9bf615ab94c2a8e7df47bd7c88c4e"
+    }
+  ],
+  "repository": "c1903146900-dev/shuabao",
+  "reviewed_raw_allowlist_sha256": "304f432868e6b7d1a15dff4bc6da31ea2714b012b47083e01233685a3771cba0",
+  "schema": "g23-source-chunked-exact-static-tools-1",
+  "status": "SOURCE_BACKUP_ONLY_NOT_RUNTIME_ADMISSION"
+}
