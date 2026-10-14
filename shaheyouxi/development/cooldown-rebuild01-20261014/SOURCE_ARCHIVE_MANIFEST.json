@@ -1,0 +1,219 @@
+{
+  "schema": "sandbox-cooldown-rebuild01-chunked-source-manifest-1",
+  "identity": "sandbox012-cooldown-rebuild01-20261014",
+  "status": "SOURCE_BACKUP_STATIC_ONLY_NOT_RUN",
+  "repository": "c1903146900-dev/shuabao",
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "append_only_prefix": "shaheyouxi/development/cooldown-rebuild01-20261014",
+  "reviewed_input_allowlist_sha256": "92e413ac4829e742faae7cd610c5f75bb5b7829d27cc471c9a59db336d4fdb57",
+  "source_manifest_sha256": "6358706b44ea80f5a9c3e5e9fe789e18ff73a6a9e925d190f73bc6a0ce320db1",
+  "delta_manifest_sha256": "8877fab3e70cad99b25695a7621623275412e4080a66e7d1c5199ae60a78eae5",
+  "source_count": 1372,
+  "source_deltas": 13,
+  "production_deltas": 11,
+  "test_deltas": 2,
+  "new_test_drafts": 27,
+  "archive": {
+    "path": "source_backup.tar.gz",
+    "bytes": 113416,
+    "sha256": "d7dfeca5bd1e66bf2fad1b74a277a2c9aa99a5c9947d5e686b8cdd92f7a981bf",
+    "git_blob_sha1": "ab87272d48ce81f1b4579400b8dcc080c8bf6063",
+    "tar_bytes": 460800,
+    "members_count": 19,
+    "members_bytes": 445702,
+    "format": "USTAR + gzip",
+    "member_type": "regular file only",
+    "member_mode": "0644",
+    "mtime": 0,
+    "uid": 0,
+    "gid": 0,
+    "uname": "",
+    "gname": "",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "compression_level": 9,
+    "split_bytes": 32768
+  },
+  "members": [
+    {
+      "path": "DELTA_MANIFEST.json",
+      "bytes": 4639,
+      "sha256": "8877fab3e70cad99b25695a7621623275412e4080a66e7d1c5199ae60a78eae5",
+      "git_blob_sha1": "996c4d7851cca33bd3f2215fecabeeb5aa5e22a2"
+    },
+    {
+      "path": "PUBLIC_MANIFEST.json",
+      "bytes": 1857,
+      "sha256": "25d4b17aba6ed9f336c62a0f6c2dad970d1cc02bfa55133c73282f6b7369ee7e",
+      "git_blob_sha1": "5d4f9cd38e84a68757def36f4a9b0f87896f1cb9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5670,
+      "sha256": "3b1308fcbbd62bbc168084f5afae5f91999446a07d9b25e2fbb114559ca62843",
+      "git_blob_sha1": "928fcb445d04b65ea24708df33e31383b7623bb4"
+    },
+    {
+      "path": "RUNTIME_VALIDATION_PLAN.md",
+      "bytes": 3536,
+      "sha256": "e852520d8d347d261d1839aebc3d70ffd320a4aa6a6f476b0a48289cda6b9898",
+      "git_blob_sha1": "22059a4137b8e95ce18e311013b1404a28e64d7b"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 266882,
+      "sha256": "6358706b44ea80f5a9c3e5e9fe789e18ff73a6a9e925d190f73bc6a0ce320db1",
+      "git_blob_sha1": "2fd4612866fb07d99434409f6963eb71179e5f08"
+    },
+    {
+      "path": "STATIC_REVIEW.json",
+      "bytes": 2440,
+      "sha256": "6f9bb281182900862b673752a600a579289c2a64a175309b7257ae10cdf837bb",
+      "git_blob_sha1": "715d0f00f84eb4e723c978eb96a4501bcbf08072"
+    },
+    {
+      "path": "source_delta/game/scripts/harvest/tree_ground_hot012.gd",
+      "bytes": 22498,
+      "sha256": "53bb9a790d6abddeb6a5a78989da3ac2c72f5f3f9c14fd2f885122bb2b8f0f5c",
+      "git_blob_sha1": "3786ff4ba9fb550f1f1ddc91424121e6f9130cae"
+    },
+    {
+      "path": "source_delta/game/scripts/harvest/tree_inventory_owner012.gd",
+      "bytes": 23316,
+      "sha256": "2ae8105c2b38d1afec561e7d86e16597c3f5ac0c8dd19410cd659fd4d1868ba5",
+      "git_blob_sha1": "4db6da721f0919ef460167ff4a31a1d91426f55c"
+    },
+    {
+      "path": "source_delta/game/scripts/harvest/tree_transaction012.gd",
+      "bytes": 4487,
+      "sha256": "ba472fbcb38a0ec8b60c528324c351530f8e9c9dd8a90516d7586065d141b6b3",
+      "git_blob_sha1": "8f8e2da7cad97d0d2fca58947e21fe8619a37d47"
+    },
+    {
+      "path": "source_delta/game/scripts/harvest/tree_world_session012.gd",
+      "bytes": 10250,
+      "sha256": "68cc500da4e87ffe23f40dc8a4dcc3fc1dfdc6df12adecba356f5173d39b020e",
+      "git_blob_sha1": "12250829dc9ba38b1a92de0a8445e35d7e4319cd"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_core012.gd",
+      "bytes": 22761,
+      "sha256": "6625904f0475343222e55c30efd929cee2a8ee8e5dae7b6d12e729a9e93fb64f",
+      "git_blob_sha1": "438876b97db2b759540180d5912a2cd583bc10e8"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_ground012.gd",
+      "bytes": 12272,
+      "sha256": "f1642ddc12ac85f9994d70812aab79010ed03b9e6a4993d62cfcdf6011d7430f",
+      "git_blob_sha1": "fe960c0d4e4c8da79035934901d8579ed7f44e6d"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_hot_boundary012.gd",
+      "bytes": 11202,
+      "sha256": "ce150b9af37d155d199834f970dae07fa0d7eb0d12c613b1d75f3f5d57e3dd9d",
+      "git_blob_sha1": "8bddba97a9e7fe91e48b024775c6d68977021755"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_owner012.gd",
+      "bytes": 11548,
+      "sha256": "fec1ff4bbda6b27d7dc05dad12f294a3d76fa736895d2dbd57074caf40634ea5",
+      "git_blob_sha1": "3ba04d7a7ce8c1baa939b1f8bce8ec8b883fa8f2"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_place_throw_cooldown012.gd",
+      "bytes": 3861,
+      "sha256": "db0933ba60ca6d6400b170e54b7f346ce61011ed931659a59a4ee5ee33e7a4e4",
+      "git_blob_sha1": "a609ec222249b71ea1a3442a15d798e665cd7209"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_profile_marker012.gd",
+      "bytes": 2107,
+      "sha256": "4de8b940670dfd5ab2dccafbd5901472f2ff9336addb12480adc268f879a84f2",
+      "git_blob_sha1": "2ecf472680877b7b4224f769be4d9c33e909798b"
+    },
+    {
+      "path": "source_delta/game/scripts/inventory/inventory_world_session012.gd",
+      "bytes": 7092,
+      "sha256": "8c00f2210baf468e336b7972f865fe17bf442f27de61b3cab38b700364602bec",
+      "git_blob_sha1": "299461b119f0f286b9f28faec66a2d1134e76eb3"
+    },
+    {
+      "path": "source_delta/game/tests/inventory/InventoryCooldownRebuild20261014Test.gd",
+      "bytes": 18686,
+      "sha256": "f24f727400fe959f2c0deca4c2802ae08663318cd574ac50fc00f155a186363b",
+      "git_blob_sha1": "de8d2fc214db989b55f4618fa2cd64697c7681ac"
+    },
+    {
+      "path": "source_delta/game/tests/inventory/InventoryGround012Test.gd",
+      "bytes": 10598,
+      "sha256": "6eb84426578482ffac193f214e48baa837dca464deb5e121faf13cced58d3b59",
+      "git_blob_sha1": "82d9ec921cfa12cc924a02a445d1996376f0c729"
+    }
+  ],
+  "parts": [
+    {
+      "sequence": 1,
+      "offset": 0,
+      "path": "source_backup.tar.gz.part01",
+      "bytes": 32768,
+      "sha256": "765cf281f36dd48603b46e021fd750f85ef9b7b268b8a11ef5e9b2221c9f54cf",
+      "git_blob_sha1": "bf43bf127d9f084ee58955644ff60ed3cb139b32"
+    },
+    {
+      "sequence": 2,
+      "offset": 32768,
+      "path": "source_backup.tar.gz.part02",
+      "bytes": 32768,
+      "sha256": "f09338a0ae0da58cddea61645a5c0168f2020d6089cb36636b7992ffc0c27183",
+      "git_blob_sha1": "30b434120982051e46594afbc9dbb7acfaa745f3"
+    },
+    {
+      "sequence": 3,
+      "offset": 65536,
+      "path": "source_backup.tar.gz.part03",
+      "bytes": 32768,
+      "sha256": "c29d4d3b67920baa76ce89773771171c78376a521017133cdb3ced7beb6d57af",
+      "git_blob_sha1": "2f1a775184b7892c574103595e253918ea6024a7"
+    },
+    {
+      "sequence": 4,
+      "offset": 98304,
+      "path": "source_backup.tar.gz.part04",
+      "bytes": 15112,
+      "sha256": "4c9de17edd5800e83903ee2ffe872bbb6f26a7ad1a7ee964e522d35bc74eede4",
+      "git_blob_sha1": "d12ccafcc2278a98aecd0212617a782b8aa28a73"
+    }
+  ],
+  "companion_files": [
+    {
+      "path": ".gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8210,
+      "sha256": "667f0a880c84beb2658dfe36affa1b037587ecd5d31fa04bdd7098acbc39f860",
+      "git_blob_sha1": "60cc98897ddd8cc5ebed1a639d8f44cc4335c7e2"
+    },
+    {
+      "path": "STATIC_REVIEW.json",
+      "bytes": 2440,
+      "sha256": "6f9bb281182900862b673752a600a579289c2a64a175309b7257ae10cdf837bb",
+      "git_blob_sha1": "715d0f00f84eb4e723c978eb96a4501bcbf08072"
+    }
+  ],
+  "checks": {
+    "repeated_archive_bytes_identical": true,
+    "input_19_files_exact": true,
+    "public_private_marker_scan": "PASS_LITERAL_SCAN_NOT_SECRET_PROOF"
+  },
+  "runtime_status": "NOT_RUN",
+  "design_blocked": [
+    "formal building placement entry",
+    "formal ammunition consumption/reload entry and zidan admission"
+  ],
+  "historical_results_inherited": false,
+  "remote_write_performed_during_preparation": false
+}

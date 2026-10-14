@@ -1,0 +1,50 @@
+{
+  "schema": "sandbox_cooldown_rebuild_static_evidence_v1",
+  "identity": "sandbox012-cooldown-rebuild01-20261014",
+  "static_source_check": "PASS",
+  "independent_source_review": "PASS_STATIC_ONLY_RUNTIME_GAPS_OPEN",
+  "author_reviews_03_and_04_identical": true,
+  "author_review_sha256": "c2cfe7e3e541217799a68f0f633c913ce0f30e3a394cb61b5ece877c542db65a",
+  "independent_review_sha256": "d352fcd837fe125123c40fb5087cbda33f5de5a78d9736af4ee24c992eed6869",
+  "source_count": 1372,
+  "reviewed_delta_count": 13,
+  "production_deltas": 11,
+  "test_deltas": 2,
+  "critical_inherited_files_byte_compared": 8,
+  "new_test_drafts": 27,
+  "closed_findings": [
+    "Cooldown input source must match actor component source identity",
+    "Bound contract independently retains immutable helper document and source identity roots",
+    "Owner and candidate share one helper through copies, reload initialization, tree transaction and completion publication"
+  ],
+  "static_scope": [
+    "absolute server world seconds persisted by aggregate snapshot",
+    "profile+content key sharing including carry sources and instances",
+    "real drop gate and deadline write share detached inventory+ground candidate",
+    "half_return and inventory-only operations exempt",
+    "cold and both cached hot validators including schema1 check deadline/world clock/source",
+    "old contracts and format fail without automatic migration/fallback",
+    "one owner/bundle publish after full validation"
+  ],
+  "runtime_gaps": [
+    "No GDScript parse/import or Godot tests",
+    "27 new tests mostly Core/helper and narrow identity fixture; do not prove actual Owner initialization/reload or Frame hot cache",
+    "Need genuine Owner5 and Owner6 initialize_loaded then valid operation with same helper",
+    "Need actual SaveStore reopen retains absolute remaining cooldown and old save refuses without fallback",
+    "Need real cache-hit negative tests for future deadline and rule/source rebinding",
+    "Need Q11 regression and genuine owner publication failure atomicity"
+  ],
+  "scanned_literal_resource_references": {
+    "literal_reference_count": 847,
+    "missing": []
+  },
+  "limitations": [
+    "Not a GDScript parser",
+    "Not a Godot import",
+    "No runtime tests executed",
+    "Does not close historical runtime resource guard gaps"
+  ],
+  "runtime_status": "NOT_RUN",
+  "parent_and_baseline_unchanged": true,
+  "historical_tests_inherited": false
+}
