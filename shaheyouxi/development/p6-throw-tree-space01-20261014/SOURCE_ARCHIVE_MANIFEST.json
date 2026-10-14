@@ -1,0 +1,173 @@
+{
+  "append_only_prefix": "shaheyouxi/development/p6-throw-tree-space01-20261014",
+  "archive": {
+    "bytes": 209753,
+    "format": "Deterministic USTAR + gzip",
+    "gid": 0,
+    "git_blob_sha1": "4cb6cfb8d1ef490cb50091820e94b620ba3b617d",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "members_bytes": 646703,
+    "members_count": 11,
+    "mode": "0644",
+    "mtime": 0,
+    "path": "source_delta.tar.gz",
+    "sha256": "d106fdc630def4a4871152caffba74854dc72360208acda98a10f912d715df68",
+    "split_bytes": 32768,
+    "tar_bytes": 665600,
+    "uid": 0
+  },
+  "companion_files": [
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": ".gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2474,
+      "git_blob_sha1": "db194a844c9550828c8bbd961ff0bca31baf21d4",
+      "path": "README.md",
+      "sha256": "2d385b42f328423a6cd4dad33a4c7d2a3d4861d34467b7bbc5452e2dd8c39adf"
+    },
+    {
+      "bytes": 885,
+      "git_blob_sha1": "1664b43aeec419bd693b251c22dd6376d52d3b73",
+      "path": "SOURCE_REVIEW.json",
+      "sha256": "97e88563a88a3c8776586402e5038ef7297485057e85c6dfaec594689bddc203"
+    }
+  ],
+  "fullmap_sha256": "75d66b2b2a92654cd1a0963e0dec63caf25920647c72b28d12e7111b6c713f65",
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "members": [
+    {
+      "bytes": 1334,
+      "git_blob_sha1": "85a82273f483c7340cb2c2d355430fc6d6f8b594",
+      "path": "sandbox_p6_throw_source/DELTA_MANIFEST.json",
+      "sha256": "9d5137be5ca394d1dc77df09f834876d42eb4d713a1bdfef444a6147ae03c2c8"
+    },
+    {
+      "bytes": 177354,
+      "git_blob_sha1": "3389fd46728a1adaadab05542aaff9719ca43a75",
+      "path": "sandbox_p6_throw_source/FINAL_FULLMAP.json",
+      "sha256": "75d66b2b2a92654cd1a0963e0dec63caf25920647c72b28d12e7111b6c713f65"
+    },
+    {
+      "bytes": 1603,
+      "git_blob_sha1": "fdae4ce014403417d7ee94780d3cdd987c6ad144",
+      "path": "sandbox_p6_throw_source/PACKAGE_FILES.json",
+      "sha256": "34c8ead2aa52c4c3442caa379366bd8d6427c84f4f4b11615c08e102161d5219"
+    },
+    {
+      "bytes": 177354,
+      "git_blob_sha1": "43a35c9860010027a7ef175e9d09e5ff2a51322d",
+      "path": "sandbox_p6_throw_source/PARENT_FULLMAP.json",
+      "sha256": "829f71dca0ef203f3f05235238166ebb533da53643889b7b53413de49a623819"
+    },
+    {
+      "bytes": 3535,
+      "git_blob_sha1": "ff110df9b44ab29cb42ad65b168fc36176645712",
+      "path": "sandbox_p6_throw_source/PARENT_RECOVERY_ANCHOR.json",
+      "sha256": "dd865e2634db0e7fe52c21c0d0c141017ad2b2ea4cf29b1d02297588e8ff7d9f"
+    },
+    {
+      "bytes": 2167,
+      "git_blob_sha1": "ca8a529918b2fab70747b8b3c006ee493db7c149",
+      "path": "sandbox_p6_throw_source/README.md",
+      "sha256": "1558ddbc7c579ec88e4987d8e48f9e20d0e197172461f5efbb78933555e99d80"
+    },
+    {
+      "bytes": 2020,
+      "git_blob_sha1": "a0da360513c74cf1f8f46d9819a7cb445b1ed061",
+      "path": "sandbox_p6_throw_source/SOURCE_CHANGE.patch",
+      "sha256": "9109fc931f66ec799dfabff9ef9c1b2e4ccd84573aaee70b366c7f51926e21de"
+    },
+    {
+      "bytes": 270062,
+      "git_blob_sha1": "ef67e104bc3d3fbd9297d7f1d6492b9d236033ef",
+      "path": "sandbox_p6_throw_source/SOURCE_MANIFEST.json",
+      "sha256": "d6753831efa643c70393dd066eb4173a2ecf31e368500b0b2a604a7d4acbfb1a"
+    },
+    {
+      "bytes": 2744,
+      "git_blob_sha1": "7727d35d1eab232385e66ac64f63e4e461163c0c",
+      "path": "sandbox_p6_throw_source/after/scripts/inventory/inventory_throw_query012.gd",
+      "sha256": "e1d32f76dbcec424e257cec9719d4f8dc26a32d6f63d46ba8dd0116c1f90cc4f"
+    },
+    {
+      "bytes": 2155,
+      "git_blob_sha1": "2bcd6e31e8011e52df037db536e945b7cc8c6466",
+      "path": "sandbox_p6_throw_source/before/scripts/inventory/inventory_throw_query012.gd",
+      "sha256": "fe686ebb69d16583b9a25fd2f2a10b73dd9d4b3bba83a4f1f777f4e3bca1a242"
+    },
+    {
+      "bytes": 6375,
+      "git_blob_sha1": "6c6043a62733ff7172bdb47ec9e1b52584dbc8e9",
+      "path": "sandbox_p6_throw_source/restore_source.py",
+      "sha256": "1a7911fd38ef9f4ecbad73af5d06f3039dcd2d411e017efe07d2c6a7c2882329"
+    }
+  ],
+  "parts": [
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "84cda13454f260cac9c56891aee320d7647217e4",
+      "offset": 0,
+      "path": "source_delta.tar.gz.part01",
+      "sequence": 1,
+      "sha256": "a044c26f0c07b4ee5d6143a9099d834382de10e84802d1aa9ead9cc60d41d12c"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "0b75845668ec55b603b1c02e4e962eecf015b455",
+      "offset": 32768,
+      "path": "source_delta.tar.gz.part02",
+      "sequence": 2,
+      "sha256": "e3a2e53fc26492b468983929664b1c2160c2be217dba2d650a57b58d0c65ad0c"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "0ff18331128947207a4da166197666ebb2e5299f",
+      "offset": 65536,
+      "path": "source_delta.tar.gz.part03",
+      "sequence": 3,
+      "sha256": "8d2ec025024d32471d9a68d04a8aed69d4ede90ed832348c5938ba24a1fbb696"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "d39741d0a0d0461ceffdf2afc2a1168fe8a5ec27",
+      "offset": 98304,
+      "path": "source_delta.tar.gz.part04",
+      "sequence": 4,
+      "sha256": "25f2df1e12123c0bc529b735e854c96b3965e28286abbfff1d0a0785d5227d9d"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "8594eb1d06c05a3dca47ee5f0de7e7a901e7a587",
+      "offset": 131072,
+      "path": "source_delta.tar.gz.part05",
+      "sequence": 5,
+      "sha256": "21fa950bfb9fae40f08bd90a06203b47809cbae281d54af7111cf31e72bb83b3"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "b00e62e3e1942a68843c944922c4351a9f8bb7e9",
+      "offset": 163840,
+      "path": "source_delta.tar.gz.part06",
+      "sequence": 6,
+      "sha256": "c81f1168e490f0d111309af7882acc5c9bc2ec81141a06a82b627e7e1418ffa5"
+    },
+    {
+      "bytes": 13145,
+      "git_blob_sha1": "07c5361e486f1a3740ac6fbed132661479b6f43c",
+      "offset": 196608,
+      "path": "source_delta.tar.gz.part07",
+      "sequence": 7,
+      "sha256": "751783da44576e9c2763d53fc5d87a436041dd49a59a5ee426979a1c55bf03f7"
+    }
+  ],
+  "repository": "c1903146900-dev/shuabao",
+  "reviewed_input_allowlist_sha256": "1d31b38ceea03152f26cb6185e1679afa55bfa712302f255e80387eec969083c",
+  "schema": "sandbox-p6-throw-chunked-exact-delta-1",
+  "source_manifest_sha256": "d6753831efa643c70393dd066eb4173a2ecf31e368500b0b2a604a7d4acbfb1a",
+  "status": "SOURCE_RECOVERY_BACKUP_ONLY"
+}
