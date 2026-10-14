@@ -1,0 +1,462 @@
+{
+  "append_only_prefix": "development/shuabao/g26-boundary-static-tools-pm01-20261014",
+  "archive": {
+    "bytes": 204085,
+    "format": "Deterministic USTAR + gzip",
+    "gid": 0,
+    "git_blob_sha1": "04650148d93b93a819c7a63d14df193a5d768f00",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "members_bytes": 851031,
+    "members_count": 51,
+    "mode": "0644",
+    "mtime": 0,
+    "path": "boundary_source_tools.tar.gz",
+    "sha256": "5dcfda80c9338af024431192696b7b6cb3c3a72cfe702fa567934c72eeb8eabc",
+    "split_bytes": 32768,
+    "tar_bytes": 890880,
+    "uid": 0
+  },
+  "companion_files": [
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": ".gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2878,
+      "git_blob_sha1": "4fb00bd7e8af2ba88f5648fe196e95244862bfe2",
+      "path": "README.md",
+      "sha256": "ae05716facac909ad2a969e2106298b01f2cd2a590203cfdcf369d8f2a40f68b"
+    },
+    {
+      "bytes": 954,
+      "git_blob_sha1": "db1ff1d0a28817d466c7c42f057424ba3c068c69",
+      "path": "SOURCE_REVIEW.json",
+      "sha256": "95c1beee276cb164216185107c2d1fce9a55f2acdf42581eda7d28b84228d9b7"
+    }
+  ],
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "members": [
+    {
+      "bytes": 4882,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "430405880868c80220cd8a2c606f568c38f6d86a",
+      "path": "g26_boundary_source_tools_pm01/README.md",
+      "sha256": "e978f71eb1d9cd03b6e916a631df6ec997c90a8c3788861a6c60aa139d0120b6"
+    },
+    {
+      "bytes": 2041,
+      "category": "original_files",
+      "git_blob_sha1": "8a2aa39c3de56d1ceaeb8048c65f3aca55fda559",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/memory_budget_v2.py",
+      "sha256": "472d2b37cb6b31a5ac47fdf0919b7acb48728ea6d1212f160d94ab11b3de8de8"
+    },
+    {
+      "bytes": 15753,
+      "category": "original_files",
+      "git_blob_sha1": "d1a9f0f9804ab3bd76862cdd7e9bd9fa203cea35",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_group_guard.py",
+      "sha256": "6344551a08361473dc85014efabc80aec5b560e458e193ac21541a33cec1d958"
+    },
+    {
+      "bytes": 23206,
+      "category": "original_files",
+      "git_blob_sha1": "2d78191c7d62cded4321d4d7d3f8fa375883fe75",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard.py",
+      "sha256": "06f365c7c79ea27808e0a3dcaa09abdf7ca42582a84ad29633ae934ca7163978"
+    },
+    {
+      "bytes": 6984,
+      "category": "original_files",
+      "git_blob_sha1": "75a25be5b25c15545282f0bdc64df29a6c7119cf",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard_reaped_row01.py",
+      "sha256": "626eb74e1c137bce47792cb9d7271dfae0622c4ac5dc40710f8a35e9329bbe2f"
+    },
+    {
+      "bytes": 3528,
+      "category": "original_files",
+      "git_blob_sha1": "e3bda6e26b9dfd4b6c1e058b88191cd39fb906d5",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard_reaped_trace02.py",
+      "sha256": "258f093d4b3d57701b1fae6ca28ddfc215cb04f2a49ce8318bc67624a1558f24"
+    },
+    {
+      "bytes": 4027,
+      "category": "original_files",
+      "git_blob_sha1": "c0853ccab08d1fc0a70c8d3c295a2ab8e38e7397",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard_rss_exit01.py",
+      "sha256": "70f0d71b816568bfb10adeba99f6c56af548fb9773f521ea62d7bafa2b4fe830"
+    },
+    {
+      "bytes": 5234,
+      "category": "original_files",
+      "git_blob_sha1": "7930df4ae4cda49269b7cbccd6a2b21d99546f81",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard_rss_reread01.py",
+      "sha256": "7f2457d16be41de0aa68805e75507910cbd495b92de94b49b87b4a35741c7dbd"
+    },
+    {
+      "bytes": 5515,
+      "category": "original_files",
+      "git_blob_sha1": "9729beb603629a19e272baf97a45961e75d50f28",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/legacy_guard/safe_tree_guard_vanished_child01.py",
+      "sha256": "5f50c17c3dacc7f97b16d3e809d7fb3a622e7b84ecd4edafbb30ab8b85d29141"
+    },
+    {
+      "bytes": 5067,
+      "category": "original_files",
+      "git_blob_sha1": "03c48eac0850028ada0451b99665603d61b74f20",
+      "path": "g26_boundary_source_tools_pm01/guard_recovery_lookup_1019/q1_guard/held_exit_adapter.py",
+      "sha256": "b1ecb7c896ce8e71a334bd75796fb46b47f116e5966fd712edd411db9db31b3a"
+    },
+    {
+      "bytes": 48445,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "782a6f1d9aa2ae733cf86acd7b12e737530e7695",
+      "path": "g26_boundary_source_tools_pm01/portable/PURE_SELECTION.json",
+      "sha256": "20827932ab35430acd1f76bac628b4716197b5358815f97f0725b440fdf0d4ea"
+    },
+    {
+      "bytes": 22285,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "e6c8ff0f32c7eabf66a15b7634fa881445b868cf",
+      "path": "g26_boundary_source_tools_pm01/portable/g26_cap_icd_gate.gd.in",
+      "sha256": "915e82c6b4d2a7bd348edefda59cddbfdd2ee59e118c645d15cbdd0703f20f45"
+    },
+    {
+      "bytes": 24864,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "41077650c6e5818c188bdea660a6579289b85623",
+      "path": "g26_boundary_source_tools_pm01/portable/g26_shield_lifecycle_gate.gd.in",
+      "sha256": "61378468c98924ce5a0d352559af36aea53031d0cdd63ebc240a7d1c10424865"
+    },
+    {
+      "bytes": 3094,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "ca345c29beeea8be333e8e5b48976dc47e50dd4d",
+      "path": "g26_boundary_source_tools_pm01/portable/render_cap_icd_script.py",
+      "sha256": "6926fd188aa713312ad666f0c953dc75eb9a318386a57ad14e602829e6f36afe"
+    },
+    {
+      "bytes": 3103,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "80cf957377b9a7a5e52fcdce48d2d85877367d4f",
+      "path": "g26_boundary_source_tools_pm01/portable/render_lifecycle_script.py",
+      "sha256": "30932ae56475ec1390d8f12441070cc806dd0f3af8aebfd4d67e29769768a26c"
+    },
+    {
+      "bytes": 4367,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "fe2694a80ae626ee1fe31a6a99a02a7aef9c0b45",
+      "path": "g26_boundary_source_tools_pm01/portable/run_portable_pure.py",
+      "sha256": "47d8daff1b9afa9f374df579d20d6cf6a7259b6b975d7acfb03bf823b0ecb812"
+    },
+    {
+      "bytes": 4553,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "dfb3bd2666cd1d7011cf3cf0809c72463cee692a",
+      "path": "g26_boundary_source_tools_pm01/portable/test_portable_contract.py",
+      "sha256": "30372f88a62007385bc4af59377bdd7a0308b50c43784cb0c8e6ebfb46176b19"
+    },
+    {
+      "bytes": 5651,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "178d6880ad32d3ef4b6ab265e6da2da63f78475d",
+      "path": "g26_boundary_source_tools_pm01/portable/test_render_cap_icd_script.py",
+      "sha256": "358878d28bd8d18a90e1efc6de96f5c7a5324804bb31e5b417508e8779de5698"
+    },
+    {
+      "bytes": 5686,
+      "category": "derived_portable_files",
+      "git_blob_sha1": "d34f9f035a097a3223ff78ef1aeb2b7217432ee2",
+      "path": "g26_boundary_source_tools_pm01/portable/test_render_lifecycle_script.py",
+      "sha256": "1bf28dc69144b2889acba8e327a7fe9190e6f9799494043fbc9754ca345a385d"
+    },
+    {
+      "bytes": 26962,
+      "category": "original_files",
+      "git_blob_sha1": "4dd6de9ae655b808a913f6faea38ce8820b333ad",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/checks_g26_recipe_types_revision01/g26_real_warning_gate.gd",
+      "sha256": "13caf9bb730bcf4dff4bbf7435e4aa13a1d0237a6226301a670cbc19be084a21"
+    },
+    {
+      "bytes": 1730,
+      "category": "original_files",
+      "git_blob_sha1": "5ec5aa5c6bc84480225c6bf9e0f601a1de6920a5",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/checks_g26_recovered/OFFER_RECIPE_DRAFT.json",
+      "sha256": "a06ea57d1e88ed0093089f69a91178257df8e9e32dcdb26a401bda73c8a2b6be"
+    },
+    {
+      "bytes": 71684,
+      "category": "original_files",
+      "git_blob_sha1": "05dd6d52d47d51f813375a9ae6beef54fca64a0e",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/BASE_GUARD_3A00.py",
+      "sha256": "3a002904e6e55e170f8597c11c4929528b5f1288d9ec13a050817d86f2a9b9b4"
+    },
+    {
+      "bytes": 68914,
+      "category": "original_files",
+      "git_blob_sha1": "4c56b90ba75c06661d78ed2a379359ed2089bac2",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/BASE_GUARD_DB0F.py",
+      "sha256": "db0f9f8de70320c83a646f7c7c7b35d95500a4a01220af7f0b334f4f89c3d315"
+    },
+    {
+      "bytes": 18490,
+      "category": "original_files",
+      "git_blob_sha1": "e28558f688c8bc37fd2fa92b9484538b81a87c74",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/BASE_SEMANTIC_PM01.py",
+      "sha256": "c8973a94de5cf5b672a622e8f2664deae5f7971dbf5bb7a499020b4321d0ad51"
+    },
+    {
+      "bytes": 2975,
+      "category": "original_files",
+      "git_blob_sha1": "a5007e5b07ede5f79976d4e008831591ed884817",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/CONTRACT.md",
+      "sha256": "22ffd553bac46cb302fa9d23c06f178b2e7909135b8753533855f67437fad609"
+    },
+    {
+      "bytes": 3213,
+      "category": "original_files",
+      "git_blob_sha1": "65c1ba257bdd0c5fce5442e3fc7d181b71cbad0f",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/REQUIRED_IDS.json",
+      "sha256": "f91d1a6c71f539679b6f01a61794268236f7e5cbc69cee15fff95332ab673bd4"
+    },
+    {
+      "bytes": 19695,
+      "category": "original_files",
+      "git_blob_sha1": "c0d996dc1e2a3f1fb0e3c65e9d3363b464abd5ac",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/g26_cap_icd_validator_pm01.py",
+      "sha256": "7695f7a6c06393462614098ebd30fc39f94f4c1a246cb3cc036fb7209d3dfb4d"
+    },
+    {
+      "bytes": 71677,
+      "category": "original_files",
+      "git_blob_sha1": "b9f7085693d4d56b66dcdd0afa1a62ca3e4d26eb",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/new_identity_guard.py",
+      "sha256": "c1b84f6e5d29d5005ce784574b4020fb83487608301bd4c65b93300ee0f4a213"
+    },
+    {
+      "bytes": 12328,
+      "category": "original_files",
+      "git_blob_sha1": "8098df8757f2f8567c4ae4708333915fe7c8ccfd",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/postopen_child_stat_adapter_pm01.py",
+      "sha256": "a369c9c9d73863b8149610e2dd266cc74b004fc8fc12613548a9b6c7cf0fc9ee"
+    },
+    {
+      "bytes": 19929,
+      "category": "original_files",
+      "git_blob_sha1": "2ad929acc1916865a4aef55fdcd1659287c7d788",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/test_cap_icd_guard_integration.py",
+      "sha256": "629aa4481d037204bad9f797e896a794670fdb828dace5e72ecf4bc07b21eb2a"
+    },
+    {
+      "bytes": 16875,
+      "category": "original_files",
+      "git_blob_sha1": "bab8972b04b91872b20ebb4a0d07e04a10deb041",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_guard_prepare_pm01/test_cap_icd_pm01.py",
+      "sha256": "ae950700267110b78d5301d7d2e275e0fee8d9ccabb68d72bec0a3803c7e6a94"
+    },
+    {
+      "bytes": 2836,
+      "category": "original_files",
+      "git_blob_sha1": "8fbe94644cf207cbe7652260232e2d962a3da47d",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_prepare_pm02/CONTRACT_DELTA.md",
+      "sha256": "2f12374a18e3abcc52ca7567a2c8e4c71218c2a30efac8d1783ccdca49b8b1e2"
+    },
+    {
+      "bytes": 6896,
+      "category": "original_files",
+      "git_blob_sha1": "4b6f1b8732d34001cb475753cc4b74010ae74d57",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_cap_icd_prepare_pm02/PARENT_CONTRACT_PM01.md",
+      "sha256": "cb7b0aba4b9c27e9492ae7cc9d73f4911e8ec6166202195a4f947253acf0a0b0"
+    },
+    {
+      "bytes": 71682,
+      "category": "original_files",
+      "git_blob_sha1": "c32d9688c8c01e57a940ed9158d33bbfec114ab9",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/BASE_GUARD_3CDC.py",
+      "sha256": "3cdc1837d28fbb28f4bcc2ea77982bf362b14ac223f28a73286acb7a2c80bf1f"
+    },
+    {
+      "bytes": 68914,
+      "category": "original_files",
+      "git_blob_sha1": "4c56b90ba75c06661d78ed2a379359ed2089bac2",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/BASE_GUARD_DB0F.py",
+      "sha256": "db0f9f8de70320c83a646f7c7c7b35d95500a4a01220af7f0b334f4f89c3d315"
+    },
+    {
+      "bytes": 1430,
+      "category": "original_files",
+      "git_blob_sha1": "fb3d55ee763f36039598140dc93aed22aae6e2a0",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/CONTRACT_DELTA.md",
+      "sha256": "b11ea00b06d0c95e333c2fb4378694c153bdb632a795f0329305d410b38d501b"
+    },
+    {
+      "bytes": 3304,
+      "category": "original_files",
+      "git_blob_sha1": "768246e6fbc724e275297b9ddfb887b6b6216be9",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/REQUIRED_IDS.json",
+      "sha256": "4498e546ae333a1b27ab27eac3402edb8fdb993f8d570249ea222db23193a562"
+    },
+    {
+      "bytes": 17695,
+      "category": "original_files",
+      "git_blob_sha1": "0095547704ceb4b7b7568f5ca235b57afd66f10f",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/g26_lifecycle_validator_pm01.py",
+      "sha256": "c50521a1fe6d99a9f4b6690c11054fd2f6057943324051c669b21a5b5af5f254"
+    },
+    {
+      "bytes": 71684,
+      "category": "original_files",
+      "git_blob_sha1": "05dd6d52d47d51f813375a9ae6beef54fca64a0e",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/new_identity_guard.py",
+      "sha256": "3a002904e6e55e170f8597c11c4929528b5f1288d9ec13a050817d86f2a9b9b4"
+    },
+    {
+      "bytes": 12328,
+      "category": "original_files",
+      "git_blob_sha1": "8098df8757f2f8567c4ae4708333915fe7c8ccfd",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/postopen_child_stat_adapter_pm01.py",
+      "sha256": "a369c9c9d73863b8149610e2dd266cc74b004fc8fc12613548a9b6c7cf0fc9ee"
+    },
+    {
+      "bytes": 19767,
+      "category": "original_files",
+      "git_blob_sha1": "9f79d65b46c7cf8daae0875542d994302d38cfa3",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/test_lifecycle_guard_integration.py",
+      "sha256": "c4a7f96f30eda9be252be01a9986df17277a6d8c4ba2f82a88446f74b5b2eb85"
+    },
+    {
+      "bytes": 15664,
+      "category": "original_files",
+      "git_blob_sha1": "ef231e8b153bc34e4810f7b3ea2ef883f68d7b3a",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_guard_prepare_pm02/test_lifecycle_pm01.py",
+      "sha256": "c1ec22c23754120efc43879c7d3b8d8c240044181f11ed528da7f20a422c9ae3"
+    },
+    {
+      "bytes": 2183,
+      "category": "original_files",
+      "git_blob_sha1": "b14f6ab4f8bf6304495f355afcc970cf1e0ab57b",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_lifecycle_semantics_revision02/CONTRACT_DELTA.md",
+      "sha256": "b822d154f5512e9c0f21ce7f76f7800a78740feaf6a6e66d56c6ed15ae2dd90d"
+    },
+    {
+      "bytes": 6986,
+      "category": "original_files",
+      "git_blob_sha1": "90ad0855557abab4951a943a91155af59e87021c",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/g26_shield_lifecycle_prepare_pm01/CONTRACT.md",
+      "sha256": "3f454b9b2dfc5385cc0d2109d8003b92d69d58f5b6568ca28cad331e2faf1c95"
+    },
+    {
+      "bytes": 1803,
+      "category": "original_files",
+      "git_blob_sha1": "b5dcc87ae92a48eb7cdc6365cf39f726d29c1370",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/G26_CAP_ICD_GUARD_PM01_COMBINED_STATIC_REVIEW01.json",
+      "sha256": "de38edf1749395647cc18400d134ef9b8caf29d9631bfdd17aa2befa8fda4767"
+    },
+    {
+      "bytes": 3129,
+      "category": "original_files",
+      "git_blob_sha1": "a986a257fc1ba95b7e280e6708fe8dddb7bda30d",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/G26_CAP_ICD_PM02_STATIC_REVIEW01.json",
+      "sha256": "5629cd9c687ba82557b58149f797ec795a0e014bb7d6a51ce686e87c2b8c5e0c"
+    },
+    {
+      "bytes": 1806,
+      "category": "original_files",
+      "git_blob_sha1": "85df7080cfcd9256968ac2a7c7800ce9339ee47c",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/G26_LIFECYCLE_GUARD_PM02_COMBINED_STATIC_REVIEW01.json",
+      "sha256": "df78a0ca031aafda5863a51cd8ec4448d6272a2f6085a425adb4599c8cb7096b"
+    },
+    {
+      "bytes": 2202,
+      "category": "original_files",
+      "git_blob_sha1": "bd56172b10c385f73be58ce711025b789ef605ed",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/G26_LIFECYCLE_SIGNED64_PM02_STATIC_REVIEW01.json",
+      "sha256": "6627c9ea0cff1c0c2275af46b0954d0b3ae976f86c5d87d0c3bc6a9df8ba902d"
+    },
+    {
+      "bytes": 3057,
+      "category": "original_files",
+      "git_blob_sha1": "752581c291fa5031a40e687fabaf1aeb921b1ce9",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/G26_SHIELD_LIFECYCLE_PM01_STATIC_REVIEW01.json",
+      "sha256": "716e3794a87fa59c2e95e9630ce1dbb76770ff8468bf81a02a4c6dcaef8bc77a"
+    },
+    {
+      "bytes": 1893,
+      "category": "original_files",
+      "git_blob_sha1": "c89731ae0ff438f6913850fa213b8e5919778f24",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/POSTOPEN_CHILD_STAT_ADAPTER_PM01_STATIC_REVIEW01.json",
+      "sha256": "f98cd245b58a6cb36c5d32453a715d7e667af0a57cd6ff0971e5342a37e29636"
+    },
+    {
+      "bytes": 3015,
+      "category": "original_files",
+      "git_blob_sha1": "0d34a2b65eded34b709f51fa109a43a3bd18dc69",
+      "path": "g26_boundary_source_tools_pm01/recovery_20261014_pm/independent_audit/UNIFIED_SHARED_RSS25_PM01_COMBINED_STATIC_REVIEW01.json",
+      "sha256": "f58b2cac2bd6afc735557540a7d654d30876e353d612370b00f07d7785acc265"
+    }
+  ],
+  "parts": [
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "6534712934e50522c7bd750c579166627dba7464",
+      "offset": 0,
+      "path": "boundary_source_tools.tar.gz.part01",
+      "sequence": 1,
+      "sha256": "d45fe43c5ee2b17cd1e3402941aa831a823222c9a41c9b5a884936c7b67af1b0"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "6cfc093ea7c908d2bb0e30d2b71027294e94627e",
+      "offset": 32768,
+      "path": "boundary_source_tools.tar.gz.part02",
+      "sequence": 2,
+      "sha256": "e4cf5bd4b2750c1f92a6c16738e6704f18dacd1bf5975342697abafee7593c05"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "5da4f2e8f4fa514eb335db363f2c66d3989e9e1f",
+      "offset": 65536,
+      "path": "boundary_source_tools.tar.gz.part03",
+      "sequence": 3,
+      "sha256": "0a4c411c4ac355400805209615e50597983bb534c0d8d69add3d5c5b5f926129"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "e27f298295241c8756bdd7557b8f93dba6802a95",
+      "offset": 98304,
+      "path": "boundary_source_tools.tar.gz.part04",
+      "sequence": 4,
+      "sha256": "77db3bf3bae8f1528be2b7f2292418149965d0328bac575480366b9108bdb29e"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "3f69a48a3ab155e425a072520dc286249c5c4fad",
+      "offset": 131072,
+      "path": "boundary_source_tools.tar.gz.part05",
+      "sequence": 5,
+      "sha256": "ed16da757fdaa1e7c55ba88f49b2ec8359b69a45ca413cdb252c29ab44fc1690"
+    },
+    {
+      "bytes": 32768,
+      "git_blob_sha1": "a02bd1c6d05ca75b8ade9fc843dcc5d118b55405",
+      "offset": 163840,
+      "path": "boundary_source_tools.tar.gz.part06",
+      "sequence": 6,
+      "sha256": "92c19880114b979b7fc79b7996d6644fea6cc91d2bf570e712405e9351fd733d"
+    },
+    {
+      "bytes": 7477,
+      "git_blob_sha1": "3ee4e0df743ad4510dc3cc1424e9ab63c2423e0a",
+      "offset": 196608,
+      "path": "boundary_source_tools.tar.gz.part07",
+      "sequence": 7,
+      "sha256": "66c1c6db004991d8b5e72052af162f5ca6a3d750beb44719e987300ee52cabac"
+    }
+  ],
+  "repository": "c1903146900-dev/shuabao",
+  "reviewed_raw_allowlist_sha256": "4aea39cf83babff3f7e07481e950752c48c46abb15d61328f4b0d0f550d73b26",
+  "schema": "g26-boundary-chunked-exact-static-tools-1",
+  "status": "SOURCE_BACKUP_ONLY_NOT_RUNTIME_ADMISSION"
+}
