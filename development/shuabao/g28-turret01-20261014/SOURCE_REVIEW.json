@@ -1,0 +1,245 @@
+{
+  "schema": "g28-turret01-public-six-delta-review-1",
+  "status": "SOURCE_COPIED_AND_STATICALLY_VERIFIED_G28_RUNTIME_NOT_RUN",
+  "candidate_identity": "candidate_g28_turret01_ordinary_admission",
+  "parent_identity": "candidate_g29_rebuild01_ordinary_admission",
+  "parent_source_sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+  "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+  "visual_sha256": "904a3b738b88f3ed7835df878c95773f89f4ea3996cd1327058f515296384a80",
+  "deltas": [
+    {
+      "path": "hex_turret_20261014/catalog.gd",
+      "before": null,
+      "after": "a770507c306e2760d92a26360b6073cad914d64a9985c89fbf258bd6a52d851a",
+      "bytes": 3818,
+      "operation": "add"
+    },
+    {
+      "path": "hex_turret_20261014/user_decision.json",
+      "before": null,
+      "after": "e3bd2a43b3a6212f9be13a3bad62a066521aea1cf3dfb8a6a9480a85fba2f0f1",
+      "bytes": 1638,
+      "operation": "add"
+    },
+    {
+      "path": "visual_rework_20261009/binding/bridge.gd",
+      "before": "38de798e1c1af49cac4d0b9364e6a2d148b6179e79dc4f0d5f47a0a51859f9a1",
+      "after": "a0da3e1e03cbb8b2e4d4b2e65a96d3db05ee3f3c371b6b0d8947d28a28cdb21a",
+      "bytes": 4051,
+      "operation": "replace"
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "before": "6c4a8b727448f8dcb3cdd65cfcef509286446e1b785656a55d23fcadae97f354",
+      "after": "5b5364869670b7e20c4acc2dcb10c84792fd78b7819d3f637900716a86e73cef",
+      "bytes": 16199,
+      "operation": "replace"
+    },
+    {
+      "path": "visual_rework_20261009/binding/g28_live_admission_plan.json",
+      "before": null,
+      "after": "226e4c78a47849a6645d2d2a833621b071e256f1ab8589a0a009e15ff13e4f94",
+      "bytes": 12397,
+      "operation": "add"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+      "after": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+      "bytes": 332493,
+      "operation": "replace"
+    }
+  ],
+  "parent_before_images": [
+    {
+      "path": "visual_rework_20261009/binding/bridge.gd",
+      "sha256": "38de798e1c1af49cac4d0b9364e6a2d148b6179e79dc4f0d5f47a0a51859f9a1",
+      "bytes": 4060,
+      "computed_member_git_blob_sha1": "1cb529884d0fb852ac460ec27f5dab118418dd45",
+      "published_archive_commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+      "published_archive_tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+      "published_archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+      "published_archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+      "published_archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+      "archive_member_path": "visual_rework_20261009/binding/bridge.gd",
+      "storage_note": "The prior bytes are archive members, not individually published Git paths."
+    },
+    {
+      "path": "visual_rework_20261009/binding/live_binding.gd",
+      "sha256": "6c4a8b727448f8dcb3cdd65cfcef509286446e1b785656a55d23fcadae97f354",
+      "bytes": 15945,
+      "computed_member_git_blob_sha1": "0ee1032eda30ecc293c75c6e20109efb8d184fcb",
+      "published_archive_commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+      "published_archive_tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+      "published_archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+      "published_archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+      "published_archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+      "archive_member_path": "visual_rework_20261009/binding/live_binding.gd",
+      "storage_note": "The prior bytes are archive members, not individually published Git paths."
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+      "bytes": 331694,
+      "computed_member_git_blob_sha1": "246e56242a0663033630a82e6e8f197ada2b1a74",
+      "published_archive_commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+      "published_archive_tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+      "published_archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+      "published_archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+      "published_archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+      "archive_member_path": "visual_rework_20261009/binding/source_binding.json",
+      "storage_note": "The prior bytes are archive members, not individually published Git paths."
+    }
+  ],
+  "recovery_chain": {
+    "repository": "c1903146900-dev/shuabao",
+    "restored50": {
+      "commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+      "tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+      "source_sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+      "next_delta_parent_before_images": [
+        {
+          "path": "visual_rework_20261009/binding/bridge.gd",
+          "sha256": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05",
+          "bytes": 4061,
+          "git_blob_sha1": "6e14ce0a0b5c39aba00b90b4a981d9af92d63e7a",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/bridge.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/live_binding.gd",
+          "sha256": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5",
+          "bytes": 15693,
+          "git_blob_sha1": "7d57bdb2cc54060d15d1e93fec06f7c128e15112",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/live_binding.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+          "bytes": 331113,
+          "git_blob_sha1": "628e889a55b1cc71cac06ef66cc14f8dfdf72f56",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/source_binding.json"
+        }
+      ],
+      "instructions": "Restore published43 baseline and ordered44-50 deltas, validating each before/after; the published G29 SOURCE_REVIEW identifies its exact50 preimages."
+    },
+    "g29_rebuild01": {
+      "commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+      "tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+      "prefix": "development/shuabao/g29-rebuild01-20261014",
+      "source_sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+      "archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+      "archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+      "source_review": "development/shuabao/g29-rebuild01-20261014/SOURCE_REVIEW.json",
+      "source_review_sha256": "085ec5c0342a494fe59a5ddc4c7e0f90235ed38540d3c955aa6ee29e41aa64ec",
+      "archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+      "archive_bytes": 113860,
+      "parts": [
+        {
+          "sequence": 1,
+          "path": "source_delta.tar.gz.part01",
+          "offset": 0,
+          "bytes": 32768,
+          "sha256": "7128668a719e3d7a3db35eebe907247caed601c14052c197816b99a7bf984343",
+          "git_blob_sha1": "969fa04c1abf2ec4596a8a1e004a0e7c29f2c194"
+        },
+        {
+          "sequence": 2,
+          "path": "source_delta.tar.gz.part02",
+          "offset": 32768,
+          "bytes": 32768,
+          "sha256": "10ee6cba6fbc1f3d21e1bc773fb9a76ce0bcd42615a6c3d74a9c371370357491",
+          "git_blob_sha1": "824f917600d4e97319e59f1c3c74c947371eb5c5"
+        },
+        {
+          "sequence": 3,
+          "path": "source_delta.tar.gz.part03",
+          "offset": 65536,
+          "bytes": 32768,
+          "sha256": "478613d909ce97c7c9235ea3b1d793c19c8bfdc69b3c60118a156fd2b6cadc86",
+          "git_blob_sha1": "d3aa04945b070552dab15578dd58fd63435ca2c6"
+        },
+        {
+          "sequence": 4,
+          "path": "source_delta.tar.gz.part04",
+          "offset": 98304,
+          "bytes": 15556,
+          "sha256": "5c510eafa04650ae8b03c8584938b55c6271c404887350382d170b654c004eb4",
+          "git_blob_sha1": "0c958b6524492fdc296a24621adb4ee11ca2ea53"
+        }
+      ],
+      "instructions": "Read the four parts at the fixed commit, verify each and concatenate in sequence; verify complete gzip hash and every safe regular-file member. Apply only the five members after checking their preimages."
+    },
+    "g28_turret01": {
+      "prefix": "development/shuabao/g28-turret01-20261014",
+      "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+      "instructions": "On an independent G29 source copy, check the three parent before hashes and three add paths absent; overlay exactly the six source_delta files. Verify source_binding SHA, its runtime/visual maps and explicit dependencies. Do not overlay this metadata folder into the game root."
+    }
+  },
+  "counts": {
+    "parent_noncache_files": 3060,
+    "successor_noncache_files": 3063,
+    "delta_files": 6,
+    "added_files": 3,
+    "source_map": 1779,
+    "visual_map": 72,
+    "intersection": 8,
+    "ancestor_replacements": 22,
+    "explicit_successor_dependencies": 294
+  },
+  "static_verified": {
+    "six_exact_after_bytes": true,
+    "three_exact_parent_preimages": true,
+    "parent_archive_members_matched_locally_verified_remote_readback": true,
+    "all_inherited_inodes_independent": true,
+    "all_unchanged_files_byte_equal": true,
+    "all_parent_bytes_and_stat_postchecked": true,
+    "old22_ancestor_rows_unchanged": true,
+    "old291_explicit_values_unchanged": true,
+    "all294_explicit_dependencies_match_runtime_map": true,
+    "original_Q3_177_ordered_chain_unchanged": true
+  },
+  "scope": {
+    "only_added_hook": "hex.final_design.common_g28.v1",
+    "ordinary_hook_count": 15,
+    "retained": "G27 and G29",
+    "not_admitted": [
+      "G19",
+      "G21",
+      "G25",
+      "G26"
+    ],
+    "original_consumers_changed": false,
+    "source_numbers_changed": false,
+    "user_snapshot_decision_path": "source_delta/hex_turret_20261014/user_decision.json",
+    "user_snapshot_decision_sha256": "e3bd2a43b3a6212f9be13a3bad62a066521aea1cf3dfb8a6a9480a85fba2f0f1",
+    "snapshot_scope": "AD/AP terms of base damage are fixed when the turret is generated; target mitigation and final-damage consumers remain original live consumers.",
+    "no_knockback_or_stun_added": true,
+    "capacity_policy_approved": false,
+    "capacity_bound": "Only current equal world/actor clocks with4sec lifetime and3sec spawn ICD prove a third concurrent turret unreachable; future clock/parameter changes require a separate capacity decision."
+  },
+  "parent_validation_boundary": "G29 b2 source received independent new headless37/34/30 checks. This is the parent prerequisite only; no G28 runtime or Host/GUI/native qualification is inherited.",
+  "runtime_status": {
+    "G28_parser": "NOT_RUN",
+    "G28_engine": "NOT_RUN",
+    "G28_headless_business": "NOT_RUN",
+    "ordinary_G28_selection": "NOT_RUN",
+    "default_Host_ready": "NOT_RUN",
+    "GUI": "NOT_RUN",
+    "native_input": "NOT_RUN",
+    "full_gameplay": "NOT_RUN"
+  },
+  "recovery_limits": {
+    "unpublished_generated_cache_files_not_restored": 198,
+    "historical107_receipts_recreated": false,
+    "original51_full_source_restored": false,
+    "historical_test_qualification_inherited": false
+  },
+  "current_remote_HEAD_asserted": false,
+  "remote_write_performed": false
+}

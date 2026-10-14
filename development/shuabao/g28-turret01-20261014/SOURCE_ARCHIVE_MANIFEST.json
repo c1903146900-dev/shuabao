@@ -1,0 +1,240 @@
+{
+  "schema": "g28-turret01-chunked-source-manifest-1",
+  "status": "G28_STATIC_ONLY_NOT_RUN",
+  "repository": "c1903146900-dev/shuabao",
+  "intended_branch": "checkpoint/c02-revision06-20261011",
+  "append_only_prefix": "development/shuabao/g28-turret01-20261014",
+  "reviewed_input_allowlist_sha256": "8b04db9d420cfb3a1db5fc0ec8934edf5b3db120807ef69cd8b9891626192e65",
+  "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+  "parent_source_sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+  "recovery_chain": {
+    "repository": "c1903146900-dev/shuabao",
+    "restored50": {
+      "commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+      "tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+      "source_sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+      "next_delta_parent_before_images": [
+        {
+          "path": "visual_rework_20261009/binding/bridge.gd",
+          "sha256": "5b4de029f07b235af525ac0fc93b0a6fa85441599c4339cdc8de6d36304bae05",
+          "bytes": 4061,
+          "git_blob_sha1": "6e14ce0a0b5c39aba00b90b4a981d9af92d63e7a",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/bridge.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/live_binding.gd",
+          "sha256": "ba42456b027f9716c6bf0f5d3099f13719bffba046157bdecd31988cad94eed5",
+          "bytes": 15693,
+          "git_blob_sha1": "7d57bdb2cc54060d15d1e93fec06f7c128e15112",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/live_binding.gd"
+        },
+        {
+          "path": "visual_rework_20261009/binding/source_binding.json",
+          "sha256": "8988f43b06a4f4a5550cdc750c03eb74858ccf22bad23cff7e1d40923d1a6ac6",
+          "bytes": 331113,
+          "git_blob_sha1": "628e889a55b1cc71cac06ef66cc14f8dfdf72f56",
+          "published_commit": "27ceff2408f0284779c833ce52bd00432d816cc6",
+          "published_tree": "c04157e59b9cf9c033c31b6cd1b78199267453f5",
+          "published_path": "development/shuabao/equipment-successor-50-g27-live/source_delta/visual_rework_20261009/binding/source_binding.json"
+        }
+      ],
+      "instructions": "Restore published43 baseline and ordered44-50 deltas, validating each before/after; the published G29 SOURCE_REVIEW identifies its exact50 preimages."
+    },
+    "g29_rebuild01": {
+      "commit": "8bb1c7ba7ef9b60cfde7342a629cbf13633a4257",
+      "tree": "244a103fd93e79a9867001ec98955081af7f56c5",
+      "prefix": "development/shuabao/g29-rebuild01-20261014",
+      "source_sha256": "b2c602e792ef4aaa86f43ee27003e9b73bf8d6f148b3a343718b073360b5a52d",
+      "archive_manifest": "development/shuabao/g29-rebuild01-20261014/SOURCE_ARCHIVE_MANIFEST.json",
+      "archive_manifest_sha256": "e833f220310fcc566e635ca12426f6368ce845c30e9704ba12a386490baeabf4",
+      "source_review": "development/shuabao/g29-rebuild01-20261014/SOURCE_REVIEW.json",
+      "source_review_sha256": "085ec5c0342a494fe59a5ddc4c7e0f90235ed38540d3c955aa6ee29e41aa64ec",
+      "archive_sha256": "cef8831a02844e4f0b76eece131ac549364fe1ea8b05909504ff7ca4ebe6fd1d",
+      "archive_bytes": 113860,
+      "parts": [
+        {
+          "sequence": 1,
+          "path": "source_delta.tar.gz.part01",
+          "offset": 0,
+          "bytes": 32768,
+          "sha256": "7128668a719e3d7a3db35eebe907247caed601c14052c197816b99a7bf984343",
+          "git_blob_sha1": "969fa04c1abf2ec4596a8a1e004a0e7c29f2c194"
+        },
+        {
+          "sequence": 2,
+          "path": "source_delta.tar.gz.part02",
+          "offset": 32768,
+          "bytes": 32768,
+          "sha256": "10ee6cba6fbc1f3d21e1bc773fb9a76ce0bcd42615a6c3d74a9c371370357491",
+          "git_blob_sha1": "824f917600d4e97319e59f1c3c74c947371eb5c5"
+        },
+        {
+          "sequence": 3,
+          "path": "source_delta.tar.gz.part03",
+          "offset": 65536,
+          "bytes": 32768,
+          "sha256": "478613d909ce97c7c9235ea3b1d793c19c8bfdc69b3c60118a156fd2b6cadc86",
+          "git_blob_sha1": "d3aa04945b070552dab15578dd58fd63435ca2c6"
+        },
+        {
+          "sequence": 4,
+          "path": "source_delta.tar.gz.part04",
+          "offset": 98304,
+          "bytes": 15556,
+          "sha256": "5c510eafa04650ae8b03c8584938b55c6271c404887350382d170b654c004eb4",
+          "git_blob_sha1": "0c958b6524492fdc296a24621adb4ee11ca2ea53"
+        }
+      ],
+      "instructions": "Read the four parts at the fixed commit, verify each and concatenate in sequence; verify complete gzip hash and every safe regular-file member. Apply only the five members after checking their preimages."
+    },
+    "g28_turret01": {
+      "prefix": "development/shuabao/g28-turret01-20261014",
+      "source_sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+      "instructions": "On an independent G29 source copy, check the three parent before hashes and three add paths absent; overlay exactly the six source_delta files. Verify source_binding SHA, its runtime/visual maps and explicit dependencies. Do not overlay this metadata folder into the game root."
+    }
+  },
+  "archive": {
+    "path": "source_backup.tar.gz",
+    "bytes": 121330,
+    "sha256": "466d39733af0ae275824a80d86302f3fd314e351d04c17f2d409650d8ebf0f1a",
+    "git_blob_sha1": "ec157e87ac32df0ea251f6b3bdbd4c6d1f148891",
+    "tar_bytes": 399360,
+    "members_count": 10,
+    "members_bytes": 388664,
+    "format": "USTAR + gzip",
+    "member_type": "regular file only",
+    "member_mode": "0644",
+    "mtime": 0,
+    "uid": 0,
+    "gid": 0,
+    "uname": "",
+    "gname": "",
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "compression_level": 9,
+    "split_bytes": 32768
+  },
+  "members": [
+    {
+      "path": ".gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "PUBLIC_SOURCE_MANIFEST.json",
+      "bytes": 3023,
+      "sha256": "77ceb08803b3113609a8dc3b5660d01b50ec82a2399b319086179437e3ace320",
+      "git_blob_sha1": "42413de2864f819af9900f79db5ee621332472f8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2614,
+      "sha256": "f71bb4e381b904bddb85e40dccc5827d2b2bdda95e09215e26f25181e16237a3",
+      "git_blob_sha1": "4f0925699294ad73b1e8bb6b60f9933158caf38f"
+    },
+    {
+      "path": "SOURCE_REVIEW.json",
+      "bytes": 12431,
+      "sha256": "d938daab3dcb13b941af3e6913881d6da9436b757c5a3e15fffb385ccad02149",
+      "git_blob_sha1": "49cfed938017405f1f421e4eb164e6d5103db446"
+    },
+    {
+      "path": "source_delta/hex_turret_20261014/catalog.gd",
+      "bytes": 3818,
+      "sha256": "a770507c306e2760d92a26360b6073cad914d64a9985c89fbf258bd6a52d851a",
+      "git_blob_sha1": "b72dc8bddaf092222f584324ecc7c48c129e004b"
+    },
+    {
+      "path": "source_delta/hex_turret_20261014/user_decision.json",
+      "bytes": 1638,
+      "sha256": "e3bd2a43b3a6212f9be13a3bad62a066521aea1cf3dfb8a6a9480a85fba2f0f1",
+      "git_blob_sha1": "14223e4a093600d5e013f0337a7270059e5898e5"
+    },
+    {
+      "path": "source_delta/visual_rework_20261009/binding/bridge.gd",
+      "bytes": 4051,
+      "sha256": "a0da3e1e03cbb8b2e4d4b2e65a96d3db05ee3f3c371b6b0d8947d28a28cdb21a",
+      "git_blob_sha1": "16dd807037afe45c0057fe542fdf2aee5516c464"
+    },
+    {
+      "path": "source_delta/visual_rework_20261009/binding/g28_live_admission_plan.json",
+      "bytes": 12397,
+      "sha256": "226e4c78a47849a6645d2d2a833621b071e256f1ab8589a0a009e15ff13e4f94",
+      "git_blob_sha1": "923b3883c1822df6f47a93c2aef9a359d88e2fbb"
+    },
+    {
+      "path": "source_delta/visual_rework_20261009/binding/live_binding.gd",
+      "bytes": 16199,
+      "sha256": "5b5364869670b7e20c4acc2dcb10c84792fd78b7819d3f637900716a86e73cef",
+      "git_blob_sha1": "667c633be98fdff9d55b6e55cd3e2e84fba782a0"
+    },
+    {
+      "path": "source_delta/visual_rework_20261009/binding/source_binding.json",
+      "bytes": 332493,
+      "sha256": "e0ef84c2220a9ebe1233645d2add9138a1fd1845a0dba44decbe7c4c7c33443a",
+      "git_blob_sha1": "84e84ac4113b8877e483887b17860041c4357ba2"
+    }
+  ],
+  "parts": [
+    {
+      "sequence": 1,
+      "offset": 0,
+      "path": "source_backup.tar.gz.part01",
+      "bytes": 32768,
+      "sha256": "8b5e07171c59592bb238788949cef2e34ef5074ef988b0ffbd64409be637c1b5",
+      "git_blob_sha1": "41f40233420f4f7a8de0c1d126a2eeafeec1e3d3"
+    },
+    {
+      "sequence": 2,
+      "offset": 32768,
+      "path": "source_backup.tar.gz.part02",
+      "bytes": 32768,
+      "sha256": "6d2e3f7841a03a895cae6ca8d4accb495af35e17d11d0e3e786277eb7235bef6",
+      "git_blob_sha1": "f3655080873511b2b2bed1f4886eab25abf62961"
+    },
+    {
+      "sequence": 3,
+      "offset": 65536,
+      "path": "source_backup.tar.gz.part03",
+      "bytes": 32768,
+      "sha256": "1a246a02ea4aa0187632c82ca1d5f2a8bab686269d66473cf13c74955e3299bf",
+      "git_blob_sha1": "45603a4521f36573ce20030ed9598904ba1ec69f"
+    },
+    {
+      "sequence": 4,
+      "offset": 98304,
+      "path": "source_backup.tar.gz.part04",
+      "bytes": 23026,
+      "sha256": "e8abf9a241ad5aacb31beba9abbdf1bf0a088549aa58ac3a0ebce0a97286d819",
+      "git_blob_sha1": "150434473687a852b8ec852e34ee6d8c4c4ea27c"
+    }
+  ],
+  "companion_files": [
+    {
+      "path": ".gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4626,
+      "sha256": "4f6c7a0803c6650635e274a885fdcca707007d823328265b2617c18f1b4f76ac",
+      "git_blob_sha1": "10978d85696dd07fc8c48d00261be7260697c877"
+    },
+    {
+      "path": "SOURCE_REVIEW.json",
+      "bytes": 12431,
+      "sha256": "d938daab3dcb13b941af3e6913881d6da9436b757c5a3e15fffb385ccad02149",
+      "git_blob_sha1": "49cfed938017405f1f421e4eb164e6d5103db446"
+    }
+  ],
+  "runtime_status": "NOT_RUN",
+  "historical_results_inherited": false,
+  "remote_write_performed_during_preparation": false
+}
