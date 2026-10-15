@@ -1,0 +1,66 @@
+{
+  "added": 4,
+  "archive": "candidate17_source_delta.tar.gz",
+  "archive_bytes": 439751,
+  "archive_members": 18,
+  "archive_sha256": "42942fa14339444bd23778cbc3b89e85339db0ebb5a9b1d9e257ffd40aad1250",
+  "cache_files": 0,
+  "changed": 6,
+  "dependency": {
+    "archive_sha256": "017406cd11e6c1ccc0449bae47e6486409e32c1f9de0f56943b4108e339fc6bd",
+    "commit": "cff1f21514a7b1003f89492ef68b9c65cf726e96",
+    "directory": "development/shuabao/cartoon-source-runtime15-20261015",
+    "map_sha256": "7ebead6adeaf6fb173e504e42d57fe3ee6052893eb63cc51ea64f34cd5623648",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3142
+  },
+  "engine_run": false,
+  "exact_runtime17_source_map_match": true,
+  "independent_restore_source_files": 3146,
+  "package_manifest_sha256": "69630b1157eb2794c80815f3808a622482555b483e0b9c166e574eadb8f57bbd",
+  "payload": {
+    "cartoon_showcase_20261015/stage/cartoon_courtyard.gd": {
+      "bytes": 21789,
+      "sha256": "503d3d5a628951275cdb3235b5954f96b5d3af1fc7ed3a2f3683b399e3485dc4"
+    },
+    "hex_potion_blast_20261014/model.gd": {
+      "bytes": 6921,
+      "sha256": "e9bded5808694b169b7e06c8751b81d1233758b050edd3f6d4e31087c39443f7"
+    },
+    "tests/ink_first_floor_user_route_20261005/native_host01/host.gd": {
+      "bytes": 6428,
+      "sha256": "61ebf36f97bbfdec689f715eb0c2120fedae3b0ddfd88e5f30c32e7ee1edd97a"
+    },
+    "tests/ink_first_floor_user_route_20261005/runtime01/host.gd": {
+      "bytes": 23548,
+      "sha256": "7167244ece45593c6c352dc4ce61139698103cc2932cb32d28a4a966e85964f0"
+    },
+    "visual_rework_20261009/binding/host_ui_projection_transition.json": {
+      "bytes": 1302,
+      "sha256": "ab28fbce4e9999c1a976b77b5467539cfe90ee2816eae44ccca8e8592e98357f"
+    },
+    "visual_rework_20261009/binding/live_binding.gd": {
+      "bytes": 26502,
+      "sha256": "2a6f4118bd93d4d9dd77ce29645ed595e1b85e7b170886abfbd39d5cf044994d"
+    },
+    "visual_rework_20261009/binding/preimages/host_ui_projection/hex_potion_blast_20261014/model.gd": {
+      "bytes": 6213,
+      "sha256": "6efcf6a3e70055e4cb6ff8d3735dd61e2bdb4de02eff8e719cbccfc52eb790e9"
+    },
+    "visual_rework_20261009/binding/preimages/host_ui_projection/tests/ink_first_floor_user_route_20261005/native_host01/host.gd": {
+      "bytes": 6273,
+      "sha256": "e77db57b9fbf6e2c44a8c226f26ff85bd44ebb5d74c5414b8c9ab72c2439485b"
+    },
+    "visual_rework_20261009/binding/preimages/host_ui_projection/tests/ink_first_floor_user_route_20261005/runtime01/host.gd": {
+      "bytes": 23393,
+      "sha256": "d07dd99fe16bfa0e30c11f07177c35b8866506c9a0dae455f6afcb8ee1bf001f"
+    },
+    "visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 346312,
+      "sha256": "d178d6da67de4951dfe2ba9603e7166371c9776cc0925da8e8046f7a76044696"
+    }
+  },
+  "payload_files": 10,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false
+}
