@@ -1,0 +1,30 @@
+{
+  "actual_run_artifacts_included": false,
+  "archive_bytes": 2634038,
+  "archive_members": 20,
+  "archive_name": "cartoon_offline06_source_delta.tar.gz",
+  "archive_sha256": "0fac8725e5679198bc5d687e48c33cfb26987c39896e833f7a7c30a1c4dd1d50",
+  "cache_bytes_included": 0,
+  "external_publication_performed": false,
+  "game_runtime13_modified": false,
+  "package_files_sha256": "6e009df8e375dd31b5f7397f2a6bd71715ab2714448dfa8be8f6789c098f4309",
+  "payload_source_files": 11,
+  "public_base": {
+    "base_archive_sha256": "fd89d44a5b68e2b9d475c59b3e008595c7ed2a221414239f508ede3c6803f4ce",
+    "base_package_files_sha256": "329021546f4602537ef9364b93658e053c6698293022f56929737047bc019099",
+    "commit": "9681403e955d0d479330ae106c2dbcd9e1dff1c4",
+    "prefix": "development/shuabao/cartoon-source-offline01-20261015",
+    "repository": "c1903146900-dev/shuabao",
+    "required_input_layout": "The fresh source root produced by that package: game_runtime13/ and offline_art_preview/. Its original G23 parent restoration remains required.",
+    "url": "https://github.com/c1903146900-dev/shuabao/tree/9681403e955d0d479330ae106c2dbcd9e1dff1c4/development/shuabao/cartoon-source-offline01-20261015",
+    "verification_scope": "This incremental restorer verifies all18 public offline source files plus2 reused public game feedback files. It does not re-verify or rebuild the full3130-file game tree."
+  },
+  "restored_offline_source_files": 24,
+  "schema": "offline06-source-checkpoint-1",
+  "source_changes": {
+    "added": 6,
+    "removed": 0,
+    "replaced": 7
+  },
+  "status": "OFFLINE_ART_CANDIDATE_ONLY; GAME_PERFORMANCE_AND_ANIMATION_UNRESOLVED"
+}
