@@ -1,0 +1,759 @@
+{
+  "archive_bytes": 1073319,
+  "archive_members": 142,
+  "archive_name": "cartoon_source_delta.tar.gz",
+  "archive_sha256": "fd89d44a5b68e2b9d475c59b3e008595c7ed2a221414239f508ede3c6803f4ce",
+  "external_publication_performed": false,
+  "package_files_sha256": "329021546f4602537ef9364b93658e053c6698293022f56929737047bc019099",
+  "package_member_files": {
+    ".gdignore": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "BASE_FULLMAP.json": {
+      "bytes": 422481,
+      "sha256": "006fba6195b80a3e343c42ffde07decad7d4980e06b0a4a169af4b718973c0bb"
+    },
+    "DELTA_MANIFEST.json": {
+      "bytes": 37014,
+      "sha256": "495c668e7862187ffab9622a65b7d18d59afa3943d65a4433d313490c8386d5a"
+    },
+    "EXCLUDED_IMPORT_DEPENDENCIES.json": {
+      "bytes": 13736,
+      "sha256": "93448010a60c48b52fa52fb28d159c190285b50721c61ba66b92cae4015d53cc"
+    },
+    "GAME_SOURCE_FULLMAP.json": {
+      "bytes": 429884,
+      "sha256": "9c8e4682317ad27246dd5f311bcb0a297171cbdbe2117b6934459f43b574087a"
+    },
+    "OFFLINE_SOURCE_FULLMAP.json": {
+      "bytes": 2178,
+      "sha256": "c8d40759e48c143e72b22902d793cf573825f84a723d3b36d681a8c6c7a7498b"
+    },
+    "PACKAGE_FILES.json": {
+      "bytes": 28524,
+      "sha256": "329021546f4602537ef9364b93658e053c6698293022f56929737047bc019099"
+    },
+    "PUBLIC_BASE.json": {
+      "bytes": 835,
+      "sha256": "8d0c24d0375a86808cea28854239a76c5b1baa8e13b4300b54a7883642a4091c"
+    },
+    "README.md": {
+      "bytes": 3105,
+      "sha256": "384c4c3e1017934d5409261642130e63a5616b2a69e92040868779e83cd71545"
+    },
+    "game_after/assets/arena/enemies/boss.glb.import": {
+      "bytes": 1038,
+      "sha256": "38a0c5816a356d9fca886aa97ef34300e22a0638cdda8948b6c8e861d255abdc"
+    },
+    "game_after/assets/enemies/siege_brood/armored/armored.glb.import": {
+      "bytes": 1061,
+      "sha256": "feecbf0ff11c32ff595c6edc5cfa22a64d91b1da899521867c2120d02b5db0fb"
+    },
+    "game_after/assets/enemies/siege_brood/armored/armored_aged_bronze_basecolor.png.import": {
+      "bytes": 1092,
+      "sha256": "2d21e8c7ef08cef9c5e6dc4b9beb4c17fc0fbeced977eab800c0c7547d4e397f"
+    },
+    "game_after/assets/enemies/siege_brood/armored/armored_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1113,
+      "sha256": "c813fd15df43fb1fab4b09c3a01f37b6b96365bb460f4e5de6283e8f1c6f004b"
+    },
+    "game_after/assets/enemies/siege_brood/armored/armored_brood_cold_iron_basecolor.png.import": {
+      "bytes": 1104,
+      "sha256": "4d0d17a0cc01b510f0d2e7d4bd0da53ffee9f5fa34ab2f4eca79acd1c8d06977"
+    },
+    "game_after/assets/enemies/siege_brood/elite/elite.glb.import": {
+      "bytes": 1054,
+      "sha256": "57f1d315f18c79d65bb43f0bed496fd59d56a126bbd92f7b2c8a5b6102873b4b"
+    },
+    "game_after/assets/enemies/siege_brood/elite/elite_aged_bronze_basecolor.png.import": {
+      "bytes": 1084,
+      "sha256": "e967bfd7b72664c14ab5163c49b0a8486505dd0df6fbee333d211105eb305669"
+    },
+    "game_after/assets/enemies/siege_brood/elite/elite_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1105,
+      "sha256": "27c21fa737b00df5bfe09ee10621e062f1634f45a00dd10f756f68c96ccec342"
+    },
+    "game_after/assets/enemies/siege_brood/elite/elite_brood_cold_iron_basecolor.png.import": {
+      "bytes": 1095,
+      "sha256": "515e5d15d4be2ecded0b7c3f72f80f3186729cdea30391e813c59be88001f862"
+    },
+    "game_after/assets/enemies/siege_brood/minion/minion.glb.import": {
+      "bytes": 1058,
+      "sha256": "fa0ac30f058aac0dd632e5d33449b6c634e407849d928373e551dd33ec12ff85"
+    },
+    "game_after/assets/enemies/siege_brood/minion/minion_aged_bronze_basecolor.png.import": {
+      "bytes": 1088,
+      "sha256": "e9a34aba668ee559ecf068834f78c6c6e837032bcc2c90a045c5b1087d4f2e64"
+    },
+    "game_after/assets/enemies/siege_brood/minion/minion_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1109,
+      "sha256": "fa8b698fe01d003d5c32e17ff608ba4e2009d155f5694cd557a3be2edef3261e"
+    },
+    "game_after/assets/enemies/siege_brood/minion/minion_brood_carapace_basecolor.png.import": {
+      "bytes": 1096,
+      "sha256": "2a06e0868b5c9fdaa830762ab6533e846ee7072f6acb7daf362f0a4c7c86fc2d"
+    },
+    "game_after/assets/enemies/siege_brood/pitcher/pitcher.glb.import": {
+      "bytes": 1062,
+      "sha256": "a0df3cde19b6bd62b63ba7b9c8f5ee68960cc9fea0a7e7b8f3cfacd7d3e9494b"
+    },
+    "game_after/assets/enemies/siege_brood/pitcher/pitcher_Kiln fired terracotta_basecolor.png.import": {
+      "bytes": 1121,
+      "sha256": "c725b80849395d4fff113be6f3377432f825ec0a151a6f257abdbcc3c9cfb419"
+    },
+    "game_after/assets/enemies/siege_brood/pitcher/pitcher_aged_bronze_basecolor.png.import": {
+      "bytes": 1092,
+      "sha256": "80a8bd913f637a3a29495c897a123d663dc41158a9c29783913924ac5a38cb6e"
+    },
+    "game_after/assets/enemies/siege_brood/pitcher/pitcher_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1113,
+      "sha256": "a14951dbef05e0853af7ae783ff366568aa3a45b721cdcbf697090aa122b94ef"
+    },
+    "game_after/assets/enemies/siege_brood/pitcher/pitcher_brood_cold_iron_basecolor.png.import": {
+      "bytes": 1104,
+      "sha256": "24a816797bae97fe6d16fea325892c19f6a8dde321a674e53ceb36d8b80f079f"
+    },
+    "game_after/assets/enemies/siege_brood/pouncer/pouncer.glb.import": {
+      "bytes": 1061,
+      "sha256": "f3379c5d98c9fc52420a3fce66239fcfddf3f9e6ed4a016629afe438d22b3626"
+    },
+    "game_after/assets/enemies/siege_brood/pouncer/pouncer_aged_bronze_basecolor.png.import": {
+      "bytes": 1092,
+      "sha256": "131cd1ad064f019f2999bef9387f6844edbd48a7a9c6bc1f24dc42918d080968"
+    },
+    "game_after/assets/enemies/siege_brood/pouncer/pouncer_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1113,
+      "sha256": "66f97cecdf0b6182330d92b776ea542176e12e709f9045c5da2a97007eb164cd"
+    },
+    "game_after/assets/enemies/siege_brood/pouncer/pouncer_brood_carapace_basecolor.png.import": {
+      "bytes": 1101,
+      "sha256": "3b16ec970a863a05804f6fe3c0a4923d938bd5fe874b3e6e0d97d8626a47f946"
+    },
+    "game_after/assets/enemies/siege_brood/ranged/ranged.glb.import": {
+      "bytes": 1057,
+      "sha256": "c25b37b3ae97017526bb5bca92867e3c764da8dea8d92508ef4329b27848ee85"
+    },
+    "game_after/assets/enemies/siege_brood/ranged/ranged_aged_bronze_basecolor.png.import": {
+      "bytes": 1088,
+      "sha256": "a3bba4afa00db67c84008ddde0ab3651764baecd681092fbcd28bbceb2e39147"
+    },
+    "game_after/assets/enemies/siege_brood/ranged/ranged_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1108,
+      "sha256": "2ee412e54ccb12ad8b7f7a741a63e9af5ec796b4e018e636e19da4ec32a6a66d"
+    },
+    "game_after/assets/enemies/siege_brood/ranged/ranged_brood_cold_iron_basecolor.png.import": {
+      "bytes": 1099,
+      "sha256": "83e504a206f8034fc97ac005028c2ad11d5174570b875906c358bcd455762d02"
+    },
+    "game_after/assets/enemies/siege_brood/support/support.glb.import": {
+      "bytes": 1061,
+      "sha256": "d9720196f2549c4ad21b6c4622e2084e797f28617cd2b9b7c24e579e9dbda1f6"
+    },
+    "game_after/assets/enemies/siege_brood/support/support_Ritual smoked jade_basecolor.png.import": {
+      "bytes": 1113,
+      "sha256": "67693f547e9dd350f04bc16d152d91cb6b9563ea4974de6b8cdc86c6e5245e4c"
+    },
+    "game_after/assets/enemies/siege_brood/support/support_aged_bronze_basecolor.png.import": {
+      "bytes": 1092,
+      "sha256": "5fe35969960c5ac33bff2d8e71bf2984ac57aaef16cd5589f38dc254ad993d02"
+    },
+    "game_after/assets/enemies/siege_brood/support/support_brood_bone_ceramic_basecolor.png.import": {
+      "bytes": 1113,
+      "sha256": "0adedf7fac17dbf67ff3df188f26f5cef04d132fc4a3608594448a4a6dd632a9"
+    },
+    "game_after/assets/enemies/siege_brood/support/support_brood_cold_iron_basecolor.png.import": {
+      "bytes": 1104,
+      "sha256": "bb42022dc0a465ebb748b5fb9ade81989c5c1d85465aca30c74a313eff2304d9"
+    },
+    "game_after/assets/ink_generated/r2_landscape01/ink_mountain_atlas01.png.import": {
+      "bytes": 1000,
+      "sha256": "e597ecf36c5d883dbb1eb3db67ee6eeae44493f5bdc73195ee43a473af683bf4"
+    },
+    "game_after/assets/ui/NotoSansCJKsc-Regular.otf.import": {
+      "bytes": 798,
+      "sha256": "3db035ef1923e8dc968aaadf3d5b8c39cdfaed0450460d8af55f45406ad9ef07"
+    },
+    "game_after/assets/xuanlei/vfx/cuicheng/basalt_grain.png.import": {
+      "bytes": 968,
+      "sha256": "3aaf644c457af010dc17a8925f75fdbc6ac1238bc442b2bc345073dc380b1007"
+    },
+    "game_after/assets/xuanlei/vfx/cuicheng/erosion.png.import": {
+      "bytes": 953,
+      "sha256": "66cc96be650a2d7a62010c1f83bc0fbc6c4b29ece116addd96f79a03320a481e"
+    },
+    "game_after/cartoon_showcase_20261015/REVIEW.md": {
+      "bytes": 4026,
+      "sha256": "85cddb68b591df29f4abe145d9b1f2c359cd0976e77e11aeed05a305dbf24589"
+    },
+    "game_after/cartoon_showcase_20261015/SOURCE_BOUNDARY.json": {
+      "bytes": 292,
+      "sha256": "b4289745ded1cd742bf6bc16c4fb8418b072eee36d99c3d2a46b3eb69ce1a399"
+    },
+    "game_after/cartoon_showcase_20261015/attack/cartoon_basic_feedback.gd": {
+      "bytes": 7308,
+      "sha256": "88c421109f6ed98696b43d80a96b919d8100769e709ea37189aff9404ace45d4"
+    },
+    "game_after/cartoon_showcase_20261015/attack/ink_attack_toon.gdshader": {
+      "bytes": 543,
+      "sha256": "59c25d8c4ade7163803c4d5bdd6d87d1654887ae3646eebd84206cc894b77627"
+    },
+    "game_after/cartoon_showcase_20261015/character/INTEGRATION.md": {
+      "bytes": 4468,
+      "sha256": "c6405edad4a15019008bc308f16ff7e3cbd50e2e4c73cfed7c6418dec982114e"
+    },
+    "game_after/cartoon_showcase_20261015/character/cartoon_scholar.gd": {
+      "bytes": 18675,
+      "sha256": "2e6df1fe2ba608db496c02a7cd6493360eadd3b76c811baff249864c84e7d655"
+    },
+    "game_after/cartoon_showcase_20261015/character/scholar_toon.gdshader": {
+      "bytes": 835,
+      "sha256": "1633a1acc7abbfb2932237a0e7cda8bf2bca964d123742cf769dddafa82cf482"
+    },
+    "game_after/cartoon_showcase_20261015/enemies/cartoon_minion.gd": {
+      "bytes": 6025,
+      "sha256": "4b0f34036ac850da288f4a0b726fdfd4aa69257da0b9fe4251bef8734b96264b"
+    },
+    "game_after/cartoon_showcase_20261015/enemies/minion_overlay.gd": {
+      "bytes": 1985,
+      "sha256": "c5029ba2d90c5acf9652cf1036234d9968bd45962442de83f2d430e034848f0a"
+    },
+    "game_after/cartoon_showcase_20261015/enemies/minion_toon.gdshader": {
+      "bytes": 574,
+      "sha256": "b6515901f2488cbaf80487a1e0f90b6e4c9b486e68b28611a455a0f6d64be3ba"
+    },
+    "game_after/cartoon_showcase_20261015/entry.gd": {
+      "bytes": 3827,
+      "sha256": "8d8fdd322c0588d2c00d152944938b9689d0148252b9e6d0550c6f2b6efa1a08"
+    },
+    "game_after/cartoon_showcase_20261015/entry.tscn": {
+      "bytes": 194,
+      "sha256": "e984eb01aecb40755a2679401f17b1c2f22369806238ccf11289437a24e6ec4b"
+    },
+    "game_after/cartoon_showcase_20261015/frame_cost_probe.gd": {
+      "bytes": 3749,
+      "sha256": "67a5893e039a801827b4dfb86d764d03dd5ee833c414bf3159bb703ba2e5d089"
+    },
+    "game_after/cartoon_showcase_20261015/navigation_host.gd": {
+      "bytes": 9191,
+      "sha256": "ab4e156e3adbbd1cedfbf619c7b651daeef9bd8b85208ade4cd60cc1907dc246"
+    },
+    "game_after/cartoon_showcase_20261015/navigation_room.tscn": {
+      "bytes": 213,
+      "sha256": "08fd90edf22daa54cf0deafcaada8597c18300d823743cf12a1cd510a5f72312"
+    },
+    "game_after/cartoon_showcase_20261015/observer.gd": {
+      "bytes": 5663,
+      "sha256": "d132831fd9634409537ceca3bea03fd8746d5b83eee31b0f3f28dd81da2afef4"
+    },
+    "game_after/cartoon_showcase_20261015/q1/cartoon_river.gd": {
+      "bytes": 7510,
+      "sha256": "661fa015288f198ac51cbeb45b216b5eac0f4b4d7e52827d8d1aa3e707a35fee"
+    },
+    "game_after/cartoon_showcase_20261015/q1/cartoon_river.gdshader": {
+      "bytes": 1848,
+      "sha256": "8a46f22c50c9af7f56374aaef6637e1294822315b5d58daff2d320ed095b4eb8"
+    },
+    "game_after/cartoon_showcase_20261015/stage/cartoon_courtyard.gd": {
+      "bytes": 18727,
+      "sha256": "821a8a41de872ca6536d72608771cff6e0c8cf1626e59c7ab040b9f85955c246"
+    },
+    "game_after/cartoon_showcase_20261015/stage/ground_shadow.gdshader": {
+      "bytes": 195,
+      "sha256": "fae2295de6ee68ceda6d181567e287f93865a66673570ea219e19d37940a28fb"
+    },
+    "game_after/cartoon_showcase_20261015/stage/toon_palette_surface.gdshader": {
+      "bytes": 587,
+      "sha256": "e68cb1d4e6711aba748cce71868355403a652ef011f508d31e152b7a3700b147"
+    },
+    "game_after/cartoon_showcase_20261015/stage/toon_surface.gdshader": {
+      "bytes": 363,
+      "sha256": "f3d8c2739ec5fd4995a2545a2175051c0c1f9327c1b9e52c9dd706eef284bdd7"
+    },
+    "game_after/data/final_design/catalog.gd": {
+      "bytes": 19782,
+      "sha256": "d11c7b7063f8ca28772af00686c2daf736ccfbdb628731cfab3cf1f8a64ab671"
+    },
+    "game_after/hex_potion_blast_20261014/model.gd": {
+      "bytes": 6213,
+      "sha256": "6efcf6a3e70055e4cb6ff8d3735dd61e2bdb4de02eff8e719cbccfc52eb790e9"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark.glb.import": {
+      "bytes": 1141,
+      "sha256": "6d621ea635939dffc300253bfc25c1b54d62eb901903413b692c56f52c900433"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_01_ink_robe.png.import": {
+      "bytes": 1141,
+      "sha256": "c482d153700b8c6b814ec25f4f6b1ba3b6a8bb3b23f41696cd3a0da9df910445"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_02_moon_silk.png.import": {
+      "bytes": 1144,
+      "sha256": "0d9e618b485443ba5aa3a279ce55f0fd78fa3b961ae1e5173944fb1f4d09d1cc"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_03_mineral_lining.png.import": {
+      "bytes": 1158,
+      "sha256": "25444f5a4cd6d13f42b1029428ccf6b09cede650d86e15ea51af78d51c165354"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_04_hair_and_wet_ink.png.import": {
+      "bytes": 1165,
+      "sha256": "7834115e98f592f23022c0ad159fd0be6fa5bb7fcf83ecfbf2541737d609da28"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_05_warm_porcelain.png.import": {
+      "bytes": 1159,
+      "sha256": "1d00c2c4d98884079bf42bfca6bf599c1343abb2e8e4f85b4909d484f7bd193f"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_06_old_brass.png.import": {
+      "bytes": 1143,
+      "sha256": "aa9926a133c8e5ef224cfa189f798d6fe46ea604f6ad77e270a109debbc32ee5"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_07_black_bamboo.png.import": {
+      "bytes": 1152,
+      "sha256": "7ac6ebd3263b95117264b220a587e6bad27d0ea71ce1868c4846021d63042f30"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_08_inkstone.png.import": {
+      "bytes": 1141,
+      "sha256": "ac764407b7b9b6cb11ae5b7a9b3a2732a1b048b2d1a6b462a3677f75fab19066"
+    },
+    "game_after/tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_09_ink_to_moon_cloth.png.import": {
+      "bytes": 1167,
+      "sha256": "137e0b57198a846f1cf7a11f0eaded2eff27a9805918fa2471a04f096fbd87c3"
+    },
+    "game_after/tests/ink_first_floor_boss_20261008/art01/boss_actions.glb.import": {
+      "bytes": 1083,
+      "sha256": "2e1ed7ff2c8c3e9fb3ef77f5eb28a393aac283e0258f801a47b9bc02ea65dacf"
+    },
+    "game_after/tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png.import": {
+      "bytes": 1007,
+      "sha256": "da1569f42133bcebcb913cbe26d812b36f3b92929ec1a9876d55261d6e6cdb91"
+    },
+    "game_after/tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png.import": {
+      "bytes": 1013,
+      "sha256": "410c49ff6d436f09d6336784027321168ab2693573fd3aabeec4b3cb7a7c8fb4"
+    },
+    "game_after/tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "bytes": 1516,
+      "sha256": "d9d6e1e0dfa2529699484efd601f2a4896db9852db1ea1719ae9679b5eab860f"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb.import": {
+      "bytes": 1117,
+      "sha256": "92d9de5cea8e8d694524d1ae11e8bf1e2f742cacbbe4e29bf8a7886251bb368c"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png.import": {
+      "bytes": 1117,
+      "sha256": "265ff2615c031957eee60c59f2285f953d7a9fce3251011ef9d8db1cc5fce551"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png.import": {
+      "bytes": 1120,
+      "sha256": "7dd003f716d9eb2bd407e673905fecf27bfe19ddb2415add5d49ac73e6c8d3be"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png.import": {
+      "bytes": 1135,
+      "sha256": "532d275ed326bce6c6586ded0101b318e2c7309c1c6662e1a8272f7300de71a4"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_04_hair_and_wet_ink.png.import": {
+      "bytes": 1141,
+      "sha256": "4d91910223773f5f171f809837a4d27ea6551099586e344018bd3b064db18dac"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_05_warm_porcelain.png.import": {
+      "bytes": 1135,
+      "sha256": "6b072e6ad8eee6d63265e5d5f1987787326f8a68c6db761e97a7506c0e2a935e"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_06_old_brass.png.import": {
+      "bytes": 1119,
+      "sha256": "2c844a5049e590ca6641d130c0602078b00dbca3cff822224d2d3e7ce0187251"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png.import": {
+      "bytes": 1129,
+      "sha256": "2a29996d2ae05d1165477e45381310f5592fbd7676015e5cce82901003101813"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_08_inkstone.png.import": {
+      "bytes": 1116,
+      "sha256": "b33a1d864c2a4c204f436785e4b8e9360a4fe13cebf5fbc96ec955a8d1d5a6fb"
+    },
+    "game_after/tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png.import": {
+      "bytes": 1144,
+      "sha256": "81568d8f26f2c277b3ab14ff297c018096ffa15db0c7c79be08c1648b38a271d"
+    },
+    "game_after/tests/ink_q3_visual_20261004/dynamic03/materials/collapse_pressure.svg.import": {
+      "bytes": 1101,
+      "sha256": "a0df784e99248dd95c0cd0c3a17f3f1a884931504145e3182378a073d62d5668"
+    },
+    "game_after/tests/ink_q3_visual_20261004/dynamic03/materials/contact_ink.svg.import": {
+      "bytes": 1083,
+      "sha256": "385e680295e1a6a1e27840a0acc282022ffba932828d96e738435e95087743cf"
+    },
+    "game_after/tests/ink_q3_visual_20261004/dynamic03/materials/contact_reserve.svg.import": {
+      "bytes": 1095,
+      "sha256": "0f01c452a62df904c2a901621f7e8faa49763413326120acb85ec19b3b972562"
+    },
+    "game_after/tests/ink_q3_visual_20261004/static01/materials/mountain_brush.svg.import": {
+      "bytes": 1091,
+      "sha256": "0a41cc929b6869a7db8019ad72083a2334c3b34a286213b4868cba29ac142667"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation.glb.import": {
+      "bytes": 1145,
+      "sha256": "31ec93cc1d5e2c89d0f731ceeb408b6198d6e3ac4fa1687273e999cef491590d"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_01_ink_robe.png": {
+      "bytes": 60373,
+      "sha256": "e8d3faf5cfbeba6cf1fc098d39570825e287625bfc956ef501c042e5f21fa0a7"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_01_ink_robe.png.import": {
+      "bytes": 1145,
+      "sha256": "c3d5e232cbd18c3509f33a57d6674f60fcdf5a4985935e1a18ec922f1d307d08"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_02_moon_silk.png": {
+      "bytes": 120087,
+      "sha256": "8dcd549c41eb860472830c87099604feb60f313140f7919df654c9d0b4dfa438"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_02_moon_silk.png.import": {
+      "bytes": 1148,
+      "sha256": "01132da4cde075d24f7cfa1492f31b444c09e6e8c0a4b921686954318f87f82d"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_03_mineral_lining.png": {
+      "bytes": 103672,
+      "sha256": "9096f67e4667b281962034cccc7a78b847e0aa69538e20ecc657d6a7d4d7232e"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_03_mineral_lining.png.import": {
+      "bytes": 1163,
+      "sha256": "ec91102865ec4457d180b3063c79cbf6f87048510a4deff4b768e9ba97a17f57"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_04_hair_and_wet_ink.png": {
+      "bytes": 12974,
+      "sha256": "884b708264d9539c05c4c6a4ae2ad03ec78393de560567c7652d22144f2146a2"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_04_hair_and_wet_ink.png.import": {
+      "bytes": 1169,
+      "sha256": "d131b44ce768a1e3599459acc6d4ad916a4e12657e51a076f697175b3a1644d6"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_05_warm_porcelain.png": {
+      "bytes": 23743,
+      "sha256": "966a5d6d31600ec591039190ee76c606881f8733a2214d002ab5fd4089ab8328"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_05_warm_porcelain.png.import": {
+      "bytes": 1163,
+      "sha256": "d3971fb783801e68d9ab1038d1cd056ea3beebb54fcb4cd312a189259673469a"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_06_old_brass.png": {
+      "bytes": 22727,
+      "sha256": "3630510b3af68c7bfb74ea3fa156b22a83a55111a57af7cee62d6aaace3e8cb3"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_06_old_brass.png.import": {
+      "bytes": 1148,
+      "sha256": "71bb8eb74c452a879608120b53c3d72aa84a67f8d79f4e7407e5b4399e93d5dc"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_07_black_bamboo.png": {
+      "bytes": 19822,
+      "sha256": "565081fcd110e3ba9c3fc3b24a8e162cd15f0c97c0f5fef109570eb32db49173"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_07_black_bamboo.png.import": {
+      "bytes": 1156,
+      "sha256": "bbe589df025fca5e1b4f15e34c59a48977edba86c2c0f11e54285c6c3a3d1fce"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_08_inkstone.png": {
+      "bytes": 19600,
+      "sha256": "a321ba9ecae572be3797d239dd0d2917daa6469666705fadeb363a87eadb822d"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_08_inkstone.png.import": {
+      "bytes": 1144,
+      "sha256": "83b57d951d6db80180d2346ba9f35e814a0fdf03d37175aca6d2a3a9e0f2ca5d"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_09_ink_to_moon_cloth.png": {
+      "bytes": 140285,
+      "sha256": "cb384d1c94e77469d29fad409cad6567a2aeb181d1d8be1be80e983addc2f628"
+    },
+    "game_after/tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation_09_ink_to_moon_cloth.png.import": {
+      "bytes": 1172,
+      "sha256": "ff1614a35f2c26ea08f4719d7df59cf9620f2d8e01101cf54c77ef1ce924f7cf"
+    },
+    "game_after/tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "bytes": 113861,
+      "sha256": "6e5d743965dfb7c25ca3b8896739a492d96f0a705871e6f5c67f3e25105d16ec"
+    },
+    "game_after/tests/ink_style_specimen_20261004/revision03/textures/quiet_stone.png.import": {
+      "bytes": 991,
+      "sha256": "256baa496d4557908bc7c0ec22f8b94e7ceee0359183c446c43ab667c67d82ff"
+    },
+    "game_after/tests/ink_style_specimen_20261004/revision03/textures/soft_grounding.png.import": {
+      "bytes": 1000,
+      "sha256": "e77fc5238a36d168d71b3a4e722b62870b4c5e6399ae0885512046829cf802d9"
+    },
+    "game_after/tests/ink_style_specimen_20261004/textures/bone.png.import": {
+      "bytes": 959,
+      "sha256": "77ea55d5cfb10307780caa3b462a03f7d701bcdbb1d7c35d924991b5eded2536"
+    },
+    "game_after/tests/ink_style_specimen_20261004/textures/bronze.png.import": {
+      "bytes": 965,
+      "sha256": "b731882b8feea3ee28d432f5902ef57a33a5dac9701f844bc4c4e3187f58cd73"
+    },
+    "game_after/tests/ink_style_specimen_20261004/textures/carapace.png.import": {
+      "bytes": 971,
+      "sha256": "79c412153fb152afcaa8bd5453900f0ff18069cfdb5acfcdeee4d705ff12c568"
+    },
+    "game_after/tests/ink_style_specimen_20261004/textures/stone.png.import": {
+      "bytes": 962,
+      "sha256": "8229c908ed3ce49a12c234a4461c65f841017f51ccc73bfc6b310dfc8e897965"
+    },
+    "game_after/visual_rework_20261009/binding/bridge.gd": {
+      "bytes": 4912,
+      "sha256": "5db1cd87fb7fd11a86a118f064483e4dc089d922dd11dfa107652b9118b2ef08"
+    },
+    "game_after/visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "bytes": 14098,
+      "sha256": "4f7a3c3504836a61f2fc6806788ec608adec893630304a49d1949b122f470916"
+    },
+    "game_after/visual_rework_20261009/binding/cpu_cache_visual_source_transition.json": {
+      "bytes": 536,
+      "sha256": "42b64dabbe8e10038f8ee3c80a7fd97cbee385f0435ad1850b07b1972a92763d"
+    },
+    "game_after/visual_rework_20261009/binding/live_binding.gd": {
+      "bytes": 23759,
+      "sha256": "7c31f7b3b70cbde7bcccfecfc962aea0fd865ee29b454c2ce3eef69e5ca5632f"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/data/final_design/catalog.gd": {
+      "bytes": 14669,
+      "sha256": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/scalar_ledger/data/final_design/catalog.gd": {
+      "bytes": 19385,
+      "sha256": "4c5d83d386a4264fe63257a3d1607cb00f8a0205d87de50dc3782e2f2d38ffbb"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/scalar_ledger/hex_potion_blast_20261014/model.gd": {
+      "bytes": 5763,
+      "sha256": "39930418d23ecc5aa73df8b16c9897b2f0abc9cefb9825a16af721bfe547a7f1"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/scalar_ledger/visual_rework_20261009/binding/bridge.gd": {
+      "bytes": 4059,
+      "sha256": "2d16405dac9cd9c2baaa29188c2d9c8c2eb4e112b0fc1b53f33be96118077f23"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/source_cost_probe/ordinary01_sim.gd": {
+      "bytes": 112654,
+      "sha256": "1c1b150f8d47063d2342e30ba318c7c3ad7cbc97b60599e13ea072377eb92189"
+    },
+    "game_after/visual_rework_20261009/binding/preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "bytes": 902,
+      "sha256": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e"
+    },
+    "game_after/visual_rework_20261009/binding/scalar_ledger_source_transition.json": {
+      "bytes": 1078,
+      "sha256": "be623184e3d4b95f45d02d1534940994e63ec51ee9a00717f737f514d3947ddc"
+    },
+    "game_after/visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 344056,
+      "sha256": "5fff36747def7c9571629e59667371d8f88f1efb6a62c12cb0f15f7278001e93"
+    },
+    "game_after/visual_rework_20261009/binding/source_cost_probe_transition.json": {
+      "bytes": 403,
+      "sha256": "98f0c9547f38b6e51f00d42b8e51a8aced83afef6b57012a50cde19be382bbc9"
+    },
+    "game_after/visual_rework_20261009/views/q1_ink.png.import": {
+      "bytes": 951,
+      "sha256": "bb3712e73b42d0b81a97352ffeee85ebf4fbc07f3c246b9cee3b29fd97985df4"
+    },
+    "offline_after/cartoon_offline_preview_20261015/fixture.gd": {
+      "bytes": 5213,
+      "sha256": "5b99ee370cb93e528b62f6ffc648861c2f98a5f2edd457b8b2305e762cdf93b2"
+    },
+    "offline_after/cartoon_offline_preview_20261015/preview.gd": {
+      "bytes": 8635,
+      "sha256": "97adec9fdd32e52067ebbbc4122aeebb51f1c30192a0051135850e9f90c10447"
+    },
+    "offline_after/cartoon_offline_preview_20261015/preview.tscn": {
+      "bytes": 216,
+      "sha256": "73c2f24353a5ba23a994cc07502a1505d59ab7b20ac32a24ccb2d6668aedd35c"
+    },
+    "offline_after/project.godot": {
+      "bytes": 643,
+      "sha256": "1d006061cb716d54a29e622e3bcfbd4e0da75ed7b10a77c2dac98e07c49397ba"
+    },
+    "restore_sources.py": {
+      "bytes": 10676,
+      "sha256": "1c3cc6de56dfe94fe1083cbe358baf1151dda3dac9c48623f64812a828844ae8"
+    },
+    "scholar14/cartoon_showcase_20261015/character/cartoon_scholar.gd": {
+      "bytes": 19651,
+      "sha256": "136f0a0636fb9e3b6dfbfeb438ee79c4c345c48b33407e341bda6b933d3f2b4c"
+    }
+  },
+  "parts": [
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part01",
+      "sha256": "fafc27f6b6e5b510f0dae47ae1dcda94ff829726e080b9d1f4efc12a781f055a"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part02",
+      "sha256": "6dc8a4d90a1e138cd66d4899e11c46bc7929cf5ca248849071add3531d2e1951"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part03",
+      "sha256": "e84e69cb6ce2e5ed5f07828a146a073be4d3a13568c5f175e3cc6286811a0070"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part04",
+      "sha256": "47f42b62956fb2aee3372e9b8d8caf13761f3cc85ae9f1d9e9827822aebe28cf"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part05",
+      "sha256": "208a607cf2b8d4a486a8e4ec7aa27c95761f5015114958cf56fa5434b58750b3"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part06",
+      "sha256": "5f09a3f8325db2f6ecebbff89ea3188c9644d62138b3c77214e4d838024dcd97"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part07",
+      "sha256": "eef0d7bcd0fc191f117780aca8a5d383d14a80b9e35961b36de24a8b2f2ae589"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part08",
+      "sha256": "22552748b7668a21adc0ad1c3ae678be978f4cb1ae9f1daa148eb65d5435debb"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part09",
+      "sha256": "b0f3472741b6dc254f9884a9a256162d5ecd8f73cbb415cbf59db4d65cc14f4f"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part10",
+      "sha256": "ac190e95d459faf11ab164d5e5974d9f74a1275ef7fe4a08362e90ebb9a6e368"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part11",
+      "sha256": "a5a2789fba232b9764a1ff501f139332e50c1765dcc07dec89a5d2adc35b17f7"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part12",
+      "sha256": "f9f70e7da215cc8e60e276631ce9879a604b50a93af7583c9d5ba0a63f7cf426"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part13",
+      "sha256": "b1b369d2603e77d57187416417e3d83884258d5965233af33a0e75985022a584"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part14",
+      "sha256": "ab9de8aa2d788c50cd0c12f741f1743b20bbaa4abc629da14d824f9f0ea0287f"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part15",
+      "sha256": "f8ea710b38bcc5724ac5e3a90f49d59f50a8c545fa34614a063c6d5c02c721f9"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part16",
+      "sha256": "f65980ee1948ab793dbb51b55fc46e78e51ab52b20b3c1847eebf6f9e15a2f2c"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part17",
+      "sha256": "bf86d580dd80b0ef6c581a3bf85c1f21a5d4094e479a9100791ee86e6594411e"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part18",
+      "sha256": "86b4ec9c3b2dd0de1428a0833888a7bf2c97b4eaa10a6ba38de5b51c8c49d1b1"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part19",
+      "sha256": "41ae12ab22160b5d4cc07a9fb1e1fe3fb18984517f27d9501ae1251957611217"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part20",
+      "sha256": "e1a731b052cab0a7e74b472a3c039e8b96435841fc88c8fe813594619065eb96"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part21",
+      "sha256": "48cd8947edfcf822c32d4bdd5e4b0ebdfe1ef30e0fce6676c8b5db2f5c8e3947"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part22",
+      "sha256": "c41e297ff23157f65990140a61ebcfb9cbd516584417858114ec87cdff9ab58d"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part23",
+      "sha256": "7555463ec81e363fb0528be7a9f063e0c92cf0314fea38e230f6820d4e1da378"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part24",
+      "sha256": "f8354a6d657478afd569a5d2b9f127e3e8706850b62f84b9d265040662f4bf7f"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part25",
+      "sha256": "aab341a9d9e395b84ac71c0c606a20ea4547575c4b52caabf85c78d1d11ffb33"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part26",
+      "sha256": "3169f40f2216c0b143f3f8118ebe81cac708db45c64a696806f65ff248d2f62c"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part27",
+      "sha256": "b3d48e9a5a6d6ecfca7c37fd57bc829fe8a2a659d37bd96f65199c1fcc162e05"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part28",
+      "sha256": "cb6846e284079ea67161102fd4fc3a1af281f152996bb42270c0cf07518614d4"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part29",
+      "sha256": "bce3d8ea95fabc43247871098829defa23178416a59c67100efc0868a8d83412"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part30",
+      "sha256": "d762d066b1e65aa9073a35083d4f05639eb565b157b595df38910cc07c1be4f0"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part31",
+      "sha256": "82532b4a9cc723aef913b506504a7f87a8996ee2120fc6e82145ccc08172a1d8"
+    },
+    {
+      "bytes": 32768,
+      "path": "cartoon_source_delta.tar.gz.part32",
+      "sha256": "3463381a6c2edc92fcba930259b3353075c28d2d790b8c14c85439402fd757fc"
+    },
+    {
+      "bytes": 24743,
+      "path": "cartoon_source_delta.tar.gz.part33",
+      "sha256": "d2d6525881932adf1417ca048f21faf8fbd8ccd9b957ae64ff79e94740e7e3d3"
+    }
+  ],
+  "public_base": {
+    "archive_sha256": "30b5462b90e23e94546b7e7f41cad5230720a1f6f51c99a302f691068cd2f605",
+    "commit": "a7615cd35550c800c36a559dcc999b9e468ada04",
+    "fullmap_sha256": "006fba6195b80a3e343c42ffde07decad7d4980e06b0a4a169af4b718973c0bb",
+    "prefix": "development/shuabao/g23-potion-source01-20261014",
+    "repository": "c1903146900-dev/shuabao",
+    "restore": "First restore this public source package and its published parent chain. This delta expects the exact resulting 3081-file source tree, without generated caches.",
+    "schema": "public-g23-source-base-anchor-1",
+    "source_binding_sha256": "d1f88e223594b69d3d8af6a73ea37f588e4b54c0b22393d104d876837f434b57",
+    "source_files": 3081,
+    "url": "https://github.com/c1903146900-dev/shuabao/tree/a7615cd35550c800c36a559dcc999b9e468ada04/development/shuabao/g23-potion-source01-20261014"
+  },
+  "schema": "cartoon-source-archive-1",
+  "source_only": true
+}
