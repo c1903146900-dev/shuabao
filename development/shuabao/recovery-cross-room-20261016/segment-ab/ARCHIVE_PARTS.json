@@ -1,0 +1,39 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 264969,
+  "sha256": "c898ee92b52ed0a3a299a54e1cd24ec455a2f2da722d661650ca582318198146",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "1d8d523cc1e2e4e6add806e99c88768f2f35ccd522c69381706a8a4f8d6b1f83"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "3fb706bf2c4b346aa7e0f397ad3d96e7de810eee2d4835b49a4559a8bad10db8"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "a5ec6c6c260311b501fb5fefc8294743d277dc79fd8cdccb2d2c73b772c50851"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 65536,
+      "sha256": "c5d9f3bd9f78d761d7e5e5f93f34b42362841f7d997df08568c6526793e119d8"
+    },
+    {
+      "file": "archive.part004",
+      "bytes": 2825,
+      "sha256": "4b493a340371f509df9aef1d84ab68838c316ab98cb2bd24ddade23146ea03fa"
+    }
+  ],
+  "package_manifest_sha256": "6eb11e8c5fd0aaada729796114609cb6c566b2745979a369167971d8c6fe515e",
+  "source_files": 3294,
+  "added_files": 5,
+  "changed_files": 3,
+  "status": "ROW06_TO_ROW11_AB_VERIFIED_PARTIAL_BRANCH_COVERAGE",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
