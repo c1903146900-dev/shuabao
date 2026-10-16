@@ -1,0 +1,34 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 230754,
+  "sha256": "67a5e29487ac0f1410f9aa0b5f8a9225a67b8167e03350d1235ac7453c507869",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "9cd20b003089a63d28b3d6a20e91551d255221ca06aadacc243c38e369d1c089"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "a927570bf2e4199859c6625ed200bc15cf4ae71e534b5a021df83e632e0fff92"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "4bf1bf71f265146b5d6c6edbe77edcfc149bf373d777edde8aad7065b77eefe5"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 34146,
+      "sha256": "7626b84a7454dc006a761f133a6f5399e9b11f6032ded1833eae871f5872f94f"
+    }
+  ],
+  "package_manifest_sha256": "8cf58e7db0d355ff2b4b4df2bafe909f4121a8915bff3e101bdc9b67a55bcc11",
+  "source_files": 3285,
+  "added_files": 5,
+  "changed_files": 2,
+  "status": "BOUNDED_R04A_TRAINING_VERIFIED_NO_R05A",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
