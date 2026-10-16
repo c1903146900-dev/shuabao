@@ -1,0 +1,15 @@
+# Boss business adapter: synthetic boundary checkpoint
+
+Base: nonboss-floor commit 6a3e21dc79df311fa6e317159ac1d18cb1ee4465, 3301 source files. Adds three Boss business adapter scripts and one independent boundary fixture; changes base_room.gd and room.gd integration. Target 3305 source files. The author candidate lacks the two historical CD test subclasses; this overlay preserves both from the published base and deletes nothing. The restored union has not separately been run. No natural-runner successor is included.
+
+## Verified scope
+boss_business_run02 passes 121/121 assertions, 50 unchanged pinned inputs, no raw ERROR, root exit 0 and owned cleanup empty. Synthetic setup establishes geometry, starting states and test scenarios; real Wind simulation requests, stepping, damage, death and reward paths execute. Coverage includes original A/B/C contact receipts, pause, R1/Shift immunity boundaries, re-entry guards, exit cancellation and a single accepted Boss-death reward of 320 gold/160 raw XP. This is not a natural full-route Boss victory. Boss art/audio are not connected and native whole-floor visual/control/performance acceptance remains pending. No new GLB or cache is included.
+
+History retained: run01 assumed an absolute origin while the original hero spawned at (0,0,5). The intended 2m placement was actually 7m; Q1 missed, no reward occurred, then the fixture read an absent conditional success field and raised SCRIPT ERROR. Parent manual exit0 was not a pass and no final result was produced. Run02 changed only fixture-relative placement and explicit failed conditional receipt checks. VSync warning remains.
+
+BOSS_BUSINESS_MANIFEST's source_frozen_pending_audit_and_runtime status is a historical source-seal field; the separately included final verification report and run02 postcheck establish only the synthetic scope above. Original authority sources remain pinned; no production balance adjustment was made to force this fixture to pass.
+
+## Recovery
+Concatenate archive.part files in ARCHIVE_PARTS.json order, verifying each SHA-256 and complete archive SHA-256/size before extracting into a new empty directory. Read restore_sources.py first. Use the previously restored nonboss-floor tree and its TARGET_SOURCE_MAP.json. Run Python 3 restore_sources.py with --base-game PATH_TO_NONBOSS_TREE --base-map PATH_TO_NONBOSS_TARGET_SOURCE_MAP --output NEW_OUTPUT_PATH --manifest-sha256 VALUE_FROM_ARCHIVE_PARTS. Output must not exist. The script verifies all 3301 base sources, exact delta/package bytes and all 3305 target SHA-256 values; base remains unchanged. No Godot launch or import occurs.
+
+Only source and small validation support are included; raw logs, caches, userdata, binaries, secrets and private media are excluded. Raw SHA references do not embed raw logs. Support commands retain historical absolute workspace paths and require explicit adaptation elsewhere. Local independent source restoration is verified; remote checks compare Git blob SHA/size and HEAD, without a second remote download-and-restore claim.
