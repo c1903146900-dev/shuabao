@@ -1,0 +1,67 @@
+{
+  "added": 1,
+  "archive": "candidate36_source_delta.tar.gz",
+  "archive_bytes": 463250,
+  "archive_members": 17,
+  "archive_sha256": "584404d92aba9643c8dec8a18119ada62c8673c2c91efa98a05f091ea0c36225",
+  "art_status": "Below reference target; not final",
+  "cache_files": 0,
+  "changed": 8,
+  "dependency": {
+    "archive_sha256": "e524cd22f94bfe97c5b0764eb65ff1e7e04f1cd8a161d746e245e3b1100b273f",
+    "commit": "d7d1c17f7696a1a20123c2755f0abd49718fd07c",
+    "directory": "development/shuabao/cartoon-source-runtime34-20261016",
+    "map_sha256": "b381fc9d3ba9a93586c35145f5ca702b70d55b524960cf5b1488f1f63f50ed9b",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3242
+  },
+  "engine_run": false,
+  "exact_runtime36_source_map_match": true,
+  "independent_restore_source_files": 3243,
+  "package_manifest_sha256": "07dcd4bec85053993feba66842ccdeb7e9d402c7c553191841f23a80002e35ab",
+  "payload": {
+    "cartoon_showcase_20261015/stage/cartoon_courtyard.gd": {
+      "bytes": 23421,
+      "sha256": "68242903dde2cf401e759453d5e1e3347dae2aa4fa04f09611f65591f1bcd9b6"
+    },
+    "cartoon_showcase_20261015/stage/whole_floor.gdshader": {
+      "bytes": 1804,
+      "sha256": "637a59b2fb68e39eee8d2ed375b5502303bf1ad952c67fb9e475260fced7de1f"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/scripts/ui/hero_chooser.gd": {
+      "bytes": 11568,
+      "sha256": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc"
+    },
+    "cartoon_visual_slots_20261015/source_transition.json": {
+      "bytes": 18672,
+      "sha256": "f1124410056d9ada9ae0e999fddc5f4e8c266e0ebb3828478306d6f50a38c4dc"
+    },
+    "cartoon_visual_slots_20261015/stage_rules42.json": {
+      "bytes": 18405,
+      "sha256": "ac6c4e234b9752f17f09126d21e012a2f41719dd61fe5f9239a3dd7f5466e676"
+    },
+    "cartoon_visual_slots_20261015/stage_validator42.gd": {
+      "bytes": 23728,
+      "sha256": "01b72c8e63bef9d7765258cf1d47d4035b139b7a462e68ecded2863a8b9926b9"
+    },
+    "scripts/ui/hero_chooser.gd": {
+      "bytes": 12544,
+      "sha256": "23365904c17453791ffa807ba999249f907780b70368f53665f7141b1b6e83b4"
+    },
+    "visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 378192,
+      "sha256": "d98884966ae3c7db3d258de64cdfa0ffb647361b139c2550d85c7f47ba83f890"
+    },
+    "visual_rework_20261009/binding/visual_binding.json": {
+      "bytes": 18129,
+      "sha256": "b36aee7d6838bd4ae815d3c5e9745fe1f4d7cf0eac596fffdfc6b323c8edfa02"
+    }
+  },
+  "payload_files": 9,
+  "private_marker_scan_passed": true,
+  "runtime36_unchanged": true,
+  "runtime_admitted": false,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false,
+  "validation_boundary": "Status: SOURCE_ONLY_NOT_RUNTIME_ADMITTED. Runtime35 existing-portrait chooser switching was manually checked. Floor69 A/B static 1280x720 renders passed capture checks and the quieter .60 contrast variant was visually selected. Runtime36 integrates those source changes but has not had a new engine, combat or full-floor run. Runtime34 default entry/HUD short checks and Runtime32 automated original-input first-floor completion (421 checks, 12 route rows, 25 kills, original Boss reward and same-run settlement) were separate earlier runs. Runtime32 peaked at 934.18 MiB and did not pass the original 896 MiB performance limit. No manual full-floor, cross-platform, final-art or playable-release acceptance is claimed."
+}
