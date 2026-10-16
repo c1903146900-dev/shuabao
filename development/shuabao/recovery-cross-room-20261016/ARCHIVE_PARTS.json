@@ -1,0 +1,43 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 346356,
+  "sha256": "9039c2500d3f1eb5ab00cffa50142bad7214f6edd47971a6a111870269f23e35",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "76ccdf6bc02b6df746e4126f8160ffa4c88b89baa34fdbbb91aec36baac3fffc"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "b04d8ec0881d2995a892bec6427284240ca1a5e71a745b1570fa309a1c7e3e0c"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "d0870f7474a10f96c723c9bb23f19d1ee2cf30735367aa66bce111f944f2a15e"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 65536,
+      "sha256": "450fd3900a01bd35f099292a9d2eabc943fbe651db376b9e941e71b8155463d7"
+    },
+    {
+      "file": "archive.part004",
+      "bytes": 65536,
+      "sha256": "30fce28b0abac070d865468f2dca198b78a5fa35a7e9ec4fc61740663c987906"
+    },
+    {
+      "file": "archive.part005",
+      "bytes": 18676,
+      "sha256": "df57b0f01aba7cb0c3d1a73a240cce217c4b50cd4e45ea0686d18868ca6f4b8d"
+    }
+  ],
+  "package_manifest_sha256": "f6fe3723a9a4713f72eade2f63f67865d8a079331f86db9f813363a964e8b8fd",
+  "source_files": 3262,
+  "added_files": 11,
+  "status": "WIP_SECOND_ROOM_DEFEATED",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
