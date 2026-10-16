@@ -1,0 +1,109 @@
+{
+  "added": 8,
+  "archive": "candidate38_source_delta.tar.gz",
+  "archive_bytes": 479075,
+  "archive_members": 27,
+  "archive_sha256": "858bcbe73ffd137dde23ab4a5020e3abcf7ebcc0cb5cb4d5bfd62bd4686e84f9",
+  "art_status": "Below reference target; not final",
+  "cache_files": 0,
+  "changed": 11,
+  "dependency": {
+    "archive_sha256": "584404d92aba9643c8dec8a18119ada62c8673c2c91efa98a05f091ea0c36225",
+    "commit": "a4259d5e61734b32d93c89ec6b8b24a75d58d550",
+    "directory": "development/shuabao/cartoon-source-runtime36-20261016",
+    "map_sha256": "e3fa5044c942526ccbe3bc97e262bfb88a80c7e8ac2fc3a3feb12e3a09333457",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3243
+  },
+  "engine_run": false,
+  "exact_runtime38_source_map_match": true,
+  "excluded_target_cache_files": 90,
+  "independent_restore_source_files": 3251,
+  "package_manifest_sha256": "e28d843dd4c33c6cf6885667614747aca1075f26cc9473631d632f30f9a60e6b",
+  "payload": {
+    "assets/fengli/vfx/forged_wake.gdshader": {
+      "bytes": 1406,
+      "sha256": "64a62a8aea64a787228e4891c6d091d3abe24cd44a04f67468916b1ad74dbd50"
+    },
+    "assets/fengli/vfx/q1_thrust.gd": {
+      "bytes": 4333,
+      "sha256": "96c024cfb8f2e6fe6bc9fa870f23fe46e0df11d2a1e56e1170974d2e2a969f43"
+    },
+    "assets/fengli/vfx/thrust_volume.gdshader": {
+      "bytes": 983,
+      "sha256": "47c2d267c61827cf342d84a75ad7ececa988785484efa8e5958f7c7b0ceb93e2"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/assets/fengli/vfx/forged_wake.gdshader": {
+      "bytes": 1340,
+      "sha256": "0a05a4fe8a1ae94e534f5123572e5c8d3657105e12227907826daa720ff33214"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/assets/fengli/vfx/q1_thrust.gd": {
+      "bytes": 4334,
+      "sha256": "e9fd7d91397be1d0a666b2026eb9cdb45ea738bc1e425f625d29177c2645507c"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/assets/fengli/vfx/thrust_volume.gdshader": {
+      "bytes": 1013,
+      "sha256": "d7592a00877fd0b5d9a36f5696d2aa153748784f3f61ad76c39b8f41ec996737"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/scripts/audio/combat_audio.gd": {
+      "bytes": 4261,
+      "sha256": "07664e90742ff471c62fc4eedfc99e0b53637859f79eadc6ee18e4ce6c70f4f2"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/scripts/audio/fengli_audio.gd": {
+      "bytes": 5448,
+      "sha256": "e2fc4aa08fe4c22d1c462d06f51a043e83f040ea9b5258233a49b9d76b611c6b"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/scripts/audio/fengli_bank.gd": {
+      "bytes": 1120,
+      "sha256": "6681e94ac8a1a73f021a4d28c3f6d9b6749e2689204aba4f5b82636d049481ff"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/scripts/integration/fengli_room.gd": {
+      "bytes": 39759,
+      "sha256": "ce00d764d85db1797185080dfdf942b94a427cee34e6411151166471669c61c0"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/tests/ink_shop_ui_host_20261004/shop_panel.gd": {
+      "bytes": 9707,
+      "sha256": "fb38b49456864976e966483d76363b8b41a123940e2ca000ce0ea512edbae0c4"
+    },
+    "cartoon_visual_slots_20261015/source_transition.json": {
+      "bytes": 22139,
+      "sha256": "b351f3ea1df7711221278dfc44aee4c77456e90df74d41913336fbbb1227b8ef"
+    },
+    "scripts/audio/combat_audio.gd": {
+      "bytes": 4665,
+      "sha256": "752efa5ee48236a49404d8185b418a1c1980aecd423c73451ae8be8727720eb9"
+    },
+    "scripts/audio/fengli_audio.gd": {
+      "bytes": 5749,
+      "sha256": "6f73fd431bb152f5a75654cb9321289208945446f429002ba9cad19e33cc6ca8"
+    },
+    "scripts/audio/fengli_bank.gd": {
+      "bytes": 1421,
+      "sha256": "5ce9efa227438a30db73ffb039c1a174e1595664f00733367ae098add53d83c9"
+    },
+    "scripts/integration/fengli_room.gd": {
+      "bytes": 40259,
+      "sha256": "0ff8730aeb42847839af90a1e6fb22c987a60d0e910439d44ebd92fa4a3487c0"
+    },
+    "scripts/integration/yanguizhou_first_floor.gd": {
+      "bytes": 12103,
+      "sha256": "bf1ff7edc91a40cfa8034285f7b13f318b0f2601993bb80f305a2fa5639bda5d"
+    },
+    "tests/ink_shop_ui_host_20261004/shop_panel.gd": {
+      "bytes": 10103,
+      "sha256": "e2d5d8fd1f5a910f098d9a37e4e7325428b4dbc9818a7148edf6fd93518f20c3"
+    },
+    "visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 379698,
+      "sha256": "1fe798cb613cac06c5a8c2ba671bd96dcef081d890c0714d26fcddc4bd75c3e4"
+    }
+  },
+  "payload_files": 19,
+  "private_marker_scan_passed": true,
+  "runtime36_restore_unchanged": true,
+  "runtime38_unchanged": true,
+  "runtime_admitted": false,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false,
+  "validation_boundary": "Status: SOURCE_ONLY_NOT_RUNTIME_ADMITTED. Runtime38 is a source-only integration of runtime37 shop 50/72 display corrections, four reviewed missing-audio source changes and three visually reviewed VFX source changes, with necessary source/visual bindings and historical preimages. Preview74 supports merging the three VFX source changes only; it is not final-art or Q2/E2/R1 functional acceptance. The earlier preview73 run02 short business-flow recording passed 22/22 checks, but its runtime guard remained RED due to eight UID-fallback warnings with backtraces. Runtime38 includes updated UID cache data locally, but every .godot cache file is excluded from this source backup. At the package evidence cutoff, runtime38 had not had an engine run; later verification is recorded separately and is not asserted by this source archive. No claim is made that the UID warnings are fixed at runtime or that runtime38 has passed the guard. Earlier runtime32 original-input first-floor automation was a separate run and peaked at 934.18 MiB, above the original 896 MiB performance limit. No manual full-floor, cross-platform, final-art, whole-runtime or playable-release acceptance is claimed."
+}
