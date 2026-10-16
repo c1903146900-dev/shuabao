@@ -1,0 +1,34 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 224814,
+  "sha256": "46d55e99c499c6a80347c5bb41337cc42d927fd6539697c25d2c905e4aadbca6",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "af8a4d5cf051fbd4483317751dd058c067a909079b6cb34d9affbeff72cfd354"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "8d8eb04d8c1e7c25e79eb716531aed76072d3c07a4dd949ce2c47abd14a38920"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "e877471a1f499304e4e24b3d8cf479fbc9abe2d677ef1613d52e73aded0ae60b"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 28206,
+      "sha256": "993630df133f9b33647dcc75cf1a554f4104cf224d777ee2b1fc9ca390a43137"
+    }
+  ],
+  "package_manifest_sha256": "52f7e36d9f643d27d34ade9001d9add8e1bbe332a4c3eb6f3b4734bed9c4cec6",
+  "source_files": 3341,
+  "added_files": 3,
+  "changed_files": 2,
+  "status": "PRESENTATION_MOTION_SAMPLING_FIX_AUDIO_EXCLUDED",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
