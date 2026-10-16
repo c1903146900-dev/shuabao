@@ -1,0 +1,34 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 249681,
+  "sha256": "657035d2034cefd20ff753beda45b4dbae514d21763292afc7d108226f82a331",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "bbd27828c09d9ece921fc1473f302a711684d1966bdc49c2a01dc46bba700669"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "96d3e36f965840d9681a31c92c7b49e24ffcb56de3f1fb8ecece3717e7a2f0a0"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "f79ba8d9131f0b567b1279e2feb6df710f326233090956b7e574f9f1afb34bae"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 53073,
+      "sha256": "aa4d16c957dcaadb5ed70d70e960eeb720c988339416325a778e1cf18094ed44"
+    }
+  ],
+  "package_manifest_sha256": "669fd9b7e3c2f6142ecf3ab6790d9b390cc06d508c065ededd2c14619f8aeb8e",
+  "source_files": 3301,
+  "added_files": 5,
+  "changed_files": 1,
+  "status": "NONBOSS_29_NODES_EF_START_VERIFIED_BOSS_UNCONNECTED",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
