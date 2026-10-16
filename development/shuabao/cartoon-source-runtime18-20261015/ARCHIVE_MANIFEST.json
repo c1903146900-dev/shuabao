@@ -1,0 +1,71 @@
+{
+  "GUI25": "Terminated at 183.78 seconds, RSS 896 MiB; stability not passed",
+  "added": 5,
+  "archive": "candidate18_source_delta.tar.gz",
+  "archive_bytes": 3737475,
+  "archive_members": 18,
+  "archive_sha256": "581e9e5a1df8130152d0e8b17205833bb41bbb633bb4d58958dd6eda614d814e",
+  "cache_files": 0,
+  "changed": 5,
+  "dependency": {
+    "archive_sha256": "42942fa14339444bd23778cbc3b89e85339db0ebb5a9b1d9e257ffd40aad1250",
+    "commit": "3fb7d17326ffdfa83195479a1bbc78d16e15d4ea",
+    "directory": "development/shuabao/cartoon-source-runtime17-20261015",
+    "map_sha256": "b8cae235138302f09c479a69359e2aea1f5b6775c4dbb1a87af9fba87c473047",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3146
+  },
+  "engine_run": false,
+  "exact_runtime18_source_map_match": true,
+  "independent_restore_source_files": 3151,
+  "offline14": "Limited 180-frame animation check passed",
+  "package_manifest_sha256": "0954528663d459be826d6ad71c4a01a29d879e48d9dca9fbfaf8631bbe2cfdca",
+  "payload": {
+    "cartoon_back_right_scholar_20261015/back_right_scholar.gd": {
+      "bytes": 4844,
+      "sha256": "df2d0631466d7450d11c3772dc89412d0b2a420246d3367a333f15dd8e57de86"
+    },
+    "cartoon_layered_scholar_20261015/assets/yan_guizhou_parts.png": {
+      "bytes": 1267151,
+      "sha256": "1ab451fac5e4d01e1aeb2035e2d6fe40d9f7b569452bb74e4b27553dcadd6037"
+    },
+    "cartoon_layered_scholar_20261015/atlas_uv_map.json": {
+      "bytes": 2046,
+      "sha256": "790e834f0ee6e65ae65b5c900fb7cf149bf87868556bff2f3b527a1ac1963490"
+    },
+    "cartoon_layered_scholar_20261015/layered_scholar.gd": {
+      "bytes": 12031,
+      "sha256": "74f530d68e68f41ade391bc408b4e98a7a01ffbb008c463629f991f541ccc452"
+    },
+    "cartoon_layered_scholar_20261015/layered_scholar_flat_uv.gdshader": {
+      "bytes": 463,
+      "sha256": "f0437ce882542ca6582070fc8b4df0f884a17dac3c8652216c90ff26bad539c3"
+    },
+    "cartoon_showcase_20261015/hud_cleanup.gd": {
+      "bytes": 2760,
+      "sha256": "97d33b9b3b44bfd9f7089433aa0d69e06f58c16e0c98cfa25a0fb5f8c87674dc"
+    },
+    "cartoon_showcase_20261015/observer.gd": {
+      "bytes": 5878,
+      "sha256": "c6ddec30406b6150a14ca78bfa2b2b199f8931d55da4c347bee82bf8c4dbd58d"
+    },
+    "cartoon_showcase_20261015/stage/assets/whole_floor_original.png": {
+      "bytes": 2299260,
+      "sha256": "becf10a291fe8ba4424d7564faf20b4807841d95b6cd85e81d5405181eeb0b9c"
+    },
+    "cartoon_showcase_20261015/stage/cartoon_courtyard.gd": {
+      "bytes": 23316,
+      "sha256": "f49a8ff809749f9577f7c40572533427e84aad9936595418f97a85049b69f474"
+    },
+    "cartoon_showcase_20261015/stage/whole_floor.gdshader": {
+      "bytes": 1238,
+      "sha256": "5fc9ef4bcda990ad13af7fba8bb52705d15ab298a79a5fe3fd93e5d158fcbc5c"
+    }
+  },
+  "payload_files": 10,
+  "private_marker_scan_passed": true,
+  "runtime18_unchanged": true,
+  "runtime_admitted": false,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false
+}
