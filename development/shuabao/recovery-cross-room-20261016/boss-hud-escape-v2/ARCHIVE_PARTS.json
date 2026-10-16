@@ -1,0 +1,44 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 385121,
+  "sha256": "1a1e5f9fe0ae258f5d9297cc237d39ac0bc92a827d5e37053d3b5446feb8b875",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "b352918b67b76bec89845668c32624007b2251cf47f64547efa5ebaa60e8b64d"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "c4323b8d707fe1a18799899f154fd431a6d73891f3a033e77e2d9fd8fcb252be"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "b0897b0283dc62d9a746acccc168dd6c17e29285985a315b9ff36ac3db83fcfc"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 65536,
+      "sha256": "dfde53966f7efaa34c918b8d99c01a615ddce4538afacb4bb7b04df31350a013"
+    },
+    {
+      "file": "archive.part004",
+      "bytes": 65536,
+      "sha256": "17e6468844b55c11c3d0d5267bfa30a6b09eac184a7a5031f6062a5f98a354b5"
+    },
+    {
+      "file": "archive.part005",
+      "bytes": 57441,
+      "sha256": "e566f2d28587f66a36d69c2e5ca96d5763672a2c43b233c1658b2edaec8cec8e"
+    }
+  ],
+  "package_manifest_sha256": "82a69c5a07ba82fea691a829af11773bc53af209dc73b24527b2d83412785b15",
+  "source_files": 3324,
+  "added_files": 10,
+  "changed_files": 2,
+  "status": "HUD_ESCAPE_V2_FUNCTIONAL_REGRESSIONS_PASSED_ART_UNACCEPTED",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
