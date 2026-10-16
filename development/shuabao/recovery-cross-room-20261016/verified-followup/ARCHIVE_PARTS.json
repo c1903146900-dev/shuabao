@@ -1,0 +1,29 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 161840,
+  "sha256": "a7ab1731727ba113f381f1a641de8c2a4322e321b9f0ac9faeedcf56ff520309",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "45ab08bf1ee056067deea306024654417a5c48d0b3bb543dcffaaf2c233f0bc6"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "bfa11a79a4466213f985411c45429e3abc10786e4193b0c2bea70f49e3ff6d7c"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 30768,
+      "sha256": "6bdf4e1f646bef84d7508865a9d6643b239f45bde96568bc23d12f4e2af47cb1"
+    }
+  ],
+  "package_manifest_sha256": "9f222c30fa0228637a1f550af8a8e9fe17f70c81045b17a1c52bbdb09f5d5fcc",
+  "source_files": 3263,
+  "added_files": 1,
+  "changed_files": 2,
+  "status": "BOUNDED_TWO_ROOM_FUNCTIONAL_AND_ISOLATED_NEGATIVE_PASS",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
