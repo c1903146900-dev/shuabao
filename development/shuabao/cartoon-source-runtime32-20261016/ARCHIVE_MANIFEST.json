@@ -1,0 +1,115 @@
+{
+  "added": 3,
+  "archive": "candidate32_source_delta.tar.gz",
+  "archive_bytes": 497746,
+  "archive_members": 29,
+  "archive_sha256": "14024b8b16a5ca7516b03ea515359b3e1aa3b730ef6f0afc5a99b1f43fd13ed5",
+  "art_status": "Below reference target; not final",
+  "cache_files": 0,
+  "changed": 18,
+  "dependency": {
+    "archive_sha256": "cd70ee06834bc6003e7af428576204139875d306390380062189bd58da8b34e8",
+    "commit": "e6b1092ca92fcf672fb8190e5b757893c26e6bd0",
+    "directory": "development/shuabao/cartoon-source-runtime26-20261016",
+    "map_sha256": "7b173f36697f1dd7cfb159d1771d29acaf25505431eff327fb842912233d18af",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3238
+  },
+  "engine_run": false,
+  "exact_runtime32_source_map_match": true,
+  "independent_restore_source_files": 3241,
+  "natural_route32": "First 11 route rows and real Boss hits; not Boss completion; original 896 MiB performance limit not passed",
+  "package_manifest_sha256": "48f1637f7f95b57ace608e8458916a0332aec6567407155a9767fc0acb874bda",
+  "payload": {
+    "cartoon_illustrated_scholar_20261015/illustrated_scholar.gd": {
+      "bytes": 9167,
+      "sha256": "da4385e1be49ce35bd451691e2c60729f20b0f4dd0f067ddfc86f81e9cbba6af"
+    },
+    "cartoon_layered_scholar_20261015/hybrid_scholar.gd": {
+      "bytes": 2856,
+      "sha256": "ca088bc5e886eedcfe9b37ce3829e962d014962fb0871d74ae25686e36809e2d"
+    },
+    "cartoon_layered_scholar_20261015/layered_scholar.gd": {
+      "bytes": 15167,
+      "sha256": "8db90642c6dfa6ae1f59f2b4f2933a8ef4e79f239e4786349f763bf579390d21"
+    },
+    "cartoon_showcase_20261015/navigation_host.gd": {
+      "bytes": 11991,
+      "sha256": "d78aa2f4ad6126a6b5869740e3515159cb8af94c9a4bf2ec309c2dbfc3b8c84d"
+    },
+    "cartoon_showcase_20261015/observer.gd": {
+      "bytes": 7684,
+      "sha256": "a292059fb7f9d4dd0f64b323eb7bbdfc622659e8a0d8715a7dcb6608202c851b"
+    },
+    "cartoon_showcase_20261015/q1/cartoon_river.gd": {
+      "bytes": 9290,
+      "sha256": "364fd250885bc3893b7c92acec4f19272f0cbec466fa17b0d69e4cd8dfb6caa0"
+    },
+    "cartoon_visual_slots_20261015/contact_restore42.gd": {
+      "bytes": 12091,
+      "sha256": "819616a569261d7050f6af1df4f27ec0e44ce3d59fe327215537f0b9820d0e19"
+    },
+    "cartoon_visual_slots_20261015/contact_validator43r2.gd": {
+      "bytes": 22249,
+      "sha256": "5f809914dbf2db851f81ededf63a8beea100830da41fe28171b9c5f6554c3e95"
+    },
+    "cartoon_visual_slots_20261015/effect_validator42.gd": {
+      "bytes": 36275,
+      "sha256": "58370521a0271d45a59cfbf0dfe1a0863bfc4802bfb1806b1e14ede18a9131b3"
+    },
+    "cartoon_visual_slots_20261015/formal_wave_reference45r2.gd": {
+      "bytes": 23091,
+      "sha256": "38e8bf0f6c1a7b02fc4dcd9dc08f29d6449addf848905fd4c3158541601ffd4f"
+    },
+    "cartoon_visual_slots_20261015/formal_wave_validator45r2.gd": {
+      "bytes": 19202,
+      "sha256": "cce3179cdd2becc239d65faa4f0efd4a9966b6bb6a9ff9404a1a4d0a8cf221b5"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd": {
+      "bytes": 6738,
+      "sha256": "45975dab784657e5994912e8022e916b6707b01f3412b2e4afe0d2d6bb9f5541"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/tests/ink_first_floor_user_route_20261005/native_host01/audio_bridge.gd": {
+      "bytes": 2464,
+      "sha256": "2a77a15786a2e81700a72776091ab63029c69c2730f77ca78fbc5cfec6781f1b"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/tests/ink_normal_floor_host_20261004/enemy_layer.gd": {
+      "bytes": 5753,
+      "sha256": "96b828b7ea50abfff9d3a054292b1c767443fb6854ea15d2332f152f31a187f8"
+    },
+    "cartoon_visual_slots_20261015/source_transition.json": {
+      "bytes": 17527,
+      "sha256": "679dd767bd0443a9d2fc14528406082fa3a78874304809911014d9b6b076a836"
+    },
+    "tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd": {
+      "bytes": 7777,
+      "sha256": "ae2f2ae726f2b70a551092d9d0daa6e2bd4efcfd819d506c67b5d54c87c0fe49"
+    },
+    "tests/ink_first_floor_user_route_20261005/native_host01/audio_bridge.gd": {
+      "bytes": 2559,
+      "sha256": "99bb8e53ca7cdc3dee6e9bc2f9367ac8708de77f33243ac89cb848ad7e1dbce6"
+    },
+    "tests/ink_first_floor_user_route_20261005/runtime01/host.gd": {
+      "bytes": 24445,
+      "sha256": "b41c38003549e5d581f00dd114d343168d118f09e381a46b976bfe96e92ca83d"
+    },
+    "tests/ink_normal_floor_host_20261004/enemy_layer.gd": {
+      "bytes": 7067,
+      "sha256": "eeca08d65b99a61dc064458c9ed872b0d7c6630cc979017e0990bdbe37c79266"
+    },
+    "visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 376514,
+      "sha256": "81218afbc6654c0e0a136122c6110e3b25fa361439088c031b8b7933ec7e1d2c"
+    },
+    "visual_rework_20261009/binding/visual_binding.json": {
+      "bytes": 17739,
+      "sha256": "402b8b63629c0c7fca6b620f86fc44bc9be392d70c05084b42e912564d49b79d"
+    }
+  },
+  "payload_files": 21,
+  "private_marker_scan_passed": true,
+  "runtime32_unchanged": true,
+  "runtime_admitted": false,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false
+}
