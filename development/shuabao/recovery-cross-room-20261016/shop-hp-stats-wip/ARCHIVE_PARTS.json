@@ -1,0 +1,40 @@
+{
+  "added_files": 2,
+  "archive": "shop_hp_wip_source.tar.gz",
+  "base_commit": "875e87076e1d755d64b3580a51828f10cc9598d0",
+  "bytes": 290391,
+  "changed_files": 3,
+  "local_independent_restore_verified": true,
+  "package_manifest_sha256": "da5fa95300cc6ce44a2b2de8608952fbfbe6feb51f2642acc4989f2020aea1a3",
+  "parts": [
+    {
+      "bytes": 65536,
+      "file": "archive.part000",
+      "sha256": "92797769adcec35971bbd2b7fe02438372a4cc0b32980913f85b3ecc95b658e0"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part001",
+      "sha256": "d81b7ff00daec33a9c0e96ef77fc2314636e5c01690d70600a4fbe2a49b030a9"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part002",
+      "sha256": "2e8dd8549df3f92a03af6fe744f94a3c7293e528a4b7d1a108031285217c1211"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part003",
+      "sha256": "0c9a6acb388b424af39337d015e493876df11458b363f622c1b723395c50f143"
+    },
+    {
+      "bytes": 28247,
+      "file": "archive.part004",
+      "sha256": "9e65df700728b5766900c1207aa16bc5403353a758b67fdacce2018d9eaf006e"
+    }
+  ],
+  "remote_redownload_restore_performed": false,
+  "sha256": "812a01546ccee081c5ebbf04d2a64d2f938ed871a1e2faf907793a09460b7fd4",
+  "source_files": 3355,
+  "status": "LOCAL_PREPARED_NOT_PUBLISHED_PENDING_ROOT_AND_AUDIT"
+}
