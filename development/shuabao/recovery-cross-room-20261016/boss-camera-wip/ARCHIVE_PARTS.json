@@ -1,0 +1,39 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 319726,
+  "sha256": "e24dad88a8290ce4d3c098c4d05d2777b3cd9923afd23a5103ea72e03c15881f",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "71041d8b0931012860e1a8adc78def55885985a8871ce6e4e6ab82853063cb52"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "71c6c933fc7794e1e57e9b041a0d5ee9eab17c27f49ebd729485436fbb603183"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "90f627ed9877a917ac6e252bc853119bf132d8a73ceb79105163b2badb24b592"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 65536,
+      "sha256": "ceccbf3f5cd6dcab61adaa94f5bdee95430d2944e268805c934e373d5016484e"
+    },
+    {
+      "file": "archive.part004",
+      "bytes": 57582,
+      "sha256": "cb2bf403c081ad14f40b95450202028a40cdc732ddfdf9a3ce404f14286ba71c"
+    }
+  ],
+  "package_manifest_sha256": "6f61a6f32b1518adb14e850ff500a05d1d1634b57e677adde2ba2ce1fc3a1572",
+  "source_files": 3314,
+  "added_files": 7,
+  "changed_files": 1,
+  "status": "BOSS_ART_CAMERA_WIP_PARTIAL_NATIVE_BOTTOM_BAR_ONLY",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
