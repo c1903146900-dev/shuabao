@@ -1,0 +1,34 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 225743,
+  "sha256": "748d9a1b4dfba2a60b0c35d7bd3b2e3e791aa57330c4b18cf1be4bde4cb423b2",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "43dc99530973179b91ec83fd14c4a9d1516e2e1a57022cca30524df5ae1e74ce"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "353beb9466e34a4d850dc9999f78bfc67c30a76e408356072e592964710af485"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "693bfe57705a9f81976443b082329135d5d9c7fc59ddcd0ad4b49f071b859ac8"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 29135,
+      "sha256": "75df284bd21edd2fe9ceb44c15807b9cf31daca99d4d4bb09cf76a129f8b1d6d"
+    }
+  ],
+  "package_manifest_sha256": "335d36ee3100b217d5764cdb51c26c923207d2074803ba504db53dabfa65e185",
+  "source_files": 3289,
+  "added_files": 4,
+  "changed_files": 1,
+  "status": "CLEAN_R05A_ELITE_REGRESSION_STOP_BEFORE_R06",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
