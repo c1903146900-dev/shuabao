@@ -1,0 +1,59 @@
+{
+  "added": 1,
+  "archive": "candidate34_source_delta.tar.gz",
+  "archive_bytes": 438883,
+  "archive_members": 15,
+  "archive_sha256": "e524cd22f94bfe97c5b0764eb65ff1e7e04f1cd8a161d746e245e3b1100b273f",
+  "art_status": "Below reference target; not final",
+  "cache_files": 0,
+  "changed": 6,
+  "dependency": {
+    "archive_sha256": "14024b8b16a5ca7516b03ea515359b3e1aa3b730ef6f0afc5a99b1f43fd13ed5",
+    "commit": "68f545f514d49bf4780fdf7efc0faf8bee1f3382",
+    "directory": "development/shuabao/cartoon-source-runtime32-20261016",
+    "map_sha256": "49859c7cbfc1ecadde4efb394329f10a170ebb3f25d70f73cfd8e33ab91f6f91",
+    "repository": "c1903146900-dev/shuabao",
+    "source_files": 3241
+  },
+  "engine_run": false,
+  "exact_runtime34_source_map_match": true,
+  "independent_restore_source_files": 3242,
+  "package_manifest_sha256": "69b57817ec9853842030b7e254f9524e9ebc20609f2f95389f25a63232882431",
+  "payload": {
+    "cartoon_showcase_20261015/hud_cleanup.gd": {
+      "bytes": 5875,
+      "sha256": "3ab96304c354dc1649caf9359949e673bd6dc128709b54ae9e6647a964ff89a3"
+    },
+    "cartoon_visual_slots_20261015/preimages/runtime20/tests/ink_first_floor_user_route_20261005/runtime01/route_map.gd": {
+      "bytes": 5384,
+      "sha256": "139dc67282ea6c2ff17a7747335b3b2173900312ba67a887c5c3d599d371da92"
+    },
+    "cartoon_visual_slots_20261015/source_transition.json": {
+      "bytes": 18131,
+      "sha256": "ecdffced75938028af227d235d6b4e542de4929a496da7188f3babf127636527"
+    },
+    "project.godot": {
+      "bytes": 719,
+      "sha256": "4a7b3a9a1e62b4bda7004c3dc2706441154bcbf2aeda169d3c6ee3d97ff12182"
+    },
+    "tests/ink_first_floor_user_route_20261005/runtime01/route_map.gd": {
+      "bytes": 5384,
+      "sha256": "1b21000093f66f34d0d12bfd71f13efbf9bd2901cb47374458d296a2ecf9650b"
+    },
+    "visual_rework_20261009/binding/source_binding.json": {
+      "bytes": 377340,
+      "sha256": "a455003e947d88713b2c995c0fc6a1caf598bf20cb906beacf0737e3a65ddb1f"
+    },
+    "visual_rework_20261009/binding/visual_binding.json": {
+      "bytes": 17861,
+      "sha256": "4a713f387f6e584f61ca996b0cd6478ebd77c923d4a0655e935b481c414613e1"
+    }
+  },
+  "payload_files": 7,
+  "private_marker_scan_passed": true,
+  "runtime34_unchanged": true,
+  "runtime_admitted": false,
+  "status": "SOURCE_ONLY_NOT_RUNTIME_ADMITTED",
+  "uploaded": false,
+  "validation_boundary": "Status: SOURCE_ONLY_NOT_RUNTIME_ADMITTED. Runtime34 default chooser to formal cartoon scene and a short HUD/entry session were manually checked. Runtime32 first-floor completion was separately validated by automated original-input visual replay (421 checks, 12 route rows, 25 kills, original Boss reward and same-run settlement). These are two separate runs: no new full-floor completion is claimed for runtime34. Runtime32 peaked at 934.18 MiB and did not pass the original 896 MiB performance limit. No cross-platform, final art or playable release-package acceptance is claimed."
+}
