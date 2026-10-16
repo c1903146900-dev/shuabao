@@ -1,0 +1,34 @@
+{
+  "archive": "recovery_cross_room_source.tar.gz",
+  "bytes": 245327,
+  "sha256": "5fcd51013dfd736f1c452d99d3dae3464dedac1a5a9b02228802a93cf0ba6dba",
+  "parts": [
+    {
+      "file": "archive.part000",
+      "bytes": 65536,
+      "sha256": "268a0dda70befa0d1f375cb8d5a560e756046667f9c7e6ab5cd3410c8af3c80c"
+    },
+    {
+      "file": "archive.part001",
+      "bytes": 65536,
+      "sha256": "b1f9d5afe448f3cfb516504fcf5f7e386de21cef259767e6246bd072adabab8f"
+    },
+    {
+      "file": "archive.part002",
+      "bytes": 65536,
+      "sha256": "1e411d3ebaeb62d57696b077b45c47103c44cb79339901d6dad455cbfaa9f8a8"
+    },
+    {
+      "file": "archive.part003",
+      "bytes": 48719,
+      "sha256": "067a8bea705f799acd54a068abb2d1411447598b914f278dc6c6a59adf8ffc6e"
+    }
+  ],
+  "package_manifest_sha256": "92f3d383d21854042fc25791d0c63cbe215730757acbeedb816f4d9d0f37ab0f",
+  "source_files": 3280,
+  "added_files": 17,
+  "changed_files": 3,
+  "status": "SOURCE_ONLY_PENDING_COMBINED_RUNTIME",
+  "local_independent_restore_verified": true,
+  "remote_redownload_restore_performed": false
+}
