@@ -1,0 +1,37 @@
+{
+  "added_files": 0,
+  "archive": "shop_crit_lifesteal_wip_source.tar.gz",
+  "base_commit": "ade787df2c11b0229ffc9ba1365d3a9ecfd72b62",
+  "bytes": 231501,
+  "changed_files": 1,
+  "local_independent_restore_verified": true,
+  "package_manifest_sha256": "016fbf399aaf16799333af85af1b4d55b881f636dbe48b5d9302ccb96e775775",
+  "parts": [
+    {
+      "bytes": 65536,
+      "file": "archive.part000",
+      "sha256": "00e598064cca17e82e472337d200361358042895630758fae25c7d75824a708a"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part001",
+      "sha256": "5bb29feb50915c25b3b370b82c831e44663a400b6c24eaa3b87ded0f90a91cf5"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part002",
+      "sha256": "f2a14d9c99faf2a973536d72475a9e4584f854251f3a68d433d1083567764bd0"
+    },
+    {
+      "bytes": 34893,
+      "file": "archive.part003",
+      "sha256": "15677118612b296741e7f6d4b2e18088431333d33707ea0f07af744d600be70f"
+    }
+  ],
+  "remote_redownload_restore_performed": false,
+  "removed_files": 0,
+  "sha256": "43196442849bed620c75968c1c957066e8c7ade2a08676c387127054b86cd50c",
+  "source_files": 3355,
+  "status": "LOCAL_PREPARED_NOT_PUBLISHED_PENDING_ROOT_AND_AUDIT",
+  "unpack_helper_sha256": "dd6e6a4f4896ad5abda8d3cbc29eed033760e1201046602154a8586d180ce9df"
+}
