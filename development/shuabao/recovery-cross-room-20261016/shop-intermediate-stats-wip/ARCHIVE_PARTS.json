@@ -1,0 +1,42 @@
+{
+  "added_files": 0,
+  "archive": "shop_intermediate_wip_source.tar.gz",
+  "base_commit": "f4979659163266293d76dddebee5e9513122e137",
+  "bytes": 275657,
+  "changed_files": 2,
+  "local_independent_restore_verified": true,
+  "package_manifest_sha256": "97abe7f9b970a1a2ab8ad407810c4975e34a32bae159967e502aff2f05c1386c",
+  "parts": [
+    {
+      "bytes": 65536,
+      "file": "archive.part000",
+      "sha256": "53986200a327b81f5f1192386139e0061c83782e86713fd4d7bf7e5b2db31273"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part001",
+      "sha256": "70ec9130f3ceb0fa7cde698ea32bf26333c8daf64d53e8cac5d644e9d7247979"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part002",
+      "sha256": "0b273e6d3529bb20bab5c17a3c4f7e710ea4e8113b02e363813f6a6fc277a210"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part003",
+      "sha256": "ff74844baf79d238289603b636528ea35095ce0c3c279b0dc3ba03595a19b187"
+    },
+    {
+      "bytes": 13513,
+      "file": "archive.part004",
+      "sha256": "e5433570216fae1c7caffa470eccf91e0d7b3dcf93d0bae5a0d8541fcdfdaf5c"
+    }
+  ],
+  "remote_redownload_restore_performed": false,
+  "removed_files": 0,
+  "sha256": "ff7a1a4b037482920fe49b8e6efa240ad33a52000d114096b89686c2bfc9b348",
+  "source_files": 3355,
+  "status": "LOCAL_PREPARED_NOT_PUBLISHED_PENDING_ROOT_AND_AUDIT",
+  "unpack_helper_sha256": "dd6e6a4f4896ad5abda8d3cbc29eed033760e1201046602154a8586d180ce9df"
+}
