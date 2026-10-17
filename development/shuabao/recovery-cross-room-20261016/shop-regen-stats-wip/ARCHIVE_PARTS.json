@@ -1,0 +1,47 @@
+{
+  "added_files": 0,
+  "archive": "shop_regen_wip_source.tar.gz",
+  "base_commit": "ec2018a6d676b3474af6eda114183667102f72ad",
+  "bytes": 341324,
+  "changed_files": 4,
+  "local_independent_restore_verified": true,
+  "package_manifest_sha256": "ec7103c29bcca812cc37725047948dc4be33481aaabd7625e2f2bbb5344994cd",
+  "parts": [
+    {
+      "bytes": 65536,
+      "file": "archive.part000",
+      "sha256": "396f72f86836179d8a66aeaacb5c3c3203dea9875fb343daf2e03fcc009547df"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part001",
+      "sha256": "9af377f3cab55be6c48965f2b7942fe5b5272a823393b3d4c18d9007ca987398"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part002",
+      "sha256": "41e5b45d90b21f56d1031d86a984be88b08aa6adda139fa42c821391d175b57d"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part003",
+      "sha256": "fddfaaa1e259d13f10de73aba1e23cb0825f1a3695077e7abd4abad1edfd1a5a"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part004",
+      "sha256": "93a9e7997a45fd56befa259413ea42cc39adbe1d5e93762a7c2c08b517051e85"
+    },
+    {
+      "bytes": 13644,
+      "file": "archive.part005",
+      "sha256": "9ad36e8d6ebb4df33f22c273b2bef220474022c3b11e26d3e7fc470f9220ad59"
+    }
+  ],
+  "remote_redownload_restore_performed": false,
+  "removed_files": 0,
+  "sha256": "dc8e78b7c37ebf0f78cf80a85c81262cf7434fe33f26c1aa1ec0910c73638e97",
+  "source_files": 3355,
+  "status": "LOCAL_PREPARED_NOT_PUBLISHED_PENDING_ROOT_AND_AUDIT",
+  "unpack_helper_sha256": "dd6e6a4f4896ad5abda8d3cbc29eed033760e1201046602154a8586d180ce9df"
+}
