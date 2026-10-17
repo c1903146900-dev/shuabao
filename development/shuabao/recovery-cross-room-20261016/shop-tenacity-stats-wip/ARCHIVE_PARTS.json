@@ -1,0 +1,37 @@
+{
+  "added_files": 0,
+  "archive": "shop_tenacity_penetration_wip_source.tar.gz",
+  "base_commit": "6e73ff1a72664ad9b7078eda3392ccbd75778bb5",
+  "bytes": 242215,
+  "changed_files": 1,
+  "local_independent_restore_verified": true,
+  "package_manifest_sha256": "b747ce6419d455d64e274b92a04fecefb35ae030990a599d20fceb5551022734",
+  "parts": [
+    {
+      "bytes": 65536,
+      "file": "archive.part000",
+      "sha256": "abbcaacf5fcea168d901f502315801b92cf15d226cba92637ea3f85bd1ccda57"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part001",
+      "sha256": "d34bf1f080f3712bfb34de1418bc505f73fee4b01454994281f79d0022a5de6c"
+    },
+    {
+      "bytes": 65536,
+      "file": "archive.part002",
+      "sha256": "d4c1cb5a897cda9c255ec22f97d9ae6d41f6460c5ac1babd64b167f784c8c99f"
+    },
+    {
+      "bytes": 45607,
+      "file": "archive.part003",
+      "sha256": "667ef1ab9192a3f10642047d254f254efb99dfc443542e019405d541e4658a1c"
+    }
+  ],
+  "remote_redownload_restore_performed": false,
+  "removed_files": 0,
+  "sha256": "70bd17597606ac9abf35edd694f684ab1c59668007026e253c4b0f0b851d785a",
+  "source_files": 3355,
+  "status": "LOCAL_PREPARED_NOT_PUBLISHED_PENDING_ROOT_AND_AUDIT",
+  "unpack_helper_sha256": "dd6e6a4f4896ad5abda8d3cbc29eed033760e1201046602154a8586d180ce9df"
+}
