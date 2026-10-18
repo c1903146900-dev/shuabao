@@ -1,0 +1,69 @@
+{
+  "status": "STATIC_AND_PURE_ONLY_REAL_CLEANUP_PENDING",
+  "files": {
+    "legacy_guard/memory_budget_v2.py": {
+      "sha256": "472d2b37cb6b31a5ac47fdf0919b7acb48728ea6d1212f160d94ab11b3de8de8",
+      "bytes": 2041
+    },
+    "legacy_guard/safe_group_guard.py": {
+      "sha256": "6344551a08361473dc85014efabc80aec5b560e458e193ac21541a33cec1d958",
+      "bytes": 15753
+    },
+    "legacy_guard/safe_tree_guard.py": {
+      "sha256": "06f365c7c79ea27808e0a3dcaa09abdf7ca42582a84ad29633ae934ca7163978",
+      "bytes": 23206
+    },
+    "legacy_guard/safe_tree_guard_reaped_row01.py": {
+      "sha256": "626eb74e1c137bce47792cb9d7271dfae0622c4ac5dc40710f8a35e9329bbe2f",
+      "bytes": 6984
+    },
+    "legacy_guard/safe_tree_guard_reaped_trace02.py": {
+      "sha256": "258f093d4b3d57701b1fae6ca28ddfc215cb04f2a49ce8318bc67624a1558f24",
+      "bytes": 3528
+    },
+    "legacy_guard/safe_tree_guard_rss_exit01.py": {
+      "sha256": "70f0d71b816568bfb10adeba99f6c56af548fb9773f521ea62d7bafa2b4fe830",
+      "bytes": 4027
+    },
+    "legacy_guard/safe_tree_guard_rss_reread01.py": {
+      "sha256": "7f2457d16be41de0aa68805e75507910cbd495b92de94b49b87b4a35741c7dbd",
+      "bytes": 5234
+    },
+    "legacy_guard/safe_tree_guard_vanished_child01.py": {
+      "sha256": "5f50c17c3dacc7f97b16d3e809d7fb3a622e7b84ecd4edafbb30ab8b85d29141",
+      "bytes": 5515
+    },
+    "q1_guard/held_exit_adapter.py": {
+      "sha256": "b1ecb7c896ce8e71a334bd75796fb46b47f116e5966fd712edd411db9db31b3a",
+      "bytes": 5067
+    },
+    "CODE_PINS.json": {
+      "sha256": "6a9399e9febda7db6936bf46203017335b3b908cfa0cbfd0597ea41b641e8e30",
+      "bytes": 1370
+    },
+    "owned_runtime_guard.py": {
+      "sha256": "5febee5aee051af45740ca8f20b9a00c44bda9b45fd35633caf0d8943941600a",
+      "bytes": 12917
+    },
+    "test_guard_pure.py": {
+      "sha256": "831cd871b8ad65fe11f510bbf159f269c39a9d0d296d6e9e66a4dd3bf7288f25",
+      "bytes": 3872
+    },
+    "PURE_TEST_RESULT.json": {
+      "sha256": "938bbc57de0d80c9d41512e87f65d2708bcdfa92f0af78a31604aec2650bf115",
+      "bytes": 812
+    },
+    "README_RUNTIME.md": {
+      "sha256": "8f7c6de31dd708a2859a0800d377c9f8080fae8124f9022f59d80821fa822370",
+      "bytes": 3097
+    },
+    "cleanup_workload.py": {
+      "sha256": "eebc837f98382c997fcb7d1bfd5a9a8c5d5a5f81a6e475f19cd297c83f1e003a",
+      "bytes": 782
+    },
+    "test_owned_cleanup.py": {
+      "sha256": "67d09f36c62700d0f794fdb75ed0172a8f6dfb6d964250a0589ac09151dd399f",
+      "bytes": 4720
+    }
+  }
+}

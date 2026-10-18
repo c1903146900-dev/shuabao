@@ -1,0 +1,23 @@
+{
+  "status": "WIP_NOT_ADMITTED_NOT_RUN",
+  "files": [
+    {
+      "target": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "c0433d1f8e587cf472951a919c3335bd2e510f87a3157c8c92373b28ff097728",
+      "payload": "sim.gd"
+    },
+    {
+      "target": "equipment_prism_20261011/model.gd",
+      "before": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "after": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "payload": "model.gd"
+    }
+  ],
+  "missing": [
+    "original rest service barrier",
+    "Catalog/UI P3 capability",
+    "map preimage migration and current after checks",
+    "independent review and native input verification"
+  ]
+}

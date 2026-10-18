@@ -1,0 +1,71 @@
+--- restored3031/tests/ink_ordinary_visuals_20261007/candidate01/host.gd
++++ candidate/tests/ink_ordinary_visuals_20261007/candidate01/host.gd
+@@ -1,15 +1,17 @@
+ extends "res://scripts/integration/yanguizhou_first_floor.gd"
+ ## Single default-entry visual WIP. Artwork is not finally accepted.
+ ## All gameplay, one Session, input, audio, room flow and startup seals inherit.
+-const OrdinaryVisualActor = preload("res://tests/ink_ultimate_brush_art_20261008/candidate01/hero_view.gd")
++const OrdinaryVisualActor = preload("res://visual_rework_20261009/runtime_actor.gd")
+ const OrdinaryParentActor = preload("res://tests/ink_ultimate_presentation_art_20261006/dual_v03/imported_gate01/consumer_candidate.gd")
+ const VISUAL_PARENT_ACTOR_PATH := "res://tests/ink_ultimate_presentation_art_20261006/dual_v03/imported_gate01/consumer_candidate.gd"
+ const VISUAL_PARENT_ACTOR_SHA := "0a7fda57ef390040e815c62fbf9637b880e1066d75d53154043549eee0dd6a12"
+ const OrdinaryAttackFeedback = preload("res://tests/ink_attack_feedback_20261007/candidate02/attack_view.gd")
+ const OrdinarySnow = preload("res://tests/ink_r1_snow_art_20261008/candidate03/domain_view.gd")
+ const OrdinaryPeaks = preload("res://tests/ink_r2_scroll_art_20261008/candidate03/peaks_view.gd")
+-const VISUAL_ACTOR_PATH := "res://tests/ink_ultimate_brush_art_20261008/candidate01/hero_view.gd"
+-const VISUAL_ACTOR_SHA := "c42104017bfd3ffb131a9595061964828ba1483c8f80fa3510a070394e0ae36c"
++const VISUAL_ACTOR_PATH := "res://visual_rework_20261009/runtime_actor.gd"
++const OriginalBrushActor=preload("res://tests/ink_ultimate_brush_art_20261008/candidate01/hero_view.gd")
++const OriginalBrushSHA="c42104017bfd3ffb131a9595061964828ba1483c8f80fa3510a070394e0ae36c"
++const VISUAL_ACTOR_SHA := "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66"
+ const VISUAL_ADAPTER_PATH := "res://tests/ink_ultimate_presentation_art_20261006/dual_v03/presenter_adapter.gd"
+ const OrdinaryVisualClock = preload("res://tests/ink_ultimate_presentation_art_20261006/dual_v03/presenter_adapter.gd")
+ const VISUAL_ADAPTER_SHA := "b3fe166685f954575f07ba7cb4786ca34b2e9e0325f3cad6286ec8ed2fdfe133"
+@@ -125,7 +127,7 @@
+  expected["actor_script"] = VISUAL_ACTOR_PATH
+  expected["actor_script_sha"] = VISUAL_ACTOR_SHA
+  var errors: Array[String] = release_identity_errors(value, expected)
+- var exact_actor: bool = _actor_is_composed() and FileAccess.get_sha256(VISUAL_ACTOR_PATH) == VISUAL_ACTOR_SHA and hero_view.get_script().get_base_script() == OrdinaryParentActor and hero_view.get_script().get_base_script().get_base_script() == ReleaseActor and FileAccess.get_sha256(VISUAL_PARENT_ACTOR_PATH) == VISUAL_PARENT_ACTOR_SHA
++ var exact_actor: bool = _actor_is_composed() and FileAccess.get_sha256(VISUAL_ACTOR_PATH) == VISUAL_ACTOR_SHA and hero_view.get_script().get_base_script() == OriginalBrushActor and FileAccess.get_sha256("res://tests/ink_ultimate_brush_art_20261008/candidate01/hero_view.gd") == OriginalBrushSHA and hero_view.get_script().get_base_script().get_base_script() == OrdinaryParentActor and hero_view.get_script().get_base_script().get_base_script().get_base_script() == ReleaseActor and FileAccess.get_sha256(VISUAL_PARENT_ACTOR_PATH) == VISUAL_PARENT_ACTOR_SHA
+  var differences: Array[String] = []
+  for error: String in inherited.get("errors",[]):
+   if exact_actor and error in VISUAL_ACTOR_DIFFERENCES: differences.append(error)
+@@ -299,3 +301,38 @@
+  if report.get("status","") == "HOLD":
+   floor_error = str(report.get("reason","boss_presentation_HOLD"))
+   _pause(true,"boss_presentation_fail_closed")
++
++# Exact continuation of the unchanged root-return and Q2 constructor source seals.
++func _return_binding_errors() -> Array[String]:
++ var errors: Array[String] = super._return_binding_errors()
++ var nav_path: String = "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd"
++ var key: String = "root_return_pin:"+nav_path
++ if key not in errors: return errors
++ var transition_path: String = "res://visual_rework_20261009/binding/g01_navigation_transition.json"
++ if FileAccess.get_sha256(transition_path) != "91ec28957ea7796049ccb2c017f0db84f3eb78d34c8ac84fe4df0d14a88f5a98": return errors
++ var t: Variant = JSON.parse_string(FileAccess.get_file_as_string(transition_path))
++ if not t is Dictionary or t.get("schema","") != "g01-navigation-exact-successor-1": return errors
++ var n: Dictionary = t.get("navigation_host",{})
++ var r: Dictionary = t.get("root_return",{})
++ var q: Dictionary = t.get("q2_overlay",{})
++ var a: Dictionary = t.get("director_authority",{})
++ if n.get("path","") != nav_path or str(n.get("before","")).is_empty() or str(n.get("after","")).is_empty(): return errors
++ if FileAccess.get_sha256(str(r.get("path",""))) != r.get("sha256","") or FileAccess.get_sha256(str(q.get("path",""))) != q.get("sha256",""): return errors
++ var original: Variant = JSON.parse_string(FileAccess.get_file_as_string(str(r.path)))
++ var overlay: Variant = JSON.parse_string(FileAccess.get_file_as_string(str(q.path)))
++ if not original is Dictionary or not overlay is Dictionary or root_return_contract != original: return errors
++ var predecessor: Dictionary = overlay.get("ancestor_pin_replacements",{}).get(nav_path,{})
++ if original.get("files",{}).get(nav_path,"") != r.get("navigation_before",""): return errors
++ if predecessor.get("before","") != r.get("navigation_before","") or predecessor.get("after","") != n.before or overlay.get("runtime_map",{}).get(nav_path,"") != n.before: return errors
++ if FileAccess.get_sha256(str(a.get("plan_path",""))) != a.get("plan_sha256",""): return errors
++ var plan: Variant = JSON.parse_string(FileAccess.get_file_as_string(str(a.plan_path)))
++ if not plan is Dictionary: return errors
++ var matches: int = 0
++ for change: Dictionary in plan.get("changed",[]):
++  if change.get("path","") == a.get("path",""):
++   if change.get("before","") != a.get("before","") or change.get("after","") != a.get("after",""): return errors
++   matches += 1
++ if matches != 1 or FileAccess.get_sha256(str(a.get("path",""))) != a.get("after",""): return errors
++ if FileAccess.get_sha256(nav_path) != n.after: return errors
++ errors.erase(key)
++ return errors

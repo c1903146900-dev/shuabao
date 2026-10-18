@@ -1,0 +1,31 @@
+{
+  "classification": "REIMPLEMENTATION",
+  "status": "WIP_NOT_ADMITTED_NOT_RUN",
+  "files": [
+    {
+      "target": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+      "payload": "sim.gd"
+    },
+    {
+      "target": "equipment_prism_20261011/model.gd",
+      "before": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "after": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "payload": "model.gd"
+    },
+    {
+      "target": "tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+      "before": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+      "after": "33da8f16f1679469f67fe05addf89c97625c269134c799b3063343f364f966ec",
+      "payload": "rest_service.gd"
+    }
+  ],
+  "static_checks": 5,
+  "missing": [
+    "P3 Catalog/UI admission",
+    "exact map preimage and current-after gate",
+    "independent integration review",
+    "native parse and real Session inputs"
+  ]
+}

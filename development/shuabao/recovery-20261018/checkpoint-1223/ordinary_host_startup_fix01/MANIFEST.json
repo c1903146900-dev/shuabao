@@ -1,0 +1,43 @@
+{
+  "classification": "NEW_BYTE_VERIFIED_SELECTION_OF_EXISTING_STARTUP_SUCCESSORS",
+  "status": "STATIC_CANDIDATE_NATIVE_NOT_RUN",
+  "target": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+  "before": "5c1cf30eefaf407c9a3c754dd86da5962edff8d3e2ab3d8a308b7e6239cec7ef",
+  "after": "7cd9301c3b6c74c93aa30b7f5522ab0d6f0686d03bdac37860ec829918c486f0",
+  "payload": "payload/tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+  "bytes": 21472,
+  "parent_manifest_sha256": "d24cf18fbcef701a55202a3d36fa6b4c4d0a7bbd900792e46bb0693cf682ec1a",
+  "inputs_verified": {
+    "tests/ink_ordinary_visuals_20261007/candidate01/host.gd": "5c1cf30eefaf407c9a3c754dd86da5962edff8d3e2ab3d8a308b7e6239cec7ef",
+    "visual_rework_20261009/runtime_host.gd": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b",
+    "visual_rework_20261009/runtime_actor.gd": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66",
+    "tests/ink_ultimate_brush_art_20261008/candidate01/hero_view.gd": "c42104017bfd3ffb131a9595061964828ba1483c8f80fa3510a070394e0ae36c",
+    "tests/ink_ultimate_presentation_art_20261006/dual_v03/imported_gate01/consumer_candidate.gd": "0a7fda57ef390040e815c62fbf9637b880e1066d75d53154043549eee0dd6a12",
+    "runtime_converted_assets/r2_conversion_binding.json": "99fddf1917f3ae2922c9d4dee1f8f5fd428f8052eb8b59374a515c5b38f4b2d6"
+  },
+  "donor_tail_sha256": "4477447abaa45541e12896173057a8f89e61cf174a0f8c19ff77e15cb23f6d26",
+  "exact_replaced_line_prefixes": [
+    "const OrdinaryVisualActor = ",
+    "const VISUAL_ACTOR_PATH := ",
+    "const VISUAL_ACTOR_SHA := ",
+    " var exact_actor: bool = "
+  ],
+  "exact_added_line_prefixes": [
+    "const OriginalBrushActor=",
+    "const OriginalBrushSHA="
+  ],
+  "original_host_reverse_diff_exact": true,
+  "source_files_changed": 1,
+  "base_written": false,
+  "engine_started": false,
+  "converted_binding_schema": "runtime-gltf-successor-r2-1",
+  "converted_five_files_actual_sha_verified": {
+    "tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation.glb": "2134978c8899ce3f94f785870159a1d46f15100ee2fd06dd583db37910bc5c1a",
+    "tests/ink_r2_presentation_art_20261006/candidate01/variant03/yanguizhou_r2_presentation.glb.import": "84326c1f9fd11afb50486e72182bc6d5386ce1042d506c5a842f3c72be65132c",
+    "runtime_converted_assets/yanguizhou_r2_presentation.scn": "0fa6e3c9533b414f66733c062b8f0c5df0f7bc1b231d930b394c198af9f649a5",
+    "runtime_converted_assets/r2_conversion_validation.json": "984b1de19c92213d74314fd7187511ff289d4778ac0193a268ed61e3a427ef1b",
+    "runtime_converted_assets/r2_conversion_guard.json": "aa56449f8ef66fa009e76631a6e50275b2d451b93197ebbdb774e57a50527b18"
+  },
+  "converted_files_still_missing": [],
+  "p3_gate": "Not produced here. P3 author must preserve original preimage/before and bind this exact new Host after in the unified migration."
+}

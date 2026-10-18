@@ -1,0 +1,55 @@
+--- tests/ink_river_hexes_20261006/ordinary01/sim.gd
++++ tests/ink_river_hexes_20261006/ordinary01/sim.gd
+@@ -80,6 +80,7 @@
+  return result
+ func end_encounter(result: String) -> void:
+  super.end_encounter(result)
++ if hero.dead: ink_p3.reset(ink_p3.rank)
+  refresh_passive23()
+  if hero.dead and _ordinary_potion_model!=null and _ordinary_potion_model.get_ref()!=null:
+   _ordinary_potion_model.get_ref().potion_consumer.retire()
+@@ -811,6 +812,7 @@
+  if not _c03_release_state_current(family,state,frame): return
+  _g01_register_root(family,state,frame)
+  _c02_register_release(family,state,frame)
++ _p3_release_committed(family,state,frame)
+  frame.seen = true
+  var evidence: Dictionary = {"family":family,"cast_id":frame.cast_id,"run_id":frame.run_id,"generation":frame.generation,"room_id":frame.room_id,"combat_level_id":frame.combat_level_id}
+  _c03_release_commit = {"frame":frame,"state":state,"evidence":evidence}
+@@ -1486,3 +1488,36 @@
+  # A before_hit reentrant settlement must not mint a new depth=1 scope from
+  # the still-visible basic birth token. The original request owns this depth.
+  return _c02_call_current(frame) and is_same(frame.request,request) and is_same(request,_g01_action_requests.back()) and _g01_call_current(request)
++
++# P3 REIMPLEMENTATION: one pure state, original successful-release authentication.
++const P3State = preload("res://yan_p3_reimplementation_20261018b/p3_state.gd")
++var ink_p3 = P3State.new()
++var ink_p3_receipts: Array = []
++
++func _p3_release_committed(family: String, state: Dictionary, frame: Dictionary) -> void:
++ if _c03_release_calls.is_empty() or not is_same(_c03_release_calls.back(),frame): return
++ if not _c03_release_state_current(family,state,frame): return
++ if family not in ["q1","q2","q3","e1","e2","e3"]: return
++ if hero.loadout.passive != "p3" or ink_p3.rank != int(hero.ranks.passive): return
++ var identity: String = JSON.stringify([frame.run_id,frame.generation,frame.room_id,family,frame.cast_id])
++ var result: Dictionary = ink_p3.release(family.left(1),identity,hero.cooldowns)
++ if not result.get("accepted",false): return
++ result.merge({"family":family,"cast_id":frame.cast_id,"run_id":frame.run_id,"generation":frame.generation,"room_id":frame.room_id,"source_time":hero_time})
++ ink_p3_receipts.append(result.duplicate(true))
++
++func _hero_reset_cooldowns(slots: Array) -> void:
++ super._hero_reset_cooldowns(slots)
++ ink_p3.cooldown_reset(slots)
++
++# Invoked only while the original Model command wrapper owns this exact frame.
++func p3_commit_model(owner: RefCounted, frame: Dictionary) -> Dictionary:
++ if not g02_model_is_bound(owner) or not owner.has_method("p3_commit_is_current") or not owner.p3_commit_is_current(self,frame):
++  return {"accepted":false,"reason":"p3_original_model_commit_required"}
++ var desired: int = int(owner.state.skills.P.rank) if owner.state.skills.P.candidate == "P3" else 0
++ if frame.action == "undo_skill" and int(frame.get("transaction",0)) > 0:
++  return ink_p3.undo_upgrade(int(frame.transaction),hero.cooldowns)
++ if desired == ink_p3.rank: return {"accepted":true,"changed":false}
++ if desired == 0:
++  ink_p3.reset(0)
++  return {"accepted":true,"changed":true}
++ return ink_p3.upgrade(desired,hero.cooldowns)

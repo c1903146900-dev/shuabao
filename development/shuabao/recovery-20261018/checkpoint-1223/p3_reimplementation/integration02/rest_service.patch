@@ -1,0 +1,10 @@
+--- tests/ink_rest_service_20261006/candidate01/rest_service.gd
++++ tests/ink_rest_service_20261006/candidate01/rest_service.gd
+@@ -40,6 +40,7 @@
+  # Healing observers may grant states. The final cleanup occurs AFTER healing,
+  # and has no outward notification after its final scalar/dictionary writes.
+  _clear_live_state(sim)
++ if sim.has_method("p3_rest_settled"): sim.p3_rest_settled(owner)
+  sim.observe_pending_health()
+  sim.transaction_active = false
+  owner._transitioning = false

@@ -1,0 +1,19 @@
+{
+  "status": "REAL_OWNED_PYTHON_CLEANUP_FIXTURE_PASSED_NOT_GAMEPLAY",
+  "accepted": true,
+  "engine_started": false,
+  "workload_ttl_seconds": 8,
+  "readiness_seconds": 2,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "errors": [],
+    "seconds": 0.3621280360000583
+  },
+  "elapsed": 0.41712562299994715,
+  "subreaper_restored": true,
+  "both_real_owned_processes_killed_and_reaped": true,
+  "publication": "Public summary omits process identities, timestamps and raw logs."
+}
