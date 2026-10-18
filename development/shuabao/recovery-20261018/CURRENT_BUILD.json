@@ -74,6 +74,13 @@
       "path": "development/shuabao/recovery-20261018/checkpoint-1343/worldfx_ui_native03/evidence01",
       "source_files": 3046,
       "scope": "Q1 same-wave shader age .26 to .66, geometry unchanged, old Q1 hidden; M/K/F1/P/preparation Space/chooser roundtrips; 13 controls on screen, 9 enabled synthetic GUI hover. Not native OS input or all skill branches."
+    },
+    {
+      "kind": "completed_floor_visible_ui",
+      "evidence_commit": "d0ae726d34d3817eec4a599a02679da982ef6b9a",
+      "path": "development/shuabao/recovery-20261018/checkpoint-1350/full_floor_native05/evidence01",
+      "source_files": 3044,
+      "scope": "Legal completion of remaining Lv7 Hex choices; existing completed-floor UI visible and resumed after confirmation cancel. Full floor/Boss ledger, rewards/rest/shop remain PASS. Dedicated settlement panel NOT_IMPLEMENTED; confirmed new-hero run not tested."
     }
   ],
   "excluded_from_this_build": [
@@ -85,7 +92,7 @@
     "All drafts not explicitly listed as validated source variants"
   ],
   "not_verified": [
-    "Visible final settlement UI after clearing pending Hex choices",
+    "Dedicated settlement panel not implemented; existing completed-floor UI is validated",
     "Death reset in integrated gameplay, all Q/E skill branches, curved gesture coverage",
     "New character art continuity and live combat integration",
     "Full-floor regression on 3046 WorldFX/UI successor",
