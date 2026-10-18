@@ -1,0 +1,158 @@
+{
+  "UI_real_error_state": "NOT_INJECTED_OR_OBSERVED",
+  "UI_terminal_states": "NOT_REACHED",
+  "accepted": true,
+  "all_skill_branches": "NOT_OBSERVED",
+  "art_acceptance": "NOT_REVIEWED",
+  "coverage": "real_first_room_first_Q1_release_worldFX_listener_legacy_hide_two_source_times_plus_UI_roundtrips",
+  "curved_gesture": "NOT_EXERCISED_BY_STRAIGHT_ROUTE_DRIVER",
+  "elapsed_ms": 22153,
+  "failure_diagnostics": [],
+  "first_release": {
+    "cast_id": 2,
+    "generation": 1,
+    "gesture_id": "1:normal-floor-4709864/first_floor/r01a:gesture:1",
+    "kind": "ink_q1_released",
+    "path_length": 10.6947575404765,
+    "released_at": 1.6,
+    "room_id": "normal-floor-4709864/first_floor/r01a",
+    "sequence": 11,
+    "source": "q1",
+    "speed": 24.0,
+    "wave_id": "1:normal-floor-4709864/first_floor/r01a:motion:2",
+    "width": 1.6
+  },
+  "images": 3,
+  "native_hit_test_proven": false,
+  "reason": "",
+  "shader_clock_tolerance": 0.00001,
+  "source_released": true,
+  "source_state_seeded": false,
+  "synthetic_visible_buttons_and_route_inputs": true,
+  "ui_native_hit_test": "NATIVE_OS_NOT_EXERCISED; enabled growth controls use observed synthetic Viewport GUI hover",
+  "ui_observed": {
+    "M_K_F1_and_original_callbacks": "OBSERVED_TWO_WAY_POSTDRAW",
+    "P_shop_modal": "OBSERVED_OPEN_CLOSE",
+    "Space_pause_status": "OBSERVED_PREPARATION_ONLY",
+    "chooser_suspend_resume_same_objects": "OBSERVED",
+    "growth_13_original_button_geometry": "OBSERVED_FULLY_IN_VIEWPORT_AND_ANCESTOR_CLIPS",
+    "growth_enabled_GUI_hover_targets": {
+      "count": 9,
+      "disabled_controls_geometry_only": [
+        "r1_choice",
+        "r2_choice",
+        "undo_button",
+        "respec_button"
+      ],
+      "native_OS_input_proven": false,
+      "synthetic_viewport_motion": true
+    },
+    "initial_four_choice_modal": "OBSERVED"
+  },
+  "visual_samples": [
+    {
+      "accepted": true,
+      "controller_counter": 13,
+      "drawn_keys": [
+        "1:normal-floor-4709864/first_floor/r01a:motion:2"
+      ],
+      "expected_shader_age": 0.26,
+      "layers": [
+        {
+          "age": 0.26,
+          "age_error": 0.0,
+          "front_distance": 6.24000000000001,
+          "geometry_sha256": "70fcb2971fc2a3ec4a76e7cc4f41e8eafc1a1dfba35a27cf4c9837a9415e5ab1",
+          "material_id": -9223371298170728861,
+          "mesh_id": -9223371298204283288,
+          "node_id": 738667269725,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        },
+        {
+          "age": 0.26,
+          "age_error": 0.0,
+          "front_distance": 6.24000000000001,
+          "geometry_sha256": "59ede9720806e8bd24a88a12e11978d4874d833c8e8f70d423a081d64b32e838",
+          "material_id": -9223371298120397205,
+          "mesh_id": -9223371298153951639,
+          "node_id": 738717601386,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        },
+        {
+          "age": 0.26,
+          "age_error": 0.0,
+          "front_distance": 6.24000000000001,
+          "geometry_sha256": "d50bb7fbf82fa4629b25c5a1f05fc67246e8ce0b41568115a39115f9eea476cf",
+          "material_id": -9223371298070065554,
+          "mesh_id": -9223371298103619988,
+          "node_id": 738767933037,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        }
+      ],
+      "legacy_q1_visible": false,
+      "reason": "",
+      "released_at": 1.6,
+      "source_hero_time": 1.86,
+      "source_phase": "combat",
+      "wave_id": "1:normal-floor-4709864/first_floor/r01a:motion:2"
+    },
+    {
+      "accepted": true,
+      "controller_counter": 15,
+      "drawn_keys": [
+        "1:normal-floor-4709864/first_floor/r01a:motion:2"
+      ],
+      "expected_shader_age": 0.660000000000001,
+      "layers": [
+        {
+          "age": 0.660000000000001,
+          "age_error": 0.0,
+          "front_distance": 10.6947575404765,
+          "geometry_sha256": "70fcb2971fc2a3ec4a76e7cc4f41e8eafc1a1dfba35a27cf4c9837a9415e5ab1",
+          "material_id": -9223371298170728861,
+          "mesh_id": -9223371298204283288,
+          "node_id": 738667269725,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        },
+        {
+          "age": 0.660000000000001,
+          "age_error": 0.0,
+          "front_distance": 10.6947575404765,
+          "geometry_sha256": "59ede9720806e8bd24a88a12e11978d4874d833c8e8f70d423a081d64b32e838",
+          "material_id": -9223371298120397205,
+          "mesh_id": -9223371298153951639,
+          "node_id": 738717601386,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        },
+        {
+          "age": 0.660000000000001,
+          "age_error": 0.0,
+          "front_distance": 10.6947575404765,
+          "geometry_sha256": "d50bb7fbf82fa4629b25c5a1f05fc67246e8ce0b41568115a39115f9eea476cf",
+          "material_id": -9223371298070065554,
+          "mesh_id": -9223371298103619988,
+          "node_id": 738767933037,
+          "sealed_shader_instance": true,
+          "shader_path": "res://visual_rework_20261009/views/q1_river.gdshader",
+          "visible": true
+        }
+      ],
+      "legacy_q1_visible": false,
+      "reason": "",
+      "released_at": 1.6,
+      "source_hero_time": 2.26,
+      "source_phase": "combat",
+      "wave_id": "1:normal-floor-4709864/first_floor/r01a:motion:2"
+    }
+  ]
+}

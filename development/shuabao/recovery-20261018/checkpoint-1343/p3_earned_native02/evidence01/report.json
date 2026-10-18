@@ -1,0 +1,30 @@
+{
+  "accepted": false,
+  "coverage": {
+    "cross_room_nonzero": "NOT_REACHED",
+    "death_reset": "NOT_OBSERVED",
+    "earned_P3": "PASS",
+    "rest_retention": "NOT_REACHED",
+    "successful_Q1": "PASS",
+    "threshold_refund": "PASS"
+  },
+  "draw_count": 417,
+  "elapsed_ms": 58320,
+  "raw_image_bytes": 7372800,
+  "reason": "NOT_REACHED_nonzero_P3_progress_for_retention",
+  "scope": "original_r01_earned_P3_r02_Q1_r03_rest",
+  "screenshots": [
+    {
+      "name": "01_earned_P3",
+      "raw_bytes": 3686400,
+      "sha256": "f6dafd3c80e11315eb7382faac459a72c4ef8c7e81c03ee5080eb3a88b16f74c"
+    },
+    {
+      "name": "failure",
+      "raw_bytes": 3686400,
+      "sha256": "30160e7b33fc3d5f40dadd374c5804f8306be8f0df727dd747b3d75b7a23af33"
+    }
+  ],
+  "source_released": true,
+  "synthetic": true
+}

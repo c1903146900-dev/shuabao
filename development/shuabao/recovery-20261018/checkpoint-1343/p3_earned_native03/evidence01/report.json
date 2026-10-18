@@ -1,0 +1,30 @@
+{
+  "accepted": true,
+  "coverage": {
+    "cross_room_nonzero": "PASS",
+    "death_reset": "NOT_OBSERVED",
+    "earned_P3": "PASS",
+    "rest_retention": "PASS",
+    "successful_Q1": "PASS",
+    "threshold_refund": "NOT_REACHED"
+  },
+  "draw_count": 441,
+  "elapsed_ms": 59673,
+  "raw_image_bytes": 7372800,
+  "reason": "",
+  "scope": "original_r01_earned_P3_r02_Q1_r03_rest",
+  "screenshots": [
+    {
+      "name": "01_earned_P3",
+      "raw_bytes": 3686400,
+      "sha256": "6165fad2f6cc02e28b10e6eb97e9f9435cf1269216aee8a048089f9fe14bb9c4"
+    },
+    {
+      "name": "02_rest_retained",
+      "raw_bytes": 3686400,
+      "sha256": "0983aa579f8ce706b41fc9761a64b79b30a49c4e0cbf5e603da7eec54ae7f199"
+    }
+  ],
+  "source_released": true,
+  "synthetic": true
+}

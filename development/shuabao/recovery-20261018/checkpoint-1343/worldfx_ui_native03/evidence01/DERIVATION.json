@@ -1,0 +1,11 @@
+{
+  "original_sha256": "f663d6437705f70b51e2c6e45b5513e8851d4eb112c0e132d8f08878b013681f",
+  "removed_paths": [
+    "/rows/2/value/projection/test_definitions",
+    "/rows/4/value/projection/test_definitions",
+    "/rows/5/value/projection/test_definitions"
+  ],
+  "reason": "Exclude embedded design authority conversation metadata; retain measured runtime rows.",
+  "public_uncompressed_sha256": "0648f7b4a338593c43572b8376445a2f0b88e0e31505034753e0353ccae8dab0",
+  "public_gzip_sha256": "f16bf6f321c4083608daf2b5261777f734486cc78436db3391bda2c708e495de"
+}

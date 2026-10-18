@@ -1,0 +1,32 @@
+{
+  "accepted": true,
+  "coverage": {
+    "boss_settlement": "PASS",
+    "confirmed_new_hero_run": "NOT_TESTED",
+    "full_floor": "PASS",
+    "hero_confirmation_cancel": "PASS",
+    "rest": "PASS",
+    "reward_uniqueness": "PASS",
+    "shop_cross_room_boundary": "PASS",
+    "shop_current_visit_undo": "PASS"
+  },
+  "draw_count": 1239,
+  "elapsed_ms": 173444,
+  "raw_image_bytes": 7372800,
+  "reason": "",
+  "scope": "original_Q1_build_full_first_floor_and_cancelled_hero_confirmation",
+  "screenshots": [
+    {
+      "name": "boss_settlement",
+      "raw_bytes": 3686400,
+      "sha256": "bdece592f58abe7ec9ce224708d50a138a6231a529132de3409c85983e37cd56"
+    },
+    {
+      "name": "resumed_same_settled_run",
+      "raw_bytes": 3686400,
+      "sha256": "bdece592f58abe7ec9ce224708d50a138a6231a529132de3409c85983e37cd56"
+    }
+  ],
+  "source_released": true,
+  "synthetic": true
+}
