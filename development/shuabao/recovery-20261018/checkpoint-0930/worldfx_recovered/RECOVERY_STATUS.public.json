@@ -1,0 +1,22 @@
+{
+  "status": "FOUR_FILES_EXACT_BYTES_RECOVERED_FROM_COMPLETE_PRIOR_INPUTS",
+  "recovered_files": {
+    "payload/yan_visual_attach_20261018/entry.gd": "b69e0e46bc52be369d04c733e87db78e9a14913491a76dd1992a973e203e00a4",
+    "payload/scenes/hero_entry.tscn": "f49d62fb4af6f8467102bc745aa8dcf44333724c1fe9422db3d8a4a97e26a41a",
+    "fixture/yan_worldfx_observation_20261018/observer.gd": "eec7678ac5137cac4387e29cf88969ba8b745eb4a78a046924b6fb8a93f11976",
+    "historical_runner01/yan_worldfx_smoke_20261018/runner.gd": "7c42a5f2a49cfb6fb68a9ec0f89c036ff8dec60a665399377ed9be771af0129c"
+  },
+  "recovered_count": 4,
+  "historical_hashes_all_match": true,
+  "current_base_binding_validated": false,
+  "current_480ca_or_3047_base_available_here": false,
+  "runtime_status": "NOT_RUN",
+  "art_acceptance": "NOT_REVIEWED",
+  "historical_runner01_status": "NOT_CLEARED_TO_RUN; old binding is archival only",
+  "runner_review_pending": [
+    "Validate actual node,mesh,material and exact sealed Q1 shader",
+    "Match layer age to same-postdraw hero_time minus first release time within 1e-5",
+    "Recheck global budget and soft absolute deadline before covered=true"
+  ],
+  "runner02": "Original write failed during executor disconnection; no verified complete prior revision02 bytes"
+}
