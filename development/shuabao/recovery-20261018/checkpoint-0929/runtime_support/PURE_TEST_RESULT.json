@@ -1,0 +1,29 @@
+{
+  "status": "PURE_TESTS_ONLY_NO_CHILDREN_OR_ENGINE",
+  "checks": [
+    "memory_kib",
+    "memory_bad_''",
+    "memory_bad_'VmSwap: nope kB'",
+    "memory_bad_'VmSwap: 2 MB'",
+    "memory_bad_'VmSwap: 2 kB\\nVmSwap: 3 kB'",
+    "exact_policy",
+    "normal_script",
+    "normal_resolution",
+    "cli_reject_['--headless']",
+    "cli_reject_['--headless=true']",
+    "cli_reject_['--editor']",
+    "cli_reject_['-e']",
+    "cli_reject_['--path', '/tmp']",
+    "cli_reject_['--script', '../test.gd']",
+    "cli_reject_['--script', 'res://../bad.gd']",
+    "cli_reject_['--resolution', '0x1']",
+    "exact_tree",
+    "modified_tree",
+    "extra_file",
+    "symlink",
+    "launch595_owned_TERM",
+    "launch600_inventory_disk_failure_still_KILL",
+    "cleanup_disk_failure_retains_until_reaped"
+  ],
+  "count": 23
+}

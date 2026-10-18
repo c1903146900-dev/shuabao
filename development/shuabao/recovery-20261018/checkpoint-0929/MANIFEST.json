@@ -1,0 +1,36 @@
+{
+  "status": "RECOVERED_CAPTURE_AND_REIMPLEMENTED_GUARD_DRAFT",
+  "files": [
+    {
+      "path": "hero2d/capture.gd",
+      "bytes": 5196,
+      "sha256": "36e64b079e069d5e259d9ea0915c263771c8612f637195e07c4061fdd6ec9dfb"
+    },
+    {
+      "path": "runtime_support/owned_runtime_guard.py",
+      "bytes": 12917,
+      "sha256": "5febee5aee051af45740ca8f20b9a00c44bda9b45fd35633caf0d8943941600a"
+    },
+    {
+      "path": "runtime_support/CODE_PINS.json",
+      "bytes": 1370,
+      "sha256": "6a9399e9febda7db6936bf46203017335b3b908cfa0cbfd0597ea41b641e8e30"
+    },
+    {
+      "path": "runtime_support/test_guard_pure.py",
+      "bytes": 3872,
+      "sha256": "831cd871b8ad65fe11f510bbf159f269c39a9d0d296d6e9e66a4dd3bf7288f25"
+    },
+    {
+      "path": "runtime_support/PURE_TEST_RESULT.json",
+      "bytes": 812,
+      "sha256": "938bbc57de0d80c9d41512e87f65d2708bcdfa92f0af78a31604aec2650bf115"
+    }
+  ],
+  "notes": [
+    "capture.gd matches the supplied historical pin; no new native run or integration.",
+    "Guard wrapper is reimplemented and pending independent review; PURE_TEST_RESULT concerns pure tests, not engine execution.",
+    "Guard component dependencies are preserved in checkpoint-0926/runtime_support; assemble only after pin verification.",
+    "No latest complete game source or release acceptance."
+  ]
+}
