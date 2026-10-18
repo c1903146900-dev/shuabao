@@ -1,0 +1,104 @@
+{
+  "schema": "yan-terminal-summary-native-fixture-v3",
+  "revision": 3,
+  "status": "STARTUP_DIAGNOSTIC_ONLY_STATIC_CHECKED_PENDING_INDEPENDENT_REVIEW_NOT_RUN",
+  "source_candidate": "../terminal_ui_candidate01",
+  "source_manifest_sha256": "c8141d0eba466734403829985459af5d26cbc32c298a50ab7c607dbe98828af6",
+  "source_inventory_sha256": "c74a9b93954f5f30abeb0721979d4d5600c02f74e1931ae3f03cd36cabc85436",
+  "production_files": 3047,
+  "resource_cache_files": 98,
+  "fixture_files": 4,
+  "expected_stage_files": 3149,
+  "entry": "res://yan_terminal_full_floor_20261018c/runner.gd",
+  "payload": [
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/binding.json",
+      "payload": "payload/yan_terminal_full_floor_20261018c/binding.json",
+      "sha256": "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053",
+      "bytes": 443265
+    },
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/driver.gd",
+      "payload": "payload/yan_terminal_full_floor_20261018c/driver.gd",
+      "sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
+      "bytes": 4355
+    },
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/runner.gd",
+      "payload": "payload/yan_terminal_full_floor_20261018c/runner.gd",
+      "sha256": "bc933d0894fc729c9c82cef20a6feff22bd01447f4217ec91001153c179403df",
+      "bytes": 44613
+    },
+    {
+      "target": "res://yan_terminal_ui_probe_20261018/probe.gd",
+      "payload": "payload/yan_terminal_ui_probe_20261018/probe.gd",
+      "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
+      "bytes": 9025
+    }
+  ],
+  "limits": {
+    "soft_signal_watchdog_seconds": 470,
+    "absolute_process_frame_deadline_seconds": 480,
+    "max_screenshots": 3,
+    "max_raw_image_bytes": 16777216,
+    "startup_observation_seconds": 30
+  },
+  "arguments": {
+    "required": "--full-floor-evidence=/absolute/fresh/evidence_directory",
+    "default_mode": "--terminal-outcome=victory",
+    "independent_optional_mode": "--terminal-outcome=defeat",
+    "original_host_evidence": "--ink-evidence=/absolute/fresh/separate/host_evidence_directory"
+  },
+  "upstream": {
+    "commit": "c12298f655b258b67669689e204309b6aff9306e",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1345/p3_reimplementation/full_floor07/",
+    "runner_sha256": "efa0a30b681051fdad434a953f68d8ec18edc89b185573402fdfa5f0bcd1f881",
+    "driver_sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
+    "passive_summary_helper_sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a"
+  },
+  "recovery_classification": {
+    "production_candidate": "EXACT_RECOVERED_BYTES",
+    "passive_helper": "EXACT_RECOVERED_BYTES",
+    "route_driver": "EXACT_FULL_FLOOR07_BYTES",
+    "runner": "PROBE03_READ_ONLY_STARTUP_OBSERVER_ADDED_TO_REVIEWED_PROBE02",
+    "binding": "NEW_3047_PRODUCTION_BINDING"
+  },
+  "validation": {
+    "self_static_checks": 50,
+    "independent_review": "PENDING",
+    "GDScript_parse": "NOT_RUN",
+    "native_victory": "NOT_RUN",
+    "native_defeat": "NOT_RUN",
+    "art_acceptance": "NOT_REVIEWED"
+  },
+  "coverage_policy": [
+    "Do not combine independent victory and defeat evidence as one invocation",
+    "Old full_floor_native05 verifies the original source route, not this summary",
+    "Victory keeps all original full-floor and final Hex gates",
+    "No confirmed new hero run, rewards, progression edits, source seeding, or clock writes",
+    "Synthetic handler input is not a native operating-system click proof",
+    "Changed future hero or Q1 source requires a separately reviewed binding and inventory"
+  ],
+  "parent_fixture_manifest_sha256": "e3f35d18fffcdac00d381533805a72519acd26d2b3726f9ae29caaae3f104c8e",
+  "previous_actual_failure": {
+    "guard_exit": -15,
+    "guard_elapsed_seconds": 328.6819793070001,
+    "operator_stopped": true,
+    "fixture_evidence_empty": true,
+    "host_receipt_status": "HOLD",
+    "host_receipt_failures": [
+      "stable_startup_draws_timeout"
+    ],
+    "host_receipt_sha256": "3ffc351fb3b6fa8de47a3800d19343213bec68f50ea715cef653925d902a4797",
+    "guard_exit_sha256": "dc73e95f58d10e46bf17a8e78b21eb4dee0f866470480e66594164a29e0b400e",
+    "terminal_summary_reached": false,
+    "cause_of_draw_timeout": "NOT_ESTABLISHED"
+  },
+  "diagnostic_delta": [
+    "Explicit original HOLD, finished, entry rejection and startup errors terminate immediately",
+    "Independent process_frame startup poll plus bounded 30s observation; no readiness override",
+    "Actual startup counters, sizes, ticks and passive Host ready-signal timestamps",
+    "Compact receipt capture; no full actor/bone proof copy",
+    "Original source and preparation constants unchanged; warm-cache success is not a cold-start fix"
+  ]
+}

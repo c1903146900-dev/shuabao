@@ -1,0 +1,41 @@
+{
+  "status": "STATIC_DIAGNOSTIC_PACKAGE_NOT_NATIVE",
+  "files": {
+    "DIAGNOSTIC_DELTA_FROM_PROBE02.diff": {
+      "sha256": "cfb9d7294dde76bb2330c50a2bda997bb132a8c62ce00a6dcf4a79bbc1e349a8",
+      "bytes": 9022
+    },
+    "FIXTURE_MANIFEST.json": {
+      "sha256": "b4c4154c535779d59fecf2e8dbc774334775b529dc57597d1b399cd572bcc54d",
+      "bytes": 4808
+    },
+    "README.md": {
+      "sha256": "78dd7c209d1b034f7b8bb66392fa9feaf1ca5df0778a7cec7bec312c248aaece",
+      "bytes": 3345
+    },
+    "STATIC_CHECKS.json": {
+      "sha256": "9415cd6a9d1f4c1d6b158ca4941f97181c5348f2bfefa8613e785ddbda0d210f",
+      "bytes": 4795
+    },
+    "check_static.py": {
+      "sha256": "5986f792e3a9c3f4c60dddc5936051af496263bfcf9f5246f2de33b7ea97bdf1",
+      "bytes": 3961
+    },
+    "payload/yan_terminal_full_floor_20261018c/binding.json": {
+      "sha256": "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053",
+      "bytes": 443265
+    },
+    "payload/yan_terminal_full_floor_20261018c/driver.gd": {
+      "sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
+      "bytes": 4355
+    },
+    "payload/yan_terminal_full_floor_20261018c/runner.gd": {
+      "sha256": "bc933d0894fc729c9c82cef20a6feff22bd01447f4217ec91001153c179403df",
+      "bytes": 44613
+    },
+    "payload/yan_terminal_ui_probe_20261018/probe.gd": {
+      "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
+      "bytes": 9025
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "accepted": true,
+  "checks": [
+    {
+      "check": "parent_runner_exact",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__initialize",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__watchdog_exit",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__budget",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__frame",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__identity",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__available",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__sample",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__diagnose",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__json",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__picture",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__capture",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__press",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__hex",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__stop",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__finish",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__same_owners",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__adopt_entry",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__growth_open",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__resolve_hexes",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__completed_ui",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__account",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__record_health",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__combat",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__upgrade",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__service",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__shop_roundtrip",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__shop_boundary",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__hero_cancel",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__full_route",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__next_node",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__summary_check",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__summary_roundtrip",
+      "accepted": true
+    },
+    {
+      "check": "preserved_probe02_function__natural_defeat",
+      "accepted": true
+    },
+    {
+      "check": "only_five_observer_functions_added",
+      "accepted": true
+    },
+    {
+      "check": "unchanged_payload/yan_terminal_full_floor_20261018c/binding.json",
+      "accepted": true
+    },
+    {
+      "check": "unchanged_payload/yan_terminal_full_floor_20261018c/driver.gd",
+      "accepted": true
+    },
+    {
+      "check": "unchanged_payload/yan_terminal_ui_probe_20261018/probe.gd",
+      "accepted": true
+    },
+    {
+      "check": "signal_watchdog_observes_startup_without_await",
+      "accepted": true
+    },
+    {
+      "check": "explicit_HOLD_precedes_observation_timeout",
+      "accepted": true
+    },
+    {
+      "check": "entry_error_and_timeout_are_observed",
+      "accepted": true
+    },
+    {
+      "check": "failure_locks_success_before_evidence",
+      "accepted": true
+    },
+    {
+      "check": "startup_abort_does_not_free_or_command_source",
+      "accepted": true
+    },
+    {
+      "check": "early_failure_does_not_copy_bone_proof",
+      "accepted": true
+    },
+    {
+      "check": "no_new_readiness_assignment",
+      "accepted": true
+    },
+    {
+      "check": "actual_preparation_failure_sets_HOLD",
+      "accepted": true
+    },
+    {
+      "check": "original_10_second_gate_unchanged",
+      "accepted": true
+    },
+    {
+      "check": "original_ink_evidence_flag_exists",
+      "accepted": true
+    },
+    {
+      "check": "original_host_has_draw_count_and_start_ticks",
+      "accepted": true
+    },
+    {
+      "check": "3047_production_source_still_exact",
+      "accepted": true
+    }
+  ],
+  "scope": "STATIC_SOURCE_AND_BYTE_CHECKS_ONLY",
+  "parse": "NOT_RUN",
+  "native": "NOT_RUN"
+}

@@ -1,0 +1,167 @@
+--- probe02/runner.gd
++++ probe03/runner.gd
+@@ -1,5 +1,5 @@
+ extends SceneTree
+-# New probe02 built from the exact, independently exercised full_floor07 fixture.
++# Probe03 adds fail-closed startup diagnosis to the reviewed probe02 fixture.
+ # This is not an exact recovery of the lost terminal runner. No gameplay state writes.
+ const BINDING = "res://yan_terminal_full_floor_20261018c/binding.json"
+ const BINDING_SHA = "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053"
+@@ -35,6 +35,10 @@
+ var released: bool = false
+ var draw_count: int = 0
+ var watchdog_fired: bool = false
++var startup_watch_active: bool = false
++var startup_watch_deadline: int = 0
++var startup_last_status: String = ""
++var startup_lifecycle: Dictionary = {}
+ 
+ func _initialize() -> void:
+  started = Time.get_ticks_msec()
+@@ -46,7 +50,116 @@
+  call_deferred("_run")
+ 
+ func _wall_watchdog() -> void:
+- if Time.get_ticks_msec() >= deadline: _watchdog_exit("absolute_480s_deadline")
++ if Time.get_ticks_msec() >= deadline:
++  _watchdog_exit("absolute_480s_deadline")
++  return
++ if startup_watch_active and not finishing and not watchdog_fired: _startup_poll()
++
++# Read only the existing preparation receipt. A source HOLD is final, even when
++# startup_session_error/floor_error remain empty. No readiness bit is assigned.
++func _startup_diagnostic() -> Dictionary:
++ var out: Dictionary={"phase":phase,"elapsed_ms":Time.get_ticks_msec()-started,"draw_count":draw_count}
++ out["observation_usec"]=Time.get_ticks_usec()
++ out["lifecycle"]=startup_lifecycle.duplicate(true)
++ if is_instance_valid(entry):
++  out["entry_screen"]=int(entry.screen)
++  out["entry_error"]=entry.error_label.text
++ if not is_instance_valid(host): out["host_valid"]=false; return out
++ out["host_valid"]=true
++ out["host_id"]=host.get_instance_id()
++ out["host_script"]=host.get_script().resource_path
++ out["host_draw_count"]=host.draw_count
++ out["host_start_ticks_usec"]=host.start_ticks
++ out["host_elapsed_usec"]=Time.get_ticks_usec()-int(host.start_ticks)
++ out["host_is_node_ready"]=host.is_node_ready()
++ out["display_server"]=DisplayServer.get_name()
++ out["rendering_method"]=RenderingServer.get_current_rendering_method()
++ var viewport_size: Vector2=host.get_viewport().get_visible_rect().size
++ var last_size: Vector2=host.get("_mainprep_last_size")
++ out["viewport_size"]=[viewport_size.x,viewport_size.y]
++ out["last_stable_viewport_size"]=[last_size.x,last_size.y]
++ for key: String in ["_mainprep_required","_mainprep_pending","_mainprep_attempted","_mainprep_stable_draws","_mainprep_suppressed_process_calls","_mainprep_focus_lost","initial_started","finished","startup_session_error","floor_error","evidence_dir"]:
++  out[key]=host.get(key)
++ var receipt: Dictionary=host.get("_mainprep_receipt")
++ var serialized: String=JSON.stringify(receipt)
++ out["receipt_sha256"]=serialized.sha256_text()
++ out["receipt_bytes"]=serialized.to_utf8_buffer().size()
++ if int(out.receipt_bytes)<=65536:
++  out["mainprep_receipt"]=receipt.duplicate(true)
++ else:
++  out["mainprep_receipt"]={"status":receipt.get("status",""),"failures":receipt.get("failures",[]),"full_receipt_omitted_over_64KiB":true}
++ var installation: Dictionary=host.get("ordinary_visual_installation")
++ out["ordinary_visual_installation"]={"accepted":installation.get("accepted",false),"reason":installation.get("reason",""),"errors":installation.get("errors",[])}
++ for pair: Array in [["sim","sim_script"],["hero_view","hero_script"],["q1_view","q1_script"]]:
++  var object: Variant=host.get(str(pair[0]))
++  if is_instance_valid(object): out[str(pair[1])]=object.get_script().resource_path
++ if is_instance_valid(host.sim):
++  out["source_phase"]=host.sim.phase
++  out["source_time"]=host.sim.hero_time
++  out["source_paused"]=host.sim.paused
++ return out
++
++# Passive lifecycle timestamps, not a new readiness or admission authority.
++func _startup_child_entered(node: Node) -> void:
++ var script: Script=node.get_script()
++ if script==null or script.resource_path!="res://scripts/integration/yanguizhou_first_floor.gd": return
++ startup_lifecycle["actual_host_id"]=node.get_instance_id()
++ startup_lifecycle["child_entered_tree_usec"]=Time.get_ticks_usec()
++ startup_lifecycle["ready_at_child_entered"]=node.is_node_ready()
++ node.ready.connect(_startup_ready_signal.bind(node.get_instance_id()),CONNECT_ONE_SHOT)
++
++func _startup_ready_signal(host_id: int) -> void:
++ startup_lifecycle["ready_signal_host_id"]=host_id
++ startup_lifecycle["ready_signal_usec"]=Time.get_ticks_usec()
++
++func _startup_abort(why: String, diagnostic: Dictionary) -> void:
++ if watchdog_fired or finishing: return
++ startup_watch_active=false
++ watchdog_fired=true
++ completed=false
++ finishing=true
++ reason=why
++ observations.append({"startup_failure":diagnostic})
++ if screenshots.size()<3: _picture("startup_failure",true)
++ # Main preparation may still own a display coroutine. Do not force-close,
++ # mutate its admission state or free that subtree; terminate this fixture.
++ var report: Dictionary={"accepted":false,"reason":why,"phase":phase,"startup":diagnostic,"source_released":false,"cleanup":"PROCESS_EXIT_REQUIRED_NO_PREPARATION_GATE_OVERRIDE","elapsed_ms":Time.get_ticks_msec()-started,"coverage":coverage.duplicate(true),"screenshots":screenshots,"raw_image_bytes":image_bytes}
++ var io_ok: bool=_json("observations.json",observations)
++ io_ok=_json("startup_failure.json",diagnostic) and io_ok
++ io_ok=_json("report.json",report) and io_ok
++ print("YAN_TERMINAL_STARTUP_FAILED ",JSON.stringify(report)," IO_OK=",io_ok)
++ quit(4)
++
++func _startup_poll() -> bool:
++ if watchdog_fired or finishing: return false
++ if not is_instance_valid(entry):
++  _startup_abort("startup_owner_changed",_startup_diagnostic()); return false
++ if not is_instance_valid(host):
++  if not entry.error_label.text.is_empty():
++   _startup_abort("original_entry_rejected:"+entry.error_label.text,_startup_diagnostic()); return false
++  if Time.get_ticks_msec()>=startup_watch_deadline:
++   _startup_abort("entry_observation_30s_deadline",_startup_diagnostic()); return false
++  return true
++ if entry.active_room!=host:
++  _startup_abort("startup_owner_changed",_startup_diagnostic()); return false
++ var receipt: Dictionary=host.get("_mainprep_receipt")
++ var status: String=str(receipt.get("status",""))
++ var why: String=""
++ if status=="HOLD": why="original_mainprep_HOLD:"+JSON.stringify(receipt.get("failures",[]))
++ elif status=="interrupted_during_preparation": why="original_mainprep_interrupted"
++ elif bool(host.finished): why="host_finished_during_startup"
++ elif not str(host.startup_session_error).is_empty(): why="original_startup_session_error:"+str(host.startup_session_error)
++ elif not str(host.floor_error).is_empty(): why="original_startup_floor_error:"+str(host.floor_error)
++ elif Time.get_ticks_msec()>=startup_watch_deadline: why="startup_observation_30s_deadline"
++ if not why.is_empty():
++  _startup_abort(why,_startup_diagnostic()); return false
++ if status!=startup_last_status:
++  startup_last_status=status
++  var diagnostic: Dictionary=_startup_diagnostic()
++  observations.append({"startup_status_change":diagnostic})
++  if not _json("startup_observation.json",diagnostic):
++   _startup_abort("startup_observation_write_failed",diagnostic); return false
++ return true
+ 
+ func _watchdog_exit(why: String = "independent_470s_watchdog") -> void:
+  if watchdog_fired: return
+@@ -189,14 +302,26 @@
+  root.add_child(entry)
+  if entry.get_script().resource_path != "res://yan_visual_attach_20261018/entry.gd": await _stop("actual_thin_entry_required"); return
+  await _frame()
++ entry.child_entered_tree.connect(_startup_child_entered)
++ startup_watch_active=true
++ startup_watch_deadline=Time.get_ticks_msec()+30000
++ startup_lifecycle["request_start_before_usec"]=Time.get_ticks_usec()
+  entry.request_start("yanguizhou")
+- while _budget() and not is_instance_valid(entry.active_room): await _frame()
++ startup_lifecycle["request_start_call_return_usec"]=Time.get_ticks_usec()
++ while _budget() and not is_instance_valid(entry.active_room):
++  if not _startup_poll(): return
++  await _frame()
++  if watchdog_fired or finishing: return
+  if not _budget(): await _stop("entry_not_ready"); return
+  host = entry.active_room
++ startup_lifecycle["first_host_observed_usec"]=Time.get_ticks_usec()
+  phase="original_mainprep"
+  while _budget() and (host._mainprep_required or not host.initial_started):
+-  if not str(host.startup_session_error).is_empty() or not str(host.floor_error).is_empty(): break
++  if not _startup_poll(): return
+   await _frame()
++  if watchdog_fired or finishing: return
++ if not _startup_poll(): return
++ startup_watch_active=false
+  if not _budget() or not str(host.startup_session_error).is_empty() or not str(host.floor_error).is_empty(): await _stop("original_startup_failed"); return
+  sim=host.sim; session=host.shop_session; model=session.ledger.model; hero=sim.hero; room=sim.room_id; generation=sim.encounter_generation
+  phase="original_hex"
