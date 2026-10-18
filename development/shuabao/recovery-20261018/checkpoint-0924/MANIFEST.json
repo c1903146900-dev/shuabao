@@ -1,0 +1,22 @@
+{
+  "status": "RECOVERED_SOURCE_FRAGMENTS_ONLY_NOT_APPLIED_OR_RUNTIME_VALIDATED",
+  "base_commit": "708454b99a631adac381417f820aabe6798c148c",
+  "files": [
+    {
+      "path": "restore_base.py",
+      "bytes": 2538,
+      "sha256": "d91dfbbc3f76a491a580f27d0a0c413a442acd9632fc34e99d128e3dc0519bc6"
+    },
+    {
+      "path": "ui_draft/yan_trial_ui_20261018/presenter.gd",
+      "bytes": 11119,
+      "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f"
+    }
+  ],
+  "notes": [
+    "UI presenter is an unapplied draft; its dependencies and full latest Yan/P3 project are not included.",
+    "restore_base.py retrieves only historical candidate43; its current execution result is not asserted.",
+    "Recovery helper does not provide full hostile-filesystem symlink containment; use a fresh trusted directory, never Python -O.",
+    "No new engine run, export, full game or release acceptance is claimed."
+  ]
+}
