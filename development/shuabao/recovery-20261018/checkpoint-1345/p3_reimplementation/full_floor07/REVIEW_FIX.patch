@@ -1,0 +1,50 @@
+--- full_floor06/runner.gd
++++ full_floor07/runner.gd
+@@ -7,7 +7,7 @@
+ var driver
+ const ROUTE = ["r01a","r02a","r03a","r04a","r05a","r06a","r07a","r08a","r09a","r10b","r11a","r12boss"]
+ const SERVICES = [3,4,6,9,11]
+-var coverage: Dictionary = {"full_floor":"NOT_REACHED","boss_settlement":"NOT_REACHED","reward_uniqueness":"NOT_REACHED","shop_current_visit_undo":"NOT_REACHED","shop_cross_room_boundary":"NOT_REACHED","rest":"NOT_REACHED","hero_confirmation_cancel":"NOT_REACHED","confirmed_new_hero_run":"NOT_TESTED"}
++var coverage: Dictionary = {"full_floor":"NOT_REACHED","boss_settlement":"NOT_REACHED","completed_floor_ui":"NOT_REACHED","dedicated_settlement_panel":"NOT_IMPLEMENTED","reward_uniqueness":"NOT_REACHED","shop_current_visit_undo":"NOT_REACHED","shop_cross_room_boundary":"NOT_REACHED","rest":"NOT_REACHED","hero_confirmation_cancel":"NOT_REACHED","confirmed_new_hero_run":"NOT_TESTED"}
+ var event_sequence: int = 0
+ var last_health_time: float = -1.0
+ var all_reward_ids: Dictionary = {}
+@@ -253,6 +253,13 @@
+   if not host.initial_hud.hex_draft.is_visible_in_tree(): await _frame(); continue
+   if not await _hex(1): return {"accepted":false,"reason":"required_visible_async_hex_failed"}
+  return {"accepted":_identity() and _budget() and model.snapshot().pending_milestones.is_empty()}
++
++func _completed_ui(label: String) -> bool:
++ if not _identity() or not _budget(): return false
++ var state: Dictionary=model.snapshot()
++ var ui: Dictionary={"label":label,"pending":state.pending_milestones.duplicate(),"hex_visible":host.initial_hud.hex_draft.is_visible_in_tree(),"header_visible":host.session_header.is_visible_in_tree(),"header_text":host.session_header.text,"next_disabled":host.session_next.disabled,"session_status":session.status,"rows":session.snapshot().row_state.completed_rows.size(),"source_time":sim.hero_time,"room_id":sim.room_id,"generation":sim.encounter_generation}
++ observations.append({"completed_floor_ui":ui})
++ return ui.pending.is_empty() and not ui.hex_visible and ui.header_visible and "12/12" in ui.header_text and "completed" in ui.header_text and ui.next_disabled and ui.session_status=="completed" and ui.rows==12
+ 
+ func _account() -> Dictionary:
+  var state: Dictionary = model.snapshot()
+@@ -431,13 +438,22 @@
+  var major: Dictionary=final_state.get("major_floor_events",{}).get("first_floor",{})
+  if session.status!="completed" or not act.get("completed",false) or not act.get("boss_defeated",false) or major.get("boss_actor_id","")!=session.boss_id or major.get("run_id","")!=session.run_id or session.settlement.get("major_floor_event",{})!=major: return false
+  coverage.boss_settlement="PASS"
++ var reward_ids_before: Array=final_state.reward_ids.duplicate(true)
++ var settlement_before: Dictionary=session.settlement.duplicate(true)
++ observations.append({"post_boss_pending":final_state.pending_milestones.duplicate(),"settlement":settlement_before})
++ var resolved: Dictionary=await _resolve_hexes()
++ if not resolved.get("accepted",false): return false
++ await _frame()
++ if not _identity() or not _budget() or model.snapshot().reward_ids!=reward_ids_before or session.settlement!=settlement_before or model.snapshot().major_floor_events.get("first_floor",{})!=major: return false
++ if not _completed_ui("after_final_hex"): return false
+  var account: Dictionary=_account()
+  for index: int in range(3): await _frame()
+  if not _identity() or not _budget() or _account()!=account: return false
+  coverage.reward_uniqueness="PASS"
+- if not await _capture("boss_settlement",_sample("boss_before_capture")): return false
++ if not await _capture("completed_floor_ui",_sample("completed_before_capture")) or not _completed_ui("completed_postdraw"): return false
++ coverage.completed_floor_ui="PASS"
+  if not await _hero_cancel(): return false
+- if not await _capture("resumed_same_settled_run",_sample("resumed_before_capture")): return false
++ if not await _capture("resumed_completed_floor_ui",_sample("resumed_before_capture")) or not _completed_ui("resumed_postdraw"): return false
+  observations.append({"final_account":_account(),"settlement":session.settlement.duplicate(true),"full_rows":session.snapshot().row_state.completed_rows})
+  coverage.full_floor="PASS"
+  return true

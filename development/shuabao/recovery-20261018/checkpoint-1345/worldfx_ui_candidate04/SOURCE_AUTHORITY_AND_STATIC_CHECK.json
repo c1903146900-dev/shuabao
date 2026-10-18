@@ -1,0 +1,87 @@
+{
+  "classification": "READ_ONLY_SOURCE_AUTHORITY_AND_CPU_STATIC_ORACLE_NOT_ENGINE",
+  "native03_source_all3046_unchanged": true,
+  "candidate_production_difference": [
+    "yan_trial_ui_20261018/presenter.gd"
+  ],
+  "native03_real_growth_overflow_result": "All13 button rectangles actually fit after expansion. Hidden first-frame minimum2351 did not prove final overflow. No scroll layout change made.",
+  "closed_hex_authority": [
+    {
+      "id": "yanguizhou_h09",
+      "required_hook": "hex.final_design.yanguizhou_h09.v1",
+      "not_in_current_first_slice_hooks": true
+    },
+    {
+      "id": "yanguizhou_h10",
+      "required_hook": "hex.final_design.yanguizhou_h10.v1",
+      "not_in_current_first_slice_hooks": true
+    },
+    {
+      "id": "yanguizhou_h11",
+      "required_hook": "hex.final_design.yanguizhou_h11.v1",
+      "not_in_current_first_slice_hooks": true
+    },
+    {
+      "id": "yanguizhou_h12",
+      "required_hook": "hex.final_design.yanguizhou_h12.v1",
+      "not_in_current_first_slice_hooks": true
+    }
+  ],
+  "authority_files": [
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/catalog.gd",
+      "sha256": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/live_binding.gd",
+      "sha256": "a40d75696d3eba53e64156799591d293641e966110775a9566bd2f311ef26271"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/bridge.gd",
+      "sha256": "d9f8283332089ba36fa741c11dfc4bc59c8bfbece0b7a3267fa2f15c49a66b4e"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/ordinary01/floor_session.gd",
+      "sha256": "cb374f04e8fa2dddb9cf76ba754730f21415962674ffa0c4538428f9e3ae9ec9"
+    },
+    {
+      "path": "res://scripts/progression/catalog_model.gd",
+      "sha256": "a7fa622cfd77a79fd0f8bf4e0199491a95616d4f6bb9ad4a52d52419c43bea64"
+    },
+    {
+      "path": "res://data/final_design/catalog.json",
+      "sha256": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3"
+    }
+  ],
+  "source_chain": "Session selects River live binding and bridge; live binding supplies Catalog FIRST_SLICE_HEX_HOOKS; bridge injects readiness.hooks into original Model; Model support and offer/commit eligibility require all required hooks.",
+  "runtime_authority_readback": "Probe05 will independently require actual Model required_hooks and supported_hooks to confirm all four are unavailable; not run for this revision.",
+  "text_oracle_cases": [
+    {
+      "candidate": "E2",
+      "original_hint": "E朝鼠标发舟，松开后再E登舟。触边停留，按原时间消散；落点站不下就保留原船。临时显示",
+      "player_hint": "E朝鼠标发舟，松开后再E登舟。触边停留，按原时间消散；落点站不下就保留原船。",
+      "original_tooltip_sha256": "6c26e051a219cb38e68f05d3516a9e9c4f2420a9e82030bcb4149d75db107edf",
+      "tooltip_gameplay_prefix_exact": true,
+      "availability_phrase_retained": true,
+      "unknown_text_untouched": true,
+      "idempotent_raw_projection_and_source_refresh": true
+    },
+    {
+      "candidate": "E3",
+      "original_hint": "E放A，松开后5秒内再E放B。只移动的敌人受伤，近高远低；H11/H12未开放。临时显示",
+      "player_hint": "E放A，松开后5秒内再E放B。只移动的敌人受伤，近高远低；相关强化尚未开放。",
+      "original_tooltip_sha256": "b59c47b824291afc980f34d7f0fdb368048c94e51a22c931ba4f841741673b4e",
+      "tooltip_gameplay_prefix_exact": true,
+      "availability_phrase_retained": true,
+      "unknown_text_untouched": true,
+      "idempotent_raw_projection_and_source_refresh": true
+    }
+  ],
+  "all_payload_fixture_hashes_verified": true,
+  "fixture_binding_all3046_exact": true,
+  "prior11_acceptance_gates_retained": true,
+  "engine_run": false,
+  "GDScript_parse": false,
+  "native_result": "NOT_RUN",
+  "art_acceptance": "NOT_REVIEWED"
+}

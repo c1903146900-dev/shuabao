@@ -1,0 +1,62 @@
+--- candidate02/presenter.gd
++++ candidate04/presenter.gd
+@@ -80,6 +80,7 @@
+  _set_text(room.session_equipment, "equipment", equipment)
+  _set_text(room.hud.footer, "footer", "WASD移动 · 左键普攻 · Q/E/R技能 · Shift闪避 · Space暂停 · M路线 · K技能")
+  _set_text(room.hud.buffs, "buffs", Initial.status(raw_buffs, room.sim.phase, str(flow.status), room.sim.hero.dead, room.sim.paused))
++ var growth_notes: String = _present_growth_copy(room)
+  room.hud.footer.tooltip_text = raw_footer
+  room.session_hint.tooltip_text = live_hint
+  _layout(room, entry)
+@@ -91,12 +92,51 @@
+  _hint_backing.visible = room.session_hint.visible
+  _diagnostics.visible = debug and not modal
+  _diagnostics_text.text = diagnostic_text + "\n\n原顶栏\n" + raw_header + "\n\n完整流程提示\n" + raw_hint + "\n\n装备接入信息\n" + raw_equipment + "\n\n当前技能操作\n" + raw_footer + "\n\n原状态\n" + raw_buffs + "\n" + raw_status
++ if not growth_notes.is_empty(): _diagnostics_text.text += "\n\n成长 E2 / E3 原始说明（含开发状态）\n" + growth_notes
+  if is_instance_valid(room.h02_label):
+   _diagnostics_text.text += "\n\n" + room.h02_label.text
+   room.h02_label.get_parent().visible = false
+  # F1 still owns diagnostics_visible. Only its presentation moves into one panel.
+  room.hud.diag.visible = false
+  entry.return_button.visible = not modal
++
++# Match only admitted E2/E3 development clauses; gameplay/rank/lock text stays
++# byte-for-byte outside these exact spans. Unavailable enhancements stay explicit;
++# their original technical IDs remain in F1. Unknown future text stays visible.
++static func _growth_display_copy(candidate: String, source_text: String) -> String:
++ var output: String = source_text
++ var replacements: Array = [
++  ["；H11/H12未开放。临时显示", "；相关强化尚未开放。"],
++  ["。临时显示", "。"],
++  ["；H09/H10均未开放。临时功能显示，最终美术和音效未完成。", "；相关强化尚未开放。"],
++  ["；H11/H12均未开放。临时功能圆与文字；最终美术与音效未完成。", "；相关强化尚未开放。"],
++  ["基础" + candidate + "已接入；美术与音效未完成。", ""],
++  ["基础" + candidate + "已接入；美术与音效尚未全部完成。", ""]
++ ]
++ for pair: Array in replacements: output = output.replace(str(pair[0]), str(pair[1]))
++ return output
++
++func _present_growth_copy(room: Node) -> String:
++ if not is_instance_valid(room.initial_hud): return ""
++ var hud: Control = room.initial_hud
++ var notes: PackedStringArray = PackedStringArray()
++ for row: Array in [["E2", hud.e2_rule_hint, hud.e2_choice], ["E3", hud.e3_rule_hint, hud.e3_choice]]:
++  var candidate: String = str(row[0])
++  var hint: Label = row[1]
++  var button: Button = row[2]
++  if not is_instance_valid(hint) or not is_instance_valid(button): continue
++  var prefix: String = "growth_" + candidate + "_"
++  var raw_hint: String = _raw(prefix + "hint", hint.text)
++  var raw_tooltip: String = _raw(prefix + "tooltip", button.tooltip_text)
++  var raw_hint_tooltip: String = _raw(prefix + "hint_tooltip", hint.tooltip_text)
++  _set_text(hint, prefix + "hint", _growth_display_copy(candidate, raw_hint))
++  button.tooltip_text = _growth_display_copy(candidate, raw_tooltip)
++  _projected[prefix + "tooltip"] = button.tooltip_text
++  hint.tooltip_text = _growth_display_copy(candidate, raw_hint_tooltip)
++  _projected[prefix + "hint_tooltip"] = hint.tooltip_text
++  notes.append(candidate + "\n" + raw_hint + "\n" + raw_tooltip)
++  if raw_hint_tooltip != raw_tooltip: notes.append(raw_hint_tooltip)
++ return "\n\n".join(notes)
+ 
+ func _raw(key: String, current: String) -> String:
+  if not _projected.has(key) or current != str(_projected[key]): _original[key] = current
