@@ -1,0 +1,801 @@
+{
+  "status": "CURRENT_RUN_RESOURCELOADER_VERIFIED",
+  "official_godot_version": "4.6.3-stable",
+  "binary_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+  "base_commit": "708454b99a631adac381417f820aabe6798c148c",
+  "source_pins_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "import_status": "FAIL_53_ORIGINAL_PNG_SIDECARS_AND_PROJECT_CHANGED",
+  "import_source_files_unchanged": true,
+  "raw_audio_error": "ALSA initialization ERR_CANT_OPEN; dummy fallback; audio unverified",
+  "uid_warnings_retained": true,
+  "loads": 196,
+  "draws": 3,
+  "guard_exit": 0,
+  "report_sha256": "bf39ed3f0b0ac7b77330b6a10e1f0d1216da4d6487602486fc3420b222c3d1e5",
+  "cache": {
+    ".godot/imported/boss.glb-08ac7b1c55273dd2cdf701b21d8075d8.scn": {
+      "sha256": "5dbd638d370ce8149b3ae481fb34ef080cb7628de059c31929a73e426c89939b",
+      "bytes": 289839,
+      "source": "assets/arena/enemies/boss.glb",
+      "source_sha256": "3c71ee0275722fcf7e33f1b3821f9e09475fca8d3b2dd869e4d3e3b6e7650d3d",
+      "original_descriptor": "assets/arena/enemies/boss.glb.import",
+      "original_descriptor_sha256": "d3319d992f284c3eb73f22e138be35d9ff0049e4a3ee08e6d69afb436831dae4"
+    },
+    ".godot/imported/elite.glb-c618cc70dedb25275f92f736f2c3c52a.scn": {
+      "sha256": "bf6957b87c5f22db8c727112ae42d8b475174c33598197520af2cf1c7424d481",
+      "bytes": 213432,
+      "source": "assets/arena/enemies/elite.glb",
+      "source_sha256": "0534c939080cfbcc87975e00d9a5afa1fa1cf6536f5eb5ef4f973707b411251d",
+      "original_descriptor": "assets/arena/enemies/elite.glb.import",
+      "original_descriptor_sha256": "96fea30c589dbf6b61d5e4154a3a3affd5f0ce30471a2db16fc42559546293dc"
+    },
+    ".godot/imported/minion.glb-d48bb50f17e050a25477f1c992820fdd.scn": {
+      "sha256": "c705effdf6d6facf73a78b0f67a68a2b8e64329e8f5f67363dc503e0deab8ea2",
+      "bytes": 190458,
+      "source": "assets/arena/enemies/minion.glb",
+      "source_sha256": "f04841f010b849795ad94420c6f6ffe7ebdd56de2de92f0fc6f78f4f19162d8f",
+      "original_descriptor": "assets/arena/enemies/minion.glb.import",
+      "original_descriptor_sha256": "4fb314b03f793ce3bb10392214de825ea6cdbada8de3d2400c06d8c12961876d"
+    },
+    ".godot/imported/armored.glb-c7f644adddb0906e5c8334e0f6411ae6.scn": {
+      "sha256": "073fb27e85e0fd93507c01affe743f39d6f99f6acc75eae0cc092251e22641ec",
+      "bytes": 72938,
+      "source": "assets/enemies/siege_brood/armored/armored.glb",
+      "source_sha256": "abcd2289d4a3c1f04baa5bd1cf33df8d0ca28738502f76a83c69bd6a5363daaa",
+      "original_descriptor": "assets/enemies/siege_brood/armored/armored.glb.import",
+      "original_descriptor_sha256": "e525a387d33967564b6425dfa43a16c03539913fe460afb58718cb4337840cf6"
+    },
+    ".godot/imported/armored_aged_bronze_basecolor.png-89850fb5a96bec1fbf6221804993b007.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/armored/armored_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/armored/armored_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "af21776eb68f26e2b4c6926a1d1bd78513df6ac835df2dcca7cf8be5d55c133b"
+    },
+    ".godot/imported/armored_brood_bone_ceramic_basecolor.png-c748cb1b80060df7d4689ff69db03064.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/armored/armored_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/armored/armored_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "352cc913ef02381d0bd915383059a244c35a29c7d5e7171635d13330afbb1ffd"
+    },
+    ".godot/imported/armored_brood_cold_iron_basecolor.png-dcc5c1c748fa70495ece0590ace9de4e.ctex": {
+      "sha256": "55553083ebbd46a1952a69b8996e6839b472fd7125accbb1fbaae633e7219e4e",
+      "bytes": 216478,
+      "source": "assets/enemies/siege_brood/armored/armored_brood_cold_iron_basecolor.png",
+      "source_sha256": "0df82d18689d3be7b78ddd2c682fd9b153e7cc557d293ec145bf9daf5f237400",
+      "original_descriptor": "assets/enemies/siege_brood/armored/armored_brood_cold_iron_basecolor.png.import",
+      "original_descriptor_sha256": "a54a87c68abc2f77542b255182d1609ca5e2b2f55803493e29c0958da809184d"
+    },
+    ".godot/imported/elite.glb-43480bfb58d94a1eb0c747e6396cc875.scn": {
+      "sha256": "1666d82bd612c3f0ba735d02b2851e635624e25a6627aedb126a005bf8f0af2b",
+      "bytes": 143502,
+      "source": "assets/enemies/siege_brood/elite/elite.glb",
+      "source_sha256": "673047b95a74ff5959bed9b880b9975fecfe3a9864b62abc8734da8f5e117dbc",
+      "original_descriptor": "assets/enemies/siege_brood/elite/elite.glb.import",
+      "original_descriptor_sha256": "1a18a2601c479478561441a7aba5f5c0a81fee75571f9c92c9d90a29d49625c9"
+    },
+    ".godot/imported/elite_aged_bronze_basecolor.png-53147a3dd0137ceebf686a30d3b7bed1.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/elite/elite_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/elite/elite_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "b2a747ac1ed29f6ea2e39aa5b2ad5f294c84d9a817965807c81b7ed0bada22fd"
+    },
+    ".godot/imported/elite_brood_bone_ceramic_basecolor.png-87230348dcb48debb513236c64981d87.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/elite/elite_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/elite/elite_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "0a40c952651fdd6c1ce88aeba8c96c70f4f8e827b0c9a4c83b13486d398c225f"
+    },
+    ".godot/imported/elite_brood_cold_iron_basecolor.png-8c8969560d3a24662adef196f8ae2e20.ctex": {
+      "sha256": "55553083ebbd46a1952a69b8996e6839b472fd7125accbb1fbaae633e7219e4e",
+      "bytes": 216478,
+      "source": "assets/enemies/siege_brood/elite/elite_brood_cold_iron_basecolor.png",
+      "source_sha256": "0df82d18689d3be7b78ddd2c682fd9b153e7cc557d293ec145bf9daf5f237400",
+      "original_descriptor": "assets/enemies/siege_brood/elite/elite_brood_cold_iron_basecolor.png.import",
+      "original_descriptor_sha256": "15f58973aaecc790ecd8f57de83fdb5bbbe62845f8a4b5241796f23f77af4a1a"
+    },
+    ".godot/imported/minion.glb-f1ccbd180e4a71fb95642140e5bb3498.scn": {
+      "sha256": "bf6537449fb196659e5bb904be5093b884ec27c15937a5b39e808d0cab34ad27",
+      "bytes": 61736,
+      "source": "assets/enemies/siege_brood/minion/minion.glb",
+      "source_sha256": "96537a7335287a850f74fd14b3fb0c6e8da20cf7ff73a2233201eabc8380ea3b",
+      "original_descriptor": "assets/enemies/siege_brood/minion/minion.glb.import",
+      "original_descriptor_sha256": "ef7ee2f5fd64138eee88c68f585d95b64d882363f3af82fd2250e41e4a66ea8a"
+    },
+    ".godot/imported/minion_aged_bronze_basecolor.png-5b0e6d025f9f958b4f88d3c2db040463.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/minion/minion_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/minion/minion_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "bd6c5e8f6bf1c9e745ba3a343b91122be1ebd17441dd36c5b6506d7eb8e2c3b2"
+    },
+    ".godot/imported/minion_brood_bone_ceramic_basecolor.png-de734232dabb7932f752bc0528fe5f7b.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/minion/minion_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/minion/minion_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "40facfc708457031fe2cd76025d20cd92c11cca80256ffc4ccf842e970d514b2"
+    },
+    ".godot/imported/minion_brood_carapace_basecolor.png-e0355afcc1f18d1b7084c0bcc042172a.ctex": {
+      "sha256": "6f19be625ec4e5fe2d562843d23b3e5bf7235876862646802878518b7917455b",
+      "bytes": 184368,
+      "source": "assets/enemies/siege_brood/minion/minion_brood_carapace_basecolor.png",
+      "source_sha256": "0cad5c4412952a47e6f24dae983a72b4c2242afac667eb48ff71064d6f129e75",
+      "original_descriptor": "assets/enemies/siege_brood/minion/minion_brood_carapace_basecolor.png.import",
+      "original_descriptor_sha256": "1ecc5d48c3669fafdd6598ff688a8e74f60223a6366e672d7bddc4901c7c78c8"
+    },
+    ".godot/imported/pitcher.glb-ee4da277d1ac99252d5ba04ea7b6668b.scn": {
+      "sha256": "2eb9dc3c8956b030559f8776c17c102610f779729864e366c8d6617fbe40a831",
+      "bytes": 110286,
+      "source": "assets/enemies/siege_brood/pitcher/pitcher.glb",
+      "source_sha256": "85de7b720f94139c547dfda39ad5532d9b1e31b7b84c315bfcd588ccdb204be3",
+      "original_descriptor": "assets/enemies/siege_brood/pitcher/pitcher.glb.import",
+      "original_descriptor_sha256": "0c884d67247a9cc145a9b9ca1457b12408102e06b7b82dc443c1a25ff7f532c1"
+    },
+    ".godot/imported/pitcher_Kiln fired terracotta_basecolor.png-1bb5e4a4ce367743a6efe41fe510fc56.ctex": {
+      "sha256": "79b1038835dbab31150626989942d51db6e612e0b83a127cb3956143d442bf05",
+      "bytes": 222852,
+      "source": "assets/enemies/siege_brood/pitcher/pitcher_Kiln fired terracotta_basecolor.png",
+      "source_sha256": "d5217a15eaa0d5cda7c783fd745c9aeb2e005a8b5c1a7e3b8c14e213db1589f4",
+      "original_descriptor": "assets/enemies/siege_brood/pitcher/pitcher_Kiln fired terracotta_basecolor.png.import",
+      "original_descriptor_sha256": "c2a33aa4082b69b3d83dbf03b702547884763942929a523f61fa566ef4e69b3a"
+    },
+    ".godot/imported/pitcher_aged_bronze_basecolor.png-9e5fe37fe1027d645629ecea87432e0b.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/pitcher/pitcher_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/pitcher/pitcher_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "4d867a4e593a85ad9b2b78e5627e221bdbf52f6ba79ab81ddd2efd9bb8e55cdb"
+    },
+    ".godot/imported/pitcher_brood_bone_ceramic_basecolor.png-e621b4e39cd9462ff8db1290d3f72ada.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/pitcher/pitcher_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/pitcher/pitcher_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "5e5c0b8a7d831451258c25a15faf9efebb4f7b7470faa344fc94640d75944d87"
+    },
+    ".godot/imported/pitcher_brood_cold_iron_basecolor.png-a3f5cf66bc66021a1737f25205bd9afb.ctex": {
+      "sha256": "55553083ebbd46a1952a69b8996e6839b472fd7125accbb1fbaae633e7219e4e",
+      "bytes": 216478,
+      "source": "assets/enemies/siege_brood/pitcher/pitcher_brood_cold_iron_basecolor.png",
+      "source_sha256": "0df82d18689d3be7b78ddd2c682fd9b153e7cc557d293ec145bf9daf5f237400",
+      "original_descriptor": "assets/enemies/siege_brood/pitcher/pitcher_brood_cold_iron_basecolor.png.import",
+      "original_descriptor_sha256": "7c46c846fa19871fd735f7b2792a56d128829d3afeeabecc993af36364938887"
+    },
+    ".godot/imported/pouncer.glb-087fab4f1db156a5d844af4717354c99.scn": {
+      "sha256": "22d593baaf6e86081fa4f64a4260916ab51ab50448911e52660ba6fc3874b0af",
+      "bytes": 74259,
+      "source": "assets/enemies/siege_brood/pouncer/pouncer.glb",
+      "source_sha256": "fb4f71f5b23d0a235e1b0b2f5e44e57678e471db6b4474a4361ba1a285571aa1",
+      "original_descriptor": "assets/enemies/siege_brood/pouncer/pouncer.glb.import",
+      "original_descriptor_sha256": "7acbad929219e074a6b4ee74af3c7488485532427ad9025b4bed5137534da4f3"
+    },
+    ".godot/imported/pouncer_aged_bronze_basecolor.png-943ccaccc343ac495818d8ca90866559.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/pouncer/pouncer_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/pouncer/pouncer_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "5048117b6bc00963cc4f830e690908817f928158b7e204015995349ecdf5520a"
+    },
+    ".godot/imported/pouncer_brood_bone_ceramic_basecolor.png-a6610ef02926dea74811a0ea591d03e9.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/pouncer/pouncer_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/pouncer/pouncer_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "f784500f33adb4873fe07bc7b88f49301b45a5ada99f5ef900c3c89e33657548"
+    },
+    ".godot/imported/pouncer_brood_carapace_basecolor.png-78c82d4998232477c4cb1a6d4f36cac1.ctex": {
+      "sha256": "6f19be625ec4e5fe2d562843d23b3e5bf7235876862646802878518b7917455b",
+      "bytes": 184368,
+      "source": "assets/enemies/siege_brood/pouncer/pouncer_brood_carapace_basecolor.png",
+      "source_sha256": "0cad5c4412952a47e6f24dae983a72b4c2242afac667eb48ff71064d6f129e75",
+      "original_descriptor": "assets/enemies/siege_brood/pouncer/pouncer_brood_carapace_basecolor.png.import",
+      "original_descriptor_sha256": "2b5fbb7a2d0f0d669cda774982b700b3ed606335c1cdc22356f369c59bf6259b"
+    },
+    ".godot/imported/ranged.glb-7f90662ff7ddd0bcc0965f8805de9321.scn": {
+      "sha256": "7ae3cb36f49aedb25ef72af8eed2d0b61e1fc04a4734d3e8256bd7a87e74f1ce",
+      "bytes": 107858,
+      "source": "assets/enemies/siege_brood/ranged/ranged.glb",
+      "source_sha256": "548856e30fa4edd66d37d8efc7eb64327a873e19e62c0af43b3fd1a4cbb61a54",
+      "original_descriptor": "assets/enemies/siege_brood/ranged/ranged.glb.import",
+      "original_descriptor_sha256": "baa59f7fd3ccb880baa871b406a3e3e44d8cd385eccc76d44f2d08467de7b6ac"
+    },
+    ".godot/imported/ranged_aged_bronze_basecolor.png-685f446528edc36c20b46d6454b60f52.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/ranged/ranged_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/ranged/ranged_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "9f39cf1124207105644709ba0ea6ec8f3525fe9ac02b5323798899fc64f60534"
+    },
+    ".godot/imported/ranged_brood_bone_ceramic_basecolor.png-bc0fafa3fb6286dd65eab15f67bc6c65.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/ranged/ranged_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/ranged/ranged_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "442e9c02ee48b45a778c6cc2b318849d1f2ccd6835844f5790524d7c3d2e1032"
+    },
+    ".godot/imported/ranged_brood_cold_iron_basecolor.png-47b959f73b26e0a7bcf7d9fa143545c0.ctex": {
+      "sha256": "55553083ebbd46a1952a69b8996e6839b472fd7125accbb1fbaae633e7219e4e",
+      "bytes": 216478,
+      "source": "assets/enemies/siege_brood/ranged/ranged_brood_cold_iron_basecolor.png",
+      "source_sha256": "0df82d18689d3be7b78ddd2c682fd9b153e7cc557d293ec145bf9daf5f237400",
+      "original_descriptor": "assets/enemies/siege_brood/ranged/ranged_brood_cold_iron_basecolor.png.import",
+      "original_descriptor_sha256": "c0e2b12bfd09f08c9b46cee78ccf78766f9baba68d094eed7ab100fe3890f860"
+    },
+    ".godot/imported/support.glb-e65d6089ec4b9284f3bc2f1c6c502fa6.scn": {
+      "sha256": "1746d971f5fecc1355407f02c00ac4f6aca79e75219f9e7566b2861499c1f024",
+      "bytes": 109658,
+      "source": "assets/enemies/siege_brood/support/support.glb",
+      "source_sha256": "96cb8602a46f902dfd49bb88aedf23cc2da8d87bd5d980d82f4ee80dd8016b15",
+      "original_descriptor": "assets/enemies/siege_brood/support/support.glb.import",
+      "original_descriptor_sha256": "4d47f6146f8f30b1d7307e5921f311e11254fa64edf7ffe7a8101b2270c61c27"
+    },
+    ".godot/imported/support_Ritual smoked jade_basecolor.png-00eb6ea60e09688f429ca2c422db8bf6.ctex": {
+      "sha256": "fe606e71c985e8538519b957aca357be38aa7a870b7482c4976702b2845f0367",
+      "bytes": 189616,
+      "source": "assets/enemies/siege_brood/support/support_Ritual smoked jade_basecolor.png",
+      "source_sha256": "5a46c483f2ac4b668289bf9c3ab0b170d958c6dcf1c4758676706613d415d824",
+      "original_descriptor": "assets/enemies/siege_brood/support/support_Ritual smoked jade_basecolor.png.import",
+      "original_descriptor_sha256": "aab132fc46ba1391024b88eb6a6687d06242ccba8238821773465eee9672e942"
+    },
+    ".godot/imported/support_aged_bronze_basecolor.png-9afa5f5230c1749dcc9bb4d2725ba2c1.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/enemies/siege_brood/support/support_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/enemies/siege_brood/support/support_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "4f3f49e00582e004adeb255a4840953bb1a1b746044247e9ee691c67b9add5ab"
+    },
+    ".godot/imported/support_brood_bone_ceramic_basecolor.png-1988c68f7360b64f1e25b72e2159fa2f.ctex": {
+      "sha256": "acfae234eed32a4c35a4fa189b01491ceb1bfd3e8c2315783111e96c06457fbd",
+      "bytes": 273020,
+      "source": "assets/enemies/siege_brood/support/support_brood_bone_ceramic_basecolor.png",
+      "source_sha256": "59c5db2876d63c5affd77cb5ccf279d3bd40d69147900ea2fc80e0119115b159",
+      "original_descriptor": "assets/enemies/siege_brood/support/support_brood_bone_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "af594dcadb4a99253b801e4f90934965bc1809e832f1f2bcfed4bee65c6fe515"
+    },
+    ".godot/imported/support_brood_cold_iron_basecolor.png-ff58247a77cc6740f6dbd6fd931a11d4.ctex": {
+      "sha256": "55553083ebbd46a1952a69b8996e6839b472fd7125accbb1fbaae633e7219e4e",
+      "bytes": 216478,
+      "source": "assets/enemies/siege_brood/support/support_brood_cold_iron_basecolor.png",
+      "source_sha256": "0df82d18689d3be7b78ddd2c682fd9b153e7cc557d293ec145bf9daf5f237400",
+      "original_descriptor": "assets/enemies/siege_brood/support/support_brood_cold_iron_basecolor.png.import",
+      "original_descriptor_sha256": "229f13691b7fe35886d88131cee30965044fcc6fb5806f5e1a0e2cb4d741764b"
+    },
+    ".godot/imported/fengli_final.glb-88df4913b43543cae7b99e3736ad58fa.scn": {
+      "sha256": "528e72538a824f26e84d9b886f5f538293b83c8e2b40245589b0c2627ada5418",
+      "bytes": 360153,
+      "source": "assets/fengli/fengli_final.glb",
+      "source_sha256": "4714ea722273430ec7917100c9c56ca5b8d5df1d205b32e4b04c311c243d8ddf",
+      "original_descriptor": "assets/fengli/fengli_final.glb.import",
+      "original_descriptor_sha256": "36247e06e337822aa26cbb477b91160a4ca292d12c8b0c74e17e93c92b6b4363"
+    },
+    ".godot/imported/fengli_final_fengli_charcoal_weave_basecolor.png-3d5f61f752ec00f0851dc1cf6b60ff5b.ctex": {
+      "sha256": "0bf23c5c2995be688e468fd5c6903f244c98af3c3e6ed25915af2bdc5816622e",
+      "bytes": 80624,
+      "source": "assets/fengli/fengli_final_fengli_charcoal_weave_basecolor.png",
+      "source_sha256": "bba2d45593c17f90b3eab04fc315bae46f25575440cb2f4e57a42a44616dd639",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_charcoal_weave_basecolor.png.import",
+      "original_descriptor_sha256": "b313f2fb5e8964424e83d29a9af1b59a2d37dd0a707cc09ce1da728d5034f567"
+    },
+    ".godot/imported/fengli_final_fengli_charcoal_weave_roughness.png-e81c8331aedb9ef418b3b941eae6da47.ctex": {
+      "sha256": "c894011cd2efb7f8b2c539dfe0030de8650b973b2aeed97a065c9cbdef57a01a",
+      "bytes": 183380,
+      "source": "assets/fengli/fengli_final_fengli_charcoal_weave_roughness.png",
+      "source_sha256": "f9d963e46850d728e976dcb48a67bdf4527ad4dbc62e2e61d720c49470df9dfb",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_charcoal_weave_roughness.png.import",
+      "original_descriptor_sha256": "bfd3db780d7537ec1687362824adb7b9ef1f93fc7532a0189f5190a5a1193b37"
+    },
+    ".godot/imported/fengli_final_fengli_cold_forged_silver_basecolor.png-8dc801eff657f9a4938b982acd200561.ctex": {
+      "sha256": "d849cc28a79ba3cd7d1ec930f63b9672657c3b34b4a9ac6dad747794793d50bc",
+      "bytes": 242632,
+      "source": "assets/fengli/fengli_final_fengli_cold_forged_silver_basecolor.png",
+      "source_sha256": "1c37f4f576c09d8a80039cd687c22e147846a59d7a071d281421d073fa181cb8",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_cold_forged_silver_basecolor.png.import",
+      "original_descriptor_sha256": "55048161892379dbbe1821e875ad0f8d3afec39ac6b01f1de571837d4a93011e"
+    },
+    ".godot/imported/fengli_final_fengli_cold_forged_silver_roughness.png-993f7c1e5ded9ac4fcc5505aa0a79daf.ctex": {
+      "sha256": "1e331aba6f45a8777f09b8eb3ea34b10cae0326c79327cbe796f5c895d8e6312",
+      "bytes": 177436,
+      "source": "assets/fengli/fengli_final_fengli_cold_forged_silver_roughness.png",
+      "source_sha256": "69e2b4f60dd4a23bbd866507559553e6da9fcdd00d3bd8813b0e7d091d312a9b",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_cold_forged_silver_roughness.png.import",
+      "original_descriptor_sha256": "e98a32c775cb5c14e83f3eeefb27e6f7899f5faadb9b867bfe70727dbc8685de"
+    },
+    ".godot/imported/fengli_final_fengli_graphite_leather_basecolor.png-0efcb3a6c3b257ddee0ba5ceed2cce50.ctex": {
+      "sha256": "888d6ec0e67c0cfd87da221599d69d4a6171f3fdfe93fdb736ff8c2b3039a6c6",
+      "bytes": 55744,
+      "source": "assets/fengli/fengli_final_fengli_graphite_leather_basecolor.png",
+      "source_sha256": "8c2b8ceeafa0f5d097a580fe83c2e60d6237e9c51dba7ebcdb7a21b96e6b72d6",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_graphite_leather_basecolor.png.import",
+      "original_descriptor_sha256": "8436e21ac3d45d06eaa3992e520aa25b6a47c9b7a524f466c00fb5b0b22b5a4e"
+    },
+    ".godot/imported/fengli_final_fengli_graphite_leather_roughness.png-2dd83a89fa6824d714afd8da4f3df70e.ctex": {
+      "sha256": "697757ffd7b6127b71944bff240d421cbdbebfb92163b5ac9e11bea8c2553ec5",
+      "bytes": 211500,
+      "source": "assets/fengli/fengli_final_fengli_graphite_leather_roughness.png",
+      "source_sha256": "b0a3d3e14293c52243e938e2f82f3659a72419ea69c1ced5d1819dba88bf627f",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_graphite_leather_roughness.png.import",
+      "original_descriptor_sha256": "65e6c0cd16dc8fec120ad91ce8d90c404fa79e41b76081bd563eb62a5aa95533"
+    },
+    ".godot/imported/fengli_final_fengli_oxblood_leather_basecolor.png-10de262e70cd29a063e28eb9cec47fb2.ctex": {
+      "sha256": "7dcc2daefa2ba1c218246bdedccd0d1473f22cc15c775c598b0a1d3e271971c9",
+      "bytes": 136838,
+      "source": "assets/fengli/fengli_final_fengli_oxblood_leather_basecolor.png",
+      "source_sha256": "9f570fc554b616a37954cef7eb31f349832603c466c3b937f07179fd58943c14",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_oxblood_leather_basecolor.png.import",
+      "original_descriptor_sha256": "9d08d2511c695d168def87177918ee13f30ecf1eb483487654efaec4ba3c05c8"
+    },
+    ".godot/imported/fengli_final_fengli_oxblood_leather_roughness.png-7ba6d448c4ebe542d3dacdd98c024ccf.ctex": {
+      "sha256": "88244cc7b9372f15aa5c53b886abdeeca90221151871f22bae0991167fe1daaa",
+      "bytes": 211416,
+      "source": "assets/fengli/fengli_final_fengli_oxblood_leather_roughness.png",
+      "source_sha256": "1baca38aa14707f5943bb4b6971a972e5790708c835d2a50076b8ae8e2a1feb7",
+      "original_descriptor": "assets/fengli/fengli_final_fengli_oxblood_leather_roughness.png.import",
+      "original_descriptor_sha256": "71b1ec32e51af707e343b02998564142b3f89148bc9abd883e33274d74cf2c4c"
+    },
+    ".godot/imported/thrust_erosion.png-94d205dce6e8c55042d76ae44c969677.ctex": {
+      "sha256": "474e3276330e29947f73f9934094cac5459c0cf40170cc4602bf00d6e7cfc8e9",
+      "bytes": 16120,
+      "source": "assets/fengli/vfx/thrust_erosion.png",
+      "source_sha256": "214995ddf3d9e1e2c99b27e10ac14f9e4b816527dc5865fc4abfa573b71ac953",
+      "original_descriptor": "assets/fengli/vfx/thrust_erosion.png.import",
+      "original_descriptor_sha256": "6e70758f68fbaf7f66302299339625923d74557bbb16ef068111d8f8d436b98f"
+    },
+    ".godot/imported/ink_mountain_atlas01.png-11e105182df603427ededab7532ba1e7.ctex": {
+      "sha256": "abf1f9c586bec2308eb431506ff42a6380606f5336499ae57bee4b658aa3b44a",
+      "bytes": 994516,
+      "source": "assets/ink_generated/r2_landscape01/ink_mountain_atlas01.png",
+      "source_sha256": "7cd89dc905f376de3dc9eb6c09ea7d9b18517cb56dccfeee65e7be54c7f019f1",
+      "original_descriptor": "assets/ink_generated/r2_landscape01/ink_mountain_atlas01.png.import",
+      "original_descriptor_sha256": "7fb15773b102d91701535dcad85518f47de6e9cd4c7c8f75d8f9c2d495ee94ac"
+    },
+    ".godot/imported/NotoSansCJKsc-Regular.otf-ffed665f475823ec8d8910f3a362173a.fontdata": {
+      "sha256": "a75640a465fe8913b152aa4400b52e9b3e482721db82abc4c6cb5ca7ef9d3407",
+      "bytes": 14445617,
+      "source": "assets/ui/NotoSansCJKsc-Regular.otf",
+      "source_sha256": "f2cac2db5b5304a895930b9076f27a3f38da20c0d8f804ce6fa44e60efba94db",
+      "original_descriptor": "assets/ui/NotoSansCJKsc-Regular.otf.import",
+      "original_descriptor_sha256": "eeff27ff191fc278e1a1a7e539663f9f9090710d46bff9b65c814f90145c3f23"
+    },
+    ".godot/imported/contact_crush.png-c19d58ab3a406a1778af0b0806c2070d.ctex": {
+      "sha256": "20a9aa1516aaaa826f45215fce5edcfebafe71ba79ada4c61e762e058a679318",
+      "bytes": 28610,
+      "source": "assets/xuanlei/vfx/basic/contact_crush.png",
+      "source_sha256": "848eed549eee970cb4726a3959ca1ab0f9b2f0c0c96e2c157216ff07a69e944e",
+      "original_descriptor": "assets/xuanlei/vfx/basic/contact_crush.png.import",
+      "original_descriptor_sha256": "1db957b9b1969cd102d2186516c8a73706d99c59285b8da55260dbeb47cd90e0"
+    },
+    ".godot/imported/contact_cut.png-6792c475fb414b110007b7b47fc646e3.ctex": {
+      "sha256": "775ec1b7ff83ebedbe2acf74a79e753424ba89464d471a48e27c1bb623589467",
+      "bytes": 24466,
+      "source": "assets/xuanlei/vfx/basic/contact_cut.png",
+      "source_sha256": "bc0e0d78aeae9b87fe517be16f28dad9d09d6e7b3a5f1844eda38cd953618bb7",
+      "original_descriptor": "assets/xuanlei/vfx/basic/contact_cut.png.import",
+      "original_descriptor_sha256": "cff4158b3073fc796b23389cf0d575608d177d96891f88f2b60945ea497c5dc2"
+    },
+    ".godot/imported/filing.png-f347b353e23cac26d24b85a849bcde2a.ctex": {
+      "sha256": "2c323e0b1526c2e40e671ebe188bad47c16abc0a6b06a5c7163721b543ee3fc2",
+      "bytes": 314,
+      "source": "assets/xuanlei/vfx/basic/filing.png",
+      "source_sha256": "07eb0e6cdb9dd0ce255aefee806a515fd7f18a8ceb3ab02dae6ca0c4858816a9",
+      "original_descriptor": "assets/xuanlei/vfx/basic/filing.png.import",
+      "original_descriptor_sha256": "877262673e7e32d0df879ca1cdb3504971ea0ec171cf5541de591df130f81e2e"
+    },
+    ".godot/imported/forged_wake.png-8004546ef04bd1e5bb3da2778cd3244b.ctex": {
+      "sha256": "bcb167cd98e1609d41b5b7b9e67f1e43ba584b894446865e46480cea98b65cc0",
+      "bytes": 95446,
+      "source": "assets/xuanlei/vfx/basic/forged_wake.png",
+      "source_sha256": "dfd5fa71987f401f087561c2a623251c7f1246477c8c568eeab61f8d5dd9e796",
+      "original_descriptor": "assets/xuanlei/vfx/basic/forged_wake.png.import",
+      "original_descriptor_sha256": "ef779afe77aff423029dc32e95a6da591f4267691a5098cb044eb097f17f0a0f"
+    },
+    ".godot/imported/basalt_grain.png-e56100f7c08da5328485aa851f3df47c.ctex": {
+      "sha256": "f9a17b950c532f7ceaaf65a0161a4c8a03e8743e9b85afde344bfa0b2f971875",
+      "bytes": 44544,
+      "source": "assets/xuanlei/vfx/cuicheng/basalt_grain.png",
+      "source_sha256": "2e42b2d5a594a30e05097ff86d3b00abc9c935b3692bb4ce94078507819581e9",
+      "original_descriptor": "assets/xuanlei/vfx/cuicheng/basalt_grain.png.import",
+      "original_descriptor_sha256": "fedcba7122a8b8ba83f74f0b8337c79bf9873af6918defc876e738749ed4d564"
+    },
+    ".godot/imported/erosion.png-ed11d59715d68affd716d60f64bad3a8.ctex": {
+      "sha256": "ddc8292f4cb26e93aedb0c01500bf7f2fc15d3c8f7ff6731a4546a3a050bd2fc",
+      "bytes": 71814,
+      "source": "assets/xuanlei/vfx/cuicheng/erosion.png",
+      "source_sha256": "940ba6be12847f14fc62894b42aa750327c930c79cbf2ddf6497cc63142f09a6",
+      "original_descriptor": "assets/xuanlei/vfx/cuicheng/erosion.png.import",
+      "original_descriptor_sha256": "54390130211e7bd663fcfc5ed0633ab77bff5e2ef9a99c7f3580d6280902ec58"
+    },
+    ".godot/imported/xuanlei.glb-5a11b3529009e9ac6230700824474499.scn": {
+      "sha256": "a6be6505f06c1cb9695748071e897ff8b793718e6c134ac1f003a99a6288b6d7",
+      "bytes": 643985,
+      "source": "assets/xuanlei/xuanlei.glb",
+      "source_sha256": "3642065ec04c332e5c228e67d3e3d31fdc95e800a716ec717f2cef7c16d6488f",
+      "original_descriptor": "assets/xuanlei/xuanlei.glb.import",
+      "original_descriptor_sha256": "7e94df99cee2f53baa05047b7913c1970cff7db3f615e42165bea8de76d8953e"
+    },
+    ".godot/imported/xuanlei_aged_bronze_basecolor.png-4ad36816750267836919198305d40239.ctex": {
+      "sha256": "a091f08653489c676bbfa9c5c2ea8407d3c33acaa95756a8679538a3b11c721b",
+      "bytes": 301892,
+      "source": "assets/xuanlei/xuanlei_aged_bronze_basecolor.png",
+      "source_sha256": "f00041e9636017e2e2d125e496e7be9e1ddba1dc7e22fb6153bb36ed9136aae5",
+      "original_descriptor": "assets/xuanlei/xuanlei_aged_bronze_basecolor.png.import",
+      "original_descriptor_sha256": "868e875a4bf5ad40ea78918ad6967a7fc727677610d87b5fbd3119315ce4ced7"
+    },
+    ".godot/imported/xuanlei_basalt_ceramic_basecolor.png-8eaf2313b1418fc919f8b8e18da520fa.ctex": {
+      "sha256": "e3536460a26c3cfd4952d0964844f9e5f53d7aa70e0dfd549acb6bacb7c34c2f",
+      "bytes": 199740,
+      "source": "assets/xuanlei/xuanlei_basalt_ceramic_basecolor.png",
+      "source_sha256": "629c5066ee0f07051ed34c9a8834ca29e523446d450ae9505a932be5704fa45f",
+      "original_descriptor": "assets/xuanlei/xuanlei_basalt_ceramic_basecolor.png.import",
+      "original_descriptor_sha256": "ceb1463f13ab272a8d9d134d708b43c36af828e77dd564e377afe44e696baddc"
+    },
+    ".godot/imported/xuanlei_blackened_iron_basecolor.png-86775a41b067351f5d1ce78deb600ecf.ctex": {
+      "sha256": "a46d6a925c764de81f886f4f44c8ed39f0476eccdbfb0e87587ad797d20f3623",
+      "bytes": 185216,
+      "source": "assets/xuanlei/xuanlei_blackened_iron_basecolor.png",
+      "source_sha256": "c07d32bca63ec89043de5aba28e31fc990cb110e5fcd60e54cf67602b6ffe1c5",
+      "original_descriptor": "assets/xuanlei/xuanlei_blackened_iron_basecolor.png.import",
+      "original_descriptor_sha256": "1b4dbbb5cc917a0f17032c3e66bc6c742a5904b7fb5a16466d00fc55a73c1f83"
+    },
+    ".godot/imported/xuanlei_worn_sandstone_basecolor.png-312104bfa93cb754847ec0ef34ec584e.ctex": {
+      "sha256": "0c6a9c756159dcce2cc9eee3e76ad1da3ff80361b1aeab866a9aaa93dc7963dc",
+      "bytes": 282756,
+      "source": "assets/xuanlei/xuanlei_worn_sandstone_basecolor.png",
+      "source_sha256": "c2dee487e66da7074eb29694b2defb16585102ba2f3fe998c8949568a62683da",
+      "original_descriptor": "assets/xuanlei/xuanlei_worn_sandstone_basecolor.png.import",
+      "original_descriptor_sha256": "d1701a5151f44753248db5bd792046c3ee80dcfc5edd845ba7bbc726724cf27d"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark.glb-54992bf9796deb71d56d75c9a1f89dc0.scn": {
+      "sha256": "d74fe0fe38ed17bfde93cb00e8185fe8075596c7d52cf771f266e36fcbcb5af5",
+      "bytes": 500886,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark.glb",
+      "source_sha256": "2b7a619226c3d53450ad643dd831babede687439eba399ddb4130cc166bda103",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark.glb.import",
+      "original_descriptor_sha256": "f7bac94d506d43e2aabd185181f9f1c61e6023a89a7e3d1758a6fd6cbbeb719b"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_01_ink_robe.png-3e6897a37dec8711abdedc5f928917bb.ctex": {
+      "sha256": "3f33ebedc4b6daba18c424eeb93d3a7f94a9e89cb7515a9a41a2ed706bde92c0",
+      "bytes": 43096,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_01_ink_robe.png",
+      "source_sha256": "e8d3faf5cfbeba6cf1fc098d39570825e287625bfc956ef501c042e5f21fa0a7",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_01_ink_robe.png.import",
+      "original_descriptor_sha256": "1e26503327483d62ad357bb03500a0f9acd4f53148f3eccf1b16dcc9241a001d"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_02_moon_silk.png-35afecbeed33acf0c1c9ec2f1a10b76d.ctex": {
+      "sha256": "28cff728d357670dbd41aea90d11abd0bbbc52aab8a7be3f3d1557387bf32a87",
+      "bytes": 81572,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_02_moon_silk.png",
+      "source_sha256": "8dcd549c41eb860472830c87099604feb60f313140f7919df654c9d0b4dfa438",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_02_moon_silk.png.import",
+      "original_descriptor_sha256": "bd6a90cc021c6c7d011870becdad6726f3df9ca086b33dd0b226e5938c8c2b2f"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_03_mineral_lining.png-a7d76a9795941047d8b56172bf808969.ctex": {
+      "sha256": "1ad6b2b8fa546c9b9595a441cd2b91348a85cf69b400115a7dc2b1a18291ccec",
+      "bytes": 79952,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_03_mineral_lining.png",
+      "source_sha256": "9096f67e4667b281962034cccc7a78b847e0aa69538e20ecc657d6a7d4d7232e",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_03_mineral_lining.png.import",
+      "original_descriptor_sha256": "f203f935b79a59072515d2af1995a2c36359f7b802cc59f201c98be97e465a2b"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_04_hair_and_wet_ink.png-2f8321cc9d5bc1b266aa139c1d7c5afd.ctex": {
+      "sha256": "c6e229de96a592b09ca8b57a2043350dc9ee4d04747740c96943d2b429aa8ab1",
+      "bytes": 6828,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_04_hair_and_wet_ink.png",
+      "source_sha256": "884b708264d9539c05c4c6a4ae2ad03ec78393de560567c7652d22144f2146a2",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_04_hair_and_wet_ink.png.import",
+      "original_descriptor_sha256": "7e910e63355202d5a09ec7b271d33d96e11b8ca22244bf976325833a91df3c55"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_05_warm_porcelain.png-db782506e23b666f92be013696571eef.ctex": {
+      "sha256": "84c6b35fa7289d4b2c3e17b04ac0b836f67fade2b0271f686eb402cc47aa3964",
+      "bytes": 12354,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_05_warm_porcelain.png",
+      "source_sha256": "966a5d6d31600ec591039190ee76c606881f8733a2214d002ab5fd4089ab8328",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_05_warm_porcelain.png.import",
+      "original_descriptor_sha256": "8a2282ae6890b18a2e24626cc16bd5c159434920ce449a693c8aabb78cae908e"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_06_old_brass.png-62c34c2340a6b831ac8e980b04a26efa.ctex": {
+      "sha256": "0f4580925b935935d6be11308246e434e9c1f94ec2287e92c962b6057e74df15",
+      "bytes": 10686,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_06_old_brass.png",
+      "source_sha256": "3630510b3af68c7bfb74ea3fa156b22a83a55111a57af7cee62d6aaace3e8cb3",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_06_old_brass.png.import",
+      "original_descriptor_sha256": "1024cc99b838c52475546b0c3312cf0b37cb118719393c37c9ec44f2227656fc"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_07_black_bamboo.png-c4f7f08db0bec40e07a5452eb001c80e.ctex": {
+      "sha256": "8c588d86fde4b0b8e62adcbe7efc6831fbcbc6464fbaa3e5980ac7bd2630b107",
+      "bytes": 6790,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_07_black_bamboo.png",
+      "source_sha256": "565081fcd110e3ba9c3fc3b24a8e162cd15f0c97c0f5fef109570eb32db49173",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_07_black_bamboo.png.import",
+      "original_descriptor_sha256": "c0fcc5b8d9d141b8b2cf870736414efdcb1d4d56e78cd8ecf69692a5aa376a44"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_08_inkstone.png-694672f701bde131186957226c04d7da.ctex": {
+      "sha256": "5ac84e48fd17145a90825ede94ebf961d41360a647d76200dafcf9721597d8fd",
+      "bytes": 7762,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_08_inkstone.png",
+      "source_sha256": "a321ba9ecae572be3797d239dd0d2917daa6469666705fadeb363a87eadb822d",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_08_inkstone.png.import",
+      "original_descriptor_sha256": "25a28fa6069cfee7f2e54d816df71707049a6d13d205b5cd34e74c1ecef26102"
+    },
+    ".godot/imported/yanguizhou_scholar_benchmark_09_ink_to_moon_cloth.png-1bcd1e978cdba14f1c54b0b9b49ce3a6.ctex": {
+      "sha256": "e121d43c929af72eaa77d128f82dfe66a9e4b29160b4cf6369e7d7936b5c0fb2",
+      "bytes": 95492,
+      "source": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_09_ink_to_moon_cloth.png",
+      "source_sha256": "cb384d1c94e77469d29fad409cad6567a2aeb181d1d8be1be80e983addc2f628",
+      "original_descriptor": "tests/ink_character_benchmark_20261004/candidate05/yanguizhou_scholar_benchmark_09_ink_to_moon_cloth.png.import",
+      "original_descriptor_sha256": "2590f8130404bf82f9490dea48117e1d3e6f21938a2b27a8a370857ad75f6a4d"
+    },
+    ".godot/imported/boss_actions.glb-ec1579dd1fa20e45feefb61e12ca448f.scn": {
+      "sha256": "f5059e3e62078617db1dd240fbd0c69ded469fdf7012af21283d90accf77980b",
+      "bytes": 339920,
+      "source": "tests/ink_first_floor_boss_20261008/art01/boss_actions.glb",
+      "source_sha256": "39455cecd1f5bfb8f6d1a2b87a7826d923f06d2f3621d9228db9396a17029c80",
+      "original_descriptor": "tests/ink_first_floor_boss_20261008/art01/boss_actions.glb.import",
+      "original_descriptor_sha256": "51545fba011e70e465bee83cdbeb395d9a1d84c1327a25821391652182f671a9"
+    },
+    ".godot/imported/q1_original_ink_brush.png-26ed846fd58cac44a6ed4bc929f21fbe.ctex": {
+      "sha256": "e50170b1f9df0acd5a77b8574b4c9924148c356eee39d16a458f420e90a3af03",
+      "bytes": 1868152,
+      "source": "tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png",
+      "source_sha256": "09d3913059d99ba8724058ce43d5c9f2d2490c5d09468884b21b02529546d8a0",
+      "original_descriptor": "tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png.import",
+      "original_descriptor_sha256": "c7896c718b9e91783b82e3097eae9303bc87e8c07533cecda1f9aa08992b1fd2"
+    },
+    ".godot/imported/q1_single_loaded_stroke.png-eb36352576d05afabdd6ac284cf6465f.ctex": {
+      "sha256": "c5bd35e971c94098e7b2759e810d9500f255b458398938ae7b86cf17763b3d39",
+      "bytes": 760502,
+      "source": "tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+      "source_sha256": "95eebee8b0c7019bf2168d804a3dafc07b5dc39d10299e9279e06704f3474590",
+      "original_descriptor": "tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png.import",
+      "original_descriptor_sha256": "ddbd4ccdcad6ddd318672d947092fb3f8298a47cf09d205c5636ee95ea81e857"
+    },
+    ".godot/imported/yanguizhou_q3_gestures.glb-7089510de41ee79cfdde12e050e53dca.scn": {
+      "sha256": "d1cccac148a411775c2a5e6386aa88a53a71fcb3b41d2e0821e41761a6197e7f",
+      "bytes": 504515,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb",
+      "source_sha256": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb.import",
+      "original_descriptor_sha256": "dbf1216d3de2fe781b75337fddce0a727f3146c178e0b774319a04bca12e2c35"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_01_ink_robe.png-88ab277397b1649d10add6776204c1d3.ctex": {
+      "sha256": "3f33ebedc4b6daba18c424eeb93d3a7f94a9e89cb7515a9a41a2ed706bde92c0",
+      "bytes": 43096,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png",
+      "source_sha256": "e8d3faf5cfbeba6cf1fc098d39570825e287625bfc956ef501c042e5f21fa0a7",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png.import",
+      "original_descriptor_sha256": "e08c47afee8a1903d03681135118204768ce5c49456119a974f0bfacc1630690"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_02_moon_silk.png-e2fa7f7a5869c10ee057a6cecd485c4a.ctex": {
+      "sha256": "28cff728d357670dbd41aea90d11abd0bbbc52aab8a7be3f3d1557387bf32a87",
+      "bytes": 81572,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png",
+      "source_sha256": "8dcd549c41eb860472830c87099604feb60f313140f7919df654c9d0b4dfa438",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png.import",
+      "original_descriptor_sha256": "3626cdb25dc0ae685b1961771a1492d5441d630f657bc0effc7712f3e754bc08"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_03_mineral_lining.png-0065270f9edd3c1cf1217bc93c537692.ctex": {
+      "sha256": "1ad6b2b8fa546c9b9595a441cd2b91348a85cf69b400115a7dc2b1a18291ccec",
+      "bytes": 79952,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png",
+      "source_sha256": "9096f67e4667b281962034cccc7a78b847e0aa69538e20ecc657d6a7d4d7232e",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png.import",
+      "original_descriptor_sha256": "d72b26d939a76075e1508bbb307aa80beec602fcf1661a1d27d4d2e70265099e"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_04_hair_and_wet_ink.png-951a22d58b8f152a95d63bb70179fe98.ctex": {
+      "sha256": "c6e229de96a592b09ca8b57a2043350dc9ee4d04747740c96943d2b429aa8ab1",
+      "bytes": 6828,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_04_hair_and_wet_ink.png",
+      "source_sha256": "884b708264d9539c05c4c6a4ae2ad03ec78393de560567c7652d22144f2146a2",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_04_hair_and_wet_ink.png.import",
+      "original_descriptor_sha256": "120759ee937d74794f0f90db8d7a91d1f5c9cea24ee597f085de0f264ae1f216"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_05_warm_porcelain.png-6a01eb6df10b939e2c8e72c4789ba76b.ctex": {
+      "sha256": "84c6b35fa7289d4b2c3e17b04ac0b836f67fade2b0271f686eb402cc47aa3964",
+      "bytes": 12354,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_05_warm_porcelain.png",
+      "source_sha256": "966a5d6d31600ec591039190ee76c606881f8733a2214d002ab5fd4089ab8328",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_05_warm_porcelain.png.import",
+      "original_descriptor_sha256": "05f60f2ef3208cc6e45404490572906d3904806b1f7e598e33659674d13a8738"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_06_old_brass.png-a5a5b800bf6597810a4d7889dc2983ec.ctex": {
+      "sha256": "0f4580925b935935d6be11308246e434e9c1f94ec2287e92c962b6057e74df15",
+      "bytes": 10686,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_06_old_brass.png",
+      "source_sha256": "3630510b3af68c7bfb74ea3fa156b22a83a55111a57af7cee62d6aaace3e8cb3",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_06_old_brass.png.import",
+      "original_descriptor_sha256": "5d9625e85e67ee683a248b209277f38da47e55872ffc2760fb80ef3b0c10b356"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_07_black_bamboo.png-749c19512db6b16fdcbfee79a0b1efbf.ctex": {
+      "sha256": "8c588d86fde4b0b8e62adcbe7efc6831fbcbc6464fbaa3e5980ac7bd2630b107",
+      "bytes": 6790,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png",
+      "source_sha256": "565081fcd110e3ba9c3fc3b24a8e162cd15f0c97c0f5fef109570eb32db49173",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png.import",
+      "original_descriptor_sha256": "d5357d9fae9e0744024884f2a7bfd7a79a83668dc0999d7efc8279e6e8e719c3"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_08_inkstone.png-e568c1c8da21131b376ae14f3e8e10f7.ctex": {
+      "sha256": "5ac84e48fd17145a90825ede94ebf961d41360a647d76200dafcf9721597d8fd",
+      "bytes": 7762,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_08_inkstone.png",
+      "source_sha256": "a321ba9ecae572be3797d239dd0d2917daa6469666705fadeb363a87eadb822d",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_08_inkstone.png.import",
+      "original_descriptor_sha256": "616b167117f80b593a28a6a2704279ba569b94afd18b9181c9cf6d27d20b4a7b"
+    },
+    ".godot/imported/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png-b7b975bfb1337d6db6d73ae26a36749f.ctex": {
+      "sha256": "e121d43c929af72eaa77d128f82dfe66a9e4b29160b4cf6369e7d7936b5c0fb2",
+      "bytes": 95492,
+      "source": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png",
+      "source_sha256": "cb384d1c94e77469d29fad409cad6567a2aeb181d1d8be1be80e983addc2f628",
+      "original_descriptor": "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png.import",
+      "original_descriptor_sha256": "d86f4b24030210239ad701881479fb333c357f8f457b033e4070d85d5489b0ac"
+    },
+    ".godot/imported/collapse_pressure.svg-f215b16037e9f94a021214d65e9b99bd.ctex": {
+      "sha256": "629ad2a6738094147db1875562351f47f59d3cc6f9622f32fa5b057411faee1f",
+      "bytes": 53814,
+      "source": "tests/ink_q3_visual_20261004/dynamic03/materials/collapse_pressure.svg",
+      "source_sha256": "452a9f68dc9261c88f56e94f5466dfa15e32f99e80c8b87b9180ae984e5b2fa2",
+      "original_descriptor": "tests/ink_q3_visual_20261004/dynamic03/materials/collapse_pressure.svg.import",
+      "original_descriptor_sha256": "137e698714e68f5c86bf0ae168a65cb0a1c99996467f5f3b7a2f64b254e8dbe0"
+    },
+    ".godot/imported/contact_ink.svg-a6f1d1542e55297afaa8f13f2e42709f.ctex": {
+      "sha256": "b6bab89b55bd0d02fa5031c3267d88e72a9c1b5e4877fb5a436d5964616170a0",
+      "bytes": 10316,
+      "source": "tests/ink_q3_visual_20261004/dynamic03/materials/contact_ink.svg",
+      "source_sha256": "c2d81b6d9f0509c9a5eeeb68a6fe95a6db649ae16cb1606229230564730a7c14",
+      "original_descriptor": "tests/ink_q3_visual_20261004/dynamic03/materials/contact_ink.svg.import",
+      "original_descriptor_sha256": "4efa2b1b56a416cdee9fc23161f60948ed46336cf0e1349af692f3aec83d8f2c"
+    },
+    ".godot/imported/contact_reserve.svg-97d61b0af32f7fe97e502b067ebb736f.ctex": {
+      "sha256": "98a8b4fe646ddc4a2539e0e246b654374d8bdd505cac0a30dca6bbbe8baa5bfa",
+      "bytes": 3970,
+      "source": "tests/ink_q3_visual_20261004/dynamic03/materials/contact_reserve.svg",
+      "source_sha256": "e437223f11e045d7ccf8cb81e64ef8edfa23b75677cda6471c75dc1c7c94d629",
+      "original_descriptor": "tests/ink_q3_visual_20261004/dynamic03/materials/contact_reserve.svg.import",
+      "original_descriptor_sha256": "b1581892bcaa17b787ed5af722593967ece5fb71ff97f10f06b559fe411d8c72"
+    },
+    ".godot/imported/mountain_brush.svg-75b6daf0fd038cac03d5795d025ce70d.ctex": {
+      "sha256": "31bc6d1fb9da4c167d17ce394c9ab779ddea2c4acee8ea89de7d60e30af2edc7",
+      "bytes": 17060,
+      "source": "tests/ink_q3_visual_20261004/static01/materials/mountain_brush.svg",
+      "source_sha256": "c137e04d34871e62b9d8132384b9357dcd8d10caa7c5f344340749ac2458a39e",
+      "original_descriptor": "tests/ink_q3_visual_20261004/static01/materials/mountain_brush.svg.import",
+      "original_descriptor_sha256": "29ffef4812c7ee7b6095e9e46698a7fcfc30bb8098afbc09cd327ea52c4184ea"
+    },
+    ".godot/imported/quiet_stone.png-5ff320ccd43cbdd360ad94d38386c8ac.ctex": {
+      "sha256": "c667d352f5b8a42e85d901d73a501ff1606e9cee210cf250d62c31aab0c7cd68",
+      "bytes": 506,
+      "source": "tests/ink_style_specimen_20261004/revision03/textures/quiet_stone.png",
+      "source_sha256": "9fdf968bc076ab68ac7892ba36ef0dd0b69b1cef813df61852983e0d653ff947",
+      "original_descriptor": "tests/ink_style_specimen_20261004/revision03/textures/quiet_stone.png.import",
+      "original_descriptor_sha256": "b062738fa107b4fcb2ee755c05b9ae665a45d116576fb9014f9de03a3ac4b21b"
+    },
+    ".godot/imported/soft_grounding.png-e59cfef749d977bbc5a103d7783531c0.ctex": {
+      "sha256": "267b69667e3be50a900070139abf733ab36ebe1854d922bd38ad98db9c91028a",
+      "bytes": 702,
+      "source": "tests/ink_style_specimen_20261004/revision03/textures/soft_grounding.png",
+      "source_sha256": "29cffbba5b0243b417e9866c400b677c396770e5def118802ad537749ef985e6",
+      "original_descriptor": "tests/ink_style_specimen_20261004/revision03/textures/soft_grounding.png.import",
+      "original_descriptor_sha256": "2edb478fe3411ef9a36f11f153f3ebf30b1abface54e3f5fc4b35304f415a8a1"
+    },
+    ".godot/imported/bone.png-36c25db36ded2f19c4d991274aad40f3.ctex": {
+      "sha256": "f34e61e5557d75fac66355e29c328be14c6675a8e41250fc2e1700885542e7d7",
+      "bytes": 174,
+      "source": "tests/ink_style_specimen_20261004/textures/bone.png",
+      "source_sha256": "b25c562b3cd06499b2fc5c64b32a564f34d764bb53a571962ada5aec14117e4b",
+      "original_descriptor": "tests/ink_style_specimen_20261004/textures/bone.png.import",
+      "original_descriptor_sha256": "9a50ea69a92c1f8df2e76e6d4f839dc4a7eef01c34468fadea6ac98cebbcb9df"
+    },
+    ".godot/imported/bronze.png-c9faa40aea6415bfb7a41227d9d9fe18.ctex": {
+      "sha256": "e75f9c032cfcc10372d203956407ba911ca544bc655d50cd759959b659de07fe",
+      "bytes": 176,
+      "source": "tests/ink_style_specimen_20261004/textures/bronze.png",
+      "source_sha256": "70a34ee2654e6d7b1d4ad1f6850d3aece5a5d5d9b7363ae15d22ecee3bf7c3fa",
+      "original_descriptor": "tests/ink_style_specimen_20261004/textures/bronze.png.import",
+      "original_descriptor_sha256": "c0cf814858423304b5bdcf72357999275366c8a6719f6bc0dfe99d858780c03d"
+    },
+    ".godot/imported/carapace.png-3d8025f2dba4b0f70f764433e74307f2.ctex": {
+      "sha256": "969cbfe025bdb834ecb13d0a9210d417f9084a1ace7a0506136eb020292760b7",
+      "bytes": 176,
+      "source": "tests/ink_style_specimen_20261004/textures/carapace.png",
+      "source_sha256": "dbc43b4bc3a04dee3ce9433e52f7e55a584a0f356323eb856519ddb8a855cc22",
+      "original_descriptor": "tests/ink_style_specimen_20261004/textures/carapace.png.import",
+      "original_descriptor_sha256": "8dabeb1d603b5dddddad7acac2c6d1d2fd3b1d45c5b1b5cef650e162a8f69b0f"
+    },
+    ".godot/imported/stone.png-a1b64cad095011055a6f82d4bddc1205.ctex": {
+      "sha256": "1b06c9f335c4d9c181e71799f847d8fd2964a702428239504aeaaab032064f30",
+      "bytes": 176,
+      "source": "tests/ink_style_specimen_20261004/textures/stone.png",
+      "source_sha256": "1b79a867fc1dd1761644e72236386f16b1ddbc1c713647457b00869798b75775",
+      "original_descriptor": "tests/ink_style_specimen_20261004/textures/stone.png.import",
+      "original_descriptor_sha256": "ba22b662f98258a57186a06250222bfc838a9875f7f3058ee7b52315dc81dd57"
+    },
+    ".godot/imported/e3_landscape_atlas01.png-cf13743279012dfe47d38048b5b1c3d8.ctex": {
+      "sha256": "258c739648e9766efdbfb84db132580a4014abe3fa0903051d3af644e6577e44",
+      "bytes": 1679334,
+      "source": "visual_rework_20261009/assets/e3_landscape_atlas01.png",
+      "source_sha256": "18d58c9d2a315422f7248cfd844e1dc79fec979ffe46d4912c66457ac9462621",
+      "original_descriptor": "visual_rework_20261009/assets/e3_landscape_atlas01.png.import",
+      "original_descriptor_sha256": "1d764feaab2d41522ca7f9a6bf280a82ab16f0e6e996f1200b7ff9b648c7a5bb"
+    },
+    ".godot/imported/guzhou_fan_atlas.png-be84406dcaee5134f3cc61854e53f20d.ctex": {
+      "sha256": "97a9a96890a313cbb98a275e2618f69e34003f46d2a95cd789e7b977225a320e",
+      "bytes": 606222,
+      "source": "visual_rework_20261009/assets/guzhou_fan_atlas.png",
+      "source_sha256": "09c9649fdc91d980f925c8f1394edcb4cfef5ab2c62163f7e39424ed1c8f4b3f",
+      "original_descriptor": "visual_rework_20261009/assets/guzhou_fan_atlas.png.import",
+      "original_descriptor_sha256": "adac8ed3d52e8260baf3408987dd2f5aa9d4a0b8dc4c4cd361cc6f233a4bc1f7"
+    },
+    ".godot/imported/huamo_bimo_atlas.png-a1f24538771f4dd0386d13d9a5494a80.ctex": {
+      "sha256": "02d2b2e7a33215e5d1cf2a032670ae457c6d72cd150d7c2a0b45e476afc3124c",
+      "bytes": 1201996,
+      "source": "visual_rework_20261009/assets/huamo_bimo_atlas.png",
+      "source_sha256": "8334617208d77b4dd1b0f422231669e5d0a70810565aede7bf7584df5e610e5d",
+      "original_descriptor": "visual_rework_20261009/assets/huamo_bimo_atlas.png.import",
+      "original_descriptor_sha256": "a30f5b766070dad0e9a5e2bcf10d4b42ee4f814c0277818999a0cf98c124ff6b"
+    },
+    ".godot/imported/r1_snow_banks.png-6bc9d28ee84060ad85062ef8da75309b.ctex": {
+      "sha256": "47ae111b16183b0bf8cf194ea4b2a991caa404ad14613b0bafd4d49271841246",
+      "bytes": 1182610,
+      "source": "visual_rework_20261009/assets/r1_snow_banks.png",
+      "source_sha256": "7cb253b13e136b1b1691fc096d071915c6625de743bffac27fed490b300b508b",
+      "original_descriptor": "visual_rework_20261009/assets/r1_snow_banks.png.import",
+      "original_descriptor_sha256": "f1933449e37447a1869a53f1b40557bee38a44d31ae54adf643f14c242b5bd05"
+    },
+    ".godot/imported/r2_ink_massif.png-4c250f55f52fd7098d0370ca20f59d7d.ctex": {
+      "sha256": "15e5fa315a087365d6435edacfa05a4ea37c9a7bd8db31bf29e8469765bac4b4",
+      "bytes": 1768566,
+      "source": "visual_rework_20261009/assets/r2_ink_massif.png",
+      "source_sha256": "ad43a14fb39cd39a5648394e7d9cc2e6dfb56a3bb87b1ea1627bdff56f29ffaa",
+      "original_descriptor": "visual_rework_20261009/assets/r2_ink_massif.png.import",
+      "original_descriptor_sha256": "ce47f5865725d805dd7ed2731f9247bbc3ecec5db44125bfd2f46fc7f34c319c"
+    },
+    ".godot/imported/q1_ink.png-ac83824d6f7e38b48564f3d0b21f6c1d.ctex": {
+      "sha256": "94a102572fd1f2ddd3db73fe61f60df79f36e90b2de7f004456533392903dd48",
+      "bytes": 406738,
+      "source": "visual_rework_20261009/views/q1_ink.png",
+      "source_sha256": "ce84d95687d5bcd9160670607dc620278604af8bc2ba17c17ac5a64a0f228e67",
+      "original_descriptor": "visual_rework_20261009/views/q1_ink.png.import",
+      "original_descriptor_sha256": "cc2cd0e3c95267f5a2e69b289fa9cc6a02ff04e2a76858bfe020d233b3a763bd"
+    },
+    ".godot/imported/q2_atmosphere_atlas.png-3179d37f8fa65e1a16a08fb2897155cf.ctex": {
+      "sha256": "77ea456b68a60438497212044eaa59dd0cb34c43b5fcdb2c05ed26ada18558be",
+      "bytes": 1183974,
+      "source": "visual_rework_20261009/views/q2_atmosphere_atlas.png",
+      "source_sha256": "16b48f032120cfa00b628292c485ff89770e2775474435c12df32f31805b5fd2",
+      "original_descriptor": "visual_rework_20261009/views/q2_atmosphere_atlas.png.import",
+      "original_descriptor_sha256": "a55f4bf2bd9b8b438e22a8a51ddb41d76b8bef616b7d73e077682ad358e8934a"
+    },
+    ".godot/imported/q2_water_atlas.png-98f3f07993493e0ec062047eba578d82.ctex": {
+      "sha256": "0498beb8e833a6d6afd3b652cfcf61afe260058e8f24830dc479ae504dd6dff0",
+      "bytes": 450296,
+      "source": "visual_rework_20261009/views/q2_water_atlas.png",
+      "source_sha256": "2a848b7808fd47306c607d68952f1baad1a42173793f85961ddf84487e1d94e2",
+      "original_descriptor": "visual_rework_20261009/views/q2_water_atlas.png.import",
+      "original_descriptor_sha256": "2f93e937997ad9f16876a479bc177c3eb982361a53213ac4f4959be3a2ee208e"
+    },
+    ".godot/imported/q2_water_wash.png-63b203572f163dbeeec78665e499a3ce.ctex": {
+      "sha256": "a830600b26f82506c4b54fd5ceb2ac2c7b4a67ca8e71ab7971685ec3aad7e300",
+      "bytes": 1512352,
+      "source": "visual_rework_20261009/views/q2_water_wash.png",
+      "source_sha256": "685d251bd3328b679eb7e1f696d27256661a9fb0fa4435bd7c699a8c48bb25b6",
+      "original_descriptor": "visual_rework_20261009/views/q2_water_wash.png.import",
+      "original_descriptor_sha256": "ae224fa2c6881e577ecb8d4051ee36fb24333b85a69d883a7c1e77b4ab90df20"
+    }
+  }
+}
