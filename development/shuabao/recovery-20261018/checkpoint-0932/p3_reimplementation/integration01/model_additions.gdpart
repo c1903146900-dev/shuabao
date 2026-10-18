@@ -1,0 +1,31 @@
+
+# P3 REIMPLEMENTATION: preserve original command replay, costs and allocations.
+var _p3_commit_frame: Dictionary = {}
+var _p3_allocation_transactions: Dictionary = {}
+func p3_commit_is_current(sim: Node, frame: Dictionary) -> bool:
+ return not _p3_commit_frame.is_empty() and is_same(frame,_p3_commit_frame) and _g01_bound(sim) and is_same(_health_sim.get_ref(),sim)
+
+func command(id: String, action: String, args: Dictionary = {}) -> Dictionary:
+ var replay: bool = receipts.has(id)
+ var before: Dictionary = state.skills.P.duplicate(true)
+ var allocation_count: int = state.allocations.size()
+ var undo_transaction: int = int(_p3_allocation_transactions.get(allocation_count,0)) if action == "undo_skill" else 0
+ var result: Dictionary = super.command(id,action,args)
+ if replay or not result.get("accepted",false): return result
+ if action == "enter_level" or (action == "context" and state.phase == "combat") or action == "respec":
+  _p3_allocation_transactions.clear()
+ var changed: bool = before != state.skills.P
+ if changed:
+  var sim: Node = _health_sim.get_ref() if _health_sim != null else null
+  var p3_result: Dictionary = {"accepted":false,"reason":"p3_bound_sim_missing"}
+  if is_instance_valid(sim) and _g01_bound(sim) and sim.has_method("p3_commit_model"):
+   _p3_commit_frame = {"action":action,"transaction":undo_transaction}
+   p3_result = sim.p3_commit_model(self,_p3_commit_frame)
+   _p3_commit_frame = {}
+  if action == "learn" and p3_result.get("transaction",0) > 0:
+   _p3_allocation_transactions[state.allocations.size()] = int(p3_result.transaction)
+  result["p3_transaction"] = p3_result.duplicate(true)
+  # Keep the exact original command result replay inclusive of the new evidence.
+  if receipts.has(id): receipts[id].result = result.duplicate(true)
+ if action == "undo_skill": _p3_allocation_transactions.erase(allocation_count)
+ return result

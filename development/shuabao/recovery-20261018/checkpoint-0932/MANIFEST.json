@@ -1,0 +1,35 @@
+{
+  "status": "RECONSTRUCTED_AND_REIMPLEMENTED_WIP_NOT_RUNTIME_ADMITTED",
+  "files": [
+    {
+      "path": "hero2d/asset_contract.gd",
+      "bytes": 4164,
+      "sha256": "b2667262d0ed614ee56d9a2061dbc24c930fdfd8645856514e971e8c1ffebc0d"
+    },
+    {
+      "path": "p3_reimplementation/integration01/sim.gd",
+      "bytes": 110255,
+      "sha256": "c0433d1f8e587cf472951a919c3335bd2e510f87a3157c8c92373b28ff097728"
+    },
+    {
+      "path": "p3_reimplementation/integration01/sim_additions.gdpart",
+      "bytes": 1954,
+      "sha256": "9b4aa004374307ddbf54c6fe6ed45656075be528abee9d325a3974100c8cdeb3"
+    },
+    {
+      "path": "p3_reimplementation/integration01/model.gd",
+      "bytes": 3781,
+      "sha256": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57"
+    },
+    {
+      "path": "p3_reimplementation/integration01/model_additions.gdpart",
+      "bytes": 1877,
+      "sha256": "7615b90875ac59d40326096fe1bd4226fb39bd3c8eb5db5444214985d76bee40"
+    }
+  ],
+  "notes": [
+    "Hero asset_contract rebuilt from surviving inputs without individual historical hash; no parsing or native validation.",
+    "P3 Sim/Model integration is new unreviewed WIP, not historical byte recovery. Session/rest/capability integration remains incomplete.",
+    "Do not activate these fragments in a production game or inherit historical runtime passes."
+  ]
+}
