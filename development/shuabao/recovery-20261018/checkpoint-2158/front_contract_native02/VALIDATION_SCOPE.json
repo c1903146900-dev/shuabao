@@ -1,0 +1,24 @@
+{
+  "native_result": "PASS",
+  "contract_checks": 19,
+  "distinct_draw_frames": [
+    0,
+    1,
+    2
+  ],
+  "guard_exit": 0,
+  "guard_elapsed_seconds": 0.53,
+  "source_posthash_exact": 8,
+  "support_posthash_exact": 16,
+  "tinyguard_posthash_exact": 4,
+  "production_candidate_unchanged": "64cc30997ac1205994fc5a1783e49092290b36478e86a12104ceebc7f91779a5",
+  "test_only_change": "Duplicate local loop variable renamed to case_result.",
+  "original_report_preserved": true,
+  "stale_report_field": "execution=requires_Godot_call_not_yet_run is a constant historical test-function label; actual execution is established by the native guard and postcheck.",
+  "not_verified": [
+    "Live combat",
+    "Rendered character art",
+    "World integration",
+    "Audio output"
+  ]
+}

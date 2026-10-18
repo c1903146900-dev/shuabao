@@ -1,0 +1,21 @@
+{
+  "source_exact": 8,
+  "support_exact": 16,
+  "tinyguard_exact": 4,
+  "native_contract_result": "PASS",
+  "checks": 19,
+  "distinct_draw_frames": [
+    0,
+    1,
+    2
+  ],
+  "exit": 0,
+  "guard_passed": true,
+  "cleanup_complete": true,
+  "limitations": [
+    "No live combat or asset rendering tested",
+    "ALSA initialization failed; dummy audio fallback",
+    "Original test execution metadata string is stale; raw and guard prove this run"
+  ],
+  "cpu_io_clear": true
+}

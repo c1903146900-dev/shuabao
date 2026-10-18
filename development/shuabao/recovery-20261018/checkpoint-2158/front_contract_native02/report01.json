@@ -1,0 +1,90 @@
+{
+  "accepted": true,
+  "cases": [
+    {
+      "name": "unobserved_release_rejected",
+      "passed": true
+    },
+    {
+      "name": "idle",
+      "passed": true
+    },
+    {
+      "name": "basic_distinct",
+      "passed": true
+    },
+    {
+      "name": "moving_basic",
+      "passed": true
+    },
+    {
+      "name": "hold_uses_draw_fraction",
+      "passed": true
+    },
+    {
+      "name": "release_source_clip_and_origin",
+      "passed": true
+    },
+    {
+      "name": "pause_same_source_pose",
+      "passed": true
+    },
+    {
+      "name": "uncovered_direction",
+      "passed": true
+    },
+    {
+      "name": "uncovered_alias",
+      "passed": true
+    },
+    {
+      "name": "control_fallback",
+      "passed": true
+    },
+    {
+      "name": "idle_recovers_without_stop_history",
+      "passed": true
+    },
+    {
+      "name": "scope_reject",
+      "passed": true
+    },
+    {
+      "name": "clock_reject",
+      "passed": true
+    },
+    {
+      "name": "original_room_permission",
+      "passed": true
+    },
+    {
+      "name": "old_room_receipt_rejected",
+      "passed": true
+    },
+    {
+      "name": "rejected_room_receipt_rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong_room_category_rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong_generation_rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong_room_rejected",
+      "passed": true
+    }
+  ],
+  "count": 19,
+  "draw_frames": [
+    0,
+    1,
+    2
+  ],
+  "elapsed_ms": 55,
+  "execution": "requires_Godot_call_not_yet_run",
+  "scope": "detached_19_contracts_only_no_assets_no_live_combat"
+}
