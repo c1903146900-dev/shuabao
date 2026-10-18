@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "d0ae726d34d3817eec4a599a02679da982ef6b9a",
+  "source_tip": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -4264,6 +4264,72 @@
       "sha256": "82a6a63837dfe1d1d3bc8bb14176f9e0a5aa65dc0d42fe69ff52f6fd7b1602c1",
       "classification": "NATIVE_COMPLETED_FLOOR_EVIDENCE",
       "validation_scope": "COMPLETED_FLOOR_UI_PASS; DEDICATED_PANEL_NOT_IMPLEMENTED; CONFIRMED_NEW_HERO_NOT_TESTED",
+      "apply_to_game": false
+    },
+    "terminal_ui_candidate01/payload/yan_trial_ui_20261018/result_summary.gd": {
+      "canonical_path": "terminal_ui_candidate01/payload/yan_trial_ui_20261018/result_summary.gd",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/terminal_ui_candidate01/payload/yan_trial_ui_20261018/result_summary.gd",
+      "git_blob_sha1": "c99d890b4a6b9cc12000c3640a0aee5ae99e8f04",
+      "bytes": 10707,
+      "sha256": "3b87f92d6d39062211b0106052d91e27a30d2a2e23fbc38c020637e62aae49c2",
+      "classification": "DISPLAY_DRAFT",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
+      "apply_to_game": false
+    },
+    "terminal_ui_candidate01/payload/yan_trial_ui_20261018/presenter.gd": {
+      "canonical_path": "terminal_ui_candidate01/payload/yan_trial_ui_20261018/presenter.gd",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/terminal_ui_candidate01/payload/yan_trial_ui_20261018/presenter.gd",
+      "git_blob_sha1": "c688f8f95fc7166c5bd5c6f4341b41d16cde4d81",
+      "bytes": 13719,
+      "sha256": "7beb3f85ad455e2a44f8a623a2b9927bf3078aeaf6fb672c12ba3afe2ac43532",
+      "classification": "DISPLAY_DRAFT",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
+      "apply_to_game": false
+    },
+    "cartoon_floor_plan01/PLAN.md": {
+      "canonical_path": "cartoon_floor_plan01/PLAN.md",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/cartoon_floor_plan01/PLAN.md",
+      "git_blob_sha1": "0b92cdd6ff90a7bb5dc1f8112afe32767f284eb3",
+      "bytes": 14950,
+      "sha256": "73141223352125d3360c700962897f310b0b0aaf1e3340a5577d257281f58093",
+      "classification": "AUDITED_CONVERSION_PLAN",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
+      "apply_to_game": false
+    },
+    "cartoon_floor_plan01/SOURCE_AUDIT.json": {
+      "canonical_path": "cartoon_floor_plan01/SOURCE_AUDIT.json",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/cartoon_floor_plan01/SOURCE_AUDIT.json",
+      "git_blob_sha1": "c08ed7401b60d83798d1af7ff8375e6e224d3467",
+      "bytes": 40743,
+      "sha256": "193b65b1119033911bf78ae29601eec5da42377cf711cf9f2677d4bd3bc5da86",
+      "classification": "AUDITED_CONVERSION_PLAN",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
+      "apply_to_game": false
+    },
+    "cartoon_floor_plan01/MANIFEST.json": {
+      "canonical_path": "cartoon_floor_plan01/MANIFEST.json",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/cartoon_floor_plan01/MANIFEST.json",
+      "git_blob_sha1": "9c47ff1303773b838f2df3eb568c74c4197f8aaf",
+      "bytes": 935,
+      "sha256": "d9dcbee489ca2f119c6ca2488c1f497687d01443ca58cec784dcafa6aecd7975",
+      "classification": "AUDITED_CONVERSION_PLAN",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
+      "apply_to_game": false
+    },
+    "cartoon_floor_plan01/SHA256SUMS": {
+      "canonical_path": "cartoon_floor_plan01/SHA256SUMS",
+      "commit": "79c742ce8f38ab66d3b8a8efa5161fb04a510921",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1356/cartoon_floor_plan01/SHA256SUMS",
+      "git_blob_sha1": "47875bcb580e53dd422a82ea02d42e96f83a1704",
+      "bytes": 238,
+      "sha256": "232099749475a12d29cf6b3e9fc6b0308ab0f84e3904717120452a46d1ea194d",
+      "classification": "AUDITED_CONVERSION_PLAN",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_BUILD_PROMOTED",
       "apply_to_game": false
     }
   },
