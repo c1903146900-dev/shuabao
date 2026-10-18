@@ -5057,6 +5057,61 @@
       "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
       "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
       "apply_to_game": false
+    },
+    "terminal_ui_candidate01/MANIFEST.json": {
+      "canonical_path": "terminal_ui_candidate01/MANIFEST.json",
+      "commit": "70659699606f3b6c173df9c80273d8bc4f80c1e3",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1401/terminal_ui_candidate01/MANIFEST.json",
+      "git_blob_sha1": "5679d28b09257f23508d71ee4ca94e224e121993",
+      "bytes": 3556,
+      "sha256": "c8141d0eba466734403829985459af5d26cbc32c298a50ab7c607dbe98828af6",
+      "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
+      "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
+    },
+    "terminal_ui_candidate01/SOURCE_PINS.expected.json": {
+      "canonical_path": "terminal_ui_candidate01/SOURCE_PINS.expected.json",
+      "commit": "70659699606f3b6c173df9c80273d8bc4f80c1e3",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1401/terminal_ui_candidate01/SOURCE_PINS.expected.json",
+      "git_blob_sha1": "cccf1aad1f0b5632dbca93adf938c4e6d435c1b0",
+      "bytes": 418309,
+      "sha256": "c74a9b93954f5f30abeb0721979d4d5600c02f74e1931ae3f03cd36cabc85436",
+      "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
+      "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
+    },
+    "terminal_ui_candidate01/PRESENTER_DELTA_FROM_COPY04.diff": {
+      "canonical_path": "terminal_ui_candidate01/PRESENTER_DELTA_FROM_COPY04.diff",
+      "commit": "70659699606f3b6c173df9c80273d8bc4f80c1e3",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1401/terminal_ui_candidate01/PRESENTER_DELTA_FROM_COPY04.diff",
+      "git_blob_sha1": "d65fb952f33d8e1af0545ae0a52fa88e85fb0aff",
+      "bytes": 1022,
+      "sha256": "43c6d1e27078ab2c924fbc7ac7b3107e20ac725571403e4e737cab0bc29d2182",
+      "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
+      "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
+    },
+    "terminal_ui_candidate01/COMPOSITION.json": {
+      "canonical_path": "terminal_ui_candidate01/COMPOSITION.json",
+      "commit": "70659699606f3b6c173df9c80273d8bc4f80c1e3",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1401/terminal_ui_candidate01/COMPOSITION.json",
+      "git_blob_sha1": "f9dce52a4adcf2f4ad065b4f7b1ca7eeb96cc963",
+      "bytes": 1324,
+      "sha256": "7c47cadd53baac4af701e6c120681f8b2a42b2a140e357b3361d40bb86fb89dc",
+      "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
+      "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
+    },
+    "terminal_ui_probe01/payload/yan_terminal_ui_probe_20261018/probe.gd": {
+      "canonical_path": "terminal_ui_probe01/payload/yan_terminal_ui_probe_20261018/probe.gd",
+      "commit": "d360aee5cd37fe7a5457ee4157385a5facfa72ea",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1400/terminal_ui_probe01/payload/yan_terminal_ui_probe_20261018/probe.gd",
+      "git_blob_sha1": "f2a6df47055348c707719a409cb5a0abe478f8b7",
+      "bytes": 9025,
+      "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
+      "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
+      "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
     }
   },
   "notes": [
@@ -5089,5 +5144,11 @@
     "cache_files": 98,
     "validation_scope": "196_RESOURCELOADER_LOADS_ONLY; ORIGINAL_IMPORT_FAILED_SIDECAR_PROJECT_MUTATION; ALSA_AND_UID_WARNINGS_RETAINED",
     "gameplay_acceptance": false
+  },
+  "reference_art_evidence": {
+    "commit": "70659699606f3b6c173df9c80273d8bc4f80c1e3",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1401/hero_mesh_native06/evidence01",
+    "files": 13,
+    "scope": "12 PNG and report, independently read back on initial publication; accepted as front-view integration reference only, not final combat art."
   }
 }
