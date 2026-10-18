@@ -1,0 +1,35 @@
+{
+  "stage_3144_exact": true,
+  "guard_seal_exact": true,
+  "accepted": true,
+  "source_released": true,
+  "scope": "original_entry_hex_P3_fee_Hero_Model_undo_Q1_only",
+  "raw_errors": [
+    "ERROR: Condition \"status < 0\" is true. Returning: ERR_CANT_OPEN"
+  ],
+  "script_errors": [],
+  "xserver_errors": 0,
+  "warning_count": 92,
+  "evidence": {
+    "02_p3_undone.png": {
+      "sha256": "83dbda21a5a9b38d7236f15cc25dd4d16f9a1dc9df5ceda7bd2591f1d3b73a8e",
+      "bytes": 272348
+    },
+    "report.json": {
+      "sha256": "8d835cf47b7409436391c21e66e99fd8fa0e8fc26123b3c6174a9248735a2def",
+      "bytes": 712
+    },
+    "03_q1_learned.png": {
+      "sha256": "2a8ff824b7bff10d891e410d1b8e1036205d23403f215d3455a72a019eea3cf4",
+      "bytes": 273457
+    },
+    "01_p3_learned.png": {
+      "sha256": "361877fe03d2795fa1273224a33961c0d14b2f4a46dc14488ba4f10f9508399c",
+      "bytes": 272548
+    },
+    "observations.json": {
+      "sha256": "f1a4fcb692362c2cc002740bd705ee94213728596e17c671d18cc337d3b4fd56",
+      "bytes": 14857
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>Front Q1 registration comparison 02</title>
+<style>body{font:15px system-ui;background:#202b36;color:#eee;margin:20px}canvas{display:block;background:#19212b;border:1px solid #667;margin-top:12px}button,input,select{margin:6px}p{max-width:1000px}</style>
+<h2>Front Q1 two-layer inspection</h2><p>Authored phase replay only. No Sim, gameplay, cooldown, damage or world effect is present. Frame 6 (seventh picture) has a known raised-brush return defect. This viewer deliberately shows it. No crossfade.</p>
+<button id="play">Pause</button><button id="step">Next upper frame</button><label>Phase <select id="phase"><option value="auto">Replay</option><option>idle</option><option>draw</option><option>hold</option><option>release</option></select></label><label>Progress<input id="progress" type="range" min="0" max="1" value="0" step=".001"></label><label>Background<select id="bg"><option value="#19212b">Dark</option><option value="#fafafa">White</option><option value="#687b67">Ground</option></select></label>
+<canvas id="canvas" width="1100" height="600"></canvas><p id="status">Loading original PNGs…</p>
+<script src="preview_registered02.js"></script>

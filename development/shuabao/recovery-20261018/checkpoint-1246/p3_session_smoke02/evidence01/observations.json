@@ -1,0 +1,679 @@
+[
+  {
+    "choosing": false,
+    "hex_before_count": 0,
+    "offered": "common_g01"
+  },
+  {
+    "choosing": false,
+    "hex_after_count": 1,
+    "receipts": [
+      {
+        "request": {
+          "action": "hex_select",
+          "actor_id": "yanguizhou",
+          "command_id": "ui-yanguizhou-12003013-1",
+          "milestone": 1,
+          "slot": 0,
+          "state_revision": 2
+        },
+        "result": {
+          "accepted": true,
+          "changed": true,
+          "events": [
+            {
+              "actor_id": "yanguizhou",
+              "definition_version": "six-heroes-final-v03-import-20261002-yanguizhou/shop/existing-fixture-20261004-v1/b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369:e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28:006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea|ink-river-h03-h04-ordinary-candidate-v1|equipment48-potions3:cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f|formal-training12",
+              "parameters": {
+                "milestone": 1,
+                "slot": 0
+              },
+              "type": "hex_select"
+            }
+          ],
+          "origin": "progression_model",
+          "reason": "",
+          "state_revision": 3
+        },
+        "source_time": 0.0
+      }
+    ]
+  },
+  {
+    "accepted": true,
+    "allocations": 0,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "",
+      "q": "",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 0,
+      "q": 0,
+      "r": 0
+    },
+    "initial_actions": 1,
+    "label": "before_learning",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 0,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "open_growth",
+    "points": 1,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "button_action": "learn",
+    "receipt": {
+      "request": {
+        "action": "learn",
+        "actor_id": "yanguizhou",
+        "candidate_id": "P3",
+        "command_id": "ui-yanguizhou-12003013-2",
+        "expected_rank": 0,
+        "slot_id": "P",
+        "state_revision": 3
+      },
+      "result": {
+        "accepted": true,
+        "changed": true,
+        "events": [
+          {
+            "actor_id": "yanguizhou",
+            "definition_version": "six-heroes-final-v03-import-20261002-yanguizhou/shop/existing-fixture-20261004-v1/b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369:e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28:006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea|ink-river-h03-h04-ordinary-candidate-v1|equipment48-potions3:cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f|formal-training12",
+            "parameters": {
+              "candidate": "P3",
+              "expected_rank": 0,
+              "slot": "P"
+            },
+            "type": "learn"
+          }
+        ],
+        "origin": "progression_model",
+        "p3_transaction": {
+          "accepted": true,
+          "changed": true,
+          "state": {
+            "cd_reset_serial": {
+              "e": 0,
+              "q": 0
+            },
+            "counts": {
+              "e": 0,
+              "q": 0
+            },
+            "epoch": 0,
+            "rank": 1,
+            "ready": {
+              "e": false,
+              "q": false
+            },
+            "release_serial": 0
+          },
+          "transaction": 1
+        },
+        "reason": "",
+        "state_revision": 4
+      },
+      "source_time": 0.0
+    }
+  },
+  {
+    "accepted": true,
+    "allocations": 1,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "p3",
+      "q": "",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 1,
+      "q": 0,
+      "r": 0
+    },
+    "initial_actions": 2,
+    "label": "p3_learned",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 1,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "learn_p3",
+    "points": 0,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "P3",
+        "rank": 1
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "accepted": true,
+    "allocations": 1,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "p3",
+      "q": "",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 1,
+      "q": 0,
+      "r": 0
+    },
+    "initial_actions": 2,
+    "label": "01_p3_learned_postdraw",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 1,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "learn_p3",
+    "points": 0,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "P3",
+        "rank": 1
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "button_action": "undo_new_points",
+    "receipt": {
+      "request": {
+        "action": "undo_new_points",
+        "actor_id": "yanguizhou",
+        "command_id": "ui-yanguizhou-12003013-3",
+        "state_revision": 4
+      },
+      "result": {
+        "accepted": true,
+        "changed": true,
+        "events": [
+          {
+            "actor_id": "yanguizhou",
+            "definition_version": "six-heroes-final-v03-import-20261002-yanguizhou/shop/existing-fixture-20261004-v1/b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369:e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28:006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea|ink-river-h03-h04-ordinary-candidate-v1|equipment48-potions3:cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f|formal-training12",
+            "parameters": {
+
+            },
+            "type": "undo_skill"
+          }
+        ],
+        "origin": "progression_model",
+        "p3_transaction": {
+          "accepted": true,
+          "state": {
+            "cd_reset_serial": {
+              "e": 0,
+              "q": 0
+            },
+            "counts": {
+              "e": 0,
+              "q": 0
+            },
+            "epoch": 0,
+            "rank": 0,
+            "ready": {
+              "e": false,
+              "q": false
+            },
+            "release_serial": 0
+          }
+        },
+        "reason": "",
+        "state_revision": 5
+      },
+      "source_time": 0.0
+    }
+  },
+  {
+    "accepted": true,
+    "allocations": 0,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "",
+      "q": "",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 0,
+      "q": 0,
+      "r": 0
+    },
+    "initial_actions": 3,
+    "label": "p3_undone",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 0,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "undo_p3",
+    "points": 1,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "accepted": true,
+    "allocations": 0,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "",
+      "q": "",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 0,
+      "q": 0,
+      "r": 0
+    },
+    "initial_actions": 3,
+    "label": "02_p3_undone_postdraw",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 0,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "undo_p3",
+    "points": 1,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "",
+        "rank": 0
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "button_action": "learn",
+    "receipt": {
+      "request": {
+        "action": "learn",
+        "actor_id": "yanguizhou",
+        "candidate_id": "Q1",
+        "command_id": "ui-yanguizhou-12003013-4",
+        "expected_rank": 0,
+        "slot_id": "Q",
+        "state_revision": 5
+      },
+      "result": {
+        "accepted": true,
+        "changed": true,
+        "events": [
+          {
+            "actor_id": "yanguizhou",
+            "definition_version": "six-heroes-final-v03-import-20261002-yanguizhou/shop/existing-fixture-20261004-v1/b59aa38e1dce88e30012810eb0a2590af1f75b456ae50b6e7b79647aab130369:e97f35712c5437912f02e78f6342ee5a895c9db3a86c8b1131d9e08073fe7e28:006646e53d28d8a220cd04ac5724faeda65ddc21a2ab45f5625656f8213a72ea|ink-river-h03-h04-ordinary-candidate-v1|equipment48-potions3:cf43d853b5a1cf4f1739c4812ecacffb14edfe796c3b8b1a5e02aa04bab3d86f|formal-training12",
+            "parameters": {
+              "candidate": "Q1",
+              "expected_rank": 0,
+              "slot": "Q"
+            },
+            "type": "learn"
+          }
+        ],
+        "origin": "progression_model",
+        "reason": "",
+        "state_revision": 6
+      },
+      "source_time": 0.0
+    }
+  },
+  {
+    "accepted": true,
+    "allocations": 1,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "",
+      "q": "q1",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 0,
+      "q": 1,
+      "r": 0
+    },
+    "initial_actions": 4,
+    "label": "q1_learned",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 0,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "learn_q1",
+    "points": 0,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "Q1",
+        "rank": 1
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "accepted": true,
+    "allocations": 1,
+    "generation": 0,
+    "hero_loadout": {
+      "e": "",
+      "passive": "",
+      "q": "q1",
+      "r": ""
+    },
+    "hero_ranks": {
+      "e": 0,
+      "passive": 0,
+      "q": 1,
+      "r": 0
+    },
+    "initial_actions": 4,
+    "label": "03_q1_learned_postdraw",
+    "p3": {
+      "cd_reset_serial": {
+        "e": 0,
+        "q": 0
+      },
+      "counts": {
+        "e": 0,
+        "q": 0
+      },
+      "epoch": 0,
+      "rank": 0,
+      "ready": {
+        "e": false,
+        "q": false
+      },
+      "release_serial": 0
+    },
+    "pending_milestones": [],
+    "phase": "learn_q1",
+    "points": 0,
+    "room_id": "ink-q1-isolated",
+    "selected_hex": [
+      "common_g01"
+    ],
+    "skills": {
+      "E": {
+        "candidate": "",
+        "rank": 0
+      },
+      "P": {
+        "candidate": "",
+        "rank": 0
+      },
+      "Q": {
+        "candidate": "Q1",
+        "rank": 1
+      },
+      "R": {
+        "candidate": "",
+        "rank": 0
+      }
+    },
+    "source_time": 0.0
+  },
+  {
+    "receipt": {
+      "accepted": true,
+      "evidence_only": true,
+      "global_progress_saved": false,
+      "last_diagnostic_write_accepted": true,
+      "reason": "host_closed_without_settlement",
+      "state": {
+        "active_node_room": "normal-floor-3725631/initial-safe",
+        "boss_registration": {
+
+        },
+        "cleared": [],
+        "content_status": "developer_proposal",
+        "fault": {
+
+        },
+        "floor_id": "first_floor",
+        "full_normal_floor_proven": false,
+        "generation": -1,
+        "kill_receipts": {
+
+        },
+        "live_lv4_pool": "TEN_REAL_HOOKS_CANDIDATE",
+        "node_count": 12,
+        "node_index": 0,
+        "production_ready": false,
+        "rest_settlements": [],
+        "room_id": "",
+        "route_version": "user-route-runtime01",
+        "row_state": {
+          "completed_rows": [],
+          "entry_receipt": {
+
+          },
+          "ready_for_owner_boss_settlement": false,
+          "receipt_evidence": "typed_caller_assertion_only",
+          "release": false,
+          "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+          "row_number": 1,
+          "row_state_instance_id": "row-state--9223371777026029577",
+          "run_id": "normal-floor-3725631",
+          "schema_version": 5,
+          "selected_identity": {
+
+          },
+          "selected_node": {
+
+          },
+          "selection_receipts": [],
+          "settlement_performed": false,
+          "status": "awaiting_selection"
+        },
+        "run_id": "normal-floor-3725631",
+        "service_present": false,
+        "service_ready": false,
+        "settlement": {
+
+        },
+        "status": "aborted"
+      }
+    },
+    "safe_close": true
+  }
+]

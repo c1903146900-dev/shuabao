@@ -1,0 +1,49 @@
+{
+  "classification": "STATIC_SOURCE_REUSE_CHECK_ONLY",
+  "base_source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "checks": {
+    "thin_entry_extends_original": true,
+    "no_launch_copy_or_override": true,
+    "no_manual_process_zero": true,
+    "synchronous_existing_sink": true,
+    "UI_after_startup_guard_before_errors": true,
+    "original_has_no_process_override": true,
+    "UI_no_disabled_writes": true,
+    "UI_no_connections": true,
+    "UI_no_request_flag_writes": true,
+    "UI_no_new_input": true,
+    "Q1_sealed_shader_static_vertex": true,
+    "Q1_free_curve_module_exists": true,
+    "R1_view_snow_only": true
+  },
+  "checks_passed": 13,
+  "checks_total": 13,
+  "source_files_unchanged": {
+    "project.godot": "cf96213f7ae2b87369e6e1552229a59854b0988a1bf28307b25a736598ca7106",
+    "scripts/integration/hero_entry.gd": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+    "scripts/integration/yanguizhou_first_floor.gd": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962",
+    "tests/ink_ordinary_visuals_20261007/candidate01/host.gd": "7cd9301c3b6c74c93aa30b7f5522ab0d6f0686d03bdac37860ec829918c486f0",
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+    "visual_rework_20261009/controller.gd": "8830631bdf2e9ad227ac867979a01a6fd16a1b9b5ff13c6e993364f6ae9bac47",
+    "visual_rework_20261009/views/q1_view.gd": "de569a31a53c967dfff8902cf2e067e013c5a0b6f552d53649891b2f05c78a90",
+    "visual_rework_20261009/views/q1_river.gdshader": "410007d026fe13c80395d91cf9b15d211f70391251277af78f505f6ccc9a6f86",
+    "visual_rework_20261009/input/q1_free_curve_sampler.gd": "80cc211b40313b4171ce8332394d54d0d396ba722045a1c8b1bf190c75df5d32",
+    "visual_rework_20261009/views/r1_source_snow_view.gd": "bead2e763e3f6d29ec93b8d85e1ca5d10c229cbd3bb8a197fca9a6ce1e730682",
+    "visual_rework_20261009/assets/r1_snow_banks.png": "7cb253b13e136b1b1691fc096d071915c6625de743bffac27fed490b300b508b",
+    "visual_rework_20261009/views/e2_source_boat_view.gd": "289f29e9c079e0c92889a8243d9b8618fa3c92bbeacc75e91f35b3edb56d9100"
+  },
+  "R1_asset_visual_inspection": "Current r1_snow_banks.png viewed directly: snowy shore/mountain strips, no depicted boat or person observed. Existing R1 source loads only field/banks/flakes; controller hides original r1_domain_view. R1 not exercised by this planned Q1 probe. E2 dedicated boat source remains unchanged.",
+  "missing_historical_evidence": "ui_recovered inventory contains source/diffs/review documents only, no historical rendered UI PNGs. Recovered source SHA does not supply image acceptance. Three new screenshots are planned only after review and authorization.",
+  "not_proven": [
+    "GDScript parse",
+    "actual scene/controls and fonts on screen",
+    "native pointer hit testing",
+    "other skill events",
+    "curved-gesture route input",
+    "R1 event/runtime appearance",
+    "terminal or real-error UI",
+    "front-animation acceptance",
+    "art acceptance"
+  ],
+  "engine_run": false
+}
