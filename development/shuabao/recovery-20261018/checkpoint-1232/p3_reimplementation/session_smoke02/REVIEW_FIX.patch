@@ -1,0 +1,41 @@
+--- session_smoke01/runner.gd
++++ session_smoke02/runner.gd
+@@ -107,7 +107,7 @@
+  await _frame()
+  if not _budget() or not _identity(): return false
+  var actual: Dictionary = _sample(name+"_postdraw")
+- for key: String in ["points","skills","hero_loadout","hero_ranks","p3","room_id","generation"]:
++ for key: String in ["points","skills","hero_loadout","hero_ranks","p3","room_id","generation","allocations","selected_hex","pending_milestones"]:
+   if actual.get(key) != expected.get(key): return false
+  return _picture(name)
+ 
+@@ -124,7 +124,8 @@
+  var view = host.initial_hud.hex_draft
+  if not _identity() or view.cards.size()!=4 or not _available(view.cards[0].select): return false
+  var before: Dictionary = model.snapshot()
+- var offered: String = before.offers[str(host.initial_controller.active_milestone)].slots[0]
++ var milestone: int = int(host.initial_controller.active_milestone)
++ var offered: String = before.offers[str(milestone)].slots[0]
+  var count: int = host.initial_actions.size()
+  var receipt_deadline: int = mini(deadline-10000,Time.get_ticks_msec()+3000)
+  observations.append({"hex_before_count":count,"choosing":view.choosing,"offered":offered})
+@@ -136,7 +137,7 @@
+  if host.initial_actions.size()!=count+1 or view.choosing: return false
+  var receipt: Dictionary = host.initial_actions.back()
+  var state: Dictionary = model.snapshot()
+- return receipt.request.action=="hex_select" and receipt.result.get("accepted",false) and state.selected_hex==[offered] and state.pending_milestones.is_empty() and state.points==1
++ return receipt.request.action=="hex_select" and receipt.request.get("slot",-1)==0 and receipt.request.get("milestone",-1)==milestone and receipt.result.get("accepted",false) and state.selected_hex==[offered] and state.pending_milestones.is_empty() and state.points==1
+ 
+ func _run() -> void:
+  root.size = Vector2i(1280,720)
+@@ -212,5 +213,9 @@
+  var report: Dictionary = {"accepted":completed and released and _budget(),"reason":reason,"synthetic":true,"scope":"original_entry_hex_P3_fee_Hero_Model_undo_Q1_only","source_released":released,"elapsed_ms":Time.get_ticks_msec()-started,"draw_count":draw_count,"screenshots":screenshots,"raw_image_bytes":image_bytes}
+  var io_ok: bool = _json("observations.json",observations)
+  io_ok = _json("report.json",report) and io_ok
++ if Time.get_ticks_msec() >= deadline:
++  report.accepted = false
++  report.reason = "absolute_deadline_after_io"
++  io_ok = _json("report.json",report) and io_ok
+  print("P3_REIMPLEMENTATION_SMOKE_FINAL ",JSON.stringify(report)," IO_OK=",io_ok)
+- quit(0 if report.accepted and io_ok else 4)
++ quit(0 if report.accepted and io_ok and Time.get_ticks_msec() < deadline else 4)
