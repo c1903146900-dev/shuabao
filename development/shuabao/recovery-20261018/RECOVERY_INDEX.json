@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "64832e8dba5e51e6e202fb72bf1804321c6671dd",
+  "source_tip": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -1416,6 +1416,259 @@
       "classification": "NEW_GENERATED_ART_CANDIDATE",
       "validation_scope": "ORIGINAL_PNG_FIXED_COMMIT_GIT_READBACK_CMP_SHA256_VERIFIED_NOT_ANIMATION_ACCEPTED",
       "apply_to_game": false
+    },
+    "runtime_swapfix01/PURE_SWAP_RESULT.json": {
+      "canonical_path": "runtime_swapfix01/PURE_SWAP_RESULT.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_swapfix01/PURE_SWAP_RESULT.json",
+      "git_blob_sha1": "5d3d7768813041f077caa8c5e93a8965b0e70b39",
+      "bytes": 505,
+      "sha256": "868d3b1268790411a10d9eb5b6286f2e4c2f075fe42c0ed300831b16f1fe2cfc",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "11_PURE_RACE_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_swapfix01/SWAPFIX_PINS.json": {
+      "canonical_path": "runtime_swapfix01/SWAPFIX_PINS.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_swapfix01/SWAPFIX_PINS.json",
+      "git_blob_sha1": "3d5a50a239b4fe3ea0e2594ae03c0349ca64b7e9",
+      "bytes": 767,
+      "sha256": "4801f5a92a65f26d629f7e1b920b4ceb932150a133e4f786aefefcc6a64954f5",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "11_PURE_RACE_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_swapfix01/SWAP_FIX.diff": {
+      "canonical_path": "runtime_swapfix01/SWAP_FIX.diff",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_swapfix01/SWAP_FIX.diff",
+      "git_blob_sha1": "f705cf21e8488d2b013ee36e377e7771c45fff3f",
+      "bytes": 3238,
+      "sha256": "bc522b219306d6332f56d96b2581ef7911a0bb461c034d213bac3d46a9819401",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "11_PURE_RACE_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_swapfix01/owned_runtime_guard.py": {
+      "canonical_path": "runtime_swapfix01/owned_runtime_guard.py",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_swapfix01/owned_runtime_guard.py",
+      "git_blob_sha1": "5c369ffc59080acaa78052077c32e9da3e7d9fa4",
+      "bytes": 13980,
+      "sha256": "126922a0ffdb6db60dd22936d870e12f459995c7549366b8f790e0e3d7da4489",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "11_PURE_RACE_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_swapfix01/test_swap_race.py": {
+      "canonical_path": "runtime_swapfix01/test_swap_race.py",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_swapfix01/test_swap_race.py",
+      "git_blob_sha1": "b736b777dd4ae3b4170c5113e497253d94405790",
+      "bytes": 2775,
+      "sha256": "d0a0ee6910b081be8590c8c4d7073bd228539b7a95fecdac1938c1e0dd0ee5ad",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "11_PURE_RACE_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_import_swapfix01/IMPORT_PINS.json": {
+      "canonical_path": "runtime_import_swapfix01/IMPORT_PINS.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_import_swapfix01/IMPORT_PINS.json",
+      "git_blob_sha1": "de55faccfebd6b1798b4abd1aff3131aacb8cd09",
+      "bytes": 823,
+      "sha256": "4e063ec832a9c0e84a744d45e10dec26452e186997f894929e07d7d3448293fe",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "19_PURE_IMPORT_POLICY_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_import_swapfix01/IMPORT_REBIND.diff": {
+      "canonical_path": "runtime_import_swapfix01/IMPORT_REBIND.diff",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_import_swapfix01/IMPORT_REBIND.diff",
+      "git_blob_sha1": "4fa59af26c69bd3aa4ff183adfaece4e7faf890f",
+      "bytes": 1172,
+      "sha256": "87cee78a198262e8657a2d9a826a06d3a7bd33e3d987edbdf605abdb495de7d9",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "19_PURE_IMPORT_POLICY_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_import_swapfix01/PURE_IMPORT_RESULT.json": {
+      "canonical_path": "runtime_import_swapfix01/PURE_IMPORT_RESULT.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_import_swapfix01/PURE_IMPORT_RESULT.json",
+      "git_blob_sha1": "49e96ab6b4466d3fec2268756e91f7413737e3e5",
+      "bytes": 674,
+      "sha256": "8840636bcb4a373e003625bf460f44dbf325c44fcc4b2bcb503e6a8391d14743",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "19_PURE_IMPORT_POLICY_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_import_swapfix01/official_import_guard.py": {
+      "canonical_path": "runtime_import_swapfix01/official_import_guard.py",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_import_swapfix01/official_import_guard.py",
+      "git_blob_sha1": "3a622222f436e8baae0b6a1f9cfd9e3a22dd1d70",
+      "bytes": 7646,
+      "sha256": "77cc982211e4791f2882f034861790b45e2c74157535bf08123097f1703d27b5",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "19_PURE_IMPORT_POLICY_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "runtime_import_swapfix01/test_import_policy.py": {
+      "canonical_path": "runtime_import_swapfix01/test_import_policy.py",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/runtime_import_swapfix01/test_import_policy.py",
+      "git_blob_sha1": "7f2a6c576f1aceb6e8acfb49a5c385f1db6f35c3",
+      "bytes": 1902,
+      "sha256": "b738cc255a8ade1afd66864805717d618f5bde2d06b9cdfdfea5f13e828bf2cd",
+      "classification": "NEW_SUPPORT_OR_REIMPLEMENTATION",
+      "validation_scope": "19_PURE_IMPORT_POLICY_CHECKS_ONLY",
+      "apply_to_game": false
+    },
+    "p3_integrated_source01/assemble.py": {
+      "canonical_path": "p3_integrated_source01/assemble.py",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/assemble.py",
+      "git_blob_sha1": "1903c670a52edbef2c9e0b5cb2696f60bf38876e",
+      "bytes": 1905,
+      "sha256": "e3ceb3a6a22a175558332b8f953b759f7e7808331854d261dd38d2fd73165eab",
+      "classification": "VERIFIED_STATIC_ASSEMBLY",
+      "validation_scope": "3044_FILE_STATIC_ASSEMBLY_ONLY",
+      "apply_to_game": false
+    },
+    "p3_integrated_source01/SOURCE_PINS.json": {
+      "canonical_path": "p3_integrated_source01/SOURCE_PINS.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/SOURCE_PINS.json",
+      "git_blob_sha1": "913459422eafd90836088818dd0a9df3ffbbc6c6",
+      "bytes": 417979,
+      "sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+      "classification": "VERIFIED_STATIC_ASSEMBLY",
+      "validation_scope": "3044_FILE_STATIC_ASSEMBLY_ONLY",
+      "apply_to_game": false
+    },
+    "p3_integrated_source01/ASSEMBLY_REPORT.json": {
+      "canonical_path": "p3_integrated_source01/ASSEMBLY_REPORT.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/ASSEMBLY_REPORT.json",
+      "git_blob_sha1": "39082d931c2f6c59f0e0a285f422170e140463a8",
+      "bytes": 2129,
+      "sha256": "0fdabf41430bb48d9818fcd6a5a357e3446819574281f2136189b8a9eeb5503c",
+      "classification": "VERIFIED_STATIC_ASSEMBLY",
+      "validation_scope": "3044_FILE_STATIC_ASSEMBLY_ONLY",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/migration01/REVIEW_PUBLIC.md": {
+      "canonical_path": "p3_reimplementation/migration01/REVIEW_PUBLIC.md",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_reimplementation/migration01/REVIEW_PUBLIC.md",
+      "git_blob_sha1": "3ed868c89d0cd1f5342dd242c824bd7e4e71f92a",
+      "bytes": 3823,
+      "sha256": "1d5cce6410ab2df78f0cc24a960dfb6008bfb61e26dbdc5136a8ac5a42718607",
+      "classification": "PUBLIC_DERIVATIVE_EVIDENCE",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_NATIVE_ACCEPTED",
+      "apply_to_game": false
+    },
+    "resource_import_closure01/IMPORT_FAILURE_PUBLIC.json": {
+      "canonical_path": "resource_import_closure01/IMPORT_FAILURE_PUBLIC.json",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/resource_import_closure01/IMPORT_FAILURE_PUBLIC.json",
+      "git_blob_sha1": "6da8e249d048d122ff8682b6d718531750cda703",
+      "bytes": 1193,
+      "sha256": "ccd04522964fd5622ded6c2016689949f43bfb3654a7baac724f88f4f54a23d1",
+      "classification": "PUBLIC_DERIVATIVE_EVIDENCE",
+      "validation_scope": "IMPORT_FAILED_PROC_RACE_NO_CACHE_PROMOTION",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke01/MANIFEST.json": {
+      "canonical_path": "p3_reimplementation/session_smoke01/MANIFEST.json",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_reimplementation/session_smoke01/MANIFEST.json",
+      "git_blob_sha1": "336dfece10d59663c6c00f1d6a0d6164c66632fb",
+      "bytes": 1064,
+      "sha256": "aec79868da7b09a0ef85f2b1bf0a37e42a28e2fbd7e8b4b0ad9aff756e069976",
+      "classification": "REIMPLEMENTATION_UNRUN_FIXTURE",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_NATIVE_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke01/binding.json": {
+      "canonical_path": "p3_reimplementation/session_smoke01/binding.json",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_reimplementation/session_smoke01/binding.json",
+      "git_blob_sha1": "dbbc716cc75a7d62c2fd15cde6db83be8b550487",
+      "bytes": 4692,
+      "sha256": "bbdd199776bce11387487d085141dd360a88082147a78f224cf479452c28c724",
+      "classification": "REIMPLEMENTATION_UNRUN_FIXTURE",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_NATIVE_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke01/runner.gd": {
+      "canonical_path": "p3_reimplementation/session_smoke01/runner.gd",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_reimplementation/session_smoke01/runner.gd",
+      "git_blob_sha1": "e6034a63eb0daeff5a992175346939bec900127a",
+      "bytes": 12262,
+      "sha256": "f193e1e33cb67b79fbd617b4339b70ec61e7e4abc68f4b6820b6a929538ae27e",
+      "classification": "REIMPLEMENTATION_UNRUN_FIXTURE",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_NATIVE_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_necessary_review01/public/REVIEW.json": {
+      "canonical_path": "p3_necessary_review01/public/REVIEW.json",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_necessary_review01/public/REVIEW.json",
+      "git_blob_sha1": "c979c99c1e52febc72f9ab042328f850fa9c0c23",
+      "bytes": 3740,
+      "sha256": "0796d88823991c6ac5bbc83cf4038074e5bf88fb86470bf60b0bfe854155b297",
+      "classification": "PUBLIC_DERIVATIVE_EVIDENCE",
+      "validation_scope": "STATIC_REVIEW_ONLY",
+      "apply_to_game": false
+    },
+    "p3_necessary_review01/public/MIGRATION_REVIEW.json": {
+      "canonical_path": "p3_necessary_review01/public/MIGRATION_REVIEW.json",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_necessary_review01/public/MIGRATION_REVIEW.json",
+      "git_blob_sha1": "5630c53cc3cf99c3480d3daa7ad60484c12c15f5",
+      "bytes": 2198,
+      "sha256": "794fc824b7fcd5bb32c9b3ba5c72e5585fe4a007359c8ae7bbd93869111e35f5",
+      "classification": "PUBLIC_DERIVATIVE_EVIDENCE",
+      "validation_scope": "STATIC_REVIEW_ONLY",
+      "apply_to_game": false
+    },
+    "p3_necessary_review01/public/PINS.json": {
+      "canonical_path": "p3_necessary_review01/public/PINS.json",
+      "commit": "3f7c44e7ea0399c8d1598b08fce48bd0e36b4a3b",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1231/p3_necessary_review01/public/PINS.json",
+      "git_blob_sha1": "83774ed886c79738f4a15afb1819779ef17d0777",
+      "bytes": 397,
+      "sha256": "47e3c76b7a620b6611acb05daa43072bb47932126787ea25501b7965a8ff5381",
+      "classification": "PUBLIC_DERIVATIVE_EVIDENCE",
+      "validation_scope": "STATIC_REVIEW_ONLY",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/upper_q1_eight_original.png": {
+      "canonical_path": "hero2d/front_motion01/upper_q1_eight_original.png",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/hero2d/front_motion01/upper_q1_eight_original.png",
+      "git_blob_sha1": "cbbdc78bcd2500a5310c605c2899949a8fbcd884",
+      "bytes": 2544112,
+      "sha256": "c5230883ccce96db9ec74f36379fc6401e1093770980453fd3d447bbc2ad1494",
+      "classification": "NEW_GENERATED_ART_CANDIDATE",
+      "validation_scope": "ORIGINAL_PNG_READBACK_CMP_SHA256_VERIFIED; UPPER_KEYS_NOT_CONTINUOUS_ANIMATION_ACCEPTED",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/lower_idle_walk_nine_original.png": {
+      "canonical_path": "hero2d/front_motion01/lower_idle_walk_nine_original.png",
+      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/hero2d/front_motion01/lower_idle_walk_nine_original.png",
+      "git_blob_sha1": "aff7de46bbe48eebc92658049bef6a662c06ca62",
+      "bytes": 1432352,
+      "sha256": "485eea12c243aa71cd06e91b33a3878ae5315c18f99ab08fa46bd3d8944451a8",
+      "classification": "NEW_GENERATED_ART_CANDIDATE",
+      "validation_scope": "ORIGINAL_PNG_READBACK_CMP_SHA256_VERIFIED; WALK_CYCLE_CONTENT_REJECTED_NOT_FOR_ACTIVATION",
+      "apply_to_game": false
     }
   },
   "notes": [
@@ -1425,5 +1678,15 @@
     "Legacy guard README containing historical machine paths is intentionally absent; execute only reviewed RUNTIME/CODE pins.",
     "Historical passes do not transfer. Source fragments remain unintegrated; private reference footage is excluded.",
     "Current tiny native evidence validates only exact isolated P3 core with three rendered frames; one ALSA error and two warnings remain disclosed. No integration, full-floor, animation or Windows acceptance."
-  ]
+  ],
+  "assembly": {
+    "historical_base": "base/game",
+    "tool": "p3_integrated_source01/assemble.py",
+    "overlay": "p3_reimplementation/migration01/overlay",
+    "manifest": "p3_reimplementation/migration01/OVERLAY_MANIFEST.json",
+    "expected_file_count": 3044,
+    "source_pins": "p3_integrated_source01/SOURCE_PINS.json",
+    "source_pins_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+    "status": "STATIC_ONLY_NOT_NATIVE_ACCEPTED"
+  }
 }
