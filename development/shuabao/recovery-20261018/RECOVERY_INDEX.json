@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
+  "source_tip": "9c8add2412b5c0810bb27db78895282b0f985c2e",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -5155,6 +5155,17 @@
       "sha256": "bcad91e1ecf5adebc2bc5773e94850e3a712972a7cb6de6438a5a43c6f3e2e42",
       "classification": "STATIC_REVIEWED_COMBAT_FIXTURE",
       "validation_scope": "NOT_NATIVE_VALIDATED; NOT_ART_ACCEPTED",
+      "apply_to_game": false
+    },
+    "terminal_ui_probe03/payload/yan_terminal_full_floor_20261018c/runner.gd": {
+      "canonical_path": "terminal_ui_probe03/payload/yan_terminal_full_floor_20261018c/runner.gd",
+      "commit": "9c8add2412b5c0810bb27db78895282b0f985c2e",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2209/terminal_ui_probe03/payload/yan_terminal_full_floor_20261018c/runner.gd",
+      "git_blob_sha1": "69e03bbf4c604c317cea20e383163f83872bc13d",
+      "bytes": 42306,
+      "sha256": "e545010f3e7b72e949384357eeefb77120aef108d64a6e7de5a5897570260865",
+      "classification": "STARTUP_DIAGNOSTIC_RUNNER_DRAFT",
+      "validation_scope": "UNRUN; PRODUCTION_UNCHANGED",
       "apply_to_game": false
     }
   },
