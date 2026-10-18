@@ -1,0 +1,12 @@
+config_version=5
+[application]
+config/name="Front Mesh Preview 01"
+run/main_scene="res://main.tscn"
+[display]
+window/size/viewport_width=1100
+window/size/viewport_height=700
+window/size/window_width_override=1100
+window/size/window_height_override=700
+[rendering]
+renderer/rendering_method="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false

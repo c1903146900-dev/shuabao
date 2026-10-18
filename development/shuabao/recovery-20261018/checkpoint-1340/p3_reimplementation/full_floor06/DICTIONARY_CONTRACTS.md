@@ -1,0 +1,25 @@
+# Dictionary field audit for the full-floor runner
+
+Actual failure: full_floor_native01 raw.log reports _resolve_hexes:252. All three model.state.pending_milestones accesses were wrong and now call model.snapshot().pending_milestones. No default empty list is substituted. Static checks previously verified textual gates, not this API contract, and did not establish engine correctness.
+
+The following groups cover the direct dictionary reads in the runner and the custom driver; inherited natural-route methods remain source-bound. Paths are relative to the actual bound source.
+
+- Raw Model.state: inventory, phase, reward_ids, skills.Q/P.rank, points. scripts/progression/model.gd:12–16 initializes them; Q/P candidate/rank initialized for COSTS slots. No remaining direct state.pending_milestones.
+- Model.snapshot: points,skills,allocations,selected_hex,offers,inventory,gold,xp,level come from state. pending_milestones is appended only in model.gd:18–26. _sample, _hex, _resolve_hexes and combat checks use this projection. Additional financial/act fields use explicit get and are required by final acceptance where relevant.
+- Hex offer: before.offers[str(active_milestone)].slots[slot], exact original four cards and active Controller milestone. scripts/progression/model.gd _hex_open creates slots/selected; _hex verifies exact single flat request.slot/request.milestone, accepted result, selected addition, unchanged SP.
+- Initial actions: runtime01/host.gd:103–105 creates request/result/source_time. Request is flat original HUD adapter action plus fields; never request.payload.
+- Host inputs: runtime01/host.gd:266–268 creates category/action/receipt/serial/source_time. Undo/service require fresh count and Session input serial, then accepted receipt.
+- Session snapshot: runtime01/floor_session.gd:435–436 creates status,row_state,service_ready,settlement and active scope. Rest override candidate01/floor_session.gd:17–20 adds rest_settlements.
+- RowState snapshot: runtime01/row_state.gd:148–149 creates row_number,entry_receipt,completed_rows. Completed row identity/node_id comes from typed completion receipt; original Session already authenticates source kills.
+- Typed entry/completion receipts: tests/ink_first_floor_candidate_20261004/caller_receipt.gd:22–23 returns kind,receipt_id,identity,payload. Identity includes node_id; combat payload.room_id is compared exactly; no inferred generic result wrapper.
+- _next_node return: fixture creates before_entry.model/hp/max_hp/cooldowns/rest_settlements plus entry_result actual Session receipt. _service reads only after accepted entry/adoption.
+- Rest receipts: rest_service.gd settle creates accepted,replayed,run_id,room_id,entry_id,HP/flask fields; snapshot returns values array. Full-floor checks prior array preserved plus exactly one new entry_id, correct run/room and equality to actual entry_result.rest.
+- Kill receipts: runtime01/floor_session.gd:288 creates sequence,reward_id,generation,event,source_result. Runner checks key existence before access. Model.receipts[id] is {request,result} (scripts/progression/model.gd:48–68), not a direct command result. Acceptance is original.result.accepted; original.request.action must be reward_minion and args.event_id/room match the actual reward and combat_level_id. runtime01/reward_model.gd:53 creates this command. Actual reward_ids includes each exactly once.
+- Boss fields: scripts/progression/catalog_model.gd:313–337 creates act_progress first_floor registration, boss_defeated/completed and major_floor_events. Actual Session settlement major_floor_event created runtime01/floor_session.gd:367–379. Final checks use get and reject missing values.
+- Shop snapshot: raw Model shop_visit is provided by the admitted commerce Model. Original shop_panel.gd:90 itself derives _undo.disabled from state.shop_visit.undo. Actual purchase/undo dictionaries are original UI/Session receipts; runner checks accepted before reading purchase effects. Ordered inventory and gold restored exactly.
+- Hero dictionaries: scripts/actors/hero_model_core.gd:6–15 defines stats.max_hp/attack_range, cooldowns.q/e/r/shift, loadout.q/passive and ranks.q/passive. Hero is an Object, never a Dictionary.
+- Source event dictionaries: original sequence/kind are read with get; health records derive actual Hero/Model state. No array-length ring cursor.
+- Custom driver visible targets: inherited _visible_enemies emits position/id/distance; _plan_q1 and movement use that original view. Gesture start/finish/visible_ids/stage and records are defined by inherited original driver. No parallel enemy-state fabrication.
+- Local binding/report/coverage/sample dictionaries: constructed in this fixture or loaded from its pinned binding JSON. _capture calls _identity before a same-frame _sample. The binding files map is presealed and every hash checked before source startup.
+
+This is source-contract verification, not a claim that all GDScript paths have executed. Native parsing, combat survival and terminal UI still require an actual run.

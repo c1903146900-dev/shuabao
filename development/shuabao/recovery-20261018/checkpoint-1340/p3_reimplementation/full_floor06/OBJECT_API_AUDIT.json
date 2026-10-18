@@ -1,0 +1,5337 @@
+{
+  "classification": "SOURCE_RECEIVER_AUDIT_NOT_NATIVE",
+  "chains": {
+    "entry": [
+      "scripts/integration/hero_entry.gd"
+    ],
+    "host": [
+      "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "scripts/integration/yanguizhou_first_floor.gd",
+      "tests/ink_river_hexes_20261006/frontdoor01/host.gd",
+      "tests/ink_r2_ordinary_20261006/candidate01/host.gd",
+      "tests/ink_ordinary_composed_20261006/candidate01/host.gd",
+      "tests/ink_p2_ordinary_20261006/ordinary01/host.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/text01/host.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/host.gd",
+      "tests/ink_rest_service_20261006/candidate01/ordinary01/host.gd",
+      "tests/ink_rest_service_20261006/candidate01/host.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/host.gd",
+      "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/host.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/host.gd",
+      "tests/ink_q2_ordinary_20261005/candidate01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/recovery08_fix01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/host.gd",
+      "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/host.gd",
+      "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/host.gd",
+      "tests/ink_first_floor_user_route_20261005/root_return_native01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/diagnostic_compact01_fix01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/gesture06_host01/parsefix01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+      "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+      "tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd",
+      "tests/ink_first_floor_user_route_20261005/native_host01/audio_bridge.gd",
+      "tests/ink_first_floor_user_route_20261005/native_host01/composed_bridge.gd",
+      "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+      "tests/ink_intermediate_shop_ui_20261004/fix02/host.gd",
+      "tests/ink_intermediate_shop_ui_20261004/host.gd",
+      "tests/ink_initial_vortex_host_20261004/host.gd",
+      "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+      "tests/ink_shop_integrated28_20261004/host.gd",
+      "tests/ink_shop_audio_fix_20261004/host.gd",
+      "tests/ink_shop_ui_host_20261004/style27/parsefix01/host.gd",
+      "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+      "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+      "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/room_host.gd",
+      "tests/ink_style_specimen_20261004/revision19_actor05/fix07/parsefix01/capture_host.gd",
+      "tests/ink_style_specimen_20261004/revision04_capture/host.gd",
+      "tests/ink_style_specimen_20261004/revision03/inputfix02/host.gd",
+      "tests/ink_style_specimen_20261004/revision03/fix01/host.gd"
+    ],
+    "sim": [
+      "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "tests/ink_river_hexes_20261006/ownership01/sim.gd",
+      "tests/ink_river_hexes_20261006/candidate01/sim.gd",
+      "tests/ink_r2_ordinary_20261006/candidate01/sim.gd",
+      "tests/ink_r2_peaks_20261006/candidate01/sim.gd",
+      "tests/ink_e1_reform_pause_20261006/candidate01/sim.gd",
+      "tests/ink_p2_ordinary_20261006/mechanism01/sim.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/sim.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/e3_boundary.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/q2_jump_seams.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/sim.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/sim.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd",
+      "tests/ink_r1_ordinary_20261005/candidate01/sim.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/sim.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd",
+      "tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd",
+      "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd",
+      "tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd",
+      "tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd",
+      "tests/ink_q1_h02_20261004/ink_h02_sim.gd",
+      "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd",
+      "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+      "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd",
+      "scripts/combat/hero_combat_core.gd"
+    ],
+    "session": [
+      "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "elixir_swift_20261010/session.gd",
+      "elixir_war_20261009/session.gd",
+      "elixir_hunter_20261009/session.gd",
+      "formal_training_20261009/session.gd",
+      "tests/ink_ordinary_composed_20261006/candidate01/floor_session.gd",
+      "tests/ink_p2_ordinary_20261006/ordinary01/floor_session.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/floor_session.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/floor_session.gd",
+      "tests/ink_rest_service_20261006/candidate01/ordinary01/floor_session.gd",
+      "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/floor_session.gd",
+      "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+      "tests/ink_first_floor_user_route_20261005/runtime01/bootstrap_session.gd",
+      "tests/ink_initial_hex_ui_20261004/fix01/session.gd",
+      "tests/ink_shop_ui_host_20261004/shop_session.gd",
+      "tests/ink_first_floor_flow_20261004/floor_coordinator.gd"
+    ],
+    "model": [
+      "equipment_prism_20261011/model.gd",
+      "equipment_scholar_20261011/model.gd",
+      "elixir_swift_20261010/model.gd",
+      "equipment_overload_20261010/model.gd",
+      "equipment_colossus_20261010/model.gd",
+      "equipment_rage_20261010/model.gd",
+      "elixir_war_20261009/model.gd",
+      "elixir_hunter_20261009/model.gd",
+      "formal_training_20261009/model.gd",
+      "equipment_regeneration_20261009/model.gd",
+      "equipment_blood_trial_20261009/model.gd",
+      "equipment_lifeline_20261009/model.gd",
+      "equipment_pursuit_20261009/model.gd",
+      "equipment_training_20261009/model.gd",
+      "equipment_basic_cycle_20261009/model.gd",
+      "equipment_elite_damage_20261009/model.gd",
+      "equipment_kill_20261009/model.gd",
+      "equipment_distance_20261009/model.gd",
+      "equipment_expansion_20261009/model.gd",
+      "visual_rework_20261009/binding/postboss_model.gd",
+      "tests/ink_equipment_live_20261008/content01/model.gd",
+      "tests/ink_equipment_live_20261008/content01/potion_model.gd",
+      "tests/ink_equipment_regen_20261008/candidate01/regen_model.gd",
+      "tests/ink_first_floor_user_route_20261005/runtime01/reward_model.gd",
+      "tests/ink_intermediate_stats_20261004/ink_intermediate_model.gd",
+      "tests/ink_initial_hex_runtime_20261004/ink_initial_model.gd",
+      "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_model.gd",
+      "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd",
+      "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd",
+      "tests/ink_first_floor_flow_20261004/ink_run_model.gd",
+      "scripts/integration/run_model.gd",
+      "scripts/progression/catalog_model.gd",
+      "scripts/progression/model.gd"
+    ],
+    "hero": [
+      "scripts/actors/hero_model_core.gd"
+    ],
+    "driver": [
+      "@driver.gd",
+      "natural_route_r09_prepare/visible_route_r09.gd"
+    ],
+    "host.shop_panel": [
+      "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "tests/ink_intermediate_shop_ui_20261004/shop_panel.gd",
+      "tests/ink_shop_ui_host_20261004/shop_panel.gd"
+    ],
+    "host.initial_hud": [
+      "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "tests/ink_r2_ordinary_20261006/candidate01/growth_hud.gd",
+      "tests/ink_ordinary_composed_20261006/candidate01/growth_hud.gd",
+      "tests/ink_p2_ordinary_20261006/ordinary01/growth_hud.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/growth_hud.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/text01/growth_hud.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/growth_hud.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/growth_hud.gd",
+      "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/growth_hud.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/growth_hud.gd",
+      "tests/ink_q2_ordinary_20261005/candidate01/growth_hud.gd",
+      "tests/ink_normal_floor_host_20261004/growth_hud.gd",
+      "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+      "tests/ink_initial_hex_ui_20261004/hex_hud.gd"
+    ],
+    "host.initial_controller": [
+      "tests/ink_q3_input_growth_20261004/controller.gd",
+      "tests/ink_initial_hex_ui_20261004/fix01/controller.gd",
+      "tests/ink_initial_hex_runtime_20261004/ink_initial_controller.gd",
+      "tests/ink_first_floor_flow_20261004/ink_progression_controller.gd",
+      "scripts/ui/progression_controller.gd"
+    ],
+    "host.input_router": [
+      "tests/ink_river_hexes_20261006/candidate01/input_adapter.gd",
+      "tests/ink_r2_ordinary_20261006/candidate01/input_adapter.gd",
+      "tests/ink_e3_ordinary_20261006/ordinary01/input_adapter.gd",
+      "tests/ink_e2_boundary_20261006/ordinary01/input_adapter.gd",
+      "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/input_adapter.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/input_adapter.gd",
+      "tests/ink_e1_ordinary_20261005/candidate01/input_base.gd",
+      "tests/ink_q2_ordinary_20261005/candidate01/input_adapter.gd",
+      "tests/ink_q3_input_growth_20261004/input_adapter.gd",
+      "tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd"
+    ],
+    "host.mouse_aim": [
+      "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd"
+    ],
+    "host.stage": [
+      "tests/ink_first_floor_room_art_20261004/stage.gd"
+    ],
+    "host.enemy_layer": [
+      "tests/ink_normal_floor_host_20261004/enemy_layer.gd"
+    ],
+    "host.enemy_layer.roster": [
+      "tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd"
+    ],
+    "host.ordinary_potion_controls": [
+      "tests/ink_equipment_live_20261008/content01/potion_controls.gd"
+    ],
+    "entry.chooser": [
+      "scripts/ui/hero_chooser.gd"
+    ],
+    "host.initial_hud.hex_draft": [
+      "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "scripts/ui/hex_draft_view.gd"
+    ],
+    "host.initial_hud.adapter": [
+      "scripts/ui/hud_adapter.gd"
+    ],
+    "session.ledger": [
+      "visual_rework_20261009/binding/bridge.gd",
+      "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/bridge.gd",
+      "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd",
+      "tests/ink_shop_ledger_bridge_20261004/ink_shop_ledger_bridge.gd",
+      "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd"
+    ],
+    "actor_view": [
+      "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+      "scripts/integration/enemy_actor_view.gd",
+      "scripts/integration/xuanlei_actor_view.gd"
+    ]
+  },
+  "entries": [
+    {
+      "receiver": "session.ledger",
+      "resolved_class": "visual_rework_20261009/binding/bridge.gd",
+      "member": "model",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd",
+        "line": 6,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "_owner_intact",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 60,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "sim",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "shop_session",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "encounter_generation",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 36,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 72
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 79
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 80
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "loadout",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 80
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "ranks",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 15,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 80
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 80
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "ink_p3",
+      "definition": {
+        "file": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+        "line": 1494,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 80
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "get_instance_id",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 87
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 88
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 88
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_instance_id",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 90
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_property_list",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 92
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 95
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 97
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "hero_view",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 98
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "hero_view",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 98
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "sim",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 99
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "get_instance_id",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 100
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "phase",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 101
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 102
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 140
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 142
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 143
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "hex_draft",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/hex_hud.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 148
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "cards",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 149
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "cards",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 149
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 150
+      }
+    },
+    {
+      "receiver": "host.initial_controller",
+      "resolved_class": "tests/ink_q3_input_growth_20261004/controller.gd",
+      "member": "active_milestone",
+      "definition": {
+        "file": "scripts/ui/progression_controller.gd",
+        "line": 38,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 151
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 153
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "choosing",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 155
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "cards",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 156
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 157
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "choosing",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 157
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 160
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 160
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "choosing",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 160
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 161
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "choosing",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 161
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 162
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 163
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "request_start",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 121,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 179
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 180
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 182
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_mainprep_required",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 184
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_started",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 184
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "startup_session_error",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 185
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "floor_error",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 185
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "startup_session_error",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 187
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "floor_error",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 187
+      }
+    },
+    {
+      "receiver": "session.ledger",
+      "resolved_class": "visual_rework_20261009/binding/bridge.gd",
+      "member": "model",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd",
+        "line": 6,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "sim",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "shop_session",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "encounter_generation",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 36,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 188
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 206
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "receipts",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 207
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "failure",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 207
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_hud",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 209
+      }
+    },
+    {
+      "receiver": "host.initial_hud.hex_draft",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "choosing",
+      "definition": {
+        "file": "scripts/ui/hex_draft_view.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 210
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "hex_draft",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/hex_hud.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 210
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_mainprep_required",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 211
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "frontdoor_close_run",
+      "definition": {
+        "file": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+        "line": 243,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 212
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "frontdoor_last_close",
+      "definition": {
+        "file": "scripts/integration/yanguizhou_first_floor.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 213
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "queue_free",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 215
+      }
+    },
+    {
+      "receiver": "session.ledger",
+      "resolved_class": "visual_rework_20261009/binding/bridge.gd",
+      "member": "model",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd",
+        "line": 6,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "_owner_intact",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 60,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_room",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 19,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "sim",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "shop_session",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 230
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 234
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 237
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "encounter_generation",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 36,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 237
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 237
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 237
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 239
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "encounter_generation",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 36,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 239
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 239
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "room_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 25,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 240
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "encounter_generation",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 36,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 240
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_learning_panel_allowed",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+        "line": 26,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 244
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "growth_panel",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 245
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "growth_toggle",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 246
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "growth_toggle",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 247
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "growth_panel",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 248
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 251
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 252
+      }
+    },
+    {
+      "receiver": "host.initial_hud.hex_draft",
+      "resolved_class": "tests/ink_initial_hex_ui_20261004/hex_view.gd",
+      "member": "is_visible_in_tree",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 253
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 255
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 258
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "event_log",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 31,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 265
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 269
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 270
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 271
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 271
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 271
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 271
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "expected_enemies",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 274
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 277
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "advance_inputs",
+      "definition": {
+        "file": "@driver.gd",
+        "line": 5,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 280
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "fault",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 284
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "failure",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 284
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "dead",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 284
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 285
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 285
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 286
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "phase",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 287
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "living",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 558,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 287
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 288
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "kill_receipts",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 292
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "kill_receipts",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 293
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 295
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "receipts",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 296
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "receipts",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 297
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "combat_level_id",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 24,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 300
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "upgrade_earned_Q1_once",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 268,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 310
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 313
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 313
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "loadout",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 313
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "ranks",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 15,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 313
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 317
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 318
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 323
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 323
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "run_id",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 331
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "active_node_room",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 331
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "cooldowns",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 333
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 337
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "_entered_service",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 207,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 338
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "get_script",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 339
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "service_continue",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 340
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 341
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "session_input_serial",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 342
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "service_continue",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 343
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 345
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "session_input_serial",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 345
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 346
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 347
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 350
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 352
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 355
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "buy_one_original_potion",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 350,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 356
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_shop",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 136,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 359
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_undo",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 360
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 360
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 361
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "session_input_serial",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 362
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_undo",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 363
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 364
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "session_input_serial",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 364
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "inputs",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 365
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 366
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_close_original_shop",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 344,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 370
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "buy_one_original_potion",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 350,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 371
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_shop",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 136,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 376
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_undo",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 377
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 377
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 378
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_undo",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 379
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_undo",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 380
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_close_original_shop",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 344,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 381
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 387
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "return_button",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 388
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "return_button",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 389
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "is_visible_in_tree",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 391
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 392
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "hero_buttons",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 32,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 393
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "hero_buttons",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 32,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 394
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "enter_button",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 33,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 395
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "enter_button",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 33,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 396
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 397
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "cancel_button",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 26,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 397
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "pending_hero",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 397
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 398
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "pending_hero",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 21,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 398
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "cancel_button",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 26,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 399
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "resume_button",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 34,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 400
+      }
+    },
+    {
+      "receiver": "entry.chooser",
+      "resolved_class": "scripts/ui/hero_chooser.gd",
+      "member": "resume_button",
+      "definition": {
+        "file": "scripts/ui/hero_chooser.gd",
+        "line": 34,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 401
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 403
+      }
+    },
+    {
+      "receiver": "entry",
+      "resolved_class": "scripts/integration/hero_entry.gd",
+      "member": "active_hero",
+      "definition": {
+        "file": "scripts/integration/hero_entry.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 403
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "q_choices",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 4,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 409
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 410
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 410
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "state",
+      "definition": {
+        "file": "scripts/progression/model.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 410
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "loadout",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 410
+      }
+    },
+    {
+      "receiver": "hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "ranks",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 15,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 410
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "bind_existing",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 21,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 411
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "resolve_hex",
+      "definition": {
+        "file": "@driver.gd",
+        "line": 50,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 411
+      }
+    },
+    {
+      "receiver": "model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 427
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "status",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 430
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "boss_id",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 430
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "run_id",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 430
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 430
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "settlement",
+      "definition": {
+        "file": "tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 439
+      }
+    },
+    {
+      "receiver": "session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 439
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 445
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 446
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_shop",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 136,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 447
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 448
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_record",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 35,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 448
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 449
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_select_row",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 114,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 454
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 455
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_record",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 35,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 455
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 456
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 456
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "next_room_preflight",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 84,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 457
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 461
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "fault",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 462
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "dead",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 462
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "paused",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 462
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 462
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "finished",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 39,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 462
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 464
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_radius",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 46,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_visible_ground",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 107,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_ground_clear",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 99,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 469
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_move",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 179,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 470
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "next_room_preflight",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+        "line": 84,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 473
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "release_between_nodes",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 245,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 474
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 476
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 476
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 476
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 476
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "cooldowns",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 476
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_request_next_room",
+      "definition": {
+        "file": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+        "line": 229,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 478
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 479
+      }
+    },
+    {
+      "receiver": "driver",
+      "resolved_class": "@driver.gd",
+      "member": "_record",
+      "definition": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd",
+        "line": 35,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 479
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 480
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 480
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+        "line": 17,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 481
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "runner.gd",
+        "line": 485
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "blocks_gameplay_input",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/hex_hud.gd",
+        "line": 55,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "dead",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "phase",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "paused",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "finished",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 39,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_mainprep_required",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 11
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 20
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_radius",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 46,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 30
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "arena_half_extent",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 45,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 35
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 41
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "cooldowns",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 42
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "lock_time",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 42
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "ink_input",
+      "definition": {
+        "file": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "driver.gd",
+        "line": 42
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_record",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_hud_request",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host.initial_hud.adapter",
+      "resolved_class": "scripts/ui/hud_adapter.gd",
+      "member": "request",
+      "definition": {
+        "file": "scripts/ui/hud_adapter.gd",
+        "line": 18,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_hud_request",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_hud_request",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "initial_actions",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+        "line": 14,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_hud_request",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "arena_half_extent",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 45,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_ground_clear",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "obstacles",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 47,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_ground_clear",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.stage",
+      "resolved_class": "tests/ink_first_floor_room_art_20261004/stage.gd",
+      "member": "camera",
+      "definition": {
+        "file": "tests/ink_first_floor_room_art_20261004/stage.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_ground",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_viewport",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_ground",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_gui_blocks_pointer_at",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 178,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_ground",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host.stage",
+      "resolved_class": "tests/ink_first_floor_room_art_20261004/stage.gd",
+      "member": "ground_point",
+      "definition": {
+        "file": "tests/ink_first_floor_room_art_20261004/stage.gd",
+        "line": 138,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_ground",
+        "line": 6
+      }
+    },
+    {
+      "receiver": "host.stage",
+      "resolved_class": "tests/ink_first_floor_room_art_20261004/stage.gd",
+      "member": "camera",
+      "definition": {
+        "file": "tests/ink_first_floor_room_art_20261004/stage.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "enemies",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 27,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.enemy_layer.roster",
+      "resolved_class": "tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd",
+      "member": "actor_view_map",
+      "definition": {
+        "file": "tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd",
+        "line": 107,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+      "member": "is_visible_in_tree",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 8
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+      "member": "global_position",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "view",
+      "resolved_class": "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+      "member": "sample_report",
+      "definition": {
+        "file": "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 16
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_visible_enemies",
+        "line": 18
+      }
+    },
+    {
+      "receiver": "host.mouse_aim",
+      "resolved_class": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+      "member": "observe",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+        "line": 16,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_viewport",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host.mouse_aim",
+      "resolved_class": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+      "member": "accepts",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+        "line": 14,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 8
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_gui_blocks_pointer_at",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 178,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 8
+      }
+    },
+    {
+      "receiver": "host.input_router",
+      "resolved_class": "tests/ink_river_hexes_20261006/candidate01/input_adapter.gd",
+      "member": "route_event",
+      "definition": {
+        "file": "tests/ink_e3_ordinary_20261006/ordinary01/input_adapter.gd",
+        "line": 55,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.stage",
+      "resolved_class": "tests/ink_first_floor_room_art_20261004/stage.gd",
+      "member": "ground_point",
+      "definition": {
+        "file": "tests/ink_first_floor_room_art_20261004/stage.gd",
+        "line": 138,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_current_pointer_ground",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/inputfix02/host.gd",
+        "line": 37,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_current_pointer_ground",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/inputfix02/host.gd",
+        "line": 37,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_route",
+        "line": 10
+      }
+    },
+    {
+      "receiver": "host.mouse_aim",
+      "resolved_class": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+      "member": "position",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd",
+        "line": 3,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_release_left",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_plan_q1",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_plan_q1",
+        "line": 11
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "tuning",
+      "definition": {
+        "file": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+        "line": 6,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_plan_q1",
+        "line": 11
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "ranks",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 15,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_plan_q1",
+        "line": 12
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "v",
+      "definition": {
+        "file": "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd",
+        "line": 35,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_plan_q1",
+        "line": 12
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "blocks_gameplay_input",
+      "definition": {
+        "file": "tests/ink_initial_hex_ui_20261004/hex_hud.gd",
+        "line": 55,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "dead",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "phase",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 22,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "paused",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "finished",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+        "line": 39,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_mainprep_required",
+      "definition": {
+        "file": "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+        "line": 10,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.stage",
+      "resolved_class": "tests/ink_first_floor_room_art_20261004/stage.gd",
+      "member": "camera",
+      "definition": {
+        "file": "tests/ink_first_floor_room_art_20261004/stage.gd",
+        "line": 11,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_viewport",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 25
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 26
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "cooldowns",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 30
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "lock_time",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 16,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:advance_inputs",
+        "line": 30
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_learning_panel_allowed",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+        "line": 26,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 6
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "growth_panel",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_toggle_growth",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+        "line": 52,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 8
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "growth_panel",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 5,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.initial_hud",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "member": "q_choices",
+      "definition": {
+        "file": "tests/ink_q3_input_growth_20261004/growth_hud.gd",
+        "line": 4,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 10
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:upgrade_earned_Q1_once",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_close_original_shop",
+        "line": 2
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_shop",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 136,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_close_original_shop",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_close_original_shop",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_close_original_shop",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 6
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "_shop",
+      "definition": {
+        "file": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+        "line": 136,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 10
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 11
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "panel_open",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 12,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 12
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_set_category",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 55,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 13
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_item_buttons",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_item_buttons",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 23,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_select",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 57,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 16
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_quote",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 13,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 17
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_state",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 18
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_buy",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 19
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_buy",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 19
+      }
+    },
+    {
+      "receiver": "host.shop_panel",
+      "resolved_class": "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd",
+      "member": "_buy",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_panel.gd",
+        "line": 20,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 22
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 23
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 24
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 27
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:buy_one_original_potion",
+        "line": 27
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "stats",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 7,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 3
+      }
+    },
+    {
+      "receiver": "host.ordinary_potion_controls",
+      "resolved_class": "tests/ink_equipment_live_20261008/content01/potion_controls.gd",
+      "member": "is_visible_in_tree",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "ordinary_potion_controls",
+      "definition": {
+        "file": "scripts/integration/yanguizhou_first_floor.gd",
+        "line": 128,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.ordinary_potion_controls",
+      "resolved_class": "tests/ink_equipment_live_20261008/content01/potion_controls.gd",
+      "member": "get_children",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 5
+      }
+    },
+    {
+      "receiver": "host",
+      "resolved_class": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "member": "get_viewport",
+      "definition": {
+        "kind": "Godot_Object_Node_Control_builtin"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 7
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 8
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 9
+      }
+    },
+    {
+      "receiver": "host.shop_session",
+      "resolved_class": "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "member": "last_receipt",
+      "definition": {
+        "file": "tests/ink_shop_ui_host_20261004/shop_session.gd",
+        "line": 17,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 12
+      }
+    },
+    {
+      "receiver": "host.shop_session.ledger.model",
+      "resolved_class": "equipment_prism_20261011/model.gd",
+      "member": "snapshot",
+      "definition": {
+        "file": "equipment_prism_20261011/model.gd",
+        "line": 28,
+        "kind": "method"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 13
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "hp",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 8,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_time",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 43,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_use_visible_potion_when_needed",
+        "line": 14
+      }
+    },
+    {
+      "receiver": "host.sim.hero",
+      "resolved_class": "scripts/actors/hero_model_core.gd",
+      "member": "position",
+      "definition": {
+        "file": "scripts/actors/hero_model_core.gd",
+        "line": 9,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_choose_visible_local_step",
+        "line": 4
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_radius",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 46,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_choose_visible_local_step",
+        "line": 11
+      }
+    },
+    {
+      "receiver": "host.sim",
+      "resolved_class": "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "member": "hero_radius",
+      "definition": {
+        "file": "scripts/combat/hero_combat_core.gd",
+        "line": 46,
+        "kind": "member"
+      },
+      "callsite": {
+        "file": "natural_route_r09_prepare/visible_route_r09.gd:_choose_visible_local_step",
+        "line": 17
+      }
+    }
+  ],
+  "unresolved": [],
+  "inherited_driver_reachable_methods": [
+    "bind_existing",
+    "_record",
+    "_hud_request",
+    "_segment_hits_box",
+    "_unoccluded",
+    "_ground_clear",
+    "_visible_ground",
+    "_visible_enemies",
+    "_route",
+    "_key",
+    "_mouse",
+    "_release_left",
+    "_move",
+    "_cancel_gesture",
+    "_plan_q1",
+    "advance_inputs",
+    "release_between_nodes",
+    "upgrade_earned_Q1_once",
+    "_potion_count",
+    "_close_original_shop",
+    "buy_one_original_potion",
+    "_use_visible_potion_when_needed",
+    "_choose_visible_local_step"
+  ],
+  "excluded_historical_methods": [
+    "prepare_first_room",
+    "prepare_next_original_node",
+    "complete_original_service",
+    "inspect_and_skip_original_training",
+    "resolve_visible_required_hexes (overridden callback)"
+  ],
+  "scope_note": "Godot builtin Button/signal/Vector/Dictionary operations are separate from project script methods; nested dictionary fields have DICTIONARY_CONTRACTS. Camera3D geometric methods and actor-view Node3D sample_report checked by actual factory definitions.",
+  "source_files": {
+    "elixir_hunter_20261009/model.gd": "b00d91f37d626b59df172fd344f3f7e605bac18a41bb288c8ece140397498350",
+    "elixir_hunter_20261009/session.gd": "a7b12ef6fa3148260eaf9451c2f262db17c6d65a6ac4e9e764fb459e4f4f2553",
+    "elixir_swift_20261010/model.gd": "fdfe930f6a9c559925568124b5f9c1f07c22ba38f0b3d48e0433f1bd88e06f4b",
+    "elixir_swift_20261010/session.gd": "2ef50ecf9377706f33c312a490ffe386401386e0213a4753bef6b94de1f76273",
+    "elixir_war_20261009/model.gd": "ae94927e07778044aaf10fbb59fbaea66f284a6a34cec72d3048489153a0113c",
+    "elixir_war_20261009/session.gd": "c94488b435cda23e3895ba2fc679f281e1095d4c6eb2843dc07ba0f0508dbdb5",
+    "equipment_basic_cycle_20261009/model.gd": "16ed297782011d1aede11d34669f14f34419ed29fd62631efbae58f1bc559409",
+    "equipment_blood_trial_20261009/model.gd": "2568aa4195b0cdb8d0b273a58d663622561fbae95e783d57151a07c83e201ee5",
+    "equipment_colossus_20261010/model.gd": "0363caf4209c4d87d0b8fda82424a7bbb7a400e3754b89bb31d657d2017b3370",
+    "equipment_distance_20261009/model.gd": "909425b85cc99230d3b7199b4329e20e758d59e594a887e34330a4aa49ecd747",
+    "equipment_elite_damage_20261009/model.gd": "d60716a6361242f78bdfae9d1d0a693fa95d42c49b37b1378087a9abe4533e18",
+    "equipment_expansion_20261009/model.gd": "415b07c8cef2654998988dd919bfde481237130d7d05f555f6555bdb01b7f57b",
+    "equipment_kill_20261009/model.gd": "6020b46a5a9536152b1af8ecf11b60a9b77fe12ec49df5140dca110d8e0e9572",
+    "equipment_lifeline_20261009/model.gd": "8346aecda4aa7217b711a5bd4bcf75f628a70ffa45a9a25de498c76d2ab8b600",
+    "equipment_overload_20261010/model.gd": "73f2d1085c21fa2c6d2cbb8057688b910983677f79de6da2676686f12e52f456",
+    "equipment_prism_20261011/model.gd": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+    "equipment_pursuit_20261009/model.gd": "c9bd4b293d7188b9861c17ad55f5f69fb6d81d722a74ad750b610647705dd439",
+    "equipment_rage_20261010/model.gd": "f7a6740f8da28fb303e1b23e16b0c649bef74daabcf30bcbc395b8e5640f53b4",
+    "equipment_regeneration_20261009/model.gd": "69d107021223b9a9e3716114e95e7761acdfde6a80ba23d3c75b893a39f212b4",
+    "equipment_scholar_20261011/model.gd": "bc49c2b87de1fd05266aa842eef257969a8c3f77fe6f5c602073f52bcc9f3282",
+    "equipment_training_20261009/model.gd": "60fb4ef2f6e16bb5bcb8d955ad5acb74a46b69fc96dae34cd8a3a5dfa35a105e",
+    "formal_training_20261009/model.gd": "e0cd67feae341c6176890dd1809797b6e622ad537a945fa5782d26d78428e78c",
+    "formal_training_20261009/session.gd": "4746bdc7b09e0070a8f88f93cf2812b224731674c43433e3268963b217844f46",
+    "natural_route_r09_prepare/visible_route_r09.gd": "f559dfdd127e8e1fcc9f0a3235fa255ad027b2a9da7fabc4b225d6bd80ede10f",
+    "scripts/actors/hero_model_core.gd": "6e215466428cc7569f7b734d99dcb9bb5aaca04aa5bcad6b469e41f53a805b48",
+    "scripts/combat/hero_combat_core.gd": "d1c125f103121607f90ea123e0a68cf6dbf78df23c5cf082d98c81fb9721f285",
+    "scripts/integration/enemy_actor_view.gd": "dbd78ca657f6a71f821ab652a57e9ab19cb78df7a67897a7010cc27cc71e93a5",
+    "scripts/integration/hero_entry.gd": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+    "scripts/integration/run_model.gd": "998895d71819da0d8ac792007cfd94b0710cb680c9c87167aa1a8769dc717818",
+    "scripts/integration/xuanlei_actor_view.gd": "f87a9e8b41a6e1bf362f273f3b41b6a46f97fdbd569783a21321f3cc73a168ca",
+    "scripts/integration/yanguizhou_first_floor.gd": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962",
+    "scripts/progression/catalog_model.gd": "a7fa622cfd77a79fd0f8bf4e0199491a95616d4f6bb9ad4a52d52419c43bea64",
+    "scripts/progression/model.gd": "c7707af3ae8c411ea31e78a19ace74545d1f5850068cfa5b07d79e057da03c68",
+    "scripts/ui/hero_chooser.gd": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+    "scripts/ui/hex_draft_view.gd": "88944e5831cdb1b7824f8b43a832755eba5983445c6d188f84f92b6ca00f344c",
+    "scripts/ui/hud_adapter.gd": "51fe449fdf135c06f7bc9e0aadf04261cd31628da3596f3abc1aca3319ec7752",
+    "scripts/ui/progression_controller.gd": "7f0f3756a99ffbb349725a9425d610faf6bff6de887fbce50c6367d02b815ed1",
+    "tests/ink_e1_ordinary_20261005/candidate01/growth_hud.gd": "5de5d6ca59c00a094993a79efb707b8b98b67abf3f865e88597d132ff9ee440a",
+    "tests/ink_e1_ordinary_20261005/candidate01/host.gd": "d0c1d2a4670898e1b40aeaba0b0f8d296e5513c1f69596ffe95dfd47b5e4a12b",
+    "tests/ink_e1_ordinary_20261005/candidate01/input_adapter.gd": "fc48e5de978166676e0450d0e8cee9fde8cd3c82a49bf2367b077253549d692d",
+    "tests/ink_e1_ordinary_20261005/candidate01/input_base.gd": "8a8dc77d4bec778a13de587230367505d4e214f1c94aa1ebc794106ab2f337ca",
+    "tests/ink_e1_ordinary_20261005/candidate01/rain_layer.gd": "0f669b66f0dd5a68b4baf2848a8f5bf7117e875b1ae6f3f2558be1b3c72ada68",
+    "tests/ink_e1_ordinary_20261005/candidate01/sim.gd": "24063049066575efbb919373f106a05dd7288f76dd785f236e39be1e001d6e0e",
+    "tests/ink_e1_reform_pause_20261006/candidate01/sim.gd": "0b0a6516c38aac0c08541d5ed06da6bb4e40a322b4900d557ef8ac7f66215373",
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762",
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd": "37801af006d8295288d6c5e209303987ea45bde87621271a13b25d89d1651786",
+    "tests/ink_e2_boundary_20261006/ordinary01/e2_remainder.gd": "45222cd344c1352d3a6b20356b0ca7b41087cb10a27a889be76d5ee1644e9955",
+    "tests/ink_e2_boundary_20261006/ordinary01/floor_session.gd": "570f0ab562fff126868c63bff59a281bc81a2bf439641b7affcc2160b94e93b1",
+    "tests/ink_e2_boundary_20261006/ordinary01/growth_hud.gd": "77c1b6bcb8e2d903009de9f3246f75b2cdef72581f9e9b2b20037b68e2b0e4e7",
+    "tests/ink_e2_boundary_20261006/ordinary01/host.gd": "e1f7be618e662a2155a8dd547d29d37c2d7449db1ab53d6b312cc8a951bc508c",
+    "tests/ink_e2_boundary_20261006/ordinary01/input_adapter.gd": "c397269008b056509fa0bfee2dbef0aaa9e5a585b07062ad54653ff8c519d921",
+    "tests/ink_e2_boundary_20261006/ordinary01/sim.gd": "e4e380b798fc20c609bd25eb6e560cb63e1a0fbd4ab76dae4a6ce63386f6d107",
+    "tests/ink_e2_boundary_20261006/ordinary01/text01/growth_hud.gd": "a64e18df963533075a4df744a30ef86accd0d12b0cea06d3915a8c76efd11aeb",
+    "tests/ink_e2_boundary_20261006/ordinary01/text01/host.gd": "77ea388462285368db8511084f7aa4ee135d9c499b8ae22e077a42efe36fd6b0",
+    "tests/ink_e3_ordinary_20261006/ordinary01/e3_base.gd": "c1f33223444d40b49a95ca4373f9ce539992097a2f8daefef78e434ad5ca1cbe",
+    "tests/ink_e3_ordinary_20261006/ordinary01/e3_boundary.gd": "f53b38a3e5f93ee4e1148c4a85412524fd3d6211a182902e2cae11c2046b9209",
+    "tests/ink_e3_ordinary_20261006/ordinary01/floor_session.gd": "a7f6a53236b5143a691c19a2e3ebde972320ed765c93c7608b13fedca9f51809",
+    "tests/ink_e3_ordinary_20261006/ordinary01/growth_hud.gd": "682ae137b7e6d75556cc42db18a5a8f185378fe6fcc7c88ae64524d60bea34c6",
+    "tests/ink_e3_ordinary_20261006/ordinary01/input_adapter.gd": "70e5cbf39bc5b3fa5b8e1e258e6328473d047006527211c80f3904d0613a92af",
+    "tests/ink_e3_ordinary_20261006/ordinary01/q2_jump_seams.gd": "459b89c6da4de380c69cf3b10799df6e9a260e9538e8c1d4e065b3a68a7163a2",
+    "tests/ink_e3_ordinary_20261006/ordinary01/sim.gd": "a95a2132bac217f07fe88d3289a7a43e8fc42073d77be65b6472ba55e4a2d9e9",
+    "tests/ink_equipment_live_20261008/content01/model.gd": "af679ebb5a07f5896e69f8a5708d518b341e5eef86118fd47e5048f419a3cb37",
+    "tests/ink_equipment_live_20261008/content01/potion_controls.gd": "7ff6f4857c22506d531eef77ae8b9bff978972394e88955be8a422953858dce4",
+    "tests/ink_equipment_live_20261008/content01/potion_model.gd": "c6f24e2e2d3baca70f285421dc1554f71f2891d4558fdd97dc6ef40a2b3945ee",
+    "tests/ink_equipment_regen_20261008/candidate01/regen_model.gd": "403eb39d4d87fbdacfc738af18f2358e17c43f6202eadef58e3d48c3113d9110",
+    "tests/ink_first_floor_enemy_views_20261004/enemy_view.gd": "66c0cc1a0319ed0931a60d26251c0b1f0d1dbad1f6ab4e9f160497d959448a9e",
+    "tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd": "45975dab784657e5994912e8022e916b6707b01f3412b2e4afe0d2d6bb9f5541",
+    "tests/ink_first_floor_flow_20261004/floor_coordinator.gd": "ad3935cec410be064c5cf2edb10394c5c2217a704062b416c08019081402576d",
+    "tests/ink_first_floor_flow_20261004/ink_ledger_bridge.gd": "21fa0c61f0279d557e13e9863a312ab50cfe9233090bb8fbac9bbb920e9532cc",
+    "tests/ink_first_floor_flow_20261004/ink_progression_controller.gd": "94f4a180a5184a66dd11aec99d590c6a798eab5f649fa9b74642a700fbd2c313",
+    "tests/ink_first_floor_flow_20261004/ink_run_model.gd": "50fc161192fdb5c60eee0e92c26a87f62c13f64cb216f3e686e74cce2b89482f",
+    "tests/ink_first_floor_room_art_20261004/stage.gd": "7994370235d499c595126e896c724a188a54ae6126951a222f2197c1aa08a292",
+    "tests/ink_first_floor_user_route_20261005/diagnostic_compact01_fix01/host.gd": "c07ae9bdef2c501864354f6f26f92b577c1de13a9ad01cfc5cf1477b8889a005",
+    "tests/ink_first_floor_user_route_20261005/gesture06_host01/parsefix01/host.gd": "c046faf792bfc2bc0db97ac235d13c67031bb6b15a6a589ba6cdcb2e44f98718",
+    "tests/ink_first_floor_user_route_20261005/native_host01/audio_bridge.gd": "2a77a15786a2e81700a72776091ab63029c69c2730f77ca78fbc5cfec6781f1b",
+    "tests/ink_first_floor_user_route_20261005/native_host01/composed_bridge.gd": "e87c0b8b2f56882c0db768657993ab0a20f7762785f95813ba784ac1456a2d08",
+    "tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f",
+    "tests/ink_first_floor_user_route_20261005/native_host01/host.gd": "e77db57b9fbf6e2c44a8c226f26ff85bd44ebb5d74c5414b8c9ab72c2439485b",
+    "tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd": "4700e763a4ac8e21cc182f85fb83eac552673d574c1f70161f14a733baf4f85c",
+    "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/host.gd": "e3b423aa18fda08a4590dd218fa31f1e9b710a9ff8e6b0eb1830946e0ce31926",
+    "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/host.gd": "07c10f322cfa480b1728a0f6a8b2b819f08716beee086419cd6e4a657af675be",
+    "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/recovery08_fix01/host.gd": "b47cb35f90c2f103081645b4201540d1592e551fd6fa7ce884b6d494f89e05c9",
+    "tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/host.gd": "e8bccb3758eca3ae8a7eec08a42e74e6b7b1108fb6737123e6071ab2c8b38b45",
+    "tests/ink_first_floor_user_route_20261005/root_return_native01/host.gd": "92967c0de5f9dfb829ad5a0428a5fea748957172b5f766f5505b0a9079a72bf5",
+    "tests/ink_first_floor_user_route_20261005/runtime01/bootstrap_session.gd": "e928d08b268ee4ba828073c685e7588aeafabcff6461c0d87a8bbac9830541f3",
+    "tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd": "bf3784501df0da9ff6006fda87d780e7a288052084aa2150fc9d696a97bf4e1b",
+    "tests/ink_first_floor_user_route_20261005/runtime01/host.gd": "d07dd99fe16bfa0e30c11f07177c35b8866506c9a0dae455f6afcb8ee1bf001f",
+    "tests/ink_first_floor_user_route_20261005/runtime01/reward_model.gd": "d6a9323352f90dbc08f8afdd41ac30f82ef5776b4e30a463815b9237241f42b2",
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_controller.gd": "d2db83e4710e725d91f8393b4e22f9ade2ef73b65e59a950e57a552b11419a2f",
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_model.gd": "4d2ebfff0d21360f63b71988ca5f802abeb490d4ea8fe88d1a0113f5c2b204c8",
+    "tests/ink_initial_hex_runtime_20261004/ink_initial_sim.gd": "5ae1211603dfdf4a81b07c9c201c0e701eac66cf7c7ae558b155d2b4f42b35a3",
+    "tests/ink_initial_hex_ui_20261004/fix01/controller.gd": "a1f3897221ce05aeea17fa06b5ca0afef7d4351b28a5264545b23e8e22135d6c",
+    "tests/ink_initial_hex_ui_20261004/fix01/host.gd": "c987c5bb2cdb46189e9dd6a74691015d88bedd255fc4317614c8a9956eb08148",
+    "tests/ink_initial_hex_ui_20261004/fix01/session.gd": "8cc3e2f61b502b26b2dac0532a914530754aae0bc60850ff397e3b5cb5d2d937",
+    "tests/ink_initial_hex_ui_20261004/hex_hud.gd": "39cc35d6ce4247ab8f53a085c9ebcdc2a51f56c3c7cef2a73ff179a51f74f853",
+    "tests/ink_initial_hex_ui_20261004/hex_view.gd": "54804880bc046b197b3fcbdf947d4bc404e9e1e00528745be40c37773340970a",
+    "tests/ink_initial_vortex_host_20261004/host.gd": "4f1c61f48c818d85458574c639570034e07e1a9f8cca7d955f11a08413bd7829",
+    "tests/ink_intermediate_shop_ui_20261004/fix02/host.gd": "fd8c0efcec9066bf9d81f2b4201017bb88ead9f2c4808d4f635d1b86f28d9712",
+    "tests/ink_intermediate_shop_ui_20261004/fix02/shop_panel.gd": "9d32dbd9fe2c3efe2c44ce4c6113397387b6e98028934fe6ca9acbb31632e2c1",
+    "tests/ink_intermediate_shop_ui_20261004/host.gd": "39e84897276b930100ed03d33be1249a8187dd34befdc25accb17b02cc4b08be",
+    "tests/ink_intermediate_shop_ui_20261004/shop_panel.gd": "c31e404592655c939f51d9035532ce5a63b2f7b9692f80b1f2a423b65488ba57",
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_model.gd": "04ada4de7ac9f3de8c5b53b44036861e3ba67689365a6014f4b427ed7f6f5cb0",
+    "tests/ink_intermediate_stats_20261004/ink_intermediate_sim.gd": "3380769d0a38058e6e9b5461f6f9beb5bda643d37846644a70851696157b2482",
+    "tests/ink_normal_floor_host_20261004/enemy_layer.gd": "96b828b7ea50abfff9d3a054292b1c767443fb6854ea15d2332f152f31a187f8",
+    "tests/ink_normal_floor_host_20261004/growth_hud.gd": "365a68d3da8d53e05a08ce7f5b5a6b8f7a86bce82f6bf4feb8a9bbf25d6f4a80",
+    "tests/ink_ordinary_composed_20261006/candidate01/floor_session.gd": "5945ec25d1617b5babc6b9c84406ad6abe015abbd0c67ed40c8bdf76b4f98e06",
+    "tests/ink_ordinary_composed_20261006/candidate01/growth_hud.gd": "11e385f3b0843fc05713ee423f45401ee86aa286dd6da31cc6aa3c51940dee5d",
+    "tests/ink_ordinary_composed_20261006/candidate01/host.gd": "23bc8c59d6f480d9257202ac37a8ba0492bed4cc3755dd1917e55e47dc633f81",
+    "tests/ink_ordinary_visuals_20261007/candidate01/host.gd": "7cd9301c3b6c74c93aa30b7f5522ab0d6f0686d03bdac37860ec829918c486f0",
+    "tests/ink_p1_ordinary_20261006/candidate01/lifesteal01/sim.gd": "83e268d33fe02ab5f2adf9a3b062a8cbf63b7b107963ccdb6966ba7544a13403",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/bridge.gd": "b2e320bd3663168888f37d2e129fc5ac7e34825f06e27a1ce495e7cfc2f16cfd",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/floor_session.gd": "7fe92d1ee360e0a3b521bb87057f19886621ff28067af7e9e20bcd5c8f7abb78",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/growth_hud.gd": "200422f33f7259aab06ebd4aa7df6cde33afc20f1886bb85d501e0d79062d87f",
+    "tests/ink_p1_ordinary_20261006/candidate01/ordinary01/host.gd": "0ec8fcfa3de54582d2df20dec9bcedd9b70179a421c7bf813256cdb489490a4a",
+    "tests/ink_p1_ordinary_20261006/candidate01/settlement.gd": "dd0638002d9b6a06ebf2dd80ecd8a78025b734961a1728c8792d3f7821fdc48c",
+    "tests/ink_p1_ordinary_20261006/candidate01/sim.gd": "285f6c2360cd003138fb48f733218d115811742b118e87f4aadb054fabfc19ac",
+    "tests/ink_p2_ordinary_20261006/mechanism01/sim.gd": "ebc5c843c72b7da04516299b43d809fceee1df7e26fbb28d085e7fea7e8288bb",
+    "tests/ink_p2_ordinary_20261006/ordinary01/floor_session.gd": "424c4796b530ea750e0edf01b36799758defe919a48741fdfb02eadea458e449",
+    "tests/ink_p2_ordinary_20261006/ordinary01/growth_hud.gd": "785f6df7a250191cd4c689fbd02e2ba72a0d962f00f606fa0f7cc63a2aade5b6",
+    "tests/ink_p2_ordinary_20261006/ordinary01/host.gd": "a5e84f1c4b1f5a90df79d87d4e6a15005cbabae11a2bfd74f51b9a5164aa856e",
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_damage_scope_guard.gd": "27a84a67ac2e00d9e99f5f9657cd1ce28061813ca936e4eb38dcb200c4ee1ab7",
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_input_adapter.gd": "ca9770bf80e45f5776adfb26ee326a9e9aad9218acda729ea94a4b4f6497f078",
+    "tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8",
+    "tests/ink_q1_h02_20261004/ink_h02_sim.gd": "796247e96a2edd211d025878fe6d99decdf27ba435104b5fa9562e75b376f3df",
+    "tests/ink_q2_foundation_20261005/fix01/ink_q2_sim.gd": "80da2a5a16b5eb6d73c8cb1227a1a075ad85a7ddc5a8ce26e6aa7533a077d677",
+    "tests/ink_q2_ordinary_20261005/candidate01/growth_hud.gd": "1acaa173108d80464988e5d661b5aea901bd1ff443c5d66863b0a5c7970f1216",
+    "tests/ink_q2_ordinary_20261005/candidate01/host.gd": "792223ab90dd9a88eeff2970eca19e90560b40844ab070a965d3ee810ef84230",
+    "tests/ink_q2_ordinary_20261005/candidate01/input_adapter.gd": "627d2877860e9ce69f902f1213231fe17d521485864086eebb353ccc1c78b275",
+    "tests/ink_q3_foundation_20261004/fix02/ink_q3_sim.gd": "ba2408a6a525a149ba217879cf914b904d81e057a83e9abc2f7560b0737bf0d7",
+    "tests/ink_q3_input_growth_20261004/controller.gd": "fb18653ff4f770becd5b1d9153583aa8910171de088704e8c4cec5f77087fa42",
+    "tests/ink_q3_input_growth_20261004/growth_hud.gd": "4534cfdd5cc468ec3dc4435a8077e6860c5be46deb759d5c132e6107e7c92db2",
+    "tests/ink_q3_input_growth_20261004/input_adapter.gd": "c58207f3f9b7852840a7e9bfdb13e177927df089fd23223fda19369581917292",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/growth_hud.gd": "530f3c23db2101b22dc26bfa62207e0f16d840deb7b0c47ba3157a443ad9b72b",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/host.gd": "8263972dc43ed10e9ab3cf0c308c9db5ccbab5cf46bfea377497a5f1b289ba04",
+    "tests/ink_r1_ordinary_20261005/candidate01/ordinary01/input_adapter.gd": "9d035d4057c87841e8b30ddd002a19e7a475150b1b42152696ce7fe094d3e809",
+    "tests/ink_r1_ordinary_20261005/candidate01/sim.gd": "3cc2948a55dbe9f1d6796b07f0a993f6f69794bdca0551b464a1cdf41d92ddf7",
+    "tests/ink_r2_ordinary_20261006/candidate01/growth_hud.gd": "a40f70c5ecc27949df169345924672433d217e18aa1ed3e44129c9de1f3d3c5b",
+    "tests/ink_r2_ordinary_20261006/candidate01/host.gd": "5370e9127a76195f1e786f354995570a79106ea5233f8ead4f4df56ba67b29ef",
+    "tests/ink_r2_ordinary_20261006/candidate01/input_adapter.gd": "0c893c79e5e2e3c27601231b2584957d17ff9b430afb96c7896b7649d3009f34",
+    "tests/ink_r2_ordinary_20261006/candidate01/sim.gd": "d39d125170d03e0965e2efa01deb639726528c38649c1e8e04e0eddbc13086a5",
+    "tests/ink_r2_peaks_20261006/candidate01/sim.gd": "416856e5b362cceccdff88743c531f05152b7b8f0cecf07812750aa75facb06b",
+    "tests/ink_rest_service_20261006/candidate01/floor_session.gd": "9d8a016475c7b5824c4daaf15ead2205a7bf776c539add5ff156def1a5ffa925",
+    "tests/ink_rest_service_20261006/candidate01/host.gd": "086f0a629c71f0df85c80d1a5c01e0f0154b3c30db859e3dd34537c68099e77e",
+    "tests/ink_rest_service_20261006/candidate01/ordinary01/floor_session.gd": "15af5192f271aa1f5263cde2ce1cb8162f18d177a12fc52f6775bb1cceae194e",
+    "tests/ink_rest_service_20261006/candidate01/ordinary01/host.gd": "8cc7d9893ad4e6c22c09418d51bb61e549b797093b0abea908d537fc209ee1da",
+    "tests/ink_river_hexes_20261006/candidate01/input_adapter.gd": "2f79fde2c97511bc10a7dd93bb4803f0cd22e51dc8bf73c447456e298dde3399",
+    "tests/ink_river_hexes_20261006/candidate01/sim.gd": "5850941bd7f6de6c30e6d36bd9093b7132912ae962afa5ff0f97c9c244fd7c29",
+    "tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": "099709d17edbaad474a1fc826383f37592cc71908c2471d9f9afd77a2d3cf2a8",
+    "tests/ink_river_hexes_20261006/frontdoor01/host.gd": "b2620751585f69c5bde67954141eef10ceaa1f7da9c67b8f92c04a321b90a864",
+    "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd": "bc1c75518866363fad8adc8342020fd778007708e2e8d7e121e0a4a6b4883e07",
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+    "tests/ink_river_hexes_20261006/ownership01/sim.gd": "6aedfe019c03c64f606988017b3bd3cd2fb20cfeab5b3dab02a1e2148408f3e2",
+    "tests/ink_shop_audio_fix_20261004/host.gd": "3fb466ac3ee6e6ffa543caac6c14187f9e6457bf0b3cdccf0bc0e3f7b9e06b0f",
+    "tests/ink_shop_integrated28_20261004/host.gd": "fcd2f956112ba033adaf977d0cabb82748e16c26005cfbc62f99215ffc0ff51a",
+    "tests/ink_shop_ledger_bridge_20261004/fix01/ink_shop_run_model.gd": "9e4a06c7915bfcc842402c4c9b6e26f4efa88e45582a678dd7bd6304828c7ff7",
+    "tests/ink_shop_ledger_bridge_20261004/ink_shop_ledger_bridge.gd": "0642d9e21705e8d7d997cd1db3b08762443bafd8f8e95e3c17d0831cad36f7d8",
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_model.gd": "4040cd64d0c03f15791bd7ad82c6bc5288b39a587ed2d2d1fbca2160cf5af2f6",
+    "tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_sim.gd": "288623926cd0b074bec968d62c0e7d78eb4d1b3bc6d711d9369989eafb58ea9a",
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_bridge.gd": "f417f81e2fcb32c06d1581a5cf29013adb0134932bebb21547b530dfaad05f12",
+    "tests/ink_shop_runtime_stats_20261004/ink_stat_run_model.gd": "4beaeb6761666b5c7f1e13bc3e958bd01bb01155ed2a61845a2b31fea1271dac",
+    "tests/ink_shop_ui_host_20261004/shop_panel.gd": "fb38b49456864976e966483d76363b8b41a123940e2ca000ce0ea512edbae0c4",
+    "tests/ink_shop_ui_host_20261004/shop_session.gd": "820f74ecb5cb14066126c8486f60092315148552d86a27c7fc36d54b43c3e2e5",
+    "tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd": "a16d0d4cf406c9b1e3348053fa58c03a65b7f7fe228c933e080d4217c42e6aac",
+    "tests/ink_shop_ui_host_20261004/style27/parsefix01/host.gd": "d3c33c9b558bf903b11a457da4bbab4e3b3b39fa46508ce9f6e3c0715bcb14ba",
+    "tests/ink_style_specimen_20261004/revision03/fix01/host.gd": "563f60b0be72844948d37dd03132e85c23b94fed01ea5534808aed54fec8217e",
+    "tests/ink_style_specimen_20261004/revision03/inputfix02/host.gd": "e983e7856a66b6edfeffecc83403e43a06f9cef35871c6ebcf4281a1d17622a8",
+    "tests/ink_style_specimen_20261004/revision03/inputfix02/mouse_aim_state.gd": "d579380babacc6e629dda7ecd8ff093c8e1eef0f54b924d4b3df8246caeadbd2",
+    "tests/ink_style_specimen_20261004/revision04_capture/host.gd": "8546faa1fbd39d7519873884675eab1a16daada5840a9ce433517d5809783d2e",
+    "tests/ink_style_specimen_20261004/revision19_actor05/fix07/parsefix01/capture_host.gd": "ca37a680f16cb83b7bc83e07ea496a4f644eae3aa4469dd80801625e3bf9a507",
+    "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd": "abb3280a9e5ed12bd867791729d3a647632f3ed8d530053c1a638bf3c4ead65c",
+    "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/room_host.gd": "b514084f69fbdbbaa050f5f49aa8e727e037175e2f95e8757bc7c2a9182fa670",
+    "visual_rework_20261009/binding/bridge.gd": "81803c521a74dc88520bcbf429a2d1bd9f9a4da9cd62ad4e06ccdf4bad963791",
+    "visual_rework_20261009/binding/postboss_model.gd": "3d8e7f0a0bea45c67e87cf438512b460e58a87a2c2c120cb145c64578481d0ed"
+  },
+  "factory_anchors": [
+    {
+      "receiver": "host.shop_panel",
+      "source": "tests/ink_first_floor_user_route_20261005/runtime01/host.gd:90",
+      "selection": "SignalSafeShopPanel.new; constant at tests/ink_intermediate_shop_ui_20261004/fix02/host.gd:3"
+    },
+    {
+      "receiver": "host.initial_hud/sim/session/input_router",
+      "source": "tests/ink_river_hexes_20261006/frontdoor01/host.gd:3-17",
+      "selection": "last override RiverGrowth/RiverSim/RiverSession/RiverRouter constructors"
+    },
+    {
+      "receiver": "host.ordinary_potion_controls",
+      "source": "scripts/integration/yanguizhou_first_floor.gd:126-136",
+      "selection": "OrdinaryPotions.new from content01/potion_controls.gd"
+    },
+    {
+      "receiver": "host.stage",
+      "source": "tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/room_host.gd:4,13",
+      "selection": "RoomView.new"
+    },
+    {
+      "receiver": "host.enemy_layer.roster and actor views",
+      "source": "tests/ink_normal_floor_host_20261004/enemy_layer.gd:4,24; tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd:3,54",
+      "selection": "Roster.new then original View.new"
+    },
+    {
+      "receiver": "entry.chooser",
+      "source": "scripts/integration/hero_entry.gd:5,45",
+      "selection": "Chooser.new"
+    },
+    {
+      "receiver": "model",
+      "source": "visual_rework_20261009/binding/bridge.gd:8",
+      "selection": "ContentModel equipment_prism same existing Model factory"
+    }
+  ],
+  "baseline_revision": "full_floor05",
+  "revision06_applicability": "Source receiver factories and method set unchanged. Callsite/definition line offsets below refer to full_floor05; revision06 adds only fixture-local scoring/telemetry and reads already audited actual Model.snapshot inventory."
+}

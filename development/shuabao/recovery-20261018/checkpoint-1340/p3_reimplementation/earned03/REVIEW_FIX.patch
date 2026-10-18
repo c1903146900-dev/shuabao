@@ -1,0 +1,34 @@
+--- earned02/runner.gd
++++ earned03/runner.gd
+@@ -1,7 +1,7 @@
+ extends SceneTree
+ # REIMPLEMENTATION. Synthetic visible-button input; no gameplay state writes.
+ const BINDING = "res://yan_p3_earned_20261018b/binding.json"
+-const BINDING_SHA = "25939c26314ce75adde9c5440d70854d5983f6612699cfebc4da1140b55861ac"
++const BINDING_SHA = "b853520f070485094a093b7c9c2c404f11c19fb3010a6e5a4c3766afb1b42789"
+ const Driver = preload("res://yan_p3_earned_20261018b/survival_driver.gd")
+ const Tuning = preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
+ var driver
+@@ -318,6 +318,8 @@
+  if not learned.accepted or learned.points!=before_points-1 or learned.skills.P.candidate!="P3" or learned.skills.P.rank!=1 or learned.hero_loadout.passive!="p3" or learned.hero_ranks.passive!=1 or learned.p3.counts!={"q":0,"e":0}: reason="earned_P3_projection_failed";return false
+  coverage.earned_P3="PASS"
+  release_base_serial=int(learned.p3.release_serial);release_epoch=int(learned.p3.epoch);release_cursor=sim.ink_p3_receipts.size();observing_p3=true
++ driver.p3_release_start=release_base_serial
++ observations.append({"input_policy":"after_three_authenticated_P3_Q1_releases_use_original_basic_and_movement_only","threshold_refund_evidence":"separate_prior_earned_native02_run_not_claimed_by_this_run"})
+  if not await _capture("01_earned_P3",learned): reason="earned_P3_capture_failed";return false
+  if host.initial_hud.growth_panel.is_visible_in_tree() and _available(host.growth_toggle): host.growth_toggle.pressed.emit()
+  phase="r02a_original_entry"
+--- earned02/survival_driver.gd
++++ earned03/survival_driver.gd
+@@ -45,3 +45,11 @@
+   var result: Dictionary = _key(KEY_SHIFT,true)
+   _key(KEY_SHIFT,false)
+   _record("original_shift_attempt",{"direction":selected},result)
++
++# Fixture input policy only: after three actual P3 release receipts, finish with
++# the original basic attack/movement instead of requesting a fourth Q1.
++var p3_release_start: int = -1
++func _plan_q1(visible: Array) -> Dictionary:
++ if p3_release_start >= 0 and host.sim.ink_p3.release_serial-p3_release_start >= 3:
++  return {}
++ return super._plan_q1(visible)

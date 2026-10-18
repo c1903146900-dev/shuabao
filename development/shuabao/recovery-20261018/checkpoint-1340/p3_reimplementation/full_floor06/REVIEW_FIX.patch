@@ -1,0 +1,68 @@
+--- full_floor05/driver.gd
++++ full_floor06/driver.gd
+@@ -2,6 +2,8 @@
+ # Synthetic original input only. No HP, inventory, position, CD or enemy writes.
+ var last_direction: Vector3 = Vector3.ZERO
+ var next_shift_attempt: int = 0
++# Input-policy hysteresis only; this never writes the actual actor position.
++var escaping_boundary: bool = false
+ func advance_inputs() -> void:
+  var previous_due: int = next_input_ms
+  super.advance_inputs()
+@@ -9,6 +11,11 @@
+  if host.finished or host._mainprep_required or host.sim.phase != "combat" or host.sim.paused or host.sim.hero.dead or host.shop_session.panel_open or host.initial_hud.blocks_gameplay_input(): return
+  var targets: Array = _visible_enemies()
+  var origin: Vector3 = host.sim.hero.position
++ var current_edge: float = float(host.sim.arena_half_extent)-maxf(absf(origin.x),absf(origin.z))
++ if current_edge<2.0: escaping_boundary=true
++ elif current_edge>4.0: escaping_boundary=false
++ var inward: Vector3 = -origin.normalized() if origin.length()>0.01 else Vector3.ZERO
++ var choices: Array = []
+  var directions: Array = []
+  if origin.length() > 0.01: directions.append(-origin.normalized())
+  if not targets.is_empty():
+@@ -34,17 +41,19 @@
+    for target: Dictionary in targets: nearest=minf(nearest,endpoint.distance_to(target.position))
+   var edge_clearance: float = float(host.sim.arena_half_extent)-maxf(absf(endpoint.x),absf(endpoint.z))
+   var score: float = -absf(nearest-desired)*2.0 + minf(edge_clearance,4.0)*0.8 + direction.dot(last_direction)*0.35
++  if escaping_boundary: score += (edge_clearance-current_edge)*8.0 + direction.dot(inward)
++  choices.append({"direction":direction,"edge_clearance":edge_clearance,"nearest_visible":nearest,"score":score})
+   if score>best: best=score;selected=direction
+  # Runs even while the original Q1 drag advances: movement is not cancelled by it.
+  _move(selected)
+  last_direction=selected
+- _record("visible_boundary_kite",{"position":origin,"hp":host.sim.hero.hp,"visible_enemies":targets.size(),"nearest":nearest_now if is_finite(nearest_now) else -1.0,"chosen_direction":selected,"q_drag_active":not gesture.is_empty()}, {"accepted":true,"meaning":"original_key_edges_sent_not_movement_acceptance"})
+- if selected!=Vector3.ZERO and nearest_now<2.5 and gesture.is_empty() and host.sim.ink_input.phase=="idle" and float(host.sim.hero.cooldowns.shift)<=0.00001 and float(host.sim.hero.lock_time)<=0.00001 and Time.get_ticks_msec()>=next_shift_attempt:
++ _record("visible_boundary_kite",{"position":origin,"hp":host.sim.hero.hp,"visible_enemies":targets.size(),"nearest":nearest_now if is_finite(nearest_now) else -1.0,"chosen_direction":selected,"q_drag_active":not gesture.is_empty(),"escaping_boundary":escaping_boundary,"edge_clearance":current_edge,"candidates":choices}, {"accepted":true,"meaning":"original_key_edges_sent_not_movement_acceptance"})
++ if selected!=Vector3.ZERO and (escaping_boundary or nearest_now<4.5) and gesture.is_empty() and host.sim.ink_input.phase=="idle" and float(host.sim.hero.cooldowns.shift)<=0.00001 and float(host.sim.hero.lock_time)<=0.00001 and Time.get_ticks_msec()>=next_shift_attempt:
+   next_shift_attempt=Time.get_ticks_msec()+1200
+   _release_left()
+   var result: Dictionary = _key(KEY_SHIFT,true)
+   _key(KEY_SHIFT,false)
+-  _record("original_shift_attempt",{"direction":selected},result)
++  _record("original_shift_attempt",{"direction":selected,"escaping_boundary":escaping_boundary,"nearest_visible":nearest_now if is_finite(nearest_now) else -1.0,"edge_clearance":current_edge},result)
+ 
+ # The runner supplies the already reviewed one-click asynchronous Hex protocol.
+ var resolve_hex: Callable
+--- full_floor05/runner.gd
++++ full_floor06/runner.gd
+@@ -1,7 +1,7 @@
+ extends SceneTree
+ # REIMPLEMENTATION. Synthetic visible-button input; no gameplay state writes.
+ const BINDING = "res://yan_full_floor_20261018b/binding.json"
+-const BINDING_SHA = "19b7e01fde96b2caac68420316afb7497cdbd347cb82f80ef172231420a65907"
++const BINDING_SHA = "41c68dc417e3bef39fe024623e46267e7c5bdfd9188bb9f52fb1e5cea2282d68"
+ const Driver = preload("res://yan_full_floor_20261018b/driver.gd")
+ const Tuning = preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
+ var driver
+@@ -281,7 +281,9 @@
+   await _frame()
+   if not _budget() or not _identity(): return false
+   _record_health()
+-  if hero.dead or not session.fault.is_empty() or not driver.failure.is_empty(): reason="NOT_REACHED_natural_death_or_source_fault";return false
++  if hero.dead or not session.fault.is_empty() or not driver.failure.is_empty():
++   observations.append({"terminal_classification":{"hero_dead":hero.dead,"hp":hero.hp,"position":hero.position,"phase":sim.phase,"session_status":session.status,"session_fault":session.fault.duplicate(true),"driver_failure":driver.failure,"inventory":model.snapshot().inventory,"actual_Q1_rank":hero.ranks.q}})
++   reason="NOT_REACHED_natural_death_or_source_fault";return false
+   if session.status in ["between_rooms","completed"] and model.state.phase=="safe":
+    driver.release_between_nodes()
+    if sim.phase!="victory" or not sim.living().is_empty(): return false

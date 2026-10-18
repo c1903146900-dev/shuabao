@@ -1,0 +1,110 @@
+{
+  "schema": "yan-worldfx-ui-probe-fixture-v1",
+  "revision": 4,
+  "classification": "NEW_RUNNER_REVISION_WITH_EXACT_RECOVERED_PASSIVE_OBSERVER",
+  "status": "GROWTH_REACHABILITY_FIXTURE_COMPLETE_FOR_STATIC_REVIEW_NOT_RUN",
+  "base_source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "required_production_expected_inventory_sha256": "c8bc6934c99fcb55ae60a765e4b59019142fcf16e64ed83f45839138d1a78b64",
+  "production_files": 3046,
+  "fixture_files": [
+    {
+      "target": "res://yan_worldfx_observation_20261018/observer.gd",
+      "payload": "payload/yan_worldfx_observation_20261018/observer.gd",
+      "sha256": "eec7678ac5137cac4387e29cf88969ba8b745eb4a78a046924b6fb8a93f11976",
+      "bytes": 8388
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/binding.json",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/binding.json",
+      "sha256": "9029188f5ef9ac877211249fff58a82114d82701a72ba2b83564f26738c7d4aa",
+      "bytes": 443428
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/runner.gd",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/runner.gd",
+      "sha256": "eafd3fe32a05ea547f600b4cb1b961cc4c5c2204cb1a3bd741523c53be88de98",
+      "bytes": 41591
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/ui_readback.gd",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/ui_readback.gd",
+      "sha256": "388fe93dc961d894afb8c5363711c5fe632f30b1ee073d61ca917060d76930ad",
+      "bytes": 8346
+    }
+  ],
+  "fixture_additions": 4,
+  "expected_source_plus_fixture_files": 3050,
+  "import_cache": "Separate runtime-owned sealed cache; expected prior98 is not inherited proof, actual inventory required",
+  "entry": "res://yan_worldfx_ui_probe_20261018b/runner.gd",
+  "evidence_argument": "--worldfx-ui-evidence=/absolute/fresh/nonexistent/directory",
+  "normal_window_required": true,
+  "root_viewport": [
+    1280,
+    720
+  ],
+  "limits": {
+    "independent_soft_timeout_ms": 170000,
+    "absolute_timeout_ms": 180000,
+    "finish_ms": 5000,
+    "max_images": 3,
+    "raw_image_budget_bytes": 16777216
+  },
+  "planned_images": [
+    "00_growth_expanded.png",
+    "01_q1_flow_early.png",
+    "02_q1_flow_later.png"
+  ],
+  "planned_observations": [
+    "real initial four-choice modal and hidden return control",
+    "Same postdraw actual header/hint/equipment/footer/buffs exactly equal the last display-only projection; no extra waiting or forced present for this gate",
+    "Under actual initial/shop modal, both hint and backing hidden; original backing-equals-hint gate retained",
+    "Explicit original growth_toggle close/reopen, actual expanded screenshot before spending original1SP",
+    "All13 original growth buttons fully inside viewport and clipping ancestors; scroll ancestry recorded; unreachable button fails before any offscreen skill signal",
+    "Enabled growth buttons: synthetic mouse-motion through real Viewport GUI dispatcher and exact hovered button/descendant readback, without clicks; disabled buttons retain business permissions and receive geometry-only checks",
+    "original asynchronous 0.24s Hex slot0 commit within3s receipt limit",
+    "original1SP learnQ1",
+    "sameHost/Sim/Hero/Session/Model through UI roundtrips and firstroom transition",
+    "M/K actual visible state and preserved request flags",
+    "F1 consolidated diagnostics and legacy label/background hiding",
+    "P safe preparation shop open/close without purchase",
+    "Space pause status in preparation",
+    "original chooser suspend/resume via visible original button signals",
+    "original visible route driver and first actual Q1 release",
+    "passive before/after original controller event counter",
+    "three real MeshInstance3D nodes with valid Mesh/ShaderMaterial and exact sealed RiverShader instance",
+    "shader age within1e-5 of same postdraw Sim.hero_time minus real release time at two times",
+    "same mesh and geometry hashes while source age advances",
+    "legacyQ1 hidden",
+    "original safe close and bounded failure diagnostics"
+  ],
+  "not_covered": [
+    "Native OS/device input. Growth hover uses synthetic Viewport GUI dispatch, not a physical mouse click.",
+    "all other skill branches",
+    "curved gesture by straight route driver",
+    "actual combat-pause clock case",
+    "real-error or terminal UI",
+    "all UI screenshots or art acceptance",
+    "front animation or hero2D",
+    "Existing-scroll wheel travel: no ScrollContainer found in current growth inheritance chain; if any button requires scrolling this fixture reports failure instead of assuming reachability."
+  ],
+  "pre_execution_requirements": [
+    "Current P3 startup, resource and session checks must be resolved separately before execution.",
+    "Actual assembled production inventory must exactly equal expected3046 pins",
+    "Review latest four fixture bytes and independently verify staging hashes",
+    "Do not execute historical runner binding or modify frozen source"
+  ],
+  "author_recheck": "Original UI presenter bytes retained. Shared Entry scheduling changes are independently reviewed; runtime confirmation remains required.",
+  "engine_run": false,
+  "previous_run": {
+    "accepted": false,
+    "source": "worldfx_ui_native01",
+    "reason": "ui_hint_backing_residual:initial_four_choice_modal",
+    "first_Q1": "NOT_REACHED",
+    "failure_preserved": true
+  },
+  "api_references": [
+    "https://docs.godotengine.org/en/stable/classes/class_viewport.html#class-viewport-method-push-input",
+    "https://docs.godotengine.org/en/stable/classes/class_viewport.html#class-viewport-method-gui-get-hovered-control"
+  ],
+  "production_changes_from_probe02": "None. Candidate02 production inventory remains c8bc6934c99fcb55ae60a765e4b59019142fcf16e64ed83f45839138d1a78b64."
+}

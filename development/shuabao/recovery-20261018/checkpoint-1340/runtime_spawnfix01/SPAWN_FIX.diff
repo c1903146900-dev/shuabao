@@ -1,0 +1,63 @@
+--- frozen_swapfix
++++ spawnfix
+@@ -80,12 +80,34 @@
+         if 'godot' in name: result.append(pid)
+     return result
+ 
+-def foreign_engines(tree):
++def engine_snapshot():
++    result=[]
++    for pid in engines():
++        try:
++            row=read_stat(pid)
++            comm=Path(f'/proc/{pid}/comm').read_text().strip()
++            after=read_stat(pid)
++        except FileNotFoundError as error:
++            if error.errno != errno.ENOENT: raise
++            continue
++        if row['start_ticks'] != after['start_ticks']: raise GuardError('engine_snapshot_identity_changed')
++        result.append(dict(row,comm=comm))
++    return result
++
++def foreign_engines(tree, snapshot, evidence):
+     foreign=[]
+-    for pid in engines():
+-        try: row=read_stat(pid)
+-        except FileNotFoundError: continue
+-        if not any(r['pid']==pid and r['start_ticks']==row['start_ticks'] and pidfd_pid(r['fd'])==pid for r in tree.records): foreign.append(pid)
++    for before in snapshot:
++        event={'snapshot':before}
++        try: current=read_stat(before['pid'])
++        except FileNotFoundError as error:
++            if error.errno != errno.ENOENT: raise
++            event['classification']='gone_ENOENT'; evidence.append(event);continue
++        event['current']=current
++        same=current['start_ticks']==before['start_ticks']
++        owned=same and any(r['pid']==before['pid'] and r['start_ticks']==before['start_ticks'] and pidfd_pid(r['fd'])==before['pid'] for r in tree.records)
++        event['classification']='owned_exact_pidfd' if owned else ('PID_reused' if not same else 'unowned_alive')
++        evidence.append(event)
++        if not owned: foreign.append(event)
+     return foreign
+ 
+ def verify_tree(root, pinfile, expected):
+@@ -190,7 +212,7 @@
+                 signal.setitimer(signal.ITIMER_REAL,max(.001,CLEANUP_AT-(time.monotonic()-started)))
+                 tree.establish();last=started
+                 while True:
+-                    tick=time.monotonic();scan,rows=tree.sample(read_rss)
++                    tick=time.monotonic();engine_rows=engine_snapshot();scan,rows=tree.sample(read_rss)
+                     own=read_stat(os.getpid());own_rss=read_rss(own);own_swap=swap_bytes(own)
+                     total=own_rss+own_swap+sum(row['rss']+owned_swap_bytes(tree,row) for row in rows)
+                     available=available_bytes();now=time.monotonic();gap=now-last;last=now
+@@ -200,7 +222,10 @@
+                     if available<MIN_AVAILABLE:raise GuardError('low_system_memory')
+                     if gap>MAX_GAP:raise GuardError('sample_gap_untrusted')
+                     if scan['escaped']:raise GuardError('owned_process_escaped_session')
+-                    if foreign_engines(tree):raise GuardError('unowned_engine_detected_no_signal_to_it')
++                    engine_evidence=[]
++                    foreign=foreign_engines(tree,engine_rows,engine_evidence)
++                    report['engine_identity_evidence']=engine_evidence
++                    if foreign:raise GuardError('unowned_engine_detected_no_signal_to_it')
+                     if cancel.requests:raise GuardError('cancel_requested')
+                     if tree.leader_done():break
+                     time.sleep(max(0,INTERVAL-(time.monotonic()-tick)))

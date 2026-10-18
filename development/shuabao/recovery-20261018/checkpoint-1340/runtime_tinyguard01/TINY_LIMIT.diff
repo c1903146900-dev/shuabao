@@ -1,0 +1,11 @@
+--- frozen_spawnfix
++++ tinyguard
+@@ -8,7 +8,7 @@
+ MIB = 1024**2
+ CAP = 1536*MIB
+ MIN_AVAILABLE = 2048*MIB
+-CLEANUP_AT, KILL_AT = 595., 600.
++CLEANUP_AT, KILL_AT = 25., 30.
+ INTERVAL, MAX_GAP = .05, .2
+ 
+ def sha(path):

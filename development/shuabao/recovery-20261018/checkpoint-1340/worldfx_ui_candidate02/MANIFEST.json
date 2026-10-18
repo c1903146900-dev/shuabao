@@ -1,0 +1,61 @@
+{
+  "schema": "yan-worldfx-ui-overlay-v1",
+  "status": "UNAPPLIED_MINIMAL_FIX_FOR_NATIVE01_FAILURE",
+  "classification": "DEFER_DISPLAY_ONLY_UI_BEHIND_ORIGINAL_MODAL_REFRESH",
+  "base_source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "base_files": 3044,
+  "expected_files": 3046,
+  "expected_inventory_file": "SOURCE_PINS.expected.json",
+  "expected_inventory_sha256": "c8bc6934c99fcb55ae60a765e4b59019142fcf16e64ed83f45839138d1a78b64",
+  "payload": [
+    {
+      "target": "res://scenes/hero_entry.tscn",
+      "payload": "payload/scenes/hero_entry.tscn",
+      "sha256": "f49d62fb4af6f8467102bc745aa8dcf44333724c1fe9422db3d8a4a97e26a41a",
+      "bytes": 182,
+      "action": "replace",
+      "preimage_sha256": "00b26deed8ed5498f785268d2f54e35bd3363bc05d33663da7b51fd0fe704045"
+    },
+    {
+      "target": "res://yan_trial_ui_20261018/presenter.gd",
+      "payload": "payload/yan_trial_ui_20261018/presenter.gd",
+      "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f",
+      "bytes": 11119,
+      "action": "add",
+      "preimage_sha256": null
+    },
+    {
+      "target": "res://yan_visual_attach_20261018/entry.gd",
+      "payload": "payload/yan_visual_attach_20261018/entry.gd",
+      "sha256": "50ed11e0c188bd4114dec928fc0d6f69820b2630244a66d1fbcdba3e83dcb764",
+      "bytes": 3097,
+      "action": "add",
+      "preimage_sha256": null
+    }
+  ],
+  "preserved": [
+    "original HeroEntry._launch_fresh",
+    "ordinary Host identity and bytes",
+    "Session and Sim bytes",
+    "worldFX controller and fallback",
+    "Q1 free-curve sampler and river shader",
+    "R1 snow view without boat; E2 boat remains distinct"
+  ],
+  "excluded": [
+    "unvalidated front animation",
+    "hero2D assets",
+    "historical 480ca/3047 binding",
+    "all-skill or art acceptance claims"
+  ],
+  "validation": {
+    "base_exact_hashes": 3044,
+    "engine_run": false,
+    "actual_assembled_source_verified": false,
+    "prior_native_result": "worldfx_ui_native01 exited4 after17.422s: ui_hint_backing_residual:initial_four_choice_modal; firstQ1 not reached",
+    "fix_not_yet_verified": true
+  },
+  "source_project_main_scene": "res://scenes/hero_entry.tscn",
+  "new_entry": "res://yan_visual_attach_20261018/entry.gd",
+  "revision": 2,
+  "delta_from_candidate01": "Only shared Entry replaces immediate presenter.present with presenter.present.call_deferred at the same guarded point. Original source Host, Sim, Session, controller, presenter and scene bytes are preserved."
+}

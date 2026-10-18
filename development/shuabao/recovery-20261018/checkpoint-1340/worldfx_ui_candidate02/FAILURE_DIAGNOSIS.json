@@ -1,0 +1,101 @@
+{
+  "classification": "ACTUAL_NATIVE_FAILURE_DIAGNOSIS_AND_UNAPPLIED_MINIMAL_FIX",
+  "actual_native_exit": 4,
+  "reported_wall_seconds": 17.422,
+  "actual_failure_reason": "ui_hint_backing_residual:initial_four_choice_modal",
+  "test_false_positive": false,
+  "actual_data": {
+    "session_header": {
+      "visible": true,
+      "visible_in_tree": true,
+      "rect": [
+        22.0,
+        14.0,
+        604.0,
+        66.0
+      ],
+      "text_head": "晏归舟首层开发候选 · 已完成 0/12 行 · preparation · F10退出\nLv.1  金币0  XP0  SP1 · Space暂停/继续 · 当前可学习  ·  Q1 / Q2 / Q3 / E1 / E2 / E3 / P1 / P2 / R1 / R2；临时功能显示",
+      "text_sha256": "eff53f37d620c44c13efe66acc79a16e9dd51c5916a3da95faa66c26ee438cf3"
+    },
+    "session_hint": {
+      "visible": true,
+      "visible_in_tree": true,
+      "rect": [
+        462.0,
+        174.0,
+        354.0,
+        172.0
+      ],
+      "text_head": "从下往上沿线选下一行；末行Boss。\n精英1–2 · 休息2–3 · 训练1–2\nM：查看/收起路线　P：安全区商店\nB旧诊断入口已停用；技能键未改变。\n休息点：回满生命、清除Buff和冷却；基础血瓶不补充\n请先完成当前海克斯四选一\n操作未完成（developer_first_floor_bound）",
+      "text_sha256": "ecd139c32dbfe4f4a9da864d4275e7c714027b1a78a40684a07112caeeee847d"
+    },
+    "session_equipment": {
+      "visible": true,
+      "visible_in_tree": true,
+      "rect": [
+        944.0,
+        642.0,
+        146.0,
+        77.0
+      ],
+      "text_head": "装备 0/6 · 基础11/一级17\n商店关开不提交；实际进入下一节点提交\n其余装备/药品/技能未开放",
+      "text_sha256": "b17c3c8d917e509577ec89136927b2839c8459675a8a384bd8051e6c8a9e4e46"
+    },
+    "trial_hint_backing": {
+      "visible": false,
+      "visible_in_tree": false,
+      "rect": [
+        454.0,
+        166.0,
+        370.0,
+        79.0
+      ]
+    },
+    "return_button": {
+      "visible": false,
+      "visible_in_tree": false,
+      "rect": [
+        1112.0,
+        18.0,
+        154.0,
+        48.0
+      ]
+    },
+    "trial_diagnostics": {
+      "visible": false,
+      "visible_in_tree": false,
+      "rect": [
+        14.0,
+        82.0,
+        810.0,
+        520.0
+      ]
+    }
+  },
+  "source_phase": {
+    "generation": 0,
+    "hero_time": 0.0,
+    "id": 312593090451,
+    "paused": true,
+    "phase": "preparation",
+    "room_id": "ink-q1-isolated"
+  },
+  "session": {
+    "id": -9223371716745492457,
+    "initial_modal": true,
+    "shop_modal": false,
+    "status": "preparation"
+  },
+  "evidence_pins": {
+    "report.json": "2989b3cca89fdc243353c1ec7b159c0562697ef29ec38b5c85bd72b671558278",
+    "observations.json": "e24e97c0d3cface0a643847edeabefba69231b6e85bb31ff8ae97129ee4486c7",
+    "failure.png": "c5f01ef9ff602af6acbf8e534850c4f220e6525462d681a97cf9821b8362cfcf"
+  },
+  "finding": "UI was already installed: relocated controls, new F1/backing and hidden return button exist. However hint is visible with original long text while backing is hidden; header/equipment also contain original long developer text. Failure screenshot independently shows original text. This is genuine overwritten presentation state, not a missing-install wait or a false assertion.",
+  "source_explanation": "The ordinary Host queues _ordinary_refresh_after_modal with call_deferred and then calls _refresh_session_controls(true). A priority100 immediate Entry projection cannot order itself after that deferred refresh. This callback-order explanation follows source plus observed state; a callback timestamp trace was not recorded.",
+  "minimum_fix": "Only Entry display projection is queued with Callable.call_deferred at the same guarded point, behind already queued Host refresh callbacks. Presenter rechecks current owner/screen/startup at execution. Host/Sim/Session/_launch_fresh/controller/presenter remain exact.",
+  "limitations": "Deferred FIFO ordering covers already queued refreshes, not arbitrary future callbacks. Same postdraw equality and modal visibility gates remain hard requirements. New native run must establish the result.",
+  "probe_change": "Preserve prior backing==hint check; add modal-both-hidden and actual text==last_projected for header/hint/equipment/footer/buffs. No extra wait is inserted before initial UI observation. Shader/deadline/owner gates unchanged.",
+  "engine_run_for_fix": false,
+  "new_expected_source_inventory_sha256": "c8bc6934c99fcb55ae60a765e4b59019142fcf16e64ed83f45839138d1a78b64"
+}

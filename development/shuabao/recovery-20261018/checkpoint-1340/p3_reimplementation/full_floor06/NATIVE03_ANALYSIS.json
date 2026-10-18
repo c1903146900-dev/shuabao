@@ -1,0 +1,212 @@
+{
+  "classification": "OBSERVED_NATURAL_DEATH_NOT_GAMEPLAY_BUG_PROOF",
+  "report_sha256": "e19ab264ea6221a4e7e53265fbd30398771d01ad145b38ff4b9b731170f742c5",
+  "observations_sha256": "f1abedfe35a5103697361588b6daf41d4d8430554f4023cf58f519d106c9c319",
+  "boss_first_health": {
+    "hp": 446.4,
+    "inventory": [
+      {
+        "count": 1,
+        "id": "potion:1",
+        "invested": 200,
+        "lineage": [
+          2
+        ],
+        "uid": 2
+      }
+    ],
+    "position": "(-8.771779, 0.0, 7.18221)",
+    "room": "normal-floor-3638742/first_floor/r12boss",
+    "time": 90.4599999999907
+  },
+  "boss_last_health": {
+    "hp": 69.0868181818107,
+    "inventory": [],
+    "position": "(-11.95997, 0.0, 7.966324)",
+    "room": "normal-floor-3638742/first_floor/r12boss",
+    "time": 129.679999999988
+  },
+  "hero_damage": [
+    {
+      "absorbed": 0.0,
+      "amount": 56.525,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.981545, 0.0, 0.191229)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-12.13571, 0.0, 5.680294)",
+      "raw": 62.1775,
+      "real_time": 107.079999999996,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 643,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 107.079999999998
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 102.772727272727,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.945275, 0.0, 0.326274)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-12.12968, 0.0, 7.006322)",
+      "raw": 113.05,
+      "real_time": 110.359999999995,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 661,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 110.359999999998
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 102.772727272727,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.999954, 0.0, -0.009638)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-12.04483, 0.0, 7.04147)",
+      "raw": 113.05,
+      "real_time": 113.079999999995,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 680,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 113.079999999998
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 56.525,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.999954, 0.0, -0.009638)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-12.04483, 0.0, 7.281469)",
+      "raw": 62.1775,
+      "real_time": 116.199999999994,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 697,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 116.199999999998
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 102.772727272727,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.982258, 0.0, -0.187535)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-12.07395, 0.0, 5.812355)",
+      "raw": 113.05,
+      "real_time": 120.919999999993,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 723,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 120.919999999998
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 56.525,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.837257, 0.0, 0.54681)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-10.99395, 0.0, 8.332353)",
+      "raw": 62.1775,
+      "real_time": 126.759999999992,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 757,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 126.759999999999
+    },
+    {
+      "absorbed": 0.0,
+      "amount": 69.1868181818108,
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "damage_type": "ordinary",
+      "direction": "(-0.934321, 0.0, 0.356432)",
+      "generation": 7,
+      "kind": "damage",
+      "position": "(-11.95997, 0.0, 7.726324)",
+      "raw": 113.05,
+      "real_time": 129.879999999993,
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 771,
+      "source": "enemy",
+      "target": "yanguizhou",
+      "wave": 7,
+      "world_time": 129.879999999999
+    }
+  ],
+  "boss_terminal": [
+    {
+      "combat_level_id": "normal-floor-3638742/first_floor/r12boss",
+      "generation": 7,
+      "kind": "encounter_finished",
+      "real_time": 129.879999999993,
+      "result": "true_dead",
+      "room_id": "normal-floor-3638742/first_floor/r12boss",
+      "sequence": 774,
+      "wave": 7,
+      "world_time": 129.879999999999
+    }
+  ],
+  "boss_total_observed_damage": 2507.999999999999,
+  "boss_shift_attempts": [],
+  "potion_uses": [
+    {
+      "action": "UI:original_visible_potion_use_button",
+      "details": {
+        "threshold": 0.6
+      },
+      "hero_time": 113.159999999986,
+      "result": {
+        "accepted": true,
+        "changed": true,
+        "economic_fixture_only": true,
+        "events": [
+          {
+            "effect_id": "ordinary-potion:normal-floor-3638742:potion-ui:24",
+            "item": "potion:1",
+            "recovery": {
+              "duration_seconds": 4.0,
+              "heal_max_health_pct": 20.0
+            },
+            "type": "recovery_committed"
+          }
+        ],
+        "health_projection": {
+          "healing_event_emitted": false,
+          "post_hp": 187.369545454543,
+          "post_max": 446.4,
+          "pre_hp": 187.369545454543,
+          "pre_max": 446.4,
+          "source_health_revision": 3138,
+          "transaction_clamp": 0.0,
+          "undo_restored_own_clamp": 0.0
+        },
+        "reason": "",
+        "state_revision": 93
+      },
+      "synthetic_player_input": true,
+      "wall_ms": 137453
+    }
+  ],
+  "interpretation": "Actual enemy damage and true_dead terminal; no script error. Input policy oscillated near west boundary; old2.5m center-distance Shift trigger never fired in Boss room. Remaining Boss HP was not captured and is not inferred."
+}
