@@ -1,0 +1,24 @@
+{
+  "schema": "q1-visual-join-new-implementation-20261018-1",
+  "parent": "recovery_20261018b/worldfx_ui_native03/source/game/visual_rework_20261009/views/q1_view.gd",
+  "before": "de569a31a53c967dfff8902cf2e067e013c5a0b6f552d53649891b2f05c78a90",
+  "after": "654915bb626c250c010a6bad92295e85afb76c0cf166269e2d25e33fac1090b0",
+  "production_relative_path": "visual_rework_20261009/views/q1_view.gd",
+  "original_20261015_bytes_available": false,
+  "implementation": "new source-segment rectangle union, earlier segment owns overlap",
+  "unchanged": [
+    "source path and sampling",
+    "width/front/time uniforms",
+    "all present_source/reset and scope lifecycle",
+    "shader",
+    "wave/preview cache lifecycle",
+    "damage and Hex rules"
+  ],
+  "checks": {
+    "pure_geometry": 16,
+    "engine": "NOT_RUN",
+    "native_input": "NOT_RUN",
+    "independent_review": "REQUESTED"
+  },
+  "limitation": "Worst-case polygon subtraction grows with source path length; no new sample limit. Geometry remains cached per existing path/wave lifecycle. Native performance and appearance not validated."
+}
