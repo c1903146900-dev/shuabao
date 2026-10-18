@@ -1,0 +1,52 @@
+{
+  "status": "RESTORED_VERIFIED_BYTES_NO_NEW_NATIVE",
+  "new_root": "recovery_20261018c",
+  "base": {
+    "commit": "708454b99a631adac381417f820aabe6798c148c",
+    "path": "development/shuabao/candidate43-rebuild/game",
+    "local_readonly": "recovery_20261018b/base/game",
+    "files": 3031,
+    "bytes": 216204684,
+    "manifest_sha256": "d24cf18fbcef701a55202a3d36fa6b4c4d0a7bbd900792e46bb0693cf682ec1a",
+    "all_SHA256_and_Git_blob_SHA1_verified": true
+  },
+  "migration": {
+    "commit": "64832e8dba5e51e6e202fb72bf1804321c6671dd",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1227/p3_reimplementation/migration01",
+    "manifest_sha256": "ec79bef7eb9384b7431393e6045de0e093916acad3aa0af647e46f7f9f64ff63"
+  },
+  "source3044": {
+    "pin_commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+    "pin_remote": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/SOURCE_PINS.json",
+    "local": "p3_integrated_source01/source/game",
+    "pins_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0"
+  },
+  "cache": {
+    "commit": "34f29ebd330b79747da39a953c978a042accda31",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-cache1242/resource_cache_validation01/cache_parts01",
+    "parts": 35,
+    "parts_sha256": "968072e3089aadae776f51cdbf9678833c179c739690c68c9ee1d1164f0c1a93",
+    "archive_sha256": "28b6fa7b0d9be2c38314d6aa32a28fbb2e2ce9bd8204f406c93feabf08504691",
+    "local": "restored_cache01",
+    "cache_manifest_sha256": "2458b5139ab11a4abb0de9cc4c24344acf2185720c2ff99c06379cc38b21b0aa"
+  },
+  "world3046": {
+    "commit": "a4beb870cd4379baa14faecbb1eb70e8dce019a2",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1340/worldfx_ui_candidate02",
+    "local": "worldfx_ui_source01/source/game",
+    "pins_sha256": "c8bc6934c99fcb55ae60a765e4b59019142fcf16e64ed83f45839138d1a78b64"
+  },
+  "guards": {
+    "commit": "a4beb870cd4379baa14faecbb1eb70e8dce019a2",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1340",
+    "spawn_seal": "adb33541f40b515520d3ade2798b6c42e6250a53fdc963dea27302cc14014030",
+    "tiny_seal": "25198f2031f066e3e640843fff4530c7639978a149fccf52e70e4a54dd10c015",
+    "base_runtime_seal": "036f5b3b933aad953b46b7a14aa1444f79118e594a1f1082f397dd1fe491e965",
+    "one_lock": "runtime_support/single_engine.lock",
+    "b_guard_execution_forbidden": true
+  },
+  "binary_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+  "public_repo": "c1903146900-dev/shuabao",
+  "downloaded_code_executed": false,
+  "engine_run": false
+}
