@@ -1,0 +1,101 @@
+{
+  "classification": "New reimplementation; revisions 01/02 visual FAIL; 03 WebGL rasterization pending playback",
+  "files": [
+    {
+      "path": "PLAYBACK_REVIEW_01.md",
+      "size": 1573,
+      "sha256": "7de5288c0bcf07b358e4d2c53a4f2a13c986dacd7ba7c4407e9fc6b04e9a8f3a"
+    },
+    {
+      "path": "PLAYBACK_REVIEW_02.md",
+      "size": 1099,
+      "sha256": "cb14e0ccd7bc8739f8071249023d17c68e11da58ceb763e9cc00f18bbb55fbfd"
+    },
+    {
+      "path": "PROMPT.txt",
+      "size": 2338,
+      "sha256": "af62ac9313baee4ba6163751088b4b55920efed067c0f8bcc30ec85571af0dd7"
+    },
+    {
+      "path": "SLEEVE_CHECK.json",
+      "size": 284,
+      "sha256": "9256c64120d336a16b545507a0829e0efea80c4f08a80b3a78e7d65a90bf6223"
+    },
+    {
+      "path": "STATUS.md",
+      "size": 2617,
+      "sha256": "d2e7a59aefa071aceaaa4a78357567ee4a3a6f01041d9a999dcdac2de320a338"
+    },
+    {
+      "path": "check_sleeve.cjs",
+      "size": 1235,
+      "sha256": "89fcf7bdf6876db1bb1601772f1563122631ceb48a0c8ff4bb887b21ccd72265"
+    },
+    {
+      "path": "history01/SLEEVE_CHECK.json",
+      "size": 283,
+      "sha256": "cc8da5fee2c22625ed73d5284e78a948c7e575d4cf8a64d58215bfadf4817d58"
+    },
+    {
+      "path": "history01/rig.js",
+      "size": 7067,
+      "sha256": "3057bf2bba0de448b375326feb2e9f41369daeafc020d2eb9bc89cf311d98230"
+    },
+    {
+      "path": "history02/rig.js",
+      "size": 7949,
+      "sha256": "c7e44d51c2c70e4ec4333a315290bab918eda2de4fc9ec0540723e791cc75f35"
+    },
+    {
+      "path": "lower_idle_walk_nine_original.png",
+      "size": 1432352,
+      "sha256": "485eea12c243aa71cd06e91b33a3878ae5315c18f99ab08fa46bd3d8944451a8"
+    },
+    {
+      "path": "neutral_parts_original.png",
+      "size": 1040334,
+      "sha256": "8d6ad6879940a8460b8458feadaf1fde00fc7d08056e1bda3058bb3f63a9ba85"
+    },
+    {
+      "path": "playback02/01_replay.png",
+      "size": 47108,
+      "sha256": "10af56e9e3b59028005891bc63c7be3afc13028bd1fce7a0ae9a537667955cfe"
+    },
+    {
+      "path": "playback02/02_release_half.png",
+      "size": 45167,
+      "sha256": "8e6365958ff06aa3b76b15781bcf5587e6c77d264baf7994aa8dd29ffe57114e"
+    },
+    {
+      "path": "playback02/03_return_white.png",
+      "size": 51483,
+      "sha256": "9a9c408ee10736a310715c132a6c48d3920d7645bd039f17e06110442bbbfefd"
+    },
+    {
+      "path": "preview.html",
+      "size": 983,
+      "sha256": "80960123e99dcd50e8dc60318ee09efd977152c3b02a8c4c413f0312489f8f40"
+    },
+    {
+      "path": "rig.js",
+      "size": 10508,
+      "sha256": "4d1da1023be4ba89ae2e1f448c75b58b4d169ea425196b38bdfdb45170a74db9"
+    },
+    {
+      "path": "serve_preview.py",
+      "size": 3687,
+      "sha256": "9a9b9397dad684a5ce9b3429810872d5cf98d349e3d1aa65c2ff1669401967bc"
+    },
+    {
+      "path": "upper_q1_eight_original.png",
+      "size": 2544112,
+      "sha256": "c5230883ccce96db9ec74f36379fc6401e1093770980453fd3d447bbc2ad1494"
+    }
+  ],
+  "derivation": {
+    "source": "MANIFEST.json",
+    "source_sha256": "9d09fb67ace6dd3502cebe0c8a616ac1e3a70ea84914b47f12599ee0b17083be",
+    "change": "Exclude Python compiled cache from public source inventory only; historical manifest and source bytes unchanged",
+    "excluded_entries": 1
+  }
+}

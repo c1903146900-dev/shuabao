@@ -1,0 +1,41 @@
+--- earned01/runner.gd
++++ earned02/runner.gd
+@@ -1,7 +1,7 @@
+ extends SceneTree
+ # REIMPLEMENTATION. Synthetic visible-button input; no gameplay state writes.
+ const BINDING = "res://yan_p3_earned_20261018b/binding.json"
+-const BINDING_SHA = "ec028d600629237809483cc51bb0cce0633bfa18b12bb8a0258a7c12eadd44c1"
++const BINDING_SHA = "25939c26314ce75adde9c5440d70854d5983f6612699cfebc4da1140b55861ac"
+ const Driver = preload("res://yan_p3_earned_20261018b/survival_driver.gd")
+ const Tuning = preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
+ var driver
+@@ -236,7 +236,7 @@
+  var flow: Dictionary = session.snapshot()
+  if flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","") != node_id: return false
+  if combat:
+-  if session.status!="combat" or sim.encounter_generation!=generation+1 or not str(sim.room_id).ends_with("/"+node_id): return false
++  if session.status!="combat" or sim.encounter_generation!=generation+1 or not str(sim.room_id).ends_with("/"+node_id) or flow.row_state.get("entry_receipt",{}).get("payload",{}).get("room_id","")!=sim.room_id: return false
+  else:
+   if session.status!="service" or sim.encounter_generation!=generation or sim.room_id!=room: return false
+  room=sim.room_id;generation=sim.encounter_generation
+@@ -263,7 +263,7 @@
+   var pending: bool = expected_count>=threshold and float(receipt.cd.before)<=0.0
+   if not is_equal_approx(float(receipt.cd.refunded),expected_refund) or not is_equal_approx(float(receipt.cd.after),float(receipt.cd.before)-expected_refund) or bool(receipt.cd.pending)!=pending: return false
+   q_count_seen=0 if expected_refund>0.0 else expected_count
+-  if receipt.state.counts.q!=q_count_seen or receipt.state.counts.e!=0 or receipt.state.release_serial!=release_base_serial+release_ids.size() or receipt.state.epoch!=release_epoch: return false
++  if receipt.state.ready!={"q":pending,"e":false} or receipt.state.counts.q!=q_count_seen or receipt.state.counts.e!=0 or receipt.state.release_serial!=release_base_serial+release_ids.size() or receipt.state.epoch!=release_epoch: return false
+   if expected_refund>0.0: coverage.threshold_refund="PASS"
+   coverage.successful_Q1="PASS"
+  return true
+--- earned01/survival_driver.gd
++++ earned02/survival_driver.gd
+@@ -23,6 +23,9 @@
+  var nearest_now: float = INF
+  for target: Dictionary in targets: nearest_now=minf(nearest_now,origin.distance_to(target.position))
+  for direction: Vector3 in directions:
++  # Match original _move key thresholds before collision/visibility prediction.
++  direction = Vector3(-1.0 if direction.x < -0.30 else (1.0 if direction.x > 0.30 else 0.0),0.0,-1.0 if direction.z < -0.30 else (1.0 if direction.z > 0.30 else 0.0)).normalized()
++  if direction == Vector3.ZERO: continue
+   var endpoint: Vector3 = origin+direction
+   if not _ground_clear(origin,endpoint,float(host.sim.hero_radius)) or _visible_ground(endpoint).is_empty(): continue
+   var nearest: float = desired

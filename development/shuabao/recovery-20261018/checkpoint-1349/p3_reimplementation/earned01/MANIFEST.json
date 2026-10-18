@@ -1,0 +1,29 @@
+{
+  "status": "WIP_NOT_RUN",
+  "classification": "REIMPLEMENTATION_SYNTHETIC_ORIGINAL_INPUT",
+  "entry": "res://yan_p3_earned_20261018b/runner.gd",
+  "argument": "--p3-evidence=<fresh absolute directory>",
+  "files": {
+    "runner.gd": "1acba92d163a2fe327e766296f403507229b5b00dc5ff77db4a4f60c7c7f6b14",
+    "binding.json": "ec028d600629237809483cc51bb0cce0633bfa18b12bb8a0258a7c12eadd44c1",
+    "survival_driver.gd": "b300c3bf30e9fecdb62df3f7601b47ab1b8040d90a1eebdd50b4b4bdcbdd5a3a"
+  },
+  "wall_seconds": 360,
+  "independent_watchdog_seconds": 350,
+  "images_max": 3,
+  "raw_image_bytes_max": 16777216,
+  "scope": [
+    "r01a original XP -> safe 1SP -> P3 rank1",
+    "r02a Q1 authenticated commits and actual remaining cooldown oracle",
+    "r03a nonzero count retention and original rest cooldown reset",
+    "death core only when latest release serial and prior nonzero count reconcile"
+  ],
+  "not_claimed": [
+    "native physical device input",
+    "fourth refund if fewer casts happen",
+    "P3 upgrades or alternate E branches",
+    "full first floor completed"
+  ],
+  "inventory_policy": "observe actual ledger; no potion/flask supplied or assumed",
+  "source_writes": false
+}

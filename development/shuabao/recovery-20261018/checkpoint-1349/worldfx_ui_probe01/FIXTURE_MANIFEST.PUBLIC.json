@@ -1,0 +1,93 @@
+{
+  "schema": "yan-worldfx-ui-probe-fixture-v1",
+  "revision": 2,
+  "classification": "NEW_RUNNER_REVISION_WITH_EXACT_RECOVERED_PASSIVE_OBSERVER",
+  "status": "COMPLETE_FOR_STATIC_REVIEW_NOT_RUN",
+  "base_source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "required_production_expected_inventory_sha256": "1286a70d07fda384d175eeecf538ca54fe9066242a9c42c90a85f5590e6ee67f",
+  "production_files": 3046,
+  "fixture_files": [
+    {
+      "target": "res://yan_worldfx_observation_20261018/observer.gd",
+      "payload": "payload/yan_worldfx_observation_20261018/observer.gd",
+      "sha256": "eec7678ac5137cac4387e29cf88969ba8b745eb4a78a046924b6fb8a93f11976",
+      "bytes": 8388
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/binding.json",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/binding.json",
+      "sha256": "471e9fe619e51da0b1edbb8e3a078bd04abf84c4fc25242b6412a1d6ddd49d13",
+      "bytes": 443428
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/runner.gd",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/runner.gd",
+      "sha256": "c0767e70aa4c15fa167af85e290ccdec112dd444e6a59d48ee91d480b1da7020",
+      "bytes": 37070
+    },
+    {
+      "target": "res://yan_worldfx_ui_probe_20261018b/ui_readback.gd",
+      "payload": "payload/yan_worldfx_ui_probe_20261018b/ui_readback.gd",
+      "sha256": "c63f7a2a21cffb24de69f7131f7cabaf48fe25a9fcbd3676678ea75dc504570e",
+      "bytes": 5796
+    }
+  ],
+  "fixture_additions": 4,
+  "expected_source_plus_fixture_files": 3050,
+  "import_cache": "Separate runtime-owned sealed cache; expected prior98 is not inherited proof, actual inventory required",
+  "entry": "res://yan_worldfx_ui_probe_20261018b/runner.gd",
+  "evidence_argument": "--worldfx-ui-evidence=/absolute/fresh/nonexistent/directory",
+  "normal_window_required": true,
+  "root_viewport": [
+    1280,
+    720
+  ],
+  "limits": {
+    "independent_soft_timeout_ms": 170000,
+    "absolute_timeout_ms": 180000,
+    "finish_ms": 5000,
+    "max_images": 3,
+    "raw_image_budget_bytes": 16777216
+  },
+  "planned_images": [
+    "00_initial_hex_modal.png",
+    "01_q1_flow_early.png",
+    "02_q1_flow_later.png"
+  ],
+  "planned_observations": [
+    "real initial four-choice modal and hidden return control",
+    "original asynchronous 0.24s Hex slot0 commit within3s receipt limit",
+    "original1SP learnQ1",
+    "sameHost/Sim/Hero/Session/Model through UI roundtrips and firstroom transition",
+    "M/K actual visible state and preserved request flags",
+    "F1 consolidated diagnostics and legacy label/background hiding",
+    "P safe preparation shop open/close without purchase",
+    "Space pause status in preparation",
+    "original chooser suspend/resume via visible original button signals",
+    "original visible route driver and first actual Q1 release",
+    "passive before/after original controller event counter",
+    "three real MeshInstance3D nodes with valid Mesh/ShaderMaterial and exact sealed RiverShader instance",
+    "shader age within1e-5 of same postdraw Sim.hero_time minus real release time at two times",
+    "same mesh and geometry hashes while source age advances",
+    "legacyQ1 hidden",
+    "original safe close and bounded failure diagnostics"
+  ],
+  "not_covered": [
+    "native OS input/pointer hit-test",
+    "all other skill branches",
+    "curved gesture by straight route driver",
+    "actual combat-pause clock case",
+    "real-error or terminal UI",
+    "all UI screenshots or art acceptance",
+    "front animation or hero2D"
+  ],
+  "pre_execution_requirements": [
+    "Current P3 startup, resource and session checks must be resolved separately before execution.",
+    "Actual assembled production inventory must exactly equal expected3046 pins",
+    "Review latest four fixture bytes and independently verify staging hashes",
+    "Do not execute historical runner binding or modify frozen source"
+  ],
+  "author_recheck": "Exact recovered UI bytes retained. Original author recheck not completed; independent source review is recorded separately.",
+  "engine_run": false,
+  "public_derivative_of_sha256": "f6435af10b4a1c18d5a723baaa011671613be27b5dd44eaf7940234e55740b3d"
+}
