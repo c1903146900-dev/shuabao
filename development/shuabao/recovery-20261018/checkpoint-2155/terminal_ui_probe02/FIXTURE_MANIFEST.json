@@ -1,0 +1,80 @@
+{
+  "schema": "yan-terminal-summary-native-fixture-v2",
+  "revision": 2,
+  "status": "NEW_REIMPLEMENTATION_STATIC_SELF_CHECKED_PENDING_INDEPENDENT_REVIEW_NOT_RUN",
+  "source_candidate": "../terminal_ui_candidate01",
+  "source_manifest_sha256": "c8141d0eba466734403829985459af5d26cbc32c298a50ab7c607dbe98828af6",
+  "source_inventory_sha256": "c74a9b93954f5f30abeb0721979d4d5600c02f74e1931ae3f03cd36cabc85436",
+  "production_files": 3047,
+  "resource_cache_files": 98,
+  "fixture_files": 4,
+  "expected_stage_files": 3149,
+  "entry": "res://yan_terminal_full_floor_20261018c/runner.gd",
+  "payload": [
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/binding.json",
+      "payload": "payload/yan_terminal_full_floor_20261018c/binding.json",
+      "sha256": "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053",
+      "bytes": 443265
+    },
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/driver.gd",
+      "payload": "payload/yan_terminal_full_floor_20261018c/driver.gd",
+      "sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
+      "bytes": 4355
+    },
+    {
+      "target": "res://yan_terminal_full_floor_20261018c/runner.gd",
+      "payload": "payload/yan_terminal_full_floor_20261018c/runner.gd",
+      "sha256": "1a51e05addc53bf0149ec0f90cd70b672003f9877bfcb10609c6bfdbe704379c",
+      "bytes": 37845
+    },
+    {
+      "target": "res://yan_terminal_ui_probe_20261018/probe.gd",
+      "payload": "payload/yan_terminal_ui_probe_20261018/probe.gd",
+      "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
+      "bytes": 9025
+    }
+  ],
+  "limits": {
+    "soft_signal_watchdog_seconds": 470,
+    "absolute_process_frame_deadline_seconds": 480,
+    "max_screenshots": 3,
+    "max_raw_image_bytes": 16777216
+  },
+  "arguments": {
+    "required": "--full-floor-evidence=/absolute/fresh/evidence_directory",
+    "default_mode": "--terminal-outcome=victory",
+    "independent_optional_mode": "--terminal-outcome=defeat"
+  },
+  "upstream": {
+    "commit": "c12298f655b258b67669689e204309b6aff9306e",
+    "prefix": "development/shuabao/recovery-20261018/checkpoint-1345/p3_reimplementation/full_floor07/",
+    "runner_sha256": "efa0a30b681051fdad434a953f68d8ec18edc89b185573402fdfa5f0bcd1f881",
+    "driver_sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
+    "passive_summary_helper_sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a"
+  },
+  "recovery_classification": {
+    "production_candidate": "EXACT_RECOVERED_BYTES",
+    "passive_helper": "EXACT_RECOVERED_BYTES",
+    "route_driver": "EXACT_FULL_FLOOR07_BYTES",
+    "runner": "NEW_PROBE02_FROM_EXACT_FULL_FLOOR07_NOT_LOST_RUNNER_RECOVERY",
+    "binding": "NEW_3047_PRODUCTION_BINDING"
+  },
+  "validation": {
+    "self_static_checks": 52,
+    "independent_review": "PENDING",
+    "GDScript_parse": "NOT_RUN",
+    "native_victory": "NOT_RUN",
+    "native_defeat": "NOT_RUN",
+    "art_acceptance": "NOT_REVIEWED"
+  },
+  "coverage_policy": [
+    "Do not combine independent victory and defeat evidence as one invocation",
+    "Old full_floor_native05 verifies the original source route, not this summary",
+    "Victory keeps all original full-floor and final Hex gates",
+    "No confirmed new hero run, rewards, progression edits, source seeding, or clock writes",
+    "Synthetic handler input is not a native operating-system click proof",
+    "Changed future hero or Q1 source requires a separately reviewed binding and inventory"
+  ]
+}

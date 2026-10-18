@@ -1,0 +1,196 @@
+--- full_floor07/runner.gd
++++ terminal_ui_probe02/runner.gd
+@@ -1,13 +1,16 @@
+ extends SceneTree
+-# REIMPLEMENTATION. Synthetic visible-button input; no gameplay state writes.
+-const BINDING = "res://yan_full_floor_20261018b/binding.json"
+-const BINDING_SHA = "41c68dc417e3bef39fe024623e46267e7c5bdfd9188bb9f52fb1e5cea2282d68"
+-const Driver = preload("res://yan_full_floor_20261018b/driver.gd")
++# New probe02 built from the exact, independently exercised full_floor07 fixture.
++# This is not an exact recovery of the lost terminal runner. No gameplay state writes.
++const BINDING = "res://yan_terminal_full_floor_20261018c/binding.json"
++const BINDING_SHA = "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053"
++const Driver = preload("res://yan_terminal_full_floor_20261018c/driver.gd")
+ const Tuning = preload("res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd")
++const TerminalProbe = preload("res://yan_terminal_ui_probe_20261018/probe.gd")
++var requested_outcome: String = "victory"
+ var driver
+ const ROUTE = ["r01a","r02a","r03a","r04a","r05a","r06a","r07a","r08a","r09a","r10b","r11a","r12boss"]
+ const SERVICES = [3,4,6,9,11]
+-var coverage: Dictionary = {"full_floor":"NOT_REACHED","boss_settlement":"NOT_REACHED","completed_floor_ui":"NOT_REACHED","dedicated_settlement_panel":"NOT_IMPLEMENTED","reward_uniqueness":"NOT_REACHED","shop_current_visit_undo":"NOT_REACHED","shop_cross_room_boundary":"NOT_REACHED","rest":"NOT_REACHED","hero_confirmation_cancel":"NOT_REACHED","confirmed_new_hero_run":"NOT_TESTED"}
++var coverage: Dictionary = {"full_floor":"NOT_REACHED","boss_settlement":"NOT_REACHED","completed_floor_ui":"NOT_REACHED","dedicated_settlement_panel":"NOT_REACHED","last_hex_summary_yield":"NOT_REACHED","summary_close_reopen":"NOT_REACHED","summary_shop_yield":"NOT_REACHED","summary_chooser_yield":"NOT_REACHED","natural_defeat_summary":"NOT_REQUESTED","reward_uniqueness":"NOT_REACHED","shop_current_visit_undo":"NOT_REACHED","shop_cross_room_boundary":"NOT_REACHED","rest":"NOT_REACHED","hero_confirmation_cancel":"NOT_REACHED","confirmed_new_hero_run":"NOT_TESTED"}
+ var event_sequence: int = 0
+ var last_health_time: float = -1.0
+ var all_reward_ids: Dictionary = {}
+@@ -38,6 +41,7 @@
+  deadline = started + 480000
+  for argument: String in OS.get_cmdline_user_args():
+   if argument.begins_with("--full-floor-evidence="): evidence = argument.trim_prefix("--full-floor-evidence=")
++  if argument.begins_with("--terminal-outcome="): requested_outcome = argument.trim_prefix("--terminal-outcome=")
+  process_frame.connect(_wall_watchdog)
+  call_deferred("_run")
+ 
+@@ -147,6 +151,13 @@
+ func _hex(slot: int = 1) -> bool:
+  var view = host.initial_hud.hex_draft
+  if not _identity() or view.cards.size()!=4 or not _available(view.cards[slot].select): return false
++ if session.status == "completed":
++  await _frame()
++  if not _identity() or not _budget(): return false
++  var yielded: Dictionary = TerminalProbe.check_pending_hex_yields(host,entry)
++  observations.append({"terminal_pending_hex_yield":yielded})
++  if not yielded.get("accepted",false): reason="summary_covers_mandatory_final_hex"; return false
++  coverage.last_hex_summary_yield="PASS"
+  var before: Dictionary = model.snapshot()
+  var milestone: int = int(host.initial_controller.active_milestone)
+  var offered: String = before.offers[str(milestone)].slots[slot]
+@@ -168,6 +179,7 @@
+  root.size = Vector2i(1280,720)
+  if not evidence.is_absolute_path() or DirAccess.dir_exists_absolute(evidence): reason="fresh_absolute_evidence_required"; quit(4); return
+  if DirAccess.make_dir_recursive_absolute(evidence)!=OK: quit(4); return
++ if requested_outcome not in ["victory","defeat"]: await _stop("terminal_outcome_must_be_victory_or_defeat"); return
+  if FileAccess.get_sha256(BINDING)!=BINDING_SHA: await _stop("binding_changed"); return
+  var binding: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(BINDING))
+  for path: String in binding.files:
+@@ -175,6 +187,7 @@
+  phase="original_entry"
+  entry = load("res://scenes/hero_entry.tscn").instantiate()
+  root.add_child(entry)
++ if entry.get_script().resource_path != "res://yan_visual_attach_20261018/entry.gd": await _stop("actual_thin_entry_required"); return
+  await _frame()
+  entry.request_start("yanguizhou")
+  while _budget() and not is_instance_valid(entry.active_room): await _frame()
+@@ -188,7 +201,14 @@
+  sim=host.sim; session=host.shop_session; model=session.ledger.model; hero=sim.hero; room=sim.room_id; generation=sim.encounter_generation
+  phase="original_hex"
+  if not await _hex(): await _stop("original_hex_receipt_required"); return
+- if not await _full_route(): await _stop(reason if not reason.is_empty() else "full_route_failed"); return
++ var reached: bool = false
++ if requested_outcome == "defeat":
++  reached = await _natural_defeat()
++ else:
++  reached = await _full_route()
++ if watchdog_fired or finishing: return
++ if not reached: await _stop(reason if not reason.is_empty() else "requested_terminal_route_failed"); return
++ if not _budget(): await _stop("deadline_before_terminal_coverage"); return
+  completed=true
+  await _finish()
+ 
+@@ -216,7 +236,7 @@
+    await _frame()
+    await _frame()
+    released=not is_instance_valid(entry)
+- var report: Dictionary = {"accepted":completed and released and _budget(),"reason":reason,"synthetic":true,"scope":"original_Q1_build_full_first_floor_and_cancelled_hero_confirmation","coverage":coverage.duplicate(true),"source_released":released,"elapsed_ms":Time.get_ticks_msec()-started,"draw_count":draw_count,"screenshots":screenshots,"raw_image_bytes":image_bytes}
++ var report: Dictionary = {"accepted":completed and released and _budget(),"reason":reason,"synthetic":true,"scope":"original_Q1_full_floor_terminal_summary" if requested_outcome=="victory" else "original_no_combat_input_natural_defeat_terminal_summary","requested_outcome":requested_outcome,"additional_run_created":false,"art_acceptance":"NOT_REVIEWED","coverage":coverage.duplicate(true),"source_released":released,"elapsed_ms":Time.get_ticks_msec()-started,"draw_count":draw_count,"screenshots":screenshots,"raw_image_bytes":image_bytes}
+  var io_ok: bool = _json("observations.json",observations)
+  io_ok = _json("report.json",report) and io_ok
+  if Time.get_ticks_msec() >= deadline:
+@@ -259,7 +279,7 @@
+  var state: Dictionary=model.snapshot()
+  var ui: Dictionary={"label":label,"pending":state.pending_milestones.duplicate(),"hex_visible":host.initial_hud.hex_draft.is_visible_in_tree(),"header_visible":host.session_header.is_visible_in_tree(),"header_text":host.session_header.text,"next_disabled":host.session_next.disabled,"session_status":session.status,"rows":session.snapshot().row_state.completed_rows.size(),"source_time":sim.hero_time,"room_id":sim.room_id,"generation":sim.encounter_generation}
+  observations.append({"completed_floor_ui":ui})
+- return ui.pending.is_empty() and not ui.hex_visible and ui.header_visible and "12/12" in ui.header_text and "completed" in ui.header_text and ui.next_disabled and ui.session_status=="completed" and ui.rows==12
++ return ui.pending.is_empty() and not ui.hex_visible and ui.header_visible and "首层已完成" in ui.header_text and ui.next_disabled and ui.session_status=="completed" and ui.rows==12 and _summary_check(label,"victory")
+ 
+ func _account() -> Dictionary:
+  var state: Dictionary = model.snapshot()
+@@ -399,6 +419,12 @@
+  var end: int=mini(deadline-10000,Time.get_ticks_msec()+3000)
+  while _same_owners() and _budget() and not entry.chooser.is_visible_in_tree() and Time.get_ticks_msec()<end: await _frame()
+  if not _identity() or not _budget() or Time.get_ticks_msec()>=end or _account()!=account or session.settlement!=settlement: return false
++ await _frame()
++ if not _identity() or not _budget(): return false
++ var yielded: Dictionary=TerminalProbe.check_yields_to_original(host,entry,"chooser")
++ observations.append({"summary_chooser_yield":yielded})
++ if not yielded.get("accepted",false): reason="summary_visible_over_original_chooser"; return false
++ coverage.summary_chooser_yield="PASS"
+  if not _available(entry.chooser.hero_buttons.xuanlei): return false
+  entry.chooser.hero_buttons.xuanlei.pressed.emit()
+  if not _available(entry.chooser.enter_button): return false
+@@ -452,6 +478,9 @@
+  coverage.reward_uniqueness="PASS"
+  if not await _capture("completed_floor_ui",_sample("completed_before_capture")) or not _completed_ui("completed_postdraw"): return false
+  coverage.completed_floor_ui="PASS"
++ coverage.dedicated_settlement_panel="PASS"
++ if coverage.last_hex_summary_yield!="PASS": reason="final_mandatory_hex_yield_not_observed"; return false
++ if not await _summary_roundtrip("victory",true): return false
+  if not await _hero_cancel(): return false
+  if not await _capture("resumed_completed_floor_ui",_sample("resumed_before_capture")) or not _completed_ui("resumed_postdraw"): return false
+  observations.append({"final_account":_account(),"settlement":session.settlement.duplicate(true),"full_rows":session.snapshot().row_state.completed_rows})
+@@ -501,3 +530,76 @@
+  if entered_flow.status!=expected_status or entered_flow.row_state.get("entry_receipt",{}).get("identity",{}).get("node_id","")!=node_id:
+   return {"accepted":false,"reason":"original_next_entry_scope_not_established"}
+  return {"accepted":true,"node_id":node_id,"row":row,"upgrade":upgrade_result,"before_entry":before_entry,"entry_result":host.shop_session.last_receipt.duplicate(true)}
++
++
++# The following checks only observe the new display. The only new display input
++# is its own close/reopen signals, guarded against any source-state change.
++func _summary_check(label: String, outcome: String) -> bool:
++ if not _identity() or not _budget(): return false
++ var actual: Dictionary=TerminalProbe.check_terminal(host,entry,outcome)
++ observations.append({"terminal_summary":label,"result":actual})
++ if not actual.get("accepted",false):
++  reason="terminal_summary_assertion:"+JSON.stringify(actual.get("failures",[]))
++  return false
++ return true
++
++func _summary_roundtrip(outcome: String, check_shop: bool) -> bool:
++ if not _summary_check("before_display_roundtrip",outcome): return false
++ var result: Dictionary=await TerminalProbe.exercise_close_reopen(host,entry)
++ if not _identity() or not _budget(): return false
++ observations.append({"summary_close_reopen":result})
++ if not result.get("accepted",false): reason="summary_close_reopen_changed_source_or_failed"; return false
++ coverage.summary_close_reopen="PASS"
++ if not _summary_check("after_display_roundtrip",outcome): return false
++ if not check_shop: return true
++ var account: Dictionary=_account()
++ var settlement: Dictionary=session.settlement.duplicate(true)
++ # Use the already supported P shortcut, rather than clicking through the card.
++ var event:=InputEventKey.new()
++ event.keycode=KEY_P; event.physical_keycode=KEY_P; event.pressed=true
++ host._input(event)
++ var release:=InputEventKey.new()
++ release.keycode=KEY_P; release.physical_keycode=KEY_P; release.pressed=false
++ host._input(release)
++ await _frame()
++ if not _identity() or not _budget(): return false
++ var yielded: Dictionary=TerminalProbe.check_yields_to_original(host,entry,"shop")
++ observations.append({"summary_shop_yield":yielded})
++ if not yielded.get("accepted",false): reason="summary_did_not_yield_to_original_shop"; return false
++ if not driver._close_original_shop(): reason="original_shop_close_failed"; return false
++ await _frame()
++ if not _identity() or not _budget() or _account()!=account or session.settlement!=settlement: return false
++ if not _summary_check("after_original_shop_close",outcome): return false
++ coverage.summary_shop_yield="PASS"
++ return true
++
++# An independent requested run may observe defeat. It supplies no attacks or
++# movement after normal entry, and never sets HP, enemy data, time or progress.
++func _natural_defeat() -> bool:
++ phase="original_no_combat_input_defeat"
++ coverage.natural_defeat_summary="NOT_REACHED"
++ driver=Driver.new();driver.bind_existing(host,deadline-10000);driver.resolve_hex=Callable(self,"_resolve_hexes")
++ if host.initial_hud.growth_panel.is_visible_in_tree():
++  if not _available(host.growth_toggle): return false
++  host.growth_toggle.pressed.emit()
++  await _frame()
++  if not _identity() or not _budget() or host.initial_hud.growth_panel.is_visible_in_tree(): return false
++ var entered: Dictionary=await _next_node(1,ROUTE[0])
++ if not _budget() or not entered.get("accepted",false) or not _adopt_entry(ROUTE[0],true): return false
++ observations.append({"natural_defeat_entry":entered,"combat_input_policy":"NO_COMBAT_INPUT_AFTER_ORIGINAL_ENTRY"})
++ driver.release_between_nodes()
++ while _budget() and _identity() and not (session.status=="defeated" and sim.phase=="true_dead" and hero.dead):
++  if not session.fault.is_empty(): reason="natural_defeat_source_fault"; return false
++  await _frame()
++  if not _identity() or not _budget(): return false
++  _record_health()
++ if not _identity() or not _budget(): reason="natural_defeat_not_reached_before_budget"; return false
++ await _frame()
++ if not _summary_check("natural_defeat_postdraw","defeat"): return false
++ if not _picture("natural_defeat_summary"): return false
++ if not await _summary_roundtrip("defeat",false): return false
++ await _frame()
++ if not _summary_check("natural_defeat_reopened_postdraw","defeat") or not _picture("natural_defeat_summary_reopened"): return false
++ coverage.natural_defeat_summary="PASS"
++ coverage.dedicated_settlement_panel="PASS"
++ return true

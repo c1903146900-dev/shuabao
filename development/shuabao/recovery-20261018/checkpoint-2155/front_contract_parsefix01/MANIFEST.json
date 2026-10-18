@@ -1,0 +1,17 @@
+{
+  "scope": "test-only local-variable rename; original 19 assertions unchanged; production files unchanged",
+  "reason": "actual Godot parser rejected duplicate local row at line80",
+  "parent_manifest_sha256": "64cc30997ac1205994fc5a1783e49092290b36478e86a12104ceebc7f91779a5",
+  "parent_test_sha256": "2960d11cb7091de92a2442ff96068010ce3be94c29ac70b98778fcc331d6ae11",
+  "files": {
+    "contract_tests.gd": {
+      "sha256": "5be61b8c3fca51b527bdab035b07b11541b2fb7912144963873ea27598aae3fb",
+      "bytes": 5681
+    },
+    "CHANGE.patch": {
+      "sha256": "13e3d42c0a78a9796caa42dbd6bb37537fd1aa05559696e92a9debc5fbf1e093",
+      "bytes": 594
+    }
+  },
+  "native_run": false
+}

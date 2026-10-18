@@ -1,0 +1,9 @@
+--- recovered_64cc/contract_tests.gd
++++ front_contract_parsefix01/contract_tests.gd
+@@ -77,5 +77,5 @@
+  results.append({"name":"wrong_room_rejected","passed":controller._room_permission().is_empty()})
+  controller.renderer.free(); controller.free(); test_host.free(); test_source.free()
+  var accepted: bool = true
+- for row: Dictionary in results: accepted=accepted and bool(row.passed)
++ for case_result: Dictionary in results: accepted=accepted and bool(case_result.passed)
+  return {"accepted":accepted,"count":results.size(),"cases":results,"execution":"requires_Godot_call_not_yet_run"}
