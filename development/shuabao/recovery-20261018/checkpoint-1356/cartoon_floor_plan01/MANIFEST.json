@@ -1,0 +1,27 @@
+{
+  "schema": "cartoon-floor-plan-package-v1",
+  "status": "PLAN_ONLY_NO_IMPLEMENTATION_OR_RUNTIME_CLAIM",
+  "source_baseline_verified": true,
+  "source_files": 3044,
+  "source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "source_changed": [],
+  "source_added": [],
+  "source_missing": [],
+  "files": [
+    {
+      "path": "PLAN.md",
+      "sha256": "73141223352125d3360c700962897f310b0b0aaf1e3340a5577d257281f58093",
+      "bytes": 14950
+    },
+    {
+      "path": "SOURCE_AUDIT.json",
+      "sha256": "193b65b1119033911bf78ae29601eec5da42377cf711cf9f2677d4bd3bc5da86",
+      "bytes": 40743
+    }
+  ],
+  "reference_media_included": false,
+  "hero2d_modified": false,
+  "engine_started": false,
+  "browser_started": false,
+  "next_step": "After hero integration, implement independent first-room plus minion cartoon visual attachment candidate; retain original gameplay and source nodes."
+}

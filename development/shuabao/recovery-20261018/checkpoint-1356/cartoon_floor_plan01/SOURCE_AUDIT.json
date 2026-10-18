@@ -1,0 +1,1163 @@
+{
+  "schema": "cartoon-first-floor-static-audit-v1",
+  "created_utc": "2026-10-18T13:55:12.921095+00:00",
+  "validation": "READ_ONLY_STATIC_INSPECTION_NO_ENGINE_NO_BROWSER",
+  "source_root": "p3_integrated_source01/source/game",
+  "source_inventory_file": "p3_integrated_source01/SOURCE_PINS.json",
+  "source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "host_ancestry": [
+    {
+      "path": "res://tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "sha256": "7cd9301c3b6c74c93aa30b7f5522ab0d6f0686d03bdac37860ec829918c486f0"
+    },
+    {
+      "path": "res://scripts/integration/yanguizhou_first_floor.gd",
+      "sha256": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962"
+    },
+    {
+      "path": "res://tests/ink_river_hexes_20261006/frontdoor01/host.gd",
+      "sha256": "b2620751585f69c5bde67954141eef10ceaa1f7da9c67b8f92c04a321b90a864"
+    },
+    {
+      "path": "res://tests/ink_r2_ordinary_20261006/candidate01/host.gd",
+      "sha256": "5370e9127a76195f1e786f354995570a79106ea5233f8ead4f4df56ba67b29ef"
+    },
+    {
+      "path": "res://tests/ink_ordinary_composed_20261006/candidate01/host.gd",
+      "sha256": "23bc8c59d6f480d9257202ac37a8ba0492bed4cc3755dd1917e55e47dc633f81"
+    },
+    {
+      "path": "res://tests/ink_p2_ordinary_20261006/ordinary01/host.gd",
+      "sha256": "a5e84f1c4b1f5a90df79d87d4e6a15005cbabae11a2bfd74f51b9a5164aa856e"
+    },
+    {
+      "path": "res://tests/ink_e2_boundary_20261006/ordinary01/text01/host.gd",
+      "sha256": "77ea388462285368db8511084f7aa4ee135d9c499b8ae22e077a42efe36fd6b0"
+    },
+    {
+      "path": "res://tests/ink_e2_boundary_20261006/ordinary01/host.gd",
+      "sha256": "e1f7be618e662a2155a8dd547d29d37c2d7449db1ab53d6b312cc8a951bc508c"
+    },
+    {
+      "path": "res://tests/ink_rest_service_20261006/candidate01/ordinary01/host.gd",
+      "sha256": "8cc7d9893ad4e6c22c09418d51bb61e549b797093b0abea908d537fc209ee1da"
+    },
+    {
+      "path": "res://tests/ink_rest_service_20261006/candidate01/host.gd",
+      "sha256": "086f0a629c71f0df85c80d1a5c01e0f0154b3c30db859e3dd34537c68099e77e"
+    },
+    {
+      "path": "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/host.gd",
+      "sha256": "0ec8fcfa3de54582d2df20dec9bcedd9b70179a421c7bf813256cdb489490a4a"
+    },
+    {
+      "path": "res://tests/ink_r1_ordinary_20261005/candidate01/ordinary01/host.gd",
+      "sha256": "8263972dc43ed10e9ab3cf0c308c9db5ccbab5cf46bfea377497a5f1b289ba04"
+    },
+    {
+      "path": "res://tests/ink_e1_ordinary_20261005/candidate01/host.gd",
+      "sha256": "d0c1d2a4670898e1b40aeaba0b0f8d296e5513c1f69596ffe95dfd47b5e4a12b"
+    },
+    {
+      "path": "res://tests/ink_q2_ordinary_20261005/candidate01/host.gd",
+      "sha256": "792223ab90dd9a88eeff2970eca19e90560b40844ab070a965d3ee810ef84230"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/recovery08_fix01/host.gd",
+      "sha256": "b47cb35f90c2f103081645b4201540d1592e551fd6fa7ce884b6d494f89e05c9"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/gait06/host.gd",
+      "sha256": "07c10f322cfa480b1728a0f6a8b2b819f08716beee086419cd6e4a657af675be"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/side_carry04/host.gd",
+      "sha256": "e8bccb3758eca3ae8a7eec08a42e74e6b7b1108fb6737123e6071ab2c8b38b45"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/root_return_native01/follow02/host.gd",
+      "sha256": "e3b423aa18fda08a4590dd218fa31f1e9b710a9ff8e6b0eb1830946e0ce31926"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/root_return_native01/host.gd",
+      "sha256": "92967c0de5f9dfb829ad5a0428a5fea748957172b5f766f5505b0a9079a72bf5"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/diagnostic_compact01_fix01/host.gd",
+      "sha256": "c07ae9bdef2c501864354f6f26f92b577c1de13a9ad01cfc5cf1477b8889a005"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/gesture06_host01/parsefix01/host.gd",
+      "sha256": "c046faf792bfc2bc0db97ac235d13c67031bb6b15a6a589ba6cdcb2e44f98718"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/navigation_host.gd",
+      "sha256": "4700e763a4ac8e21cc182f85fb83eac552673d574c1f70161f14a733baf4f85c"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/host.gd",
+      "sha256": "e77db57b9fbf6e2c44a8c226f26ff85bd44ebb5d74c5414b8c9ab72c2439485b"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd",
+      "sha256": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/audio_bridge.gd",
+      "sha256": "2a77a15786a2e81700a72776091ab63029c69c2730f77ca78fbc5cfec6781f1b"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/native_host01/composed_bridge.gd",
+      "sha256": "e87c0b8b2f56882c0db768657993ab0a20f7762785f95813ba784ac1456a2d08"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/runtime01/host.gd",
+      "sha256": "d07dd99fe16bfa0e30c11f07177c35b8866506c9a0dae455f6afcb8ee1bf001f"
+    },
+    {
+      "path": "res://tests/ink_intermediate_shop_ui_20261004/fix02/host.gd",
+      "sha256": "fd8c0efcec9066bf9d81f2b4201017bb88ead9f2c4808d4f635d1b86f28d9712"
+    },
+    {
+      "path": "res://tests/ink_intermediate_shop_ui_20261004/host.gd",
+      "sha256": "39e84897276b930100ed03d33be1249a8187dd34befdc25accb17b02cc4b08be"
+    },
+    {
+      "path": "res://tests/ink_initial_vortex_host_20261004/host.gd",
+      "sha256": "4f1c61f48c818d85458574c639570034e07e1a9f8cca7d955f11a08413bd7829"
+    },
+    {
+      "path": "res://tests/ink_initial_hex_ui_20261004/fix01/host.gd",
+      "sha256": "c987c5bb2cdb46189e9dd6a74691015d88bedd255fc4317614c8a9956eb08148"
+    },
+    {
+      "path": "res://tests/ink_shop_integrated28_20261004/host.gd",
+      "sha256": "fcd2f956112ba033adaf977d0cabb82748e16c26005cfbc62f99215ffc0ff51a"
+    },
+    {
+      "path": "res://tests/ink_shop_audio_fix_20261004/host.gd",
+      "sha256": "3fb466ac3ee6e6ffa543caac6c14187f9e6457bf0b3cdccf0bc0e3f7b9e06b0f"
+    },
+    {
+      "path": "res://tests/ink_shop_ui_host_20261004/style27/parsefix01/host.gd",
+      "sha256": "d3c33c9b558bf903b11a457da4bbab4e3b3b39fa46508ce9f6e3c0715bcb14ba"
+    },
+    {
+      "path": "res://tests/ink_shop_ui_host_20261004/style26/parsefix01/host.gd",
+      "sha256": "a16d0d4cf406c9b1e3348053fa58c03a65b7f7fe228c933e080d4217c42e6aac"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/host.gd",
+      "sha256": "abb3280a9e5ed12bd867791729d3a647632f3ed8d530053c1a638bf3c4ead65c"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision26_safe_clock/parsefix01/room_host.gd",
+      "sha256": "b514084f69fbdbbaa050f5f49aa8e727e037175e2f95e8757bc7c2a9182fa670"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision19_actor05/fix07/parsefix01/capture_host.gd",
+      "sha256": "ca37a680f16cb83b7bc83e07ea496a4f644eae3aa4469dd80801625e3bf9a507"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision04_capture/host.gd",
+      "sha256": "8546faa1fbd39d7519873884675eab1a16daada5840a9ce433517d5809783d2e"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision03/inputfix02/host.gd",
+      "sha256": "e983e7856a66b6edfeffecc83403e43a06f9cef35871c6ebcf4281a1d17622a8"
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+      "sha256": "563f60b0be72844948d37dd03132e85c23b94fed01ea5534808aed54fec8217e"
+    }
+  ],
+  "session_ancestry": [
+    {
+      "path": "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd",
+      "sha256": "099709d17edbaad474a1fc826383f37592cc71908c2471d9f9afd77a2d3cf2a8"
+    },
+    {
+      "path": "res://elixir_swift_20261010/session.gd",
+      "sha256": "2ef50ecf9377706f33c312a490ffe386401386e0213a4753bef6b94de1f76273"
+    },
+    {
+      "path": "res://elixir_war_20261009/session.gd",
+      "sha256": "c94488b435cda23e3895ba2fc679f281e1095d4c6eb2843dc07ba0f0508dbdb5"
+    },
+    {
+      "path": "res://elixir_hunter_20261009/session.gd",
+      "sha256": "a7b12ef6fa3148260eaf9451c2f262db17c6d65a6ac4e9e764fb459e4f4f2553"
+    },
+    {
+      "path": "res://formal_training_20261009/session.gd",
+      "sha256": "4746bdc7b09e0070a8f88f93cf2812b224731674c43433e3268963b217844f46"
+    },
+    {
+      "path": "res://tests/ink_ordinary_composed_20261006/candidate01/floor_session.gd",
+      "sha256": "5945ec25d1617b5babc6b9c84406ad6abe015abbd0c67ed40c8bdf76b4f98e06"
+    },
+    {
+      "path": "res://tests/ink_p2_ordinary_20261006/ordinary01/floor_session.gd",
+      "sha256": "424c4796b530ea750e0edf01b36799758defe919a48741fdfb02eadea458e449"
+    },
+    {
+      "path": "res://tests/ink_e3_ordinary_20261006/ordinary01/floor_session.gd",
+      "sha256": "a7f6a53236b5143a691c19a2e3ebde972320ed765c93c7608b13fedca9f51809"
+    },
+    {
+      "path": "res://tests/ink_e2_boundary_20261006/ordinary01/floor_session.gd",
+      "sha256": "570f0ab562fff126868c63bff59a281bc81a2bf439641b7affcc2160b94e93b1"
+    },
+    {
+      "path": "res://tests/ink_rest_service_20261006/candidate01/ordinary01/floor_session.gd",
+      "sha256": "15af5192f271aa1f5263cde2ce1cb8162f18d177a12fc52f6775bb1cceae194e"
+    },
+    {
+      "path": "res://tests/ink_rest_service_20261006/candidate01/floor_session.gd",
+      "sha256": "9d8a016475c7b5824c4daaf15ead2205a7bf776c539add5ff156def1a5ffa925"
+    },
+    {
+      "path": "res://tests/ink_p1_ordinary_20261006/candidate01/ordinary01/floor_session.gd",
+      "sha256": "7fe92d1ee360e0a3b521bb87057f19886621ff28067af7e9e20bcd5c8f7abb78"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/runtime01/floor_session.gd",
+      "sha256": "bf3784501df0da9ff6006fda87d780e7a288052084aa2150fc9d696a97bf4e1b"
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/runtime01/bootstrap_session.gd",
+      "sha256": "e928d08b268ee4ba828073c685e7588aeafabcff6461c0d87a8bbac9830541f3"
+    },
+    {
+      "path": "res://tests/ink_initial_hex_ui_20261004/fix01/session.gd",
+      "sha256": "8cc3e2f61b502b26b2dac0532a914530754aae0bc60850ff397e3b5cb5d2d937"
+    },
+    {
+      "path": "res://tests/ink_shop_ui_host_20261004/shop_session.gd",
+      "sha256": "820f74ecb5cb14066126c8486f60092315148552d86a27c7fc36d54b43c3e2e5"
+    },
+    {
+      "path": "res://tests/ink_first_floor_flow_20261004/floor_coordinator.gd",
+      "sha256": "ad3935cec410be064c5cf2edb10394c5c2217a704062b416c08019081402576d"
+    }
+  ],
+  "source_dependencies": [
+    {
+      "path": "res://project.godot",
+      "sha256": "cf96213f7ae2b87369e6e1552229a59854b0988a1bf28307b25a736598ca7106",
+      "bytes": 705
+    },
+    {
+      "path": "res://scenes/hero_entry.tscn",
+      "sha256": "00b26deed8ed5498f785268d2f54e35bd3363bc05d33663da7b51fd0fe704045",
+      "bytes": 180
+    },
+    {
+      "path": "res://scripts/integration/hero_entry.gd",
+      "sha256": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+      "bytes": 15108
+    },
+    {
+      "path": "res://scripts/ui/hero_chooser.gd",
+      "sha256": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+      "bytes": 11568
+    },
+    {
+      "path": "res://tests/ink_first_floor_room_art_20261004/stage.gd",
+      "sha256": "7994370235d499c595126e896c724a188a54ae6126951a222f2197c1aa08a292",
+      "bytes": 8214
+    },
+    {
+      "path": "res://tests/ink_first_floor_room_art_20261004/room_layout.json",
+      "sha256": "0eb81dacfc66a1117f4a1c1647309c37980bcf72f4de3d50e88a909cd4d1946b",
+      "bytes": 4854
+    },
+    {
+      "path": "res://tests/ink_first_floor_room_art_20261004/room_layout.gd",
+      "sha256": "58e633cc12bdba40a524b0edc94b8818bb1cfb64c9ba58f562f13d7ab1eabd89",
+      "bytes": 1201
+    },
+    {
+      "path": "res://tests/ink_first_floor_room_art_20261004/room_geometry.json",
+      "sha256": "9d6e53b06ba1517853af4190678e5ab6e1aad41db0454a087ffa1506d08c7c3f",
+      "bytes": 1536601
+    },
+    {
+      "path": "res://tests/ink_first_floor_room_art_20261004/lighting_contract.json",
+      "sha256": "ceec466b15070b16b04aa9e943b0d74eff91d097f528c1f02ef2dfe0bf23c208",
+      "bytes": 1381
+    },
+    {
+      "path": "res://tests/ink_style_specimen_20261004/style.gd",
+      "sha256": "508e4a2b91f8a698c4cca6e2767261504a45fdfbb0b11a185ddc960af7e94b97",
+      "bytes": 2137
+    },
+    {
+      "path": "res://tests/ink_normal_floor_host_20261004/enemy_layer.gd",
+      "sha256": "96b828b7ea50abfff9d3a054292b1c767443fb6854ea15d2332f152f31a187f8",
+      "bytes": 5753
+    },
+    {
+      "path": "res://tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd",
+      "sha256": "45975dab784657e5994912e8022e916b6707b01f3412b2e4afe0d2d6bb9f5541",
+      "bytes": 6738
+    },
+    {
+      "path": "res://tests/ink_first_floor_enemy_views_20261004/fix01/pose_cursor.gd",
+      "sha256": "fc59aa1ad879208d35142a5495e693a73f21a6d256a7a5a1f77ee748d2acf14f",
+      "bytes": 4577
+    },
+    {
+      "path": "res://tests/ink_first_floor_enemy_views_20261004/enemy_view.gd",
+      "sha256": "66c0cc1a0319ed0931a60d26251c0b1f0d1dbad1f6ab4e9f160497d959448a9e",
+      "bytes": 6929
+    },
+    {
+      "path": "res://tests/ink_first_floor_enemy_views_20261004/asset_catalog.gd",
+      "sha256": "911e772217847329fcc4261b0a45983963e84e9406e798b3b5cdcfd23e5ce621",
+      "bytes": 1484
+    },
+    {
+      "path": "res://tests/ink_first_floor_enemy_views_20261004/source_reader.gd",
+      "sha256": "15e996146fb91db74a08ae47cf3d5c542b98d8e6b313fc7b32cc6b434b768bf5",
+      "bytes": 4844
+    },
+    {
+      "path": "res://scripts/integration/enemy_actor_view.gd",
+      "sha256": "dbd78ca657f6a71f821ab652a57e9ab19cb78df7a67897a7010cc27cc71e93a5",
+      "bytes": 6388
+    },
+    {
+      "path": "res://scripts/integration/xuanlei_actor_view.gd",
+      "sha256": "f87a9e8b41a6e1bf362f273f3b41b6a46f97fdbd569783a21321f3cc73a168ca",
+      "bytes": 25492
+    },
+    {
+      "path": "res://tests/ink_attack_feedback_20261007/candidate02/attack_view.gd",
+      "sha256": "5654b0af05733876ea0f685dfd15621e2f7b4eff075cee56f450582c23d4f94f",
+      "bytes": 9787
+    },
+    {
+      "path": "res://assets/enemies/siege_brood/vfx/enemy_combat_vfx.gd",
+      "sha256": "5ec8c0ecf946a5499e86637bb8b4bfd0b553c993324f268800c10e1f54a65bdb",
+      "bytes": 29067
+    },
+    {
+      "path": "res://tests/ink_first_floor_boss_20261008/presentation01/manager.gd",
+      "sha256": "46bc4cd0491f5cb4eceb9c396c3d55c5828486908dbf6dba5ed2b3a095cfcf24",
+      "bytes": 2327
+    },
+    {
+      "path": "res://tests/ink_first_floor_boss_20261008/art02/boss_art_consumer.gd",
+      "sha256": "ccbd14050ca09827d979a73ccbe060dd699f2177e6475d51029da11abbfe6658",
+      "bytes": 17418
+    },
+    {
+      "path": "res://tests/ink_first_floor_boss_20261008/art01/boss_actions.glb",
+      "sha256": "39455cecd1f5bfb8f6d1a2b87a7826d923f06d2f3621d9228db9396a17029c80",
+      "bytes": 1422456
+    },
+    {
+      "path": "res://assets/enemies/siege_brood/animation_contract.json",
+      "sha256": "f124a56fc63236db09c9721eb98e9bb5cc1a7455f888f49d559b8c064a84f3b4",
+      "bytes": 11150
+    },
+    {
+      "path": "res://assets/arena/enemies/animation_contract.json",
+      "sha256": "5876cab9cc1cc1f34ab29a1c32149a8ddaf11762666cb50423bd97d0887132f6",
+      "bytes": 2172
+    },
+    {
+      "path": "res://tests/ink_first_floor_user_route_20261005/runtime01/first_floor.json",
+      "sha256": "559c977b6a10dc8caa08be12de43b462c961af6ba4985ef6da5e44531b43c0f6",
+      "bytes": 11731
+    }
+  ],
+  "route": {
+    "path": "res://tests/ink_first_floor_user_route_20261005/runtime01/first_floor.json",
+    "version": "user-route-runtime01",
+    "row_count": 12,
+    "node_count": 30,
+    "payloads": {
+      "ordinary_a": {
+        "node_type": "combat",
+        "kind": "ordinary",
+        "roster": [
+          "minion",
+          "minion",
+          "minion",
+          "minion"
+        ]
+      },
+      "ordinary_b": {
+        "node_type": "combat",
+        "kind": "ordinary",
+        "roster": [
+          "armored",
+          "armored",
+          "minion",
+          "minion"
+        ]
+      },
+      "ordinary_c": {
+        "node_type": "combat",
+        "kind": "ordinary",
+        "roster": [
+          "ranged",
+          "ranged",
+          "pouncer",
+          "minion",
+          "minion",
+          "minion"
+        ]
+      },
+      "elite_a": {
+        "node_type": "combat",
+        "kind": "elite",
+        "roster": [
+          "elite",
+          "minion",
+          "minion",
+          "minion"
+        ]
+      },
+      "elite_b": {
+        "node_type": "combat",
+        "kind": "elite",
+        "roster": [
+          "elite",
+          "ranged",
+          "support"
+        ]
+      },
+      "elite_c": {
+        "node_type": "combat",
+        "kind": "elite",
+        "roster": [
+          "elite",
+          "ranged",
+          "support"
+        ]
+      },
+      "boss": {
+        "node_type": "combat",
+        "kind": "boss",
+        "roster": [
+          "boss"
+        ]
+      },
+      "rest": {
+        "node_type": "service",
+        "kind": "rest",
+        "roster": []
+      },
+      "training": {
+        "node_type": "service",
+        "kind": "training",
+        "roster": []
+      }
+    }
+  },
+  "enemies": {
+    "minion": {
+      "asset": "res://assets/enemies/siege_brood/minion/minion.glb",
+      "sha256": "96537a7335287a850f74fd14b3fb0c6e8da20cf7ff73a2233201eabc8380ea3b",
+      "source_mesh_node_count": 4,
+      "source_skin_joint_counts": [
+        8
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death"
+      ],
+      "source_model_height_m": 1.16,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.005",
+          "source_node_path": "Brood_minion/SkinnedSurface_aged_bronze.005",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_Brood hot vermilion.002",
+          "source_node_path": "Brood_minion/SkinnedSurface_Brood hot vermilion.002",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.001",
+          "source_node_path": "Brood_minion/SkinnedSurface_brood_bone_ceramic.001",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_carapace.001",
+          "source_node_path": "Brood_minion/SkinnedSurface_brood_carapace.001",
+          "mesh_index": 3
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "armored": {
+      "asset": "res://assets/enemies/siege_brood/armored/armored.glb",
+      "sha256": "abcd2289d4a3c1f04baa5bd1cf33df8d0ca28738502f76a83c69bd6a5363daaa",
+      "source_mesh_node_count": 4,
+      "source_skin_joint_counts": [
+        10
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death"
+      ],
+      "source_model_height_m": 1.14,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.003",
+          "source_node_path": "Brood_armored/SkinnedSurface_aged_bronze.003",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_Brood hot vermilion.003",
+          "source_node_path": "Brood_armored/SkinnedSurface_Brood hot vermilion.003",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.004",
+          "source_node_path": "Brood_armored/SkinnedSurface_brood_bone_ceramic.004",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_cold_iron.002",
+          "source_node_path": "Brood_armored/SkinnedSurface_brood_cold_iron.002",
+          "mesh_index": 3
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "ranged": {
+      "asset": "res://assets/enemies/siege_brood/ranged/ranged.glb",
+      "sha256": "548856e30fa4edd66d37d8efc7eb64327a873e19e62c0af43b3fd1a4cbb61a54",
+      "source_mesh_node_count": 4,
+      "source_skin_joint_counts": [
+        10
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death"
+      ],
+      "source_model_height_m": 1.9,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.002",
+          "source_node_path": "Brood_ranged/SkinnedSurface_aged_bronze.002",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_Brood spectral violet.002",
+          "source_node_path": "Brood_ranged/SkinnedSurface_Brood spectral violet.002",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.003",
+          "source_node_path": "Brood_ranged/SkinnedSurface_brood_bone_ceramic.003",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_cold_iron.001",
+          "source_node_path": "Brood_ranged/SkinnedSurface_brood_cold_iron.001",
+          "mesh_index": 3
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "pouncer": {
+      "asset": "res://assets/enemies/siege_brood/pouncer/pouncer.glb",
+      "sha256": "fb4f71f5b23d0a235e1b0b2f5e44e57678e471db6b4474a4361ba1a285571aa1",
+      "source_mesh_node_count": 4,
+      "source_skin_joint_counts": [
+        11
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death",
+        "leap"
+      ],
+      "source_model_height_m": 0.82,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.001",
+          "source_node_path": "Brood_pouncer/SkinnedSurface_aged_bronze.001",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_Brood hot vermilion.001",
+          "source_node_path": "Brood_pouncer/SkinnedSurface_Brood hot vermilion.001",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.002",
+          "source_node_path": "Brood_pouncer/SkinnedSurface_brood_bone_ceramic.002",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_carapace.002",
+          "source_node_path": "Brood_pouncer/SkinnedSurface_brood_carapace.002",
+          "mesh_index": 3
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "elite": {
+      "asset": "res://assets/enemies/siege_brood/elite/elite.glb",
+      "sha256": "673047b95a74ff5959bed9b880b9975fecfe3a9864b62abc8734da8f5e117dbc",
+      "source_mesh_node_count": 4,
+      "source_skin_joint_counts": [
+        12
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death"
+      ],
+      "source_model_height_m": 2.56,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.004",
+          "source_node_path": "Brood_elite/SkinnedSurface_aged_bronze.004",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_Brood hot vermilion.004",
+          "source_node_path": "Brood_elite/SkinnedSurface_Brood hot vermilion.004",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.005",
+          "source_node_path": "Brood_elite/SkinnedSurface_brood_bone_ceramic.005",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_cold_iron.003",
+          "source_node_path": "Brood_elite/SkinnedSurface_brood_cold_iron.003",
+          "mesh_index": 3
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "support": {
+      "asset": "res://assets/enemies/siege_brood/support/support.glb",
+      "sha256": "96cb8602a46f902dfd49bb88aedf23cc2da8d87bd5d980d82f4ee80dd8016b15",
+      "source_mesh_node_count": 5,
+      "source_skin_joint_counts": [
+        13
+      ],
+      "source_animation_names": [
+        "idle",
+        "run",
+        "locomotion",
+        "attack",
+        "anticipation",
+        "recovery",
+        "hit",
+        "hurt",
+        "death"
+      ],
+      "source_model_height_m": 2.3,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "SkinnedSurface_aged_bronze.007",
+          "source_node_path": "Brood_support/SkinnedSurface_aged_bronze.007",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_bone_ceramic.007",
+          "source_node_path": "Brood_support/SkinnedSurface_brood_bone_ceramic.007",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "SkinnedSurface_brood_cold_iron.005",
+          "source_node_path": "Brood_support/SkinnedSurface_brood_cold_iron.005",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "SkinnedSurface_Ritual cold ink",
+          "source_node_path": "Brood_support/SkinnedSurface_Ritual cold ink",
+          "mesh_index": 3
+        },
+        {
+          "source_node_name": "SkinnedSurface_Ritual smoked jade",
+          "source_node_path": "Brood_support/SkinnedSurface_Ritual smoked jade",
+          "mesh_index": 4
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    },
+    "boss": {
+      "asset": "res://assets/arena/enemies/boss.glb",
+      "sha256": "3c71ee0275722fcf7e33f1b3821f9e09475fca8d3b2dd869e4d3e3b6e7650d3d",
+      "source_mesh_node_count": 72,
+      "source_skin_joint_counts": [
+        19
+      ],
+      "source_animation_names": [
+        "attack",
+        "death",
+        "heavy_attack",
+        "hit",
+        "idle",
+        "release",
+        "walk",
+        "windup"
+      ],
+      "source_model_height_m": 2.78,
+      "source_mesh_nodes": [
+        {
+          "source_node_name": "Back fork crossbar",
+          "source_node_path": "BossRig/Back fork crossbar",
+          "mesh_index": 0
+        },
+        {
+          "source_node_name": "Back fork upright -1",
+          "source_node_path": "BossRig/Back fork upright -1",
+          "mesh_index": 1
+        },
+        {
+          "source_node_name": "Back fork upright 1",
+          "source_node_path": "BossRig/Back fork upright 1",
+          "mesh_index": 2
+        },
+        {
+          "source_node_name": "Belt",
+          "source_node_path": "BossRig/Belt",
+          "mesh_index": 3
+        },
+        {
+          "source_node_name": "Boot -1",
+          "source_node_path": "BossRig/Boot -1",
+          "mesh_index": 4
+        },
+        {
+          "source_node_name": "Boot 1",
+          "source_node_path": "BossRig/Boot 1",
+          "mesh_index": 5
+        },
+        {
+          "source_node_name": "Boss eye slit",
+          "source_node_path": "BossRig/Boss eye slit",
+          "mesh_index": 6
+        },
+        {
+          "source_node_name": "Chest brass vertical",
+          "source_node_path": "BossRig/Chest brass vertical",
+          "mesh_index": 7
+        },
+        {
+          "source_node_name": "Chest recessed plaque",
+          "source_node_path": "BossRig/Chest recessed plaque",
+          "mesh_index": 8
+        },
+        {
+          "source_node_name": "ContactFit_copper knee lames and tasset spines",
+          "source_node_path": "BossRig/ContactFit_copper knee lames and tasset spines",
+          "mesh_index": 9
+        },
+        {
+          "source_node_name": "ContactFit_inner knee gussets",
+          "source_node_path": "BossRig/ContactFit_inner knee gussets",
+          "mesh_index": 10
+        },
+        {
+          "source_node_name": "ContactFit_oxblood hip suspensions",
+          "source_node_path": "BossRig/ContactFit_oxblood hip suspensions",
+          "mesh_index": 11
+        },
+        {
+          "source_node_name": "ContactFit_separated greaves and front rear tassets",
+          "source_node_path": "BossRig/ContactFit_separated greaves and front rear tassets",
+          "mesh_index": 12
+        },
+        {
+          "source_node_name": "Deep boss visor",
+          "source_node_path": "BossRig/Deep boss visor",
+          "mesh_index": 13
+        },
+        {
+          "source_node_name": "elbow-1",
+          "source_node_path": "BossRig/elbow-1",
+          "mesh_index": 14
+        },
+        {
+          "source_node_name": "elbow1",
+          "source_node_path": "BossRig/elbow1",
+          "mesh_index": 15
+        },
+        {
+          "source_node_name": "Forearm -1",
+          "source_node_path": "BossRig/Forearm -1",
+          "mesh_index": 16
+        },
+        {
+          "source_node_name": "Forearm 1",
+          "source_node_path": "BossRig/Forearm 1",
+          "mesh_index": 17
+        },
+        {
+          "source_node_name": "Gauntlet -1",
+          "source_node_path": "BossRig/Gauntlet -1",
+          "mesh_index": 18
+        },
+        {
+          "source_node_name": "Gauntlet 1",
+          "source_node_path": "BossRig/Gauntlet 1",
+          "mesh_index": 19
+        },
+        {
+          "source_node_name": "Great maul haft",
+          "source_node_path": "BossRig/Great maul haft",
+          "mesh_index": 20
+        },
+        {
+          "source_node_name": "Great maul head",
+          "source_node_path": "BossRig/Great maul head",
+          "mesh_index": 21
+        },
+        {
+          "source_node_name": "Greave -1",
+          "source_node_path": "BossRig/Greave -1",
+          "mesh_index": 22
+        },
+        {
+          "source_node_name": "Greave 1",
+          "source_node_path": "BossRig/Greave 1",
+          "mesh_index": 23
+        },
+        {
+          "source_node_name": "Knee cap -1",
+          "source_node_path": "BossRig/Knee cap -1",
+          "mesh_index": 24
+        },
+        {
+          "source_node_name": "Knee cap 1",
+          "source_node_path": "BossRig/Knee cap 1",
+          "mesh_index": 25
+        },
+        {
+          "source_node_name": "knee-1",
+          "source_node_path": "BossRig/knee-1",
+          "mesh_index": 26
+        },
+        {
+          "source_node_name": "knee1",
+          "source_node_path": "BossRig/knee1",
+          "mesh_index": 27
+        },
+        {
+          "source_node_name": "Maul striking collar",
+          "source_node_path": "BossRig/Maul striking collar",
+          "mesh_index": 28
+        },
+        {
+          "source_node_name": "Maul striking collar.001",
+          "source_node_path": "BossRig/Maul striking collar.001",
+          "mesh_index": 29
+        },
+        {
+          "source_node_name": "Octagonal bastion shoulder -1",
+          "source_node_path": "BossRig/Octagonal bastion shoulder -1",
+          "mesh_index": 30
+        },
+        {
+          "source_node_name": "Octagonal bastion shoulder 1",
+          "source_node_path": "BossRig/Octagonal bastion shoulder 1",
+          "mesh_index": 31
+        },
+        {
+          "source_node_name": "Polish_bastion shoulder mantle -10",
+          "source_node_path": "BossRig/Polish_bastion shoulder mantle -10",
+          "mesh_index": 32
+        },
+        {
+          "source_node_name": "Polish_bastion shoulder mantle -11",
+          "source_node_path": "BossRig/Polish_bastion shoulder mantle -11",
+          "mesh_index": 33
+        },
+        {
+          "source_node_name": "Polish_bastion shoulder mantle 10",
+          "source_node_path": "BossRig/Polish_bastion shoulder mantle 10",
+          "mesh_index": 34
+        },
+        {
+          "source_node_name": "Polish_bastion shoulder mantle 11",
+          "source_node_path": "BossRig/Polish_bastion shoulder mantle 11",
+          "mesh_index": 35
+        },
+        {
+          "source_node_name": "Polish_elbow shell -1",
+          "source_node_path": "BossRig/Polish_elbow shell -1",
+          "mesh_index": 36
+        },
+        {
+          "source_node_name": "Polish_elbow shell 1",
+          "source_node_path": "BossRig/Polish_elbow shell 1",
+          "mesh_index": 37
+        },
+        {
+          "source_node_name": "Polish_elbow-1",
+          "source_node_path": "BossRig/Polish_elbow-1",
+          "mesh_index": 38
+        },
+        {
+          "source_node_name": "Polish_elbow1",
+          "source_node_path": "BossRig/Polish_elbow1",
+          "mesh_index": 39
+        },
+        {
+          "source_node_name": "Polish_heavy split thigh apron -1",
+          "source_node_path": "BossRig/Polish_heavy split thigh apron -1",
+          "mesh_index": 40
+        },
+        {
+          "source_node_name": "Polish_heavy split thigh apron 1",
+          "source_node_path": "BossRig/Polish_heavy split thigh apron 1",
+          "mesh_index": 41
+        },
+        {
+          "source_node_name": "Polish_keystone breast",
+          "source_node_path": "BossRig/Polish_keystone breast",
+          "mesh_index": 42
+        },
+        {
+          "source_node_name": "Polish_keystone recess",
+          "source_node_path": "BossRig/Polish_keystone recess",
+          "mesh_index": 43
+        },
+        {
+          "source_node_name": "Polish_knee-1",
+          "source_node_path": "BossRig/Polish_knee-1",
+          "mesh_index": 44
+        },
+        {
+          "source_node_name": "Polish_knee1",
+          "source_node_path": "BossRig/Polish_knee1",
+          "mesh_index": 45
+        },
+        {
+          "source_node_name": "Polish_knuckle plate -1",
+          "source_node_path": "BossRig/Polish_knuckle plate -1",
+          "mesh_index": 46
+        },
+        {
+          "source_node_name": "Polish_knuckle plate 1",
+          "source_node_path": "BossRig/Polish_knuckle plate 1",
+          "mesh_index": 47
+        },
+        {
+          "source_node_name": "Polish_maul forged end -1",
+          "source_node_path": "BossRig/Polish_maul forged end -1",
+          "mesh_index": 48
+        },
+        {
+          "source_node_name": "Polish_maul forged end 1",
+          "source_node_path": "BossRig/Polish_maul forged end 1",
+          "mesh_index": 49
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 0",
+          "source_node_path": "BossRig/Polish_maul leather wrap 0",
+          "mesh_index": 50
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 1",
+          "source_node_path": "BossRig/Polish_maul leather wrap 1",
+          "mesh_index": 51
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 2",
+          "source_node_path": "BossRig/Polish_maul leather wrap 2",
+          "mesh_index": 52
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 3",
+          "source_node_path": "BossRig/Polish_maul leather wrap 3",
+          "mesh_index": 53
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 4",
+          "source_node_path": "BossRig/Polish_maul leather wrap 4",
+          "mesh_index": 54
+        },
+        {
+          "source_node_name": "Polish_maul leather wrap 5",
+          "source_node_path": "BossRig/Polish_maul leather wrap 5",
+          "mesh_index": 55
+        },
+        {
+          "source_node_name": "Polish_ochre breast rune",
+          "source_node_path": "BossRig/Polish_ochre breast rune",
+          "mesh_index": 56
+        },
+        {
+          "source_node_name": "Polish_sabatons -1",
+          "source_node_path": "BossRig/Polish_sabatons -1",
+          "mesh_index": 57
+        },
+        {
+          "source_node_name": "Polish_sabatons 1",
+          "source_node_path": "BossRig/Polish_sabatons 1",
+          "mesh_index": 58
+        },
+        {
+          "source_node_name": "Polish_shoulder-1",
+          "source_node_path": "BossRig/Polish_shoulder-1",
+          "mesh_index": 59
+        },
+        {
+          "source_node_name": "Polish_shoulder1",
+          "source_node_path": "BossRig/Polish_shoulder1",
+          "mesh_index": 60
+        },
+        {
+          "source_node_name": "Polish_stone jaw -1",
+          "source_node_path": "BossRig/Polish_stone jaw -1",
+          "mesh_index": 61
+        },
+        {
+          "source_node_name": "Polish_stone jaw 1",
+          "source_node_path": "BossRig/Polish_stone jaw 1",
+          "mesh_index": 62
+        },
+        {
+          "source_node_name": "Polish_wrist clasp -1",
+          "source_node_path": "BossRig/Polish_wrist clasp -1",
+          "mesh_index": 63
+        },
+        {
+          "source_node_name": "Polish_wrist clasp 1",
+          "source_node_path": "BossRig/Polish_wrist clasp 1",
+          "mesh_index": 64
+        },
+        {
+          "source_node_name": "Stone mask",
+          "source_node_path": "BossRig/Stone mask",
+          "mesh_index": 65
+        },
+        {
+          "source_node_name": "Tapered armored torso",
+          "source_node_path": "BossRig/Tapered armored torso",
+          "mesh_index": 66
+        },
+        {
+          "source_node_name": "Thigh -1",
+          "source_node_path": "BossRig/Thigh -1",
+          "mesh_index": 67
+        },
+        {
+          "source_node_name": "Thigh 1",
+          "source_node_path": "BossRig/Thigh 1",
+          "mesh_index": 68
+        },
+        {
+          "source_node_name": "Upper arm -1",
+          "source_node_path": "BossRig/Upper arm -1",
+          "mesh_index": 69
+        },
+        {
+          "source_node_name": "Upper arm 1",
+          "source_node_path": "BossRig/Upper arm 1",
+          "mesh_index": 70
+        },
+        {
+          "source_node_name": "Waist",
+          "source_node_path": "BossRig/Waist",
+          "mesh_index": 71
+        }
+      ],
+      "runtime_selection": "Copy original view.meshes before adding skin; verify instance ownership under view.visual. Source GLB names are evidence, not assumed Godot runtime paths."
+    }
+  },
+  "room": {
+    "geometry_stats": {
+      "opaque_triangles": 4572,
+      "shadow_triangles": 2976,
+      "actor_contact_triangles": 120,
+      "floor_triangles": 1352,
+      "material_families": [
+        "aged_copper",
+        "broken_sandstone",
+        "copper_patina",
+        "earth",
+        "old_wood",
+        "olive_foliage",
+        "painted_sandstone",
+        "sandstone",
+        "sandstone_joint"
+      ],
+      "opaque_meshes": 1,
+      "shadow_meshes": 1,
+      "no_texture_imports": true
+    },
+    "hide_only_named_meshes": [
+      "PaintedForecourtOpaque",
+      "StaticSoftShadowLayer/BakedVolumeCastAndContact"
+    ],
+    "preserve_named_nodes": [
+      "SharedWarmKey",
+      "Forecourt_18m_40degCamera",
+      "StaticSoftShadowLayer"
+    ],
+    "preserve_object_members": [
+      "camera",
+      "sun",
+      "hero_grounding",
+      "enemy_grounding"
+    ],
+    "group_count": 67,
+    "collision_ids": [
+      "arena_boundary",
+      "east_cistern_garden",
+      "north_east_wing",
+      "north_west_wing",
+      "outside_boundary",
+      "south_east_wing",
+      "south_west_wing",
+      "west_gallery"
+    ]
+  },
+  "exclusions": [
+    "pitcher not referenced by current first-floor route",
+    "hero2d source and assets not modified",
+    "third-party reference video and frames not included",
+    "no assertion that unrecovered historical cartoon room/enemy art exists"
+  ]
+}
