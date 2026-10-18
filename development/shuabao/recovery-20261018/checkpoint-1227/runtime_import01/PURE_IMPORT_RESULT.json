@@ -1,0 +1,25 @@
+{
+  "status": "PURE_POLICY_ONLY_NO_PROCESS_OR_ENGINE",
+  "count": 19,
+  "checks": [
+    "fixed_normal_editor_flags",
+    "reject_extra_--headless",
+    "reject_extra_--path",
+    "reject_extra_--script",
+    "reject_extra_--quit-after",
+    "unchanged",
+    "changed_reject_project.godot",
+    "changed_reject_art.png",
+    "changed_reject_art.png.import",
+    "removed_reject",
+    "new_cache_allowed",
+    "new_associated_uid_allowed",
+    "unknown_add_reject_unrelated.uid",
+    "unknown_add_reject_art.png.import.uid",
+    "unknown_add_reject_new.gd",
+    "unknown_add_reject_new.png",
+    "unknown_add_reject_.godot",
+    "inventory_actual",
+    "symlink_reject"
+  ]
+}

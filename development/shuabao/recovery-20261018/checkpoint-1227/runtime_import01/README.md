@@ -1,0 +1,9 @@
+# Fixed official-import adapter
+
+This independent adapter reuses the sealed runtime guard's complete execution and owned-cleanup implementation. Its only engine arguments are `--editor --import --quit`, in a normal window. The original runtime support directory and exclusive lock are shared. Memory, swap, low-memory, sampling, and 595/600-second policies are unchanged. These are user-space observed limits, not OS hard guarantees.
+
+The exact config contains source, source_pins, source_pins_sha256, project, pins, pins_sha256, out, binary, binary_sha256. Both input trees must initially equal the same flat path-to-SHA manifest: 98 original assets, their 98 original import descriptors, and one independent project. Source and stage must be separate copies with no hardlinks. No caller engine flags are accepted.
+
+After actual owned termination, source must remain entirely unchanged. Existing stage assets, descriptors, and project must remain byte-identical. Only new .godot files or new associated asset .uid/.import sidecars are allowed. Any original change is a failure even when the editor exits zero. import_diff.json records removed/changed/added files and added/total byte counts. IMPORT_POST_STAGE_PINS.json records every actual post-import file SHA for later independently reviewed cache extraction. A failed import is never promoted by this adapter.
+
+Launch with Python -I -B and an independently verified IMPORT_PINS.json before executing the adapter. Then pass --config and its exact --config-sha256. The base 16-file runtime seal is verified again by the adapter. Pure tests do not launch any process. The recovered guard has separately passed a real owned Python TERM/KILL/reap test and a normal-window P3 core test; official import with this adapter remains unrun until root authorizes it.
