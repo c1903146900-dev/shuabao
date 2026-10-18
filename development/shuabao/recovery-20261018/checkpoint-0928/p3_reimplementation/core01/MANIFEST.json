@@ -1,0 +1,22 @@
+{
+  "classification": "REIMPLEMENTATION_NOT_EXACT_RECOVERY",
+  "status": "STATIC_STRUCTURE_ONLY_NATIVE_NOT_RUN",
+  "files": {
+    "p3_state.gd": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c",
+    "test_state.gd": "9b6c36314f98e5e3eab1570819f2836d3d08e4d7fa7086caafa748148832eb2d"
+  },
+  "verified_dependencies": {
+    "game/data/final_design/catalog.gd": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+    "game/data/final_design/catalog.json": "b5f920148ea7e74aa75f4b2c01721ae77d6a701615a67f2899b393e1dfdb4fd3",
+    "game/data/final_design/effective_overrides.json": "bfaed238edfd723a3d4aa8d363acfe8e46dab14feec64388666fde457a80a72d",
+    "game/tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e"
+  },
+  "test_count": 19,
+  "limits": [
+    "No Sim authentication integration yet",
+    "No Model fees or Session routing tested",
+    "Cross-room preservation check is only a no-mutation contract",
+    "Cooldowns and reset receipts are synthetic core inputs",
+    "Original lost tests not reconstructed byte-for-byte"
+  ]
+}
