@@ -1,0 +1,19 @@
+--- copy04/presenter.gd
++++ terminal01/presenter.gd
+@@ -5,6 +5,8 @@
+ const Settled = preload("res://visual_rework_20261009/settled_floor_text.gd")
+ const Defeated = preload("res://visual_rework_20261009/defeated_run_text.gd")
+ const Initial = preload("res://visual_rework_20261009/initial_status_text.gd")
++const ResultSummary = preload("res://yan_trial_ui_20261018/result_summary.gd")
++var _result_summary = ResultSummary.new()
+ const ENTRY_RUN: int = 1 # Exact original hero_entry.Screen.RUN in the pinned parent.
+ const Readable = preload("res://visual_rework_20261009/readable_layout.gd")
+ var _room_id: int = 0
+@@ -99,6 +101,7 @@
+  # F1 still owns diagnostics_visible. Only its presentation moves into one panel.
+  room.hud.diag.visible = false
+  entry.return_button.visible = not modal
++ _result_summary.present(room, entry, flow, settled, defeated)
+ 
+ # Match only admitted E2/E3 development clauses; gameplay/rank/lock text stays
+ # byte-for-byte outside these exact spans. Unavailable enhancements stay explicit;

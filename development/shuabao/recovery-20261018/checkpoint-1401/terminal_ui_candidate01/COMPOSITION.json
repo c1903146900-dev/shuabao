@@ -1,0 +1,20 @@
+{
+  "schema": "display-attachment-composition-v1",
+  "entry_delta": "EMPTY",
+  "entry_parent_sha256": "50ed11e0c188bd4114dec928fc0d6f69820b2630244a66d1fbcdba3e83dcb764",
+  "do_not_overwrite_independent_hero_entry_additions": true,
+  "for_existing_worldfx03_or_copy04_only_apply": [
+    "yan_trial_ui_20261018/presenter.gd",
+    "yan_trial_ui_20261018/result_summary.gd"
+  ],
+  "order": [
+    "Original Host refresh and deferred modal refresh",
+    "Existing shared Entry queues presenter.present deferred",
+    "Presenter formats existing HUD and candidate04 copy",
+    "ResultSummary reads already eligible terminal flow and builds display only",
+    "Independent hero controller remains on its original attachment/process contract"
+  ],
+  "lifetime": "New CanvasLayer105 is a child of the original Host. Existing chooser recursion hides/suspends/restores it; original Host disposal frees its nodes. New buttons only set the local expanded flag. No exit, reward or session callback.",
+  "pending_hex": "Actual modal/visible/choosing Hex always wins; victory also awaits original milestone offer selections. Death does not generate new choices.",
+  "source_integration_inventory": "Must be recomputed when combined with independent hero controller/Entry bytes; do not reuse this standalone3047 pin for a combined source."
+}
