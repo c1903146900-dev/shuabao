@@ -1,0 +1,27 @@
+{
+  "status": "EXACT_CORE_BYTES_RECOVERED_NOT_APPLIED",
+  "historical_parent_source_pins_sha256": "480ca236f212e681d9bad67623750940f0c1af51be9f6243be3b1f0009656515",
+  "historical_parent_files": 3046,
+  "historical_shared_entry_preimage_sha256": "b69e0e46bc52be369d04c733e87db78e9a14913491a76dd1992a973e203e00a4",
+  "current_base_binding_checked": false,
+  "files": [
+    {
+      "path": "overlay/yan_trial_ui_20261018/presenter.gd",
+      "bytes": 11119,
+      "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f",
+      "historical_expected_sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f",
+      "exact_match": true
+    },
+    {
+      "path": "integration/shared_entry_with_ui.gd",
+      "bytes": 2939,
+      "sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19",
+      "historical_expected_sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19",
+      "exact_match": true
+    }
+  ],
+  "historical_validation": "Prior final UI bytes passed 41 static checks before environment loss. That is historical evidence only, not a fresh base verification or native result.",
+  "engine_run": false,
+  "uploaded_by_this_worker": false,
+  "next_step": "Publisher backs up recovered files. Rebind to separately verified exact base and reviewed shared Entry preimage before applying."
+}

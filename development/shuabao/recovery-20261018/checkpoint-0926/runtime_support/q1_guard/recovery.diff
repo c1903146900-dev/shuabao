@@ -1,0 +1,44 @@
+--- archived/bounded_run_import.py
++++ restored/bounded_run_q1.py
+@@ -11,15 +11,18 @@
+ import time
+ import traceback
+ 
+-SOURCE = Path(__file__).resolve().parents[1] / 'loot_recovery_20261007/restored/six-hero-current-wip/tools/loot_resource_guard_20261006'
++SOURCE = Path(__file__).resolve().parents[1] / 'legacy_guard'
+ sys.path.insert(0, str(SOURCE))
+ from safe_tree_guard import (GuardError, LocalSubreaper, DeferredCancellation,
+                              children, read_stat, proc_inventory, exited, pidfd_pid)
+ from safe_tree_guard_rss_reread01 import read_rss
++# Missing newhost adapters are NOT reconstructed. Use archived strict tree.
+ from held_exit_adapter import OwnedTree
+-from proc_exit_adapter import install, inventory_read, EVIDENCE, confirmed_absent
+-install()
+-from safe_tree_guard import proc_inventory
++EVIDENCE = []
++def inventory_read(reader, pid):
++    return reader(pid)
++def confirmed_absent(pid):
++    return not Path(f'/proc/{pid}').exists()
+ 
+ MIB = 1024**2
+ INTERVAL = .050
+@@ -87,7 +90,7 @@
+                 pass
+         time.sleep(.025 if elapsed < 1.5 else .25)
+ 
+-PROFILES = {'import': 60., 'gui': 110., 'gui180': 180., 'gui900': 900., 'gui2400': 2400., 'pair': 110., 'pair300': 300., 'pair600': 600.}
++PROFILES = {'import': 60., 'gui': 110.}
+ 
+ def profile_limits(profile='import', seconds=None, rss_mib=896):
+     if profile not in PROFILES:
+@@ -108,7 +111,8 @@
+     report = {'command':command, 'profile':{'name':profile, 'rss_limit_bytes':rss_mib*MIB, 'wall_seconds':seconds,
+               'sample_interval_seconds':INTERVAL, 'scope':'controller plus owned descendants',
+               'memory_enforcement':'sampled RSS, not a kernel hard limit', 'cgroup_or_OOM_guarantee':False},
+-              'started':False, 'reason':'', 'peak_total_rss':0, 'max_sample_gap':0}
++              'started':False, 'reason':'', 'peak_total_rss':0, 'max_sample_gap':0,
++              'recovery_note':'Archived strict rss_reread01 tree; narrow held terminal omission restored; proc_exit adapter not reconstructed; pair profiles disabled'}
+     if pair_policy is not None:
+         from pair_exit_adapter import PairOwnedTree
+         tree = PairOwnedTree(os.readlink('/proc/self/ns/pid'), pair_policy)
