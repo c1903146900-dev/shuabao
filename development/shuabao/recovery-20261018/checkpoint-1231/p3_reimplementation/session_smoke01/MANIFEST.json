@@ -1,0 +1,37 @@
+{
+  "status": "WIP_NOT_RUN_REIMPLEMENTATION",
+  "entry": "res://yan_p3_smoke_20261018b/runner.gd",
+  "arguments": [
+    "--p3-evidence=<fresh absolute directory>"
+  ],
+  "limits": {
+    "wall_seconds": 180,
+    "soft_seconds": 170,
+    "finish_join_seconds": 5,
+    "images": 3,
+    "raw_image_bytes": 16777216
+  },
+  "files": {
+    "res://yan_p3_smoke_20261018b/runner.gd": {
+      "file": "runner.gd",
+      "sha256": "f193e1e33cb67b79fbd617b4339b70ec61e7e4abc68f4b6820b6a929538ae27e"
+    },
+    "res://yan_p3_smoke_20261018b/binding.json": {
+      "file": "binding.json",
+      "sha256": "bbdd199776bce11387487d085141dd360a88082147a78f224cf479452c28c724"
+    }
+  },
+  "scope": [
+    "original entry and mainprep",
+    "original visible first Hex button with asynchronous exact receipt",
+    "P3 learning cost and Model/Hero projection",
+    "original visible undo and refunded 1SP",
+    "Q1 learning and Model/Hero projection"
+  ],
+  "not_covered": [
+    "P3 release count",
+    "threshold refund",
+    "room/rest/death lifecycle",
+    "full first floor"
+  ]
+}

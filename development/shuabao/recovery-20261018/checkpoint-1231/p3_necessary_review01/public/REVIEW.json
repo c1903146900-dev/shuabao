@@ -1,0 +1,57 @@
+{
+  "status": "NECESSARY_RULE_AND_WIRING_STATIC_REVIEW_CLEAR_WITH_INTEGRATION_GATE_PENDING",
+  "engine_started": false,
+  "files": {
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+      "candidate": "recovery_20261018b/p3_reimplementation/integration02/sim.gd"
+    },
+    "equipment_prism_20261011/model.gd": {
+      "before": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "after": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "candidate": "recovery_20261018b/p3_reimplementation/integration02/model.gd"
+    },
+    "tests/ink_rest_service_20261006/candidate01/rest_service.gd": {
+      "before": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+      "after": "33da8f16f1679469f67fe05addf89c97625c269134c799b3063343f364f966ec",
+      "candidate": "recovery_20261018b/p3_reimplementation/integration02/rest_service.gd"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/catalog.gd": {
+      "before": "d6b63ac39558cc95a4e0607d9935da85d981206114041c308920ac8f1e58e323",
+      "after": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9",
+      "candidate": "recovery_20261018b/p3_reimplementation/ui01/catalog.gd"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd": {
+      "before": "2d9eec12ceb0e6f0017b98d0b530e37165a43d36f1cf1e6719b8e5377d47e2a6",
+      "after": "bc1c75518866363fad8adc8342020fd778007708e2e8d7e121e0a4a6b4883e07",
+      "candidate": "recovery_20261018b/p3_reimplementation/ui01/growth_hud.gd"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd": {
+      "before": "8f33242427b6b39661f47acadaabd792a7a18abd293d5c47b94a762e8a0a95d3",
+      "after": "4161bdb703055d9977bc7915c9887f91e335a1fb786f535bb8a639a935f6bf27",
+      "candidate": "recovery_20261018b/p3_reimplementation/ui01/runtime_text.gd"
+    },
+    "tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd": {
+      "before": "1cfe7077797be25d702a8655eecf8ecb6fd5b46366ab0a3549289915eddd371b",
+      "after": "832462f6bfdcd0333d02d80340f3f982b256c29f90d2bdbe7a8709c78edb592f",
+      "candidate": "recovery_20261018b/p3_reimplementation/projection01/hud_projection.gd"
+    }
+  },
+  "scope": [
+    "Original six successful release hooks checked after original CD writes; current original _c03 frame/state authenticates Q/E only",
+    "Original Model P cost is 1 SP; command receipt replay is retained; original allocation journal still owns refund",
+    "Safe-only undo; combat entry clears allocations and combat learning adds no undo allocation; original step advances clocks only in active combat",
+    "Original Session command_completed flushes the Hero projection after Model command",
+    "Rest barrier runs after second cleanup while both original transaction locks are held; owner and entered-rest checks remain true in that window",
+    "Death resets P3 progress at current rank; respec/passive removal uses rank zero",
+    "UI uses original adapter learn intent and original visible P row; new passive HUD projection is read-only"
+  ],
+  "pending": [
+    "Unified P3 gate/current after/exact old preimages/source1747+visual71 maps final review",
+    "Native parse and real Session button/fee/undo/release evidence on this integrated version",
+    "Actual P3 button minimum size and viewport containment",
+    "No claim of lost historical native acceptance"
+  ],
+  "known_boundary": "P3 command inverse follows existing legal Session allocation/clock boundaries. Invalid external/stale journal paths are not claimed as supported or fixed."
+}

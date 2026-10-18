@@ -1,0 +1,33 @@
+{
+  "status": "STATIC_SOURCE_ADMISSION_CLEAR_NATIVE_INTEGRATION_NOT_RUN",
+  "overlay_manifest_path": "recovery_20261018b/p3_reimplementation/migration01/OVERLAY_MANIFEST.json",
+  "overlay_manifest_sha256": "ec79bef7eb9384b7431393e6045de0e093916acad3aa0af647e46f7f9f64ff63",
+  "overlay_files": 23,
+  "existing_changed_files_including_source_binding": 10,
+  "new_source_files": 13,
+  "expected_complete_source_files": 3044,
+  "verified": [
+    "23 actual overlay bytes and exact file set; no symlink",
+    "Nine actual predecessor preimages equal restored3031 bytes and original map hashes",
+    "Nine actual current afters equal reviewed integration02/UI01/projection01/Host/live_binding payloads",
+    "Current source_binding equals exact predecessor JSON plus one p3_gameplay_migration member",
+    "Source1747 and visual71 authority maps unchanged",
+    "Live binding retains existing factory, parent/grandparent, replacement and mandatory dependency checks; only gate/old10 capability split added",
+    "Gate actual self normalization, manifest/source seals and predecessor/visual seals",
+    "Author 33 check Python replay executed in memory with output write removed",
+    "Five additional corruption tests for gate, manifest, source binding, predecessor and visual binding all rejected by matching gate prechecks",
+    "Catalog effective capability adds only P3; existing Hex hooks remain"
+  ],
+  "boundaries": [
+    "No GDScript engine run by reviewer",
+    "Base inventory relied on independent verification complete3031 verification for unchanged resource hashes; changed/preimage inputs were read and hashed independently",
+    "New core19 native result is separately owned by independent verification and does not prove integrated UI/Session",
+    "Actual UI font sizing, viewport containment and visible original button inputs still need native evidence",
+    "No old lost 3045/3046 acceptance inherited"
+  ],
+  "host_remote_backup_reported_by_publisher": {
+    "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+    "path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/",
+    "readback": "publisher confirmed all six files byte-for-byte"
+  }
+}
