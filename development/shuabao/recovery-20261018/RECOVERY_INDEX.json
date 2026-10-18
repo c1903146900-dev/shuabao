@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "2b1b95000be9f435c7e36a361264f98610c143a8",
+  "source_tip": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -4791,7 +4791,7 @@
       "bytes": 9191,
       "sha256": "ee6a285977c3864b3b26208c1a61db92d963558cfded83421006493cbe031abf",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/payload/yan_terminal_full_floor_20261018c/binding.json": {
@@ -4802,7 +4802,7 @@
       "bytes": 443265,
       "sha256": "9dfec798588e18474538570a0e53ed044ba52c0090972461b740602f0a7af053",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/payload/yan_terminal_full_floor_20261018c/driver.gd": {
@@ -4813,7 +4813,7 @@
       "bytes": 4355,
       "sha256": "f1129fb1fa57305f938af3685759674b3731500e687d95a2fd75f19d41eaec29",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/payload/yan_terminal_full_floor_20261018c/runner.gd": {
@@ -4824,7 +4824,7 @@
       "bytes": 37845,
       "sha256": "1a51e05addc53bf0149ec0f90cd70b672003f9877bfcb10609c6bfdbe704379c",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/payload/yan_terminal_ui_probe_20261018/probe.gd": {
@@ -4835,7 +4835,7 @@
       "bytes": 9025,
       "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/FIXTURE_MANIFEST.json": {
@@ -4846,7 +4846,7 @@
       "bytes": 3538,
       "sha256": "e3f35d18fffcdac00d381533805a72519acd26d2b3726f9ae29caaae3f104c8e",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/README.md": {
@@ -4857,7 +4857,7 @@
       "bytes": 4510,
       "sha256": "e4547cfb249ecdf88110648ad7d9148da9920e80afa971bb9d223770e836751b",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/RUNNER_DELTA_FROM_FULL_FLOOR07.diff": {
@@ -4868,7 +4868,7 @@
       "bytes": 13596,
       "sha256": "a0195c53a80eafb371e2f49f63fe8b33d2d8a2c72f334c8f581821bb63007bff",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/STATIC_CHECKS.json": {
@@ -4879,7 +4879,7 @@
       "bytes": 5077,
       "sha256": "8d17c18e3be4ae7849b36607a7d9765ee57c585675a8579407dbb747d0bbb2c8",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/check_static.py": {
@@ -4890,7 +4890,7 @@
       "bytes": 6110,
       "sha256": "b757150f4acd590ad510153e8781384429100b955540991061f2b6b1cdcabc77",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "terminal_ui_probe02/PACKAGE_PINS.json": {
@@ -4901,7 +4901,7 @@
       "bytes": 1591,
       "sha256": "ddf433a0ec593aa7a9d4b8bf359f2a08268f4498be9177ae494f0f5a6c06de4d",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
-      "validation_scope": "NOT_NATIVE_VALIDATED",
+      "validation_scope": "INDEPENDENT_STATIC_REVIEW_CLEAR_FOR_VICTORY_FIXTURE; NO_NATIVE_OR_DEFEAT_PASS",
       "apply_to_game": false
     },
     "front_contract_parsefix01/contract_tests.gd": {
@@ -4935,6 +4935,127 @@
       "sha256": "13e3d42c0a78a9796caa42dbd6bb37537fd1aa05559696e92a9debc5fbf1e093",
       "classification": "SEALED_STATIC_FIXTURE_OR_PARSE_FIX",
       "validation_scope": "NOT_NATIVE_VALIDATED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/capture.gd": {
+      "canonical_path": "front_contract_native02/stage01/capture.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/capture.gd",
+      "git_blob_sha1": "18451337a7eaf577932182e328cc89e8e35ac7f7",
+      "bytes": 5196,
+      "sha256": "36e64b079e069d5e259d9ea0915c263771c8612f637195e07c4061fdd6ec9dfb",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/controller.gd": {
+      "canonical_path": "front_contract_native02/stage01/controller.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/controller.gd",
+      "git_blob_sha1": "eb388c49e9102b377575b5254cab20ed0fe52ef8",
+      "bytes": 7923,
+      "sha256": "5d97ddee8f912f04554204de8be4407805a7cfadd84ad77284dfb286ffd5bed6",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/contract_tests.gd": {
+      "canonical_path": "front_contract_native02/stage01/contract_tests.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/contract_tests.gd",
+      "git_blob_sha1": "0ffc8b2668b5c9758bfb7e5f206939a7f843aa0e",
+      "bytes": 5681,
+      "sha256": "5be61b8c3fca51b527bdab035b07b11541b2fb7912144963873ea27598aae3fb",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/geometry.gd": {
+      "canonical_path": "front_contract_native02/stage01/geometry.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/geometry.gd",
+      "git_blob_sha1": "5969ecb3427062690ed0ca733a5d5bcd54dfdca2",
+      "bytes": 7135,
+      "sha256": "701ef5125973d3c90c0b5445a24f87bd875a5915cb49be30d9a760f8b5945953",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/mapper.gd": {
+      "canonical_path": "front_contract_native02/stage01/mapper.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/mapper.gd",
+      "git_blob_sha1": "25995ec70d7043437104170e0b61d12c39e23350",
+      "bytes": 4103,
+      "sha256": "c0d4a13f9e487f2ce42215ec881ed2648822444256bb83311ad3d229ecc0d7de",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/project.godot": {
+      "canonical_path": "front_contract_native02/stage01/project.godot",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/project.godot",
+      "git_blob_sha1": "d39f525c89079b48ecbf2cbc5dfa0bd455f7fd0e",
+      "bytes": 200,
+      "sha256": "6aa3d29915e9e7def89c9e2802f87e2b4c36b0056efcd42858f0be61f21a6404",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/runner.gd": {
+      "canonical_path": "front_contract_native02/stage01/runner.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/runner.gd",
+      "git_blob_sha1": "2b100e9f804d3fb0bae920e467937f136f522f05",
+      "bytes": 2510,
+      "sha256": "83276f1da4bcf5a8c7f3f7727ada499022950ffef364b3577cca871e368e0e96",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/stage01/renderer.gd": {
+      "canonical_path": "front_contract_native02/stage01/renderer.gd",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/stage01/renderer.gd",
+      "git_blob_sha1": "77ceb91a3e65ddc9afffb3b5f59ca815184d960f",
+      "bytes": 3810,
+      "sha256": "567eeb44064e2e57e45619ab028b525c938a0c0720bf82093d6a68100c9cdd45",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/STAGE_PINS_01.json": {
+      "canonical_path": "front_contract_native02/STAGE_PINS_01.json",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/STAGE_PINS_01.json",
+      "git_blob_sha1": "761d348543c3f375f1d5d1905d2583bcf035830a",
+      "bytes": 688,
+      "sha256": "0beed1511a8b2c5f72dce4f465b314bfe08a726213bddd67d60971bb5c551b96",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/report01.json": {
+      "canonical_path": "front_contract_native02/report01.json",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/report01.json",
+      "git_blob_sha1": "0d07523eaa7c08a7b472e6f0629d288d894032a2",
+      "bytes": 1613,
+      "sha256": "a68ef24bbf9d60e626bffa5bc669dd409f8f195855cd9054032a777fb99e8814",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
+      "apply_to_game": false
+    },
+    "front_contract_native02/POSTCHECK_01.json": {
+      "canonical_path": "front_contract_native02/POSTCHECK_01.json",
+      "commit": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2158/front_contract_native02/POSTCHECK_01.json",
+      "git_blob_sha1": "462a3cf92a978ef81e0fd49206e9584567c3fc9d",
+      "bytes": 478,
+      "sha256": "8c13c8343b4225a29863ee83c01d57df86da02d9471522640debe720be53b6e3",
+      "classification": "NATIVE_DETACHED_CONTRACT_EVIDENCE",
+      "validation_scope": "19_CHECKS_THREE_DRAW_FRAMES_PASS; NO_LIVE_COMBAT_OR_ART_ACCEPTANCE; ORIGINAL_STALE_EXECUTION_LABEL_RETAINED",
       "apply_to_game": false
     }
   },
