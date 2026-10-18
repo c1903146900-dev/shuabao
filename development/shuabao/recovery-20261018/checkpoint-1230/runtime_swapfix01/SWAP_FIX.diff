@@ -1,0 +1,56 @@
+--- frozen_guard01
++++ swapfix01
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env python3
+ """Reimplementation after rollback. Sampled limits; no hard-kernel termination claim."""
+-import argparse, fcntl, hashlib, json, os, signal, subprocess, sys, time
++import argparse, errno, fcntl, hashlib, json, os, signal, subprocess, sys, time
+ from pathlib import Path
+ from types import SimpleNamespace
+-HERE = Path(__file__).resolve().parent
++HERE = Path(__file__).resolve().parent.parent/'runtime_support'
+ LEGACY_SHA = '6a9399e9febda7db6936bf46203017335b3b908cfa0cbfd0597ea41b641e8e30'
+ MIB = 1024**2
+ CAP = 1536*MIB
+@@ -51,6 +51,23 @@
+     after = read_stat(row['pid'])
+     if after['start_ticks'] != row['start_ticks']: raise GuardError('swap_identity_changed')
+     return value
++
++def owned_swap_bytes(tree, row):
++    try:
++        return swap_bytes(row)
++    except FileNotFoundError as error:
++        if error.errno != errno.ENOENT:
++            raise
++        # Reuse the exact legacy held-identity/twice-POLLIN/fresh-terminal proof.
++        # A missing field, live row, different identity, or permission error never qualifies.
++        tree.terminal_omission(row, error)
++        if not hasattr(tree, 'terminal_swap_evidence'):
++            tree.terminal_swap_evidence = []
++        tree.terminal_swap_evidence.append({'pid':row['pid'], 'start_ticks':row['start_ticks'],
++            'proof':'legacy_terminal_omission_passed', 'terminal_swap_bytes':0,
++            'previously_sampled_RSS_retained':True, 'historical_peak_known':False})
++        tree.terminal_swap_evidence = tree.terminal_swap_evidence[-32:]
++        return 0
+ 
+ def available_bytes():
+     return parse_kib(Path('/proc/meminfo').read_text(), 'MemAvailable')
+@@ -175,7 +192,7 @@
+                 while True:
+                     tick=time.monotonic();scan,rows=tree.sample(read_rss)
+                     own=read_stat(os.getpid());own_rss=read_rss(own);own_swap=swap_bytes(own)
+-                    total=own_rss+own_swap+sum(row['rss']+swap_bytes(row) for row in rows)
++                    total=own_rss+own_swap+sum(row['rss']+owned_swap_bytes(tree,row) for row in rows)
+                     available=available_bytes();now=time.monotonic();gap=now-last;last=now
+                     report['peak_rss_plus_swap']=max(report['peak_rss_plus_swap'],total);report['max_sample_gap']=max(report['max_sample_gap'],gap)
+                     samples.write(json.dumps({'elapsed':now-started,'rss_plus_swap':total,'available':available,'gap':gap,'owned':len(rows)})+'\n');samples.flush()
+@@ -194,6 +211,8 @@
+                 report['cleanup']=cleanup(tree,output,started);owned_clean=True
+                 report['exit']=tree.process.returncode if tree.process else None
+                 report['signals']=list(tree.signals);report['launch_errors']=launch.errors
++                report['terminal_swap_evidence']=getattr(tree,'terminal_swap_evidence',[])
++                report['held_exit_evidence']=list(getattr(tree,'held_exit_evidence',[]))
+                 report['cancellation_requests']=list(cancel.requests)
+                 if cancel.requests and not report['reason']:report['reason']='cancel_requested_during_cleanup'
+                 report['elapsed']=time.monotonic()-started

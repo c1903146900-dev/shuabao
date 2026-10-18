@@ -1,0 +1,35 @@
+{
+  "status": "ASSEMBLED_STATIC_NOT_NATIVE",
+  "source_files": 3044,
+  "source_bytes": 216720205,
+  "changed_existing": [
+    "equipment_prism_20261011/model.gd",
+    "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+    "tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+    "tests/ink_river_hexes_20261006/ordinary01/catalog.gd",
+    "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+    "tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd",
+    "tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd",
+    "tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+    "visual_rework_20261009/binding/live_binding.gd",
+    "visual_rework_20261009/binding/source_binding.json"
+  ],
+  "new_files": [
+    "yan_p3_reimplementation_20261018b/gate.gd",
+    "yan_p3_reimplementation_20261018b/migration.json",
+    "yan_p3_reimplementation_20261018b/p3_state.gd",
+    "yan_p3_reimplementation_20261018b/predecessor_source_binding.json",
+    "yan_p3_reimplementation_20261018b/preimages/equipment_prism_20261011/model.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_rest_service_20261006/candidate01/rest_service.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/catalog.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd",
+    "yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+    "yan_p3_reimplementation_20261018b/preimages/visual_rework_20261009/binding/live_binding.gd"
+  ],
+  "base_before_after_exact": true,
+  "source_pins_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "overlay_manifest_sha256": "ec79bef7eb9384b7431393e6045de0e093916acad3aa0af647e46f7f9f64ff63"
+}

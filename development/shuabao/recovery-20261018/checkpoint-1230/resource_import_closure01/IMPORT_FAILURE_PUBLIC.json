@@ -1,0 +1,43 @@
+{
+  "status": "FAILED_OFFICIAL_IMPORT_NOT_PROMOTED",
+  "passed": false,
+  "failure_class": "FileNotFoundError_proc_status_race",
+  "elapsed": 0.20557135399940307,
+  "exit": -15,
+  "source_197_exact": true,
+  "guard_files_exact": {
+    "runtime_support": true,
+    "runtime_import01": true
+  },
+  "owned_cleanup_empty": true,
+  "peak_rss_plus_swap": 108912640,
+  "max_sample_gap": 0.05057169000065187,
+  "import_diff": {
+    "mode": "official_import",
+    "source": {
+      "removed": [],
+      "changed": [],
+      "added": [],
+      "forbidden_added": [],
+      "accepted": true
+    },
+    "stage": {
+      "removed": [],
+      "changed": [],
+      "added": [
+        ".godot/.gdignore"
+      ],
+      "forbidden_added": [],
+      "accepted": true,
+      "added_bytes": 1,
+      "total_bytes": 78697357,
+      "post_file_count": 198,
+      "post_pins_sha256": "27721b8509c20fd26ec17977011aa4a241c45aff1750bda63164d393e3b15f86"
+    },
+    "failed_import_cache_not_promoted": true
+  },
+  "raw_error_count": 0,
+  "raw_script_error_count": 0,
+  "cache_promotion": "NONE_EARLY_GUARD_FAILURE",
+  "publication": "Derivative public summary. Machine paths, process identities and raw logs omitted."
+}

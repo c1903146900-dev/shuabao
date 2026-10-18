@@ -1,0 +1,18 @@
+--- frozen_import01
++++ import_swapfix01
+@@ -15,7 +15,14 @@
+     for rel,row in json.loads(seal.read_text())['files'].items():
+         p=SUPPORT/rel
+         if p.is_symlink() or p.stat().st_size!=row['bytes'] or sha(p)!=row['sha256']:raise RuntimeError('runtime_changed:'+rel)
+-    spec=importlib.util.spec_from_file_location('sealed_owned_runtime',SUPPORT/'owned_runtime_guard.py')
++    swap=SUPPORT.parent/'runtime_swapfix01'
++    swap_seal=swap/'SWAPFIX_PINS.json'
++    if sha(swap_seal)!='4801f5a92a65f26d629f7e1b920b4ceb932150a133e4f786aefefcc6a64954f5':raise RuntimeError('swapfix_seal_changed')
++    if any(p.name=='__pycache__' or p.suffix in ('.pyc','.pyo') for p in swap.rglob('*')):raise RuntimeError('unexpected_swapfix_bytecode')
++    for rel,row in json.loads(swap_seal.read_text())['files'].items():
++        p=swap/rel
++        if p.is_symlink() or p.stat().st_size!=row['bytes'] or sha(p)!=row['sha256']:raise RuntimeError('swapfix_changed:'+rel)
++    spec=importlib.util.spec_from_file_location('sealed_owned_runtime',swap/'owned_runtime_guard.py')
+     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+     return module
+ 

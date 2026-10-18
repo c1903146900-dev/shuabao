@@ -1,0 +1,23 @@
+{
+  "status": "PURE_11_PASS_NATIVE_UNRUN",
+  "base_runtime_seal": "036f5b3b933aad953b46b7a14aa1444f79118e594a1f1082f397dd1fe491e965",
+  "shared_lock": "../runtime_support/single_engine.lock",
+  "files": {
+    "owned_runtime_guard.py": {
+      "sha256": "126922a0ffdb6db60dd22936d870e12f459995c7549366b8f790e0e3d7da4489",
+      "bytes": 13980
+    },
+    "SWAP_FIX.diff": {
+      "sha256": "bc522b219306d6332f56d96b2581ef7911a0bb461c034d213bac3d46a9819401",
+      "bytes": 3238
+    },
+    "test_swap_race.py": {
+      "sha256": "d0a0ee6910b081be8590c8c4d7073bd228539b7a95fecdac1938c1e0dd0ee5ad",
+      "bytes": 2775
+    },
+    "PURE_SWAP_RESULT.json": {
+      "sha256": "868d3b1268790411a10d9eb5b6286f2e4c2f075fe42c0ed300831b16f1fe2cfc",
+      "bytes": 505
+    }
+  }
+}

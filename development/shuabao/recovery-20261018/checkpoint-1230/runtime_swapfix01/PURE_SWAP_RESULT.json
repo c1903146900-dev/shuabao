@@ -1,0 +1,17 @@
+{
+  "status": "PURE_FAKE_RACE_ONLY_NO_CHILDREN_ENGINE_OR_REAL_PIDFD",
+  "count": 11,
+  "checks": [
+    "exact_held_terminal_twice_POLLIN_swap_zero_RSS_retained",
+    "exact_held_absent_twice_POLLIN",
+    "still_live_rejected",
+    "PID_reused_rejected",
+    "pidfd_not_exited_rejected",
+    "no_owned_record_rejected",
+    "duplicate_identity_rejected",
+    "permission_denied_rejected",
+    "missing_VmSwap_live_rejected",
+    "normal_measured_swap_unchanged",
+    "self_swap_missing_stays_strict"
+  ]
+}
