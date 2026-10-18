@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "d00b6532bb755f3ff0829571e47bfdf20fc8e5c7",
+  "source_tip": "6051d253746c3b47db25729ff86bff7d281a89e4",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -1650,8 +1650,8 @@
     },
     "hero2d/front_motion01/upper_q1_eight_original.png": {
       "canonical_path": "hero2d/front_motion01/upper_q1_eight_original.png",
-      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
-      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/hero2d/front_motion01/upper_q1_eight_original.png",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/upper_q1_eight_original.png",
       "git_blob_sha1": "cbbdc78bcd2500a5310c605c2899949a8fbcd884",
       "bytes": 2544112,
       "sha256": "c5230883ccce96db9ec74f36379fc6401e1093770980453fd3d447bbc2ad1494",
@@ -1661,8 +1661,8 @@
     },
     "hero2d/front_motion01/lower_idle_walk_nine_original.png": {
       "canonical_path": "hero2d/front_motion01/lower_idle_walk_nine_original.png",
-      "commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
-      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1230/hero2d/front_motion01/lower_idle_walk_nine_original.png",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/lower_idle_walk_nine_original.png",
       "git_blob_sha1": "aff7de46bbe48eebc92658049bef6a662c06ca62",
       "bytes": 1432352,
       "sha256": "485eea12c243aa71cd06e91b33a3878ae5315c18f99ab08fa46bd3d8944451a8",
@@ -1712,6 +1712,105 @@
       "sha256": "028184b1a02a253265e743a4112ee53a81a18e37a39882b3dd3d24be736a6c4c",
       "classification": "REIMPLEMENTATION_REVISED_FIXTURE",
       "validation_scope": "REMOTE_BYTES_VERIFIED_PENDING_NATIVE; NO_HISTORICAL_PASS_INHERITED",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/preview.html": {
+      "canonical_path": "hero2d/front_motion01/preview.html",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/preview.html",
+      "git_blob_sha1": "e248aeaa6e9194c668e33fce29548961ce14564b",
+      "bytes": 1184,
+      "sha256": "05dace7ace71b1a9cd277dc17b7dc1b6ddcb6ab0e2d8aa392dd2a1b1214d6d58",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/preview.js": {
+      "canonical_path": "hero2d/front_motion01/preview.js",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/preview.js",
+      "git_blob_sha1": "34987b1a04f78423ecd8550665ab3160187d3d89",
+      "bytes": 4653,
+      "sha256": "8c691a7ab19e92db5583ba672383df2c25bcc37249e041bd9d889ac0e1ffdc1d",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/check_mesh.cjs": {
+      "canonical_path": "hero2d/front_motion01/check_mesh.cjs",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/check_mesh.cjs",
+      "git_blob_sha1": "017f699782aeafb0321f07fc638f2becf5a07625",
+      "bytes": 1447,
+      "sha256": "a7c113ace2da11c7a3bcb1de26463371855542b77467499d06bd6fb46148ee52",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/MESH_CHECK.json": {
+      "canonical_path": "hero2d/front_motion01/MESH_CHECK.json",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/MESH_CHECK.json",
+      "git_blob_sha1": "806c8c976262b6c42cc5b396ea2648018c9d714d",
+      "bytes": 254,
+      "sha256": "0c7f7722127708c661018b8c7ed52224d403df2cbc46bc46dad72ff18dc55d65",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/ALPHA_INSPECTION.json": {
+      "canonical_path": "hero2d/front_motion01/ALPHA_INSPECTION.json",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/ALPHA_INSPECTION.json",
+      "git_blob_sha1": "bf6ea241750dfa1bcd045741d1c504f059ff2c54",
+      "bytes": 3134,
+      "sha256": "ec9addea86413d0ad453e81be4f6575de7535ddfeec3630f814946d754f79775",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/STATUS.md": {
+      "canonical_path": "hero2d/front_motion01/STATUS.md",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/STATUS.md",
+      "git_blob_sha1": "dac65b1fa4986214f890c702108ba50ddf64a852",
+      "bytes": 3319,
+      "sha256": "bafa5fe4eafd38559e358c089eefc6ceda62b21751c07685f85677c2aa42e224",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "hero2d/front_motion01/PROTOTYPE_MANIFEST.json": {
+      "canonical_path": "hero2d/front_motion01/PROTOTYPE_MANIFEST.json",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/hero2d/front_motion01/PROTOTYPE_MANIFEST.json",
+      "git_blob_sha1": "788a2e437b58581f5ec4a32757db5f6205fc70ae",
+      "bytes": 827,
+      "sha256": "24166c13af1089685d6935651b7ab5e44de02afe113935faddba2af569fa0e3b",
+      "classification": "NEW_ART_INSPECTION_PROTOTYPE",
+      "validation_scope": "NUMERICAL_MESH_CHECK_ONLY_CONTINUOUS_PLAYBACK_NOT_VERIFIED_NOT_COMBAT",
+      "apply_to_game": false
+    },
+    "worldfx_ui_candidate01/payload/yan_visual_attach_20261018/entry.gd": {
+      "canonical_path": "worldfx_ui_candidate01/payload/yan_visual_attach_20261018/entry.gd",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/worldfx_ui_candidate01/payload/yan_visual_attach_20261018/entry.gd",
+      "git_blob_sha1": "f00332a901dabbd023a66022f263279b9e5fd4c8",
+      "bytes": 2939,
+      "sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19",
+      "classification": "EXACT_RECOVERED_BYTES_REUSED_NEW_UNRUN_CANDIDATE",
+      "validation_scope": "NOT_ASSEMBLED_NOT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "worldfx_ui_candidate01/payload/scenes/hero_entry.tscn": {
+      "canonical_path": "worldfx_ui_candidate01/payload/scenes/hero_entry.tscn",
+      "commit": "6051d253746c3b47db25729ff86bff7d281a89e4",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1236/worldfx_ui_candidate01/payload/scenes/hero_entry.tscn",
+      "git_blob_sha1": "5307a2234d169033019d9b5ebe7494246872c5a6",
+      "bytes": 182,
+      "sha256": "f49d62fb4af6f8467102bc745aa8dcf44333724c1fe9422db3d8a4a97e26a41a",
+      "classification": "EXACT_RECOVERED_BYTES_REUSED_NEW_UNRUN_CANDIDATE",
+      "validation_scope": "NOT_ASSEMBLED_NOT_RUNTIME_ACCEPTED",
       "apply_to_game": false
     }
   },
