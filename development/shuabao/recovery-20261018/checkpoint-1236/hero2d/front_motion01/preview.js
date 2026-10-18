@@ -1,0 +1,79 @@
+'use strict';
+// Inspection renderer, not production reducer. Public phase/progress is already normalized.
+const upper=new Image(), lower=new Image();
+upper.src='upper_q1_eight_original.png'; lower.src='lower_idle_walk_nine_original.png';
+const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d');
+const RELEASE_SPAN=.6000000238418579;
+const anchors=[[210,324],[177,325],[185,334],[187,328],[212,298],[190,328],[184,336],[190,333]];
+let running=true,time=0,last=null,forced=-1;
+document.getElementById('play').onclick=()=>{running=!running;document.getElementById('play').textContent=running?'Pause':'Play';};
+document.getElementById('step').onclick=()=>{running=false;forced=(forced+1)%8;document.getElementById('play').textContent='Play';};
+document.getElementById('phase').onchange=()=>{forced=-1;};
+const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);};
+// Waist is fixed. Each whole shoe is translated, not stretched. A continuous
+// material field bridges the crotch; no separate limb cylinders or raster cuts.
+function legVertex(x,y,phase,moving){
+ if(!moving)return [x,y];
+ const blend=smooth((y-70)/170),side=smooth((x-330)/40);
+ const a=Math.sin(phase),b=Math.sin(phase+Math.PI);
+ const dyL=14*a-6*Math.max(0,Math.cos(phase));
+ const dyR=14*b-6*Math.max(0,Math.cos(phase+Math.PI));
+ return [x,y+blend*(dyL*(1-side)+dyR*side)];
+}
+function triangle(image,src,dst){
+ const [a,b,c]=src,[p,q,r]=dst;
+ const det=(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+ if(Math.abs(det)<1e-8)throw Error('degenerate UV');
+ const u=[(c[1]-a[1])/det,-(b[1]-a[1])/det],v=[-(c[0]-a[0])/det,(b[0]-a[0])/det];
+ const A=(q[0]-p[0])*u[0]+(r[0]-p[0])*u[1],C=(q[0]-p[0])*v[0]+(r[0]-p[0])*v[1];
+ const B=(q[1]-p[1])*u[0]+(r[1]-p[1])*u[1],D=(q[1]-p[1])*v[0]+(r[1]-p[1])*v[1];
+ ctx.save();ctx.beginPath();ctx.moveTo(...p);ctx.lineTo(...q);ctx.lineTo(...r);ctx.closePath();ctx.clip();ctx.transform(A,B,C,D,p[0]-A*a[0]-C*a[1],p[1]-B*a[0]-D*a[1]);ctx.drawImage(image,0,0);ctx.restore();
+}
+function drawLegs(x,y,s,phase,moving){
+ // First source cell only; other eight are rejected as a walk sequence.
+ const xs=[224,240,260,280,300,320,330,350,370,390,410,430,450,470,480];
+ const ys=[0,20,45,70,100,130,160,190,220,240,260,280,300,320];
+ const point=(p)=>{const d=legVertex(...p,phase,moving);return [x+(d[0]-350)*s,y+(d[1]-20)*s];};
+ for(let j=0;j<ys.length-1;j++)for(let i=0;i<xs.length-1;i++){
+ const a=[xs[i],ys[j]],b=[xs[i+1],ys[j]],c=[xs[i+1],ys[j+1]],d=[xs[i],ys[j+1]];
+ for(const t of [[a,b,c],[a,c,d]])triangle(lower,t,t.map(point));
+ }
+}
+function frameFor(phase,p){
+ if(phase==='idle')return 0;
+ if(phase==='draw')return p<.35?0:p<.8?1:2;
+ if(phase==='hold')return 2;
+ if(phase==='release')return [3,4,5,6,7][Math.min(4,Math.floor(p*5))];
+ throw Error('unknown phase');
+}
+function replay(t){
+ const c=t%3.8;
+ if(c<.7)return ['idle',0];
+ if(c<1.5)return ['draw',(c-.7)/.8]; // Demonstration input drag, not a skill duration.
+ if(c<2.0)return ['hold',1]; // Demonstration player hold, not an automatic release.
+ if(c<2+RELEASE_SPAN)return ['release',(c-2)/RELEASE_SPAN];
+ return ['idle',0];
+}
+function character(x,y,size,frame,moving){
+ const s=size/307;
+ drawLegs(x,y,s,time*6,moving);
+ const a=anchors[frame],sx=(frame%4)*384,sy=Math.floor(frame/4)*512;
+ ctx.drawImage(upper,sx,sy,384,512,x-a[0]*s,y-a[1]*s,384*s,512*s);
+ ctx.strokeStyle='#d89f50';ctx.beginPath();ctx.moveTo(x-20,y+290*s);ctx.lineTo(x+20,y+290*s);ctx.stroke();
+}
+function tick(stamp){
+ if(last!==null&&running)time+=Math.min(.1,(stamp-last)/1000);last=stamp;
+ ctx.fillStyle=document.getElementById('bg').value;ctx.fillRect(0,0,canvas.width,canvas.height);
+ let [phase,p]=replay(time),selected=document.getElementById('phase').value;
+ if(selected!=='auto'){phase=selected;p=Number(document.getElementById('progress').value);}
+ const frame=forced>=0?forced:frameFor(phase,p);
+ if(upper.complete&&upper.naturalWidth&&lower.complete&&lower.naturalWidth){
+ character(230,300,240,frame,false);character(600,300,240,frame,true);character(900,350,60,frame,true);
+ ctx.fillStyle='#cc9163';ctx.font='16px sans-serif';ctx.fillText('stationary / 240 px',130,540);ctx.fillText('moving lower / 240 px',490,540);ctx.fillText('60 px',870,540);
+ document.getElementById('status').textContent=`${phase} ${p.toFixed(3)} | upper frame ${frame} | release clip span ${RELEASE_SPAN}s | known: upper frame switching/waist registration/return jump require visual iteration`;
+ }
+ requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+// Explicit test hook; no gameplay dispatch or synthetic accepted-release event.
+window.hero2dInspection={legVertex,frameFor,releaseSpan:RELEASE_SPAN};
