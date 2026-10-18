@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "c79e5f3dd19e317caf0c4c7484424336726f6b4d",
+  "source_tip": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -270,7 +270,7 @@
       "bytes": 4000,
       "sha256": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c",
       "classification": "REIMPLEMENTATION",
-      "validation_scope": "REMOTE_BYTES_VERIFIED; NOT_CURRENT_RUNTIME_ACCEPTED",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_PASSED_AT_EXACT_BYTES; NOT_SIM_MODEL_SESSION_GAMEPLAY",
       "apply_to_game": false
     },
     "restore_priority.py": {
@@ -369,7 +369,7 @@
       "bytes": 3570,
       "sha256": "9b6c36314f98e5e3eab1570819f2836d3d08e4d7fa7086caafa748148832eb2d",
       "classification": "REIMPLEMENTATION",
-      "validation_scope": "REMOTE_BYTES_VERIFIED; NOT_CURRENT_RUNTIME_ACCEPTED",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_PASSED_AT_EXACT_BYTES; NOT_SIM_MODEL_SESSION_GAMEPLAY",
       "apply_to_game": false
     },
     "hero2d/capture.gd": {
@@ -525,6 +525,347 @@
       "classification": "REIMPLEMENTATION",
       "validation_scope": "REMOTE_BYTES_VERIFIED; NOT_CURRENT_RUNTIME_ACCEPTED",
       "apply_to_game": false
+    },
+    "runtime_support/cleanup_workload.py": {
+      "canonical_path": "runtime_support/cleanup_workload.py",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/runtime_support/cleanup_workload.py",
+      "git_blob_sha1": "effd0d9cdee4c5b1647bf73d6100f9929dadc57d",
+      "bytes": 782,
+      "sha256": "eebc837f98382c997fcb7d1bfd5a9a8c5d5a5f81a6e475f19cd297c83f1e003a",
+      "classification": "NEW_SUPPORT",
+      "validation_scope": "SHORT_OWNED_PYTHON_CLEANUP_FIXTURE_NOT_GENERAL_GUARANTEE",
+      "apply_to_game": false
+    },
+    "runtime_support/test_owned_cleanup.py": {
+      "canonical_path": "runtime_support/test_owned_cleanup.py",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/runtime_support/test_owned_cleanup.py",
+      "git_blob_sha1": "0301cfd13253dc25048e4d1ab3000a69bdfb4d9f",
+      "bytes": 4720,
+      "sha256": "67d09f36c62700d0f794fdb75ed0172a8f6dfb6d964250a0589ac09151dd399f",
+      "classification": "NEW_SUPPORT",
+      "validation_scope": "SHORT_OWNED_PYTHON_CLEANUP_FIXTURE_NOT_GENERAL_GUARANTEE",
+      "apply_to_game": false
+    },
+    "runtime_support/RUNTIME_PINS.json": {
+      "canonical_path": "runtime_support/RUNTIME_PINS.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/runtime_support/RUNTIME_PINS.json",
+      "git_blob_sha1": "86f0644ce2f5a1cb135a606109043455d7507956",
+      "bytes": 2494,
+      "sha256": "036f5b3b933aad953b46b7a14aa1444f79118e594a1f1082f397dd1fe491e965",
+      "classification": "NEW_SUPPORT",
+      "validation_scope": "SHORT_OWNED_PYTHON_CLEANUP_FIXTURE_NOT_GENERAL_GUARANTEE",
+      "apply_to_game": false
+    },
+    "runtime_support/CLEANUP_COMMAND_PORTABLE.txt": {
+      "canonical_path": "runtime_support/CLEANUP_COMMAND_PORTABLE.txt",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/runtime_support/CLEANUP_COMMAND_PORTABLE.txt",
+      "git_blob_sha1": "5dcf181ea5ddf2feb1e4981ccffbf87b62f77c60",
+      "bytes": 579,
+      "sha256": "555b6628298be29374fc80507f41ae959a058ce76193c74dc2c296de5206aa6b",
+      "classification": "NEW_SUPPORT",
+      "validation_scope": "SHORT_OWNED_PYTHON_CLEANUP_FIXTURE_NOT_GENERAL_GUARANTEE",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration01/sim.patch": {
+      "canonical_path": "p3_reimplementation/integration01/sim.patch",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration01/sim.patch",
+      "git_blob_sha1": "fe32d76679a6d79ca9207be339cfc193bfbf084d",
+      "bytes": 3241,
+      "sha256": "2573f4abd58afa81c4c98ab2b7eeafe443386402c00a5973eaae3640ba26b318",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration01/model.patch": {
+      "canonical_path": "p3_reimplementation/integration01/model.patch",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration01/model.patch",
+      "git_blob_sha1": "96b971bcfd7d4b0093182d65fa59adaee555ee12",
+      "bytes": 2141,
+      "sha256": "28c21b5476deafd1dc81a5eab9cbc4d2253a8e7e0420051913abad4c78e87013",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration01/WIP_MANIFEST.json": {
+      "canonical_path": "p3_reimplementation/integration01/WIP_MANIFEST.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration01/WIP_MANIFEST.json",
+      "git_blob_sha1": "69988c5f2ef80452b62f3dff48a20605ca6a4ebe",
+      "bytes": 794,
+      "sha256": "8d4aa8febbecb5fd78a0c0b4151f9b9ce7ec889d6304c806d240db737f41cfab",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/WIP_MANIFEST.json": {
+      "canonical_path": "p3_reimplementation/integration02/WIP_MANIFEST.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/WIP_MANIFEST.json",
+      "git_blob_sha1": "1b25ccefb9cf33c2862adb14c755a64a028be470",
+      "bytes": 1132,
+      "sha256": "211ebad42f28d5b33e1633b9b83435d5ce30ece63ca6124fe9f8f916f4763372",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/model.gd": {
+      "canonical_path": "p3_reimplementation/integration02/model.gd",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/model.gd",
+      "git_blob_sha1": "004e58f24d338b5ae38be8f76ceb53366ff55035",
+      "bytes": 3781,
+      "sha256": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/model.patch": {
+      "canonical_path": "p3_reimplementation/integration02/model.patch",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/model.patch",
+      "git_blob_sha1": "96b971bcfd7d4b0093182d65fa59adaee555ee12",
+      "bytes": 2141,
+      "sha256": "28c21b5476deafd1dc81a5eab9cbc4d2253a8e7e0420051913abad4c78e87013",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/rest_service.gd": {
+      "canonical_path": "p3_reimplementation/integration02/rest_service.gd",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/rest_service.gd",
+      "git_blob_sha1": "2a7a79f019b1006ac7a0dc05fc2375a2763f9a85",
+      "bytes": 5189,
+      "sha256": "33da8f16f1679469f67fe05addf89c97625c269134c799b3063343f364f966ec",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/rest_service.patch": {
+      "canonical_path": "p3_reimplementation/integration02/rest_service.patch",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/rest_service.patch",
+      "git_blob_sha1": "9ef71b2cc22a09190df458c1ed735b22ed6f2bac",
+      "bytes": 491,
+      "sha256": "eced8e539fcb79c9f12fd5bde513884646d07979a847f9cd55344f7207846c63",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/sim.gd": {
+      "canonical_path": "p3_reimplementation/integration02/sim.gd",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/sim.gd",
+      "git_blob_sha1": "fb0cb6b7dd53281a6e038fed4f121587fe13acc6",
+      "bytes": 110715,
+      "sha256": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/integration02/sim.patch": {
+      "canonical_path": "p3_reimplementation/integration02/sim.patch",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_reimplementation/integration02/sim.patch",
+      "git_blob_sha1": "1727140cbd6db741bbf43d8dd7e0b3f18d872fd9",
+      "bytes": 3709,
+      "sha256": "fc9943a99e53b59cc1183547dcf40c2dd18fa482be266536f3280eac3fdd8eb6",
+      "classification": "REIMPLEMENTATION_WIP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/MANIFEST.json": {
+      "canonical_path": "ordinary_host_startup_fix01/MANIFEST.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/MANIFEST.json",
+      "git_blob_sha1": "c90a78e5c730f18aa63be4fdbf9dc2f12f47204f",
+      "bytes": 2894,
+      "sha256": "ee350c157456988194a53876560d15219bd758118089cc59e3329bfe5dc4c17c",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/PINS.json": {
+      "canonical_path": "ordinary_host_startup_fix01/PINS.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/PINS.json",
+      "git_blob_sha1": "442b765eedd79d4cfa417c1004b8059134835b91",
+      "bytes": 580,
+      "sha256": "52b4a250aee07cc85b4fa1376ca1de1739a5125c290e9777f9000a2dc53e0bea",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/REVIEW_REQUEST.md": {
+      "canonical_path": "ordinary_host_startup_fix01/REVIEW_REQUEST.md",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/REVIEW_REQUEST.md",
+      "git_blob_sha1": "cfe84f6c58234684b322840ec75fc7239d2b3f86",
+      "bytes": 1695,
+      "sha256": "e70391dbc5ef6482434146a292ffdb34092d0009cbbc76a464a8a40e226fc923",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/SOURCE_DELTA.diff": {
+      "canonical_path": "ordinary_host_startup_fix01/SOURCE_DELTA.diff",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/SOURCE_DELTA.diff",
+      "git_blob_sha1": "2924562f887b3640443f7a56587db7966d8b765e",
+      "bytes": 6205,
+      "sha256": "037c6413588c4b3d0eed992e7b2fea4292d0affb4b4894d513eb65e5201db695",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/build.py": {
+      "canonical_path": "ordinary_host_startup_fix01/build.py",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/build.py",
+      "git_blob_sha1": "425cf13206e7f040aa16e0a199140191e91dca6e",
+      "bytes": 4212,
+      "sha256": "9223c94a9422a013fd51d49578e2f885bcc5d28a63ac1fecc4cb31a5dae84c7c",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "ordinary_host_startup_fix01/payload/tests/ink_ordinary_visuals_20261007/candidate01/host.gd": {
+      "canonical_path": "ordinary_host_startup_fix01/payload/tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/ordinary_host_startup_fix01/payload/tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "git_blob_sha1": "77a6711127740b9e7fe41cc83c2f4ca20c1c361c",
+      "bytes": 21472,
+      "sha256": "7cd9301c3b6c74c93aa30b7f5522ab0d6f0686d03bdac37860ec829918c486f0",
+      "classification": "RECONSTRUCTED_EXISTING_SUCCESSOR",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_core_native01/stage/runner.gd": {
+      "canonical_path": "p3_core_native01/stage/runner.gd",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_core_native01/stage/runner.gd",
+      "git_blob_sha1": "688943478b59b08f4a4c7ef993ece7a4c4696401",
+      "bytes": 1090,
+      "sha256": "9788c08efdba4077a5566a214d2ebc43a9539cf8f8b3cee79c64b47d2f43e605",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_ONLY_NOT_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "p3_core_native01/stage/project.godot": {
+      "canonical_path": "p3_core_native01/stage/project.godot",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_core_native01/stage/project.godot",
+      "git_blob_sha1": "e28abfd851e35f68fe95900602d1e614bbbb11bd",
+      "bytes": 255,
+      "sha256": "32b2dde129bde7579511e4e5c8cfa5c12d5a298f8f31a12b075defc43ebc6643",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_ONLY_NOT_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "p3_core_native01/SOURCE_PINS.json": {
+      "canonical_path": "p3_core_native01/SOURCE_PINS.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_core_native01/SOURCE_PINS.json",
+      "git_blob_sha1": "d3146d3086d2a176f48e5c1cc2a3615454077235",
+      "bytes": 874,
+      "sha256": "5907038bf9277d76fbf3164f957008ae4dfcb80346d06941c2d45a505fbce888",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_ONLY_NOT_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "p3_core_native01/report.json": {
+      "canonical_path": "p3_core_native01/report.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_core_native01/report.json",
+      "git_blob_sha1": "9e613974924aa83558c07877e5e57ae7f59e9e65",
+      "bytes": 120,
+      "sha256": "9883e6fe466ca08858f2d70b3c874457b8e7c4682f91dd039f143725756b52af",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_ONLY_NOT_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "p3_core_native01/POSTCHECK.json": {
+      "canonical_path": "p3_core_native01/POSTCHECK.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/p3_core_native01/POSTCHECK.json",
+      "git_blob_sha1": "fc26c7c50b71cb051169ca888307aed433978599",
+      "bytes": 410,
+      "sha256": "ffe45129120af240d0e29f3d4a98efebb248f8b61794c53a8b9692c76d87787e",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_ONLY_NOT_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "base/RECOVERY_VERIFICATION.json": {
+      "canonical_path": "base/RECOVERY_VERIFICATION.json",
+      "commit": "0673bb4012fbf5202d5ff6404bf767d05559acd0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1223/base/RECOVERY_VERIFICATION.json",
+      "git_blob_sha1": "a1c920777ead0d20243c65abcc918df475f5b6a1",
+      "bytes": 452,
+      "sha256": "e1acfa86ad65c0b8464a6a0b099d930cbd605b695a4b3b025f7bd1fc41cc54c5",
+      "classification": "SCOPED_VERIFICATION_EVIDENCE",
+      "validation_scope": "3031_HISTORICAL_SOURCE_BYTES_ONLY",
+      "apply_to_game": false
+    },
+    "hero2d/art_identity01/PROMPT.txt": {
+      "canonical_path": "hero2d/art_identity01/PROMPT.txt",
+      "commit": "a32bbfaa3a5718d44a91e772a9cf57a585815de0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1221/hero2d/art_identity01/PROMPT.txt",
+      "git_blob_sha1": "519c8a3c08666d39019c2873e9bbe8bbed8e9d25",
+      "bytes": 3233,
+      "sha256": "95f9e7c4540d4c0cd529215a11ef20d512a9d5b1a2ee08c00fc24319aceceb4a",
+      "classification": "NEW_GENERATED_ART_CANDIDATE_OR_DOCUMENTATION",
+      "validation_scope": "ORIGINAL_PNG_GIT_READBACK_CMP_AND_SHA256_VERIFIED; VISUAL_IDENTITY_REFERENCE_ONLY_NOT_RIG_OR_ANIMATION_ACCEPTED",
+      "apply_to_game": false
+    },
+    "hero2d/art_identity01/INSPECTION.md": {
+      "canonical_path": "hero2d/art_identity01/INSPECTION.md",
+      "commit": "a32bbfaa3a5718d44a91e772a9cf57a585815de0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1221/hero2d/art_identity01/INSPECTION.md",
+      "git_blob_sha1": "c597d092acb7084d627f386924c17e6f67f6e5cd",
+      "bytes": 1438,
+      "sha256": "9d011729ba29bf6708eecc844b04ffba617f09bd7b4e6980c8662dcb918b7fb3",
+      "classification": "NEW_GENERATED_ART_CANDIDATE_OR_DOCUMENTATION",
+      "validation_scope": "ORIGINAL_PNG_GIT_READBACK_CMP_AND_SHA256_VERIFIED; VISUAL_IDENTITY_REFERENCE_ONLY_NOT_RIG_OR_ANIMATION_ACCEPTED",
+      "apply_to_game": false
+    },
+    "hero2d/art_identity01/yan_four_views_original.png": {
+      "canonical_path": "hero2d/art_identity01/yan_four_views_original.png",
+      "commit": "a32bbfaa3a5718d44a91e772a9cf57a585815de0",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1221/hero2d/art_identity01/yan_four_views_original.png",
+      "git_blob_sha1": "41acd04359c398b1a0a96280ba7dea49b8fe439d",
+      "bytes": 1365143,
+      "sha256": "81bbfb23cc41ee321c29241cf5d500396337b5e5e576ceae0be6108dbc8f19ea",
+      "classification": "NEW_GENERATED_ART_CANDIDATE_OR_DOCUMENTATION",
+      "validation_scope": "ORIGINAL_PNG_GIT_READBACK_CMP_AND_SHA256_VERIFIED; VISUAL_IDENTITY_REFERENCE_ONLY_NOT_RIG_OR_ANIMATION_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_core_native01/stage/yan_p3_reimplementation_20261018b/p3_state.gd": {
+      "canonical_path": "p3_core_native01/stage/yan_p3_reimplementation_20261018b/p3_state.gd",
+      "commit": "468983ae2d2e37497dc9b1a02161f67d7c33f025",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-0928/p3_reimplementation/core01/p3_state.gd",
+      "git_blob_sha1": "2cee1da29f5356a109d9fc0ac9d99ce3cca5ba00",
+      "bytes": 4000,
+      "sha256": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c",
+      "classification": "REIMPLEMENTATION",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_PASSED_AT_EXACT_BYTES; NOT_SIM_MODEL_SESSION_GAMEPLAY",
+      "apply_to_game": false
+    },
+    "p3_core_native01/stage/yan_p3_reimplementation_20261018b/test_state.gd": {
+      "canonical_path": "p3_core_native01/stage/yan_p3_reimplementation_20261018b/test_state.gd",
+      "commit": "468983ae2d2e37497dc9b1a02161f67d7c33f025",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-0928/p3_reimplementation/core01/test_state.gd",
+      "git_blob_sha1": "e8770ac8d77d0b78666409fa33e0e2fa3e24bf55",
+      "bytes": 3570,
+      "sha256": "9b6c36314f98e5e3eab1570819f2836d3d08e4d7fa7086caafa748148832eb2d",
+      "classification": "REIMPLEMENTATION",
+      "validation_scope": "ISOLATED_P3_RULE_CORE_19_NATIVE_CHECKS_PASSED_AT_EXACT_BYTES; NOT_SIM_MODEL_SESSION_GAMEPLAY",
+      "apply_to_game": false
     }
   },
   "notes": [
@@ -532,6 +873,7 @@
     "Verify bytes, SHA256 and Git blob identity before copying. No absolute paths, symlinks or traversal targets are allowed.",
     "Entries identify code commits, not the index commit, to avoid self-referential commit hashes.",
     "Legacy guard README containing historical machine paths is intentionally absent; execute only reviewed RUNTIME/CODE pins.",
-    "Historical passes do not transfer. Source fragments remain unintegrated; private reference footage is excluded."
+    "Historical passes do not transfer. Source fragments remain unintegrated; private reference footage is excluded.",
+    "Current tiny native evidence validates only exact isolated P3 core with three rendered frames; one ALSA error and two warnings remain disclosed. No integration, full-floor, animation or Windows acceptance."
   ]
 }
