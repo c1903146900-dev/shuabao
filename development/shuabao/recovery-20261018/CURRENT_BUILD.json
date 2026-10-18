@@ -1,0 +1,67 @@
+{
+  "schema": "shuabao-current-verifiable-build-v1",
+  "status": "ASSEMBLABLE_3044_SOURCE_PLUS_98_CACHE_LIMITED_NATIVE_VALIDATION",
+  "not_complete_playable_release": true,
+  "source": {
+    "base_commit": "708454b99a631adac381417f820aabe6798c148c",
+    "base_path": "development/shuabao/candidate43-rebuild/game",
+    "base_files": 3031,
+    "base_manifest_sha256": "d24cf18fbcef701a55202a3d36fa6b4c4d0a7bbd900792e46bb0693cf682ec1a",
+    "overlay_commit": "64832e8dba5e51e6e202fb72bf1804321c6671dd",
+    "overlay_path": "development/shuabao/recovery-20261018/checkpoint-1227/p3_reimplementation/migration01/overlay",
+    "overlay_manifest_sha256": "ec79bef7eb9384b7431393e6045de0e093916acad3aa0af647e46f7f9f64ff63",
+    "assembly_commit": "fecfbfcfceed93c52919be27ae184554225e9d75",
+    "assembly_tool_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/assemble.py",
+    "source_files": 3044,
+    "source_pins_path": "development/shuabao/recovery-20261018/checkpoint-1230/p3_integrated_source01/SOURCE_PINS.json",
+    "source_pins_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0"
+  },
+  "cache": {
+    "commit": "34f29ebd330b79747da39a953c978a042accda31",
+    "parts_manifest": "resource_cache_validation01/cache_parts01/PARTS.json",
+    "restore_tool": "resource_cache_validation01/cache_parts01/restore_cache.py",
+    "archive_bytes": 36192656,
+    "archive_sha256": "28b6fa7b0d9be2c38314d6aa32a28fbb2e2ce9bd8204f406c93feabf08504691",
+    "parts": 35,
+    "remote_readback": "FRESH_GIT_OBJECT_STORE_ALL_PARTS_SIZE_SHA256_FULL_ARCHIVE_SHA256_AND_98_MEMBERS_VERIFIED",
+    "safe_regular_members": 99,
+    "cache_files": 98,
+    "validation_scope": "196_RESOURCELOADER_LOADS_ONLY; ORIGINAL_IMPORT_FAILED_SIDECAR_PROJECT_MUTATION; ALSA_AND_UID_WARNINGS_RETAINED",
+    "gameplay_acceptance": false
+  },
+  "verified_scope": [
+    {
+      "kind": "isolated_P3_core",
+      "checks": 19,
+      "scope": "Pure rule state only, three rendered frames. Not Sim/Model/Session integration."
+    },
+    {
+      "kind": "resource_loading",
+      "loads": 196,
+      "scope": "98 original-resource and imported-resource pairs. Not original import success."
+    },
+    {
+      "kind": "original_entry_UI_transaction_smoke",
+      "evidence_commit": "5a790f022a0939587ecc26582b84bab86315230e",
+      "evidence_prefix": "development/shuabao/recovery-20261018/checkpoint-1246/p3_session_smoke02/",
+      "scope": "Synthetic original Entry/Hex P3 fee/Hero/Model projection, undo and Q1 learning only. Three screenshots. Source and guard posthash exact.",
+      "warnings": "One ALSA initialization error, 92 warnings, zero script and XServer errors in recorded postcheck."
+    }
+  ],
+  "excluded_from_this_build": [
+    "worldfx_ui_candidate01",
+    "worldfx_ui_probe01",
+    "hero2d/front_motion01",
+    "all other unreviewed overlays and fixtures unless explicitly staged separately"
+  ],
+  "not_verified": [
+    "Real Q/E skill release authentication and cross-room/rest/death P3 behavior in gameplay",
+    "Full first-floor completion with current exact source",
+    "WorldFX/UI candidate native behavior and visual acceptance",
+    "Front animation continuity and actual combat integration",
+    "Audio output",
+    "Windows export/PCK retention and Windows launch"
+  ],
+  "restoration_policy": "RECOVERY_INDEX.json canonical paths are isolated recovery staging targets, not a merged game. Only the exact source/base/overlay/cache references above define this build. Never automatically overlay other historical drafts.",
+  "publication_scope": "Project files only; no private conversations, credentials or machine-specific raw logs."
+}
