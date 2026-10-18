@@ -1,0 +1,33 @@
+{
+  "native_result": "PASS_PARTIAL_FRONT_SAMPLE",
+  "stage_exact": 3153,
+  "guard_sources_exact": 20,
+  "screenshots_sha_exact": 8,
+  "script_errors": 0,
+  "errors": [
+    "ERROR: Condition \"status < 0\" is true. Returning: ERR_CANT_OPEN"
+  ],
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "errors": [],
+    "seconds": 0.025881015999857482
+  },
+  "source_released": true,
+  "cold_startup_previous_hold": "UNRESOLVED_NOT_REPRODUCED_THIS_RUN",
+  "art_acceptance": "ACCEPTED_FRONT_INTEGRATION_SAMPLE_ONLY",
+  "native_OS_input": false,
+  "cpu_io_clear": true,
+  "derivation": {
+    "original_sha256": "18a7a67101ba5334bf8001e2c412881eadc9d49d687ed33427fc6a10274d5746",
+    "removed_fields": [
+      "cleanup.reaps"
+    ],
+    "updated_fields": [
+      "art_acceptance"
+    ],
+    "scope": "Front idle/walk/basic/Q1 integration reference. Other directions, complete skill set and final art acceptance remain outside this evidence."
+  }
+}

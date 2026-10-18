@@ -1,0 +1,1125 @@
+{
+  "accepted": true,
+  "coverage": {
+    "Q1_events": [
+      {
+        "cast_id": 2,
+        "combat_level_id": "normal-floor-3950235/first_floor/r01a",
+        "front_direction": "(0.0, 0.0, 1.0)",
+        "front_distance": 0.0,
+        "front_position": "(0.0, 0.0, 5.760002)",
+        "generation": 1,
+        "gesture_id": "1:normal-floor-3950235/first_floor/r01a:gesture:1",
+        "hit_target_ids": [],
+        "kind": "ink_q1_released",
+        "path": [
+          "(0.0, 0.0, 5.760002)",
+          "(0.0, 0.0, 6.093336)",
+          "(0.0, 0.0, 6.426668)",
+          "(0.0, 0.0, 6.893335)",
+          "(0.0, 0.0, 7.293333)",
+          "(0.0, 0.0, 7.626669)",
+          "(0.0, 0.0, 7.960001)",
+          "(0.0, 0.0, 8.226669)"
+        ],
+        "path_length": 2.46666717529297,
+        "preview_only": false,
+        "real_time": 2.46,
+        "released_at": 2.46,
+        "room_id": "normal-floor-3950235/first_floor/r01a",
+        "segment_index": 0,
+        "sequence": 12,
+        "source": "q1",
+        "speed": 24.0,
+        "travel_fraction": 0.0,
+        "wave": 1,
+        "wave_id": "1:normal-floor-3950235/first_floor/r01a:motion:2",
+        "width": 1.6,
+        "world_time": 2.46
+      }
+    ],
+    "Q1_release_input": {
+      "accepted": true,
+      "cast_id": 2,
+      "consumed": true,
+      "gesture_id": "1:normal-floor-3950235/first_floor/r01a:gesture:1",
+      "reason": "ok",
+      "state_revision": 146,
+      "wave_id": "1:normal-floor-3950235/first_floor/r01a:motion:2"
+    },
+    "actor_id": 510010591148,
+    "basic_events": [
+      {
+        "cast_id": 1,
+        "combat_level_id": "normal-floor-3950235/first_floor/r01a",
+        "front_direction": "(0.0, 0.0, 1.0)",
+        "front_distance": 0.0,
+        "front_position": "(0.0, 0.0, 0.760002)",
+        "generation": 1,
+        "hit_target_ids": [],
+        "kind": "ink_basic_released",
+        "path": [
+          "(0.0, 0.0, 0.760002)",
+          "(0.0, 0.0, 9.760002)"
+        ],
+        "path_length": 9.0,
+        "real_time": 0.980000000000001,
+        "released_at": 0.980000000000001,
+        "room_id": "normal-floor-3950235/first_floor/r01a",
+        "segment_index": 0,
+        "sequence": 7,
+        "source": "attack",
+        "speed": 22.0,
+        "travel_fraction": 0.0,
+        "wave": 1,
+        "wave_id": "1:normal-floor-3950235/first_floor/r01a:motion:1",
+        "width": 0.55,
+        "world_time": 0.980000000000001
+      }
+    ],
+    "basic_input": {
+      "accepted": true,
+      "cast_id": 1,
+      "projectile_id": "1:normal-floor-3950235/first_floor/r01a:motion:1",
+      "reason": "ok",
+      "state_revision": 61
+    },
+    "moving_cast_displacement": 9.35999202728271,
+    "original_close": {
+      "accepted": true,
+      "receipt": {
+        "accepted": true,
+        "evidence_only": true,
+        "global_progress_saved": false,
+        "last_diagnostic_write_accepted": true,
+        "reason": "host_closed_without_settlement",
+        "state": {
+          "active_node_room": "normal-floor-3950235/first_floor/r01a",
+          "boss_registration": {
+
+          },
+          "cleared": [],
+          "content_status": "developer_proposal",
+          "fault": {
+
+          },
+          "floor_id": "first_floor",
+          "full_normal_floor_proven": false,
+          "generation": 1,
+          "kill_receipts": {
+
+          },
+          "live_lv4_pool": "TEN_REAL_HOOKS_CANDIDATE",
+          "node_count": 12,
+          "node_index": 0,
+          "production_ready": false,
+          "rest_settlements": [],
+          "room_id": "normal-floor-3950235/first_floor/r01a",
+          "route_version": "user-route-runtime01",
+          "row_state": {
+            "completed_rows": [],
+            "entry_receipt": {
+              "identity": {
+                "node_id": "r01a",
+                "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+                "row_number": 1,
+                "row_state_instance_id": "row-state--9223371766087284704",
+                "run_id": "normal-floor-3950235",
+                "selected_binding_id": "50b53ae42822df84fe7646d4a83b680d7469da7e27d159957aa938b3f16c2a66"
+              },
+              "kind": 0,
+              "payload": {
+                "boss_actor_id": "",
+                "commerce_commit_id": "commerce-f7624604ee785477a78c4c614ece36129cea7ee3edddae500166547dd22cf5ad",
+                "encounter_id": "encounter-4ff151c773b962fb606b7740f72122fad44bc9fa5a318d4c70dbcdf1ebab28cd",
+                "entry_id": "entry-8df6a3103947dba16574fe265c847cb84fcd3f356c46f08628c691f1f88acc49",
+                "expected_actor_ids": [
+                  "enemy_1",
+                  "enemy_2",
+                  "enemy_3",
+                  "enemy_4"
+                ],
+                "generation": 1,
+                "room_id": "normal-floor-3950235/first_floor/r01a"
+              },
+              "receipt_id": "entry-8df6a3103947dba16574fe265c847cb84fcd3f356c46f08628c691f1f88acc49"
+            },
+            "ready_for_owner_boss_settlement": false,
+            "receipt_evidence": "typed_caller_assertion_only",
+            "release": false,
+            "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+            "row_number": 1,
+            "row_state_instance_id": "row-state--9223371766087284704",
+            "run_id": "normal-floor-3950235",
+            "schema_version": 5,
+            "selected_identity": {
+              "node_id": "r01a",
+              "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+              "row_number": 1,
+              "row_state_instance_id": "row-state--9223371766087284704",
+              "run_id": "normal-floor-3950235",
+              "selected_binding_id": "50b53ae42822df84fe7646d4a83b680d7469da7e27d159957aa938b3f16c2a66"
+            },
+            "selected_node": {
+              "next": [
+                "r02a",
+                "r02b"
+              ],
+              "node_id": "r01a",
+              "payload": {
+                "kind": "ordinary",
+                "node_type": "combat",
+                "roster": [
+                  {
+                    "kind": "minion",
+                    "position": [
+                      -4.0,
+                      0.0,
+                      -6.0
+                    ]
+                  },
+                  {
+                    "kind": "minion",
+                    "position": [
+                      4.0,
+                      0.0,
+                      -6.0
+                    ]
+                  },
+                  {
+                    "kind": "minion",
+                    "position": [
+                      -6.0,
+                      0.0,
+                      3.0
+                    ]
+                  },
+                  {
+                    "kind": "minion",
+                    "position": [
+                      6.0,
+                      0.0,
+                      3.0
+                    ]
+                  }
+                ]
+              },
+              "payload_ref": "ordinary_a",
+              "row_number": 1
+            },
+            "selection_receipts": [
+              {
+                "identity": {
+                  "node_id": "r01a",
+                  "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+                  "row_number": 1,
+                  "row_state_instance_id": "row-state--9223371766087284704",
+                  "run_id": "normal-floor-3950235",
+                  "selected_binding_id": "50b53ae42822df84fe7646d4a83b680d7469da7e27d159957aa938b3f16c2a66"
+                },
+                "node": {
+                  "next": [
+                    "r02a",
+                    "r02b"
+                  ],
+                  "node_id": "r01a",
+                  "payload": {
+                    "kind": "ordinary",
+                    "node_type": "combat",
+                    "roster": [
+                      {
+                        "kind": "minion",
+                        "position": [
+                          -4.0,
+                          0.0,
+                          -6.0
+                        ]
+                      },
+                      {
+                        "kind": "minion",
+                        "position": [
+                          4.0,
+                          0.0,
+                          -6.0
+                        ]
+                      },
+                      {
+                        "kind": "minion",
+                        "position": [
+                          -6.0,
+                          0.0,
+                          3.0
+                        ]
+                      },
+                      {
+                        "kind": "minion",
+                        "position": [
+                          6.0,
+                          0.0,
+                          3.0
+                        ]
+                      }
+                    ]
+                  },
+                  "payload_ref": "ordinary_a",
+                  "row_number": 1
+                }
+              }
+            ],
+            "settlement_performed": false,
+            "status": "entered"
+          },
+          "run_id": "normal-floor-3950235",
+          "service_present": false,
+          "service_ready": false,
+          "settlement": {
+
+          },
+          "status": "aborted"
+        }
+      }
+    },
+    "original_entry_receipt": {
+      "accepted": true,
+      "entry": {
+        "identity": {
+          "node_id": "r01a",
+          "route_binding_id": "9929b02e7fda70ce9755cb62af65c6d1edaa7e74b74076d62f02c00d1902a2c4",
+          "row_number": 1,
+          "row_state_instance_id": "row-state--9223371766087284704",
+          "run_id": "normal-floor-3950235",
+          "selected_binding_id": "50b53ae42822df84fe7646d4a83b680d7469da7e27d159957aa938b3f16c2a66"
+        },
+        "kind": 0,
+        "payload": {
+          "boss_actor_id": "",
+          "commerce_commit_id": "commerce-f7624604ee785477a78c4c614ece36129cea7ee3edddae500166547dd22cf5ad",
+          "encounter_id": "encounter-4ff151c773b962fb606b7740f72122fad44bc9fa5a318d4c70dbcdf1ebab28cd",
+          "entry_id": "entry-8df6a3103947dba16574fe265c847cb84fcd3f356c46f08628c691f1f88acc49",
+          "expected_actor_ids": [
+            "enemy_1",
+            "enemy_2",
+            "enemy_3",
+            "enemy_4"
+          ],
+          "generation": 1,
+          "room_id": "normal-floor-3950235/first_floor/r01a"
+        },
+        "receipt_id": "entry-8df6a3103947dba16574fe265c847cb84fcd3f356c46f08628c691f1f88acc49"
+      },
+      "reason": "selected_node_entered"
+    },
+    "pause": {
+      "draws": 3,
+      "signature": {
+        "actor_transform": "[X: (-0.309017, 0.0, -0.951056), Y: (0.0, 1.0, 0.0), Z: (0.951056, 0.0, -0.309017), O: (0.0, 0.0, 0.760002)]",
+        "display_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.766044, -0.642788), Z: (0.0, 0.642788, 0.766044), O: (0.0, 0.0, 0.760002)]",
+        "meshes": [
+          {
+            "arrays_hash": 137123986,
+            "name": "legs",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]"
+          },
+          {
+            "arrays_hash": 921492098,
+            "name": "sleeve_back",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0005)]"
+          },
+          {
+            "arrays_hash": 1007255382,
+            "name": "patch",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.001)]"
+          },
+          {
+            "arrays_hash": 170337406,
+            "name": "body",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0015)]"
+          },
+          {
+            "arrays_hash": 515089455,
+            "name": "head",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.002)]"
+          },
+          {
+            "arrays_hash": 921492098,
+            "name": "sleeve_front",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0025)]"
+          },
+          {
+            "arrays_hash": 1139038115,
+            "name": "hand",
+            "transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.003)]"
+          }
+        ],
+        "receipt": {
+          "accepted": true,
+          "gait_phase": 3.01592532221817,
+          "hidden_skin_count": 9,
+          "moving": false,
+          "original_alias": "",
+          "original_event_kind": "encounter_started",
+          "original_event_serial": 6,
+          "phase": "idle",
+          "progress": 0.0,
+          "release_origin_fraction": -1.0,
+          "renderer": {
+            "accepted": true,
+            "depth_test": true,
+            "direct_world_mesh": true,
+            "minimum_area": 10.1603918075562,
+            "world_height": 2.181
+          },
+          "scope": [
+            262345328529,
+            -9223371774056462431,
+            "normal-floor-3950235/first_floor/r01a",
+            1
+          ],
+          "source_started": 0.980000000000001,
+          "source_time": 0.980000000000001
+        },
+        "source_time": 0.980000000000001
+      }
+    },
+    "player_id": 515798731459,
+    "request_start_after_usec": 857961,
+    "request_start_before_usec": 857909,
+    "skeleton_id": 515630958561
+  },
+  "draw_count": 53,
+  "elapsed_ms": 23705,
+  "native_OS_input": false,
+  "raw_bytes": 29491200,
+  "reason": "",
+  "scope": "front_idle_walk_basic_Q1_partial_world_sample",
+  "screenshots": [
+    {
+      "draw": 24,
+      "name": "01_front_walk",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 3.01592532221817,
+        "hidden_skin_count": 9,
+        "moving": true,
+        "original_alias": "",
+        "original_event_kind": "encounter_started",
+        "original_event_serial": 6,
+        "phase": "idle",
+        "progress": 0.0,
+        "release_origin_fraction": -1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 10.1603918075562,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 0.86,
+        "source_time": 0.86
+      },
+      "sha256": "cc46e1683868e9bf03af24b1468472247142efad20dec9aaabd07a6e4abe651c",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 0.86
+    },
+    {
+      "draw": 25,
+      "name": "00_front_idle",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 3.01592532221817,
+        "hidden_skin_count": 9,
+        "moving": false,
+        "original_alias": "",
+        "original_event_kind": "encounter_started",
+        "original_event_serial": 6,
+        "phase": "idle",
+        "progress": 0.0,
+        "release_origin_fraction": -1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 10.1603918075562,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 0.980000000000001,
+        "source_time": 0.980000000000001
+      },
+      "sha256": "668d7ed2847821888439b9c90aa904b5ebefa69e36cbe4a6d574039e93a0b2cb",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 0.980000000000001
+    },
+    {
+      "draw": 30,
+      "name": "02_front_basic",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 3.01592532221817,
+        "hidden_skin_count": 9,
+        "moving": false,
+        "original_alias": "basic_upper",
+        "original_event_kind": "ink_basic_released",
+        "original_event_serial": 7,
+        "phase": "basic",
+        "progress": 0.128571429050394,
+        "release_origin_fraction": -1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 9.64438533782959,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 0.980000000000001,
+        "source_time": 1.04
+      },
+      "sha256": "59add598a2a01884434359798d39ba4438ef164fbb26762d4fc76dd861d2ea39",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 1.04
+    },
+    {
+      "draw": 36,
+      "name": "03_moving_Q1_draw",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 5.52919954495854,
+        "hidden_skin_count": 9,
+        "moving": true,
+        "original_alias": "q1_draw_upper",
+        "original_event_kind": "ink_q1_preview_started",
+        "original_event_serial": 10,
+        "phase": "draw",
+        "progress": 0.266666666666667,
+        "release_origin_fraction": -1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 8.04242992401123,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 1.52,
+        "source_time": 1.72
+      },
+      "sha256": "a78bde314109031e74c765ad14ec30f95c9247f8aeef33f81b20cb2f382fb1c7",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 1.72
+    },
+    {
+      "draw": 42,
+      "name": "04_moving_Q1_hold",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 1.00529870355665,
+        "hidden_skin_count": 9,
+        "moving": true,
+        "original_alias": "q1_hold_upper",
+        "original_event_kind": "ink_q1_preview_frozen",
+        "original_event_serial": 11,
+        "phase": "hold",
+        "progress": 1.0,
+        "release_origin_fraction": -1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 1.53425121307373,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 2.27,
+        "source_time": 2.36
+      },
+      "sha256": "395d96af70e3bb78ab2affc9de093f29ef6ec93d41ec2bc717a5241d16c04180",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 2.36
+    },
+    {
+      "draw": 44,
+      "name": "05_moving_Q1_release",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 3.26724325698082,
+        "hidden_skin_count": 9,
+        "moving": true,
+        "original_alias": "q1_release_upper",
+        "original_event_kind": "ink_q1_released",
+        "original_event_serial": 12,
+        "phase": "release",
+        "progress": 0.133333328035143,
+        "release_origin_fraction": 1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 1.53425121307373,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 2.46,
+        "source_time": 2.54
+      },
+      "sha256": "ff759ec28cd0dd353207a01ee4a021cbb81d2977e6bdce636b8ebf20a72f8364",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 2.54
+    },
+    {
+      "draw": 50,
+      "name": "06_front_return_idle",
+      "plan": {
+        "accepted": true,
+        "gait_phase": 3.76989161007374,
+        "hidden_skin_count": 9,
+        "moving": false,
+        "original_alias": "",
+        "original_event_kind": "ink_q1_finished",
+        "original_event_serial": 13,
+        "phase": "idle",
+        "progress": 0.0,
+        "release_origin_fraction": 1.0,
+        "renderer": {
+          "accepted": true,
+          "depth_test": true,
+          "direct_world_mesh": true,
+          "minimum_area": 1.53425121307373,
+          "world_height": 2.181
+        },
+        "scope": [
+          262345328529,
+          -9223371774056462431,
+          "normal-floor-3950235/first_floor/r01a",
+          1
+        ],
+        "source_started": 3.18,
+        "source_time": 3.18
+      },
+      "sha256": "14533766e5bfdb50b82019a4cb3dbf5e2398a2d80c276e63e8ba7f3dd66ed3f6",
+      "skin_hidden": true,
+      "skin_restored": false,
+      "source_time": 3.18
+    },
+    {
+      "draw": 51,
+      "name": "07_original_direction_fallback",
+      "plan": {
+        "accepted": false,
+        "reason": "uncovered_direction",
+        "restoration_complete": true
+      },
+      "sha256": "8d664d412c3c04d545cb9852abf7730a7d204cb8c676ad299da9214c2efb16fb",
+      "skin_hidden": false,
+      "skin_restored": true,
+      "source_time": 3.28
+    }
+  ],
+  "source_released": true,
+  "startup_context": {
+    "attempted": true,
+    "draw": 51,
+    "floor_error": "",
+    "host_start_ticks": 3796117,
+    "initial_started": true,
+    "last_size": "(1280.0, 720.0)",
+    "now_usec": 22157120,
+    "pending": false,
+    "process": 50,
+    "receipt": {
+      "actor_candidate": "gesture06_exact_intent_rotation_leaf",
+      "after": {
+        "audio_command_count": 3,
+        "audio_commands_sha256": "1ad196dfe86588bd3ace6a5a5d872714bd85f3387c65a67cec82af42be128b9c",
+        "audio_dropped_count": 0,
+        "audio_dropped_sha256": "3c88bf13b58cba9ca7fe10c55db47931f52b52975cf1e9eaa0c9b0ec29c7c6be",
+        "audio_nonzero_pcm_frames": 0,
+        "audio_players_playing": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "events_sha256": "3c88bf13b58cba9ca7fe10c55db47931f52b52975cf1e9eaa0c9b0ec29c7c6be",
+        "full_sha256": "b4ab58eec05fa4ddf57180acae12a0b1da2e06a3d9da8ef588e2da036152896b",
+        "ink_sha256": "1064d4b22d172fb940e1d7ed3705bff28421d2a5953608318307cecc98fd5b14",
+        "input_router_gesture": "",
+        "input_router_keys_sha256": "4d159113222bfeb85fbe717cc2393ee8a6a85b7ce5ac1791c4eade5e3dd6de41",
+        "input_router_left_physical": false,
+        "input_router_serial": 2,
+        "paused": true,
+        "rng_state": "6418756434854113447"
+      },
+      "audio_commands_by_preparation": 0,
+      "before": {
+        "audio_command_count": 3,
+        "audio_commands_sha256": "1ad196dfe86588bd3ace6a5a5d872714bd85f3387c65a67cec82af42be128b9c",
+        "audio_dropped_count": 0,
+        "audio_dropped_sha256": "3c88bf13b58cba9ca7fe10c55db47931f52b52975cf1e9eaa0c9b0ec29c7c6be",
+        "audio_nonzero_pcm_frames": 0,
+        "audio_players_playing": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "events_sha256": "3c88bf13b58cba9ca7fe10c55db47931f52b52975cf1e9eaa0c9b0ec29c7c6be",
+        "full_sha256": "b4ab58eec05fa4ddf57180acae12a0b1da2e06a3d9da8ef588e2da036152896b",
+        "ink_sha256": "1064d4b22d172fb940e1d7ed3705bff28421d2a5953608318307cecc98fd5b14",
+        "input_router_gesture": "",
+        "input_router_keys_sha256": "4d159113222bfeb85fbe717cc2393ee8a6a85b7ce5ac1791c4eade5e3dd6de41",
+        "input_router_left_physical": false,
+        "input_router_serial": 2,
+        "paused": true,
+        "rng_state": "6418756434854113447"
+      },
+      "blocked_input_events": 0,
+      "effect_candidate": "effect05_native_alpha",
+      "elapsed_wall_usec": 1622345,
+      "environment_after": {
+        "actor_id": 510010591148,
+        "actor_script": "res://visual_rework_20261009/runtime_actor.gd",
+        "camera_id": 338950096610,
+        "camera_size": 18.0,
+        "camera_transform": "Transform3D(1, 0, 0, 0, 0.76604444, 0.64278764, 0, -0.64278764, 0.76604444, 0, 20.138391, 28)",
+        "contact_black_id": -9223371697334253803,
+        "contact_mineral_id": -9223371697300699246,
+        "contact_wet_id": -9223371697317476588,
+        "environment_id": -9223371698156337450,
+        "flow_asset_binding": "961b39f9fa77cd34ce64b4ebce65bb474cb494e7d7cc90507ad611a9ab06bb4a",
+        "flow_material_id": -9223371697250367769,
+        "flow_pigment_id": -9223371697518802753,
+        "flow_shader_id": -9223371862405281445,
+        "follow02_actor_sha": "e541fb196e3daa9460d56eecf93d04e58ef34e1e7c9449ff6319a97b90090b72",
+        "follow02_helper_sha": "90129923c7b537b601c7115b70d512635a4fd7b7f1c183feeccbfaafad4256e6",
+        "follow02_solver_id": -9223371526793852273,
+        "gait06_actor_sha": "17d5dfe046a45b47daaf7e6f650a9bf3f8ca36ab8739997ed79471a3fc54a1c6",
+        "gait06_asset_sha": "1aec676cb4f145e39c38ed4ca49e6f134fea866574c021cd16ace129c10ba2b5",
+        "gait06_binding_sha": "7cf8f33ace6a268c4e21c674f1f11ef762eccfe86e82b04bc46dbeafa9372c80",
+        "gait06_lower_instance_id": -9223371510217962863,
+        "gait06_lower_sha": "73fafd76ac84971dd8911fba22dbab3f01889f6477a10a363adfa53af9e5ceb9",
+        "gait06_phase_sha": "6e10debf1774aa735b6728ead59d7f3f85922434db4c64e620670af4b4a379f5",
+        "gait06_private_clip_ids": {
+          "gait06_strafe_left_lower": -9223371510251517221,
+          "gait06_strafe_right_lower": -9223371510234740004,
+          "gait06_walk_back_lower": -9223371510268294440,
+          "gait06_walk_lower": -9223371510285071657
+        },
+        "gait06_report_sha": "d3fb391d6d26a96f5dd1278f45cf3ce79ceb0153938d2dbee7b5b9a320d2170c",
+        "gesture_intent_binding": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+        "main_material_ids": [
+          -9223371697401362227,
+          -9223371697384585450
+        ],
+        "ordinary_visual_actor_sha": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66",
+        "ordinary_visual_asset_sha": "2134978c8899ce3f94f785870159a1d46f15100ee2fd06dd583db37910bc5c1a",
+        "ordinary_visual_binding_sha": "b10cee035d0f81666871e6a3bb1bb6c05255df27e0e13cdbecdccdab08b055c9",
+        "ordinary_visual_clock_id": -9223371526777075783,
+        "ordinary_visual_parent_actor_sha": "0a7fda57ef390040e815c62fbf9637b880e1066d75d53154043549eee0dd6a12",
+        "paint_texture_id": -9223371697720129333,
+        "presenter_id": 338983651091,
+        "presenter_script": "res://tests/ink_q1_flow_20261005/effect05/q1_effect_presenter.gd",
+        "presenter_viewport_id": 26508002725,
+        "preview_material_id": -9223371697367807799,
+        "preview_under_material_id": -9223371697351030585,
+        "recovery08_actor_sha": "e24d393f977224970f73143933dab6141674fb6406ed5cdecb8d2a9094b01e61",
+        "recovery08_asset_sha": "8101c8416dcef08bdc5f9190a9b3a6f9c4441a4eaed02707011e1c0b635bff74",
+        "recovery08_binding_sha": "022ae3172e5c0873fcefb951e1e6f146225a61a6178cc9962b7a59c44b9e4116",
+        "recovery08_release_clip_id": -9223371508439577888,
+        "recovery08_report_sha": "ef718fccd49e8448fa23bda0b36bb2e4e524d49d22d72dd2c418016321e144dd",
+        "root_return_actor_id": 510010591148,
+        "root_return_actor_sha": "8856e856563d463dd816ebe068cb4d2c357870bf8d4ee18d58b23c263abef0a6",
+        "root_return_helper_sha": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+        "side_carry_actor_sha": "df264a8f68d3329def34fe0cee0d7c542dbf67a32255ff362c8586b56d3626fc",
+        "side_carry_asset_sha": "06b2f5bb05bef2d3035c151df709c5c60671122bb7cdf3851449199fb0d99049",
+        "side_carry_binding_sha": "4356fe80c7887254db9299b934aa5f8ccd67150053e4233c38f8c127e6612a03",
+        "side_carry_private_clip_ids": {
+          "brush_carry_upper": -9223371512013124958,
+          "q1_draw_upper": -9223371512063456808,
+          "q1_hold_upper": -9223371512046679385,
+          "q1_release_upper": -9223371508439577888
+        },
+        "side_carry_report_sha": "eae43d385dffafc395993e36ef4782cbf1aef28b43c47dbd837997c9e57df47a",
+        "stroke_texture_id": -9223371697518802753,
+        "viewport_id": 26508002725,
+        "viewport_size": "(1280.0, 720.0)",
+        "world_id": -9223372010279664214
+      },
+      "environment_before": {
+        "actor_id": 510010591148,
+        "actor_script": "res://visual_rework_20261009/runtime_actor.gd",
+        "camera_id": 338950096610,
+        "camera_size": 18.0,
+        "camera_transform": "Transform3D(1, 0, 0, 0, 0.76604444, 0.64278764, 0, -0.64278764, 0.76604444, 0, 20.138391, 28)",
+        "contact_black_id": -9223371697334253803,
+        "contact_mineral_id": -9223371697300699246,
+        "contact_wet_id": -9223371697317476588,
+        "environment_id": -9223371698156337450,
+        "flow_asset_binding": "961b39f9fa77cd34ce64b4ebce65bb474cb494e7d7cc90507ad611a9ab06bb4a",
+        "flow_material_id": -9223371697250367769,
+        "flow_pigment_id": -9223371697518802753,
+        "flow_shader_id": -9223371862405281445,
+        "follow02_actor_sha": "e541fb196e3daa9460d56eecf93d04e58ef34e1e7c9449ff6319a97b90090b72",
+        "follow02_helper_sha": "90129923c7b537b601c7115b70d512635a4fd7b7f1c183feeccbfaafad4256e6",
+        "follow02_solver_id": -9223371526793852273,
+        "gait06_actor_sha": "17d5dfe046a45b47daaf7e6f650a9bf3f8ca36ab8739997ed79471a3fc54a1c6",
+        "gait06_asset_sha": "1aec676cb4f145e39c38ed4ca49e6f134fea866574c021cd16ace129c10ba2b5",
+        "gait06_binding_sha": "7cf8f33ace6a268c4e21c674f1f11ef762eccfe86e82b04bc46dbeafa9372c80",
+        "gait06_lower_instance_id": -9223371510217962863,
+        "gait06_lower_sha": "73fafd76ac84971dd8911fba22dbab3f01889f6477a10a363adfa53af9e5ceb9",
+        "gait06_phase_sha": "6e10debf1774aa735b6728ead59d7f3f85922434db4c64e620670af4b4a379f5",
+        "gait06_private_clip_ids": {
+          "gait06_strafe_left_lower": -9223371510251517221,
+          "gait06_strafe_right_lower": -9223371510234740004,
+          "gait06_walk_back_lower": -9223371510268294440,
+          "gait06_walk_lower": -9223371510285071657
+        },
+        "gait06_report_sha": "d3fb391d6d26a96f5dd1278f45cf3ce79ceb0153938d2dbee7b5b9a320d2170c",
+        "gesture_intent_binding": "2dc112ec9da4bcfb8a95964af338114c1b6d95ca78a98f2665e69d185ea75bb8",
+        "main_material_ids": [
+          -9223371697401362227,
+          -9223371697384585450
+        ],
+        "ordinary_visual_actor_sha": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66",
+        "ordinary_visual_asset_sha": "2134978c8899ce3f94f785870159a1d46f15100ee2fd06dd583db37910bc5c1a",
+        "ordinary_visual_binding_sha": "b10cee035d0f81666871e6a3bb1bb6c05255df27e0e13cdbecdccdab08b055c9",
+        "ordinary_visual_clock_id": -9223371526777075783,
+        "ordinary_visual_parent_actor_sha": "0a7fda57ef390040e815c62fbf9637b880e1066d75d53154043549eee0dd6a12",
+        "paint_texture_id": -9223371697720129333,
+        "presenter_id": 338983651091,
+        "presenter_script": "res://tests/ink_q1_flow_20261005/effect05/q1_effect_presenter.gd",
+        "presenter_viewport_id": 26508002725,
+        "preview_material_id": -9223371697367807799,
+        "preview_under_material_id": -9223371697351030585,
+        "recovery08_actor_sha": "e24d393f977224970f73143933dab6141674fb6406ed5cdecb8d2a9094b01e61",
+        "recovery08_asset_sha": "8101c8416dcef08bdc5f9190a9b3a6f9c4441a4eaed02707011e1c0b635bff74",
+        "recovery08_binding_sha": "022ae3172e5c0873fcefb951e1e6f146225a61a6178cc9962b7a59c44b9e4116",
+        "recovery08_release_clip_id": -9223371508439577888,
+        "recovery08_report_sha": "ef718fccd49e8448fa23bda0b36bb2e4e524d49d22d72dd2c418016321e144dd",
+        "root_return_actor_id": 510010591148,
+        "root_return_actor_sha": "8856e856563d463dd816ebe068cb4d2c357870bf8d4ee18d58b23c263abef0a6",
+        "root_return_helper_sha": "f212a7d7fce95fed02726856e1f478d33bd6671530377d71d90bbd28b3cd56e1",
+        "side_carry_actor_sha": "df264a8f68d3329def34fe0cee0d7c542dbf67a32255ff362c8586b56d3626fc",
+        "side_carry_asset_sha": "06b2f5bb05bef2d3035c151df709c5c60671122bb7cdf3851449199fb0d99049",
+        "side_carry_binding_sha": "4356fe80c7887254db9299b934aa5f8ccd67150053e4233c38f8c127e6612a03",
+        "side_carry_private_clip_ids": {
+          "brush_carry_upper": -9223371512013124958,
+          "q1_draw_upper": -9223371512063456808,
+          "q1_hold_upper": -9223371512046679385,
+          "q1_release_upper": -9223371508439577888
+        },
+        "side_carry_report_sha": "eae43d385dffafc395993e36ef4782cbf1aef28b43c47dbd837997c9e57df47a",
+        "stroke_texture_id": -9223371697518802753,
+        "viewport_id": 26508002725,
+        "viewport_size": "(1280.0, 720.0)",
+        "world_id": -9223372010279664214
+      },
+      "explicit_diagnostic_pause": false,
+      "failures": [],
+      "first_actual_input_pending": true,
+      "fixture_sha256": "04c040efe991dc0a3ce30daf6ee3546ca9f7078d82d79a744cac8a57620d6166",
+      "input_blocked_during_preparation": true,
+      "normal_run": false,
+      "performance_passed": false,
+      "private_viewport_created": false,
+      "samples": [
+        {
+          "actual_main_viewport_draws": 2,
+          "diagnostics": {
+            "bounded_warmup_complete": false,
+            "contact_count": 0,
+            "emission": false,
+            "last_error": "",
+            "original_rgba_texture": "res://tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png",
+            "particles": false,
+            "pooled_mesh_nodes": 0,
+            "residue_count": 0,
+            "revision": 68,
+            "scope": "ink-style-specimen-0:1.0",
+            "single_stroke_texture": "res://tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+            "source_mutation": false,
+            "source_time": 1.22,
+            "status": "presented_not_visually_accepted",
+            "strong_wave_count": 0,
+            "triangles": 0,
+            "visual_revision": 7,
+            "wave_geometry": []
+          },
+          "environment_and_resources_unchanged": true,
+          "fixture": "preview",
+          "fixture_argument_unchanged": true,
+          "fixture_source_time": 1.22,
+          "geometry_errors": [],
+          "main_viewport_draw_calls": 307.0,
+          "mesh_before_draws": [
+            {
+              "node": "SourcePathPreview",
+              "same_main_viewport": true,
+              "surfaces": [
+                {
+                  "in_frustum_vertices": 6,
+                  "material_id": -9223371697351030585,
+                  "uv": 0,
+                  "uv2": 0,
+                  "vertices": 6
+                },
+                {
+                  "in_frustum_vertices": 18,
+                  "material_id": -9223371697367807799,
+                  "uv": 0,
+                  "uv2": 0,
+                  "vertices": 18
+                }
+              ],
+              "visible_in_tree": true
+            }
+          ],
+          "original_source_line": 4275.0,
+          "source_differences": []
+        },
+        {
+          "actual_main_viewport_draws": 2,
+          "diagnostics": {
+            "bounded_warmup_complete": false,
+            "contact_count": 1,
+            "emission": false,
+            "last_error": "",
+            "original_rgba_texture": "res://tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png",
+            "particles": false,
+            "pooled_mesh_nodes": 0,
+            "residue_count": 0,
+            "revision": 78,
+            "scope": "ink-style-specimen-0:1.0",
+            "single_stroke_texture": "res://tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+            "source_mutation": false,
+            "source_time": 1.36,
+            "status": "presented_not_visually_accepted",
+            "strong_wave_count": 1,
+            "triangles": 744,
+            "visual_revision": "effect05_native_alpha_pressure_mapping",
+            "wave_geometry": [
+              {
+                "exact_segment_ids": [
+                  "1:ink-style-specimen-0:motion:1:segment:0"
+                ],
+                "fixed_origin": "(0.000002, 0.0, 1.191252)",
+                "fly_white_source": "original_rgba_alpha",
+                "front_arc": 3.36,
+                "front_profile": "off_center_tip_plus_inward_setback_only",
+                "height_cap_m": 0.067,
+                "max_arc": 3.36,
+                "max_lateral": 0.688529123979639,
+                "max_layers": 2,
+                "maximum_front_setback_m": 0.635,
+                "min_arc": 0.0,
+                "original_pigment": "res://tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+                "procedural_slits": 0,
+                "residue_only": false,
+                "shared_full_width_uv": true,
+                "solid_body_layers": 1,
+                "source_age": 0.14,
+                "source_half_width": 0.8,
+                "stationary_pigment_coordinates": true,
+                "tail_profile": "tapered_side_release",
+                "triangles": 744,
+                "wave_id": "1:ink-style-specimen-0:motion:1",
+                "wet_underwash_layers": 1
+              }
+            ]
+          },
+          "environment_and_resources_unchanged": true,
+          "fixture": "wave_contact",
+          "fixture_argument_unchanged": true,
+          "fixture_source_time": 1.36,
+          "geometry_errors": [],
+          "main_viewport_draw_calls": 309.0,
+          "mesh_before_draws": [
+            {
+              "node": "SourcePathPreview",
+              "same_main_viewport": true,
+              "surfaces": [],
+              "visible_in_tree": true
+            },
+            {
+              "node": "LowWave_0",
+              "same_main_viewport": true,
+              "surfaces": [
+                {
+                  "in_frustum_vertices": 2232,
+                  "material_id": -9223371697250367769,
+                  "uv": 2232,
+                  "uv2": 0,
+                  "vertices": 2232
+                }
+              ],
+              "visible_in_tree": true
+            },
+            {
+              "node": "Contact_1",
+              "same_main_viewport": true,
+              "surfaces": [
+                {
+                  "in_frustum_vertices": 24,
+                  "material_id": -9223371697317476588,
+                  "uv": 24,
+                  "uv2": 0,
+                  "vertices": 24
+                },
+                {
+                  "in_frustum_vertices": 18,
+                  "material_id": -9223371697334253803,
+                  "uv": 18,
+                  "uv2": 0,
+                  "vertices": 18
+                },
+                {
+                  "in_frustum_vertices": 3,
+                  "material_id": -9223371697300699246,
+                  "uv": 0,
+                  "uv2": 0,
+                  "vertices": 3
+                }
+              ],
+              "visible_in_tree": true
+            }
+          ],
+          "original_source_line": 4276.0,
+          "source_differences": []
+        },
+        {
+          "actual_main_viewport_draws": 2,
+          "diagnostics": {
+            "bounded_warmup_complete": false,
+            "contact_count": 0,
+            "emission": false,
+            "last_error": "",
+            "original_rgba_texture": "res://tests/ink_q1_effect_20261004/revision03/q1_original_ink_brush.png",
+            "particles": false,
+            "pooled_mesh_nodes": 1,
+            "residue_count": 1,
+            "revision": 84,
+            "scope": "ink-style-specimen-0:1.0",
+            "single_stroke_texture": "res://tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+            "source_mutation": false,
+            "source_time": 1.48,
+            "status": "presented_not_visually_accepted",
+            "strong_wave_count": 0,
+            "triangles": 492,
+            "visual_revision": "effect05_native_alpha_pressure_mapping",
+            "wave_geometry": [
+              {
+                "exact_segment_ids": [
+                  "1:ink-style-specimen-0:motion:1:segment:0"
+                ],
+                "fixed_origin": "(0.000002, 0.0, 1.191252)",
+                "fly_white_source": "original_rgba_alpha",
+                "front_arc": 5.91315841674805,
+                "front_profile": "off_center_tip_plus_inward_setback_only",
+                "height_cap_m": 0.067,
+                "max_arc": 5.91315841674805,
+                "max_lateral": 0.426481465671671,
+                "max_layers": 2,
+                "maximum_front_setback_m": 0.635,
+                "min_arc": 1.11315841674805,
+                "original_pigment": "res://tests/ink_q1_effect_20261004/revision06/q1_single_loaded_stroke.png",
+                "procedural_slits": 0,
+                "residue_only": true,
+                "shared_full_width_uv": true,
+                "solid_body_layers": 0,
+                "source_age": 0.26,
+                "source_half_width": 0.8,
+                "stationary_pigment_coordinates": true,
+                "tail_profile": "tapered_side_release",
+                "triangles": 492,
+                "wave_id": "1:ink-style-specimen-0:motion:1",
+                "wet_underwash_layers": 1
+              }
+            ]
+          },
+          "environment_and_resources_unchanged": true,
+          "fixture": "residue",
+          "fixture_argument_unchanged": true,
+          "fixture_source_time": 1.48,
+          "geometry_errors": [],
+          "main_viewport_draw_calls": 306.0,
+          "mesh_before_draws": [
+            {
+              "node": "SourcePathPreview",
+              "same_main_viewport": true,
+              "surfaces": [],
+              "visible_in_tree": true
+            },
+            {
+              "node": "WeakRetiredInk_0",
+              "same_main_viewport": true,
+              "surfaces": [
+                {
+                  "in_frustum_vertices": 1476,
+                  "material_id": -9223371697250367769,
+                  "uv": 1476,
+                  "uv2": 0,
+                  "vertices": 1476
+                }
+              ],
+              "visible_in_tree": true
+            }
+          ],
+          "original_source_line": 4277.0,
+          "source_differences": []
+        }
+      ],
+      "scope": "Preparation seal only: exact gesture06 intent actor and unchanged effect05 presenter in main viewport; actor-only revision, no new handoff effect. First-construction pause and post-success resume are separate host lifecycle transitions. No ordinary Lv1, Boss, art or performance acceptance.",
+      "source_differences": [],
+      "source_snapshot_restored": true,
+      "source_steps_or_requests_by_preparation": 0,
+      "startup_focus_lost": false,
+      "status": "main_viewport_preparation_drawn_source_unchanged",
+      "suppressed_inherited_process_calls": 8,
+      "transients_and_dedup_empty": true
+    },
+    "required": false,
+    "stable_draws": 3,
+    "started_usec": 13749302,
+    "startup_session_error": "",
+    "suppressed_process_calls": 11,
+    "viewport_size": "(1280.0, 720.0)"
+  },
+  "synthetic_input": true
+}

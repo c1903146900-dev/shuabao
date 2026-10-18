@@ -1,0 +1,1158 @@
+[
+  {
+    "controller": {
+
+    },
+    "draw": 14,
+    "hero_position": "(0.0, 0.0, 4.0)",
+    "hp": 360.0,
+    "original_upper": "",
+    "paused": true,
+    "phase": "original_startup",
+    "process": 13,
+    "source_time": 0.0
+  },
+  {
+    "controller": {
+
+    },
+    "draw": 15,
+    "hero_position": "(0.0, 0.0, 4.0)",
+    "hp": 360.0,
+    "original_upper": "",
+    "paused": true,
+    "phase": "original_startup",
+    "process": 14,
+    "source_time": 0.0
+  },
+  {
+    "controller": {
+
+    },
+    "draw": 16,
+    "hero_position": "(0.0, 0.0, 4.0)",
+    "hp": 360.0,
+    "original_upper": "",
+    "paused": false,
+    "phase": "original_startup",
+    "process": 15,
+    "source_time": 0.0
+  },
+  {
+    "controller": {
+
+    },
+    "draw": 17,
+    "hero_position": "(0.0, 0.0, 4.0)",
+    "hp": 360.06,
+    "original_upper": "",
+    "paused": false,
+    "phase": "original_startup",
+    "process": 16,
+    "source_time": 0.12
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 18,
+    "hero_position": "(0.0, 0.0, 3.160001)",
+    "hp": 360.13,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 17,
+    "source_time": 0.26
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 19,
+    "hero_position": "(0.0, 0.0, 2.440001)",
+    "hp": 360.19,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 18,
+    "source_time": 0.38
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 20,
+    "hero_position": "(0.0, 0.0, 1.840002)",
+    "hp": 360.24,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 19,
+    "source_time": 0.48
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 21,
+    "hero_position": "(0.0, 0.0, 1.240002)",
+    "hp": 360.29,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 20,
+    "source_time": 0.58
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 22,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.33,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 21,
+    "source_time": 0.66
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 23,
+    "hero_position": "(0.0, 0.0, 0.160002)",
+    "hp": 360.38,
+    "original_upper": "",
+    "paused": false,
+    "phase": "retreat_original_W",
+    "process": 22,
+    "source_time": 0.76
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.86,
+      "source_time": 0.86
+    },
+    "draw": 24,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.43,
+    "original_upper": "",
+    "paused": false,
+    "phase": "front_walk",
+    "process": 23,
+    "source_time": 0.86
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 0.980000000000001
+    },
+    "draw": 25,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.49,
+    "original_upper": "",
+    "paused": false,
+    "phase": "front_idle",
+    "process": 24,
+    "source_time": 0.980000000000001
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 0.980000000000001
+    },
+    "draw": 26,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.49,
+    "original_upper": "",
+    "paused": true,
+    "phase": "front_idle",
+    "process": 25,
+    "source_time": 0.980000000000001
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 0.980000000000001
+    },
+    "draw": 27,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.49,
+    "original_upper": "",
+    "paused": true,
+    "phase": "front_idle",
+    "process": 26,
+    "source_time": 0.980000000000001
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 0.980000000000001
+    },
+    "draw": 28,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.49,
+    "original_upper": "",
+    "paused": true,
+    "phase": "front_idle",
+    "process": 27,
+    "source_time": 0.980000000000001
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "encounter_started",
+      "original_event_serial": 6,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 10.1603918075562,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 0.980000000000001
+    },
+    "draw": 29,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.49,
+    "original_upper": "",
+    "paused": true,
+    "phase": "front_idle",
+    "process": 28,
+    "source_time": 0.980000000000001
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "basic_upper",
+      "original_event_kind": "ink_basic_released",
+      "original_event_serial": 7,
+      "phase": "basic",
+      "progress": 0.128571429050394,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.64438533782959,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 1.04
+    },
+    "draw": 30,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.52,
+    "original_upper": "basic_upper",
+    "paused": false,
+    "phase": "ordinary_basic",
+    "process": 29,
+    "source_time": 1.04
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "basic_upper",
+      "original_event_kind": "ink_basic_released",
+      "original_event_serial": 7,
+      "phase": "basic",
+      "progress": 0.47142857318478,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.64438533782959,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 1.2
+    },
+    "draw": 31,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.599999999999,
+    "original_upper": "basic_upper",
+    "paused": false,
+    "phase": "ordinary_basic",
+    "process": 30,
+    "source_time": 1.2
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "basic_upper",
+      "original_event_kind": "ink_basic_released",
+      "original_event_serial": 7,
+      "phase": "basic",
+      "progress": 0.728571431285569,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.60110664367676,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 1.32
+    },
+    "draw": 32,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.659999999999,
+    "original_upper": "basic_upper",
+    "paused": false,
+    "phase": "ordinary_basic",
+    "process": 31,
+    "source_time": 1.32
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "basic_upper",
+      "original_event_kind": "ink_basic_finished",
+      "original_event_serial": 8,
+      "phase": "basic",
+      "progress": 0.94285714636956,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.60110664367676,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 0.980000000000001,
+      "source_time": 1.42
+    },
+    "draw": 33,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.709999999999,
+    "original_upper": "basic_upper",
+    "paused": false,
+    "phase": "ordinary_basic",
+    "process": 32,
+    "source_time": 1.42
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.01592532221817,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "ink_basic_finished",
+      "original_event_serial": 8,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.60110664367676,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 1.52
+    },
+    "draw": 34,
+    "hero_position": "(0.0, 0.0, 0.760002)",
+    "hp": 360.759999999999,
+    "original_upper": "",
+    "paused": false,
+    "phase": "ordinary_basic",
+    "process": 33,
+    "source_time": 1.52
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 4.27256243358835,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.133333333333333,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 9.57939147949219,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 1.62
+    },
+    "draw": 35,
+    "hero_position": "(0.0, 0.0, 1.360002)",
+    "hp": 360.809999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 34,
+    "source_time": 1.62
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 5.52919954495854,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.266666666666667,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 8.04242992401123,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 1.72
+    },
+    "draw": 36,
+    "hero_position": "(0.0, 0.0, 1.960002)",
+    "hp": 360.859999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 35,
+    "source_time": 1.72
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 1.0053046956691,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.453333333333334,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 5.84108924865723,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 1.86
+    },
+    "draw": 37,
+    "hero_position": "(0.0, 0.0, 2.800001)",
+    "hp": 360.929999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 36,
+    "source_time": 1.86
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 2.51326773128522,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.613333333333334,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 2.73814535140991,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 1.98
+    },
+    "draw": 38,
+    "hero_position": "(0.0, 0.0, 3.52)",
+    "hp": 360.989999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 37,
+    "source_time": 1.98
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.76990359429864,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.746666666666667,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 2.08
+    },
+    "draw": 39,
+    "hero_position": "(0.0, 0.0, 4.12)",
+    "hp": 361.039999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 38,
+    "source_time": 2.08
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 5.02653945731207,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.880000000000001,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 2.18
+    },
+    "draw": 40,
+    "hero_position": "(0.0, 0.0, 4.719999)",
+    "hp": 361.089999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 39,
+    "source_time": 2.18
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 6.03184814772281,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_draw_upper",
+      "original_event_kind": "ink_q1_preview_started",
+      "original_event_serial": 10,
+      "phase": "draw",
+      "progress": 0.986666666666668,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 1.52,
+      "source_time": 2.26
+    },
+    "draw": 41,
+    "hero_position": "(0.0, 0.0, 5.199999)",
+    "hp": 361.129999999999,
+    "original_upper": "q1_draw_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 40,
+    "source_time": 2.26
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 1.00529870355665,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_hold_upper",
+      "original_event_kind": "ink_q1_preview_frozen",
+      "original_event_serial": 11,
+      "phase": "hold",
+      "progress": 1.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.27,
+      "source_time": 2.36
+    },
+    "draw": 42,
+    "hero_position": "(0.0, 0.0, 5.799998)",
+    "hp": 361.179999999999,
+    "original_upper": "q1_hold_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 41,
+    "source_time": 2.36
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 2.26193456657008,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_hold_upper",
+      "original_event_kind": "ink_q1_preview_frozen",
+      "original_event_serial": 11,
+      "phase": "hold",
+      "progress": 1.0,
+      "release_origin_fraction": -1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.27,
+      "source_time": 2.46
+    },
+    "draw": 43,
+    "hero_position": "(0.0, 0.0, 6.399998)",
+    "hp": 361.229999999999,
+    "original_upper": "q1_hold_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 42,
+    "source_time": 2.46
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.26724325698082,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_release_upper",
+      "original_event_kind": "ink_q1_released",
+      "original_event_serial": 12,
+      "phase": "release",
+      "progress": 0.133333328035143,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.46,
+      "source_time": 2.54
+    },
+    "draw": 44,
+    "hero_position": "(0.0, 0.0, 6.879997)",
+    "hp": 361.269999999999,
+    "original_upper": "q1_release_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 43,
+    "source_time": 2.54
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 4.77520629259693,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_release_upper",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "release",
+      "progress": 0.333333320087858,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.46,
+      "source_time": 2.66
+    },
+    "draw": 45,
+    "hero_position": "(0.0, 0.0, 7.599997)",
+    "hp": 361.329999999999,
+    "original_upper": "q1_release_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 44,
+    "source_time": 2.66
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 6.28316932821304,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_release_upper",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "release",
+      "progress": 0.533333312140572,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.46,
+      "source_time": 2.78
+    },
+    "draw": 46,
+    "hero_position": "(0.0, 0.0, 8.319996)",
+    "hp": 361.389999999999,
+    "original_upper": "q1_release_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 45,
+    "source_time": 2.78
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 1.25661988404688,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_release_upper",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "release",
+      "progress": 0.699999972184501,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.46,
+      "source_time": 2.88
+    },
+    "draw": 47,
+    "hero_position": "(0.0, 0.0, 8.919995)",
+    "hp": 361.439999999999,
+    "original_upper": "q1_release_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 46,
+    "source_time": 2.88
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 2.51325574706031,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "q1_release_upper",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "release",
+      "progress": 0.86666663222843,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 2.46,
+      "source_time": 2.98
+    },
+    "draw": 48,
+    "hero_position": "(0.0, 0.0, 9.519995)",
+    "hp": 361.489999999999,
+    "original_upper": "q1_release_upper",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 47,
+    "source_time": 2.98
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.76989161007374,
+      "hidden_skin_count": 9,
+      "moving": true,
+      "original_alias": "",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 3.08,
+      "source_time": 3.08
+    },
+    "draw": 49,
+    "hero_position": "(0.0, 0.0, 10.11999)",
+    "hp": 361.539999999999,
+    "original_upper": "",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 48,
+    "source_time": 3.08
+  },
+  {
+    "controller": {
+      "accepted": true,
+      "gait_phase": 3.76989161007374,
+      "hidden_skin_count": 9,
+      "moving": false,
+      "original_alias": "",
+      "original_event_kind": "ink_q1_finished",
+      "original_event_serial": 13,
+      "phase": "idle",
+      "progress": 0.0,
+      "release_origin_fraction": 1.0,
+      "renderer": {
+        "accepted": true,
+        "depth_test": true,
+        "direct_world_mesh": true,
+        "minimum_area": 1.53425121307373,
+        "world_height": 2.181
+      },
+      "scope": [
+        262345328529,
+        -9223371774056462431,
+        "normal-floor-3950235/first_floor/r01a",
+        1
+      ],
+      "source_started": 3.18,
+      "source_time": 3.18
+    },
+    "draw": 50,
+    "hero_position": "(0.0, 0.0, 10.11999)",
+    "hp": 361.589999999999,
+    "original_upper": "",
+    "paused": false,
+    "phase": "moving_Q1",
+    "process": 49,
+    "source_time": 3.18
+  },
+  {
+    "controller": {
+      "accepted": false,
+      "reason": "uncovered_direction",
+      "restoration_complete": true
+    },
+    "draw": 51,
+    "hero_position": "(0.0, 0.0, 9.519995)",
+    "hp": 361.639999999999,
+    "original_upper": "",
+    "paused": false,
+    "phase": "original_direction_fallback",
+    "process": 50,
+    "source_time": 3.28
+  }
+]

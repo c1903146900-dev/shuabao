@@ -1,0 +1,393 @@
+[
+  {
+    "action": "key:W:down",
+    "details": {
+      "event": "W - Physical",
+      "ground": "(inf, inf, inf)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 0.12,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 17716
+  },
+  {
+    "action": "key:W:up",
+    "details": {
+      "event": "W - Physical",
+      "ground": "(inf, inf, inf)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 0.76,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 18307
+  },
+  {
+    "action": "key:S:down",
+    "details": {
+      "event": "S - Physical",
+      "ground": "(inf, inf, inf)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 0.76,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 18307
+  },
+  {
+    "action": "key:S:up",
+    "details": {
+      "event": "S - Physical",
+      "ground": "(inf, inf, inf)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 0.86,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 19141
+  },
+  {
+    "action": "mouse:left_down",
+    "details": {
+      "event": "Left Mouse Button",
+      "ground": "(0.0, 0.0, 5.760002)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 488.5853)"
+    },
+    "hero_time": 0.980000000000001,
+    "result": {
+      "accepted": true,
+      "cast_id": 1,
+      "projectile_id": "1:normal-floor-3950235/first_floor/r01a:motion:1",
+      "reason": "ok",
+      "state_revision": 61
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 19509
+  },
+  {
+    "action": "mouse:left_up",
+    "details": {
+      "event": "Left Mouse Button",
+      "ground": "(0.0, 0.0, 5.760002)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 488.5853)"
+    },
+    "hero_time": 0.980000000000001,
+    "result": {
+      "accepted": false,
+      "consumed": false,
+      "reason": "basic_mouse_up"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 19509
+  },
+  {
+    "action": "key:Q:down",
+    "details": {
+      "event": "Q - Physical",
+      "ground": "(0.0, 0.0, 5.76108)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 1.52,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "gesture_id": "1:normal-floor-3950235/first_floor/r01a:gesture:1",
+      "reason": "armed"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20227
+  },
+  {
+    "action": "key:Q:up",
+    "details": {
+      "event": "Q - Physical",
+      "ground": "(0.0, 0.0, 5.76108)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 1.52,
+    "result": {
+      "accepted": false,
+      "consumed": true,
+      "reason": "q_up_never_releases"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20227
+  },
+  {
+    "action": "mouse:left_down",
+    "details": {
+      "event": "Left Mouse Button",
+      "ground": "(0.0, 0.0, 5.760002)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 488.5576)"
+    },
+    "hero_time": 1.52,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "gesture_id": "1:normal-floor-3950235/first_floor/r01a:gesture:1",
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20228
+  },
+  {
+    "action": "key:S:down",
+    "details": {
+      "event": "S - Physical",
+      "ground": "(0.0, 0.0, 5.760002)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 1.52,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20228
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 488.5576)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 5.760002)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 488.5576)"
+    },
+    "hero_time": 1.52,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20229
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 487.8719)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 6.093336)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 487.8719)"
+    },
+    "hero_time": 1.62,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20325
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 483.4838)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 6.426668)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 483.4838)"
+    },
+    "hero_time": 1.72,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20654
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 468.2694)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 6.893335)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 468.2694)"
+    },
+    "hero_time": 1.86,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20768
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 463.1375)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 7.293333)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 463.1375)"
+    },
+    "hero_time": 1.98,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20866
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 459.0222)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 7.626669)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 459.0222)"
+    },
+    "hero_time": 2.08,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 20961
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 453.1325)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 7.960001)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 453.1325)"
+    },
+    "hero_time": 2.18,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 21051
+  },
+  {
+    "action": "mouse:motion",
+    "details": {
+      "event": "Mouse motion at position ((640.0, 448.5642)) with velocity ((0.0, 0.0))",
+      "ground": "(0.0, 0.0, 8.226669)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 448.5642)"
+    },
+    "hero_time": 2.26,
+    "result": {
+      "accepted": true,
+      "consumed": true,
+      "reason": "drawing"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 21138
+  },
+  {
+    "action": "mouse:left_up",
+    "details": {
+      "event": "Left Mouse Button",
+      "ground": "(0.0, 0.0, 8.260002)",
+      "gui_blocked": false,
+      "pixel": "(640.0, 420.0652)"
+    },
+    "hero_time": 2.46,
+    "result": {
+      "accepted": true,
+      "cast_id": 2,
+      "consumed": true,
+      "gesture_id": "1:normal-floor-3950235/first_floor/r01a:gesture:1",
+      "reason": "ok",
+      "state_revision": 146,
+      "wave_id": "1:normal-floor-3950235/first_floor/r01a:motion:2"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 21326
+  },
+  {
+    "action": "key:S:up",
+    "details": {
+      "event": "S - Physical",
+      "ground": "(0.0, 0.0, 9.332836)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 3.08,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 21954
+  },
+  {
+    "action": "key:W:down",
+    "details": {
+      "event": "W - Physical",
+      "ground": "(0.0, 0.0, 9.334808)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 3.18,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 22054
+  },
+  {
+    "action": "key:W:up",
+    "details": {
+      "event": "W - Physical",
+      "ground": "(0.0, 0.0, 9.335596)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 3.28,
+    "result": {
+      "accepted": true,
+      "reason": "movement_intent"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 22151
+  },
+  {
+    "action": "key:Q:up",
+    "details": {
+      "event": "Q - Physical",
+      "ground": "(0.0, 0.0, 9.335596)",
+      "gui_blocked": false,
+      "pixel": null
+    },
+    "hero_time": 3.28,
+    "result": {
+      "accepted": false,
+      "consumed": false,
+      "reason": "q_up_never_releases"
+    },
+    "synthetic_player_input": true,
+    "wall_ms": 22157
+  }
+]
