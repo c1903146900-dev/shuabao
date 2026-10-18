@@ -1,0 +1,37 @@
+{
+  "status": "WIP_FIXTURE_API_AND_INDEPENDENT_WATCHDOG_NOT_RUN",
+  "entry": "res://yan_p3_smoke_20261018b/runner.gd",
+  "arguments": [
+    "--p3-evidence=<fresh absolute directory>"
+  ],
+  "limits": {
+    "wall_seconds": 180,
+    "soft_seconds": 170,
+    "finish_join_seconds": 5,
+    "images": 3,
+    "raw_image_bytes": 16777216
+  },
+  "files": {
+    "res://yan_p3_smoke_20261018b/runner.gd": {
+      "file": "runner.gd",
+      "sha256": "08e801c703ee72b57ce8a749fc6884cba46902253e0a66e2d8c7186de0ccf9cd"
+    },
+    "res://yan_p3_smoke_20261018b/binding.json": {
+      "file": "binding.json",
+      "sha256": "d4af4d000f69c4bfc1be2d833a37b6d2701f4d745cf1c3a335950020bac4ea60"
+    }
+  },
+  "scope": [
+    "original entry and mainprep",
+    "original visible first Hex button with asynchronous exact receipt",
+    "P3 learning cost and Model/Hero projection",
+    "original visible undo and refunded 1SP",
+    "Q1 learning and Model/Hero projection"
+  ],
+  "not_covered": [
+    "P3 release count",
+    "threshold refund",
+    "room/rest/death lifecycle",
+    "full first floor"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "yan-worldfx-ui-overlay-v1",
+  "status": "UNAPPLIED_STATIC_CANDIDATE_NOT_RUN",
+  "classification": "EXACT_RECOVERED_PRESENTATION_REUSE_ON_NEW_P3_SOURCE",
+  "base_source_inventory_sha256": "b34d8236d9c0987714a0ed72db933da98af4bbc528d2fe2b8d5a548322438ff0",
+  "base_files": 3044,
+  "expected_files": 3046,
+  "expected_inventory_file": "SOURCE_PINS.expected.json",
+  "expected_inventory_sha256": "1286a70d07fda384d175eeecf538ca54fe9066242a9c42c90a85f5590e6ee67f",
+  "payload": [
+    {
+      "target": "res://scenes/hero_entry.tscn",
+      "payload": "payload/scenes/hero_entry.tscn",
+      "sha256": "f49d62fb4af6f8467102bc745aa8dcf44333724c1fe9422db3d8a4a97e26a41a",
+      "bytes": 182,
+      "action": "replace",
+      "preimage_sha256": "00b26deed8ed5498f785268d2f54e35bd3363bc05d33663da7b51fd0fe704045"
+    },
+    {
+      "target": "res://yan_trial_ui_20261018/presenter.gd",
+      "payload": "payload/yan_trial_ui_20261018/presenter.gd",
+      "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f",
+      "bytes": 11119,
+      "action": "add",
+      "preimage_sha256": null
+    },
+    {
+      "target": "res://yan_visual_attach_20261018/entry.gd",
+      "payload": "payload/yan_visual_attach_20261018/entry.gd",
+      "sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19",
+      "bytes": 2939,
+      "action": "add",
+      "preimage_sha256": null
+    }
+  ],
+  "preserved": [
+    "original HeroEntry._launch_fresh",
+    "ordinary Host identity and bytes",
+    "Session and Sim bytes",
+    "worldFX controller and fallback",
+    "Q1 free-curve sampler and river shader",
+    "R1 snow view without boat; E2 boat remains distinct"
+  ],
+  "excluded": [
+    "unvalidated front animation",
+    "hero2D assets",
+    "historical 480ca/3047 binding",
+    "all-skill or art acceptance claims"
+  ],
+  "validation": {
+    "base_exact_hashes": 3044,
+    "base_missing_or_extra": [],
+    "engine_run": false,
+    "actual_assembled_source_verified": false,
+    "ui_author_compatibility": "PENDING",
+    "probe": "separate fixture under preparation"
+  },
+  "source_project_main_scene": "res://scenes/hero_entry.tscn",
+  "new_entry": "res://yan_visual_attach_20261018/entry.gd"
+}

@@ -1,0 +1,75 @@
+--- session_smoke02/runner.gd
++++ session_smoke03/runner.gd
+@@ -1,7 +1,7 @@
+ extends SceneTree
+ # REIMPLEMENTATION. Synthetic visible-button input; no gameplay state writes.
+ const BINDING = "res://yan_p3_smoke_20261018b/binding.json"
+-const BINDING_SHA = "bbdd199776bce11387487d085141dd360a88082147a78f224cf479452c28c724"
++const BINDING_SHA = "d4af4d000f69c4bfc1be2d833a37b6d2701f4d745cf1c3a335950020bac4ea60"
+ var started: int
+ var deadline: int
+ var evidence: String = ""
+@@ -22,21 +22,33 @@
+ var completed: bool = false
+ var released: bool = false
+ var draw_count: int = 0
++var watchdog_fired: bool = false
+ 
+ func _initialize() -> void:
+  started = Time.get_ticks_msec()
+  deadline = started + 180000
+  for argument: String in OS.get_cmdline_user_args():
+   if argument.begins_with("--p3-evidence="): evidence = argument.trim_prefix("--p3-evidence=")
++ process_frame.connect(_wall_watchdog)
+  call_deferred("_run")
+ 
+-func _process(_delta: float) -> bool:
+- if Time.get_ticks_msec() >= deadline:
+-  # Same owner, no second asynchronous finish. Outer guard covers OS-level blocks.
+-  reason = "absolute_180s_deadline"
+-  if not evidence.is_empty(): _json("deadline.json",{"accepted":false,"phase":phase,"finishing":finishing,"released":released})
+-  quit(4)
+- return false
++func _wall_watchdog() -> void:
++ if Time.get_ticks_msec() >= deadline: _watchdog_exit("absolute_180s_deadline")
++
++func _watchdog_exit(why: String = "independent_170s_watchdog") -> void:
++ if watchdog_fired: return
++ watchdog_fired = true
++ finishing = true
++ reason = why
++ # Independent signal callback survives a failed _run coroutine. No second finish.
++ var diagnostic: Dictionary = {"accepted":false,"reason":why,"phase":phase,"elapsed_ms":Time.get_ticks_msec()-started,"source_released":released,"draw_count":draw_count}
++ if not evidence.is_empty():
++  if screenshots.size()<3 and Time.get_ticks_msec()<deadline: _picture("watchdog_failure")
++  _json("watchdog.json",diagnostic)
++  _json("observations.json",observations)
++  _json("report.json",diagnostic)
++ print("P3_REIMPLEMENTATION_SMOKE_WATCHDOG ",JSON.stringify(diagnostic))
++ quit(4)
+ 
+ func _budget() -> bool:
+  return Time.get_ticks_msec() < deadline - (0 if finishing else 10000)
+@@ -140,6 +152,7 @@
+  return receipt.request.action=="hex_select" and receipt.request.get("slot",-1)==0 and receipt.request.get("milestone",-1)==milestone and receipt.result.get("accepted",false) and state.selected_hex==[offered] and state.pending_milestones.is_empty() and state.points==1
+ 
+ func _run() -> void:
++ create_timer(170.0,true,false,true).timeout.connect(_watchdog_exit)
+  root.size = Vector2i(1280,720)
+  if not evidence.is_absolute_path() or DirAccess.dir_exists_absolute(evidence): reason="fresh_absolute_evidence_required"; quit(4); return
+  if DirAccess.make_dir_recursive_absolute(evidence)!=OK: quit(4); return
+@@ -165,10 +178,11 @@
+  if not await _hex(): await _stop("original_hex_receipt_required"); return
+  phase="open_growth"
+  var hud = host.initial_hud
+- if not hud.panel.visible:
+-  if not _available(hud.allocation): await _stop("growth_button_unavailable"); return
+-  hud.allocation.pressed.emit()
++ if not hud.growth_panel.is_visible_in_tree():
++  if not _available(host.growth_toggle): await _stop("growth_button_unavailable"); return
++  host.growth_toggle.pressed.emit()
+  await _frame()
++ if not _identity() or not hud.growth_panel.is_visible_in_tree(): await _stop("original_growth_panel_not_visible"); return
+  var before: Dictionary = _sample("before_learning")
+  if not before.accepted or before.points!=1 or before.skills.P.rank!=0: await _stop("fresh_one_sp_required"); return
+  phase="learn_p3"
