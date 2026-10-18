@@ -1,0 +1,16 @@
+{
+  "before_revision01": "654915bb626c250c010a6bad92295e85afb76c0cf166269e2d25e33fac1090b0",
+  "after": "61a09d0789dfdddb1460bef64472da3335ad8a2d0f09b3bbbd1ff409233621fa",
+  "source_rules_changed": false,
+  "source_sampler_unchanged": true,
+  "present_source_byte_identical": true,
+  "reset_delta": "clear two-slot geometry cache",
+  "geometry": "same rectangle union; conservative four-axis disjoint rejection before clipping",
+  "cache": "guide and source-width prefix caches; full-width prewarm only no GPU uploads; release layers share one ArrayMesh with original height offsets",
+  "checks": "16 pure double geometry cases passed; prefix reset/width/immutable old mesh mirror passed on revision02; no engine/float32/native acceptance",
+  "performance": "HOLD until Godot budget and render verification; worst case remains unbounded without altering sampler",
+  "dependencies": [
+    "../q1_join_visual_reimplementation01",
+    "../q1_join_visual_reimplementation02"
+  ]
+}

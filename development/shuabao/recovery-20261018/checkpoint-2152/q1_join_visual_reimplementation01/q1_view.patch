@@ -1,0 +1,105 @@
+--- recovery_20261018b/worldfx_ui_native03/source/game/visual_rework_20261009/views/q1_view.gd
++++ q1_view.gd
+@@ -21,29 +21,85 @@
+  var result:float=0.0
+  for i in range(1,path.size()):result+=Vector3(path[i-1]).distance_to(path[i])
+  return result
++# New 2026-10-18 implementation: exact union of source-segment rectangles.
++# First segment owns overlap. No path fitting, width extension or source writes.
++func _join_cross(a:Vector2,b:Vector2)->float:
++ return a.x*b.y-a.y*b.x
++func _join_clean(poly:Array[Vector2])->Array[Vector2]:
++ var out:Array[Vector2]=[]
++ for p:Vector2 in poly:
++  if out.is_empty() or p.distance_squared_to(out.back())>1e-18:out.append(p)
++ if out.size()>1 and out[0].distance_squared_to(out.back())<=1e-18:out.pop_back()
++ return out
++func _join_half(poly:Array[Vector2],a:Vector2,b:Vector2,inside:bool)->Array[Vector2]:
++ var out:Array[Vector2]=[]
++ if poly.is_empty():return out
++ var edge:Vector2=b-a
++ var previous:Vector2=poly.back()
++ var dp:float=_join_cross(edge,previous-a)
++ var previous_in:bool=dp>=0.0 if inside else dp<=0.0
++ for current:Vector2 in poly:
++  var dc:float=_join_cross(edge,current-a)
++  var current_in:bool=dc>=0.0 if inside else dc<=0.0
++  if current_in!=previous_in:
++   var denominator:float=dp-dc
++   if denominator!=0.0:out.append(previous.lerp(current,clampf(dp/denominator,0.0,1.0)))
++  if current_in:out.append(current)
++  previous=current;dp=dc;previous_in=current_in
++ return _join_clean(out)
++func _join_bounds(poly:Array[Vector2])->Rect2:
++ var bounds:Rect2=Rect2(poly[0],Vector2.ZERO)
++ for p:Vector2 in poly:bounds=bounds.expand(p)
++ return bounds
++func _join_subtract(poly:Array[Vector2],cut:Array[Vector2])->Array:
++ if not _join_bounds(poly).intersects(_join_bounds(cut)):return [poly]
++ var pieces:Array=[]
++ var remaining:Array[Vector2]=poly
++ for edge_index:int in range(cut.size()):
++  var a:Vector2=cut[edge_index];var b:Vector2=cut[(edge_index+1)%cut.size()]
++  var outside:Array[Vector2]=_join_half(remaining,a,b,false)
++  if outside.size()>=3:pieces.append(outside)
++  remaining=_join_half(remaining,a,b,true)
++  if remaining.size()<3:break
++ return pieces
+ func _mesh(path:Array,width:float,layer:int,guide:bool=false)->MeshInstance3D:
+  var length:float=_length(path)
+  var vertices:=PackedVector3Array();var uv:=PackedVector2Array();var indices:=PackedInt32Array()
++ var previous_rectangles:Array=[]
+  var along:float=0.0
+- # Resampling each segment avoids uneven UV speed, without spline overshoot.
+- var samples:Array[Vector3]=[]
+- for i in range(1,path.size()):
+-  var a:Vector3=path[i-1];var b:Vector3=path[i]
+-  var steps:int=maxi(1,ceili(a.distance_to(b)/.10))
+-  for j in range(steps):samples.append(a.lerp(b,float(j)/steps))
+- samples.append(path.back())
+- for i in range(samples.size()):
+-  if i>0:along+=samples[i-1].distance_to(samples[i])
+-  var forward:Vector3=samples[mini(i+1,samples.size()-1)]-samples[maxi(i-1,0)]
+-  var side:Vector3=Vector3(-forward.z,0,forward.x).normalized()
+-  for edge in range(2):
+-   vertices.append(samples[i]+side*(float(edge)-.5)*(width if not guide else .10)+Vector3.UP*(.025+layer*.008))
+-   uv.append(Vector2(along/maxf(length,.001),float(edge)))
+-  if i<samples.size()-1:
+-   var k:int=i*2;indices.append_array(PackedInt32Array([k,k+2,k+3,k,k+3,k+1]))
++ var draw_width:float=.10 if guide else width
++ for i:int in range(1,path.size()):
++  var world_a:Vector3=path[i-1];var world_b:Vector3=path[i]
++  var a:Vector2=Vector2(world_a.x,world_a.z);var b:Vector2=Vector2(world_b.x,world_b.z)
++  var distance:float=a.distance_to(b)
++  # Duplicate points have no area and no source arc length.
++  if distance<=0.0:continue
++  var direction:Vector2=(b-a)/distance
++  var side:Vector2=Vector2(-direction.y,direction.x)
++  var half:Vector2=side*draw_width*.5
++  var rectangle:Array[Vector2]=[a-half,b-half,b+half,a+half]
++  var pieces:Array=[rectangle]
++  for previous:Array[Vector2] in previous_rectangles:
++   var next_pieces:Array=[]
++   for piece:Array[Vector2] in pieces:next_pieces.append_array(_join_subtract(piece,previous))
++   pieces=next_pieces
++   if pieces.is_empty():break
++  for piece:Array[Vector2] in pieces:
++   for fan:int in range(1,piece.size()-1):
++    var triangle:Array[Vector2]=[piece[0],piece[fan],piece[fan+1]]
++    var area:float=_join_cross(triangle[1]-triangle[0],triangle[2]-triangle[0])
++    if area==0.0:continue
++    if area<0.0:triangle=[triangle[0],triangle[2],triangle[1]]
++    for p:Vector2 in triangle:
++     indices.append(vertices.size())
++     vertices.append(Vector3(p.x,.025+layer*.008,p.y))
++     uv.append(Vector2((along+clampf((p-a).dot(direction),0.0,distance))/maxf(length,.001),clampf(.5+(p-a).dot(side)/draw_width,0.0,1.0)))
++  previous_rectangles.append(rectangle)
++  along+=distance
+  var arrays:Array=[];arrays.resize(Mesh.ARRAY_MAX)
+  arrays[Mesh.ARRAY_VERTEX]=vertices;arrays[Mesh.ARRAY_TEX_UV]=uv;arrays[Mesh.ARRAY_INDEX]=indices
+- var mesh:=ArrayMesh.new();mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
++ var mesh:=ArrayMesh.new()
++ if not vertices.is_empty():mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+  var n:=MeshInstance3D.new();n.mesh=mesh;n.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+  var material:=ShaderMaterial.new();material.shader=RIVER_SHADER
+  material.set_shader_parameter("ink_texture",INK);material.set_shader_parameter("path_length",length)

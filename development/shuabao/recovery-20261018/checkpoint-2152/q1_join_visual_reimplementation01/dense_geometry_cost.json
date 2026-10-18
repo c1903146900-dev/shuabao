@@ -1,0 +1,70 @@
+{
+  "not_engine_performance": true,
+  "unbounded_sampler": true,
+  "measurements": [
+    {
+      "shape": "U",
+      "points": 33,
+      "rectangles": 32,
+      "triangles": 126,
+      "seconds_python_double": 0.0033185310021508485
+    },
+    {
+      "shape": "U",
+      "points": 129,
+      "rectangles": 128,
+      "triangles": 510,
+      "seconds_python_double": 0.038829671997518744
+    },
+    {
+      "shape": "U",
+      "points": 257,
+      "rectangles": 256,
+      "triangles": 1022,
+      "seconds_python_double": 0.14405260999774328
+    },
+    {
+      "shape": "S",
+      "points": 33,
+      "rectangles": 32,
+      "triangles": 215,
+      "seconds_python_double": 0.010198474999924656
+    },
+    {
+      "shape": "S",
+      "points": 129,
+      "rectangles": 128,
+      "triangles": 865,
+      "seconds_python_double": 0.0927478159974271
+    },
+    {
+      "shape": "S",
+      "points": 257,
+      "rectangles": 256,
+      "triangles": 1932,
+      "seconds_python_double": 0.37830068100083736
+    },
+    {
+      "shape": "near180",
+      "points": 33,
+      "rectangles": 32,
+      "triangles": 102,
+      "seconds_python_double": 0.004090747999725863
+    },
+    {
+      "shape": "near180",
+      "points": 129,
+      "rectangles": 128,
+      "triangles": 406,
+      "seconds_python_double": 0.02151053999841679
+    },
+    {
+      "shape": "near180",
+      "points": 257,
+      "rectangles": 256,
+      "triangles": 811,
+      "seconds_python_double": 0.07079345999954967
+    }
+  ],
+  "provenance": "Recovered numeric output from visible tool response 2026-10-18 14:02:40; not re-executed after environment recovery."
+}

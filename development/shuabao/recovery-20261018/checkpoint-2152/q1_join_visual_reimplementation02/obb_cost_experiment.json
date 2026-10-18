@@ -1,0 +1,184 @@
+{
+  "python_mirror_only": true,
+  "engine_performance": "NOT_RUN",
+  "geometry_comparison": "equal area; disjoint rejection avoids unnecessary partitioning; further checks pending",
+  "lifecycle_checks": "prefix edits/rewind/width/duplicate/reset/old-result immutability passed",
+  "measurements": [
+    {
+      "shape": "U",
+      "points": 33,
+      "preview_max_ms": 0.1366970000162837,
+      "preview_total_ms": 2.5305029995479345,
+      "release_once_ms": 1.5578500000401618,
+      "release_triangles": 126,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 31,
+      "shared_layers": true
+    },
+    {
+      "shape": "U",
+      "points": 129,
+      "preview_max_ms": 0.6177260000868046,
+      "preview_total_ms": 24.373814000341554,
+      "release_once_ms": 8.520918999920468,
+      "release_triangles": 510,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 127,
+      "shared_layers": true
+    },
+    {
+      "shape": "U",
+      "points": 257,
+      "preview_max_ms": 5.335942999977306,
+      "preview_total_ms": 107.95372999962183,
+      "release_once_ms": 20.16559900005177,
+      "release_triangles": 1022,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 255,
+      "shared_layers": true
+    },
+    {
+      "shape": "U",
+      "points": 513,
+      "preview_max_ms": 10.31280400002288,
+      "preview_total_ms": 468.8420120014598,
+      "release_once_ms": 68.41854599997532,
+      "release_triangles": 2046,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 511,
+      "shared_layers": true
+    },
+    {
+      "shape": "S",
+      "points": 33,
+      "preview_max_ms": 1.969454000004589,
+      "preview_total_ms": 5.304256000499663,
+      "release_once_ms": 6.529481000029591,
+      "release_triangles": 169,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 31,
+      "shared_layers": true
+    },
+    {
+      "shape": "S",
+      "points": 129,
+      "preview_max_ms": 0.6963749999613356,
+      "preview_total_ms": 26.361991000385387,
+      "release_once_ms": 43.934746999980234,
+      "release_triangles": 597,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 127,
+      "shared_layers": true
+    },
+    {
+      "shape": "S",
+      "points": 257,
+      "preview_max_ms": 3.1965119999313174,
+      "preview_total_ms": 113.60798799944405,
+      "release_once_ms": 136.94333499995537,
+      "release_triangles": 1196,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 255,
+      "shared_layers": true
+    },
+    {
+      "shape": "S",
+      "points": 513,
+      "preview_max_ms": 5.188298000007308,
+      "preview_total_ms": 479.3077380006707,
+      "release_once_ms": 472.3102329999165,
+      "release_triangles": 2373,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 511,
+      "shared_layers": true
+    },
+    {
+      "shape": "near180",
+      "points": 33,
+      "preview_max_ms": 1.7777829999658934,
+      "preview_total_ms": 4.4768810003006365,
+      "release_once_ms": 3.1313130000398814,
+      "release_triangles": 102,
+      "preview_peak_pieces": 3,
+      "preview_clip_calls": 93,
+      "shared_layers": true
+    },
+    {
+      "shape": "near180",
+      "points": 129,
+      "preview_max_ms": 0.5042740000362755,
+      "preview_total_ms": 20.42520199881892,
+      "release_once_ms": 9.557967999967332,
+      "release_triangles": 406,
+      "preview_peak_pieces": 3,
+      "preview_clip_calls": 381,
+      "shared_layers": true
+    },
+    {
+      "shape": "near180",
+      "points": 257,
+      "preview_max_ms": 2.4597159999757423,
+      "preview_total_ms": 74.88758500051063,
+      "release_once_ms": 20.67111200005911,
+      "release_triangles": 811,
+      "preview_peak_pieces": 3,
+      "preview_clip_calls": 765,
+      "shared_layers": true
+    },
+    {
+      "shape": "near180",
+      "points": 513,
+      "preview_max_ms": 3.53349200008779,
+      "preview_total_ms": 290.2701319995913,
+      "release_once_ms": 49.39970800000992,
+      "release_triangles": 1624,
+      "preview_peak_pieces": 3,
+      "preview_clip_calls": 1533,
+      "shared_layers": true
+    },
+    {
+      "shape": "duplicate",
+      "points": 33,
+      "preview_max_ms": 0.4178930000762193,
+      "preview_total_ms": 1.5178360002892077,
+      "release_once_ms": 2.7113979999739968,
+      "release_triangles": 82,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 15,
+      "shared_layers": true
+    },
+    {
+      "shape": "duplicate",
+      "points": 129,
+      "preview_max_ms": 0.23160099999586237,
+      "preview_total_ms": 10.406805000457098,
+      "release_once_ms": 18.738273999929334,
+      "release_triangles": 296,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 63,
+      "shared_layers": true
+    },
+    {
+      "shape": "duplicate",
+      "points": 257,
+      "preview_max_ms": 0.6177760000127819,
+      "preview_total_ms": 39.78834099962114,
+      "release_once_ms": 64.51600599996254,
+      "release_triangles": 594,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 127,
+      "shared_layers": true
+    },
+    {
+      "shape": "duplicate",
+      "points": 513,
+      "preview_max_ms": 3.0030490000854115,
+      "preview_total_ms": 183.90908000003492,
+      "release_once_ms": 229.5819800000345,
+      "release_triangles": 1170,
+      "preview_peak_pieces": 2,
+      "preview_clip_calls": 255,
+      "shared_layers": true
+    }
+  ]
+}
