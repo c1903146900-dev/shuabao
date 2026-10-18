@@ -1,0 +1,24 @@
+--- a/yan_visual_attach_20261018/entry.gd
++++ b/yan_visual_attach_20261018/entry.gd
+@@ -1,5 +1,7 @@
+ extends "res://scripts/integration/hero_entry.gd"
+ ## Presentation attachment only. Original entry transaction and ordinary host stay intact.
++const TrialUI = preload("res://yan_trial_ui_20261018/presenter.gd")
++var _trial_ui = TrialUI.new()
+ const SkillVisualController = preload("res://visual_rework_20261009/controller.gd")
+ signal worldfx_attached(controller: Node3D, receipt: Dictionary)
+ var _skill_visual_controller: Node3D
+@@ -13,12 +15,12 @@
+ func _process(_delta: float) -> void:
+ 	if screen != Screen.RUN or active_hero != "yanguizhou" or not is_instance_valid(active_room): return
+ 	if bool(active_room.get("_mainprep_required")) or bool(active_room.get("_mainprep_pending")): return
++	_trial_ui.present(active_room, self)
+ 	if not str(active_room.get("floor_error")).is_empty() or not str(active_room.get("startup_session_error")).is_empty(): return
+ 	if bool(active_room.get("finished")): return
+ 	var installation: Variant = active_room.get("ordinary_visual_installation")
+ 	if not installation is Dictionary or not installation.get("accepted", false): return
+ 	_ensure_skill_visuals()
+-	# The reviewed UI presenter may be called here each frame in a later combined candidate.
+ 	# No hero2D is attached: its accepted asset package does not exist yet.
+ 
+ func _ensure_skill_visuals() -> void:

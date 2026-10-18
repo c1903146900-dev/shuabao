@@ -1,0 +1,44 @@
+{
+  "scope": "Local recovered UI candidate only; publication is handled by publisher",
+  "applied": false,
+  "engine_run": false,
+  "current_base_source_gate_run": false,
+  "core_source_exact_match_count": 2,
+  "shared_entry_delta_rechecked": {
+    "preimage_sha256": "b69e0e46bc52be369d04c733e87db78e9a14913491a76dd1992a973e203e00a4",
+    "after_sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19",
+    "patch_dry_run_exit": 0
+  },
+  "files": [
+    {
+      "path": "RECOVERY_STATUS.json",
+      "bytes": 1371,
+      "sha256": "faf536e85b88fd21424d9dd9a87692dd3b1cf39efbdae093b960516ef500edea"
+    },
+    {
+      "path": "REVIEW_PLAN.md",
+      "bytes": 3921,
+      "sha256": "78d6e7f8e0c3969fcbc97cb5b3435884f72502654f926ca1f1388c932f79240d"
+    },
+    {
+      "path": "SHARED_ENTRY_UI_DELTA.diff",
+      "bytes": 1408,
+      "sha256": "946ca82f38386d487f8482200f5dd2e5a6b7fe824a328fa29b4a2ebc2fb0b656"
+    },
+    {
+      "path": "UI_PRESENTER.diff",
+      "bytes": 11389,
+      "sha256": "9530ba2a6a43a2380af0327ce0a2d9e34c82978c09fca5901ca9ac36b01ecbd6"
+    },
+    {
+      "path": "integration/shared_entry_with_ui.gd",
+      "bytes": 2939,
+      "sha256": "3df38f41d37c3198fc3b3030309de2876568d4c97678cfb61a1bd75716307a19"
+    },
+    {
+      "path": "overlay/yan_trial_ui_20261018/presenter.gd",
+      "bytes": 11119,
+      "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f"
+    }
+  ]
+}

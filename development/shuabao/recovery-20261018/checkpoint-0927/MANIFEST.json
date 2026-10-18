@@ -1,0 +1,51 @@
+{
+  "status": "RECOVERY_AND_REIMPLEMENTATION_DRAFTS_ONLY",
+  "files": [
+    {
+      "path": "restore_priority.py",
+      "bytes": 1596,
+      "sha256": "7e25dd641c45fed92971b47ec06571fdcd58c8189627d02919d11dff7dc824cb"
+    },
+    {
+      "path": "worldfx_recovered/payload/scenes/hero_entry.tscn",
+      "bytes": 182,
+      "sha256": "f49d62fb4af6f8467102bc745aa8dcf44333724c1fe9422db3d8a4a97e26a41a"
+    },
+    {
+      "path": "worldfx_recovered/fixture/yan_worldfx_observation_20261018/observer.gd",
+      "bytes": 8388,
+      "sha256": "eec7678ac5137cac4387e29cf88969ba8b745eb4a78a046924b6fb8a93f11976"
+    },
+    {
+      "path": "ui_recovered/REVIEW_PLAN.md",
+      "bytes": 3921,
+      "sha256": "78d6e7f8e0c3969fcbc97cb5b3435884f72502654f926ca1f1388c932f79240d"
+    },
+    {
+      "path": "ui_recovered/SHARED_ENTRY_UI_DELTA.diff",
+      "bytes": 1408,
+      "sha256": "946ca82f38386d487f8482200f5dd2e5a6b7fe824a328fa29b4a2ebc2fb0b656"
+    },
+    {
+      "path": "ui_recovered/UI_PRESENTER.diff",
+      "bytes": 11389,
+      "sha256": "9530ba2a6a43a2380af0327ce0a2d9e34c82978c09fca5901ca9ac36b01ecbd6"
+    },
+    {
+      "path": "ui_recovered/RECOVERY_INVENTORY.json",
+      "bytes": 1441,
+      "sha256": "e1fa23caa3c06cc0b0a19cdf7a99e95b4172a4447575252ca35f20ee188553d1"
+    },
+    {
+      "path": "p3_reimplementation/core01/p3_state.gd",
+      "bytes": 4000,
+      "sha256": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c"
+    }
+  ],
+  "notes": [
+    "p3_state.gd is new reimplementation, not recovered historical bytes, not integrated or engine validated.",
+    "WorldFX scene/observer and UI core are recovered fragments with missing latest base dependencies; no runtime acceptance.",
+    "restore_priority.py requires restore_base.py from checkpoint-0924 alongside it and a verified base manifest; use a fresh trusted directory, never Python -O.",
+    "UI inventory refers to source files distributed across checkpoint-0924/0926/0927; no standalone package claim."
+  ]
+}
