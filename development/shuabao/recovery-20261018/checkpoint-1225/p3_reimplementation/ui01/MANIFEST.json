@@ -1,0 +1,24 @@
+{
+  "status": "WIP_UI_NOT_NATIVE_VERIFIED",
+  "files": [
+    {
+      "target": "tests/ink_river_hexes_20261006/ordinary01/catalog.gd",
+      "before": "d6b63ac39558cc95a4e0607d9935da85d981206114041c308920ac8f1e58e323",
+      "after": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9",
+      "payload": "catalog.gd"
+    },
+    {
+      "target": "tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd",
+      "before": "2d9eec12ceb0e6f0017b98d0b530e37165a43d36f1cf1e6719b8e5377d47e2a6",
+      "after": "bc1c75518866363fad8adc8342020fd778007708e2e8d7e121e0a4a6b4883e07",
+      "payload": "growth_hud.gd"
+    },
+    {
+      "target": "tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd",
+      "before": "8f33242427b6b39661f47acadaabd792a7a18abd293d5c47b94a762e8a0a95d3",
+      "after": "4161bdb703055d9977bc7915c9887f91e335a1fb786f535bb8a639a935f6bf27",
+      "payload": "runtime_text.gd"
+    }
+  ],
+  "layout": "420px nominal only; actual font minimum, viewport containment and clicking require native validation"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "REAL_OWNED_PYTHON_CLEANUP_FIXTURE",
+  "accepted": true,
+  "engine_started": false,
+  "reason": "",
+  "workload_ttl_seconds": 8,
+  "readiness_seconds": 2,
+  "exit": -9,
+  "elapsed": 0.41712562299994715,
+  "subreaper_restored": true,
+  "both_real_owned_processes_killed_and_reaped": true,
+  "cancellation_requests": [],
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "errors": [],
+    "seconds": 0.3621280360000583
+  },
+  "actual_reap_results": [
+    {
+      "si_code": 2,
+      "si_status": 9
+    },
+    {
+      "si_code": 2,
+      "si_status": 9
+    }
+  ],
+  "signal_kinds": [
+    "owned_pidfd",
+    "reserved_original_group"
+  ],
+  "signals_observed": [
+    9,
+    15
+  ],
+  "original_local_report_sha256": "922d4448df57e5485a313f3c22b519c39524e798a232b80d29ab834083593607",
+  "runtime_seal_sha256": "036f5b3b933aad953b46b7a14aa1444f79118e594a1f1082f397dd1fe491e965",
+  "post_run_all_16_sealed_files_exact": true,
+  "scope": "Real owned Python cleanup only; normal-exit engine guard and game validation remain untested.",
+  "redactions": "Process IDs, process start ticks, and monotonic signal timestamps omitted; original local report unchanged."
+}

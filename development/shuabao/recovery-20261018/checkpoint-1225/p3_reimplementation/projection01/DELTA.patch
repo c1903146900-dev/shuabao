@@ -1,0 +1,31 @@
+--- tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd
++++ tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd
+@@ -68,13 +68,14 @@
+ 
+ static func p_model_from(source: Node) -> Dictionary:
+  if not is_instance_valid(source) or source.get_script().resource_path != Binding.SIM_PATH: return {"accepted":false,"reason":"exact_e3_ordinary_sim_required"}
++ if source.hero.loadout.passive == "p3": return _p3_model_from(source)
+  if source.hero.loadout.passive == "p2": return _p2_model_from(source)
+  var rank: int = int(source.hero.ranks.passive)
+  var learned: bool = source.hero.loadout.passive == "p1" and rank > 0
+  var detail: String = "P1 计白当黑 · "+("%d阶" % rank if learned else "未学习")
+  detail += "\n"+Design.description("yanguizhou","p1",rank if learned else 1)
+  detail += "\n被动，无主动施放与独立冷却。各段正常伤害先结算；整次Q/E结束后只命中过一敌才一次补增伤、返当时剩余冷却，不提前击杀。每条完整Q2河含H03全折段与H04全部伤害独立计算；E3按实际交换伤害批次完成结算，放A与A到期不触发奖励；R1/R2/BASIC不计入。"
+- detail += "\n补算只对实际损失生命的伤害按原Q/E面积系数参与已有吸血；不再触发一次命中、暴击或减伤。每阶1SP，上限4阶。P1/P2同栏互斥；P3与未接强化未开放；临时文字卡，无美术/音频验收。"
++ detail += "\n补算只对实际损失生命的伤害按原Q/E面积系数参与已有吸血；不再触发一次命中、暴击或减伤。每阶1SP，上限4阶。P1/P2/P3同栏互斥；未接强化未开放；临时文字卡，无美术/音频验收。"
+  return {"accepted":true,"candidate":"p1","rank":rank,"learned":learned,"label":"%d/4" % rank if learned else "未学","tooltip":detail,"passive_only":true,"has_active_input":false,"source_time":source.hero_time,"generation":source.encounter_generation,"room_id":source.room_id,"temporary_visual":true}
+ 
+ static func _p2_model_from(source: Node) -> Dictionary:
+@@ -105,3 +106,12 @@
+  patch.tooltip_text = str(shown.tooltip); patch.queue_redraw()
+  hud.source_model["selected_p"] = shown.duplicate(true)
+  return shown
++
++static func _p3_model_from(source: Node) -> Dictionary:
++ var state: Dictionary = source.ink_p3.snapshot()
++ var rank: int = int(source.hero.ranks.passive)
++ if state.rank != rank or rank <= 0: return {"accepted":false,"reason":"p3_projection_rank_mismatch"}
++ var threshold: int = source.ink_p3.threshold()
++ var detail: String = Design.description("yanguizhou","p3",rank)+"\n"+P2RuntimeText.p3_rules()
++ detail += "\nQ %d/%d%s · E %d/%d%s" % [state.counts.q,threshold," 待成功释放" if state.ready.q else "",state.counts.e,threshold," 待成功释放" if state.ready.e else ""]
++ return {"accepted":true,"candidate":"p3","rank":rank,"learned":true,"label":"Q %d/%d · E %d/%d" % [state.counts.q,threshold,state.counts.e,threshold],"tooltip":detail,"passive_only":true,"has_active_input":false,"counts":state.counts.duplicate(),"ready":state.ready.duplicate(),"source_time":source.hero_time,"generation":source.encounter_generation,"room_id":source.room_id,"temporary_visual":true}
