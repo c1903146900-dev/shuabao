@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "657fcdf67fbe1ecec0001da59f52900f595b4deb",
+  "source_tip": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -5111,6 +5111,50 @@
       "sha256": "cef056ef326b307604bf1ba1d45a07b42554b5f411649e2e476ae7f7e083234a",
       "classification": "RECOVERED_EXISTING_TERMINAL_DRAFT",
       "validation_scope": "STATIC_CANDIDATE; NO_NATIVE_ACCEPTANCE",
+      "apply_to_game": false
+    },
+    "front_combat_probe01/MANIFEST.json": {
+      "canonical_path": "front_combat_probe01/MANIFEST.json",
+      "commit": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2207/front_combat_probe01/MANIFEST.json",
+      "git_blob_sha1": "82cda4ce2ea6a65d370637575d4d96cfd340760e",
+      "bytes": 461,
+      "sha256": "5e1bb40e5abec1ec386e756caa39715693a25ce5ed2b880d6e18fd33050c160c",
+      "classification": "STATIC_REVIEWED_COMBAT_FIXTURE",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_ART_ACCEPTED",
+      "apply_to_game": false
+    },
+    "front_combat_probe01/README.md": {
+      "canonical_path": "front_combat_probe01/README.md",
+      "commit": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2207/front_combat_probe01/README.md",
+      "git_blob_sha1": "8a88c14025f20ff3f47d4b8516239c8be137485b",
+      "bytes": 2867,
+      "sha256": "46b9ba57c4d0f13549c610d0ddd0eedd8590a774d3b8b8dfa8789a57f978bcac",
+      "classification": "STATIC_REVIEWED_COMBAT_FIXTURE",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_ART_ACCEPTED",
+      "apply_to_game": false
+    },
+    "front_combat_probe01/build_stage.py": {
+      "canonical_path": "front_combat_probe01/build_stage.py",
+      "commit": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2207/front_combat_probe01/build_stage.py",
+      "git_blob_sha1": "83d5e5c70ca2153985a4d7ee230ef11c2d1f043e",
+      "bytes": 3017,
+      "sha256": "3d7f5ffffa179d5b73a62d0be7340eb327bc505560b46331b827877cfc03d78f",
+      "classification": "STATIC_REVIEWED_COMBAT_FIXTURE",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_ART_ACCEPTED",
+      "apply_to_game": false
+    },
+    "front_combat_probe01/runner.gd": {
+      "canonical_path": "front_combat_probe01/runner.gd",
+      "commit": "57abb04b64dfbe627f2568bfc9a274226a6a32c9",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-2207/front_combat_probe01/runner.gd",
+      "git_blob_sha1": "ae6f56ff59968de978cc0ef2d9fbe7dab289e1be",
+      "bytes": 18461,
+      "sha256": "bcad91e1ecf5adebc2bc5773e94850e3a712972a7cb6de6438a5a43c6f3e2e42",
+      "classification": "STATIC_REVIEWED_COMBAT_FIXTURE",
+      "validation_scope": "NOT_NATIVE_VALIDATED; NOT_ART_ACCEPTED",
       "apply_to_game": false
     }
   },
