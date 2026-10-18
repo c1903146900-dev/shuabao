@@ -2,7 +2,7 @@
   "schema": "shuabao-recovery-index-v1",
   "repository": "c1903146900-dev/shuabao",
   "branch": "checkpoint/c02-revision06-20261011",
-  "source_tip": "6051d253746c3b47db25729ff86bff7d281a89e4",
+  "source_tip": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
   "scope": "ISOLATED_STAGING_ONLY_NOT_COMPLETE_LATEST_GAME",
   "historical_base": {
     "commit": "708454b99a631adac381417f820aabe6798c148c",
@@ -1822,6 +1822,127 @@
       "sha256": "5cc639de6d06b1504b176529e292b8e366f5ce27763e127b0f957351c195d76f",
       "classification": "EXACT_RECOVERED_BYTES_REUSED_NEW_UNRUN_CANDIDATE",
       "validation_scope": "EXACT_PRIOR_BLOB_REUSE_NOT_APPLIED_NOT_CURRENT_RUNTIME_ACCEPTED",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke03/binding.json": {
+      "canonical_path": "p3_reimplementation/session_smoke03/binding.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke03/binding.json",
+      "git_blob_sha1": "d7790f982d74baf2ccfa45c7cdb12c29bffd89fb",
+      "bytes": 5093,
+      "sha256": "d4af4d000f69c4bfc1be2d833a37b6d2701f4d745cf1c3a335950020bac4ea60",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke03/REVIEW_FIX.patch": {
+      "canonical_path": "p3_reimplementation/session_smoke03/REVIEW_FIX.patch",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke03/REVIEW_FIX.patch",
+      "git_blob_sha1": "2192d12839974d049660434b0282bde8595e2724",
+      "bytes": 3662,
+      "sha256": "b747b22ce7b1ec4f12543b8abd5df47bea7a10469986912b5128b72ed0f62136",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke03/runner.gd": {
+      "canonical_path": "p3_reimplementation/session_smoke03/runner.gd",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke03/runner.gd",
+      "git_blob_sha1": "441cf45caceb5b995fa78bd99fa3af3d468c361c",
+      "bytes": 13412,
+      "sha256": "08e801c703ee72b57ce8a749fc6884cba46902253e0a66e2d8c7186de0ccf9cd",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke03/MANIFEST.json": {
+      "canonical_path": "p3_reimplementation/session_smoke03/MANIFEST.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke03/MANIFEST.json",
+      "git_blob_sha1": "07b50c15caa04552dcecd7e96d4c7b336e24a153",
+      "bytes": 1084,
+      "sha256": "b24fef09015ea12c3709ce8d1fc1df848b3edb81ae338698ec2c96068be43adf",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke04/binding.json": {
+      "canonical_path": "p3_reimplementation/session_smoke04/binding.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke04/binding.json",
+      "git_blob_sha1": "d7790f982d74baf2ccfa45c7cdb12c29bffd89fb",
+      "bytes": 5093,
+      "sha256": "d4af4d000f69c4bfc1be2d833a37b6d2701f4d745cf1c3a335950020bac4ea60",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke04/REVIEW_FIX.patch": {
+      "canonical_path": "p3_reimplementation/session_smoke04/REVIEW_FIX.patch",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke04/REVIEW_FIX.patch",
+      "git_blob_sha1": "b7f26805ed20436c6cf2332ef3f6e25cdf110a84",
+      "bytes": 2143,
+      "sha256": "85f616c88d2291a1a3e36610d7fcbfae5e72cd0852ef24cc41562d495f2f5542",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke04/runner.gd": {
+      "canonical_path": "p3_reimplementation/session_smoke04/runner.gd",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke04/runner.gd",
+      "git_blob_sha1": "f8daa470181d162bf879fd8a6067755e4262528e",
+      "bytes": 13629,
+      "sha256": "3309b802fbc1a222e0ab7e806fa0c8109261ba0eab50e86b3ca6fc1f1b0b2852",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "p3_reimplementation/session_smoke04/MANIFEST.json": {
+      "canonical_path": "p3_reimplementation/session_smoke04/MANIFEST.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/p3_reimplementation/session_smoke04/MANIFEST.json",
+      "git_blob_sha1": "87de34129f11672f93902df2f55c23bff4d85e98",
+      "bytes": 1084,
+      "sha256": "60d2a435d0f43b0165914e542fff772ad3e5d57a61f228ee2baeb384472b2061",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "worldfx_ui_candidate01/MANIFEST.json": {
+      "canonical_path": "worldfx_ui_candidate01/MANIFEST.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/worldfx_ui_candidate01/MANIFEST.json",
+      "git_blob_sha1": "a58d7aef789590fa5202b48f7d7dedbb54e04955",
+      "bytes": 2224,
+      "sha256": "7069c8bddbc7a95fc6c78a00eea453ee381acc580cf0942f3078783be04f7934",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "worldfx_ui_candidate01/SOURCE_PINS.expected.json": {
+      "canonical_path": "worldfx_ui_candidate01/SOURCE_PINS.expected.json",
+      "commit": "e6d48d6eec934907972f2d7d7b1888e8fc4b9b02",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-1241/worldfx_ui_candidate01/SOURCE_PINS.expected.json",
+      "git_blob_sha1": "506afb84a9d94dc56381c7752d58dca2f0dfcc1b",
+      "bytes": 418196,
+      "sha256": "1286a70d07fda384d175eeecf538ca54fe9066242a9c42c90a85f5590e6ee67f",
+      "classification": "NEW_UNRUN_FIXTURE_OR_EXPECTED_CANDIDATE_MAP",
+      "validation_scope": "REMOTE_BYTES_VERIFIED_NOT_CURRENT_NATIVE_PASS",
+      "apply_to_game": false
+    },
+    "worldfx_ui_probe01/payload/yan_worldfx_observation_20261018/observer.gd": {
+      "canonical_path": "worldfx_ui_probe01/payload/yan_worldfx_observation_20261018/observer.gd",
+      "commit": "18d75333b0bae4b1b732ae0f680164b0d15084db",
+      "repository_path": "development/shuabao/recovery-20261018/checkpoint-0927/worldfx_recovered/fixture/yan_worldfx_observation_20261018/observer.gd",
+      "git_blob_sha1": "17d3044b7d5dcebcabc90759f6f3a2a7c452ce2a",
+      "bytes": 8388,
+      "sha256": "eec7678ac5137cac4387e29cf88969ba8b745eb4a78a046924b6fb8a93f11976",
+      "classification": "EXACT_RECOVERED_OBSERVER_REUSED_NEW_UNRUN_PROBE",
+      "validation_scope": "REMOTE_BYTES_VERIFIED; NOT_CURRENT_RUNTIME_ACCEPTED",
       "apply_to_game": false
     }
   },
