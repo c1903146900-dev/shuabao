@@ -1,0 +1,146 @@
+--- source09/tests/ink_style_specimen_20261004/revision03/fix01/host.gd
++++ candidate/tests/ink_style_specimen_20261004/revision03/fix01/host.gd
+@@ -61,6 +61,7 @@
+ 	if evidence_dir.is_empty():evidence_dir="user://ink_style_specimen_"+str(Time.get_unix_time_from_system()).replace(".","_")
+ 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_dir))
+ 	recording=FileAccess.open(evidence_dir.path_join("source_frames.jsonl"),FileAccess.WRITE)
++	var _startup_probe_base_stage_effect_audio_hud: int = _startup_probe_begin()
+ 	stage=Stage.new();add_child(stage)
+ 	q1_view=Q1View.new();add_child(q1_view)
+ 	basic_view=BasicView.new();add_child(basic_view)
+@@ -74,10 +75,13 @@
+ 	get_window().close_requested.connect(func():close_sample("window_close"))
+ 	get_window().focus_exited.connect(_focus_lost)
+ 	RenderingServer.frame_post_draw.connect(_drawn)
++	_startup_probe_end("base_stage_effect_audio_hud", _startup_probe_base_stage_effect_audio_hud)
+ 	_start_encounter()
+ 	stage.follow(sim.hero.position,1.0)
+ 	if start_paused and not gate_mode:_pause(true,"start_paused_after_real_idle0_sample")
++	var _startup_probe_base_startup_report: int = _startup_probe_begin()
+ 	_write_json("session_start.json",{"scope":"diagnostic learned Q1, real one-minion director; not normal Lv1, final art, Boss, performance or OS-input acceptance","renderer":RenderingServer.get_video_adapter_name(),"rendering_method":RenderingServer.get_current_rendering_method(),"display":DisplayServer.get_name(),"resolution":get_viewport().get_visible_rect().size,"camera_size":stage.camera.size,"camera_contract":stage.camera_contract(),"logical_viewport_not_raster":true,"shadow_enabled":stage.shadow_enabled,"audio":audio_output.report(),"hero_import":hero_view.proof,"enemy_import":enemy_view.proof,"gate_mode":gate_mode,"start_paused":start_paused,"active_budget_seconds":active_budget_seconds,"hard_wall_budget_seconds":finite_seconds,"rules_sha256":sim.source_rules_hash,"auto_finish":sim.auto_finish,"producer_revision":"control02","producer_binding_sha256":FileAccess.get_sha256(PRODUCER_BINDING_PATH)})
++	_startup_probe_end("base_startup_report", _startup_probe_base_startup_report)
+ func _start_encounter() -> void:
+ 	if is_instance_valid(sim):sim.queue_free()
+ 	if is_instance_valid(hero_view):hero_view.queue_free()
+@@ -267,3 +271,20 @@
+ 	capture_history.append(record)
+ 	_write_json(filename.trim_suffix(".png")+".json",record)
+ 	print("INK_STYLE_F9 ",JSON.stringify({"status":record.status,"png_path":record.png_path,"capture_pair_unchanged":pair_unchanged,"paused_source_unchanged":paused_unchanged}))
++
++# Opt-in bounded startup observation only. No world data, frame logger or file output.
++var _startup_probe_enabled: bool = "--trial-startup-profile" in OS.get_cmdline_user_args()
++var _startup_probe_open: bool = true
++var _startup_probe_rows: Array = []
++var _startup_probe_dropped: int = 0
++func _startup_probe_begin() -> int:
++	return Time.get_ticks_usec() if _startup_probe_enabled and _startup_probe_open else 0
++func _startup_probe_end(label: String, began: int) -> void:
++	if began == 0 or not _startup_probe_enabled or not _startup_probe_open: return
++	var ended: int = Time.get_ticks_usec()
++	if _startup_probe_rows.size() >= 64:
++		_startup_probe_dropped += 1
++		return
++	_startup_probe_rows.append({"label":label,"begin_usec":began,"end_usec":ended,"elapsed_usec":ended-began})
++func startup_construction_profile() -> Dictionary:
++	return {"enabled":_startup_probe_enabled,"closed":not _startup_probe_open,"rows":_startup_probe_rows.duplicate(true),"dropped":_startup_probe_dropped,"scope":"startup_wall_intervals_nested_do_not_sum","deferred_warmup_included":false}
+--- source09/tests/ink_first_floor_user_route_20261005/runtime01/host.gd
++++ candidate/tests/ink_first_floor_user_route_20261005/runtime01/host.gd
+@@ -47,29 +47,45 @@
+  return FloorHUD.new()
+ func _start_encounter() -> void:
+  if shop_session != null: startup_session_error = "fresh_restart_requires_exit_and_new_session"; return
++ var _startup_probe_runtime_sim_router: int = _startup_probe_begin()
+  sim = _make_floor_sim(); add_child(sim)
+  sim.hero.position = Vector3(0,0,4)
+  sim.ai_enabled = true; sim.auto_finish = false
+  room_binding_report = RoomLayout.bind_to_sim(sim); bound_room_sim_id = sim.get_instance_id()
+  input_router = _make_floor_router(); input_router.bind(sim)
++ _startup_probe_end("runtime_sim_router", _startup_probe_runtime_sim_router)
++ var _startup_probe_runtime_initial_actor: int = _startup_probe_begin()
+  hero_view = MotionView.new(); add_child(hero_view)
++ _startup_probe_end("runtime_initial_actor", _startup_probe_runtime_initial_actor)
++ var _startup_probe_runtime_other_views: int = _startup_probe_begin()
+  enemy_view = CaptureAnchor.new(); add_child(enemy_view); enemy_view.visible = false
+  enemy_layer = EnemyLayer.new(); add_child(enemy_layer)
+  mountain_view = MountainView.new(); add_child(mountain_view)
+  aim_preview = Preview.new(); add_child(aim_preview)
++ _startup_probe_end("runtime_other_views", _startup_probe_runtime_other_views)
++ var _startup_probe_authority_session_constructor: int = _startup_probe_begin()
+  shop_session = _make_floor_session()
++ _startup_probe_end("authority_session_constructor", _startup_probe_authority_session_constructor)
++ var _startup_probe_authority_reward_configure: int = _startup_probe_begin()
+  var configured: Dictionary = shop_session.configure_reward_table(REWARD_ROOT+"reward_table.json",REWARD_ROOT+"rewards.csv",REWARD_ROOT+"validation_result.json",true)
++ _startup_probe_end("authority_reward_configure", _startup_probe_authority_reward_configure)
++ var _startup_probe_authority_definition_load: int = _startup_probe_begin()
+  var loaded: Dictionary = FloorSession.MixedSchema.load_definition(FloorSession.DEFAULT_DEFINITION,true)
++ _startup_probe_end("authority_definition_load", _startup_probe_authority_definition_load)
+  var initialized: Dictionary = configured
+  if configured.accepted and loaded.accepted:
++  var _startup_probe_authority_initialize_floor: int = _startup_probe_begin()
+   initialized = shop_session.initialize_floor(sim,loaded.definition,"normal-floor-%d" % Time.get_ticks_usec(),true)
++  _startup_probe_end("authority_initialize_floor", _startup_probe_authority_initialize_floor)
+  elif not loaded.accepted: initialized = loaded
+  if not initialized.accepted: startup_session_error = str(initialized.reason); floor_error = startup_session_error
+  else: shop_session.bind_input_suspender(input_router.suspend_input)
+  sim.combat_event.connect(_combat_event); sim.encounter_finished.connect(_session_terminal)
+  enemy_layer.reader.capture(sim)
+  seen_receipts.clear(); q1_view.reset_visuals(); audio_output.restart_scope(); audio_output.clear()
++ var _startup_probe_runtime_initial_refresh: int = _startup_probe_begin()
+  _refresh(0.0)
++ _startup_probe_end("runtime_initial_refresh", _startup_probe_runtime_initial_refresh)
+ func _create_session_controls() -> void:
+  session_canvas = CanvasLayer.new(); session_canvas.layer = 100; add_child(session_canvas)
+  var overlay := Control.new(); overlay.theme = preload("res://tests/ink_style_specimen_20261004/style.gd").ui_theme()
+--- source09/tests/ink_ordinary_visuals_20261007/candidate01/host.gd
++++ candidate/tests/ink_ordinary_visuals_20261007/candidate01/host.gd
+@@ -37,7 +37,9 @@
+ 
+ func _start_encounter() -> void:
+  var fresh: bool = shop_session == null
++ var _startup_probe_outer_ancestor_encounter: int = _startup_probe_begin()
+  super._start_encounter()
++ _startup_probe_end("outer_ancestor_encounter", _startup_probe_outer_ancestor_encounter)
+  if not fresh or not is_instance_valid(sim) or not startup_session_error.is_empty() or not floor_error.is_empty(): return
+  if not release_installed or not release_installation.get("accepted",false):
+   _ordinary_visual_fail("recovery08_ancestor_seal_required")
+@@ -62,8 +64,10 @@
+  var removed_id: int = hero_view.get_instance_id()
+  remove_child(hero_view)
+  hero_view.free()
++ var _startup_probe_outer_final_actor: int = _startup_probe_begin()
+  hero_view = OrdinaryVisualActor.new()
+  add_child(hero_view)
++ _startup_probe_end("outer_final_actor", _startup_probe_outer_final_actor)
+  ordinary_visual_actor_installed = true
+  if not hero_view.recovery_ready or hero_view.proof.get("status", "HOLD") == "HOLD":
+   _ordinary_visual_fail("actual_dual_actor_parent_HOLD")
+@@ -76,10 +80,16 @@
+  if not ordinary_visual_clock_binding.get("accepted",false):
+   _ordinary_visual_fail("actual_dual_source_clock_HOLD")
+   return
++ var _startup_probe_outer_final_effect_views: int = _startup_probe_begin()
+  _ordinary_install_views()
++ _startup_probe_end("outer_final_effect_views", _startup_probe_outer_final_effect_views)
+  if not ordinary_visual_views_installed: return
++ var _startup_probe_outer_final_refresh: int = _startup_probe_begin()
+  _refresh(0.0)
++ _startup_probe_end("outer_final_refresh", _startup_probe_outer_final_refresh)
++ var _startup_probe_outer_final_identity: int = _startup_probe_begin()
+  var identity: Dictionary = _composed_warmup_identity()
++ _startup_probe_end("outer_final_identity", _startup_probe_outer_final_identity)
+  var unchanged: bool = before == _gesture_gameplay_seal()
+  ordinary_visual_installation = {"accepted":unchanged and identity.get("accepted",false),
+   "source_ledger_session_rng_and_director_equal":unchanged,
+@@ -425,9 +435,12 @@
+ 
+ var _startup_construction_complete_usec: int = 0
+ func _ready() -> void:
++ var _startup_probe_outer_ready_total: int = _startup_probe_begin()
+  super._ready()
+  _startup_construction_complete_usec = Time.get_ticks_usec()
+  _startup_construction_complete = true
++ _startup_probe_end("outer_ready_total", _startup_probe_outer_ready_total)
++ _startup_probe_open = false
+ 
+ func startup_phase_diagnostics() -> Dictionary:
+  var now_usec: int = Time.get_ticks_usec()
