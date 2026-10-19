@@ -1,0 +1,30 @@
+{
+  "status": "immutable_source_checkpoint_not_native_validated",
+  "changes": [
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/decoy_director.gd",
+      "before_sha256": null,
+      "after_sha256": "a04d63970332ef4324bbfcacd394f297a911959be2471631770c7f7b602b8be5",
+      "bytes": 13798
+    },
+    {
+      "path": "tests/ink_first_floor_boss_20261008/source01/enemy_director.gd",
+      "before_sha256": "837706dde51561fd5754cedb7c7470f8a25f419675844de814fa58c20e7868c1",
+      "after_sha256": "11e210034cda6d9c53bc951f5326a936c48ac9c4d2116c8ef514ab6b8935ce90",
+      "bytes": 914
+    },
+    {
+      "path": "visual_rework_20261009/views/e2_source_boat_view.gd",
+      "before_sha256": "289f29e9c079e0c92889a8243d9b8618fa3c92bbeacc75e91f35b3edb56d9100",
+      "after_sha256": "75f21cb560fe08a4b545f7ce2936441a2999d816db5befe9d2c07cb921d2ae29",
+      "bytes": 5338
+    }
+  ],
+  "public_files": [
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/decoy_director.gd",
+    "payload/tests/ink_first_floor_boss_20261008/source01/enemy_director.gd",
+    "payload/visual_rework_20261009/views/e2_source_boat_view.gd",
+    "README.md",
+    "MANIFEST.json"
+  ]
+}

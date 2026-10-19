@@ -1,0 +1,50 @@
+{
+  "schema": "source08-rebuild-portable-delta-1",
+  "base_pck_sha256": "f5d8b2e8cef38cdae67fe91c8612726cb7ceec03e2ea79e879187d7cd75e4c4d",
+  "base_pck_bytes": 301528916,
+  "result_files": 3377,
+  "result_pck_sha256": "913a45f5595d495be97cd2f0710ead7389d6b7b4ecfa33b28495d2348ccfa451",
+  "result_pck_bytes": 301552900,
+  "files": [
+    {
+      "path": "data/final_design/catalog.gd",
+      "before": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+      "after": "196c4b1a33d78876c21bd8bc6a55a00445651d54f3b0224dbaaaeeb39ae67afc"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/data/final_design/catalog.gd",
+      "before": null,
+      "after": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9"
+    },
+    {
+      "path": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "after": "cb277bc316c08a8d998f21df1f3b4750fb15cd2853ce0b2c995932f2081a93e3"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": null,
+      "after": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "234e9e5d7b9593aede713e02e3092236952a9d66208241e2228a3451e5fb65db",
+      "after": "c06b032b602472cd58b14a4701baa712b9f08bf88a62611619b01ab77ee518a2"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "206d90110cfe67fe0b5ccb7bed439d9e79523b0549ea0d0b5f44a71b05595aef",
+      "after": "d8759819095da846e92f1c5683e12ea59aba7a94735df63ca84a3142a8c6656a",
+      "replacement": {
+        "old": "\"sha256\": \"234e9e5d7b9593aede713e02e3092236952a9d66208241e2228a3451e5fb65db\"",
+        "new": "\"sha256\": \"c06b032b602472cd58b14a4701baa712b9f08bf88a62611619b01ab77ee518a2\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "fbd6eb793cefe69cf71856588e08f4442d94fba24523c21484189a9f8013fba9",
+      "after": "2d6f6d7dc3417f513bc94b61c35bf79d744a502f4d24f0fb890c59eeed188f63"
+    }
+  ],
+  "native_acceptance": "NOT_VERIFIED"
+}
