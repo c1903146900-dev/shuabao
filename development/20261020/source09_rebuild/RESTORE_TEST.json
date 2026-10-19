@@ -1,0 +1,22 @@
+{
+  "result": "EXACT_RESTORE_VERIFIED_NO_ENGINE",
+  "source_files": 3379,
+  "all_source_sha256_equal": true,
+  "pck_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+  "pck_bytes": 301573944,
+  "native_acceptance": "NOT_ESTABLISHED_BY_THIS_RESTORE",
+  "public_files": [
+    "MANIFEST.json",
+    "PAYLOAD_PINS.json",
+    "README.md",
+    "apply.py",
+    "payload/scripts/integration/hero_entry.gd",
+    "payload/scripts/integration/loading_status.gd",
+    "payload/yan_p3_reimplementation_20261018b/gate.gd",
+    "payload/yan_p3_reimplementation_20261018b/migration.json",
+    "payload/yan_p3_reimplementation_20261018b/presentation_preimages/scripts/integration/hero_entry.gd",
+    "payload/yan_trial_ui_20261018/page_coordinator.gd",
+    "payload/yan_trial_ui_20261018/presenter.gd",
+    "RESTORE_TEST.json"
+  ]
+}
