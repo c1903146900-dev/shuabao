@@ -1,0 +1,43 @@
+--- source06/data/final_design/catalog.gd
++++ candidate/data/final_design/catalog.gd
+@@ -67,16 +67,20 @@
+ 	return result
+ 
+ static func hex_definition(id: String) -> Dictionary:
++	return _hex_definition_source(id).duplicate(true)
++
++# Internal read-only reference; never returned by public getters.
++static func _hex_definition_source(id: String) -> Dictionary:
+ 	if id.begins_with("common_"):
+-		return _source().get("common_hexes", {}).get(id.trim_prefix("common_").to_upper(), {}).duplicate(true)
++		return _source().get("common_hexes", {}).get(id.trim_prefix("common_").to_upper(), {})
+ 	for hero_id in hero_ids():
+ 		if id.begins_with(hero_id + "_"):
+-			return _source().heroes[hero_id].hexes.get(id.trim_prefix(hero_id + "_").to_upper(), {}).duplicate(true)
++			return _source().heroes[hero_id].hexes.get(id.trim_prefix(hero_id + "_").to_upper(), {})
+ 	return {}
+ 
+ static func hex_parameter(id: String, token: String) -> float:
+-	var p: Dictionary = hex_definition(id).get("parameters", {}).get(_token(token), {})
+-	var override: Dictionary = effective_overrides().get("hexes", {}).get(id, {}).get(_token(token), {})
++	var p: Dictionary = _hex_definition_source(id).get("parameters", {}).get(_token(token), {}).duplicate(true)
++	var override: Dictionary = _effective_overrides_source().get("hexes", {}).get(id, {}).get(_token(token), {})
+ 	if not override.is_empty(): p.values = override.values
+ 	return _value(p, 1)
+ 
+@@ -163,10 +167,14 @@
+ 	return float(values[rank - 1])
+ 
+ static func effective_overrides() -> Dictionary:
++	return _effective_overrides_source().duplicate(true)
++
++# Initialization remains lazy and identical; callers below only read this reference.
++static func _effective_overrides_source() -> Dictionary:
+ 	if _override_cache.is_empty():
+ 		var parsed = JSON.parse_string(FileAccess.get_file_as_string("res://data/final_design/effective_overrides.json"))
+ 		if parsed is Dictionary: _override_cache = _canonical(parsed)
+-	return _override_cache.duplicate(true)
++	return _override_cache
+ 
+ static func _render(hero_id: String, template: String, parameters: Dictionary, rank: int) -> String:
+ 	var result := template

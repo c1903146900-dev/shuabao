@@ -1,0 +1,71 @@
+{
+  "checks": 4352,
+  "failures": [],
+  "hero_rank_cells": 2888,
+  "hex_cells": 344,
+  "override_unchanged": true,
+  "percent_cells": 152,
+  "rounds": [
+    {
+      "arm": "original",
+      "calls": 3000,
+      "elapsed_usec": 166815,
+      "round": 0,
+      "sum": 18000.0
+    },
+    {
+      "arm": "candidate",
+      "calls": 3000,
+      "elapsed_usec": 22969,
+      "round": 0,
+      "sum": 18000.0
+    },
+    {
+      "arm": "candidate",
+      "calls": 3000,
+      "elapsed_usec": 36566,
+      "round": 1,
+      "sum": 18000.0
+    },
+    {
+      "arm": "original",
+      "calls": 3000,
+      "elapsed_usec": 158213,
+      "round": 1,
+      "sum": 18000.0
+    },
+    {
+      "arm": "original",
+      "calls": 3000,
+      "elapsed_usec": 196804,
+      "round": 2,
+      "sum": 18000.0
+    },
+    {
+      "arm": "candidate",
+      "calls": 3000,
+      "elapsed_usec": 18465,
+      "round": 2,
+      "sum": 18000.0
+    },
+    {
+      "arm": "candidate",
+      "calls": 3000,
+      "elapsed_usec": 21298,
+      "round": 3,
+      "sum": 18000.0
+    },
+    {
+      "arm": "original",
+      "calls": 3000,
+      "elapsed_usec": 195691,
+      "round": 3,
+      "sum": 18000.0
+    }
+  ],
+  "scope": "source06_catalog_only_GUI_microbenchmark_not_game_frame",
+  "source_unchanged": true,
+  "spellings": 1032,
+  "status": "PASS",
+  "total_usec": 1345143
+}
