@@ -1,0 +1,30 @@
+{
+  "status": "immutable_source_checkpoint_work_in_progress_not_native_validated",
+  "changes": [
+    {
+      "path": "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "before": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762",
+      "after": "629cdf44c742c6fb5180846527deceb090954b656be7afcb5a1230ddfeaa83b0",
+      "bytes": 29431
+    },
+    {
+      "path": "tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd",
+      "before": "37801af006d8295288d6c5e209303987ea45bde87621271a13b25d89d1651786",
+      "after": "951ae7a908118f3ae70177b41456285db3e8fc1e7ebd69eec0a6b5669ad2d54b",
+      "bytes": 4147
+    },
+    {
+      "path": "tests/ink_e2_boundary_20261006/ordinary01/sim.gd",
+      "before": "e4e380b798fc20c609bd25eb6e560cb63e1a0fbd4ab76dae4a6ce63386f6d107",
+      "after": "0a6092b8a1024fa593030244b60e035f56a3e494617acd59ff57254cdc03cf5e",
+      "bytes": 5938
+    }
+  ],
+  "public_files": [
+    "payload/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+    "payload/tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd",
+    "payload/tests/ink_e2_boundary_20261006/ordinary01/sim.gd",
+    "README.md",
+    "MANIFEST.json"
+  ]
+}
