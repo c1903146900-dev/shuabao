@@ -1,0 +1,24 @@
+{
+  "status": "immutable_source_checkpoint_not_native_validated",
+  "supersedes": "checkpoint03 e2_base.gd and boat_probe.gd only",
+  "changes": [
+    {
+      "path": "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "previous_checkpoint_sha256": "36a7d5505ca418ed832b2f00bb43c16ccde8cc410da37706c5370eee70966fd5",
+      "after_sha256": "c1a9fc08d85e05a8361d2e185ac004ef0a2416d423fd85b6ae00a12ee8ae7fb9",
+      "bytes": 29601
+    },
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd",
+      "previous_checkpoint_sha256": "70affe8ad7c61efc5fc5e273676580049db233e5d9747981bd7d14150565589f",
+      "after_sha256": "7b401be92015c138ad47574282b8e3c7409146ccea02c3172238699613607b61",
+      "bytes": 14688
+    }
+  ],
+  "public_files": [
+    "payload/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd",
+    "README.md",
+    "MANIFEST.json"
+  ]
+}

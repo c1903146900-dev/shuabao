@@ -1,0 +1,45 @@
+{
+  "status": "immutable_source_checkpoint_not_native_validated",
+  "supersedes": "checkpoint01 e2_base.gd only; retain checkpoint01 other files and checkpoint02",
+  "changes": [
+    {
+      "path": "tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+      "before_sha256": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762",
+      "after_sha256": "36a7d5505ca418ed832b2f00bb43c16ccde8cc410da37706c5370eee70966fd5",
+      "bytes": 29478
+    },
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd",
+      "before_sha256": null,
+      "after_sha256": "70affe8ad7c61efc5fc5e273676580049db233e5d9747981bd7d14150565589f",
+      "bytes": 13016
+    },
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/probe.tscn",
+      "before_sha256": null,
+      "after_sha256": "832201633735fee7927a2a1b3e4f3134671fcfbb19c5e7f161d69aea6d6bb47c",
+      "bytes": 214
+    },
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/director_probe.tscn",
+      "before_sha256": null,
+      "after_sha256": "8c41c4c65bf17f33ca2638313dce6d02140a19ce034b2d8db576d847819537c8",
+      "bytes": 217
+    },
+    {
+      "path": "tests/first_hero_boat_hooks_rebuild_20261020/director_probe.gd",
+      "before_sha256": null,
+      "after_sha256": "68e0980253edf8a571e5b6dc502a52a84c44c5c36668fcbc56ec7b70a1277f89",
+      "bytes": 10030
+    }
+  ],
+  "public_files": [
+    "payload/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd",
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd",
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/probe.tscn",
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/director_probe.tscn",
+    "payload/tests/first_hero_boat_hooks_rebuild_20261020/director_probe.gd",
+    "README.md",
+    "MANIFEST.json"
+  ]
+}
