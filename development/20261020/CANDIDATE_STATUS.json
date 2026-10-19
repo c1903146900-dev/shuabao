@@ -1,0 +1,23 @@
+{
+  "status": "CANDIDATES_NOT_NATIVE_VALIDATED",
+  "baseline_pck_sha256": "77f747f6f68b970042f2f184de660afd812f2320cf03c6d127e244b68cbc119a",
+  "changes": [
+    "mutually exclusive skill and route presentation",
+    "scalar catalog lookup allocation reduction"
+  ],
+  "files": [
+    {
+      "path": "development/20261020/ui_rebuild01/yan_trial_ui_20261018/page_coordinator.gd",
+      "sha256": "5b3861f09f897aeb3aecfb14e7f4ed1f6ff6ab4e50386dd14e928019355557ae"
+    },
+    {
+      "path": "development/20261020/ui_rebuild01/yan_trial_ui_20261018/presenter.gd",
+      "sha256": "1539646ff96cd88f5b56e36b45fd276e28da80d9a97105707a8ebd1686fc04aa"
+    },
+    {
+      "path": "development/20261020/performance_rebuild01/data/final_design/catalog.gd",
+      "sha256": "196c4b1a33d78876c21bd8bc6a55a00445651d54f3b0224dbaaaeeb39ae67afc"
+    }
+  ],
+  "integration": "Requires exact authority binding migration and native tests before production admission."
+}
