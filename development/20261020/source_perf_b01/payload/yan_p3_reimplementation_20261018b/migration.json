@@ -1,0 +1,189 @@
+{
+  "schema": "yan-p3-gameplay-migration-1",
+  "predecessor": "res://yan_p3_reimplementation_20261018b/predecessor_source_binding.json",
+  "predecessor_sha": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+  "visual_path": "res://visual_rework_20261009/binding/visual_binding.json",
+  "visual_sha": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+  "changes": {
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "65fa20283d277d09a84d82579d5d3a81b3891fdb5ab3d1a617a9868d51324bc0",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+    },
+    "res://equipment_prism_20261011/model.gd": {
+      "before": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "after": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/equipment_prism_20261011/model.gd"
+    },
+    "res://tests/ink_rest_service_20261006/candidate01/rest_service.gd": {
+      "before": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+      "after": "33da8f16f1679469f67fe05addf89c97625c269134c799b3063343f364f966ec",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_rest_service_20261006/candidate01/rest_service.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/catalog.gd": {
+      "before": "d6b63ac39558cc95a4e0607d9935da85d981206114041c308920ac8f1e58e323",
+      "after": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/catalog.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd": {
+      "before": "2d9eec12ceb0e6f0017b98d0b530e37165a43d36f1cf1e6719b8e5377d47e2a6",
+      "after": "bc1c75518866363fad8adc8342020fd778007708e2e8d7e121e0a4a6b4883e07",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd": {
+      "before": "8f33242427b6b39661f47acadaabd792a7a18abd293d5c47b94a762e8a0a95d3",
+      "after": "4161bdb703055d9977bc7915c9887f91e335a1fb786f535bb8a639a935f6bf27",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd": {
+      "before": "1cfe7077797be25d702a8655eecf8ecb6fd5b46366ab0a3549289915eddd371b",
+      "after": "832462f6bfdcd0333d02d80340f3f982b256c29f90d2bdbe7a8709c78edb592f",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd"
+    },
+    "res://tests/ink_ordinary_visuals_20261007/candidate01/host.gd": {
+      "before": "5c1cf30eefaf407c9a3c754dd86da5962edff8d3e2ab3d8a308b7e6239cec7ef",
+      "after": "a57a946e8b898aba610d959cd7b515adf062ad840c9086e487a5e236e78ddec2",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_ordinary_visuals_20261007/candidate01/host.gd"
+    },
+    "res://visual_rework_20261009/binding/live_binding.gd": {
+      "before": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "after": "23ddf8c89be2728f5031d629bc938cd9acfb5193f4f441d16be77c343d90f0de",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/visual_rework_20261009/binding/live_binding.gd"
+    }
+  },
+  "added": {
+    "res://yan_p3_reimplementation_20261018b/p3_state.gd": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c",
+    "res://yan_enemy_cartoon_20261019/outline.gdshader": "bf52b5e10e4f207c4a6100862ca60fe6b86a6e8e908fd87d2a369eac9ac5fb50",
+    "res://yan_enemy_cartoon_20261019/body.gdshader": "6d8b72cdb5d0124f8f66fa02c298f2b0e3c3fb29e8b5172190d3a9a7854f3d63",
+    "res://yan_enemy_cartoon_20261019/enemy_view.gd": "487e36b02a6a65d69236dda576996c5469e297c69340c05eea46aa022333de5a",
+    "res://yan_trial_ui_20261018/page_coordinator.gd": "0ee78a1da34f4dde39da1cc3f24a1ce5e0a912a8b20829a104be56abbaf51d63",
+    "res://yan_trial_ui_20261018/presenter.gd": "ea6ad6df667b21445e6b228d18fd740da18c6db835c9518d3db2119fc44100b6",
+    "res://scripts/integration/loading_status.gd": "1ecee900e5d20b338b51dbd687be1585da88667d86eb959a9b4d2eed42211d58",
+    "res://yan_visual_attach_20261018/entry.gd": "32dca8f1a4511b6e62e96c57f0f34e558f0c342a9bf8c73419924b8842767b92",
+    "res://performance_probe_20261020/flow_binding.gd": "38200ace6f661c0d91cba9a63c4439221fa69efd3cfd0d6b0a9f77cbb3e116c2",
+    "res://performance_probe_20261020/frame_cpu.gd": "b0ef5dc5260984f17ef58c7af0009f4344a81b930518893b37fac72ab4d8aebc"
+  },
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1",
+    "E2",
+    "E3",
+    "P1",
+    "P2",
+    "P3",
+    "R1",
+    "R2"
+  ],
+  "presentation_changes": {
+    "res://scripts/ui/hero_chooser.gd": {
+      "map_scope": "source",
+      "before": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+      "after": "6e3398fcfa8144a33d598aaad02a954ca2555c0b5b8573dc402c3201f41bf6af",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/scripts/ui/hero_chooser.gd"
+    },
+    "res://visual_rework_20261009/controller.gd": {
+      "map_scope": "visual",
+      "before": "8830631bdf2e9ad227ac867979a01a6fd16a1b9b5ff13c6e993364f6ae9bac47",
+      "after": "9796c5f722421d2d9ee35fb8e0fc0b7827d2043a4d7c5888a1e2e87972cdb275",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/controller.gd"
+    },
+    "res://visual_rework_20261009/views/q3_mountain_mesh.gd": {
+      "map_scope": "visual",
+      "before": "a5e4e88c09eeba702ced6ba14299060e8be8fe09d19c873e30d95eb7b2c31ae3",
+      "after": "02f7486b35c1864d0a33778d141a29ffdad71f661fd1ef97d8024dfa978fbc88",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/views/q3_mountain_mesh.gd"
+    },
+    "res://visual_rework_20261009/views/q3_rock.gdshader": {
+      "map_scope": "visual",
+      "before": "31bdee1f25267b07e7cb36fc4d4a7538b0eec86331f1e21e2667aef53c8226af",
+      "after": "5d8e26347671d4df3ec1c93614c3a74afb3425f61b3fe96c4affeb8ca39ac69d",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/views/q3_rock.gdshader"
+    },
+    "res://tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd": {
+      "map_scope": "source",
+      "before": "45975dab784657e5994912e8022e916b6707b01f3412b2e4afe0d2d6bb9f5541",
+      "after": "54c9bdc282becb5a1aeaed37ebb4fdf1dfbf3667888da20c735f9fbfd0271948",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd"
+    },
+    "res://data/final_design/catalog.gd": {
+      "map_scope": "source",
+      "before": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+      "after": "196c4b1a33d78876c21bd8bc6a55a00445651d54f3b0224dbaaaeeb39ae67afc",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/data/final_design/catalog.gd"
+    },
+    "res://visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "map_scope": "source",
+      "before": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "after": "7b0204eac1bf2c2487f50771e15547f73b626dc5ec93cb0df6be5659837b5127",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/binding/c03_visual_source_successor.gd"
+    },
+    "res://scripts/integration/hero_entry.gd": {
+      "map_scope": "source",
+      "before": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+      "after": "2f4a5aa4b6b4d72d2a048e9bc0903addbb746761292902bcefea4807e010bcb5",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/scripts/integration/hero_entry.gd"
+    },
+    "res://tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd": {
+      "map_scope": "source",
+      "before": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f",
+      "after": "f4116bf367e312ffc6eac9cb9e75fff271611756c47cfdbb95378c1581a2d4fb",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd"
+    },
+    "res://visual_rework_20261009/runtime_actor.gd": {
+      "map_scope": "visual",
+      "before": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66",
+      "after": "038f6805928d14df25b57444331c15c89a46231834554256ed742da50a05ea15",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/runtime_actor.gd"
+    },
+    "res://visual_rework_20261009/runtime_host.gd": {
+      "map_scope": "source",
+      "before": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b",
+      "after": "456c42cf20cb2d3aa86f0f96b3bf7ef03d3c2d8cf42ac1028fcf804d3c5d0d40",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/runtime_host.gd"
+    },
+    "res://elixir_swift_20261010/common_bridge.gd": {
+      "map_scope": "source",
+      "before": "9b31899ae30107eea394fea3b3c78f43a229999816d83580c79ff82946ec2412",
+      "after": "a51d10da0b2803e75fbdb9d173ef2befc09b158b22f5a72bd6aaf08d826af9c4",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/elixir_swift_20261010/common_bridge.gd"
+    },
+    "res://scripts/combat/common_hex_bridge.gd": {
+      "map_scope": "source",
+      "before": "006058789a60df858b21d7fb04269d8849859b14ef35b1cc203ea8921b7e9763",
+      "after": "5f07255df6edd028c9c697859142db9b389a2bc2c9fe4661c0cde6066f24ca1e",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/scripts/combat/common_hex_bridge.gd"
+    },
+    "res://elixir_war_20261009/common_bridge.gd": {
+      "map_scope": "source",
+      "before": "4e8a4f4018067be3b77cbf90feb175e69a3338a180875082ad64b80862913e02",
+      "after": "a6fc490a407f613a75ee851ee8fd976f2fa583a4cbb967fe45f83dc1b34bc710",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/elixir_war_20261009/common_bridge.gd"
+    },
+    "res://equipment_pursuit_20261009/common_bridge.gd": {
+      "map_scope": "source",
+      "before": "86d35c3ee9566c23bc0d4d5ab7f60e101e9b08dc2a884e43377bcfb733c378f3",
+      "after": "97f43505e6606630d224ee319d881335822fb0a016236544b3fd1f836d200cd3",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/equipment_pursuit_20261009/common_bridge.gd"
+    },
+    "res://tests/ink_initial_hex_runtime_20261004/ink_initial_stat_consumer.gd": {
+      "map_scope": "source",
+      "before": "524471c5ef2742025d9876a40406f84b03c8f93ceccba6a65371ea6da8f2318e",
+      "after": "b32dda8c35854fbc0e0937930f7fb84130414065cb93c0d7740184ea91c18540",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_initial_hex_runtime_20261004/ink_initial_stat_consumer.gd"
+    },
+    "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd": {
+      "map_scope": "source",
+      "before": "319ea10cad6b54698d8c677c1af5aec7de16f3ab48673a991a5efa70266798a8",
+      "after": "2a5d3ea61e049b2d6df01fb9c503b6b3ccf725d7c13d7c5287743a07ebbc7945",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_sim.gd"
+    },
+    "res://tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd": {
+      "map_scope": "source",
+      "before": "8456310d03c299da54472e9291527d72349979b4ca3b1435246c2f8bbba5992e",
+      "after": "d9ad84f97a33de7a4fdcef8d1712a4ab31c297a47b1c5944bfc18e6210dc231e",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_q1_foundation_20261004/revision02/scripts/ink_tuning.gd"
+    }
+  }
+}

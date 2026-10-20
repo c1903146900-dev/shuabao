@@ -1,0 +1,73 @@
+{
+  "status": "FRESH_FULL_SOURCE_AND_PCK_EXACT",
+  "native": "UNRUN",
+  "source_files": 3386,
+  "pck_sha256": "61fe07fda847835d814593236280e2102afe8ee45fc1f62c1057ef325d0368cb",
+  "public_files": [
+    {
+      "path": "MANIFEST.json",
+      "sha256": "0b20f69690049558e4fff477dba27d30a21e9141bb7ee8e935b0bb2038f802ba",
+      "bytes": 2982
+    },
+    {
+      "path": "PAYLOAD_PINS.json",
+      "sha256": "94bd5d4a0fc8c1211b328c1c97ce2bb3cc98e7f0a3c0a09b38d6fdde5902b652",
+      "bytes": 1490
+    },
+    {
+      "path": "README.md",
+      "sha256": "7ae304151ae5ea4f8bfd1892b2f3df52a48172e8f783daaa4e5836d551a7991d",
+      "bytes": 794
+    },
+    {
+      "path": "apply.py",
+      "sha256": "766f81a2091c8c8d33c9685b6b34abe4e85836577ad88ac5e331a09922fbed50",
+      "bytes": 4026
+    },
+    {
+      "path": "payload/elixir_swift_20261010/common_bridge.gd",
+      "sha256": "a51d10da0b2803e75fbdb9d173ef2befc09b158b22f5a72bd6aaf08d826af9c4",
+      "bytes": 1427
+    },
+    {
+      "path": "payload/performance_probe_20261020/frame_cpu.gd",
+      "sha256": "b0ef5dc5260984f17ef58c7af0009f4344a81b930518893b37fac72ab4d8aebc",
+      "bytes": 2649
+    },
+    {
+      "path": "payload/scripts/combat/common_hex_bridge.gd",
+      "sha256": "5f07255df6edd028c9c697859142db9b389a2bc2c9fe4661c0cde6066f24ca1e",
+      "bytes": 18310
+    },
+    {
+      "path": "payload/tests/ink_river_hexes_20261006/ordinary01/sim.gd",
+      "sha256": "65fa20283d277d09a84d82579d5d3a81b3891fdb5ab3d1a617a9868d51324bc0",
+      "bytes": 111113
+    },
+    {
+      "path": "payload/visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "sha256": "3725f787098bb5bbe2d30f3fcf6376ca633661209b04ebeed49e8578ac7cd223",
+      "bytes": 9590
+    },
+    {
+      "path": "payload/yan_p3_reimplementation_20261018b/gate.gd",
+      "sha256": "457887de340d033226050a37a5fa055652d2f8b29b89656a586f2e74013b5033",
+      "bytes": 6675
+    },
+    {
+      "path": "payload/yan_p3_reimplementation_20261018b/migration.json",
+      "sha256": "dedc26f502aee7eec8c691229e00844cc93c480b56457e4571a5ad6604816790",
+      "bytes": 10158
+    },
+    {
+      "path": "payload/yan_p3_reimplementation_20261018b/presentation_preimages/elixir_swift_20261010/common_bridge.gd",
+      "sha256": "9b31899ae30107eea394fea3b3c78f43a229999816d83580c79ff82946ec2412",
+      "bytes": 1040
+    },
+    {
+      "path": "payload/yan_p3_reimplementation_20261018b/presentation_preimages/scripts/combat/common_hex_bridge.gd",
+      "sha256": "006058789a60df858b21d7fb04269d8849859b14ef35b1cc203ea8921b7e9763",
+      "bytes": 17920
+    }
+  ]
+}
