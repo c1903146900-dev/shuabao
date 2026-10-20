@@ -1,0 +1,35 @@
+{
+  "schema": "skin16-portable-delta-1",
+  "base_pck_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+  "base_pck_bytes": 301573944,
+  "result_files": 3379,
+  "result_pck_sha256": "761b094458f6025e876504f9ec677f20e0d98069598c9b3d4c7e1de13757710e",
+  "result_pck_bytes": 301579304,
+  "files": [
+    {
+      "path": "yan_visual_attach_20261018/entry.gd",
+      "before": "a64cc8825b98cf9477272932471c4bb75eb2ac08026bbe30061596d347478253",
+      "after": "18cf8ac03497720207ec1e283e80d49c743d4377fe0cc9105e7a0c600850bc7f"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659",
+      "after": "6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "d427d29743011834b6d31d5492c4d0e761bb59227d122c7f3e2670c516d76e88",
+      "after": "66e41b2efbdba8e93b29a9d090cc091e03d57de4201e272be9cf63179b8df0f9",
+      "replacement": {
+        "old": "\"sha256\": \"4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659\"",
+        "new": "\"sha256\": \"6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "3fb342b9e1ae83c258bad0402b7cc60d45ab0088f137e633a877c788e746f180",
+      "after": "3e70083542135b81e66f4f0b77baf3643270f6668ecfce6820d2d8d7cb0c13ce"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
