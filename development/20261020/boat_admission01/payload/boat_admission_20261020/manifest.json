@@ -1,0 +1,97 @@
+{
+  "schema": "boat-exact-source-successor-1",
+  "status": "admission_candidate_not_native_verified",
+  "changes": {
+    "res://tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd": {
+      "before": "dce7b8a7577e6d11c26b37a1f93916fd36dd1134badacbec8fcdf8f6c1933762",
+      "after": "c1a9fc08d85e05a8361d2e185ac004ef0a2416d423fd85b6ae00a12ee8ae7fb9",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_e2_boundary_20261006/ordinary01/e2_base.gd"
+    },
+    "res://tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd": {
+      "before": "37801af006d8295288d6c5e209303987ea45bde87621271a13b25d89d1651786",
+      "after": "951ae7a908118f3ae70177b41456285db3e8fc1e7ebd69eec0a6b5669ad2d54b",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_e2_boundary_20261006/ordinary01/e2_boundary.gd"
+    },
+    "res://tests/ink_e2_boundary_20261006/ordinary01/sim.gd": {
+      "before": "e4e380b798fc20c609bd25eb6e560cb63e1a0fbd4ab76dae4a6ce63386f6d107",
+      "after": "0a6092b8a1024fa593030244b60e035f56a3e494617acd59ff57254cdc03cf5e",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_e2_boundary_20261006/ordinary01/sim.gd"
+    },
+    "res://tests/ink_first_floor_boss_20261008/source01/enemy_director.gd": {
+      "before": "837706dde51561fd5754cedb7c7470f8a25f419675844de814fa58c20e7868c1",
+      "after": "11e210034cda6d9c53bc951f5326a936c48ac9c4d2116c8ef514ab6b8935ce90",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_first_floor_boss_20261008/source01/enemy_director.gd"
+    },
+    "res://visual_rework_20261009/views/e2_source_boat_view.gd": {
+      "before": "289f29e9c079e0c92889a8243d9b8618fa3c92bbeacc75e91f35b3edb56d9100",
+      "after": "75f21cb560fe08a4b545f7ce2936441a2999d816db5befe9d2c07cb921d2ae29",
+      "preimage": "res://boat_admission_20261020/preimages/visual_rework_20261009/views/e2_source_boat_view.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/host.gd": {
+      "before": "b2620751585f69c5bde67954141eef10ceaa1f7da9c67b8f92c04a321b90a864",
+      "after": "4d30658fc7ab5de08b69ceb8f448304658e6e12eb0bc16b492a22789d909c782",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_river_hexes_20261006/frontdoor01/host.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd": {
+      "before": "099709d17edbaad474a1fc826383f37592cc71908c2471d9f9afd77a2d3cf2a8",
+      "after": "87003fb24933d85effcf24961df49b9287c7909cd66212313685b1374c0d4fb7",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_river_hexes_20261006/frontdoor01/floor_session.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/e_hud.gd": {
+      "before": "0434a3b7f057ccd074506cfa92e2002caa7a74128579c5f02e7a78572f23ce01",
+      "after": "f313d097502ceaa249f4e4401af79d1c9874c42a7a6d0e37ea7925120d49c9bd",
+      "preimage": "res://boat_admission_20261020/preimages/tests/ink_river_hexes_20261006/ordinary01/e_hud.gd"
+    },
+    "res://visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "before": "cb277bc316c08a8d998f21df1f3b4750fb15cd2853ce0b2c995932f2081a93e3",
+      "after": "6b44f0e40cef6c833d5ee7a37f4a27c5964dd15d70bbdf61fbf55ffd7d37c0ec",
+      "preimage": "res://boat_admission_20261020/preimages/visual_rework_20261009/binding/c03_visual_source_successor.gd"
+    }
+  },
+  "added": {
+    "res://tests/first_hero_boat_hooks_rebuild_20261020/decoy_director.gd": "a04d63970332ef4324bbfcacd394f297a911959be2471631770c7f7b602b8be5",
+    "res://boat_admission_20261020/catalog.gd": "4452558d495bc8e1c164dccaa0e6cef12e73f534b91a1dd9108ea84faf09056d",
+    "res://boat_admission_20261020/h10_permissions.json": "88e47f48cf2ad30f276d5451e043794ae9871f3d3f397d0fc0833127d75e3cb6",
+    "res://boat_admission_20261020/bridge.gd": "f3df74340a72239d458b94f45dcbae5152ed3aa12b283935e7eabb7fafa2b935",
+    "res://boat_admission_20261020/live_binding.gd": "e4ebb823c6579ed15da8363cdac834b1e9c55912fd8986b85b856a3ea632b294"
+  },
+  "predecessor_authorities": {
+    "res://yan_p3_reimplementation_20261018b/gate.gd": "3fb342b9e1ae83c258bad0402b7cc60d45ab0088f137e633a877c788e746f180",
+    "res://visual_rework_20261009/binding/live_binding.gd": "23ddf8c89be2728f5031d629bc938cd9acfb5193f4f441d16be77c343d90f0de",
+    "res://visual_rework_20261009/binding/source_binding.json": "d427d29743011834b6d31d5492c4d0e761bb59227d122c7f3e2670c516d76e88",
+    "res://visual_rework_20261009/binding/visual_binding.json": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+    "res://yan_p3_reimplementation_20261018b/migration.json": "4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659",
+    "res://tests/ink_river_hexes_20261006/ordinary01/catalog.gd": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9"
+  },
+  "hooks_before": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h03.v1",
+    "hex.final_design.yanguizhou_h04.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1"
+  ],
+  "hooks_after": [
+    "hex.final_design.yanguizhou_h01.v1",
+    "hex.final_design.yanguizhou_h02.v1",
+    "hex.final_design.yanguizhou_h03.v1",
+    "hex.final_design.yanguizhou_h04.v1",
+    "hex.final_design.yanguizhou_h05.v1",
+    "hex.final_design.yanguizhou_h06.v1",
+    "hex.final_design.common_g01.v1",
+    "hex.final_design.common_g05.v1",
+    "hex.final_design.common_g06.v1",
+    "hex.final_design.common_g15.v1",
+    "hex.final_design.common_g24.v1",
+    "hex.final_design.common_g30.v1",
+    "hex.final_design.yanguizhou_h09.v1",
+    "hex.final_design.yanguizhou_h10.v1"
+  ],
+  "normal_acquisition_verified": false
+}
