@@ -1,0 +1,45 @@
+{
+  "schema": "autohex-profile-portable-delta-1",
+  "base_pck_sha256": "b1320d0e2779c7063baf526a0be471a1691795f8cba4d552b3573801f4a4bb32",
+  "base_pck_bytes": 301656868,
+  "result_files": 3385,
+  "result_pck_sha256": "b1cc8d89aebeed245f5b7da5b2ea615225823bd74338545075e7e26cde3e7d82",
+  "result_pck_bytes": 301660632,
+  "files": [
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "08f241997e0bb469cc9d3d110ab9cce131a078a4f2bdb18d5bdb58f210333ada",
+      "after": "f7beaa6ca6cd7edc74a50174efa60563dfad868698c3b7bdb01509bd15d7c895"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "276d50fd3f2ef7f66605b2d630630351b5bad908950c669a362b21ddd70d0ca0",
+      "after": "f0c1407fd705b292585b55ad2421360d98f3471efaf86060ef0526fcfbb6166f"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "d765b70bfae133b30cd5fde5ecf22989ce1737fad950750f4ebf9fd000dd415f",
+      "after": "a8f719ab5b55d34258fd5af754896f84218ab48611683a2e3fba93ca7daf1cec",
+      "replacement": {
+        "old": "\"sha256\": \"276d50fd3f2ef7f66605b2d630630351b5bad908950c669a362b21ddd70d0ca0\"",
+        "new": "\"sha256\": \"f0c1407fd705b292585b55ad2421360d98f3471efaf86060ef0526fcfbb6166f\""
+      }
+    },
+    {
+      "path": "visual_rework_20261009/binding/c03_visual_source_successor.gd",
+      "before": "cb277bc316c08a8d998f21df1f3b4750fb15cd2853ce0b2c995932f2081a93e3",
+      "after": "8e1d7bdd4961a2df21a68bc8f855aed6dbc85f56f6e0437c35f3e85edb2f13fc"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_first_floor_flow_20261004/ink_progression_controller.gd",
+      "before": null,
+      "after": "94f4a180a5184a66dd11aec99d590c6a798eab5f649fa9b74642a700fbd2c313"
+    },
+    {
+      "path": "tests/ink_first_floor_flow_20261004/ink_progression_controller.gd",
+      "before": "94f4a180a5184a66dd11aec99d590c6a798eab5f649fa9b74642a700fbd2c313",
+      "after": "9c1c5de313c7a1e3f9bc1be713bcf4172ee9cb0ba0aefad3ea74eb5efecc4a05"
+    }
+  ],
+  "native_acceptance": "PERFORMANCE_COMPARISON_NATIVE_UNRUN"
+}
