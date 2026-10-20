@@ -1,0 +1,151 @@
+{
+  "accepted": true,
+  "draws": 250,
+  "elapsed_ms": 25585,
+  "full_floor_tested": false,
+  "images": [
+    {
+      "draw": 242,
+      "name": "front_neutral",
+      "sha256": "1e8b80800e7a1ed0a5908a43f35f65e0e78917b06cc57d9ca402b62a0416f78a",
+      "wall_ms": 23717
+    },
+    {
+      "draw": 245,
+      "name": "front_walk",
+      "sha256": "b9bea112c40edea3346df0782372ad34e225fd9cf0fd4fa5a570559b2dfe73a8",
+      "wall_ms": 24282
+    },
+    {
+      "draw": 250,
+      "name": "front_stop",
+      "sha256": "ac79021b59c26065b6f282761562bb880583e5b6d50c53bd4e144eb0cb97f87d",
+      "wall_ms": 25585
+    }
+  ],
+  "loading": {
+    "click_usec": 1299286,
+    "first_display_postdraw_usec": 16293071,
+    "first_display_text_set_usec": 16076402,
+    "first_usable_admitted_usec": 18898763,
+    "first_usable_postdraw_usec": 19002491,
+    "host_add_child_begin_usec": 5706382,
+    "host_add_child_ready_return_usec": 16075632,
+    "host_ready_postdraw_usec": 5706090,
+    "host_ready_text_set_usec": 5672501,
+    "instantiate_begin_usec": 5672245,
+    "instantiate_postdraw_usec": 5672232,
+    "instantiate_return_usec": 5672475,
+    "instantiate_text_set_usec": 5606575,
+    "launch_begin_usec": 1299584,
+    "performance_passed": false,
+    "phases": [
+      "resource_request",
+      "instantiate",
+      "host_ready",
+      "first_display"
+    ],
+    "resource_get_return_usec": 5606560,
+    "resource_loaded_observed_usec": 5606490,
+    "resource_request_begin_usec": 1328960,
+    "resource_request_postdraw_usec": 1328947,
+    "resource_request_return_usec": 1329064,
+    "resource_request_text_set_usec": 1299616,
+    "status": "ready_observed"
+  },
+  "motion_repaired": false,
+  "reason": "",
+  "sampler_failure": "",
+  "scope": "SOURCE09_CONVERGED_ORIGINAL_FRONT_MOTION_DIAGNOSTIC",
+  "test_environment": {
+    "LP_NUM_THREADS": "2",
+    "scope": "TEST_PROCESS_ONLY_NOT_GAME_OPTIMIZATION"
+  },
+  "observation_summary": [
+    {
+      "label": "enter_hero",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 208,
+      "map_visible": false,
+      "page": "blocked",
+      "skills_visible": false,
+      "stage": "initial_hex",
+      "wall_ms": 18718
+    },
+    {
+      "label": "select_hex",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 271
+    },
+    {
+      "draw": 214,
+      "map_visible": false,
+      "page": "skills",
+      "skills_visible": true,
+      "stage": "skills",
+      "wall_ms": 19396
+    },
+    {
+      "label": "learn_Q1",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "label": "skills_done",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 221,
+      "map_visible": true,
+      "page": "map",
+      "skills_visible": false,
+      "stage": "map",
+      "wall_ms": 20118
+    },
+    {
+      "label": "select_r01a",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "label": "enter_r01a",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 228,
+      "map_visible": false,
+      "page": "room",
+      "skills_visible": false,
+      "stage": "room",
+      "wall_ms": 21538
+    },
+    {
+      "draw": 228,
+      "map_visible": false,
+      "page": "room",
+      "skills_visible": false,
+      "stage": "first_combat",
+      "wall_ms": 21538
+    },
+    {
+      "stage": "walk_cycle"
+    }
+  ],
+  "motion_samples": 22,
+  "motion_scope": "front/yaw0 converged neutral and 0.54-second gait excerpt only; full original numeric report omitted for size",
+  "art_or_all_actions_accepted": false,
+  "source_report_sha256": "87b95c5c057764bacc0f9cd6754bfdb505d1d22a55bf2b3dc0f1f026fe142ab2",
+  "source_postcheck_sha256": "b18acda186908e9a3a7fec40ae5f90e28723086ef6b3a4a625f67729393ef6a4",
+  "publication_note": "Selected original fields; screenshots and large numeric arrays omitted. Source report hashes identify unmodified local originals."
+}

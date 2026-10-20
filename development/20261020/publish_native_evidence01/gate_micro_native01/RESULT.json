@@ -1,0 +1,93 @@
+{
+  "cache_order": "whole_pack_sha_precheck; script_load; original_verify; source_legacy; visual_legacy; three_text_read_and_parse_pairs; source_sha_replay; visual_sha_replay",
+  "independent_intervals_not_initialize_floor_sum": true,
+  "pack_precheck_usec": 1192363,
+  "pack_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+  "read_capabilities": {
+    "reason": "requires exact live Sim/clock/director; no world is instantiated or replaced",
+    "status": "NOT_RUN_REAL_SIM_REQUIRED"
+  },
+  "rows": [
+    {
+      "elapsed_usec": 60250,
+      "label": "load_original_scripts_no_instances"
+    },
+    {
+      "accepted": true,
+      "elapsed_usec": 22294,
+      "label": "original_verify_once"
+    },
+    {
+      "accepted": true,
+      "elapsed_usec": 795031,
+      "entries": 1747,
+      "includes_nested_verify": true,
+      "label": "original_verify_legacy_map_source"
+    },
+    {
+      "accepted": true,
+      "elapsed_usec": 98395,
+      "entries": 71,
+      "includes_nested_verify": true,
+      "label": "original_verify_legacy_map_visual"
+    },
+    {
+      "elapsed_usec": 52,
+      "label": "replay_read_text",
+      "resource": "res://yan_p3_reimplementation_20261018b/migration.json"
+    },
+    {
+      "characters": 7841,
+      "elapsed_usec": 113,
+      "label": "replay_parse_existing_text_once",
+      "resource": "res://yan_p3_reimplementation_20261018b/migration.json"
+    },
+    {
+      "elapsed_usec": 279,
+      "label": "replay_read_text",
+      "resource": "res://yan_p3_reimplementation_20261018b/predecessor_source_binding.json"
+    },
+    {
+      "characters": 322883,
+      "elapsed_usec": 4831,
+      "label": "replay_parse_existing_text_once",
+      "resource": "res://yan_p3_reimplementation_20261018b/predecessor_source_binding.json"
+    },
+    {
+      "elapsed_usec": 110,
+      "label": "replay_read_text",
+      "resource": "res://visual_rework_20261009/binding/visual_binding.json"
+    },
+    {
+      "characters": 9222,
+      "elapsed_usec": 335,
+      "label": "replay_parse_existing_text_once",
+      "resource": "res://visual_rework_20261009/binding/visual_binding.json"
+    },
+    {
+      "authority_admission": false,
+      "elapsed_usec": 1274618,
+      "files": 1747,
+      "label": "replay_sha_loop_source",
+      "logical_bytes": 176544509,
+      "matches": 1747,
+      "warm_after_original_checks": true
+    },
+    {
+      "authority_admission": false,
+      "elapsed_usec": 77954,
+      "files": 71,
+      "label": "replay_sha_loop_visual",
+      "logical_bytes": 16679427,
+      "matches": 71,
+      "warm_after_original_checks": true
+    }
+  ],
+  "scope": "standalone_read_only_gate_micro_not_world_initialization",
+  "status": "PASS",
+  "test_LP_NUM_THREADS": "2",
+  "world_instances_created": 0,
+  "source_report_sha256": "8eb553d3070d5074903c257e9bce9685d70984eba55a2ab8bcf7b8f1a5aaeed5",
+  "source_postcheck_sha256": "400449212f4b54893e5e169abb8453558c3814b8200bddaff596d08dbac91223",
+  "publication_note": "Selected original fields; screenshots and large numeric arrays omitted. Source report hashes identify unmodified local originals."
+}

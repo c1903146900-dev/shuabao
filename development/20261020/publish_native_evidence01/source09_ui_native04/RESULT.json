@@ -1,0 +1,309 @@
+{
+  "accepted": true,
+  "draws": 410,
+  "elapsed_ms": 25364,
+  "equipment_tooltip": {
+    "hover_path": "/root/HeroEntry/YanguizhouFirstFloorCandidate/@CanvasLayer@237/@Control@238/@Label@277",
+    "include_internal": true,
+    "mouse": [
+      1017.0,
+      670.0
+    ],
+    "mouse_filter": 1,
+    "popup_path": "/root/HeroEntry/YanguizhouFirstFloorCandidate/@CanvasLayer@237/@Control@238/@Label@277/@PopupPanel@519",
+    "rect": [
+      944.0,
+      642.0,
+      146.0,
+      56.0
+    ],
+    "scanned_nodes": 572,
+    "target_path": "/root/HeroEntry/YanguizhouFirstFloorCandidate/@CanvasLayer@237/@Control@238/@Label@277",
+    "tooltip_text": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+    "visible_popup_texts": [
+      "药水总计最多5瓶。\n进入下一节点时确认本次交易。"
+    ],
+    "visible_windows": [
+      {
+        "path": "/root/HeroEntry/YanguizhouFirstFloorCandidate/@CanvasLayer@237/@Control@238/@Label@277/@PopupPanel@519",
+        "position": [
+          739,
+          599
+        ],
+        "size": [
+          268,
+          61
+        ]
+      }
+    ],
+    "wait_ms": 477
+  },
+  "full_floor_tested": false,
+  "images": [
+    {
+      "draw": 381,
+      "name": "skills",
+      "sha256": "5a608a9443b88eac7eba35545487deefd511d393471c13e540adadbb607abe3d",
+      "wall_ms": 19130
+    },
+    {
+      "draw": 389,
+      "name": "map",
+      "sha256": "c40503e889302cdcef2e6ee8ead4c245ebd3b83ed74086d4ec92bbb8ae110b20",
+      "wall_ms": 20606
+    },
+    {
+      "draw": 407,
+      "name": "first_combat",
+      "sha256": "05e68c90750fe31f67c55d61e550751947fd0bc766be26b91f34b70d81ab30b8",
+      "wall_ms": 24624
+    },
+    {
+      "draw": 410,
+      "name": "equipment_tooltip",
+      "sha256": "420e155ddecc240d3aeee92b0a3d24da65d827508c70a481ef82faf69bcbbb38",
+      "wall_ms": 25364
+    }
+  ],
+  "loading": {
+    "click_usec": 1321278,
+    "first_display_postdraw_usec": 16105815,
+    "first_display_text_set_usec": 15946777,
+    "first_usable_admitted_usec": 18364463,
+    "first_usable_postdraw_usec": 18446636,
+    "host_add_child_begin_usec": 6329484,
+    "host_add_child_ready_return_usec": 15946335,
+    "host_ready_postdraw_usec": 6329245,
+    "host_ready_text_set_usec": 6310544,
+    "instantiate_begin_usec": 6310290,
+    "instantiate_postdraw_usec": 6310280,
+    "instantiate_return_usec": 6310491,
+    "instantiate_text_set_usec": 6279603,
+    "launch_begin_usec": 1321460,
+    "performance_passed": false,
+    "phases": [
+      "resource_request",
+      "instantiate",
+      "host_ready",
+      "first_display"
+    ],
+    "resource_get_return_usec": 6279588,
+    "resource_loaded_observed_usec": 6279545,
+    "resource_request_begin_usec": 1345828,
+    "resource_request_postdraw_usec": 1345821,
+    "resource_request_return_usec": 1346643,
+    "resource_request_text_set_usec": 1321489,
+    "status": "ready_observed"
+  },
+  "reason": "",
+  "scope": "SOURCE09_UI_LOADING_ROUTE_ONLY",
+  "observation_summary": [
+    {
+      "label": "enter_hero",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 374,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          370.0,
+          79.0
+        ],
+        "visible": false
+      },
+      "map_visible": false,
+      "page": "blocked",
+      "skills_visible": false,
+      "stage": "initial_hex",
+      "wall_ms": 18140
+    },
+    {
+      "label": "select_hex",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 403
+    },
+    {
+      "draw": 380,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          370.0,
+          58.0
+        ],
+        "visible": false
+      },
+      "map_visible": false,
+      "page": "skills",
+      "skills_visible": true,
+      "stage": "skills",
+      "wall_ms": 18986
+    },
+    {
+      "label": "learn_Q1",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "label": "skills_done",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 388,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "node_overlaps": [],
+        "rect": [
+          922.0,
+          210.0,
+          330.0,
+          58.0
+        ],
+        "visible": true
+      },
+      "map_visible": true,
+      "page": "map",
+      "skills_visible": false,
+      "stage": "map",
+      "wall_ms": 20317
+    },
+    {
+      "label": "map_done",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 393,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          370.0,
+          58.0
+        ],
+        "visible": true
+      },
+      "map_visible": false,
+      "page": "room",
+      "skills_visible": false,
+      "stage": "room",
+      "wall_ms": 21333
+    },
+    {
+      "draw": 396,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          370.0,
+          58.0
+        ],
+        "visible": false
+      },
+      "map_visible": false,
+      "page": "skills",
+      "skills_visible": true,
+      "stage": "skills",
+      "wall_ms": 21956
+    },
+    {
+      "draw": 399,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "node_overlaps": [],
+        "rect": [
+          922.0,
+          210.0,
+          330.0,
+          58.0
+        ],
+        "visible": true
+      },
+      "map_visible": true,
+      "page": "map",
+      "skills_visible": false,
+      "stage": "map",
+      "wall_ms": 22532
+    },
+    {
+      "label": "select_r01a",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "label": "enter_r01a",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 1
+    },
+    {
+      "draw": 406,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          330.0,
+          58.0
+        ],
+        "visible": false
+      },
+      "map_visible": false,
+      "page": "room",
+      "skills_visible": false,
+      "stage": "room",
+      "wall_ms": 24165
+    },
+    {
+      "draw": 406,
+      "equipment_text": "装备 0/6",
+      "equipment_tooltip": "药水总计最多5瓶。\n进入下一节点时确认本次交易。",
+      "hint_backing": {
+        "found": true,
+        "rect": [
+          454.0,
+          166.0,
+          330.0,
+          58.0
+        ],
+        "visible": false
+      },
+      "map_visible": false,
+      "page": "room",
+      "skills_visible": false,
+      "stage": "first_combat",
+      "wall_ms": 24165
+    }
+  ],
+  "source_report_sha256": "5f6fa0f5be7fc340cafd3a8019c80f921cfd05eb3a3d56129c7b9eadd3c09c66",
+  "source_postcheck_sha256": "13b3ed69be14734d082582ad337893f9e8fb29dc49e775930f15f6e7b3d598a2",
+  "publication_note": "Selected original fields; screenshots and large numeric arrays omitted. Source report hashes identify unmodified local originals."
+}

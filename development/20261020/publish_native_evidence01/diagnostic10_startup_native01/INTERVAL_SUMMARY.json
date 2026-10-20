@@ -1,0 +1,26 @@
+{
+  "accepted": true,
+  "click_to_first_usable_ms": 17245.668,
+  "resource_wait_ms": 3547.872,
+  "host_ready_ms": 10700.805,
+  "after_ready_to_usable_ms": 2900.167,
+  "intervals_ms": {
+    "base_stage_effect_audio_hud": 67.704,
+    "runtime_sim_router": 2.203,
+    "runtime_initial_actor": 98.187,
+    "runtime_other_views": 0.511,
+    "authority_session_constructor": 0.045,
+    "authority_reward_configure": 0.482,
+    "authority_definition_load": 8.796,
+    "authority_initialize_floor": 3049.956,
+    "runtime_initial_refresh": 204.957,
+    "outer_ancestor_encounter": 7237.196,
+    "outer_final_actor": 341.457,
+    "outer_final_effect_views": 50.113,
+    "outer_final_refresh": 22.21,
+    "outer_final_identity": 92.785,
+    "base_startup_report": 597.475,
+    "outer_ready_total": 10700.739
+  },
+  "do_not_sum_nested": true
+}

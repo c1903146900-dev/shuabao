@@ -1,0 +1,78 @@
+[
+  {
+    "test": "source09_ui_native04",
+    "source": "source09_rebuild",
+    "pack_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+    "pack_bytes": 301573944,
+    "source_pins_sha256": "dad5ada83000b04f9a3ae5cda98afcaca30ca8bf8edee19839460cb4eb4bbde9",
+    "fixture_files": [
+      "source09_ui_native04/fixture/runner.gd"
+    ],
+    "fixture_original_sha256": {
+      "runner.gd": "68d0d3cf2abc5de8c4060da743fb0556f76cd4918cd41ed56f34c5e39996813c"
+    },
+    "engine_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+    "input_pins_original_sha256": "52cb7a7da1112c94de913cebd00731f98177c127f1f3fc2816b3c3ddad9bb78f",
+    "guard_pins_original_sha256": "ea3fcd332c94bc3f9bed2311c517563ffcfb4d20d8f6abaee91ff73bf6ca0216",
+    "native_result": "PASS_ONLY_IN_RECORDED_SCOPE"
+  },
+  {
+    "test": "source09_motion_native03",
+    "source": "source09_rebuild",
+    "pack_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+    "pack_bytes": 301573944,
+    "source_pins_sha256": "dad5ada83000b04f9a3ae5cda98afcaca30ca8bf8edee19839460cb4eb4bbde9",
+    "fixture_files": [
+      "source09_motion_native03/fixture/runner.gd",
+      "source09_motion_native03/fixture/observer.gd",
+      "source09_motion_native03/fixture/rig_observer.gd"
+    ],
+    "fixture_original_sha256": {
+      "runner.gd": "5cc68dbbac77a2817eca478d67d24ffeab6acfb3f63e5370946f4095d1cf7817",
+      "observer.gd": "241c92a42dc9f47aa0ce127e84b78f02342d94f8e0be99a4a2353e5285ad609f",
+      "rig_observer.gd": "c81c7692730a65e61846bf7141a0963ec0017d6534a955001ada23a08cbc8a08"
+    },
+    "engine_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+    "input_pins_original_sha256": "5e7be14d1bfcb5298df9fa340fc48d1ebc2d0183ca7134ad9c62f038724bc625",
+    "guard_pins_original_sha256": "d5a3da0482c798f86efdc04e5dcab2392f84f700e139fefc3aa877fbb3845d94",
+    "native_result": "PASS_ONLY_IN_RECORDED_SCOPE"
+  },
+  {
+    "test": "diagnostic10_startup_native01",
+    "source": "diagnostic10_rebuild",
+    "pack_sha256": "44c6727ed9800f43b8edfb98c93f3fb4801739ea9d521e2580604069b74b9f32",
+    "pack_bytes": 301620640,
+    "source_pins_sha256": "1afd1d9db55bbe58bab910f3c10d37aa7369ee0dac13d4adaf2d56ba4f743649",
+    "fixture_files": [
+      "diagnostic10_startup_native01/fixture/runner.gd"
+    ],
+    "fixture_original_sha256": {
+      "runner.gd": "84751eb26fbaccc018c5f6d69f681efddcb17856d6f24f2045f482baf830d212"
+    },
+    "engine_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+    "input_pins_original_sha256": "aa76446b278ef425aa36156ab203014d7b1954e4d1c4f6d38a5a53805ba9f2e0",
+    "guard_pins_original_sha256": "86122553820e0b90941349e57f14c8a0c755392863d63b308be1355c2746d9e2",
+    "native_result": "PASS_ONLY_IN_RECORDED_SCOPE"
+  },
+  {
+    "test": "gate_micro_native01",
+    "source": "source09_rebuild",
+    "pack_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+    "pack_bytes": 301573944,
+    "source_pins_sha256": "dad5ada83000b04f9a3ae5cda98afcaca30ca8bf8edee19839460cb4eb4bbde9",
+    "fixture_files": [
+      "gate_micro_native01/fixture/gate_audit_runner.gd",
+      "gate_micro_native01/fixture/gate_audit_main.tscn",
+      "gate_micro_native01/fixture/project.godot"
+    ],
+    "fixture_original_sha256": {
+      "gate_audit_runner.gd": "9861bab32fbcd784f2eda9c53aa5aae2915d66312019c7437b2dc176f50e00fe",
+      "gate_audit_main.tscn": "a885c74a3656d9547a546f6af2236f07f45725e39b9a84510a239a9615b83899",
+      "project.godot": "704e6bc7b438c29f89be77ca1bd0368da10c77e0695d23a5816ccb5ab89bb89d"
+    },
+    "engine_sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3",
+    "input_pins_original_sha256": "802b15479d5cc76e52be5c1881a5a89dd336d2f8ed9f9467cd2c960ed4732a3d",
+    "guard_pins_original_sha256": "bf81f020c654f910be87518a3d5060fe2c87c54fe555fd7491fd4a21ae98498b",
+    "native_result": "PASS_ONLY_IN_RECORDED_SCOPE"
+  }
+]

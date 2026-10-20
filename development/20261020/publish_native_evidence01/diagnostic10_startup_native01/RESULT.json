@@ -1,0 +1,174 @@
+{
+  "accepted": true,
+  "construction_profile": {
+    "closed": true,
+    "deferred_warmup_included": false,
+    "dropped": 0,
+    "enabled": true,
+    "rows": [
+      {
+        "begin_usec": 5009380,
+        "elapsed_usec": 67704,
+        "end_usec": 5077084,
+        "label": "base_stage_effect_audio_hud"
+      },
+      {
+        "begin_usec": 5077156,
+        "elapsed_usec": 2203,
+        "end_usec": 5079359,
+        "label": "runtime_sim_router"
+      },
+      {
+        "begin_usec": 5079362,
+        "elapsed_usec": 98187,
+        "end_usec": 5177549,
+        "label": "runtime_initial_actor"
+      },
+      {
+        "begin_usec": 5177554,
+        "elapsed_usec": 511,
+        "end_usec": 5178065,
+        "label": "runtime_other_views"
+      },
+      {
+        "begin_usec": 5178067,
+        "elapsed_usec": 45,
+        "end_usec": 5178112,
+        "label": "authority_session_constructor"
+      },
+      {
+        "begin_usec": 5178113,
+        "elapsed_usec": 482,
+        "end_usec": 5178595,
+        "label": "authority_reward_configure"
+      },
+      {
+        "begin_usec": 5178598,
+        "elapsed_usec": 8796,
+        "end_usec": 5187394,
+        "label": "authority_definition_load"
+      },
+      {
+        "begin_usec": 5187399,
+        "elapsed_usec": 3049956,
+        "end_usec": 8237355,
+        "label": "authority_initialize_floor"
+      },
+      {
+        "begin_usec": 8239369,
+        "elapsed_usec": 204957,
+        "end_usec": 8444326,
+        "label": "runtime_initial_refresh"
+      },
+      {
+        "begin_usec": 5077093,
+        "elapsed_usec": 7237196,
+        "end_usec": 12314289,
+        "label": "outer_ancestor_encounter"
+      },
+      {
+        "begin_usec": 12410443,
+        "elapsed_usec": 341457,
+        "end_usec": 12751900,
+        "label": "outer_final_actor"
+      },
+      {
+        "begin_usec": 12840863,
+        "elapsed_usec": 50113,
+        "end_usec": 12890976,
+        "label": "outer_final_effect_views"
+      },
+      {
+        "begin_usec": 12890983,
+        "elapsed_usec": 22210,
+        "end_usec": 12913193,
+        "label": "outer_final_refresh"
+      },
+      {
+        "begin_usec": 12913198,
+        "elapsed_usec": 92785,
+        "end_usec": 13005983,
+        "label": "outer_final_identity"
+      },
+      {
+        "begin_usec": 13010005,
+        "elapsed_usec": 597475,
+        "end_usec": 13607480,
+        "label": "base_startup_report"
+      },
+      {
+        "begin_usec": 5009109,
+        "elapsed_usec": 10700739,
+        "end_usec": 15709848,
+        "label": "outer_ready_total"
+      }
+    ],
+    "scope": "startup_wall_intervals_nested_do_not_sum"
+  },
+  "draws": 141,
+  "elapsed_ms": 18436,
+  "images": [
+    {
+      "draw": 141,
+      "name": "first_usable_hex",
+      "sha256": "e4a35a551b21c34b9ed1705c5a5c52de8d23d936f5baeff1e340fefc8f296f88",
+      "wall_ms": 18436
+    }
+  ],
+  "loading": {
+    "click_usec": 1364365,
+    "first_display_postdraw_usec": 15915245,
+    "first_display_text_set_usec": 15710207,
+    "first_usable_admitted_usec": 18514188,
+    "first_usable_postdraw_usec": 18610033,
+    "host_add_child_begin_usec": 5009061,
+    "host_add_child_ready_return_usec": 15709866,
+    "host_ready_postdraw_usec": 5008783,
+    "host_ready_text_set_usec": 4985291,
+    "instantiate_begin_usec": 4985022,
+    "instantiate_postdraw_usec": 4985009,
+    "instantiate_return_usec": 4985266,
+    "instantiate_text_set_usec": 4939026,
+    "launch_begin_usec": 1364504,
+    "performance_passed": false,
+    "phases": [
+      "resource_request",
+      "instantiate",
+      "host_ready",
+      "first_display"
+    ],
+    "resource_get_return_usec": 4939009,
+    "resource_loaded_observed_usec": 4938959,
+    "resource_request_begin_usec": 1391087,
+    "resource_request_postdraw_usec": 1391073,
+    "resource_request_return_usec": 1391124,
+    "resource_request_text_set_usec": 1364532,
+    "status": "ready_observed"
+  },
+  "performance_improved": false,
+  "reason": "",
+  "scope": "DIAGNOSTIC10_REAL_STARTUP_INTERVALS",
+  "test_environment": {
+    "LP_NUM_THREADS": "2",
+    "scope": "TEST_PROCESS_ONLY"
+  },
+  "observation_summary": [
+    {
+      "label": "enter_hero",
+      "pressed": 1,
+      "stage": "click",
+      "transaction_wait_ms": 0
+    },
+    {
+      "draw": 140,
+      "map_visible": false,
+      "page": "blocked",
+      "skills_visible": false,
+      "stage": "initial_hex",
+      "wall_ms": 18294
+    }
+  ],
+  "source_report_sha256": "918f84f415ba7e00f432dc178f9d3950618402456e45840baa595e1b14475bd7",
+  "source_postcheck_sha256": "089c9cf5bb641c50dce8d6f5ddfdcf2f76810dda3c8cf496bbdb8aa0773abab5",
+  "publication_note": "Selected original fields; screenshots and large numeric arrays omitted. Source report hashes identify unmodified local originals."
+}

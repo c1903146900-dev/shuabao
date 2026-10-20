@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "reason": "",
+  "exit": 0,
+  "elapsed": 4.184225268000773,
+  "rss_plus_swap_cap": 1610612736,
+  "min_available": 2147483648,
+  "sample_interval": 0.05,
+  "max_allowed_gap": 0.2,
+  "peak_rss_plus_swap": 202899456,
+  "max_sample_gap": 0.17614390699964133,
+  "cleanup_at": 55.0,
+  "kill_request_at": 60.0,
+  "hard_kernel_guarantee": false,
+  "raw_errors": [],
+  "owned_cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "errors": []
+  },
+  "source_exit_sha256": "6b1343c6d450b176330d6e4b0f06577886b5d394ac2a747e18642f620c372f6c",
+  "postcheck_complete": true,
+  "test_environment": {
+    "key": "LP_NUM_THREADS",
+    "previous": null,
+    "child_value": "2",
+    "scope": "child_process_only"
+  }
+}

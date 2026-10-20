@@ -1,0 +1,12 @@
+# Native verification snapshot
+
+These are bounded native observations, not release acceptance. Restore the exact published source09 or diagnostic10 PCK listed in INDEX.json. Fixtures are the original executed bytes; results are selected original JSON fields with original-report SHA-256 provenance. No screenshots, binaries, credentials or machine-specific paths are included.
+
+## Reproduction
+Use official Godot 4.6.3 Linux x86_64 (engine SHA in INDEX), a real GUI display and the pinned PCK. Use a new empty runtime directory and a new writable evidence directory. For the three scene tests invoke Godot with --path RUNTIME --audio-driver Dummy --main-pack PACK --script FIXTURE/runner.gd -- --baseline-evidence=EVIDENCE. Diagnostic10 additionally requires --trial-startup-profile. Keep motion runner plus both observers together. For Gate micro use its provided fixture project with --path FIXTURE --audio-driver Dummy -- --source-pack=PACK --evidence=EVIDENCE.
+
+Motion, diagnostic10 and Gate micro require LP_NUM_THREADS=2 only in the test child process; UI04 did not override it. This limits software-renderer worker threads for test isolation and is not a game-code optimization. Apply an external owned-process watchdog with the exact memory, timing and cleanup limits in each GUARD_SUMMARY.json; do not run unbounded. The snapshot includes guard summaries, not the platform-specific watchdog implementation. Recheck all input hashes before and after execution, reject runtime errors, and fully reap owned descendants.
+
+UI04 performs real hero selection, Hex selection, Q1 learning, done/map navigation, K/M exclusivity, first-room entry and visible equipment-tooltip hover. It passes this functional/local-layout scope, not whole-game art. Motion03 follows the same legitimate entry then samples front neutral, a 0.54-second gait excerpt and stop; motion_repaired remains false. Earlier motion sampling-gap failures remain separate evidence and are not reclassified here.
+
+Diagnostic10 records nested startup wall intervals. Do not sum parent and child intervals. Host readiness took about 10.701 seconds; instrumentation did not improve it. Gate micro pre-reads the entire pack for SHA before measurements, so later readings are warm-cache observations. It does not instantiate a real Sim or test read_capabilities and does not measure whole-game FPS. All image hashes are provenance only; images are omitted from this small snapshot.

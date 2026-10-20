@@ -1,0 +1,103 @@
+{
+  "status": "PUBLIC_NATIVE_SCOPE_SNAPSHOT",
+  "files": {
+    "INDEX.json": {
+      "sha256": "cdc98ebcebe4ef7c84463ae098fc0dd9bb63925d9903418f59eda94b1dad68f1",
+      "bytes": 3989
+    },
+    "README.md": {
+      "sha256": "320fe5854f5aa14cabb841f102ef0f41d45b8ad73e18b5fc5fe0b3b54849d1af",
+      "bytes": 2444
+    },
+    "diagnostic10_startup_native01/GUARD_SUMMARY.json": {
+      "sha256": "d5a85a0e808e74824995ef5ede7c85b849f104e24999ad886f759e3684addd7c",
+      "bytes": 838
+    },
+    "diagnostic10_startup_native01/INTERVAL_SUMMARY.json": {
+      "sha256": "d47df4bd91c2e6d3ad82b1a96ead1455c9739a9b2dcd41bd873c550830467160",
+      "bytes": 833
+    },
+    "diagnostic10_startup_native01/RESULT.json": {
+      "sha256": "fceb8642083b0cf1aabefc2e60b961508e184d88ab51fc117c7cdd7408df1f29",
+      "bytes": 4768
+    },
+    "diagnostic10_startup_native01/fixture/runner.gd": {
+      "sha256": "84751eb26fbaccc018c5f6d69f681efddcb17856d6f24f2045f482baf830d212",
+      "bytes": 10394
+    },
+    "gate_micro_native01/GUARD_SUMMARY.json": {
+      "sha256": "06296165237ce4046c0f3a2038809e9a8627a13efe307a2498ba90daaa77f681",
+      "bytes": 837
+    },
+    "gate_micro_native01/RESULT.json": {
+      "sha256": "e81cd3535360986e2ffed27e88f7dc7b5117d83e94a70c895e3f2b0e0b294175",
+      "bytes": 3124
+    },
+    "gate_micro_native01/fixture/gate_audit_main.tscn": {
+      "sha256": "a885c74a3656d9547a546f6af2236f07f45725e39b9a84510a239a9615b83899",
+      "bytes": 317
+    },
+    "gate_micro_native01/fixture/gate_audit_runner.gd": {
+      "sha256": "9861bab32fbcd784f2eda9c53aa5aae2915d66312019c7437b2dc176f50e00fe",
+      "bytes": 6537
+    },
+    "gate_micro_native01/fixture/project.godot": {
+      "sha256": "704e6bc7b438c29f89be77ca1bd0368da10c77e0695d23a5816ccb5ab89bb89d",
+      "bytes": 262
+    },
+    "source09_motion_native03/GUARD_SUMMARY.json": {
+      "sha256": "f39cd61e9dff2c2927fd7abf3e73cdd0f7805605377ba1507e44bdaf73990083",
+      "bytes": 838
+    },
+    "source09_motion_native03/RESULT.json": {
+      "sha256": "3221fa6ac7fde6451c4b3f28cb74099568b46f0e81864ce4274c5ff6d5c573a5",
+      "bytes": 4032
+    },
+    "source09_motion_native03/fixture/observer.gd": {
+      "sha256": "241c92a42dc9f47aa0ce127e84b78f02342d94f8e0be99a4a2353e5285ad609f",
+      "bytes": 6961
+    },
+    "source09_motion_native03/fixture/rig_observer.gd": {
+      "sha256": "c81c7692730a65e61846bf7141a0963ec0017d6534a955001ada23a08cbc8a08",
+      "bytes": 7897
+    },
+    "source09_motion_native03/fixture/runner.gd": {
+      "sha256": "5cc68dbbac77a2817eca478d67d24ffeab6acfb3f63e5370946f4095d1cf7817",
+      "bytes": 13073
+    },
+    "source09_ui_native04/GUARD_SUMMARY.json": {
+      "sha256": "5e47cc8c72d8cbfde637022198a8997fb0bb75b0ddd134b07643bd6ce21a2c11",
+      "bytes": 785
+    },
+    "source09_ui_native04/RESULT.json": {
+      "sha256": "6e46100a4e6a181147c871d6638a1403624296e483fd36b809400015e4e099e2",
+      "bytes": 8015
+    },
+    "source09_ui_native04/fixture/runner.gd": {
+      "sha256": "68d0d3cf2abc5de8c4060da743fb0556f76cd4918cd41ed56f34c5e39996813c",
+      "bytes": 13371
+    }
+  },
+  "public_files": [
+    "INDEX.json",
+    "README.md",
+    "diagnostic10_startup_native01/GUARD_SUMMARY.json",
+    "diagnostic10_startup_native01/INTERVAL_SUMMARY.json",
+    "diagnostic10_startup_native01/RESULT.json",
+    "diagnostic10_startup_native01/fixture/runner.gd",
+    "gate_micro_native01/GUARD_SUMMARY.json",
+    "gate_micro_native01/RESULT.json",
+    "gate_micro_native01/fixture/gate_audit_main.tscn",
+    "gate_micro_native01/fixture/gate_audit_runner.gd",
+    "gate_micro_native01/fixture/project.godot",
+    "source09_motion_native03/GUARD_SUMMARY.json",
+    "source09_motion_native03/RESULT.json",
+    "source09_motion_native03/fixture/observer.gd",
+    "source09_motion_native03/fixture/rig_observer.gd",
+    "source09_motion_native03/fixture/runner.gd",
+    "source09_ui_native04/GUARD_SUMMARY.json",
+    "source09_ui_native04/RESULT.json",
+    "source09_ui_native04/fixture/runner.gd",
+    "MANIFEST.json"
+  ]
+}

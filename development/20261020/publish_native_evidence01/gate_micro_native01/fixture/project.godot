@@ -1,0 +1,9 @@
+config_version=5
+[application]
+config/name="Read-only source09 Gate GUI microbenchmark"
+run/main_scene="res://gate_audit_main.tscn"
+[display]
+window/size/viewport_width=640
+window/size/viewport_height=240
+[rendering]
+renderer/rendering_method="gl_compatibility"
