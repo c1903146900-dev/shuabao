@@ -1,0 +1,58 @@
+{
+  "schema": "user-rule-overlay-v1",
+  "overlay_id": "20261020-yanguizhou-r-hex-resolutions",
+  "effective_rules": true,
+  "recorded_utc": "2026-10-20T01:44:16Z",
+  "recorded_utc_is_not_source_timestamp": true,
+  "rules": {
+    "H13": {
+      "control_contract": "existing_hard_control_stun",
+      "stops": [
+        "voluntary_movement",
+        "attack"
+      ],
+      "tenacity": "existing_adjustment",
+      "already_fired_projectiles": "unchanged",
+      "ordinary_seconds": 1.5,
+      "elite_seconds": 0.7,
+      "boss_excluded": true
+    },
+    "H14": {
+      "per_enemy_percent": 1.5,
+      "per_cast_cap_percent": 25,
+      "health_basis": "current_max_hp_at_each_heal",
+      "budget_charge": "actual_health_restored_only",
+      "production_normalization": "sum(actual_restored / max_hp_at_that_restore), cap .25; reserve before reentrant heal callbacks",
+      "overheal_charge": 0
+    },
+    "H15": {
+      "base_peak_counts_unchanged": [
+        7,
+        9,
+        13,
+        20
+      ],
+      "modified_peak_counts": [
+        9,
+        11,
+        17,
+        26
+      ],
+      "interval_multiplier": 0.75,
+      "duration_and_rollup": "unchanged",
+      "original_peak_final_damage_percent": 30
+    }
+  },
+  "H16_retained_source_mapping": {
+    "not_new_user_numbers": true,
+    "distance": 4,
+    "duration": 0.4,
+    "start": "original_rollup_time - .4",
+    "complete": "before original rollup target sampling",
+    "only_movement_targets": "ordinary enemies",
+    "rollup_final_damage_multiplier": 1.5,
+    "base_peak_times_and_count": "unchanged"
+  },
+  "runtime_status": "CANDIDATE_SOURCE_ONLY_NOT_NATIVE_VERIFIED_NOT_ORDINARY_ADMITTED",
+  "approval_date_utc": "2026-10-20"
+}
