@@ -1,0 +1,50 @@
+{
+  "schema": "visual11-portable-delta-1",
+  "base_pck_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+  "base_pck_bytes": 301573944,
+  "result_files": 3380,
+  "result_pck_sha256": "5539c9a50ed88c3db779297e73346e830611075e7f62a71b1cd99e74f959e271",
+  "result_pck_bytes": 301578056,
+  "files": [
+    {
+      "path": "yan_enemy_cartoon_20261019/body.gdshader",
+      "before": "6d8b72cdb5d0124f8f66fa02c298f2b0e3c3fb29e8b5172190d3a9a7854f3d63",
+      "after": "1b284ad1b70a9ad5b8f9bcf479e685b6d1d4625664436304cc25b8bd449d47ce"
+    },
+    {
+      "path": "yan_enemy_cartoon_20261019/enemy_view.gd",
+      "before": "487e36b02a6a65d69236dda576996c5469e297c69340c05eea46aa022333de5a",
+      "after": "f116268362973961b511e1b8de239863cb5d37baf016c3c3d262f6240968e8ef"
+    },
+    {
+      "path": "visual_rework_20261009/views/q1_river.gdshader",
+      "before": "410007d026fe13c80395d91cf9b15d211f70391251277af78f505f6ccc9a6f86",
+      "after": "9d53301ee340b084c7126bdb5b262fa86e51ea963dff10f08a97d8dd48c58b86"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/views/q1_river.gdshader",
+      "before": null,
+      "after": "410007d026fe13c80395d91cf9b15d211f70391251277af78f505f6ccc9a6f86"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659",
+      "after": "eb7d11149d511dce42c14a65b92ce9bf259e80a92b96209aa208d9cf8bc232bc"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "d427d29743011834b6d31d5492c4d0e761bb59227d122c7f3e2670c516d76e88",
+      "after": "bc63b6b0851c008cad92f4c4de694c38aa87c6e492958e18e1903496a4ae43b2",
+      "replacement": {
+        "old": "\"sha256\": \"4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659\"",
+        "new": "\"sha256\": \"eb7d11149d511dce42c14a65b92ce9bf259e80a92b96209aa208d9cf8bc232bc\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "3fb342b9e1ae83c258bad0402b7cc60d45ab0088f137e633a877c788e746f180",
+      "after": "04eb86676cb510590539c539b16acbb81c5c014dbfe3f08e771721d3616ce8c5"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
