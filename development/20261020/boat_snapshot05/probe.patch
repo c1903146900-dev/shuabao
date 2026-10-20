@@ -1,0 +1,24 @@
+--- snapshot04/tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd
++++ snapshot05/tests/first_hero_boat_hooks_rebuild_20261020/boat_probe.gd
+@@ -214,7 +214,20 @@
+   else: tick(sim,float(state.voyage_until)-sim.hero_time+0.02)
+   if mode=="cancel": sim.cancel_cast(int(state.cast_id))
+   elif mode=="owner_death": sim.damage_hero(10000000.0,Vector3.ZERO,0.0,true,true,{"fixture":"owner_death_cleanup"}); tick(sim,0.02)
+-  else: sim.begin_encounter("replacement-room",[])
++  else:
++   var previous_room: String = sim.room_id
++   var previous_generation: int = sim.encounter_generation
++   if not check(sim.phase=="combat","room transition begins in combat"): sim.free(); continue
++   var refused: Dictionary = sim.begin_encounter("replacement-room",[])
++   observations.append({"stage":"room_change_direct_begin_negative","returning":returning,"result":refused.duplicate(true),"phase":sim.phase,"room":sim.room_id,"generation":sim.encounter_generation})
++   if not check(not bool(refused.get("accepted",false)) and refused.get("reason","")=="invalid_phase","direct begin during combat is rejected"): sim.free(); continue
++   if not check(sim.room_id==previous_room and sim.encounter_generation==previous_generation and is_same(sim.ink_boat,state),"rejected room input preserves exact original scope and boat"): sim.free(); continue
++   sim.end_encounter("cancelled")
++   if not check(sim.phase!="combat" and sim.ink_boat.is_empty(),"real end_encounter retires boat before new room"): sim.free(); continue
++   var entered: Dictionary = sim.begin_encounter("replacement-room",[])
++   observations.append({"stage":"room_change_legal_end_begin","returning":returning,"result":entered.duplicate(true),"phase":sim.phase,"room":sim.room_id,"generation":sim.encounter_generation,"previous_room":previous_room,"previous_generation":previous_generation})
++   if not check(bool(entered.get("accepted",false)),"legal replacement room accepted"): sim.free(); continue
++   if not check(sim.phase=="combat" and sim.room_id=="replacement-room" and sim.encounter_generation==previous_generation+1,"real replacement scope committed"): sim.free(); continue
+   tick(sim,5.0)
+   check(sim.ink_boat.is_empty(),mode+" clears boat")
+   check(sim.ink_e2_finished.is_empty() and sim.ink_p1_receipts.is_empty(),mode+" no terminal or P1")
