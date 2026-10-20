@@ -1,0 +1,35 @@
+{
+  "schema": "visual17-portable-delta-1",
+  "base_pck_sha256": "62baea1172b0892cdbbf553cf9b988b98f489948c42554930993f679db1d50d7",
+  "base_pck_bytes": 301581560,
+  "result_files": 3380,
+  "result_pck_sha256": "868eb794d205c34291056cad2cc59eaa1eb2b12f45a7cb316de4de4d1b01237d",
+  "result_pck_bytes": 301581560,
+  "files": [
+    {
+      "path": "yan_enemy_cartoon_20261019/enemy_view.gd",
+      "before": "8bfc06dcbb0d7543b10abb60fee54faffd92f7dce62f2335d3b3934bc89b705e",
+      "after": "3cf87e6e28a9a5834ff0d00d245ac118620242dc93ef2db11edf3db89a1a84d3"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "4217e191b9ce5ededa52e517bfc3a7d156d2b98a7c94ea9c36e29ccc15dfaf34",
+      "after": "c1ab66a808ead1b02d122ad5941d7f21b35f54ada0b9fe1b0824a4c186547b44"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "7e9524266b380342ab5bc93a8168e68547f6c2a1a269ae5ad8920533850affed",
+      "after": "e024bb8161433674bfaa051257c6b29c88fbb747d926c05653a19080c179d2e2",
+      "replacement": {
+        "old": "\"sha256\": \"4217e191b9ce5ededa52e517bfc3a7d156d2b98a7c94ea9c36e29ccc15dfaf34\"",
+        "new": "\"sha256\": \"c1ab66a808ead1b02d122ad5941d7f21b35f54ada0b9fe1b0824a4c186547b44\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "fc8c0a2e382dae621afa178870f7d025ebdab31ddb4db9f4465e930ff3e5b438",
+      "after": "30479bb6f12a54b1b6f4c1cc7ab44da72f014a889edb4ce2b0cf60d8b6e4610a"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
