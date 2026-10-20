@@ -1,0 +1,45 @@
+{
+  "schema": "diagnostic12-portable-delta-1",
+  "base_pck_sha256": "44c6727ed9800f43b8edfb98c93f3fb4801739ea9d521e2580604069b74b9f32",
+  "base_pck_bytes": 301620640,
+  "result_files": 3382,
+  "result_pck_sha256": "7a99ec751e416f279fa6cb033f525209bd853300f9be8302ca34ce44a21d1148",
+  "result_pck_bytes": 301635008,
+  "files": [
+    {
+      "path": "tests/ink_style_specimen_20261004/revision03/fix01/host.gd",
+      "before": "92fa5f349bbe438e6a07077c0d0e1872d94652ac6eddbe27b8c457e38166f129",
+      "after": "b6b4e8f246568d85c49e2157bb29deb204990ccab380cfa26965133c9368cdce"
+    },
+    {
+      "path": "scripts/integration/yanguizhou_first_floor.gd",
+      "before": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962",
+      "after": "85133bd7c995fc10659631cb7b7c2e54cbfb9933c3b5d53c606cf341aabb1bd7"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/scripts/integration/yanguizhou_first_floor.gd",
+      "before": null,
+      "after": "a22e37f57d18e84952b5793fda68bb2fb08c132a9dcb04a691f2e003ded0d962"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "9439c9cfb759cf6f095909e6c02d77e06be7c6fe9f971b4e6bfaf60ad52cc8fa",
+      "after": "ce95856aab67578b0d8b798a08a3f6cb8428ca9333e91fed6b7edfdfe5997b1f"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "1b207ab660e3fba88f7890512efd9e81fd10a3a680ccc72de1c11d4039b6920e",
+      "after": "ef010d642ce5f704f7d2044929e91f5a766a838d93654293bad171742846de58",
+      "replacement": {
+        "old": "\"sha256\": \"9439c9cfb759cf6f095909e6c02d77e06be7c6fe9f971b4e6bfaf60ad52cc8fa\"",
+        "new": "\"sha256\": \"ce95856aab67578b0d8b798a08a3f6cb8428ca9333e91fed6b7edfdfe5997b1f\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "04c24773daa1d9831c2c477075d8b54b2a6676451b5a9be459e30ebda651d732",
+      "after": "02bb17073a7314afe4367b359c62c1a3695a7117ace446b1f78c0c9dda24f624"
+    }
+  ],
+  "native_acceptance": "DIAGNOSTIC_UNRUN"
+}
