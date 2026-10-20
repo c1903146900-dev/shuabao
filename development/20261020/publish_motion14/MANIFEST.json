@@ -1,0 +1,55 @@
+{
+  "schema": "motion14-portable-delta-1",
+  "base_pck_sha256": "00e2180c6556b26ce0f74ad19e8005ff5243bbd1c424a514e87a218c289f28fe",
+  "base_pck_bytes": 301573944,
+  "result_files": 3381,
+  "result_pck_sha256": "7e94097f65dbe89a65c2cb4dcab06d2cc670dc8284f07ba2b497ee1ed6fedf2a",
+  "result_pck_bytes": 301589320,
+  "files": [
+    {
+      "path": "yan_front_hero_20261018/controller.gd",
+      "before": "7bcef5554e04127d1d5689d3d62be24068adb688c23f7f754a92cb23d6abe182",
+      "after": "bfb736993a399e594660f17408788824a266b3fad83876445d8dc584bfd757a5"
+    },
+    {
+      "path": "yan_front_hero_20261018/front/geometry.gd",
+      "before": "701ef5125973d3c90c0b5445a24f87bd875a5915cb49be30d9a760f8b5945953",
+      "after": "898db77bb0ca94b652f7dd8d025139d2258d9178126386eaabe9c50333751812"
+    },
+    {
+      "path": "yan_front_hero_20261018/front/renderer.gd",
+      "before": "567eeb44064e2e57e45619ab028b525c938a0c0720bf82093d6a68100c9cdd45",
+      "after": "c02f7a06ca9a96a3a55d4cc7638bb944c5ff828d83963bfaf97138b22af6dbf3"
+    },
+    {
+      "path": "yan_front_hero_20261018/front/walk_calibration.gd",
+      "before": null,
+      "after": "7808e75606cd67169a32cf0adc0488e31ff8ff28791f35826578f1d4175c7c19"
+    },
+    {
+      "path": "yan_front_hero_20261018/front/walk_rig.gd",
+      "before": null,
+      "after": "e979459a70a4a042d69fffb252f57850241b619b73a7b41ed2c42cad14ae8fe5"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659",
+      "after": "316bd04806b4583269d3ea993fa86453a55460be389c88adc181dea1aa7ff0ce"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "d427d29743011834b6d31d5492c4d0e761bb59227d122c7f3e2670c516d76e88",
+      "after": "b2e9abed598ae735c86bd90f957746e3c01793fe8097c4f35923029c7a86e5cd",
+      "replacement": {
+        "old": "\"sha256\": \"4e6866b95b23fa57c3ca19db5f2cd639de03d9d1ec37ce369347ccb786ef2659\"",
+        "new": "\"sha256\": \"316bd04806b4583269d3ea993fa86453a55460be389c88adc181dea1aa7ff0ce\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "3fb342b9e1ae83c258bad0402b7cc60d45ab0088f137e633a877c788e746f180",
+      "after": "4090aa64c728e3f97fa0387ed31e62fe9b90bd41db9435cd8b3e1dcb7524bf3d"
+    }
+  ],
+  "native_acceptance": "MOTION_NATIVE_UNRUN"
+}

@@ -1,0 +1,131 @@
+{
+  "schema": "yan-p3-gameplay-migration-1",
+  "predecessor": "res://yan_p3_reimplementation_20261018b/predecessor_source_binding.json",
+  "predecessor_sha": "f6ef76ff90ad17fddc13653fc8e14e1a284e42c5ba5eef8af9382d021cc784b2",
+  "visual_path": "res://visual_rework_20261009/binding/visual_binding.json",
+  "visual_sha": "93fd6f6761a84f40df7a9720eee0bac6a73297a28c0492db0d023f4ea665c8d5",
+  "changes": {
+    "res://tests/ink_river_hexes_20261006/ordinary01/sim.gd": {
+      "before": "6b0330739e1c62453e4adfe7ff3a8e805c4a9e7a58844741780e3d1b99b69697",
+      "after": "1f269d3cab08bf4f5e94b0a3ea4f747407ddec17c4d2f55769b77fc446388140",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/sim.gd"
+    },
+    "res://equipment_prism_20261011/model.gd": {
+      "before": "3053d10e5700696e82d647b0c27aabbd87088132c07b1b1adba6612d7e7488fe",
+      "after": "692b526aa285d30ceab7064302552178596023b217194287d9f0af44fab53a57",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/equipment_prism_20261011/model.gd"
+    },
+    "res://tests/ink_rest_service_20261006/candidate01/rest_service.gd": {
+      "before": "d7f9edf2b4c21555df4c28f69418f0a3d375cb698ee621711960577e04215f96",
+      "after": "33da8f16f1679469f67fe05addf89c97625c269134c799b3063343f364f966ec",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_rest_service_20261006/candidate01/rest_service.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/catalog.gd": {
+      "before": "d6b63ac39558cc95a4e0607d9935da85d981206114041c308920ac8f1e58e323",
+      "after": "40eb7b28defad8889b631b4965f9b54accf7cfcd3e40e877f3442ec7f6700fb9",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/catalog.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd": {
+      "before": "2d9eec12ceb0e6f0017b98d0b530e37165a43d36f1cf1e6719b8e5377d47e2a6",
+      "after": "bc1c75518866363fad8adc8342020fd778007708e2e8d7e121e0a4a6b4883e07",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/growth_hud.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd": {
+      "before": "8f33242427b6b39661f47acadaabd792a7a18abd293d5c47b94a762e8a0a95d3",
+      "after": "4161bdb703055d9977bc7915c9887f91e335a1fb786f535bb8a639a935f6bf27",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/runtime_text.gd"
+    },
+    "res://tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd": {
+      "before": "1cfe7077797be25d702a8655eecf8ecb6fd5b46366ab0a3549289915eddd371b",
+      "after": "832462f6bfdcd0333d02d80340f3f982b256c29f90d2bdbe7a8709c78edb592f",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_river_hexes_20261006/ordinary01/hud_projection.gd"
+    },
+    "res://tests/ink_ordinary_visuals_20261007/candidate01/host.gd": {
+      "before": "5c1cf30eefaf407c9a3c754dd86da5962edff8d3e2ab3d8a308b7e6239cec7ef",
+      "after": "9d262fb9080cbf3fee9a002628a9f685b2c5de6b6345c05cd23d88adbed7a46a",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/tests/ink_ordinary_visuals_20261007/candidate01/host.gd"
+    },
+    "res://visual_rework_20261009/binding/live_binding.gd": {
+      "before": "49c99881db3d5a28931deccfb0ddff10022b64d58ff5e44979e92bbb7fc40718",
+      "after": "23ddf8c89be2728f5031d629bc938cd9acfb5193f4f441d16be77c343d90f0de",
+      "preimage": "res://yan_p3_reimplementation_20261018b/preimages/visual_rework_20261009/binding/live_binding.gd"
+    }
+  },
+  "added": {
+    "res://yan_p3_reimplementation_20261018b/p3_state.gd": "24841340026b7912a4ffe1d4dfc587955c381106c5fea2b55f253ef9fb53623c",
+    "res://yan_enemy_cartoon_20261019/outline.gdshader": "bf52b5e10e4f207c4a6100862ca60fe6b86a6e8e908fd87d2a369eac9ac5fb50",
+    "res://yan_enemy_cartoon_20261019/body.gdshader": "6d8b72cdb5d0124f8f66fa02c298f2b0e3c3fb29e8b5172190d3a9a7854f3d63",
+    "res://yan_enemy_cartoon_20261019/enemy_view.gd": "487e36b02a6a65d69236dda576996c5469e297c69340c05eea46aa022333de5a",
+    "res://yan_trial_ui_20261018/page_coordinator.gd": "0ee78a1da34f4dde39da1cc3f24a1ce5e0a912a8b20829a104be56abbaf51d63",
+    "res://yan_trial_ui_20261018/presenter.gd": "23dd4aa98626075d7e43a5475c11f3c60e2be77c5824d1924bab54c11ffc6853",
+    "res://scripts/integration/loading_status.gd": "1ecee900e5d20b338b51dbd687be1585da88667d86eb959a9b4d2eed42211d58",
+    "res://yan_front_hero_20261018/controller.gd": "bfb736993a399e594660f17408788824a266b3fad83876445d8dc584bfd757a5",
+    "res://yan_front_hero_20261018/front/geometry.gd": "898db77bb0ca94b652f7dd8d025139d2258d9178126386eaabe9c50333751812",
+    "res://yan_front_hero_20261018/front/renderer.gd": "c02f7a06ca9a96a3a55d4cc7638bb944c5ff828d83963bfaf97138b22af6dbf3",
+    "res://yan_front_hero_20261018/front/walk_calibration.gd": "7808e75606cd67169a32cf0adc0488e31ff8ff28791f35826578f1d4175c7c19",
+    "res://yan_front_hero_20261018/front/walk_rig.gd": "e979459a70a4a042d69fffb252f57850241b619b73a7b41ed2c42cad14ae8fe5"
+  },
+  "runtime_candidates": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "E1",
+    "E2",
+    "E3",
+    "P1",
+    "P2",
+    "P3",
+    "R1",
+    "R2"
+  ],
+  "presentation_changes": {
+    "res://scripts/ui/hero_chooser.gd": {
+      "map_scope": "source",
+      "before": "a952aab7c78c1e8c604485a84d20b63d23c1eb4f7101aae0c038cbc4f6d104bc",
+      "after": "6e3398fcfa8144a33d598aaad02a954ca2555c0b5b8573dc402c3201f41bf6af",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/scripts/ui/hero_chooser.gd"
+    },
+    "res://visual_rework_20261009/controller.gd": {
+      "map_scope": "visual",
+      "before": "8830631bdf2e9ad227ac867979a01a6fd16a1b9b5ff13c6e993364f6ae9bac47",
+      "after": "21f162bf90480fc7e950edf4bfb479be4f413a785ee2f2dd02cff32670d27b89",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/controller.gd"
+    },
+    "res://visual_rework_20261009/views/q3_mountain_mesh.gd": {
+      "map_scope": "visual",
+      "before": "a5e4e88c09eeba702ced6ba14299060e8be8fe09d19c873e30d95eb7b2c31ae3",
+      "after": "02f7486b35c1864d0a33778d141a29ffdad71f661fd1ef97d8024dfa978fbc88",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/views/q3_mountain_mesh.gd"
+    },
+    "res://visual_rework_20261009/views/q3_rock.gdshader": {
+      "map_scope": "visual",
+      "before": "31bdee1f25267b07e7cb36fc4d4a7538b0eec86331f1e21e2667aef53c8226af",
+      "after": "5d8e26347671d4df3ec1c93614c3a74afb3425f61b3fe96c4affeb8ca39ac69d",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/views/q3_rock.gdshader"
+    },
+    "res://tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd": {
+      "map_scope": "source",
+      "before": "45975dab784657e5994912e8022e916b6707b01f3412b2e4afe0d2d6bb9f5541",
+      "after": "54c9bdc282becb5a1aeaed37ebb4fdf1dfbf3667888da20c735f9fbfd0271948",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_first_floor_enemy_views_20261004/fix01/roster_presenter.gd"
+    },
+    "res://data/final_design/catalog.gd": {
+      "map_scope": "source",
+      "before": "c1c7ea3fa9b3dc871ee0c4fe4372a38728c7c2cb51f123438ae0300c2cfbbeb9",
+      "after": "196c4b1a33d78876c21bd8bc6a55a00445651d54f3b0224dbaaaeeb39ae67afc",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/data/final_design/catalog.gd"
+    },
+    "res://visual_rework_20261009/binding/c03_visual_source_successor.gd": {
+      "map_scope": "source",
+      "before": "170334554176e450bec905f1f189429b51defc860094b62c937003291b6a2a66",
+      "after": "cb277bc316c08a8d998f21df1f3b4750fb15cd2853ce0b2c995932f2081a93e3",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/binding/c03_visual_source_successor.gd"
+    },
+    "res://scripts/integration/hero_entry.gd": {
+      "map_scope": "source",
+      "before": "26b57cebdaaffc44559d636f5c5f6c725d295524ee75d1884e1996213730d770",
+      "after": "2f4a5aa4b6b4d72d2a048e9bc0903addbb746761292902bcefea4807e010bcb5",
+      "preimage": "res://yan_p3_reimplementation_20261018b/presentation_preimages/scripts/integration/hero_entry.gd"
+    }
+  }
+}
