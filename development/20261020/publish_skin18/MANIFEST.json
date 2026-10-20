@@ -1,0 +1,40 @@
+{
+  "schema": "skin18-portable-delta-1",
+  "base_pck_sha256": "761b094458f6025e876504f9ec677f20e0d98069598c9b3d4c7e1de13757710e",
+  "base_pck_bytes": 301579304,
+  "result_files": 3380,
+  "result_pck_sha256": "4f7b0c7c34f483f73b2f95b07436373ed846c177571c77d8ed5de35b3c624b91",
+  "result_pck_bytes": 301586928,
+  "files": [
+    {
+      "path": "yan_skin_material_20261020/private_materials.gd",
+      "before": null,
+      "after": "a2b41f07469999763d20f23e6f996752c8cdf5f9dd3186daaed4345c798a8e6a"
+    },
+    {
+      "path": "yan_visual_attach_20261018/entry.gd",
+      "before": "18cf8ac03497720207ec1e283e80d49c743d4377fe0cc9105e7a0c600850bc7f",
+      "after": "1cb7be63da0ca7a22808b7a07174159202f70186e4ca13c219240d0c6c69750f"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6",
+      "after": "dcb03c966b48bab4d4ab59db66a11bd165dd62acf3f73a31a3107fe85d091f64"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "66e41b2efbdba8e93b29a9d090cc091e03d57de4201e272be9cf63179b8df0f9",
+      "after": "14c5511d7b13d7b4a4a75054c75e3dfbf75ffc8e6a2513fc064c48df56cacc38",
+      "replacement": {
+        "old": "\"sha256\": \"6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6\"",
+        "new": "\"sha256\": \"dcb03c966b48bab4d4ab59db66a11bd165dd62acf3f73a31a3107fe85d091f64\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "3e70083542135b81e66f4f0b77baf3643270f6668ecfce6820d2d8d7cb0c13ce",
+      "after": "30c45f4eedac96019b00c6c299850bb354904c7f075a773fe75f09bb362953db"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
