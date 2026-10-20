@@ -1,0 +1,20 @@
+{
+  "result": "EXACT_RESTORE_VERIFIED_NO_ENGINE",
+  "source_files": 3380,
+  "all_source_sha256_equal": true,
+  "pck_bytes_equal": true,
+  "pck_sha256": "71316dbd3a250fdcecbd1717ce0a170a5b0d1ab71d745c48429e8480a275a2fb",
+  "pck_bytes": 301591700,
+  "native_acceptance": "COPY_NATIVE_UNRUN",
+  "public_files": [
+    "MANIFEST.json",
+    "PAYLOAD_PINS.json",
+    "README.md",
+    "apply.py",
+    "payload/yan_p3_reimplementation_20261018b/gate.gd",
+    "payload/yan_p3_reimplementation_20261018b/migration.json",
+    "payload/yan_skin_copy_20261020/display.gd",
+    "payload/yan_visual_attach_20261018/entry.gd",
+    "RESTORE_TEST.json"
+  ]
+}
