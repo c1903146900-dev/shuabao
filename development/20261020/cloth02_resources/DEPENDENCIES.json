@@ -1,0 +1,50 @@
+{
+  "engine": "Godot 4.6.3",
+  "base": "skin20_headshape_candidate",
+  "fixed_inputs": {
+    "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+    "tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb.import": "dbf1216d3de2fe781b75337fddce0a727f3146c178e0b774319a04bca12e2c35",
+    ".godot/imported/yanguizhou_q3_gestures.glb-7089510de41ee79cfdde12e050e53dca.scn": "9e9f4962c63bdee42bd804777663dc94e21c6d6f8ceba9c7fc8097a5352ee5e8",
+    "yan_skin_copy_20261020/head_shape.gd": "b0c4913888099f5d5d3e5f5a497064222fca85a9a9db1c2643b4eb0b7fcc65df"
+  },
+  "authoring_files": {
+    "yan_skin_bake_20261020/cloth_bake.gd": "c314338655abe6b2e7c491f1940bd99057914ea88271741f21ea514813688c97",
+    "yan_skin_bake_20261020/export_baked.gd": "752439d7ab27d849290e8e2fcf9f7c6e1146082b3b60052ded686d075151a91f",
+    "yan_skin_bake_20261020/cloth_palette.gdshader": "c0dc93711b285c9239a6c691f3f6f5548eaad7aea3c48524d5efbd59268bb3b3"
+  },
+  "direct_dependencies": {
+    "mesh_00.res": [
+      "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png"
+    ],
+    "mesh_01.res": [
+      "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png"
+    ],
+    "mesh_02.res": [
+      "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png"
+    ],
+    "mesh_03.res": [
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_04_hair_and_wet_ink.png"
+    ],
+    "mesh_04.res": [
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_05_warm_porcelain.png"
+    ],
+    "mesh_05.res": [
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_06_old_brass.png"
+    ],
+    "mesh_06.res": [
+      "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png"
+    ],
+    "mesh_07.res": [
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_08_inkstone.png"
+    ],
+    "mesh_08.res": [
+      "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+      "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png"
+    ]
+  },
+  "note": "Restore exact resources rather than re-exporting; original imported asset and texture closure plus the exact palette shader remain required. The original exporter has a fixed local output directory; archival source is provenance, not a portable rerun command."
+}

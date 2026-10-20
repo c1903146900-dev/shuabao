@@ -1,0 +1,2464 @@
+{
+  "actual_seams": {
+    "maximum_new_gap": 0.0000000298023223876953,
+    "ok": true,
+    "pairs": 711,
+    "violations": 0
+  },
+  "art_acceptance": "NOT_REVIEWED",
+  "body_candidate_vertices": 4449,
+  "body_fallback_reason": "none",
+  "body_geometry_applied": true,
+  "build_usec": 371597,
+  "cold_process_dependency_validation": "PENDING_REQUIRED",
+  "dependency_handoff": "Direct dependencies recorded per file; stage original GLB/imported scene/textures and palette shader, then fresh GUI process loader-only validation. Same-process reload is not dependency acceptance.",
+  "files": [
+    {
+      "baked_arrays_sha256": "04ab90a567faa990dae36c2480df20e2f4a2c80f58d18dc66a91023669fb1992",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "spine",
+            "chest"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 294
+        }
+      ],
+      "cloth": {
+        "body_moved": 245,
+        "invariant_uv_skin_index_lods": true,
+        "material_contract": {
+          "actual_stored_properties": {
+            "albedo_color": "(1.0, 1.0, 1.0, 1.0)",
+            "albedo_texture": "(res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png):<CompressedTexture2D#-9223372009340140104>",
+            "albedo_texture_force_srgb": "false",
+            "albedo_texture_msdf": "false",
+            "anisotropy": "0.0",
+            "anisotropy_enabled": "false",
+            "anisotropy_flowmap": "<Object#null>",
+            "ao_enabled": "false",
+            "ao_light_affect": "0.0",
+            "ao_on_uv2": "false",
+            "ao_texture": "<Object#null>",
+            "ao_texture_channel": "0",
+            "backlight": "(0.0, 0.0, 0.0, 1.0)",
+            "backlight_enabled": "false",
+            "backlight_texture": "<Object#null>",
+            "bent_normal_enabled": "false",
+            "bent_normal_texture": "<Object#null>",
+            "billboard_keep_scale": "false",
+            "billboard_mode": "0",
+            "blend_mode": "0",
+            "clearcoat": "1.0",
+            "clearcoat_enabled": "false",
+            "clearcoat_roughness": "0.5",
+            "clearcoat_texture": "<Object#null>",
+            "cull_mode": "2",
+            "depth_draw_mode": "0",
+            "depth_test": "0",
+            "detail_albedo": "<Object#null>",
+            "detail_blend_mode": "0",
+            "detail_enabled": "false",
+            "detail_mask": "<Object#null>",
+            "detail_normal": "<Object#null>",
+            "detail_uv_layer": "0",
+            "diffuse_mode": "0",
+            "disable_ambient_light": "false",
+            "disable_fog": "false",
+            "disable_receive_shadows": "false",
+            "disable_specular_occlusion": "false",
+            "distance_fade_max_distance": "10.0",
+            "distance_fade_min_distance": "0.0",
+            "distance_fade_mode": "0",
+            "emission": "(0.0, 0.0, 0.0, 1.0)",
+            "emission_enabled": "false",
+            "emission_energy_multiplier": "1.0",
+            "emission_on_uv2": "false",
+            "emission_operator": "0",
+            "emission_texture": "<Object#null>",
+            "fixed_size": "false",
+            "fov_override": "75.0",
+            "grow": "false",
+            "grow_amount": "0.0",
+            "heightmap_deep_parallax": "false",
+            "heightmap_enabled": "false",
+            "heightmap_flip_binormal": "false",
+            "heightmap_flip_tangent": "false",
+            "heightmap_flip_texture": "false",
+            "heightmap_scale": "5.0",
+            "heightmap_texture": "<Object#null>",
+            "metallic": "0.0",
+            "metallic_specular": "0.5",
+            "metallic_texture": "<Object#null>",
+            "metallic_texture_channel": "0",
+            "msdf_outline_size": "0.0",
+            "msdf_pixel_range": "4.0",
+            "next_pass": "<Object#null>",
+            "no_depth_test": "false",
+            "normal_enabled": "false",
+            "normal_scale": "1.0",
+            "normal_texture": "<Object#null>",
+            "point_size": "1.0",
+            "proximity_fade_distance": "1.0",
+            "proximity_fade_enabled": "false",
+            "refraction_enabled": "false",
+            "refraction_scale": "0.05000000074506",
+            "refraction_texture": "<Object#null>",
+            "refraction_texture_channel": "0",
+            "render_priority": "0",
+            "rim": "1.0",
+            "rim_enabled": "false",
+            "rim_texture": "<Object#null>",
+            "rim_tint": "0.5",
+            "roughness": "0.89999997615814",
+            "roughness_texture": "<Object#null>",
+            "roughness_texture_channel": "0",
+            "script": "<null>",
+            "shading_mode": "1",
+            "shadow_to_opacity": "false",
+            "specular_mode": "0",
+            "stencil_color": "(0.0, 0.0, 0.0, 1.0)",
+            "stencil_compare": "0",
+            "stencil_flags": "0",
+            "stencil_mode": "0",
+            "stencil_outline_thickness": "0.00999999977648",
+            "stencil_reference": "1",
+            "subsurf_scatter_enabled": "false",
+            "subsurf_scatter_skin_mode": "false",
+            "subsurf_scatter_strength": "0.0",
+            "subsurf_scatter_texture": "<Object#null>",
+            "subsurf_scatter_transmittance_boost": "0.0",
+            "subsurf_scatter_transmittance_color": "(1.0, 1.0, 1.0, 1.0)",
+            "subsurf_scatter_transmittance_depth": "0.10000000149012",
+            "subsurf_scatter_transmittance_enabled": "false",
+            "subsurf_scatter_transmittance_texture": "<Object#null>",
+            "texture_filter": "3",
+            "texture_repeat": "true",
+            "transparency": "0",
+            "use_fov_override": "false",
+            "use_particle_trails": "false",
+            "use_point_size": "false",
+            "use_z_clip_scale": "false",
+            "uv1_offset": "(0.0, 0.0, 0.0)",
+            "uv1_scale": "(1.0, 1.0, 1.0)",
+            "uv1_triplanar": "false",
+            "uv1_triplanar_sharpness": "1.0",
+            "uv1_world_triplanar": "false",
+            "uv2_offset": "(0.0, 0.0, 0.0)",
+            "uv2_scale": "(1.0, 1.0, 1.0)",
+            "uv2_triplanar": "false",
+            "uv2_triplanar_sharpness": "1.0",
+            "uv2_world_triplanar": "false",
+            "vertex_color_is_srgb": "false",
+            "vertex_color_use_as_albedo": "false",
+            "z_clip_scale": "1.0"
+          },
+          "checked_default_properties": 118,
+          "noncloth_rendering_equivalence": "contract_checked_not_pixel_verified",
+          "ok": true,
+          "opaque_alpha_ignored_as_in_source": true
+        },
+        "new_bounds": "[P: (-0.268489, 1.1, -0.184509), S: (0.530873, 0.59, 0.334685)]",
+        "ok": true,
+        "old_bounds": "[P: (-0.253292, 1.1, -0.172522), S: (0.500823, 0.59, 0.310243)]",
+        "painted": 294,
+        "source_face_hand_pen_texture_preserved": true,
+        "unselected_vertex_bytes_equal": true
+      },
+      "direct_dependencies": [
+        "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_01_ink_robe.png"
+      ],
+      "file": "mesh_00.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 0,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "raw_storage_unchanged": true,
+            "selected": 0,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_01_ink_robe",
+      "sha256": "810de8fb8f9932d5f608ac494a4fc4698666dd005a5e020a3be549ec5c4d5ea6",
+      "source_arrays_sha256": "3af0ec74c4fc03dc10c666308cd92943573790c1fd53a8ddcb4ec45d8f5f5af3",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "68c672c4774f8dbbe197943de1dac972c8f3883d21d34c44abaf59b0fd95b3d9",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": true,
+          "bones": [
+            "chest",
+            "spine",
+            "pelvis"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 294
+        },
+        {
+          "body": false,
+          "bones": [
+            "hair_1",
+            "hair_2"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 32
+        },
+        {
+          "body": false,
+          "bones": [
+            "hair_1",
+            "hair_2"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 32
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_front_L",
+            "skirt_front_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 289
+        },
+        {
+          "body": true,
+          "bones": [
+            "chest"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 246
+        },
+        {
+          "body": true,
+          "bones": [
+            "chest",
+            "spine"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 78
+        },
+        {
+          "body": true,
+          "bones": [
+            "chest",
+            "spine",
+            "pelvis"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 80
+        },
+        {
+          "body": false,
+          "bones": [
+            "shin_L",
+            "thigh_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 145
+        },
+        {
+          "body": false,
+          "bones": [
+            "shin_R",
+            "thigh_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 145
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 222
+        },
+        {
+          "body": true,
+          "bones": [
+            "chest",
+            "spine"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 56
+        },
+        {
+          "body": false,
+          "bones": [
+            "foot_L",
+            "toe_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 105
+        },
+        {
+          "body": false,
+          "bones": [
+            "foot_R",
+            "toe_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 105
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_R",
+            "sleeve_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 116
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 232
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_L",
+            "sleeve_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 116
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 232
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 441
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 392
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 24
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "sash_L"
+          ],
+          "paint": true,
+          "role": "muted_teal_sash",
+          "vertices": 28
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "sash_R"
+          ],
+          "paint": true,
+          "role": "muted_teal_sash",
+          "vertices": 28
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 21
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 21
+        }
+      ],
+      "cloth": {
+        "body_moved": 848,
+        "invariant_uv_skin_index_lods": true,
+        "material_contract": {
+          "actual_stored_properties": {
+            "albedo_color": "(1.0, 1.0, 1.0, 1.0)",
+            "albedo_texture": "(res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png):<CompressedTexture2D#-9223372008820046406>",
+            "albedo_texture_force_srgb": "false",
+            "albedo_texture_msdf": "false",
+            "anisotropy": "0.0",
+            "anisotropy_enabled": "false",
+            "anisotropy_flowmap": "<Object#null>",
+            "ao_enabled": "false",
+            "ao_light_affect": "0.0",
+            "ao_on_uv2": "false",
+            "ao_texture": "<Object#null>",
+            "ao_texture_channel": "0",
+            "backlight": "(0.0, 0.0, 0.0, 1.0)",
+            "backlight_enabled": "false",
+            "backlight_texture": "<Object#null>",
+            "bent_normal_enabled": "false",
+            "bent_normal_texture": "<Object#null>",
+            "billboard_keep_scale": "false",
+            "billboard_mode": "0",
+            "blend_mode": "0",
+            "clearcoat": "1.0",
+            "clearcoat_enabled": "false",
+            "clearcoat_roughness": "0.5",
+            "clearcoat_texture": "<Object#null>",
+            "cull_mode": "2",
+            "depth_draw_mode": "0",
+            "depth_test": "0",
+            "detail_albedo": "<Object#null>",
+            "detail_blend_mode": "0",
+            "detail_enabled": "false",
+            "detail_mask": "<Object#null>",
+            "detail_normal": "<Object#null>",
+            "detail_uv_layer": "0",
+            "diffuse_mode": "0",
+            "disable_ambient_light": "false",
+            "disable_fog": "false",
+            "disable_receive_shadows": "false",
+            "disable_specular_occlusion": "false",
+            "distance_fade_max_distance": "10.0",
+            "distance_fade_min_distance": "0.0",
+            "distance_fade_mode": "0",
+            "emission": "(0.0, 0.0, 0.0, 1.0)",
+            "emission_enabled": "false",
+            "emission_energy_multiplier": "1.0",
+            "emission_on_uv2": "false",
+            "emission_operator": "0",
+            "emission_texture": "<Object#null>",
+            "fixed_size": "false",
+            "fov_override": "75.0",
+            "grow": "false",
+            "grow_amount": "0.0",
+            "heightmap_deep_parallax": "false",
+            "heightmap_enabled": "false",
+            "heightmap_flip_binormal": "false",
+            "heightmap_flip_tangent": "false",
+            "heightmap_flip_texture": "false",
+            "heightmap_scale": "5.0",
+            "heightmap_texture": "<Object#null>",
+            "metallic": "0.0",
+            "metallic_specular": "0.5",
+            "metallic_texture": "<Object#null>",
+            "metallic_texture_channel": "0",
+            "msdf_outline_size": "0.0",
+            "msdf_pixel_range": "4.0",
+            "next_pass": "<Object#null>",
+            "no_depth_test": "false",
+            "normal_enabled": "false",
+            "normal_scale": "1.0",
+            "normal_texture": "<Object#null>",
+            "point_size": "1.0",
+            "proximity_fade_distance": "1.0",
+            "proximity_fade_enabled": "false",
+            "refraction_enabled": "false",
+            "refraction_scale": "0.05000000074506",
+            "refraction_texture": "<Object#null>",
+            "refraction_texture_channel": "0",
+            "render_priority": "0",
+            "rim": "1.0",
+            "rim_enabled": "false",
+            "rim_texture": "<Object#null>",
+            "rim_tint": "0.5",
+            "roughness": "0.89999997615814",
+            "roughness_texture": "<Object#null>",
+            "roughness_texture_channel": "0",
+            "script": "<null>",
+            "shading_mode": "1",
+            "shadow_to_opacity": "false",
+            "specular_mode": "0",
+            "stencil_color": "(0.0, 0.0, 0.0, 1.0)",
+            "stencil_compare": "0",
+            "stencil_flags": "0",
+            "stencil_mode": "0",
+            "stencil_outline_thickness": "0.00999999977648",
+            "stencil_reference": "1",
+            "subsurf_scatter_enabled": "false",
+            "subsurf_scatter_skin_mode": "false",
+            "subsurf_scatter_strength": "0.0",
+            "subsurf_scatter_texture": "<Object#null>",
+            "subsurf_scatter_transmittance_boost": "0.0",
+            "subsurf_scatter_transmittance_color": "(1.0, 1.0, 1.0, 1.0)",
+            "subsurf_scatter_transmittance_depth": "0.10000000149012",
+            "subsurf_scatter_transmittance_enabled": "false",
+            "subsurf_scatter_transmittance_texture": "<Object#null>",
+            "texture_filter": "3",
+            "texture_repeat": "true",
+            "transparency": "0",
+            "use_fov_override": "false",
+            "use_particle_trails": "false",
+            "use_point_size": "false",
+            "use_z_clip_scale": "false",
+            "uv1_offset": "(0.0, 0.0, 0.0)",
+            "uv1_scale": "(1.0, 1.0, 1.0)",
+            "uv1_triplanar": "false",
+            "uv1_triplanar_sharpness": "1.0",
+            "uv1_world_triplanar": "false",
+            "uv2_offset": "(0.0, 0.0, 0.0)",
+            "uv2_scale": "(1.0, 1.0, 1.0)",
+            "uv2_triplanar": "false",
+            "uv2_triplanar_sharpness": "1.0",
+            "uv2_world_triplanar": "false",
+            "vertex_color_is_srgb": "false",
+            "vertex_color_use_as_albedo": "false",
+            "z_clip_scale": "1.0"
+          },
+          "checked_default_properties": 118,
+          "noncloth_rendering_equivalence": "contract_checked_not_pixel_verified",
+          "ok": true,
+          "opaque_alpha_ignored_as_in_source": true
+        },
+        "new_bounds": "[P: (-0.612087, 0.015573, -0.23875), S: (1.277744, 2.116427, 0.65984)]",
+        "ok": true,
+        "old_bounds": "[P: (-0.612087, 0.015573, -0.23875), S: (1.277744, 2.116427, 0.65984)]",
+        "painted": 1795,
+        "source_face_hand_pen_texture_preserved": true,
+        "unselected_vertex_bytes_equal": true
+      },
+      "direct_dependencies": [
+        "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_02_moon_silk.png"
+      ],
+      "file": "mesh_01.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 90,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.612087, 0.015573, -0.23875), S: (1.277744, 2.116427, 0.65984)]",
+            "old_bounds": "[P: (-0.612087, 0.015573, -0.216), S: (1.277744, 2.074427, 0.63709)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 90,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_02_moon_silk",
+      "sha256": "ce3d410d07e7ecfd83fa9ec7145582ee426db4585075f1eeb12612846634668b",
+      "source_arrays_sha256": "a38c131e58486e68a3a01c60ad23c3ac2a6e677925548e309db61a60f6ae25a9",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "20574b29a1804642effec8714b44e0f4312e60e5a32daa56eadedbb00d313d20",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": true,
+          "bones": [
+            "chest"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 287
+        },
+        {
+          "body": true,
+          "bones": [
+            "chest",
+            "spine"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 30
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_front_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_back_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_back_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_front_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 196
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "sash_L"
+          ],
+          "paint": true,
+          "role": "muted_teal_sash",
+          "vertices": 56
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "sash_R"
+          ],
+          "paint": true,
+          "role": "muted_teal_sash",
+          "vertices": 56
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 66
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 51
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_R"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 87
+        },
+        {
+          "body": false,
+          "bones": [
+            "forearm_L"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 87
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 44
+        }
+      ],
+      "cloth": {
+        "body_moved": 1577,
+        "invariant_uv_skin_index_lods": true,
+        "material_contract": {
+          "actual_stored_properties": {
+            "albedo_color": "(1.0, 1.0, 1.0, 1.0)",
+            "albedo_texture": "(res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png):<CompressedTexture2D#-9223372008299952700>",
+            "albedo_texture_force_srgb": "false",
+            "albedo_texture_msdf": "false",
+            "anisotropy": "0.0",
+            "anisotropy_enabled": "false",
+            "anisotropy_flowmap": "<Object#null>",
+            "ao_enabled": "false",
+            "ao_light_affect": "0.0",
+            "ao_on_uv2": "false",
+            "ao_texture": "<Object#null>",
+            "ao_texture_channel": "0",
+            "backlight": "(0.0, 0.0, 0.0, 1.0)",
+            "backlight_enabled": "false",
+            "backlight_texture": "<Object#null>",
+            "bent_normal_enabled": "false",
+            "bent_normal_texture": "<Object#null>",
+            "billboard_keep_scale": "false",
+            "billboard_mode": "0",
+            "blend_mode": "0",
+            "clearcoat": "1.0",
+            "clearcoat_enabled": "false",
+            "clearcoat_roughness": "0.5",
+            "clearcoat_texture": "<Object#null>",
+            "cull_mode": "2",
+            "depth_draw_mode": "0",
+            "depth_test": "0",
+            "detail_albedo": "<Object#null>",
+            "detail_blend_mode": "0",
+            "detail_enabled": "false",
+            "detail_mask": "<Object#null>",
+            "detail_normal": "<Object#null>",
+            "detail_uv_layer": "0",
+            "diffuse_mode": "0",
+            "disable_ambient_light": "false",
+            "disable_fog": "false",
+            "disable_receive_shadows": "false",
+            "disable_specular_occlusion": "false",
+            "distance_fade_max_distance": "10.0",
+            "distance_fade_min_distance": "0.0",
+            "distance_fade_mode": "0",
+            "emission": "(0.0, 0.0, 0.0, 1.0)",
+            "emission_enabled": "false",
+            "emission_energy_multiplier": "1.0",
+            "emission_on_uv2": "false",
+            "emission_operator": "0",
+            "emission_texture": "<Object#null>",
+            "fixed_size": "false",
+            "fov_override": "75.0",
+            "grow": "false",
+            "grow_amount": "0.0",
+            "heightmap_deep_parallax": "false",
+            "heightmap_enabled": "false",
+            "heightmap_flip_binormal": "false",
+            "heightmap_flip_tangent": "false",
+            "heightmap_flip_texture": "false",
+            "heightmap_scale": "5.0",
+            "heightmap_texture": "<Object#null>",
+            "metallic": "0.0",
+            "metallic_specular": "0.5",
+            "metallic_texture": "<Object#null>",
+            "metallic_texture_channel": "0",
+            "msdf_outline_size": "0.0",
+            "msdf_pixel_range": "4.0",
+            "next_pass": "<Object#null>",
+            "no_depth_test": "false",
+            "normal_enabled": "false",
+            "normal_scale": "1.0",
+            "normal_texture": "<Object#null>",
+            "point_size": "1.0",
+            "proximity_fade_distance": "1.0",
+            "proximity_fade_enabled": "false",
+            "refraction_enabled": "false",
+            "refraction_scale": "0.05000000074506",
+            "refraction_texture": "<Object#null>",
+            "refraction_texture_channel": "0",
+            "render_priority": "0",
+            "rim": "1.0",
+            "rim_enabled": "false",
+            "rim_texture": "<Object#null>",
+            "rim_tint": "0.5",
+            "roughness": "0.89999997615814",
+            "roughness_texture": "<Object#null>",
+            "roughness_texture_channel": "0",
+            "script": "<null>",
+            "shading_mode": "1",
+            "shadow_to_opacity": "false",
+            "specular_mode": "0",
+            "stencil_color": "(0.0, 0.0, 0.0, 1.0)",
+            "stencil_compare": "0",
+            "stencil_flags": "0",
+            "stencil_mode": "0",
+            "stencil_outline_thickness": "0.00999999977648",
+            "stencil_reference": "1",
+            "subsurf_scatter_enabled": "false",
+            "subsurf_scatter_skin_mode": "false",
+            "subsurf_scatter_strength": "0.0",
+            "subsurf_scatter_texture": "<Object#null>",
+            "subsurf_scatter_transmittance_boost": "0.0",
+            "subsurf_scatter_transmittance_color": "(1.0, 1.0, 1.0, 1.0)",
+            "subsurf_scatter_transmittance_depth": "0.10000000149012",
+            "subsurf_scatter_transmittance_enabled": "false",
+            "subsurf_scatter_transmittance_texture": "<Object#null>",
+            "texture_filter": "3",
+            "texture_repeat": "true",
+            "transparency": "0",
+            "use_fov_override": "false",
+            "use_particle_trails": "false",
+            "use_point_size": "false",
+            "use_z_clip_scale": "false",
+            "uv1_offset": "(0.0, 0.0, 0.0)",
+            "uv1_scale": "(1.0, 1.0, 1.0)",
+            "uv1_triplanar": "false",
+            "uv1_triplanar_sharpness": "1.0",
+            "uv1_world_triplanar": "false",
+            "uv2_offset": "(0.0, 0.0, 0.0)",
+            "uv2_scale": "(1.0, 1.0, 1.0)",
+            "uv2_triplanar": "false",
+            "uv2_triplanar_sharpness": "1.0",
+            "uv2_world_triplanar": "false",
+            "vertex_color_is_srgb": "false",
+            "vertex_color_use_as_albedo": "false",
+            "z_clip_scale": "1.0"
+          },
+          "checked_default_properties": 118,
+          "noncloth_rendering_equivalence": "contract_checked_not_pixel_verified",
+          "ok": true,
+          "opaque_alpha_ignored_as_in_source": true
+        },
+        "new_bounds": "[P: (-0.584555, 0.299989, -0.251177), S: (1.238656, 1.862811, 0.581742)]",
+        "ok": true,
+        "old_bounds": "[P: (-0.584555, 0.299989, -0.251087), S: (1.238656, 1.862811, 0.581652)]",
+        "painted": 1802,
+        "source_face_hand_pen_texture_preserved": true,
+        "unselected_vertex_bytes_equal": true
+      },
+      "direct_dependencies": [
+        "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_03_mineral_lining.png"
+      ],
+      "file": "mesh_02.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 66,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.584555, 0.299989, -0.251087), S: (1.238656, 1.862811, 0.581652)]",
+            "old_bounds": "[P: (-0.584555, 0.299989, -0.251087), S: (1.238656, 1.818011, 0.581652)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 66,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_03_mineral_lining",
+      "sha256": "04e311e67aa9e3cf2a21ffe6e383fc0b52e256e7a19d8965c6210c25528e7d1e",
+      "source_arrays_sha256": "a6171ce77a89557bc4170a7f5d85c4f3259b953a4f09f7c13fde120d8c2191a7",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "c0bae52d5b8b60cb4ebb76e473ee9f9d04c7e08e9e63eb33ed079b3d01422c85",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 1105
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 165
+        },
+        {
+          "body": false,
+          "bones": [
+            "hair_1",
+            "hair_2"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 114
+        },
+        {
+          "body": false,
+          "bones": [
+            "hair_1",
+            "hair_2"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 114
+        },
+        {
+          "body": false,
+          "bones": [
+            "foot_L",
+            "toe_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 150
+        },
+        {
+          "body": false,
+          "bones": [
+            "foot_R",
+            "toe_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 150
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 155
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 39
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 36
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 39
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 36
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 36
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 36
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 28
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        },
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 3
+        }
+      ],
+      "cloth": {
+        "body_moved": 0,
+        "ok": true,
+        "painted": 0,
+        "unchanged_mesh": true
+      },
+      "direct_dependencies": [
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_04_hair_and_wet_ink.png"
+      ],
+      "file": "mesh_03.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 1634,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.332, 0.018211, -0.201554), S: (0.620168, 2.213889, 0.597779)]",
+            "old_bounds": "[P: (-0.332, 0.018211, -0.191325), S: (0.620168, 2.162789, 0.58755)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 1634,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_04_hair_and_wet_ink",
+      "sha256": "30bfd457ac073f0b0d92d64575c7ac5893c88edcf38ce01862e59c07668159ea",
+      "source_arrays_sha256": "e11289b7624a852e83361264af7acbc04fa4ade58911cd7ef94dc22a81551f9e",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "92ca74648ad69f2c7a50d78542c2e4c4ccf233e9e75c362578a506bb07663563",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 513
+        },
+        {
+          "body": false,
+          "bones": [
+            "neck"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 99
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 6
+        },
+        {
+          "body": false,
+          "bones": [
+            "hand_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 46
+        },
+        {
+          "body": false,
+          "bones": [
+            "hand_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 75
+        },
+        {
+          "body": false,
+          "bones": [
+            "hand_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 46
+        },
+        {
+          "body": false,
+          "bones": [
+            "hand_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 75
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 52
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 52
+        },
+        {
+          "body": false,
+          "bones": [
+            "index_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 44
+        },
+        {
+          "body": false,
+          "bones": [
+            "middle_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 44
+        },
+        {
+          "body": false,
+          "bones": [
+            "ring_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 44
+        },
+        {
+          "body": false,
+          "bones": [
+            "pinky_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 44
+        },
+        {
+          "body": false,
+          "bones": [
+            "thumb_L"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 39
+        },
+        {
+          "body": false,
+          "bones": [
+            "index_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 55
+        },
+        {
+          "body": false,
+          "bones": [
+            "middle_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 55
+        },
+        {
+          "body": false,
+          "bones": [
+            "ring_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 55
+        },
+        {
+          "body": false,
+          "bones": [
+            "pinky_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 55
+        },
+        {
+          "body": false,
+          "bones": [
+            "thumb_R"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 52
+        }
+      ],
+      "cloth": {
+        "body_moved": 0,
+        "ok": true,
+        "painted": 0,
+        "unchanged_mesh": true
+      },
+      "direct_dependencies": [
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_05_warm_porcelain.png"
+      ],
+      "file": "mesh_04.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 689,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.560777, 1.00356, -0.1475), S: (1.183915, 1.12294, 0.487437)]",
+            "old_bounds": "[P: (-0.560777, 1.00356, -0.118), S: (1.183915, 1.08144, 0.457937)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 689,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_05_warm_porcelain",
+      "sha256": "c97be1245d9b7c6aece8470f019ae7bae321c5add0e08983f663516e382ee6ff",
+      "source_arrays_sha256": "c65d36439e867d5b2d811e77f88992fd3770aa80225adfedd4bdec84d2c78105",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "695e8c06b358eadee572bedce831d62782ab2ec7e0f9d3a6e98cbe1f71398283",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 52
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 58
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 58
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 58
+        }
+      ],
+      "cloth": {
+        "body_moved": 0,
+        "ok": true,
+        "painted": 0,
+        "unchanged_mesh": true
+      },
+      "direct_dependencies": [
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_06_old_brass.png"
+      ],
+      "file": "mesh_05.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 52,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.174229, 0.885192, -0.10625), S: (1.344144, 1.295146, 0.472249)]",
+            "old_bounds": "[P: (-0.139383, 0.885192, -0.085), S: (1.309298, 1.248751, 0.450999)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 52,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_06_old_brass",
+      "sha256": "0a32152e03c82ed1c583490b6b44cdd3e5f0cf4638566fd079c19895c08058c4",
+      "source_arrays_sha256": "c4ba3d4d5b85f57589f6f31c0dd69868b6732f8d73c07fdce09157aa090082a5",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "7f6c518405f489e83d4e10a5d53749aa3e7cd5621149554e203f90e928157f6b",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 232
+        },
+        {
+          "body": true,
+          "bones": [
+            "skirt_back_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 119
+        },
+        {
+          "body": true,
+          "bones": [
+            "skirt_back_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 119
+        },
+        {
+          "body": true,
+          "bones": [
+            "skirt_front_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 119
+        },
+        {
+          "body": true,
+          "bones": [
+            "skirt_front_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 119
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "brush"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 30
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 28
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 28
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 28
+        },
+        {
+          "body": false,
+          "bones": [
+            "head"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 28
+        }
+      ],
+      "cloth": {
+        "body_moved": 137,
+        "invariant_uv_skin_index_lods": true,
+        "material_contract": {
+          "actual_stored_properties": {
+            "albedo_color": "(1.0, 1.0, 1.0, 1.0)",
+            "albedo_texture": "(res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png):<CompressedTexture2D#-9223372006320241205>",
+            "albedo_texture_force_srgb": "false",
+            "albedo_texture_msdf": "false",
+            "anisotropy": "0.0",
+            "anisotropy_enabled": "false",
+            "anisotropy_flowmap": "<Object#null>",
+            "ao_enabled": "false",
+            "ao_light_affect": "0.0",
+            "ao_on_uv2": "false",
+            "ao_texture": "<Object#null>",
+            "ao_texture_channel": "0",
+            "backlight": "(0.0, 0.0, 0.0, 1.0)",
+            "backlight_enabled": "false",
+            "backlight_texture": "<Object#null>",
+            "bent_normal_enabled": "false",
+            "bent_normal_texture": "<Object#null>",
+            "billboard_keep_scale": "false",
+            "billboard_mode": "0",
+            "blend_mode": "0",
+            "clearcoat": "1.0",
+            "clearcoat_enabled": "false",
+            "clearcoat_roughness": "0.5",
+            "clearcoat_texture": "<Object#null>",
+            "cull_mode": "2",
+            "depth_draw_mode": "0",
+            "depth_test": "0",
+            "detail_albedo": "<Object#null>",
+            "detail_blend_mode": "0",
+            "detail_enabled": "false",
+            "detail_mask": "<Object#null>",
+            "detail_normal": "<Object#null>",
+            "detail_uv_layer": "0",
+            "diffuse_mode": "0",
+            "disable_ambient_light": "false",
+            "disable_fog": "false",
+            "disable_receive_shadows": "false",
+            "disable_specular_occlusion": "false",
+            "distance_fade_max_distance": "10.0",
+            "distance_fade_min_distance": "0.0",
+            "distance_fade_mode": "0",
+            "emission": "(0.0, 0.0, 0.0, 1.0)",
+            "emission_enabled": "false",
+            "emission_energy_multiplier": "1.0",
+            "emission_on_uv2": "false",
+            "emission_operator": "0",
+            "emission_texture": "<Object#null>",
+            "fixed_size": "false",
+            "fov_override": "75.0",
+            "grow": "false",
+            "grow_amount": "0.0",
+            "heightmap_deep_parallax": "false",
+            "heightmap_enabled": "false",
+            "heightmap_flip_binormal": "false",
+            "heightmap_flip_tangent": "false",
+            "heightmap_flip_texture": "false",
+            "heightmap_scale": "5.0",
+            "heightmap_texture": "<Object#null>",
+            "metallic": "0.0",
+            "metallic_specular": "0.5",
+            "metallic_texture": "<Object#null>",
+            "metallic_texture_channel": "0",
+            "msdf_outline_size": "0.0",
+            "msdf_pixel_range": "4.0",
+            "next_pass": "<Object#null>",
+            "no_depth_test": "false",
+            "normal_enabled": "false",
+            "normal_scale": "1.0",
+            "normal_texture": "<Object#null>",
+            "point_size": "1.0",
+            "proximity_fade_distance": "1.0",
+            "proximity_fade_enabled": "false",
+            "refraction_enabled": "false",
+            "refraction_scale": "0.05000000074506",
+            "refraction_texture": "<Object#null>",
+            "refraction_texture_channel": "0",
+            "render_priority": "0",
+            "rim": "1.0",
+            "rim_enabled": "false",
+            "rim_texture": "<Object#null>",
+            "rim_tint": "0.5",
+            "roughness": "0.72000002861023",
+            "roughness_texture": "<Object#null>",
+            "roughness_texture_channel": "0",
+            "script": "<null>",
+            "shading_mode": "1",
+            "shadow_to_opacity": "false",
+            "specular_mode": "0",
+            "stencil_color": "(0.0, 0.0, 0.0, 1.0)",
+            "stencil_compare": "0",
+            "stencil_flags": "0",
+            "stencil_mode": "0",
+            "stencil_outline_thickness": "0.00999999977648",
+            "stencil_reference": "1",
+            "subsurf_scatter_enabled": "false",
+            "subsurf_scatter_skin_mode": "false",
+            "subsurf_scatter_strength": "0.0",
+            "subsurf_scatter_texture": "<Object#null>",
+            "subsurf_scatter_transmittance_boost": "0.0",
+            "subsurf_scatter_transmittance_color": "(1.0, 1.0, 1.0, 1.0)",
+            "subsurf_scatter_transmittance_depth": "0.10000000149012",
+            "subsurf_scatter_transmittance_enabled": "false",
+            "subsurf_scatter_transmittance_texture": "<Object#null>",
+            "texture_filter": "3",
+            "texture_repeat": "true",
+            "transparency": "0",
+            "use_fov_override": "false",
+            "use_particle_trails": "false",
+            "use_point_size": "false",
+            "use_z_clip_scale": "false",
+            "uv1_offset": "(0.0, 0.0, 0.0)",
+            "uv1_scale": "(1.0, 1.0, 1.0)",
+            "uv1_triplanar": "false",
+            "uv1_triplanar_sharpness": "1.0",
+            "uv1_world_triplanar": "false",
+            "uv2_offset": "(0.0, 0.0, 0.0)",
+            "uv2_scale": "(1.0, 1.0, 1.0)",
+            "uv2_triplanar": "false",
+            "uv2_triplanar_sharpness": "1.0",
+            "uv2_world_triplanar": "false",
+            "vertex_color_is_srgb": "false",
+            "vertex_color_use_as_albedo": "false",
+            "z_clip_scale": "1.0"
+          },
+          "checked_default_properties": 118,
+          "noncloth_rendering_equivalence": "contract_checked_not_pixel_verified",
+          "ok": true,
+          "opaque_alpha_ignored_as_in_source": true
+        },
+        "new_bounds": "[P: (-0.29728, 0.29017, -0.262528), S: (1.475884, 1.827868, 0.658865)]",
+        "ok": true,
+        "old_bounds": "[P: (-0.29728, 0.29017, -0.262454), S: (1.475884, 1.827868, 0.658791)]",
+        "painted": 476,
+        "source_face_hand_pen_texture_preserved": true,
+        "unselected_vertex_bytes_equal": true
+      },
+      "direct_dependencies": [
+        "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_07_black_bamboo.png"
+      ],
+      "file": "mesh_06.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 112,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "lod_storage_preserved": true,
+            "new_bounds": "[P: (-0.29728, 0.29017, -0.262454), S: (1.475884, 1.827868, 0.658791)]",
+            "old_bounds": "[P: (-0.29728, 0.29017, -0.262454), S: (1.475884, 1.787137, 0.658791)]",
+            "raw_unselected_records_preserved": true,
+            "selected": 112,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_07_black_bamboo",
+      "sha256": "8d8d29bfbefbbaf3d5d6fcd326377b6ee05b4b83d39b46231335dd9ae33c483a",
+      "source_arrays_sha256": "e2e024600a5a1f2335e0907bb2ed6a85de2ffcd4f9bb1018bb78ba1b9164dbcf",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "e94a27336c61c4cd7729a79732cea5490168fe753289de6ada1fb4dc0a91fde8",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": false,
+          "bones": [
+            "inkstone"
+          ],
+          "paint": false,
+          "role": "original_texture_preserved",
+          "vertices": 205
+        }
+      ],
+      "cloth": {
+        "body_moved": 0,
+        "ok": true,
+        "painted": 0,
+        "unchanged_mesh": true
+      },
+      "direct_dependencies": [
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_08_inkstone.png"
+      ],
+      "file": "mesh_07.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 0,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "raw_storage_unchanged": true,
+            "selected": 0,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_08_inkstone",
+      "sha256": "63dc7bd812103951142cd62ac2f6c3e3496d5b3123e98b6ccc01db31642eda90",
+      "source_arrays_sha256": "e94a27336c61c4cd7729a79732cea5490168fe753289de6ada1fb4dc0a91fde8",
+      "source_shadow_present": false
+    },
+    {
+      "baked_arrays_sha256": "ff0aba9fe9bc87aad3cfdc9a4ee3f8c6ea6af87006238a0a446aadb675a91ff8",
+      "baked_shadow_present": false,
+      "classification": [
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_front_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_back_R"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_back_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": true,
+          "bones": [
+            "pelvis",
+            "skirt_front_L"
+          ],
+          "paint": true,
+          "role": "warm_ivory_inner_skirt",
+          "vertices": 238
+        },
+        {
+          "body": false,
+          "bones": [
+            "upper_arm_R",
+            "forearm_R",
+            "sleeve_R"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 493
+        },
+        {
+          "body": false,
+          "bones": [
+            "upper_arm_L",
+            "sleeve_L",
+            "forearm_L"
+          ],
+          "paint": true,
+          "role": "deep_teal_robe",
+          "vertices": 493
+        }
+      ],
+      "cloth": {
+        "body_moved": 904,
+        "invariant_uv_skin_index_lods": true,
+        "material_contract": {
+          "actual_stored_properties": {
+            "albedo_color": "(1.0, 1.0, 1.0, 1.0)",
+            "albedo_texture": "(res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png):<CompressedTexture2D#-9223372005347162673>",
+            "albedo_texture_force_srgb": "false",
+            "albedo_texture_msdf": "false",
+            "anisotropy": "0.0",
+            "anisotropy_enabled": "false",
+            "anisotropy_flowmap": "<Object#null>",
+            "ao_enabled": "false",
+            "ao_light_affect": "0.0",
+            "ao_on_uv2": "false",
+            "ao_texture": "<Object#null>",
+            "ao_texture_channel": "0",
+            "backlight": "(0.0, 0.0, 0.0, 1.0)",
+            "backlight_enabled": "false",
+            "backlight_texture": "<Object#null>",
+            "bent_normal_enabled": "false",
+            "bent_normal_texture": "<Object#null>",
+            "billboard_keep_scale": "false",
+            "billboard_mode": "0",
+            "blend_mode": "0",
+            "clearcoat": "1.0",
+            "clearcoat_enabled": "false",
+            "clearcoat_roughness": "0.5",
+            "clearcoat_texture": "<Object#null>",
+            "cull_mode": "2",
+            "depth_draw_mode": "0",
+            "depth_test": "0",
+            "detail_albedo": "<Object#null>",
+            "detail_blend_mode": "0",
+            "detail_enabled": "false",
+            "detail_mask": "<Object#null>",
+            "detail_normal": "<Object#null>",
+            "detail_uv_layer": "0",
+            "diffuse_mode": "0",
+            "disable_ambient_light": "false",
+            "disable_fog": "false",
+            "disable_receive_shadows": "false",
+            "disable_specular_occlusion": "false",
+            "distance_fade_max_distance": "10.0",
+            "distance_fade_min_distance": "0.0",
+            "distance_fade_mode": "0",
+            "emission": "(0.0, 0.0, 0.0, 1.0)",
+            "emission_enabled": "false",
+            "emission_energy_multiplier": "1.0",
+            "emission_on_uv2": "false",
+            "emission_operator": "0",
+            "emission_texture": "<Object#null>",
+            "fixed_size": "false",
+            "fov_override": "75.0",
+            "grow": "false",
+            "grow_amount": "0.0",
+            "heightmap_deep_parallax": "false",
+            "heightmap_enabled": "false",
+            "heightmap_flip_binormal": "false",
+            "heightmap_flip_tangent": "false",
+            "heightmap_flip_texture": "false",
+            "heightmap_scale": "5.0",
+            "heightmap_texture": "<Object#null>",
+            "metallic": "0.0",
+            "metallic_specular": "0.5",
+            "metallic_texture": "<Object#null>",
+            "metallic_texture_channel": "0",
+            "msdf_outline_size": "0.0",
+            "msdf_pixel_range": "4.0",
+            "next_pass": "<Object#null>",
+            "no_depth_test": "false",
+            "normal_enabled": "false",
+            "normal_scale": "1.0",
+            "normal_texture": "<Object#null>",
+            "point_size": "1.0",
+            "proximity_fade_distance": "1.0",
+            "proximity_fade_enabled": "false",
+            "refraction_enabled": "false",
+            "refraction_scale": "0.05000000074506",
+            "refraction_texture": "<Object#null>",
+            "refraction_texture_channel": "0",
+            "render_priority": "0",
+            "rim": "1.0",
+            "rim_enabled": "false",
+            "rim_texture": "<Object#null>",
+            "rim_tint": "0.5",
+            "roughness": "0.89999997615814",
+            "roughness_texture": "<Object#null>",
+            "roughness_texture_channel": "0",
+            "script": "<null>",
+            "shading_mode": "1",
+            "shadow_to_opacity": "false",
+            "specular_mode": "0",
+            "stencil_color": "(0.0, 0.0, 0.0, 1.0)",
+            "stencil_compare": "0",
+            "stencil_flags": "0",
+            "stencil_mode": "0",
+            "stencil_outline_thickness": "0.00999999977648",
+            "stencil_reference": "1",
+            "subsurf_scatter_enabled": "false",
+            "subsurf_scatter_skin_mode": "false",
+            "subsurf_scatter_strength": "0.0",
+            "subsurf_scatter_texture": "<Object#null>",
+            "subsurf_scatter_transmittance_boost": "0.0",
+            "subsurf_scatter_transmittance_color": "(1.0, 1.0, 1.0, 1.0)",
+            "subsurf_scatter_transmittance_depth": "0.10000000149012",
+            "subsurf_scatter_transmittance_enabled": "false",
+            "subsurf_scatter_transmittance_texture": "<Object#null>",
+            "texture_filter": "3",
+            "texture_repeat": "true",
+            "transparency": "0",
+            "use_fov_override": "false",
+            "use_particle_trails": "false",
+            "use_point_size": "false",
+            "use_z_clip_scale": "false",
+            "uv1_offset": "(0.0, 0.0, 0.0)",
+            "uv1_scale": "(1.0, 1.0, 1.0)",
+            "uv1_triplanar": "false",
+            "uv1_triplanar_sharpness": "1.0",
+            "uv1_world_triplanar": "false",
+            "uv2_offset": "(0.0, 0.0, 0.0)",
+            "uv2_scale": "(1.0, 1.0, 1.0)",
+            "uv2_triplanar": "false",
+            "uv2_triplanar_sharpness": "1.0",
+            "uv2_world_triplanar": "false",
+            "vertex_color_is_srgb": "false",
+            "vertex_color_use_as_albedo": "false",
+            "z_clip_scale": "1.0"
+          },
+          "checked_default_properties": 118,
+          "noncloth_rendering_equivalence": "contract_checked_not_pixel_verified",
+          "ok": true,
+          "opaque_alpha_ignored_as_in_source": true
+        },
+        "new_bounds": "[P: (-0.610095, 0.295989, -0.257289), S: (1.270324, 1.402125, 0.579381)]",
+        "ok": true,
+        "old_bounds": "[P: (-0.610095, 0.295989, -0.257261), S: (1.270324, 1.402125, 0.579353)]",
+        "painted": 1938,
+        "source_face_hand_pen_texture_preserved": true,
+        "unselected_vertex_bytes_equal": true
+      },
+      "direct_dependencies": [
+        "res://yan_skin_bake_20261020/cloth_palette.gdshader",
+        "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures_09_ink_to_moon_cloth.png"
+      ],
+      "file": "mesh_08.res",
+      "head": {
+        "head_ramp_height": 0.129999995231628,
+        "lod_indices_and_levels_byte_equal": true,
+        "neck_anchor": "(0.0, 1.67, 0.0)",
+        "ok": true,
+        "scale_above_ramp": [
+          1.25,
+          1.1,
+          1.25
+        ],
+        "selected_vertices": 0,
+        "shadow_policy": "changed_mesh_uses_main_mesh_shadow_cast_unchanged",
+        "source_never_written": true,
+        "surfaces": [
+          {
+            "raw_storage_unchanged": true,
+            "selected": 0,
+            "surface": 0
+          }
+        ]
+      },
+      "name": "ScholarSurface_09_ink_to_moon_cloth",
+      "sha256": "8ade7b6e66857992c6dd8e12f762ed3b42252a9258966a0d680b9aedf32c0103",
+      "source_arrays_sha256": "47f715d23cc67267a6ae928ae95363dfcbb4bdca3276a3aa3088930d813537b0",
+      "source_shadow_present": false
+    }
+  ],
+  "head_selected": 2643,
+  "lod_pairs": 47,
+  "ok": true,
+  "painted_vertices": 6305,
+  "prospective_seams": {
+    "maximum_new_gap": 0.0000000298023223876953,
+    "ok": true,
+    "pairs": 711,
+    "violations": 0
+  },
+  "runtime_geometry_work_required": false,
+  "runtime_integration": "NOT_INSTALLED",
+  "schema": "offline-cloth-bake-1",
+  "source_glb_sha256": "a41f04eca11416a1908caa6afc681afd2d3493b1470b402cd8ac4abd8d941bc2",
+  "source_head_recipe_sha256": "b0c4913888099f5d5d3e5f5a497064222fca85a9a9db1c2643b4eb0b7fcc65df",
+  "source_imported_sha256": "9e9f4962c63bdee42bd804777663dc94e21c6d6f8ceba9c7fc8097a5352ee5e8",
+  "source_model": "res://tests/ink_q3_gesture_runtime_20261004/assets/yanguizhou_q3_gestures.glb",
+  "vertices": 12883
+}
