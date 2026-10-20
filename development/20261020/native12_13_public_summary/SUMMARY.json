@@ -1,0 +1,38 @@
+{
+  "scope": "Diagnostic12 startup and visual13 actual material observation",
+  "test_environment": {
+    "renderer": "Mesa llvmpipe software rendering",
+    "LP_NUM_THREADS": "2 child process only"
+  },
+  "diagnostic12": {
+    "report_sha256": "478fa21093d94a325e3ee2ef9c4fda43b781022cb9b3a95bf1ceb69d7a245048",
+    "policy_cases": 12,
+    "policy_passed": true,
+    "actual_export_requested": false,
+    "suppressed_attempts": 9,
+    "base_startup_report_ms": 0.003,
+    "click_to_first_usable_ms": 15462.694,
+    "host_ready_ms": 8044.61,
+    "interpretation": "Nested intervals are not additive. Other startup stages vary; overall speedup cannot be assigned solely to export suppression. No Windows FPS conclusion."
+  },
+  "visual13": {
+    "report_sha256": "f4efb1035e2b21678d07148f909cbb2a282819805d515486901112b1b23b2d29",
+    "actual_minions": 4,
+    "unique_expected_material_tags_per_minion": 4,
+    "all_actual_material_values_verified": true,
+    "q1_source_ages_seconds": [
+      0.14,
+      0.82
+    ],
+    "q1_width": 1.6,
+    "actual_path_points": 13,
+    "art_approved": false,
+    "root_visual_assessment": "Minions appear blurrier; Q1 is clearer. Overall cartoon art not accepted. Future animation review requires sustained multiple frames."
+  },
+  "postchecks": {
+    "frozen_inputs_unchanged": true,
+    "strict_error_scan_clear": true,
+    "owned_cleanup_clear": true
+  },
+  "contains_screenshots": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "visual15-portable-delta-1",
+  "base_pck_sha256": "c620a2cba7868269c9d1b250f195eec6666785f922b548489b862e6625d3eac1",
+  "base_pck_bytes": 301578456,
+  "result_files": 3380,
+  "result_pck_sha256": "62baea1172b0892cdbbf553cf9b988b98f489948c42554930993f679db1d50d7",
+  "result_pck_bytes": 301581560,
+  "files": [
+    {
+      "path": "yan_cartoon_courtyard_20261018/room_skin.gd",
+      "before": "619ff916e0248f77e43ebe5d54a2aeccc5116f505eab46827ae115903011be99",
+      "after": "2fa6bd41fd106d67e4941d23e15a479d88e6f4cd858d9e0a16c99b197e142366"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "5a1c8b7f83ecf5fafe9beb5a04b6b160c5a39c25bd057567715eb0f5f6586b65",
+      "after": "4217e191b9ce5ededa52e517bfc3a7d156d2b98a7c94ea9c36e29ccc15dfaf34"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "235103fb46e608c91c85d6716bb7d021c128d72ba01a8b4e2155de0da01fa8b3",
+      "after": "7e9524266b380342ab5bc93a8168e68547f6c2a1a269ae5ad8920533850affed",
+      "replacement": {
+        "old": "\"sha256\": \"5a1c8b7f83ecf5fafe9beb5a04b6b160c5a39c25bd057567715eb0f5f6586b65\"",
+        "new": "\"sha256\": \"4217e191b9ce5ededa52e517bfc3a7d156d2b98a7c94ea9c36e29ccc15dfaf34\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "c8f022f404a09245e1a95ede9c7ac4e4cf68f52effdd7b94a9b11d254b79b931",
+      "after": "fc8c0a2e382dae621afa178870f7d025ebdab31ddb4db9f4465e930ff3e5b438"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
