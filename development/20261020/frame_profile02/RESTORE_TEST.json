@@ -1,0 +1,19 @@
+{
+  "result": "EXACT_RESTORE_VERIFIED_NO_ENGINE",
+  "source_files": 3384,
+  "all_source_sha256_equal": true,
+  "pck_bytes_equal": true,
+  "pck_sha256": "b1320d0e2779c7063baf526a0be471a1691795f8cba4d552b3573801f4a4bb32",
+  "native_acceptance": "NATIVE_28_FRAMES_VALID_GUARD_IMAGE_COUNT_FAILED",
+  "public_files": [
+    "MANIFEST.json",
+    "PAYLOAD_PINS.json",
+    "README.md",
+    "apply.py",
+    "payload/yan_p3_reimplementation_20261018b/gate.gd",
+    "payload/yan_p3_reimplementation_20261018b/migration.json",
+    "payload/yan_visual_attach_20261018/entry.gd",
+    "RESTORE_TEST.json"
+  ],
+  "restore_scope": "Previously verified full source and PCK exact reconstruction; this update changes public documentation/status only."
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "frame-profile-portable-delta-1",
+  "base_pck_sha256": "761b094458f6025e876504f9ec677f20e0d98069598c9b3d4c7e1de13757710e",
+  "base_pck_bytes": 301579304,
+  "result_files": 3384,
+  "result_pck_sha256": "2761e6997363ba41b1b8db841222be7b77d7632bd285a3a1ed3ce9f81143010d",
+  "result_pck_bytes": 301656868,
+  "files": [
+    {
+      "path": "performance_probe_20261020/flow_binding.gd",
+      "before": null,
+      "after": "38200ace6f661c0d91cba9a63c4439221fa69efd3cfd0d6b0a9f77cbb3e116c2"
+    },
+    {
+      "path": "performance_probe_20261020/frame_cpu.gd",
+      "before": null,
+      "after": "a44e852df67e129dabb9c49de0bc3d50ab624252026b478658b2826ab08685f6"
+    },
+    {
+      "path": "tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd",
+      "before": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f",
+      "after": "f4116bf367e312ffc6eac9cb9e75fff271611756c47cfdbb95378c1581a2d4fb"
+    },
+    {
+      "path": "tests/ink_ordinary_visuals_20261007/candidate01/host.gd",
+      "before": "9d262fb9080cbf3fee9a002628a9f685b2c5de6b6345c05cd23d88adbed7a46a",
+      "after": "a57a946e8b898aba610d959cd7b515adf062ad840c9086e487a5e236e78ddec2"
+    },
+    {
+      "path": "visual_rework_20261009/controller.gd",
+      "before": "21f162bf90480fc7e950edf4bfb479be4f413a785ee2f2dd02cff32670d27b89",
+      "after": "9796c5f722421d2d9ee35fb8e0fc0b7827d2043a4d7c5888a1e2e87972cdb275"
+    },
+    {
+      "path": "visual_rework_20261009/runtime_actor.gd",
+      "before": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66",
+      "after": "038f6805928d14df25b57444331c15c89a46231834554256ed742da50a05ea15"
+    },
+    {
+      "path": "visual_rework_20261009/runtime_host.gd",
+      "before": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b",
+      "after": "456c42cf20cb2d3aa86f0f96b3bf7ef03d3c2d8cf42ac1028fcf804d3c5d0d40"
+    },
+    {
+      "path": "yan_trial_ui_20261018/presenter.gd",
+      "before": "23dd4aa98626075d7e43a5475c11f3c60e2be77c5824d1924bab54c11ffc6853",
+      "after": "ea6ad6df667b21445e6b228d18fd740da18c6db835c9518d3db2119fc44100b6"
+    },
+    {
+      "path": "yan_visual_attach_20261018/entry.gd",
+      "before": "18cf8ac03497720207ec1e283e80d49c743d4377fe0cc9105e7a0c600850bc7f",
+      "after": "eb37c2d77d8a7d9b32bd8fc0e3c287b2219fa17ca031eceee8bd780fa81b86d3"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/tests/ink_first_floor_user_route_20261005/native_host01/flow_bridge.gd",
+      "before": null,
+      "after": "fccc171979663a6f556bf531c6ce8ba29de06ac24e35464eef45bd3bdec8842f"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/runtime_actor.gd",
+      "before": null,
+      "after": "c0ad0a2f51548126a338a9333cfc9b7bc39c0f806f86dec795e031ff86adca66"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/presentation_preimages/visual_rework_20261009/runtime_host.gd",
+      "before": null,
+      "after": "7be374962b5c7298a413355a529e8cb535961e03b72fd49efbe557e481ff8e7b"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6",
+      "after": "1121689d62ffa8b0f6b3d3fcec667a38a41e625d84f5a13959632a832be43892"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "66e41b2efbdba8e93b29a9d090cc091e03d57de4201e272be9cf63179b8df0f9",
+      "after": "9ae95247da24728efd4adfd3494204b9983e74b67095aba8036b03a23e74728e",
+      "replacement": {
+        "old": "\"sha256\": \"6e3497c4d0a016ac6e4a09d48bcc78ec46ea452efcc6a5b449ddab6c9c05c4a6\"",
+        "new": "\"sha256\": \"1121689d62ffa8b0f6b3d3fcec667a38a41e625d84f5a13959632a832be43892\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "3e70083542135b81e66f4f0b77baf3643270f6668ecfce6820d2d8d7cb0c13ce",
+      "after": "cfa2be74b375bf7995a3b4f92ffeb59466159eb2d6bc25fd1c194d11268946e8"
+    }
+  ],
+  "native_acceptance": "NATIVE_PARSE_FAILED_NO_CPU_SAMPLES"
+}
