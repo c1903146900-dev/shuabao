@@ -1,0 +1,40 @@
+{
+  "schema": "visual13-portable-delta-1",
+  "base_pck_sha256": "5539c9a50ed88c3db779297e73346e830611075e7f62a71b1cd99e74f959e271",
+  "base_pck_bytes": 301578056,
+  "result_files": 3380,
+  "result_pck_sha256": "c620a2cba7868269c9d1b250f195eec6666785f922b548489b862e6625d3eac1",
+  "result_pck_bytes": 301578456,
+  "files": [
+    {
+      "path": "yan_enemy_cartoon_20261019/enemy_view.gd",
+      "before": "f116268362973961b511e1b8de239863cb5d37baf016c3c3d262f6240968e8ef",
+      "after": "8bfc06dcbb0d7543b10abb60fee54faffd92f7dce62f2335d3b3934bc89b705e"
+    },
+    {
+      "path": "visual_rework_20261009/views/q1_river.gdshader",
+      "before": "9d53301ee340b084c7126bdb5b262fa86e51ea963dff10f08a97d8dd48c58b86",
+      "after": "575e74aa05fe70f5a6bb864ff64a85499194e3e6e012f23942fb1da2de7638e9"
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/migration.json",
+      "before": "eb7d11149d511dce42c14a65b92ce9bf259e80a92b96209aa208d9cf8bc232bc",
+      "after": "5a1c8b7f83ecf5fafe9beb5a04b6b160c5a39c25bd057567715eb0f5f6586b65"
+    },
+    {
+      "path": "visual_rework_20261009/binding/source_binding.json",
+      "before": "bc63b6b0851c008cad92f4c4de694c38aa87c6e492958e18e1903496a4ae43b2",
+      "after": "235103fb46e608c91c85d6716bb7d021c128d72ba01a8b4e2155de0da01fa8b3",
+      "replacement": {
+        "old": "\"sha256\": \"eb7d11149d511dce42c14a65b92ce9bf259e80a92b96209aa208d9cf8bc232bc\"",
+        "new": "\"sha256\": \"5a1c8b7f83ecf5fafe9beb5a04b6b160c5a39c25bd057567715eb0f5f6586b65\""
+      }
+    },
+    {
+      "path": "yan_p3_reimplementation_20261018b/gate.gd",
+      "before": "04eb86676cb510590539c539b16acbb81c5c014dbfe3f08e771721d3616ce8c5",
+      "after": "c8f022f404a09245e1a95ede9c7ac4e4cf68f52effdd7b94a9b11d254b79b931"
+    }
+  ],
+  "native_acceptance": "VISUAL_NATIVE_UNRUN"
+}
