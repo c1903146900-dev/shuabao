@@ -1,0 +1,10 @@
+name: Release capability check
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report capability
+        run: echo 'Release workflow capability check only.'
