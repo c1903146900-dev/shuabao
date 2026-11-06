@@ -30,3 +30,6 @@ Rebuild q2_e2_combo01 through the documented chain, then run rebuild_20261106/bu
 
 R1 candidate pack SHA256: 633da80415771827a17231aee5f60948444b9a789c6cb0735275917434f5b08d
 Preserved combination pack SHA256: a66990e44a2ed50e159ebbfe35bc42c2e5b798eafaeffb6248f00fefbd85ab39
+
+## Subsequent combination regression
+See COMBINATION_QA.md for the later complete-floor/UI and cleanup results. Those results supersede the earlier full-floor-pending status only for R1 + Q2/E2, not Q3.
