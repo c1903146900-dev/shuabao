@@ -21,3 +21,7 @@ No immediate blind long retry or safety-limit change was made. Keep the candidat
 After a fresh 45-second idle precheck (maximum gap 0.171548 seconds, no gap above 0.2), one new run of the unchanged q3_motion01 isolated package was attempted with source Q3 event counting. The guard stopped in the first room at wall 14.045800 seconds: sample_gap_untrusted, maximum gap 0.417499 seconds, peak owned RSS+swap 393162752 bytes. Exit -15; all owned processes cleaned up. No SCRIPT ERROR was reported before termination. This remains a failed/incomplete full-floor attempt, not a pass. Q3 was not merged and protection was unchanged.
 
 Independent work continued instead: the static locomotion-exit candidate was rebased onto the newer Q2/E2/R1 combination in a separate package. It has only structural/hash checks, not runtime acceptance. See combined_exit_review_20261106/README.md. Preserved passing Q2/E2/R1 package is untouched.
+
+## Latest preserved isolated retry
+
+q3floorstable01 on unchanged q3_motion01 stopped at wall111.475621 s for sample_gap_untrusted, max gap0.403783 s, exit-15, complete cleanup. It is still not an isolated complete-floor pass. No immediate long retry or protection change. An exact three-line forward integration draft was built and hash-checked only; see q3_combo_review_20261106/README.md. Current accepted baseline remains motion_combo05.

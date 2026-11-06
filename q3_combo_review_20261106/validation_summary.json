@@ -1,0 +1,16 @@
+{
+  "draft": "q3_combo_draft01",
+  "base": "motion_combo05",
+  "pack_sha256": "b56dd6e27d7177476177553a6b73801f92f11a806b5115976ad0a73eb6b54889",
+  "accepted": false,
+  "runtime": "not_run",
+  "manifest_entries_verified": 243,
+  "old_isolated_retry": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "exit": -15,
+    "elapsed": 111.4756206810016,
+    "max_sample_gap": 0.4037825260020327,
+    "peak_rss_plus_swap": 405188608
+  }
+}
