@@ -1,0 +1,11 @@
+# E3 open flowing-wind candidate, not accepted
+
+Observed actual E3 combat on motion_combo06 before editing.11 bounded frames covered activation, walking, dash, melee pressure and room victory. Skill activation, existing7-second timer, actual kill extensions and HUD state worked. In actual frames3/5/7 the two nearly full-height upright wisps crossed the face/body and looked more like brackets than moving wind. This is a visual observation, not a claim that E3 gameplay is broken.
+
+Isolated change replaces only those two ordinary body-aura polylines with two staggered, upward-moving, tapered open wisps outside the face. Source hero_time owns phase and existing activation pulse owns strength. No circular barrier, new cue count, text, hitbox, animation lock, attack mechanics, damage, cooldown, buff duration or kill extension changes. Actual death-prevention flash and receipt/source validation remain untouched.
+
+First e3_wind01 passed short execution but its thinner strokes were too faint in combat; it was not accepted merely for passing. Revised e3_wind02 increases taper width, length and contrast without covering the face. Actual frame3 shows the wisps outside the central face, frame7 retains readable close enemies and warning. It is an incremental visual candidate, not proof of final game quality or user aesthetic approval.
+
+All three bounded observations passed the unchanged guard and cleaned up. Candidate02 is NOT the accepted baseline. motion_combo06 is retained; Q3 remains separate. Need actual pause/lifetime/natural end and interrupted cleanup, relevant UI and full-floor regression before adoption. The observation ended after room victory with E3 still having extended time; it does NOT prove natural expiry or death-save coverage. Original behavior suppresses aura outside combat while HUD may still show remaining time; this change does not alter that existing rule.
+
+Recovery: build_e3_wind.py uses changes for first attempt; build_e3_wind02.py uses changes02 for revised attempt. Both clone motion_combo06 and need original private inputs/art. All243 manifest entries verified. Public backups exclude private art/screenshots/raw logs. Current source change is limited to _draw_e3 geometry, leaving adjacent skills unchanged.

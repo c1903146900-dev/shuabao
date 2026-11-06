@@ -1,0 +1,39 @@
+{
+  "accepted": false,
+  "baseline": "motion_combo06",
+  "candidate": "e3_wind02",
+  "pack_sha256": "cbc31d2269d207c5c9f13c96eb5a921e7eabdcefeffb61567912875d8433d998",
+  "tests": {
+    "e3experience01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 21.517579590999958,
+      "max_sample_gap": 0.13700079399859533,
+      "peak_rss_plus_swap": 431071232,
+      "owned_cleanup_complete": true
+    },
+    "e3wind01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 20.72235204899698,
+      "max_sample_gap": 0.06791916099973605,
+      "peak_rss_plus_swap": 430481408,
+      "owned_cleanup_complete": true
+    },
+    "e3wind02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 21.190268335998553,
+      "max_sample_gap": 0.08058338699993328,
+      "peak_rss_plus_swap": 430837760,
+      "owned_cleanup_complete": true
+    }
+  },
+  "manifest_entries_verified": 243,
+  "first_attempt": "Functional short pass but visually too faint; not selected.",
+  "second_attempt": "Short actual combat visual review improved visibility and cleared central face; lifecycle/UI/fullfloor not yet run.",
+  "mechanics_changed": false
+}
