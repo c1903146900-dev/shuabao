@@ -1,0 +1,10 @@
+{
+  "duration_seconds": 90,
+  "context": "same GUI terminal used to launch guarded Godot",
+  "max_gap": 0.152219008999964,
+  "over_200ms": 0,
+  "before_loadavg": "1.48 1.74 1.92 1/628 14791",
+  "after_loadavg": "0.42 1.31 1.75 1/631 14792",
+  "cpu_pressure_and_cgroup_metrics": "not exposed in either namespace (files absent)",
+  "interpretation": "No >0.2s idle gap observed; not a guarantee of loaded runtime stability. No root cause established. No scheduling/security settings changed."
+}

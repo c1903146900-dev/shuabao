@@ -19,6 +19,6 @@
     "bodyaimui05",
     "bodyaimnative05final"
   ],
-  "blocked_test": "bodyaimfloor05",
-  "blocker": "GuardError:sample_gap_untrusted, gap 0.261909598 seconds at wall 146.752758820 seconds; reached Boss but did not finish."
+  "blocked_test": "bodyaimfloor05retry01",
+  "blocker": "One retry after a new 90-second idle diagnostic stopped on unchanged guard at wall 54.215458 s, max gap 0.212647 s. Same-terminal diagnostic did not establish root cause. No further long retry."
 }

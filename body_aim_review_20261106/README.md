@@ -72,3 +72,14 @@ Candidate05 passed 11 UI checks (wall 13.665522 s, gap 0.173670 s) and the bound
 Its own complete-floor run reached the Boss but was stopped by the unchanged sampling guard: GuardError:sample_gap_untrusted, max gap 0.261909598 s, wall 146.752758820 s, peak RSS+swap 416632832 bytes, exit -15. Last progress was simulation time 131.618687 s, Boss alive, hero HP 420. All owned processes were cleaned up. This is NOT a complete-floor pass and the older candidate03/04 complete-floor passes do not substitute for it. The final acceptance script refused to promote this candidate after checking the failed exit report. No blind repeat or protection relaxation was made.
 
 Keep motion_combo02 as the accepted baseline. Candidate05 is backed up for later bounded final regression after scheduling conditions improve. Combat logic and other heroes remain byte-identical; 243 manifest entries and the old rollback pack were verified. The body-picking changes are not merged into the accepted baseline.
+
+
+## One later bounded retry, still not accepted
+A new 90-second idle diagnostic had max gap 0.053423 s and no gap above 0.2 s; load average fell from 0.69 to 0.15. After that, one unchanged candidate05 full-floor retry was attempted. It stopped at wall 54.215458 s with sample_gap_untrusted, max gap 0.212647 s, peak RSS+swap 409513984 bytes. Last progress: node r04a, simulation 45.587986 s, HP 306.195. Exit -15, complete owned-process cleanup. No repeated long run followed. This confirms that idle preflight alone is not a reliable guarantee.
+
+The prior failed run's median gap was 0.050161 s and p99 0.054545 s; only one of 2898 samples exceeded 0.2 s. Minimum available memory was 8081293312 bytes, far above the unchanged 2-GiB floor, and peak RSS+swap stayed below the 1.5-GiB cap. These readings do not establish a CPU-throttling root cause. A matching-terminal diagnostic is being collected because the shell tool's process namespace only lists its local command processes, not the GUI-launched game. Do not treat that process listing as a full desktop workload inventory.
+
+
+Same-GUI-terminal 90-second diagnostic completed with max gap 0.152219 s, no gap above 0.2 s, and load average decreasing from 1.48 to 0.42. It could see the terminal/desktop namespace, but CPU pressure and cgroup accounting files were absent there as well. Neither context establishes throttling or another precise root cause. Idle stability alone remains insufficient; no second long run was launched after the failed retry. The final candidate and prior accepted baseline remain unchanged.
+
+Independent review reused existing successful R2 gameplay evidence instead of repeating the same leveling/capture. Rear preparation, forward release and source nail fronts were already readable; no unobserved defect was used to justify changes. See r2_motion_review_20261106/README.md.

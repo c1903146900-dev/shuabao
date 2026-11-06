@@ -114,5 +114,15 @@
     "exit": -15,
     "cleanup_complete": true,
     "candidate": "body_aim05"
+  },
+  "bodyaimfloor05retry01": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "max_sample_gap": 0.21264711899857502,
+    "elapsed": 54.21545764500115,
+    "peak_rss_plus_swap": 409513984,
+    "exit": -15,
+    "candidate": "body_aim05",
+    "cleanup_complete": true
   }
 }

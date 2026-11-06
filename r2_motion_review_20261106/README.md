@@ -1,0 +1,10 @@
+# R2 next visual observation, not an accepted change
+
+Read-only baseline analysis identified one concrete real-play question: does the action read as a throw from the hero, a travelling nail front and a distinct impact, or as disconnected elements? No visual defect is asserted without observing gameplay.
+
+Source facts: fengli_ultimates.gd releases at 0.10 hero-seconds, then nails travel on world time. Source owns collision, damage and slow. Coincident nails are intentional, not an artificial spread. nail_effects.gd reuses the original e1throw windup/contact/recover art, projects actual projectile position, and draws source impact rays for 0.16 world-seconds. R2 is outside the current puppet-motion branch and uses discrete pose phases. The three frames share anchor [596,895] and scale 0.0835509; crop-height differences alone do not prove jumping.
+
+Next bounded normal-gameplay observation: learn R2 through the ordinary progression, cast toward a surviving mid-range enemy, then basic attack and legally recast. Inspect release-to-front continuity, contact-specific impact, recovery into real movement, and recast readability in existing effects. Keep original timing, collision, nail counts, art and audio ownership. No new hints, artificial spread or fabricated impact. No source change or R2 runtime test was made in this review.
+
+## Reconciled existing evidence before scheduling another run
+The earlier ultimate_motion_review_20261106/README.md already records normal-gameplay R2 observation. Its existing r2_sheet.png was reviewed again: rear preparation changes into forward release, source nail fronts and impact are visible, then normal motion resumes. The underlying r2observe02 run passed (wall 124.299624 s, gap 0.060778 s, peak RSS+swap 500600832 bytes, exit 0 and clean cleanup). Thus the source-only weaker-follow-through hypothesis does not establish an urgent R2 defect. Do not repeat the same leveling/capture or alter R2 merely because it lacks puppet motion. Reuse this evidence; only revisit with a specific recast/modifier issue or new user feedback. No R2 change is proposed now.

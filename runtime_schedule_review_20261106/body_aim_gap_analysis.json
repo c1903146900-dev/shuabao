@@ -1,0 +1,54 @@
+{
+  "bodyaimfloor01": {
+    "passed": true,
+    "reason": "",
+    "samples": 3358,
+    "median_gap": 0.05014762800055905,
+    "p99_gap": 0.05481894799959264,
+    "max_gap": 0.1572079739999026,
+    "gaps_over_100ms": 2,
+    "gaps_over_200ms": 0,
+    "peak_rss_plus_swap": 439410688,
+    "minimum_available": 7897063424,
+    "last_available": 8407478272
+  },
+  "bodyaimfloor04": {
+    "passed": true,
+    "reason": "",
+    "samples": 3161,
+    "median_gap": 0.050154840999312,
+    "p99_gap": 0.05455068700030097,
+    "max_gap": 0.056477596997865476,
+    "gaps_over_100ms": 0,
+    "gaps_over_200ms": 0,
+    "peak_rss_plus_swap": 415358976,
+    "minimum_available": 8136540160,
+    "last_available": 8430071808
+  },
+  "bodyaimfloor05": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "samples": 2898,
+    "median_gap": 0.05016148449976754,
+    "p99_gap": 0.05454498199833324,
+    "max_gap": 0.26190959800078417,
+    "gaps_over_100ms": 2,
+    "gaps_over_200ms": 1,
+    "peak_rss_plus_swap": 416632832,
+    "minimum_available": 8081293312,
+    "last_available": 8181587968
+  },
+  "bodyaimnative05final": {
+    "passed": true,
+    "reason": "",
+    "samples": 777,
+    "median_gap": 0.05017318200043519,
+    "p99_gap": 0.05449060400133021,
+    "max_gap": 0.057209803999285214,
+    "gaps_over_100ms": 0,
+    "gaps_over_200ms": 0,
+    "peak_rss_plus_swap": 404733952,
+    "minimum_available": 8133148672,
+    "last_available": 8340664320
+  }
+}
