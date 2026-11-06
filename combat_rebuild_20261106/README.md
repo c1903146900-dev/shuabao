@@ -18,4 +18,4 @@ The four production scripts remain byte-identical to the initial backed-up check
 
 Known diagnostics: existing boot-time Unicode/NUL parsing messages remain. The specimen run also logged an XServer BadValue error, despite successfully saving the image and exiting with code 0. The runs are not claimed to be free of all diagnostics.
 
-Full-floor normal-combat regression, Windows execution, audio verification, and user acceptance remain pending. These basic attacks faced away from nearby enemies, so hit-spark quality is not accepted by this smoke test. Raw logs, screenshots, and art are not included in this public status update.
+Fresh script-assisted normal-combat full-floor regression subsequently passed all 12 rows including the Boss; see [the combined status](../rebuild_20261106/STATUS.md). Windows execution, audio verification, and human full-floor/user acceptance remain pending. These basic attacks faced away from nearby enemies, so hit-spark quality is not accepted by this smoke test. Raw logs, screenshots, and art are not included in this public status update.
