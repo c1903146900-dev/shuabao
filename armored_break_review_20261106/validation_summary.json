@@ -1,0 +1,26 @@
+{
+  "candidate": "armored_break_draft01",
+  "base": "motion_combo05 plus isolated armored facing",
+  "pack_sha256": "21428bf5a88a99b473d006fb54415145cac873a9b5e49a998e43dcd46d744d06",
+  "accepted": false,
+  "runtime": "not_run",
+  "manifest_entries_verified": 243,
+  "prior_facing_run": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "exit": -15,
+    "elapsed": 34.42008252200321,
+    "max_sample_gap": 0.24894052099989494,
+    "peak_rss_plus_swap": 554864640,
+    "owned_cleanup_complete": true
+  },
+  "actual_broken_samples": [
+    1.98,
+    1.46,
+    0.999999999999999,
+    0.499999999999999
+  ],
+  "maximum_added_lean_radians": 0.26,
+  "maximum_squash": 0.16,
+  "body_scale_positive": true
+}

@@ -21,9 +21,18 @@
       "max_sample_gap": 0.05336306100070942,
       "peak_rss_plus_swap": 46759936,
       "owned_cleanup_complete": true
+    },
+    "armoredfacing02": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 34.42008252200321,
+      "max_sample_gap": 0.24894052099989494,
+      "peak_rss_plus_swap": 554864640,
+      "owned_cleanup_complete": true
     }
   },
-  "candidate_runtime": "Blocked before functional observations. Other engine not signalled.",
+  "candidate_runtime": "Functional observations obtained after idle check, but guard failed during capture save; not accepted.",
   "q3": "Excluded; still separate pending candidate.",
   "manifest_entries_verified": 243
 }
