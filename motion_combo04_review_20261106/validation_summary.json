@@ -1,0 +1,29 @@
+{
+  "baseline": "motion_combo04",
+  "pack_sha256": "f27313d385817900802ac84a8956214fdb18e28b2dccb6e690a3db3f0284005e",
+  "accepted_functional_baseline": true,
+  "old_baseline_preserved": "motion_combo03",
+  "runs": {
+    "combo04mixed01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 49.2237528020014,
+      "max_sample_gap": 0.06563737400210812,
+      "peak_rss_plus_swap": 595279872
+    },
+    "combo04ui01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 12.458213738002087,
+      "max_sample_gap": 0.05487211899890099,
+      "peak_rss_plus_swap": 396500992
+    },
+    "combo04floor01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 169.2035850680004,
+      "max_sample_gap": 0.15134204300193232,
+      "peak_rss_plus_swap": 407158784
+    }
+  }
+}
