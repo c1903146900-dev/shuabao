@@ -4,7 +4,7 @@ The health cue made HP loss readable, but the hero body did not react to that so
 
 Only presentation.gd and generated binding seals differ from player_hurt01. The source health helper remains unchanged. The candidate passed the inherited 243 production-load/helper checks. A normal-source enemy-attack capture produced 38 frames; every rendered response pulse and sequence matched the live health cue, including decay to zero. Impact and settled frames were visually inspected. Both guarded runs passed, exited 0 and fully cleaned up. This is script-assisted evidence, not human quality acceptance.
 
-Key UI and near-Boss observation are pending for this exact candidate. The preceding health-only Boss observation was stopped in room six by a guard sampling-gap failure; all owned processes were cleaned up. No guard threshold was relaxed. Earlier full-floor passes belong to player_hurt01, not this modified candidate. Windows, hardware audio and final acceptance remain unverified.
+The new candidate's key-UI run was stopped after 10.291 seconds by the unchanged guard: a 0.2451-second monitoring sample gap exceeded its 0.2-second limit. All owned processes were reaped and the terminal returned idle. The chained near-Boss run therefore never launched. These checks remain unverified, not passed. Further engine runs were paused rather than relaxing safeguards. The preceding health-only Boss observation was stopped in room six by a guard sampling-gap failure; all owned processes were cleaned up. No guard threshold was relaxed. Earlier full-floor passes belong to player_hurt01, not this modified candidate. Windows, hardware audio and final acceptance remain unverified.
 
 ## Recovery
 
