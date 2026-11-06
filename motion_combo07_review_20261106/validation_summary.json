@@ -1,0 +1,132 @@
+{
+  "accepted": true,
+  "baseline": "motion_combo06",
+  "candidate": "e3_wind02",
+  "pack_sha256": "cbc31d2269d207c5c9f13c96eb5a921e7eabdcefeffb61567912875d8433d998",
+  "tests": {
+    "e3experience01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 21.517579590999958,
+      "max_sample_gap": 0.13700079399859533,
+      "peak_rss_plus_swap": 431071232,
+      "owned_cleanup_complete": true
+    },
+    "e3wind01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 20.72235204899698,
+      "max_sample_gap": 0.06791916099973605,
+      "peak_rss_plus_swap": 430481408,
+      "owned_cleanup_complete": true
+    },
+    "e3wind02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 21.190268335998553,
+      "max_sample_gap": 0.08058338699993328,
+      "peak_rss_plus_swap": 430837760,
+      "owned_cleanup_complete": true
+    },
+    "e3lifetime01": {
+      "passed": false,
+      "reason": "",
+      "exit": 1,
+      "elapsed": 0.4796450220019324,
+      "max_sample_gap": 0.050736878998577595,
+      "peak_rss_plus_swap": 158892032,
+      "owned_cleanup_complete": true
+    },
+    "e3lifetime02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 18.465200429000106,
+      "max_sample_gap": 0.05478977099846816,
+      "peak_rss_plus_swap": 403152896,
+      "owned_cleanup_complete": true
+    },
+    "e3lifecycle01": {
+      "passed": false,
+      "reason": "",
+      "exit": 9,
+      "elapsed": 13.453564880997874,
+      "max_sample_gap": 0.06166876299903379,
+      "peak_rss_plus_swap": 409264128,
+      "owned_cleanup_complete": true
+    },
+    "e3lifecycle02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 13.08858231600243,
+      "max_sample_gap": 0.054858528998011025,
+      "peak_rss_plus_swap": 409509888,
+      "owned_cleanup_complete": true
+    },
+    "e3windui01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.445455999000842,
+      "max_sample_gap": 0.07647068100050092,
+      "peak_rss_plus_swap": 400728064,
+      "owned_cleanup_complete": true
+    },
+    "e3windfloor03": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 245.85462287100017,
+      "max_sample_gap": 0.1625075990014011,
+      "peak_rss_plus_swap": 421789696,
+      "owned_cleanup_complete": true
+    }
+  },
+  "manifest_entries_verified": 243,
+  "first_attempt": "Functional short pass but visually too faint; not selected.",
+  "second_attempt": "Passed short actual visual observation, pause/expiry, new-run cleanup, shared UI and full-floor regression. Identical runtime and pack promoted to motion_combo07.",
+  "mechanics_changed": false,
+  "lifecycle": {
+    "pause_hero_clock_frozen": true,
+    "natural_expiry": true,
+    "expiry_starts_existing_cooldown": 32,
+    "old_presentation_cache_cleared": true,
+    "new_run_no_e3": true,
+    "old_actor_buff_snapshot_retained_by_existing_crossroom_rule": true
+  },
+  "test_failure_notes": {
+    "e3lifetime01": "Observer preparation accidentally replaced a function declaration; fixed exact-line replacement and checked function declarations. Game source unchanged.",
+    "e3lifecycle01": "Incorrect assertion expected E3 source actor state erased on room close. Source explicitly preserves the buff across rooms. Revised test verifies cancelled old cast registry, cleared old visual caches, and absent E3 in new run; no mechanics changed."
+  },
+  "independent_review": "Passed read-only review: only bounded local drawing calculations and expected seals changed; other mechanics, skills, save flash and validation unchanged.",
+  "accepted_as": "motion_combo07",
+  "full_floor": {
+    "rooms": 12,
+    "boss": true,
+    "simulated_seconds": 232.034275000006,
+    "hp": 420,
+    "gold": 465,
+    "purchased": 9,
+    "used": 9,
+    "events": {
+      "e3_ended": 5,
+      "e3_extended": 17,
+      "e3_started": 7,
+      "q2_finished": 17,
+      "q2_strike_started": 25,
+      "r1_finished": 3,
+      "r1_started": 3
+    }
+  },
+  "visual_review": "Actual full-floor frames in mixed close-enemy and spread-enemy rooms show visible open side wisps without crossing the central face. Incremental presentation improvement; not user aesthetic acceptance.",
+  "coverage_limits": [
+    "No new death-save activation test; unchanged source reviewed.",
+    "Shared UI 11 checks, not exhaustive E3-specific UI.",
+    "No Windows release validation.",
+    "Q3 remains isolated and unaccepted."
+  ]
+}

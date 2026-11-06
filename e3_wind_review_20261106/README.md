@@ -1,4 +1,4 @@
-# E3 open flowing-wind candidate, not accepted
+# E3 open flowing-wind improvement, accepted as motion_combo07
 
 Observed actual E3 combat on motion_combo06 before editing.11 bounded frames covered activation, walking, dash, melee pressure and room victory. Skill activation, existing7-second timer, actual kill extensions and HUD state worked. In actual frames3/5/7 the two nearly full-height upright wisps crossed the face/body and looked more like brackets than moving wind. This is a visual observation, not a claim that E3 gameplay is broken.
 
@@ -6,6 +6,9 @@ Isolated change replaces only those two ordinary body-aura polylines with two st
 
 First e3_wind01 passed short execution but its thinner strokes were too faint in combat; it was not accepted merely for passing. Revised e3_wind02 increases taper width, length and contrast without covering the face. Actual frame3 shows the wisps outside the central face, frame7 retains readable close enemies and warning. It is an incremental visual candidate, not proof of final game quality or user aesthetic approval.
 
-All three bounded observations passed the unchanged guard and cleaned up. Candidate02 is NOT the accepted baseline. motion_combo06 is retained; Q3 remains separate. Need actual pause/lifetime/natural end and interrupted cleanup, relevant UI and full-floor regression before adoption. The observation ended after room victory with E3 still having extended time; it does NOT prove natural expiry or death-save coverage. Original behavior suppresses aura outside combat while HUD may still show remaining time; this change does not alter that existing rule.
+The revised candidate passed actual pause clock freezing, natural expiry and existing 32-second cooldown, old visual-cache cleanup, and a fresh run without E3. E3 intentionally retains remaining source-owned buff time across rooms; the first lifecycle test incorrectly expected erasure and was corrected without changing gameplay. An earlier observer parse error is also retained in the summary. Both corrected runs passed.
 
+Shared UI passed 11 checks. The E3-equipped full first floor passed all 12 rooms including Boss: 232.034275 simulated seconds, final HP 420, 9 potions bought and used; E3 started 7 times, extended 17 times, and naturally ended 5 times. Guard wall time 245.854623 seconds, maximum sampling gap 0.162508 seconds, exit 0 with complete owned cleanup. Q2 and R1 also ran; this loadout did not equip E2. Actual saved mixed-enemy room frames retain a clear central face and readable enemies. These observations do not establish final aesthetic approval or exhaustive readability.
+
+Independent read-only review found no integration blocker. motion_combo07 is an exact runtime/pack copy of tested e3_wind02, SHA256 cbc31d2269d207c5c9f13c96eb5a921e7eabdcefeffb61567912875d8433d998. motion_combo06 is preserved, and Q3 remains separate. Original aura suppression outside combat and the death-prevention flash are unchanged; death-save activation was not newly exercised.
 Recovery: build_e3_wind.py uses changes for first attempt; build_e3_wind02.py uses changes02 for revised attempt. Both clone motion_combo06 and need original private inputs/art. All243 manifest entries verified. Public backups exclude private art/screenshots/raw logs. Current source change is limited to _draw_e3 geometry, leaving adjacent skills unchanged.
