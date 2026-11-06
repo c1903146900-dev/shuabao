@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,json,hashlib,shutil,re,struct
 R=Path(__file__).resolve().parent;out=R/sys.argv[1];assert not out.exists();runtime=out/'runtime';shutil.copytree(R/'restored238',runtime)
-for folder in [R/'flow_changes',R.parent/'combat_rebuild_20261106/changes']:
+for folder in [R/(sys.argv[2] if len(sys.argv)>2 else 'flow_changes'),R.parent/'combat_rebuild_20261106/changes']:
  for p in folder.rglob('*'):
   if p.is_file():d=runtime/p.relative_to(folder);d.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,d)
 sha=lambda b:hashlib.sha256(b).hexdigest()
