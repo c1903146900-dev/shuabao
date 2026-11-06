@@ -18,4 +18,4 @@ The initial patch had two conflicting scope-reset hunks. A shell sequence incorr
 A brief execution-connection loss occurred after the successful checks. On reconnection, files, exit reports and the exact package hash above were reverified. No result was inferred from an interrupted connection.
 
 ## Next skill review
-A bounded E1 first-throw observation on this combination completed under the original guard (wall 18.674312 s, max gap 0.054223 s, peak 534138880 bytes, exit 0, cleanup complete). Its visual findings are separate; no new throwing change is merged here.
+The first E1 probe completed under the original guard but its request was rejected with no_target; it is NOT casting evidence. A corrected normal-input approach brought the hero within range and obtained an accepted first throw. See throw_motion_review_20261106/README.md. No new throwing change is merged here.
