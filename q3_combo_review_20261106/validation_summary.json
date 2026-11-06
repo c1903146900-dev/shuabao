@@ -3,7 +3,7 @@
   "base": "motion_combo05",
   "pack_sha256": "b56dd6e27d7177476177553a6b73801f92f11a806b5115976ad0a73eb6b54889",
   "accepted": false,
-  "runtime": "not_run",
+  "runtime": "short_and_lifecycle_passed_ui_guard_failed_full_floor_not_run",
   "manifest_entries_verified": 243,
   "old_isolated_retry": {
     "passed": false,
@@ -12,5 +12,68 @@
     "elapsed": 111.4756206810016,
     "max_sample_gap": 0.4037825260020327,
     "peak_rss_plus_swap": 405188608
+  },
+  "tests": {
+    "q3comboshort01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 24.06309647099988,
+      "max_sample_gap": 0.10899923499891884,
+      "peak_rss_plus_swap": 607760384,
+      "owned_cleanup_complete": true
+    },
+    "q3combomirror01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 27.501726955997583,
+      "max_sample_gap": 0.05585365300066769,
+      "peak_rss_plus_swap": 664489984,
+      "owned_cleanup_complete": true
+    },
+    "q3combolifepre01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.852900988000329,
+      "max_sample_gap": 0.09466975100076525,
+      "peak_rss_plus_swap": 411807744,
+      "owned_cleanup_complete": true
+    },
+    "q3combolifepost01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.721678077999968,
+      "max_sample_gap": 0.1304694409991498,
+      "peak_rss_plus_swap": 408162304,
+      "owned_cleanup_complete": true
+    },
+    "q3comboui01": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 3.063044999998965,
+      "max_sample_gap": 0.20079541199811501,
+      "peak_rss_plus_swap": 294002688,
+      "owned_cleanup_complete": true
+    }
+  },
+  "visual_review": {
+    "left_q3_samples": 15,
+    "right_q3_samples": 13,
+    "observed": "Continuous sword-arm windup, swing, wave release and return; no detached sword or inverted wave in sampled actual frames. Technical visual review, not user aesthetic acceptance."
+  },
+  "lifecycle": {
+    "before_release_age": 0.04,
+    "before_pending": 1,
+    "before_waves": 0,
+    "after_release_age": 0.18,
+    "after_pending": 0,
+    "after_waves": 1,
+    "old_closed_clean": true,
+    "new_run_clean": true,
+    "shift_cancel_test": false
   }
 }
