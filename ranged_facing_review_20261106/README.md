@@ -24,3 +24,9 @@ Status: isolated candidate, full-floor regression attempted but NOT passed. No m
 A fresh 90-second idle precheck had max gap 0.063248 s and no gaps over 0.2 s. The unchanged candidate then ran once under the original guard. At wall 84.773525 s the guard stopped it for sample_gap_untrusted (0.239036 s). Peak owned memory was 409595904 bytes; exit -15, all owned processes cleaned up, no SCRIPT ERROR. This does not establish a game defect or a scheduling root cause, and the precheck did not guarantee runtime stability. No immediate repeated long run, threshold change, accepted-baseline replacement or merge followed. Existing successful short combat and UI results remain valid only for their covered scope.
 
 Independent integration review found an important future constraint: the aim candidate must record exactly the same mirrored transform as the visible body. See INTEGRATION.md; no combined build has been made.
+
+## Later stable full-floor verification
+
+After the combined baseline mixed-combat observation passed with max gap0.092421 s, one new immutable full-floor run of the unchanged ranged_facing01 was performed. It passed the original guard at wall170.420224 s, max gap0.126109 s, exit0 and complete process cleanup. No SCRIPT ERROR. FINAL NATURAL_PASS time=158.500466333332 rows=12 HP=420.0 gold=395 purchased=9 used=9 route=["r01a", "r02a", "r03a", "r04a", "r05a", "r06a", "r07a", "r08a", "r09a", "r10a", "r11a", "r12boss"]
+
+The earlier full-floor sample-gap failure remains recorded. The shooter candidate now has its own short directional review, UI and full-floor pass, but has not been merged into motion_combo03. Its full presentation file must not replace the newer pouncer implementation. Body aiming remains separately unpassed and excluded.

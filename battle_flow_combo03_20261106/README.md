@@ -1,0 +1,9 @@
+# Combined baseline mixed combat observation
+
+After a new 30-second idle check (max gap0.053244 s), the unchanged motion_combo03 completed a 45-second normal-source combat observation across r01c, r02c and part of r03c. Two encounters won; the third was deliberately closed at the observation limit, not counted as a win. Guard passed: wall72.020828 s, max gap0.092421 s, exit0, complete cleanup. No SCRIPT ERROR or visual receipt errors. The earlier startup sample-gap failure is retained in motion_combo03_review_20261106.
+
+The evidence contains65 warnings,29 shots and7 pounces. Actual frames25/32/36/70/90 were reviewed for melee/ranged pressure, pounces in both directions, cleanup of a remaining shooter and a crowded second mixed room. Pouncers now extend toward their committed travel direction while shooter threats continue independently. First and second combats took21.38/11.52 simulation seconds. The sampled only-shooter tail was about3.0/3.6 elapsed seconds before the last combat sample, not evidence of excessive endless chasing. The nearest-target/warning-dodge script and nondeterministic frame timing are confounds; do not claim a speed/health improvement versus prior clips.
+
+No new pacing/balance defect was established. The most definite remaining visible issue is the already isolated shooter's fixed right-facing gun during leftward fire. That candidate is being verified separately before integration. Do not invent spawn/HP/cooldown changes to manufacture progress, or substitute this observation for native player aiming tests.
+
+This is script-assisted normal play, not human playtesting or user aesthetic acceptance. Body-aim and Q3 animation candidates remain excluded. Public files contain only observer source and summary, not private artwork/screenshots/raw session data.
