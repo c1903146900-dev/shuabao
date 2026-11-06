@@ -1,0 +1,11 @@
+# Q2 real two-target follow-up
+
+Source review identified the actual chain radius as 3.5 units and the rank-1 cap as four strikes. The earlier condition of two enemies within four units of the hero did not ensure those enemies were within chain range of each other. The revised normal-input observer waits for a pair within 80% of the real chain radius, both with legal landings, then aims and presses Q. No targets, positions, stats or hit counts are injected.
+
+First revised attempt emitted source strikes 1 and 2, including a left-to-right facing change, but was stopped by the unchanged guard: sample gap 0.278845 s, wall 15.845558 s, peak RSS+swap 520482816 bytes, exit -15. All owned processes cleaned up. Partial images/receipts are not a completed pass.
+
+A separate, smaller observation window then captured only the two strikes and their immediate exit (0.65 simulated seconds, rather than the prior 1.2-second window). It completed with 19 frames: strike 1 left-facing, strike 2 transitioning to right-facing, then normal exit. Viewed consecutive frames across the actual target and facing switch. Both forward stabs and the live source path remain coherent. Guard passed unchanged, exit 0, wall 15.778112 s, max gap 0.055203 s, peak RSS+swap 451334144 bytes; all owned processes cleaned up. No script or visual errors. The earlier failed run remains recorded.
+
+This establishes bounded two-target chain and direction-change coverage, not all four-strike cases, full floor, arbitrary obstacles, cancellation or manual acceptance. Candidate pack/source unchanged.
+
+Combination assessment: Q2 and E2 candidates share the passed E1 baseline. Their presentation dispatch additions are compatible in principle, but their complete changed files must not simply overwrite one another. A deliberate combined source must preserve the Q2 forward-contact deformation and E2 world-clock occurrence dispatch independently. Neither candidate should be promoted based on these short checks alone. Keep the pending Q3 and static locomotion-exit candidate out of the first combination; validate the combined runtime before any complete-floor claim. Scheduling instability remains relevant to long runs; limits must stay unchanged.
