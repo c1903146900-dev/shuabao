@@ -74,5 +74,45 @@
     "exit": 0,
     "cleanup_complete": true,
     "candidate": "body_aim04"
+  },
+  "bodyaimfloor04": {
+    "passed": true,
+    "reason": "",
+    "max_sample_gap": 0.056477596997865476,
+    "elapsed": 159.68711799000084,
+    "peak_rss_plus_swap": 415358976,
+    "exit": 0,
+    "cleanup_complete": true,
+    "candidate": "body_aim04"
+  },
+  "bodyaimui05": {
+    "passed": true,
+    "reason": "",
+    "max_sample_gap": 0.17367036100040423,
+    "elapsed": 13.665521661001549,
+    "peak_rss_plus_swap": 396976128,
+    "exit": 0,
+    "cleanup_complete": true,
+    "candidate": "body_aim05"
+  },
+  "bodyaimnative05final": {
+    "passed": true,
+    "reason": "",
+    "max_sample_gap": 0.057209803999285214,
+    "elapsed": 39.26762231400062,
+    "peak_rss_plus_swap": 404733952,
+    "exit": 0,
+    "cleanup_complete": true,
+    "candidate": "body_aim05"
+  },
+  "bodyaimfloor05": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "max_sample_gap": 0.26190959800078417,
+    "elapsed": 146.75275881999914,
+    "peak_rss_plus_swap": 416632832,
+    "exit": -15,
+    "cleanup_complete": true,
+    "candidate": "body_aim05"
   }
 }

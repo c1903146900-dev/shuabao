@@ -605,6 +605,7 @@ func body_aim_at(point:Vector2)->Vector3:
    body_pick_images[key]=pixels
   var source:Rect2=region.source
   var uv:Vector2=source.position+(local-destination.position)/destination.size*source.size
+  uv=uv.clamp(source.position+Vector2(.5,.5),source.end-Vector2(.5,.5))
   var pixels:Image=body_pick_images[key]
   var at:=Vector2i(floori(uv.x),floori(uv.y))
   if at.x<0 or at.y<0 or at.x>=pixels.get_width() or at.y>=pixels.get_height():continue
@@ -620,6 +621,7 @@ func _record_hero_rect(texture:Texture2D,destination:Rect2,source:Rect2,transfor
  var u:Vector2=source.position;var v:Vector2=source.end
  var pixels:=PackedVector2Array([u,Vector2(v.x,u.y),v,Vector2(u.x,v.y)])
  _record_hero_mesh(texture,positions,pixels,PackedInt32Array([0,1,2,0,2,3]),transform)
+ body_pick_regions[-1]["clip_source"]=source
 func record_hero_mesh(texture:Texture2D,positions:PackedVector2Array,uv:PackedVector2Array,indices:PackedInt32Array)->void:
  var pixels:=PackedVector2Array()
  for value in uv:pixels.append(value*Vector2(texture.get_size()))
@@ -638,6 +640,9 @@ func _hero_pixel_hit(region:Dictionary,point:Vector2)->bool:
   var u:float=delta.cross(ac)/determinant;var v:float=ab.cross(delta)/determinant
   if u<0 or v<0 or u+v>1:continue
   var uv:Vector2=region.pixels[ia]*(1-u-v)+region.pixels[ib]*u+region.pixels[ic]*v
+  if region.has("clip_source"):
+   var clip:Rect2=region.clip_source
+   uv=uv.clamp(clip.position+Vector2(.5,.5),clip.end-Vector2(.5,.5))
   var key:String="hero:"+str(region.image_key)
   if not body_pick_images.has(key):
    var pixels:Image=region.image_texture.get_image()
@@ -645,8 +650,7 @@ func _hero_pixel_hit(region:Dictionary,point:Vector2)->bool:
    if pixels.is_compressed() and pixels.decompress()!=OK:return true
    body_pick_images[key]=pixels
   var pixels:Image=body_pick_images[key]
-  var at:=Vector2i(floori(uv.x),floori(uv.y))
-  if at.x>=0 and at.y>=0 and at.x<pixels.get_width() and at.y<pixels.get_height() and _body_alpha(pixels,uv)>=.2:return true
+  if _body_alpha(pixels,uv)>=.2:return true
  return false
 
 func _body_alpha(pixels:Image,uv:Vector2)->float:

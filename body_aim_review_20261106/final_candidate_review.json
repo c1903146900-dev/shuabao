@@ -1,0 +1,24 @@
+{
+  "candidate": "body_aim05",
+  "base": "motion_combo02",
+  "base_pack_sha256": "61a25deca4f7b60abf27875e5ffcbef821e0b23dd3240440759df88cda38fda8",
+  "candidate_pack_sha256": "4d7b011c99c2df99ce5399869fd7f1c1864b5461bece41d63f117419f071d721",
+  "manifest_entries_verified": 243,
+  "changed_files": [
+    "fengli_route_20261024/host.gd",
+    "fengli_route_20261024/presentation.gd",
+    "fengli_route_20261024/puppet_motion.gd",
+    "first_hero_full_admission_20261020/manifest.json",
+    "release_generation_20261020/generation.gd"
+  ],
+  "combat_and_other_heroes_unchanged": true,
+  "original_baseline_preserved": true,
+  "runtime_acceptance": "not_accepted_final_floor_guard_gap",
+  "renderer_reference": "https://github.com/godotengine/godot/blob/7d41c59c4/drivers/gles3/shaders/canvas.glsl",
+  "passed_tests": [
+    "bodyaimui05",
+    "bodyaimnative05final"
+  ],
+  "blocked_test": "bodyaimfloor05",
+  "blocker": "GuardError:sample_gap_untrusted, gap 0.261909598 seconds at wall 146.752758820 seconds; reached Boss but did not finish."
+}
