@@ -1,0 +1,60 @@
+{
+  "baseline_files": 238,
+  "baseline_fingerprint": "b19ba560a68bf2b9538466b14b1447ef6d0805fdddd1aaf6f7948e17f2deaa5e",
+  "inputs": [
+    {
+      "filename": "playable.zip",
+      "bytes": 82012628,
+      "sha256": "0a708d03e38856139745820c3e1d0243ef87fde55d32577b532bba0ecff16efc"
+    },
+    {
+      "filename": "delta238.zip",
+      "bytes": 319692,
+      "sha256": "33d0b5686b7317982ba3bbfc0757357dfa2c167033eeaaa22f7b6077efc085ba"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "motion_polish02",
+      "pck_sha256": "a13aa63a0a811b1a7b9fbe32a00357c66663c9e3be3f9c9633795f4a105f2793",
+      "binding_entries": 238,
+      "exact_match": true
+    },
+    {
+      "candidate": "enemy_cues02",
+      "pck_sha256": "3ea8cacd425a0dcbed031eb1173d70c35ef466fd44c81d5ad4e09af84d684525",
+      "binding_entries": 239,
+      "exact_match": true
+    },
+    {
+      "candidate": "projectile_cues02",
+      "pck_sha256": "cf65fd47dc36368264b6c8b3062c7466678a778adb3bc3a481762942234ba453",
+      "binding_entries": 240,
+      "exact_match": true
+    },
+    {
+      "candidate": "hit_feedback02",
+      "pck_sha256": "744d7a6f5506d00249d78b9c8194c8529d1e9f4bf0833e24631540b017703994",
+      "binding_entries": 241,
+      "exact_match": true
+    },
+    {
+      "candidate": "audio_sync01",
+      "pck_sha256": "c99305b1a1138d6b8e4a77edb2248ce8012958f4ebeec4ac62085fee338011bc",
+      "binding_entries": 241,
+      "exact_match": true
+    },
+    {
+      "candidate": "lob_cues01",
+      "pck_sha256": "c9bfba8f7a73cc51019801cd78c837863a82925835d31d3a7387334cd4ed3856",
+      "binding_entries": 242,
+      "exact_match": true
+    },
+    {
+      "candidate": "control_continuity01",
+      "pck_sha256": "85f4c29d69d9e1467fb9a37d1742b179a572535e858170e645cd06d5be437236",
+      "binding_entries": 242,
+      "exact_match": true
+    }
+  ]
+}
