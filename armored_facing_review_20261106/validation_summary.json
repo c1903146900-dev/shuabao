@@ -1,0 +1,29 @@
+{
+  "candidate": "armored_facing01",
+  "base": "motion_combo05",
+  "accepted": false,
+  "pack_sha256": "fc737d39d21f07151d2a1bc3901f60ad3c628ef4bb8d8d266ebba8a740ae5ff2",
+  "tests": {
+    "readability01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 39.152300096000545,
+      "max_sample_gap": 0.06007378599679214,
+      "peak_rss_plus_swap": 555302912,
+      "owned_cleanup_complete": true
+    },
+    "armoredfacing01": {
+      "passed": false,
+      "reason": "GuardError:unowned_engine_detected_no_signal_to_it",
+      "exit": -15,
+      "elapsed": 0.16222300000299583,
+      "max_sample_gap": 0.05336306100070942,
+      "peak_rss_plus_swap": 46759936,
+      "owned_cleanup_complete": true
+    }
+  },
+  "candidate_runtime": "Blocked before functional observations. Other engine not signalled.",
+  "q3": "Excluded; still separate pending candidate.",
+  "manifest_entries_verified": 243
+}
