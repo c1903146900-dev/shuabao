@@ -1,9 +1,9 @@
 {
-  "candidate": "pouncer_motion01",
-  "pack_sha256": "e428957b680a163a8753105e4fb50f25f822df953f05e2328106b4352a41a334",
+  "candidate": "pouncer_motion02",
+  "pack_sha256": "8bf660559a251ac22799a0f18d970a29fa850efa528a6c8a750d876fecf96102",
   "base": "motion_combo02",
   "accepted": false,
-  "fullfloor": "not_run",
+  "fullfloor": "passed",
   "runs": {
     "pouncerbefore01": {
       "passed": true,
@@ -18,6 +18,49 @@
       "elapsed": 47.150219330000255,
       "max_sample_gap": 0.10295401099938317,
       "peak_rss_plus_swap": 956567552
+    },
+    "pouncermirror01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 44.96523912500197,
+      "max_sample_gap": 0.05971752799814567,
+      "peak_rss_plus_swap": 956784640
+    },
+    "pouncercontrol01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 46.763173206996726,
+      "max_sample_gap": 0.057093995998002356,
+      "peak_rss_plus_swap": 956104704
+    },
+    "pouncermirror02": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 44.54634252300093,
+      "max_sample_gap": 0.05471945800309186,
+      "peak_rss_plus_swap": 957239296
+    },
+    "pouncercontrol02": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 46.265481230999285,
+      "max_sample_gap": 0.05518402100278763,
+      "peak_rss_plus_swap": 956682240
+    },
+    "pouncerui02": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 12.3573274770024,
+      "max_sample_gap": 0.05503363699972397,
+      "peak_rss_plus_swap": 396566528
+    },
+    "pouncerfloor02": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 162.7647983200004,
+      "max_sample_gap": 0.07096762000219314,
+      "peak_rss_plus_swap": 409710592
     }
-  }
+  },
+  "functional_regression_passed": true
 }

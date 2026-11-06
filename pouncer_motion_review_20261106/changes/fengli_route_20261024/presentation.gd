@@ -391,7 +391,9 @@ func _draw_enemy(enemy:Dictionary)->void:
     attack_lean=signf(forward.x)*.10*settle
   if not receipt.has("pouncer_body_motion"):receipt.pouncer_body_motion=[]
   receipt.pouncer_body_motion.append({"actor_id":enemy.actor_id,"state":enemy.state,"lean":attack_lean,"squash":attack_squash,"visual_only":true})
- draw_set_transform(at,tilt+attack_lean,Vector2((1+.035*amount)*(1+attack_squash),(1-.035*amount)*(1-attack_squash)))
+ var body_facing:float=1.0
+ if key=="pouncer" and (p(enemy.position+enemy.aim)-at).x<-.001:body_facing=-1.0
+ draw_set_transform(at,tilt+attack_lean,Vector2(body_facing*(1+.035*amount)*(1+attack_squash),(1-.035*amount)*(1-attack_squash)))
  if not receipt.has("enemy_hit_reactions"):receipt.enemy_hit_reactions=[]
  if amount>0:receipt.enemy_hit_reactions.append({"actor_id":enemy.actor_id,"sequence":reaction.sequence,"pulse":amount,"source_position":enemy.position,"visual_only":true})
  if key in ["ranged","pouncer","support","pitcher"]:
