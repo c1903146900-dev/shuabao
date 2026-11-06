@@ -1,4 +1,4 @@
-# Armored broken-guard posture draft, not accepted
+# Armored broken-guard posture: verified as motion_combo06
 
 Read-only inspection of the graphical environment found no Godot process. A fresh facing-candidate run then recorded real combat in r01b. Its source receipt showed enemy2 with guard_active=false and guard_broken_left1.98,1.46,1.00,0.50 seconds across subsequent samples. The existing mechanic supplies2.1 seconds after the third frontal basic contact, or at least0.85 after control; neither source rule is changed. Guard-inactive recovery is not automatically a broken guard.
 
@@ -9,3 +9,13 @@ This new draft adds an intact-body held-shield droop/lurch only during source gu
 The draft is not run or accepted. Positive scale bounds and all243 manifest entries verify statically. Maximum added lean0.26 radians and squash0.16. Current motion_combo05 remains accepted; armored_facing01 and Q3 stay separate candidates. Next observation is state-selected and bounded to12 images rather than flushing every sampled frame, while keeping all guard thresholds unchanged. It must cover intact guard, real frontal break, held-open window, return, both facing directions, control, cleanup, and native picking before promotion. Failure requires retaining or revising the candidate, not lowering protection.
 
 Build with rebuild_20261106/build_armored_break.py using motion_combo05 and original private inputs/art. This public recovery record excludes private assets/screenshots/raw process data.
+
+## Actual candidate verification update
+
+The exact draft later ran. Two bounded normal-room observations passed and showed correct left/right shield facing (243 combined recorded facing samples,84 left159 right), but neither triggered guard break. They are NOT break acceptance. A frontal-standing probe was defeated after recording a break; no saved break frame from that failed probe is claimed. A native observer initially had a parse error, corrected in a fresh stage, and its next continuous-attack strategy killed during unguarded recovery without exercising the required third guard contact. Those failures remain recorded.
+
+The corrected native observer uses normal movement and starts basic attacks only while the existing guard is active, its warning early, and the player in front. It writes no HP/position/AI/guard values. This reliably exercised three actual guarded contacts, separately from each side. Both native runs passed. The actual window showed the impacted front lower with its original shield still attached, the held-open pose after hit flash faded, and full return when the source window ended. It is a restrained full-body readability cue, not a newly articulated shield or definitive user aesthetic approval.
+
+Real native pointer clicks on the right broken body, left broken shield, intact opposite-facing enemy and restored body mapped to their actual enemy positions. Empty ground returned infinite body target and retained the original ground direction. These were paused selection probes, not proof of native combat damage or changed attack range. A final left-run click logged an empty guard-pose receipt after the window expired. No extension of the2.1-second rule occurred.
+
+All11 UI checks passed. Full-floor regression on the exact pack then passed all12 rows including Boss, beginning with normal r01b shield enemies and r02d before returning to the available a-route. Simulation170.258107 seconds, guard wall182.005305, gap0.068995, exit0 with owned cleanup complete. Q2/E2/R1 all exercised; no SCRIPT ERROR. Independent source review found no blocker. The accepted functional development baseline is now motion_combo06 with the identical pack; previous motion_combo05 is retained. Earlier draft/not-run paragraphs above describe chronology, not current acceptance.

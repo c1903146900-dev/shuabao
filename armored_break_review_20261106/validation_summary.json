@@ -2,8 +2,8 @@
   "candidate": "armored_break_draft01",
   "base": "motion_combo05 plus isolated armored facing",
   "pack_sha256": "21428bf5a88a99b473d006fb54415145cac873a9b5e49a998e43dcd46d744d06",
-  "accepted": false,
-  "runtime": "not_run",
+  "accepted": true,
+  "runtime": "Accepted as functional development baseline motion_combo06, identical tested pack; not human aesthetic or Windows/release acceptance.",
   "manifest_entries_verified": 243,
   "prior_facing_run": {
     "passed": false,
@@ -22,5 +22,139 @@
   ],
   "maximum_added_lean_radians": 0.26,
   "maximum_squash": 0.16,
-  "body_scale_positive": true
+  "body_scale_positive": true,
+  "tests": {
+    "armbreakshort01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 32.46698573100002,
+      "max_sample_gap": 0.13690560200120672,
+      "peak_rss_plus_swap": 446459904,
+      "owned_cleanup_complete": true
+    },
+    "armbreakshort02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 30.655841333002172,
+      "max_sample_gap": 0.05521147000035853,
+      "peak_rss_plus_swap": 417853440,
+      "owned_cleanup_complete": true
+    },
+    "armbreakfront01": {
+      "passed": false,
+      "reason": "",
+      "exit": 9,
+      "elapsed": 21.43635561100018,
+      "max_sample_gap": 0.06100633499954711,
+      "peak_rss_plus_swap": 408653824,
+      "owned_cleanup_complete": true
+    },
+    "armbreaknative01": {
+      "passed": false,
+      "reason": "",
+      "exit": 1,
+      "elapsed": 0.4297704380005598,
+      "max_sample_gap": 0.050253209003130905,
+      "peak_rss_plus_swap": 150560768,
+      "owned_cleanup_complete": true
+    },
+    "armbreaknative02": {
+      "passed": false,
+      "reason": "",
+      "exit": 9,
+      "elapsed": 21.746332443999563,
+      "max_sample_gap": 0.05564784200032591,
+      "peak_rss_plus_swap": 396234752,
+      "owned_cleanup_complete": true
+    },
+    "armbreaknative03": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 58.34226633700018,
+      "max_sample_gap": 0.1855938310000056,
+      "peak_rss_plus_swap": 402911232,
+      "owned_cleanup_complete": true
+    },
+    "armbreaknativeleft01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 64.39169742199738,
+      "max_sample_gap": 0.056426930997986346,
+      "peak_rss_plus_swap": 404201472,
+      "owned_cleanup_complete": true
+    },
+    "armbreakui01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.466867570998147,
+      "max_sample_gap": 0.055429558000469115,
+      "peak_rss_plus_swap": 396693504,
+      "owned_cleanup_complete": true
+    },
+    "armbreakfloor01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 182.00530517899824,
+      "max_sample_gap": 0.06899490899741068,
+      "peak_rss_plus_swap": 416931840,
+      "owned_cleanup_complete": true
+    }
+  },
+  "visual_review": {
+    "right_break": true,
+    "left_break": true,
+    "left_settled_window": true,
+    "left_window_return_empty_pose": true,
+    "scope": "actual GUI, scripted normal gameplay to trigger source guard break; native clicks while paused validate selection, not manual attack direction or human full-floor acceptance"
+  },
+  "native_selection": {
+    "right_broken_enemy": true,
+    "left_broken_shield": true,
+    "intact_left_enemy": true,
+    "empty_ground_fallback": true,
+    "post_return_enemy": true
+  },
+  "test_failures_explained": {
+    "armbreakfront01": "Deliberate frontal standing defeated; valid break telemetry, no saved final frames. Not a regression pass.",
+    "armbreaknative01": "Observer parse error from preparation replacement, fixed in subsequent fresh stage; game source unchanged.",
+    "armbreaknative02": "Continuous attacks hit unguarded recovery and killed shield before required third guard contact; hero defeated. Next observer initiates only within source early guard window to exercise authored counterplay."
+  },
+  "full_floor": {
+    "rows": 12,
+    "route": [
+      "r01b",
+      "r02d",
+      "r03a",
+      "r04a",
+      "r05a",
+      "r06a",
+      "r07a",
+      "r08a",
+      "r09a",
+      "r10a",
+      "r11a",
+      "r12boss"
+    ],
+    "simulation_seconds": 170.258107444446,
+    "hp": 420,
+    "gold": 865,
+    "purchased": 7,
+    "used": 7,
+    "motion_counts": {
+      "e2_blink": 11,
+      "e2_finished": 11,
+      "e2_spin_started": 33,
+      "q2_finished": 10,
+      "q2_strike_started": 19,
+      "r1_finished": 3,
+      "r1_started": 3
+    }
+  },
+  "independent_static_review": "No blocker; shared picking/drawing transform verified, no gameplay writes, natural reset, unchanged other skills."
 }

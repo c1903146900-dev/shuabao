@@ -37,7 +37,7 @@ func sample_battle()->void:
  print("BATTLE_SAMPLE ",images.size()-1," ",JSON.stringify({"elapsed":elapsed,"room":host.sim.room_id,"phase":host.sim.phase,"hero":host.sim.hero.position,"hp":host.sim.hero.hp,"enemies":host.sim.living().map(func(e):return {"id":e.actor_id,"kind":e.kind,"position":e.position,"state":e.state,"hp":e.hp,"timer":e.timer,"wait_age":e.get("wait_age",0.0),"aim":e.aim}),"visual_errors":host.presentation.receipt.get("errors",[]),"guard_facing":host.presentation.receipt.get("armored_body_facing",[])}))
 func finish_review()->void:
  release()
- for i in range(images.size()):images[i].save_png("user://armored_break/frame_%03d.png"%i)
+ for i in range(images.size()):images[i].save_png("user://armored_break/capture/frame_%03d.png"%i)
  print("BATTLE_REVIEW_DONE elapsed=",elapsed," room=",host.sim.room_id," HP=",host.sim.hero.hp)
  host.frontdoor_close_run("battle_flow_review");quit()
 func fail(reason:String)->void:print("FINAL NATURAL_FAIL ",reason," time=",elapsed," route=",route);quit(9)
