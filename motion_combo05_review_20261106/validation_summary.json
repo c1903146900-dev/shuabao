@@ -1,0 +1,38 @@
+{
+  "candidate": "motion_combo05",
+  "base": "motion_combo04",
+  "pack_sha256": "f722486eef1571faf20c1352226eb20aef489f4cff5003ba13afc02bf5d4b5e9",
+  "accepted": true,
+  "fullfloor": "passed",
+  "runs": {
+    "combo05ui01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 12.864086657998996,
+      "max_sample_gap": 0.054931576996750664,
+      "peak_rss_plus_swap": 397455360
+    },
+    "combo05native01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 48.765028139001515,
+      "max_sample_gap": 0.06287741899723187,
+      "peak_rss_plus_swap": 403226624
+    },
+    "combo05native02": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 51.847074334000354,
+      "max_sample_gap": 0.11162779099686304,
+      "peak_rss_plus_swap": 403267584
+    },
+    "combo05floor01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 169.38824491899868,
+      "max_sample_gap": 0.13406096499966225,
+      "peak_rss_plus_swap": 415100928
+    }
+  },
+  "acceptance_scope": "functional development baseline, not human aesthetic or Windows release acceptance"
+}
