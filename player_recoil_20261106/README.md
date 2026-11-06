@@ -15,3 +15,17 @@ Follow ../player_hurt_20261106/README.md to reconstruct player_hurt01, then run 
 Expected runtime pack SHA-256: abb08b97eabde4a969824555636217a3ff2c90ba1aded1dd25850d52fec14692.
 
 The original private archives remain necessary. This source-only checkpoint is not a standalone playable release. No images, assets, recordings, private storage references, diagnostics or internal reports are published here.
+
+## Follow-up: scheduling diagnosis and successful sequential validation
+
+Failed attempts had ample available memory (at least 7.48 GiB), normal median sample gaps around 50 ms, and isolated 245/321 ms gaps. A 45-second no-engine scheduling probe saw low system load and no gap above 200 ms (maximum 164 ms). Host pressure and CPU quota counters were not exposed, so no definitive host-throttling cause is asserted. Safeguards, thresholds and game code were not changed.
+
+A subsequent quiet sequential run, without concurrent builds/uploads, completed all three checks on the unchanged player_recoil01 pack:
+
+- Key UI: 11 checks, 13.822 wall seconds, maximum monitor gap 0.0567 seconds.
+- Near-Boss observation: normal route followed by 18 seconds of close positioning; 135 frames, 178.796 wall seconds total, maximum gap 0.1152 seconds. Actual source damage reduced HP to 66.71. The local health cue was present in 60 frames. Inspected impact/settled/low-HP frames show readable health below the overlapping hero and Boss, including recovery/shield effects.
+- Complete floor: all 12 selected nodes through Boss, 194.083 simulated seconds / 206.975 wall seconds, HP 420, gold 595, eight potions purchased and eight used; maximum gap 0.1221 seconds.
+
+All three runs passed the existing guard, exited 0, and fully cleaned up owned processes. No SCRIPT ERROR was reported; existing NUL diagnostics remain. Fresh reconstruction also reproduced the exact pack hash above.
+
+Coverage limits: the observed Boss encounter had only one enemy, not a multi-enemy crowd. Its 11 B-wave warning frames did not coincide with the local HP cue, so simultaneous warning/health overlap is not claimed verified. This is script-assisted normal-source testing; Windows, hardware audio, human quality acceptance and new directional hurt artwork remain outside completion. Prior failed guard attempts are retained rather than rewritten as passes.
