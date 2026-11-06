@@ -608,7 +608,7 @@ func body_aim_at(point:Vector2)->Vector3:
   var pixels:Image=body_pick_images[key]
   var at:=Vector2i(floori(uv.x),floori(uv.y))
   if at.x<0 or at.y<0 or at.x>=pixels.get_width() or at.y>=pixels.get_height():continue
-  if pixels.get_pixelv(at).a<.2:continue
+  if _body_alpha(pixels,uv)<.2:continue
   for enemy in host.sim.enemies:
    if not enemy.dead and str(enemy.actor_id)==str(region.actor_id):return enemy.position
   return Vector3.INF
@@ -646,5 +646,18 @@ func _hero_pixel_hit(region:Dictionary,point:Vector2)->bool:
    body_pick_images[key]=pixels
   var pixels:Image=body_pick_images[key]
   var at:=Vector2i(floori(uv.x),floori(uv.y))
-  if at.x>=0 and at.y>=0 and at.x<pixels.get_width() and at.y<pixels.get_height() and pixels.get_pixelv(at).a>=.2:return true
+  if at.x>=0 and at.y>=0 and at.x<pixels.get_width() and at.y<pixels.get_height() and _body_alpha(pixels,uv)>=.2:return true
  return false
+
+func _body_alpha(pixels:Image,uv:Vector2)->float:
+ # Canvas uses linear filtering. Texture coordinates denote pixel edges,
+ # so sample around texel centers rather than flooring one source texel.
+ var centered:Vector2=uv-Vector2(.5,.5)
+ var x:int=floori(centered.x);var y:int=floori(centered.y)
+ var weight:Vector2=centered-Vector2(x,y)
+ var width:int=pixels.get_width()-1;var height:int=pixels.get_height()-1
+ var a:float=pixels.get_pixel(clampi(x,0,width),clampi(y,0,height)).a
+ var b:float=pixels.get_pixel(clampi(x+1,0,width),clampi(y,0,height)).a
+ var c:float=pixels.get_pixel(clampi(x,0,width),clampi(y+1,0,height)).a
+ var d:float=pixels.get_pixel(clampi(x+1,0,width),clampi(y+1,0,height)).a
+ return lerpf(lerpf(a,b,weight.x),lerpf(c,d,weight.x),weight.y)
