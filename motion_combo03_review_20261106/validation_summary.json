@@ -1,0 +1,26 @@
+{
+  "baseline": "motion_combo03",
+  "pack_sha256": "8bf660559a251ac22799a0f18d970a29fa850efa528a6c8a750d876fecf96102",
+  "same_bytes_as": "pouncer_motion02",
+  "manifest_entries_verified": 243,
+  "functional_tests": [
+    "pouncermirror02",
+    "pouncercontrol02",
+    "pouncerui02",
+    "pouncerfloor02"
+  ],
+  "old_baseline_preserved": "motion_combo02",
+  "excluded": [
+    "ranged_facing01",
+    "body_aim05",
+    "q3_motion01"
+  ],
+  "additional_mixed_route": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "exit": -15,
+    "elapsed": 3.775962312000047,
+    "max_sample_gap": 0.3308401700014656,
+    "peak_rss_plus_swap": 293179392
+  }
+}

@@ -2,7 +2,7 @@
   "candidate": "pouncer_motion02",
   "pack_sha256": "8bf660559a251ac22799a0f18d970a29fa850efa528a6c8a750d876fecf96102",
   "base": "motion_combo02",
-  "accepted": false,
+  "accepted": true,
   "fullfloor": "passed",
   "runs": {
     "pouncerbefore01": {
@@ -62,5 +62,6 @@
       "peak_rss_plus_swap": 409710592
     }
   },
-  "functional_regression_passed": true
+  "functional_regression_passed": true,
+  "acceptance_scope": "functionally verified development baseline motion_combo03, not human aesthetic or release acceptance"
 }
