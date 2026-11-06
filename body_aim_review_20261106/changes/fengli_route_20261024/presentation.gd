@@ -44,6 +44,7 @@ var body_pick_regions:Array=[]
 var body_pick_images:Dictionary={}
 var body_pick_context:Dictionary={}
 var body_pick_scope:String=""
+var hero_pick_transform:=Transform2D.IDENTITY
 var pose_meta:Dictionary={}
 var scope:String=""
 var receipt:Dictionary={}
@@ -282,18 +283,22 @@ func _hero()->void:
   var leg:Dictionary=frames[leg_key];var lr:Array=leg.region
   var leg_region:=Rect2(lr[0],lr[1],lr[2],lr[3])
   draw_set_transform(at,0,Vector2(_mirror,1))
+  _record_hero_rect(pose_textures[leg_key],Rect2((leg_region.position-Vector2(leg.anchor[0],leg.anchor[1]))*float(leg.scale),leg_region.size*float(leg.scale)),_pose_texture_region(leg_key,leg_region),Transform2D(0.0,Vector2(_mirror,1),0.0,at))
   draw_texture_rect_region(pose_textures[leg_key],Rect2((leg_region.position-Vector2(leg.anchor[0],leg.anchor[1]))*float(leg.scale),leg_region.size*float(leg.scale)),_pose_texture_region(leg_key,leg_region))
   frame["locomotion_legs"]=leg_key
+ hero_pick_transform=Transform2D(body_rotation,Vector2(_mirror,1.0)*body_scale,0.0,at+body_offset)
  draw_set_transform(at+body_offset,body_rotation,Vector2(_mirror,1.0)*body_scale)
  if puppet:
   puppet_motion.draw_pose(self,pose_textures[frame.key],str(frame.key),animation,float(frame.get("age",0)),anchor,scale,moving_basic)
   receipt.puppet_motion=puppet_motion.receipt.duplicate(true)
  else:
   receipt.puppet_motion={}
+  _record_hero_rect(pose_textures[frame.key],Rect2((region.position-anchor)*scale,region.size*scale),_pose_texture_region(str(frame.key),region),hero_pick_transform)
   draw_texture_rect_region(pose_textures[frame.key],Rect2((region.position-anchor)*scale,region.size*scale),_pose_texture_region(str(frame.key),region))
  if str(frame.key).begins_with("walk_"):
   var upper:Dictionary=frames.walk_upper_frozen_cut;var ur:Array=upper.region
   var src:=Rect2(ur[0],ur[1],ur[2],ur[3])
+  _record_hero_rect(pose_textures.walk_upper_frozen_cut,Rect2((src.position-Vector2(upper.anchor[0],upper.anchor[1]))*float(upper.scale),src.size*float(upper.scale)),_pose_texture_region("walk_upper_frozen_cut",src),hero_pick_transform)
   draw_texture_rect_region(pose_textures.walk_upper_frozen_cut,Rect2((src.position-Vector2(upper.anchor[0],upper.anchor[1]))*float(upper.scale),src.size*float(upper.scale)),_pose_texture_region("walk_upper_frozen_cut",src))
  draw_set_transform(Vector2.ZERO)
  if screen_direction.length_squared()>0.001:
@@ -333,8 +338,6 @@ func _draw()->void:
  for actor:Dictionary in actors:
   if actor.hero:
    _hero()
-   # Conservative foreground exclusion: never pick an enemy through the hero.
-   body_pick_regions.append({"hero_occluder":Rect2(hero_foot+Vector2(-70,-90),Vector2(140,105))})
    order.append({"actor_id":"fengli","screen_y":actor.y})
   else:_draw_enemy(actor.enemy);order.append({"actor_id":actor.enemy.actor_id,"screen_y":actor.y})
  receipt.actor_draw_order=order
@@ -588,8 +591,8 @@ func body_aim_at(point:Vector2)->Vector3:
  if not active or not point.is_finite() or body_pick_scope!=_current_scope() or host.sim.phase!="combat":return Vector3.INF
  for index in range(body_pick_regions.size()-1,-1,-1):
   var region:Dictionary=body_pick_regions[index]
-  if region.has("hero_occluder"):
-   if Rect2(region.hero_occluder).has_point(point):return Vector3.INF
+  if region.has("hero_triangles"):
+   if _hero_pixel_hit(region,point):return Vector3.INF
    continue
   var local:Vector2=Transform2D(region.transform).affine_inverse()*point
   var destination:Rect2=region.destination
@@ -610,3 +613,38 @@ func body_aim_at(point:Vector2)->Vector3:
    if not enemy.dead and str(enemy.actor_id)==str(region.actor_id):return enemy.position
   return Vector3.INF
  return Vector3.INF
+
+func _record_hero_rect(texture:Texture2D,destination:Rect2,source:Rect2,transform:Transform2D)->void:
+ var a:Vector2=destination.position;var b:Vector2=destination.end
+ var positions:=PackedVector2Array([a,Vector2(b.x,a.y),b,Vector2(a.x,b.y)])
+ var u:Vector2=source.position;var v:Vector2=source.end
+ var pixels:=PackedVector2Array([u,Vector2(v.x,u.y),v,Vector2(u.x,v.y)])
+ _record_hero_mesh(texture,positions,pixels,PackedInt32Array([0,1,2,0,2,3]),transform)
+func record_hero_mesh(texture:Texture2D,positions:PackedVector2Array,uv:PackedVector2Array,indices:PackedInt32Array)->void:
+ var pixels:=PackedVector2Array()
+ for value in uv:pixels.append(value*Vector2(texture.get_size()))
+ _record_hero_mesh(texture,positions,pixels,indices,hero_pick_transform)
+func _record_hero_mesh(texture:Texture2D,positions:PackedVector2Array,pixels:PackedVector2Array,indices:PackedInt32Array,transform:Transform2D)->void:
+ body_pick_regions.append({"hero_triangles":indices,"vertices":positions,"pixels":pixels,"image_key":str(texture.get_instance_id()),"image_texture":texture,"transform":transform})
+func _hero_pixel_hit(region:Dictionary,point:Vector2)->bool:
+ var local:Vector2=Transform2D(region.transform).affine_inverse()*point
+ var vertices:PackedVector2Array=region.vertices;var indices:PackedInt32Array=region.hero_triangles
+ for i in range(0,indices.size(),3):
+  var ia:int=indices[i];var ib:int=indices[i+1];var ic:int=indices[i+2]
+  var a:Vector2=vertices[ia];var ab:Vector2=vertices[ib]-a;var ac:Vector2=vertices[ic]-a
+  var determinant:float=ab.cross(ac)
+  if absf(determinant)<.000001:continue
+  var delta:Vector2=local-a
+  var u:float=delta.cross(ac)/determinant;var v:float=ab.cross(delta)/determinant
+  if u<0 or v<0 or u+v>1:continue
+  var uv:Vector2=region.pixels[ia]*(1-u-v)+region.pixels[ib]*u+region.pixels[ic]*v
+  var key:String="hero:"+str(region.image_key)
+  if not body_pick_images.has(key):
+   var pixels:Image=region.image_texture.get_image()
+   if pixels==null:return true
+   if pixels.is_compressed() and pixels.decompress()!=OK:return true
+   body_pick_images[key]=pixels
+  var pixels:Image=body_pick_images[key]
+  var at:=Vector2i(floori(uv.x),floori(uv.y))
+  if at.x>=0 and at.y>=0 and at.x<pixels.get_width() and at.y<pixels.get_height() and pixels.get_pixelv(at).a>=.2:return true
+ return false
