@@ -17,6 +17,7 @@ python rebuild_20261106/build_hit_feedback.py hit_feedback02
 python rebuild_20261106/build_audio_sync.py audio_sync01
 python rebuild_20261106/build_lob_readability.py lob_cues01
 python rebuild_20261106/build_control.py control_continuity01
+python rebuild_20261106/build_dash_timing.py dash_timing01
 ```
 
 Restoration verifies and combines 225 files from the original runtime with 13 delta payload files, producing the exact 238-file baseline. It also restores the original bootstrap. The first build applies flow_next, then combat_rebuild and motion_polish. Each following build starts from its immediately preceding named candidate and applies its own overlay. Assets are carried forward unchanged. Binding manifests and generation seals are rebuilt at every step.
@@ -25,6 +26,6 @@ For each candidate, compare `boot/packs/runtime.pck` against REBUILD_HASHES.json
 
 ## Recovery verification
 
-A fresh-directory restoration and all seven build steps were executed on 2026-11-06. Every resulting runtime pack matched the preserved tested candidate byte-for-byte. Every binding entry and corresponding generation-manifest hash was checked. The two original archives were independently fetched from their retained remote storage and matched their recorded SHA-256 values. All overlay source bytes matched the repository's stored Git blob hashes.
+A fresh-directory restoration and all eight build steps were executed on 2026-11-06. Every resulting runtime pack matched the preserved tested candidate byte-for-byte. Every binding entry and corresponding generation-manifest hash was checked. The two original archives were independently fetched from their retained remote storage and matched their recorded SHA-256 values. All overlay source bytes matched the repository's stored Git blob hashes.
 
 This establishes recovery from **this repository plus the two authorized original archives**, not GitHub alone. Private original archives, generated runtime packs, recordings, screenshots and diagnostic logs are not uploaded by this checkpoint. Runtime acceptance remains candidate-specific: successful reconstruction does not replace gameplay, hardware audio, Windows or user acceptance tests.
