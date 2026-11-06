@@ -1,0 +1,23 @@
+{
+  "candidate": "pouncer_motion01",
+  "pack_sha256": "e428957b680a163a8753105e4fb50f25f822df953f05e2328106b4352a41a334",
+  "base": "motion_combo02",
+  "accepted": false,
+  "fullfloor": "not_run",
+  "runs": {
+    "pouncerbefore01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 46.95454525199966,
+      "max_sample_gap": 0.07128121799905784,
+      "peak_rss_plus_swap": 947097600
+    },
+    "pouncermotion01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 47.150219330000255,
+      "max_sample_gap": 0.10295401099938317,
+      "peak_rss_plus_swap": 956567552
+    }
+  }
+}
