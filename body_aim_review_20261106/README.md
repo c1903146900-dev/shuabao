@@ -83,3 +83,9 @@ The prior failed run's median gap was 0.050161 s and p99 0.054545 s; only one of
 Same-GUI-terminal 90-second diagnostic completed with max gap 0.152219 s, no gap above 0.2 s, and load average decreasing from 1.48 to 0.42. It could see the terminal/desktop namespace, but CPU pressure and cgroup accounting files were absent there as well. Neither context establishes throttling or another precise root cause. Idle stability alone remains insufficient; no second long run was launched after the failed retry. The final candidate and prior accepted baseline remain unchanged.
 
 Independent review reused existing successful R2 gameplay evidence instead of repeating the same leveling/capture. Rear preparation, forward release and source nail fronts were already readable; no unobserved defect was used to justify changes. See r2_motion_review_20261106/README.md.
+
+## Final05 later full-floor pass
+
+After successive stable enemy-presentation checks, the unchanged final05 package (4d7b011c99c2df99ce5399869fd7f1c1864b5461bece41d63f117419f071d721) received one fresh full-floor run. It passed all12 nodes including Boss: FINAL NATURAL_PASS time=163.283333333334 rows=12 HP=318.29839285714 gold=595 purchased=8 used=3 route=["r01a", "r02a", "r03a", "r04a", "r05a", "r06a", "r07a", "r08a", "r09a", "r10a", "r11a", "r12boss"]
+
+Original guard passed at wall174.987333 s, max gap0.121437 s, exit0 and full cleanup. No SCRIPT ERROR. Earlier failures remain failures. Together with the final05 native pointer and UI evidence, this completes the isolated candidate functional checks; it does NOT validate integration with newer pouncer/shooter body transforms. Current accepted development baseline is motion_combo04; final05 has not been copied over it. Merge by differences and record the shared signed body transform before any combined mouse acceptance.
