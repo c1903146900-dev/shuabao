@@ -2,7 +2,7 @@
   "candidate": "ranged_facing01",
   "pck_sha256": "c69bf906c336c836fd5a5d84582053206aec6fe54e76f98aee09ad8ee2a67ecf",
   "accepted": false,
-  "fullfloor": "not_run",
+  "fullfloor": "guard_stopped_not_passed",
   "unchanged_base": "motion_combo02",
   "checks": {
     "rangedfacing01": {
@@ -19,6 +19,15 @@
       "elapsed": 12.56277319199944,
       "max_sample_gap": 0.05468234400177607,
       "peak_rss_plus_swap": 399261696,
+      "cleanup_verified": true
+    },
+    "rangedfacingfloor01": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 84.77352513900041,
+      "max_sample_gap": 0.2390364610000688,
+      "peak_rss_plus_swap": 409595904,
       "cleanup_verified": true
     }
   }

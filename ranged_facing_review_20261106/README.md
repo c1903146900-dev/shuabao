@@ -16,4 +16,11 @@ The earlier battle log gives no reason to change encounter balance: first/second
 
 All 11 key UI checks passed in a separate unchanged-guard run: wall 12.562773 s, max gap 0.054682 s, peak 399261696 bytes, exit 0 and clean process teardown. No SCRIPT ERROR in either successful run; inherited NUL font diagnostics remain.
 
-Status: isolated candidate, full-floor regression pending. No merge or promotion. This is script-assisted functional/visual evidence, not human aesthetic or Windows acceptance. The final mouse-aim candidate remains separately pending its own full-floor test.
+Status: isolated candidate, full-floor regression attempted but NOT passed. No merge or promotion. This is script-assisted functional/visual evidence, not human aesthetic or Windows acceptance. The final mouse-aim candidate remains separately pending its own full-floor test.
+
+
+## Full-floor attempt
+
+A fresh 90-second idle precheck had max gap 0.063248 s and no gaps over 0.2 s. The unchanged candidate then ran once under the original guard. At wall 84.773525 s the guard stopped it for sample_gap_untrusted (0.239036 s). Peak owned memory was 409595904 bytes; exit -15, all owned processes cleaned up, no SCRIPT ERROR. This does not establish a game defect or a scheduling root cause, and the precheck did not guarantee runtime stability. No immediate repeated long run, threshold change, accepted-baseline replacement or merge followed. Existing successful short combat and UI results remain valid only for their covered scope.
+
+Independent integration review found an important future constraint: the aim candidate must record exactly the same mirrored transform as the visible body. See INTEGRATION.md; no combined build has been made.
