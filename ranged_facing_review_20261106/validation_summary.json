@@ -1,0 +1,25 @@
+{
+  "candidate": "ranged_facing01",
+  "pck_sha256": "c69bf906c336c836fd5a5d84582053206aec6fe54e76f98aee09ad8ee2a67ecf",
+  "accepted": false,
+  "fullfloor": "not_run",
+  "unchanged_base": "motion_combo02",
+  "checks": {
+    "rangedfacing01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 49.85803241300164,
+      "max_sample_gap": 0.16328876800253056,
+      "peak_rss_plus_swap": 598339584,
+      "cleanup_verified": true
+    },
+    "rangedfacingui01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 12.56277319199944,
+      "max_sample_gap": 0.05468234400177607,
+      "peak_rss_plus_swap": 399261696,
+      "cleanup_verified": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# Ranged enemy body facing, isolated candidate
+
+The accepted motion_combo02 battle capture shows a concrete directional mismatch: both shooter guns point right while their committed projectiles travel left toward the hero (before/frame_025.png). Inspection of the three-frame shooter atlas confirms all original poses face right; the draw path never mirrors them. This makes mixed melee/ranged pressure harder to read from the bodies themselves.
+
+ranged_facing01 mirrors only the ranged shooter body and its existing hit flash around the authoritative foot anchor when the committed aim projects left on screen. It uses enemy.aim, not the current hero position, so a committed shot remains readable without tracking the player after commitment. No new cue, texture, lock-on, AI, spawn, cooldown, damage, attack range or room timing was introduced. Near-vertical aim retains the original right-facing pose. Other enemy art is intentionally not changed without its own evidence.
+
+Base: motion_combo02, SHA256 61a25deca4f7b60abf27875e5ffcbef821e0b23dd3240440759df88cda38fda8. Candidate PCK: c69bf906c336c836fd5a5d84582053206aec6fe54e76f98aee09ad8ee2a67ecf. Only presentation.gd and regenerated manifest/generation seals differ. The active fengli_route enemy director, shared director, simulation and other heroes remain byte-identical. body_aim05 and Q3 are not included.
+
+Recovery: rebuild the saved motion_combo02 chain, apply changes with rebuild_20261106/build_ranged_facing.py using a fresh output name. Original private artwork and source inputs are required; this is not a standalone public playable distribution. Production engine tests must use the original owned_runtime_guard without changed limits.
+
+## Short mixed-combat evidence
+
+A normal-source 28-second combat observation traversed the mixed first room into the second: 63 screenshots, 2,880 renderer direction samples (2,451 left and 429 right), 20 matched warning/release direction pairs, no visual errors. Guard passed at wall 49.858032 s, max sample gap 0.163289 s, peak RSS+swap 598339584 bytes, exit 0 and complete owned-process cleanup. Reviewed actual screenshots 25/40 (leftward guns and bolts) and 46 (rightward gun and bolt), plus a live GUI screenshot. The older and new battle paths are not frame-identical deterministic A/B runs, so different clear times or health must not be claimed as gameplay improvement. The visible directional mismatch is corrected in both directions.
+
+The earlier battle log gives no reason to change encounter balance: first/second rooms took 24.70/9.92 simulation seconds with a nearest-target, warning-dodge script, with only-shooter cleanup roughly 7.2/3.0 elapsed seconds. This is strategy-dependent, not proof of a pacing defect. Pouncer delays also include distance, recovery and existing threat limits; no scheduler starvation was established.
+
+All 11 key UI checks passed in a separate unchanged-guard run: wall 12.562773 s, max gap 0.054682 s, peak 399261696 bytes, exit 0 and clean process teardown. No SCRIPT ERROR in either successful run; inherited NUL font diagnostics remain.
+
+Status: isolated candidate, full-floor regression pending. No merge or promotion. This is script-assisted functional/visual evidence, not human aesthetic or Windows acceptance. The final mouse-aim candidate remains separately pending its own full-floor test.
