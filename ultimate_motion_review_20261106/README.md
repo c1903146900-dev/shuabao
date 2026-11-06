@@ -33,3 +33,5 @@ Preserved combination pack SHA256: a66990e44a2ed50e159ebbfe35bc42c2e5b798eafaeff
 
 ## Subsequent combination regression
 See COMBINATION_QA.md for the later complete-floor/UI and cleanup results. Those results supersede the earlier full-floor-pending status only for R1 + Q2/E2, not Q3.
+
+The subsequent pre-release menu/new-run cleanup check also passed; see the latest section of COMBINATION_QA.md. The package is unchanged.

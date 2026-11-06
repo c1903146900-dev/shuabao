@@ -19,3 +19,11 @@ Pack SHA256 remains 633da80415771827a17231aee5f60948444b9a789c6cb0735275917434f5
 
 ## Incomplete lifecycle attempt
 The separate natural-leveling/menu-reset observer stopped at wall 5.503671 seconds, before the R1 test point, because the unchanged guard observed a 0.438962-second sample gap. Peak owned RSS+swap was 311275520 bytes. All owned processes were cleaned up. It provides NO runtime immunity/Shift/menu-reset result. No blind retry was made after this scheduling failure. The public observer remains a pending test, not evidence of a pass. Until that gap is covered, this combination is complete-floor/UI checked with lifecycle validation pending, rather than an unconditional release replacement.
+
+
+## Successful lifecycle follow-up
+A new 45-second idle scheduling diagnostic recorded a maximum gap of 0.103061 seconds and no gaps above 0.2 seconds. This justified one fresh guarded attempt, not a relaxation of protection or a guarantee of future stability. The observer's skill-learning priorities were aligned with the complete-floor Q2/E2/R1 combination.
+
+The normal run naturally reached R1. At age 0.26 seconds before its unified release, damage and control immunity both reported true. A normal Shift input left R1 active and its animation intact, consistent with the original non-cancellable presentation rule. Through the ordinary menu, Start New Run and confirmation flow, the old encounter then reported clean: old cast no longer current, pending effects and wind projectiles empty, core presentation empty, r1_active false, R1 cast state absent and rendered animation empty. A different new run ID and clean new presentation/projectiles were confirmed.
+
+Guard passed: wall 108.986424 seconds, largest sample gap 0.128570 seconds, peak owned RSS+swap 419229696 bytes, exit 0, all owned processes cleaned up, no SCRIPT ERROR. This closes the pre-release menu/new-run cleanup gap; the earlier failed attempt remains a failure. It does not claim after-release forced closure, death or every modifier. The build can now be described as Q2/E2/R1 complete-floor, key-UI and pre-release lifecycle checked, while retaining the older combination and excluding Q3. It remains subject to user visual/gamefeel acceptance.

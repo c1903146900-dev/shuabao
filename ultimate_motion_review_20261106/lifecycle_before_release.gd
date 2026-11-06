@@ -50,7 +50,7 @@ func learn()->void:
  if int(s.points)<=0:return
  var choices:Array=[]
  if int(s.level)>=7 and int(s.skills.R.rank)==0:choices.append(["R","R1"])
- if int(s.skills.Q.rank)==0:choices.append(["Q","Q2"])
+ if int(s.skills.E.rank)==0:choices.append(["E","E2"])
  if int(s.skills.Q.rank)==0:choices.append(["Q","Q2"])
  if int(s.skills.P.rank)==0:choices.append(["P","P2"])
  choices.append_array([["E","E2"],["Q","Q2"],["P","P2"]])
