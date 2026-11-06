@@ -352,15 +352,15 @@ func _draw_enemy(enemy:Dictionary)->void:
   var forward:Vector2=p(enemy.position+enemy.aim)-at
   if str(enemy.state)=="warning":
    var wind:float=clampf(float(enemy.warning_progress),0.0,1.0)
-   attack_lean=-signf(forward.x)*.09*wind
-   attack_squash=.06*wind
+   attack_lean=-signf(forward.x)*.16*wind
+   attack_squash=.11*wind
   elif str(enemy.state)=="recover" and enemy_melee_impacts.has(str(enemy.actor_id)):
    var impact:Dictionary=enemy_melee_impacts[str(enemy.actor_id)]
    var age:float=host.sim.clock.world_time-float(impact.world_time)
    if age>=0.0 and age<.18:
     var settle:float=pow(1.0-age/.18,2.0)
-    attack_lean=signf(forward.x)*.09*settle
-    attack_squash=-.04*settle
+    attack_lean=signf(forward.x)*.15*settle
+    attack_squash=-.07*settle
   if absf(attack_lean)+absf(attack_squash)>.00001:
    if not receipt.has("enemy_attack_bodies"):receipt.enemy_attack_bodies=[]
    receipt.enemy_attack_bodies.append({"actor_id":enemy.actor_id,"state":enemy.state,"lean":attack_lean,"squash":attack_squash,"visual_only":true})

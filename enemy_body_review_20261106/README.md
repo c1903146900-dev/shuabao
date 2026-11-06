@@ -15,3 +15,6 @@ Existing NUL diagnostics remain. Full floor, cancellation/pause, other enemy typ
 ## Isolation and recovery
 Built separately from preserved r1_motion01, not from the walking candidate and not merged into a checked release. Only presentation.gd and generated manifest/seal differ. Run rebuild_20261106/build_enemy_body.py with a fresh output name after reconstructing r1_motion01. Private original input/artwork remains necessary. Pack SHA256: eba3b94654cb23fa22d5598c698db579bd5fdb72948ee0d28ee78db153f1da1e.
 Public observers use user://enemy_body output paths (create directories first). Raw logs and screenshots remain private, excluded from the public backup.
+
+## Follow-up revision
+The current changes directory now contains candidate02, with stronger visual anticipation/release after actual crowd review. Candidate01 and its original hash above are preserved historical results. See FOLLOWUP_QA.md for exact revision, direction/crowd observations and the later complete-floor pass.
