@@ -1,0 +1,108 @@
+{
+  "accepted": true,
+  "accepted_as": "motion_combo09",
+  "baseline": "motion_combo08",
+  "candidate": "shop_input_draft01",
+  "pack_sha256": "2244517097829e2d875841b94d6c83b2dfe5646452c49cdd5a0ab74012f6104d",
+  "manifest_entries_verified": 243,
+  "combat_rules_changed": false,
+  "tests": {
+    "firstroommanual01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 81.07865662199765,
+      "max_sample_gap": 0.06733467199956067,
+      "peak_rss_plus_swap": 404570112,
+      "owned_cleanup_complete": true
+    },
+    "shopcontrolbefore01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 11.333582347993797,
+      "max_sample_gap": 0.05437701299524633,
+      "peak_rss_plus_swap": 392896512,
+      "owned_cleanup_complete": true
+    },
+    "shopcontrolafter01": {
+      "passed": false,
+      "reason": "",
+      "exit": 9,
+      "elapsed": 10.597315432001778,
+      "max_sample_gap": 0.0548733390023699,
+      "peak_rss_plus_swap": 394006528,
+      "owned_cleanup_complete": true
+    },
+    "shopcontrolafter02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 11.342127794996486,
+      "max_sample_gap": 0.0863489679977647,
+      "peak_rss_plus_swap": 393490432,
+      "owned_cleanup_complete": true
+    },
+    "shopnativeafter01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 28.086996309000824,
+      "max_sample_gap": 0.05471039099938935,
+      "peak_rss_plus_swap": 393850880,
+      "owned_cleanup_complete": true
+    },
+    "shopinputui01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.760118715996214,
+      "max_sample_gap": 0.054421955996076576,
+      "peak_rss_plus_swap": 398147584,
+      "owned_cleanup_complete": true
+    },
+    "shopinputfloor01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 257.99331571900257,
+      "max_sample_gap": 0.08776281099562766,
+      "peak_rss_plus_swap": 415969280,
+      "owned_cleanup_complete": true
+    }
+  },
+  "evidence": {
+    "native_baseline": "A moved x6.679064 to3.079067; subsequent A+P remained x3.079067 while combat continued.",
+    "script_baseline": "Denied P reset move intent to zero, suppressed held attack; distance0 and one initial attack.",
+    "script_candidate": "Denied P preserved movement/held state; distance2.579999 and two attacks across actual attack interval1.302381s.",
+    "native_candidate": "W+P held650ms moved source hero from z10 to6.040004; no shop opened.",
+    "accepted_boundaries": "Successful shop open/close and real manual pause still cleared inputs; rejection notice retained."
+  },
+  "observer_failure": "shopcontrolafter01 used an arbitrary0.85s window shorter than the actual basic interval. Movement/held flags already passed, but only one attack occurred. Corrected test derives hold duration from actual hero.attack_speed without changing game source; after02 passed. Before02 is prepared but not run.",
+  "full_floor": {
+    "rooms": 12,
+    "boss": true,
+    "simulated_seconds": 245.566349333344,
+    "final_hp": 215.62678571428,
+    "gold": 395,
+    "purchased": 9,
+    "used": 9,
+    "q3_started": 21,
+    "q3_launched": 21,
+    "q3_contact": 28,
+    "q3_expired": 21,
+    "loadout": [
+      "Q3",
+      "E1",
+      "R2",
+      "P2"
+    ]
+  },
+  "independent_review": "Only preemptive host._shop suspension removed. Session accepted open/close callbacks remain bound and authoritative; all pause/modal/map/focus/room/menu/fault boundaries preserved. No blocker.",
+  "limits": [
+    "Native keyboard refusal tested; shop HUD-click movement rule reviewed but not separately exercised natively.",
+    "Nonempty pending tap preservation follows exact no-mutation source path; test snapshots had empty pending buffer.",
+    "No Windows release or final aesthetic acceptance.",
+    "Boss body motion remains isolated and is NOT included."
+  ]
+}
