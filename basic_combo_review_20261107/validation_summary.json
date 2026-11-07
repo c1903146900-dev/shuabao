@@ -1,6 +1,6 @@
 {
-  "candidate": "basic_returnstroke_draft02",
-  "accepted_baseline": "motion_combo11",
+  "candidate": "returnstroke_combo12_draft01",
+  "accepted_baseline": "motion_combo12",
   "promoted": false,
   "runs": {
     "combostrokebefore01": {
@@ -232,6 +232,75 @@
         "errors": [],
         "seconds": 0.08241998199810041
       }
+    },
+    "returnfull04": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 138.38517499900627,
+      "max_sample_gap": 0.3436027429997921,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23678,
+            "start_ticks": 3943289,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.05301332400267711
+      }
+    },
+    "returnui02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.480137070997444,
+      "max_sample_gap": 0.055645088003075216,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23760,
+            "start_ticks": 3959475,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025995996002166066
+      }
+    },
+    "returncancel03": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 22.328947323003376,
+      "max_sample_gap": 0.06856380100362003,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23842,
+            "start_ticks": 3960761,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02562296900578076
+      }
     }
   },
   "native_scope": "Actual held left mouse plus W/S/D and Shift. Moving returnstroke and unchanged dash attack viewed. Dodge transition, not proof of precontact cancellation.",
@@ -249,5 +318,6 @@
     "later_basic_impact": true,
     "visual": "Frame 13 shows dash instead of canceled returnstroke; source hero_frame agrees."
   },
-  "latest_full_scope": "Reached r12boss, stopped by guard before completion. No promotion."
+  "latest_full_scope": "Combo12 rebase interrupted at138.385 seconds by gap.343603; no promotion. UI11 and real precontact cancel pass on rebased bytes.",
+  "pack_sha256": "1f1962274098891b667d621611393d5f55f1dc12758ee6b8d431a01a95abaf7a"
 }

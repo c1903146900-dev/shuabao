@@ -33,3 +33,8 @@ returncancel01 uses normal source combat and normal input-router Shift, script-a
 returnfull02 followed the stable 22-second cancellation check, but was also stopped by the unchanged guard at wall 62.213 seconds: gap .336804 > .2. Cleanup completed. Full-floor acceptance remains pending; no promotion or further immediate full-floor retry.
 
 returnfull03 followed a 60-second idle scheduler check (max .172211, no gap > .2, load declined). The unchanged guard later stopped the run at wall 238.052 s, gap .404584, during r12boss before completion. Cleanup passed. This shows an idle precheck does not guarantee the sustained engine run; do not treat reaching Boss as full-floor acceptance. Candidate remains isolated.
+
+## Combo12 rebase
+Latest isolated candidate returnstroke_combo12_draft01 uses accepted combo12 (including landed ink), with only the same seven-line ordinary arm change plus new seals. All243 manifest entries verified. Pack1f1962274098891b667d621611393d5f55f1dc12758ee6b8d431a01a95abaf7a. Builder rebuild_20261106/build_returnstroke_combo12.py preserves the original builder/candidate.
+
+returnfull04 was stopped at wall138.385 seconds by gap.343603 > .2, cleanup complete. This is not a complete pass. returnui02 passed11 checks, and returncancel03 again proves cast2 canceled at.06 before .216667 contact with no canceled impact and later ordinary attack resumed. That observer writes separate captures; an unused returncancel02 stage is not runtime evidence. No immediate long retry or promotion.
