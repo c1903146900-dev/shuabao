@@ -71,6 +71,79 @@
         "errors": [],
         "seconds": 0.02559588100120891
       }
+    },
+    "hurtnativemoving01": {
+      "passed": false,
+      "reason": "",
+      "elapsed": 0.8304083019975224,
+      "max_sample_gap": 0.050374147002003156,
+      "exit": 1,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21542,
+            "start_ticks": 3585737,
+            "si_code": 1,
+            "si_status": 1
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025682578001578804
+      }
+    },
+    "hurtnativemoving02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 25.069543363002595,
+      "max_sample_gap": 0.058236073004081845,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21624,
+            "start_ticks": 3590032,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02574987999832956
+      }
+    },
+    "hurtnativemoving03": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 50.67400901099609,
+      "max_sample_gap": 0.25607940500049153,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21706,
+            "start_ticks": 3595397,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.2239332800018019
+      }
     }
-  }
+  },
+  "moving_basic_acceptance": false,
+  "prepared_not_run": [
+    "check_health.gd"
+  ]
 }
