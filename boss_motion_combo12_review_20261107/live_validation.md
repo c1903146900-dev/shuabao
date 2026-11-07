@@ -15,3 +15,7 @@ Next, a real cone warning released as enemy_impact with hit=false. Nine release 
 Guard passed: wall 170.484243 seconds; peak RSS plus swap 430911488 bytes; maximum sample gap 0.069008263 seconds against unchanged 0.2 limit. Exit code 0; owned process cleanup verified.
 
 Not yet tested in this run: successful wave release, horizontal left/right directions, active-release menu/new-run cache cleanup, Boss kill and full-floor completion. No promotion to the accepted baseline. Next tests must preserve the normal route and existing protections. Raw runtime logs, screenshots, private inputs and assets are intentionally excluded from this public backup.
+
+## Separate complete-floor regression
+
+bossfull13a used the same unchanged ordinary-route observer as accepted combo13. It completed all 12 a-route nodes and defeated the Boss: simulation 241.247629 seconds, remaining HP 315.968393, gold 395, nine potions purchased and four used. Guard passed at wall 253.497132 seconds, peak RSS plus swap 428724224 bytes, maximum gap 0.116337676 seconds, exit 0 and owned cleanup verified. This is script-assisted normal-input/UI gameplay, not a human/OS-input acceptance test. It does not substitute for the separate opposite-direction and active-release lifecycle checks. The Boss candidate remains isolated pending those checks.
