@@ -71,6 +71,103 @@
         "errors": [],
         "seconds": 0.025642698994488455
       }
+    },
+    "combomirror01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 19.143612902000314,
+      "max_sample_gap": 0.05789034899498802,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22362,
+            "start_ticks": 3687865,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02583118800248485
+      }
+    },
+    "combonative01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 35.16717859599885,
+      "max_sample_gap": 0.09935725000104867,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22444,
+            "start_ticks": 3692465,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02560067200101912
+      }
+    },
+    "returnui01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.557869046002452,
+      "max_sample_gap": 0.0557367939982214,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22529,
+            "start_ticks": 3710280,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025658541002485435
+      }
+    },
+    "combofull01": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 83.81891808899672,
+      "max_sample_gap": 0.3062978829984786,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22611,
+            "start_ticks": 3713090,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.078756451002846
+      }
     }
-  }
+  },
+  "native_scope": "Actual held left mouse plus W/S/D and Shift. Moving returnstroke and unchanged dash attack viewed. Dodge transition, not proof of precontact cancellation.",
+  "ui_checks": 11,
+  "preflight_error": "An existing comboui01 tag was accidentally selected. Guard rejected fresh_external_output_required before launch. Old result is not candidate evidence; fresh returnui01 passed.",
+  "lifecycle_static": "Scope reset, matching cast cancellation, replacement by new action, hero-clock expiry, encounter finish and new run clear or supersede animation. No production change. Native Shift occurs 1.04 s after second start, beyond .6333 s duration; precontact cancellation not exercised.",
+  "status": "Isolated candidate; full floor interrupted by sample-gap guard. No promotion."
 }
