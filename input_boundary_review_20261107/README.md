@@ -1,6 +1,6 @@
 # Menu release synchronization candidate
 
-Status: isolated candidate, NOT promoted. Accepted baseline remains motion_combo09.
+Status: accepted as motion_combo10 after focused boundaries, native menu release/held protection, shared UI and full 12-room regression. motion_combo09 is preserved. Accepted runtime and pack are byte-identical to tested input_boundary_draft01.
 
 Actual first-room native keyboard/mouse observation on combo09 found normal held movement/basic attacks, dash attacks followed by basics, E1 action-lock recovery and rejected cooldown presses continuous. No mechanism change justified there.
 
@@ -21,4 +21,8 @@ Tests use unchanged owned runtime protection. Native pointer presses/releases ar
 - menureleaseui01: all 11 shared UI checks passed; guard max gap 0.09796s, clean exit.
 - Independent actual-diff review passed: only entry, host and generated sealing files differ. Double release is idempotent; no press forwarding or movement/pending clearing occurs.
 
-Pending before acceptance: focused adversarial method-input/idempotency checks, normal full-floor regression. Latest native guard gap reached 0.1915s below the unchanged 0.2s threshold; do not blindly run long tests or relax protection. Boss motion remains a separate candidate and is not included.
+Final checks: releasemethod01 passed press/other-button rejection, unchanged duplicate-down protection and idempotent release without clearing movement, issuing actions or changing the observed empty pending buffer. Nonempty pending preservation is source-reviewed, not separately seeded in a runtime test. Guard gap 0.0550s, exit 0.
+
+releasefloor01 completed all 12 rooms including Boss through normal source combat and route navigation: simulation 241.684595s, HP 329.6984, gold 395, 9 potions bought and 5 used. Q3 starts/launched/expired 22, contacts 29. Guard wall 253.899816s, maximum sample gap 0.09838008s, exit 0, complete owned cleanup. No retry was required. This is script-assisted normal play, not human playtesting or Windows release acceptance.
+
+All 243 manifest entries verified. Only entry, host and generated seals differ from combo09. Boss motion remains separate and is not included. No claim that Alt-Tab was reproduced or fixed.
