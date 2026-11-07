@@ -1,0 +1,58 @@
+{
+  "hudbefore01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 143.8774989129961,
+    "max_sample_gap": 0.07702658400376095,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudlayout01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 11.59652759799792,
+    "max_sample_gap": 0.05528158899687696,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudafter01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 136.41783564700017,
+    "max_sample_gap": 0.059424047998618335,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudlayout02": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 11.659667869003897,
+    "max_sample_gap": 0.05624474000069313,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudnative01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 100.54939887500223,
+    "max_sample_gap": 0.058774197997990996,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudnativecombat01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 36.73370320600225,
+    "max_sample_gap": 0.07635869899968384,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudfull01": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "elapsed": 229.07996404499863,
+    "max_sample_gap": 0.3044625610054936,
+    "exit": -15,
+    "cleanup_verified": true
+  }
+}
