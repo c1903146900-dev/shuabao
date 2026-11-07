@@ -1,0 +1,122 @@
+{
+  "candidate": "input_boundary_draft01",
+  "accepted_baseline": "motion_combo09",
+  "promoted": false,
+  "runs": {
+    "continuitymanual01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 47.61990394399618,
+      "max_sample_gap": 0.0563912639991031,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 20722,
+            "start_ticks": 3472055,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025616590995923616
+      }
+    },
+    "menureleasebefore01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 34.25652986700152,
+      "max_sample_gap": 0.10546869200334186,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 20804,
+            "start_ticks": 3484246,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02574773300148081
+      }
+    },
+    "menureleaseafter01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 28.486848682005075,
+      "max_sample_gap": 0.07798642600391759,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 20886,
+            "start_ticks": 3492459,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02591701699566329
+      }
+    },
+    "menuholdafter01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 50.915574794998975,
+      "max_sample_gap": 0.19150651100062532,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 20968,
+            "start_ticks": 3498227,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02561452300142264
+      }
+    },
+    "menureleaseui01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.950518675002968,
+      "max_sample_gap": 0.09796143900166498,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21050,
+            "start_ticks": 3505273,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.0255881999983103
+      }
+    }
+  }
+}
