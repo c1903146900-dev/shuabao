@@ -1,0 +1,28 @@
+{
+  "passed": false,
+  "reason": "GuardError:sample_gap_untrusted",
+  "elapsed": 89.90394555700186,
+  "max_sample_gap": 0.3941145829958259,
+  "exit": -15,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "reaps": [
+      {
+        "pid": 22857,
+        "start_ticks": 3753976,
+        "si_code": 2,
+        "si_status": 15
+      }
+    ],
+    "errors": [],
+    "seconds": 0.0853487140047946
+  },
+  "candidate": "none; baseline motion_combo11 unchanged",
+  "reached_r2": false,
+  "last_progress": "r04a cleared; no R2 learned",
+  "old_evidence": "r2observe02 frame3 round1 count1; frame12 round2 count2; frame15 round2 count2 and round3 count2",
+  "decision": "No new effects without a demonstrated benefit; do not obscure the arm with another cluster."
+}
