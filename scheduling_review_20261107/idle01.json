@@ -1,0 +1,19 @@
+{
+  "seconds": 60.01567932600301,
+  "max_gap": 0.17221121900365688,
+  "over_02": 0,
+  "samples": 1181,
+  "before": {
+    "/proc/pressure/cpu": null,
+    "/proc/pressure/memory": null,
+    "/sys/fs/cgroup/cpu.stat": null,
+    "/proc/loadavg": "0.88 1.51 1.59 1/634 22936\n"
+  },
+  "after": {
+    "/proc/pressure/cpu": null,
+    "/proc/pressure/memory": null,
+    "/sys/fs/cgroup/cpu.stat": null,
+    "/proc/loadavg": "0.42 1.26 1.50 1/635 22936\n"
+  },
+  "scope": "Read-only idle scheduler observation; not engine guard replacement or promise of future stability."
+}

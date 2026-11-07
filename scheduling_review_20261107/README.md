@@ -1,0 +1,5 @@
+# Scheduling and existing combat-frame review
+
+Idle01 is a read-only 60-second sample in the graphical terminal environment, no engine or configuration changes. Max gap .172211 seconds, none over .2. Exposed load averages declined. CPU/memory pressure and cgroup cpu.stat were unavailable through these paths, so no specific contention cause is claimed. The subsequent guarded returnfull03 still exceeded .2 seconds during Boss. Guard code and policy are untouched; idle timing is not a substitute for the guard.
+
+Existing native frame036 shows a hostile projectile below the bottom HUD, and frame039 shows a trail at its upper edge. This confirms occlusion of some arena space, but the hero/nearby threats are above the panel; unseen imminent danger is not established. Native frame027 and R2 frame026 show overlapping actors with distinguishable bright hero and health bars. Accepted presentation already depth-sorts feet and draws bars after actors, and crowd_health_review reports passing crossings. No additional HUD/effect code was justified by these screenshots. Preserve the accepted fixes rather than manufacture a new defect.

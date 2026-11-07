@@ -209,6 +209,29 @@
         "errors": [],
         "seconds": 0.0877644499996677
       }
+    },
+    "returnfull03": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 238.0519115510033,
+      "max_sample_gap": 0.4045838659949368,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22940,
+            "start_ticks": 3779984,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.08241998199810041
+      }
     }
   },
   "native_scope": "Actual held left mouse plus W/S/D and Shift. Moving returnstroke and unchanged dash attack viewed. Dodge transition, not proof of precontact cancellation.",
@@ -225,5 +248,6 @@
     "cancelled_cast_impact": false,
     "later_basic_impact": true,
     "visual": "Frame 13 shows dash instead of canceled returnstroke; source hero_frame agrees."
-  }
+  },
+  "latest_full_scope": "Reached r12boss, stopped by guard before completion. No promotion."
 }
