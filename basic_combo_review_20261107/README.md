@@ -26,3 +26,8 @@ returnui01 passed all 11 normal UI checks. An accidentally reused older comboui0
 Not final player aesthetic acceptance or Windows/hardware/audio acceptance. Old combo11 and Boss motion isolation remain intact.
 
 Lifecycle source review: presentation.gd rejects old run/room/generation events, clears on scope change and matching cancellation, replaces on new actions, and expires on hero clock. Host close ends encounter; new run frees old room/presentation. No stale returnstroke state found. Native Shift occurred 1.04 seconds after the preceding attack, after its .6333-second visual duration, so precontact cancel remains untested here.
+
+## Actual precontact cancellation
+returncancel01 uses normal source combat and normal input-router Shift, script-assisted rather than native OS timing. Second basic cast 2 was canceled at hero age .06, before contact .216667. Source attack_cancelled contains cast 2; no impact exists for that cast. The visual receipt and inspected frame 13 switched to dash, then later basic casts 5/6 generated ordinary impacts. No production state, clock, cooldown, damage or rules were edited. Guard passed: wall 22.002 seconds, max gap .059014 seconds, clean exit. Earlier native transition remains a separate non-cancel sample.
+
+returnfull02 followed the stable 22-second cancellation check, but was also stopped by the unchanged guard at wall 62.213 seconds: gap .336804 > .2. Cleanup completed. Full-floor acceptance remains pending; no promotion or further immediate full-floor retry.

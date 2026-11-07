@@ -163,11 +163,67 @@
         "errors": [],
         "seconds": 0.078756451002846
       }
+    },
+    "returncancel01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 22.001918689995364,
+      "max_sample_gap": 0.05901420200098073,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22693,
+            "start_ticks": 3732011,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025620716995035764
+      }
+    },
+    "returnfull02": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 62.212697680006386,
+      "max_sample_gap": 0.3368038789994898,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22775,
+            "start_ticks": 3736760,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.0877644499996677
+      }
     }
   },
   "native_scope": "Actual held left mouse plus W/S/D and Shift. Moving returnstroke and unchanged dash attack viewed. Dodge transition, not proof of precontact cancellation.",
   "ui_checks": 11,
   "preflight_error": "An existing comboui01 tag was accidentally selected. Guard rejected fresh_external_output_required before launch. Old result is not candidate evidence; fresh returnui01 passed.",
   "lifecycle_static": "Scope reset, matching cast cancellation, replacement by new action, hero-clock expiry, encounter finish and new run clear or supersede animation. No production change. Native Shift occurs 1.04 s after second start, beyond .6333 s duration; precontact cancellation not exercised.",
-  "status": "Isolated candidate; full floor interrupted by sample-gap guard. No promotion."
+  "status": "Isolated candidate; full floor interrupted by sample-gap guard. No promotion.",
+  "early_cancel": {
+    "input": "Normal router Shift, script-assisted source combat, no state injection",
+    "attack_age": 0.06,
+    "contact_after": 0.216666666666667,
+    "cast_id": 2,
+    "source_cancelled": true,
+    "cancelled_cast_impact": false,
+    "later_basic_impact": true,
+    "visual": "Frame 13 shows dash instead of canceled returnstroke; source hero_frame agrees."
+  }
 }
