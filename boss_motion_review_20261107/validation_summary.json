@@ -41,11 +41,49 @@
       "max_sample_gap": 0.2835924540013366,
       "peak_rss_plus_swap": 384385024,
       "owned_cleanup_complete": true
+    },
+    "bossmotionui03": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.908468200999778,
+      "max_sample_gap": 0.054042264993768185,
+      "peak_rss_plus_swap": 397201408,
+      "owned_cleanup_complete": true
+    },
+    "bossmotionafter04": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 127.10465031000058,
+      "max_sample_gap": 0.4393598640017444,
+      "peak_rss_plus_swap": 413921280,
+      "owned_cleanup_complete": true
+    },
+    "bossh08draft01": {
+      "passed": false,
+      "reason": "",
+      "exit": 9,
+      "elapsed": 5.843138492004073,
+      "max_sample_gap": 0.054109561002405826,
+      "peak_rss_plus_swap": 388677632,
+      "owned_cleanup_complete": true
+    },
+    "bossh08draft02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 7.259020956000313,
+      "max_sample_gap": 0.0542318290026742,
+      "peak_rss_plus_swap": 396419072,
+      "owned_cleanup_complete": true
     }
   },
   "failures": {
     "bossmotionafter01": "Candidate01 inserted boss pose in hero function due ambiguous first body_scale match. Actual parse errors occurred, as well as guard gap failure. Not solely an environment failure. Retained locally.",
-    "bossmotionafter03": "Corrected candidate03 stopped at startup under unchanged sampling guard; no candidate Boss frames or gameplay acceptance. No further long retry."
+    "bossmotionafter03": "Corrected candidate03 stopped at startup under unchanged sampling guard; no candidate Boss frames or gameplay acceptance. No further long retry.",
+    "bossmotionafter04": "After a successful final-candidate short UI run, one normal-route attempt stopped after room9 at wall127.104650s, gap0.439360s. No Boss frames or lifecycle result. No immediate repeated long run.",
+    "bossh08draft01": "Observer expected shorthand H12/G29 etc; actual displayed IDs are namespaced fengli_h12/common_g29. Stopped before refresh, corrected exact ID expectations. No game source change."
   },
   "revision_history": {
     "01": "Wrong insertion location; rejected.",
@@ -56,5 +94,21 @@
     "Actual candidate Boss before/after visual comparison when scheduling is stable.",
     "Left/right and vertical release presentation, actual canceled warning, terminal/new-run cache and exact body picking.",
     "Normal full floor and relevant UI on final candidate before promotion."
+  ],
+  "h08_draft_runtime_verified": {
+    "initial": [
+      "fengli_h12",
+      "common_g29",
+      "common_g30",
+      "fengli_h16"
+    ],
+    "refresh_slot0": "common_g13",
+    "refresh_slot1": "fengli_h08",
+    "selected": "fengli_h08",
+    "learned": "E1 rank1",
+    "actual_boss_cancellation_tested": false
+  },
+  "prepared_not_run": [
+    "observe_h08_cancel.gd: normal H08 selection, E1 route, actual warning contact, post-cancel neutral draw checks and menu/new-run cleanup."
   ]
 }
