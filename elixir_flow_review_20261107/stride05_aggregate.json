@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "full_floor_completed": true,
+    "real_source_ui_chain": true,
+    "inventory_does_not_activate": true,
+    "safe_drink_pending_only": true,
+    "attack_speed_plus_15_percent": true,
+    "cdr_plus_8_points": true,
+    "combat_base_movement": true,
+    "next_battle_cleanup": true,
+    "shift_bonus_observed": true,
+    "movement_additive_not_compounded": true,
+    "remaining_duration_bounded": true,
+    "natural_1p5_second_expiry": true
+  },
+  "passed": true,
+  "combat_samples": 156,
+  "native_click_acceptance": false,
+  "partial_tick_movement_not_in_sample_resolution": true
+}
