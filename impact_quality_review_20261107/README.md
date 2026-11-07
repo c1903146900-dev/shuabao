@@ -1,5 +1,7 @@
 # R1 target-impact visual candidate
 
+Current development: the complete airborne five-edge R1 performance and its real-impact burst are preserved in star_performance_v3_changes. See RELEASE_STATUS.md for latest actual observations and the failed full-floor sampling attempt. Accepted baseline remains motion_combo15; v3 is not promoted. The original local-contact candidate documented below is preserved as a historical isolated stage.
+
 Accepted baseline remains motion_combo15. The isolated candidate only changes the actual R1 damage-hit drawing branch in fengli_route_20261024/skill_effects.gd.
 
 Actual normal gameplay images show large surrounding R1 action strokes but small regular blue stars at the targets' feet. These read like ground markers, separated from body response and the improved defeat motion. Basic attacks and Q2 already have separate contact treatments and are not part of this change.
