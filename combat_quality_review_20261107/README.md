@@ -1,6 +1,6 @@
 # Enemy defeat motion candidate
 
-Accepted baseline: motion_combo14, preserved unchanged. Current candidate is v2 in changes/. Exact v1 source is retained in changes01/. See LIVE_STATUS.md for actual observations and limitations.
+Latest accepted development baseline: motion_combo15, using the exact tested v2 in changes/. Previous combo14 is preserved unchanged. Exact v1 source is retained in changes01/. See LIVE_STATUS.md for actual observations and limitations.
 
 Issue: actual normal combat and R1 clear frames show defeated enemies disappearing abruptly, including an unobscured last armored enemy. Existing source commits death and rewards correctly, but immediately skipping dead body drawing cuts off all body follow-through.
 
@@ -15,6 +15,6 @@ Use a new output name if it already exists. The builder refuses to replace exist
 V2 pack SHA-256: ed78f36bbd844fa4435d26158a5305e68caa29afd012c9847bc53921d38a3045
 V1 pack SHA-256: 1dfc14fe45184ea0376fa63b06e32926849c937274cc9184dfd7afe1882707a7
 
-V1 was judged too fade-dominated despite passing a narrow technical check. V2 has been rendered in an actual final-enemy kill and visually reviewed, but remains isolated pending further combat/lifecycle regression. Do not treat static curve checks or observer exit0 as final visual acceptance.
+V1 was judged too fade-dominated despite passing a narrow technical check. V2 was then validated in actual combat/final-enemy cases, complete first floor, UI and pause/new-run lifecycle, and promoted byte-for-byte to motion_combo15. The group observer remains failed for its separate unmet victory requirement; its narrower five-kill visual evidence is explicitly recorded in LIVE_STATUS.md. Do not treat static curve checks or observer exit0 as final visual acceptance.
 
 Only project source, builders, bounded observers and aggregate summaries belong in this backup. Original assets, runtime captures, raw logs, private reference material, credentials and personal data are excluded.
