@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "reason": "",
+  "elapsed": 40.1356451449974,
+  "max_sample_gap": 0.05451001299661584,
+  "exit": 0,
+  "cleanup": {
+    "leader_reaped": true,
+    "owned_descendants_reaped_or_confirmed_exited": true,
+    "direct_children_empty": true,
+    "original_group_empty": true,
+    "reaps": [
+      {
+        "pid": 23022,
+        "start_ticks": 3819234,
+        "si_code": 1,
+        "si_status": 0
+      }
+    ],
+    "errors": [],
+    "seconds": 0.025611012999434024
+  },
+  "event_counts": {
+    "encounter_started": 1,
+    "enemy_warning": 34,
+    "damage": 28,
+    "enemy_impact": 14,
+    "enemy_pounce_started": 6,
+    "enemy_shot": 20,
+    "encounter_finished": 1
+  },
+  "warning_roles": {
+    "minion": 8,
+    "pouncer": 6,
+    "ranged": 20
+  },
+  "max_sampled_threat": 3,
+  "combat_window_seconds": 22,
+  "full_room_clear": false,
+  "production_changed": false
+}
