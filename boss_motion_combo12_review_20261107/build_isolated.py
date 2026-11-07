@@ -11,7 +11,15 @@ import shutil
 import struct
 import sys
 
-from prepare_overlay import BASE, HERE, OUTPUT, REL, ROOT, digest, prepare, require
+import importlib.util
+_helper_path = Path(__file__).resolve().with_name("prepare_overlay.py")
+_spec = importlib.util.spec_from_file_location("boss_combo12_prepare_overlay", _helper_path)
+if _spec is None or _spec.loader is None:
+    raise RuntimeError("local overlay helper unavailable")
+_helper = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_helper)
+BASE, HERE, OUTPUT, REL, ROOT = (_helper.BASE, _helper.HERE, _helper.OUTPUT, _helper.REL, _helper.ROOT)
+digest, prepare, require = _helper.digest, _helper.prepare, _helper.require
 
 REBUILD = ROOT / "rebuild_20261106"
 MANIFEST = "first_hero_full_admission_20261020/manifest.json"

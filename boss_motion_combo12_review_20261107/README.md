@@ -1,4 +1,4 @@
-# Boss motion rebase onto combo12: prepared, not accepted
+# Boss motion rebase onto combo12/13: isolated, not accepted
 
 The overlay is derived from motion_combo12, with only the reviewed Boss additions
 from boss_motion_review_20261107/changes03. It does not overwrite combo12 with an
@@ -27,9 +27,9 @@ Build only after the current guarded run finishes, not concurrently with it:
 The builder is pinned to accepted combo12. If a later candidate becomes the new
 accepted baseline, review and rebase again before building; do not drop its new
 changes. The separate returnstroke candidate is not incorporated or overwritten.
-The prepared pack has not been built in this review, and no engine/UI was run.
+This preparation note predates the live runs. See live_validation.md for the built combo12 and combo13 candidates, actual narrow Boss pass and remaining checks.
 
-Previous candidate03 remains unaccepted. Its short startup and isolated drawing
+Historical candidate03 remains unaccepted. Its short startup and isolated drawing
 fixture passed, but none of its guarded ordinary-route attempts reached the Boss.
 The last H08 route attempt stopped around room3 under the unchanged sampling
 guard. A verified initial UI path selects H08 and learns E1, and a real room1
