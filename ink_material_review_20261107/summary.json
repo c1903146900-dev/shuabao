@@ -1,0 +1,84 @@
+{
+  "candidate": "ink_material_draft01",
+  "base": "motion_combo11",
+  "promoted": false,
+  "pack_sha256": "f400fce7fbfc1468c071d5896741345ad1ca6ffb30ccff19e597a41f29ea38e0",
+  "manifest_verified": 243,
+  "runs": {
+    "guardteam01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 133.89826652099873,
+      "max_sample_gap": 0.05573859099968104,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23104,
+            "start_ticks": 3833973,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025635382000473328
+      }
+    },
+    "guardteam02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 141.11816428100428,
+      "max_sample_gap": 0.16309016000013798,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23186,
+            "start_ticks": 3851340,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025648301001638174
+      }
+    },
+    "inkmaterial01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 56.48989986000379,
+      "max_sample_gap": 0.055670707995886914,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23268,
+            "start_ticks": 3872231,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025634853998781182
+      }
+    }
+  },
+  "production_delta": "Only _draw_pitcher_zones colors, width and contained material marks; manifest/generation regenerated.",
+  "remaining": [
+    "overlapping player ground-effect readability",
+    "full-floor regression",
+    "user aesthetic acceptance"
+  ]
+}
