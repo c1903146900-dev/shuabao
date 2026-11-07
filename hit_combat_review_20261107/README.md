@@ -1,6 +1,6 @@
-# Directional player hurt response: isolated candidate
+# Directional player hurt response: accepted motion_combo11
 
-Accepted baseline remains motion_combo10. This candidate is NOT promoted.
+Accepted as motion_combo11 after focused native combat, helper boundaries, shared UI and complete first-floor regression. motion_combo10 is preserved. Accepted pack/runtime are byte-identical to the tested directional_hurt_draft01. Earlier checkpoint statuses below are historical, not current blockers.
 
 Actual first-room damage captures showed that the old small facing-based squash was easily missed except for the HP bar. Static review also showed that it could reinforce a normal basic-attack swing instead of communicating a hit, and reacted identically to attacks from opposite sides.
 
@@ -31,3 +31,15 @@ hurtnativemoving03 starts capture only when both actual recoil and moving_basic 
 check_health.gd extends the inherited source-health helper cases with directional normalization, invalid/zero direction fallback, recoil expiry and clearing. It is prepared but NOT RUN in this checkpoint. It uses an isolated helper test source, not production simulation writes.
 
 Remaining: obtain a valid moving-basic damage overlap with stable runtime sampling, inspect waist/legs and continued action, execute helper/UI checks and full-floor regression. Accepted baseline remains combo10; no new acceptance is claimed.
+
+## Final acceptance checks
+
+hurthealth02 passed all 268 inherited and extended helper cases, including direction normalization/fallback, expiry, scope and clear behavior. Guard max gap 0.05079s, exit 0.
+
+hurtnativemoving04 used real held mouse plus alternating short W/S movements in the first mixed-enemy room. Capture began only with both source-owned recoil and moving_basic true. The first three samples had recoil 0.373, 0.130 and 0.012 while the actual walk legs progressed passing_a/contact_b/passing_b; subsequent samples reached zero and continued the basic and walking cycle. Native run guard passed, max gap 0.17862s, normal F9 close and complete cleanup.
+
+Frames 000/001/002/005 were independently inspected: no obvious disconnected waist/legs, floating torso or residual deformation. Frame 002 was heavily occluded by enemies, so it does not prove seam visibility. The recorded moving-basic overlap covers recoil decay, not peak 1.0; full-strength recoil was observed separately in standing/normal-basic captures. This is bounded evidence, not final human aesthetic acceptance.
+
+hurtui01 passed all 11 shared UI checks, max gap 0.05417s. hurtfloor01 completed all 12 rooms including Boss once: simulation 242.279631s, HP 327.5584, gold 395, 9 potions bought/used; Q3 starts/launched/expired 21, contacts 22. Guard wall 254.575421s, max gap 0.07045948s, exit 0 and complete cleanup. This floor is script-assisted normal source combat, not OS-only human play.
+
+All 243 manifest entries verified; only the intended presentation/helper files and seals differ from combo10. No new gameplay stun, damage, action cancellation, target locking, sound or prompts. Boss motion draft remains excluded. Previous failed/insufficient runs are retained above.

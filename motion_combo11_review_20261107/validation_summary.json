@@ -1,0 +1,251 @@
+{
+  "candidate": "directional_hurt_draft01",
+  "accepted_baseline": "motion_combo11",
+  "promoted": true,
+  "runs": {
+    "hitbodybefore01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.472681239996746,
+      "max_sample_gap": 0.0553458540016436,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21296,
+            "start_ticks": 3556059,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02563079199899221
+      }
+    },
+    "hitbodyafter01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.827157190993603,
+      "max_sample_gap": 0.05489805700199213,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21378,
+            "start_ticks": 3564251,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025830778999079484
+      }
+    },
+    "hitchainright01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.521671393995348,
+      "max_sample_gap": 0.056825422994734254,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21460,
+            "start_ticks": 3569772,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02559588100120891
+      }
+    },
+    "hurtnativemoving01": {
+      "passed": false,
+      "reason": "",
+      "elapsed": 0.8304083019975224,
+      "max_sample_gap": 0.050374147002003156,
+      "exit": 1,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21542,
+            "start_ticks": 3585737,
+            "si_code": 1,
+            "si_status": 1
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025682578001578804
+      }
+    },
+    "hurtnativemoving02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 25.069543363002595,
+      "max_sample_gap": 0.058236073004081845,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21624,
+            "start_ticks": 3590032,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02574987999832956
+      }
+    },
+    "hurtnativemoving03": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "elapsed": 50.67400901099609,
+      "max_sample_gap": 0.25607940500049153,
+      "exit": -15,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21706,
+            "start_ticks": 3595397,
+            "si_code": 2,
+            "si_status": 15
+          }
+        ],
+        "errors": [],
+        "seconds": 0.2239332800018019
+      }
+    },
+    "hurthealth02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 2.2823823990038363,
+      "max_sample_gap": 0.050791715999366716,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21788,
+            "start_ticks": 3612848,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025590485005523078
+      }
+    },
+    "hurtnativemoving04": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 40.19457110399526,
+      "max_sample_gap": 0.17862030400283402,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21870,
+            "start_ticks": 3615690,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02557288399839308
+      }
+    },
+    "hurtui01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.964110087996232,
+      "max_sample_gap": 0.054166116999113,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21952,
+            "start_ticks": 3621570,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02555531499820063
+      }
+    },
+    "hurtfloor01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 254.57542059700063,
+      "max_sample_gap": 0.07045948199811392,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22034,
+            "start_ticks": 3624230,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.026025334998848848
+      }
+    }
+  },
+  "moving_basic_acceptance": true,
+  "prepared_not_run": [],
+  "pack_sha256": "33e675266ece262f5acedf2082df8f3d6ca8ced594e6e3c4919f78918fa81f40",
+  "full_floor": {
+    "rooms": 12,
+    "boss_completed": true,
+    "simulation_seconds": 242.279631333337,
+    "hp": 327.558392857131,
+    "gold": 395,
+    "potions_bought": 9,
+    "potions_used": 9,
+    "q3_starts": 21,
+    "q3_contacts": 22
+  }
+}

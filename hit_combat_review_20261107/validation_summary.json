@@ -1,7 +1,7 @@
 {
   "candidate": "directional_hurt_draft01",
-  "accepted_baseline": "motion_combo10",
-  "promoted": false,
+  "accepted_baseline": "motion_combo11",
+  "promoted": true,
   "runs": {
     "hitbodybefore01": {
       "passed": true,
@@ -140,10 +140,112 @@
         "errors": [],
         "seconds": 0.2239332800018019
       }
+    },
+    "hurthealth02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 2.2823823990038363,
+      "max_sample_gap": 0.050791715999366716,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21788,
+            "start_ticks": 3612848,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025590485005523078
+      }
+    },
+    "hurtnativemoving04": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 40.19457110399526,
+      "max_sample_gap": 0.17862030400283402,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21870,
+            "start_ticks": 3615690,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02557288399839308
+      }
+    },
+    "hurtui01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.964110087996232,
+      "max_sample_gap": 0.054166116999113,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21952,
+            "start_ticks": 3621570,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02555531499820063
+      }
+    },
+    "hurtfloor01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 254.57542059700063,
+      "max_sample_gap": 0.07045948199811392,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22034,
+            "start_ticks": 3624230,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.026025334998848848
+      }
     }
   },
-  "moving_basic_acceptance": false,
-  "prepared_not_run": [
-    "check_health.gd"
-  ]
+  "moving_basic_acceptance": true,
+  "prepared_not_run": [],
+  "pack_sha256": "33e675266ece262f5acedf2082df8f3d6ca8ced594e6e3c4919f78918fa81f40",
+  "full_floor": {
+    "rooms": 12,
+    "boss_completed": true,
+    "simulation_seconds": 242.279631333337,
+    "hp": 327.558392857131,
+    "gold": 395,
+    "potions_bought": 9,
+    "potions_used": 9,
+    "q3_starts": 21,
+    "q3_contacts": 22
+  }
 }
