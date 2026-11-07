@@ -1,6 +1,6 @@
 # R1 single-release wind burst candidate
 
-Accepted baseline remains motion_combo15. Ground-star v1 and airborne v2 are preserved. V2 completed normal and northern-position presentation/pause/cancellation observations, but actual review found that isolated target cuts did not sufficiently convey a coherent burst after the hold.
+Previous accepted baseline motion_combo15 remains preserved. Ground-star v1 and airborne v2 are preserved. V2 completed normal and northern-position presentation/pause/cancellation observations, but actual review found that isolated target cuts did not sufficiently convey a coherent burst after the hold.
 
 This v3 retains the complete airborne entry/five connected edges/return/hold and target-contact drawing byte-for-byte. It adds one source-owned release sheet, exclusively from an admitted real r1_impact event. The event position, radius and direction define it. The open288-degree wind crest has a72-degree tapered rear gap, transparent interior, and no equally bright closed ring. It expands visually from.18R toR in.08 seconds and dissipates by.14 seconds. These are drawing times, not damage times or extra contacts. The existing single simultaneous damage event is unchanged.
 
@@ -19,3 +19,9 @@ The prior v2 northern-origin/menu-new-run cancellation evidence remains preserve
 Current status: preserved isolated v3 candidate, normal full-floor regression still required under trustworthy sampling conditions. Accepted baseline remains motion_combo15. Do not promote on short checks or visual review alone.
 
 Only public-safe code, builders, bounded observers and aggregate summaries are included. No screenshots, raw logs, private source references, credentials or user conversation are uploaded.
+
+## Complete-floor verification and promotion
+
+After a fresh20-second non-engine scheduling observation (maximum gap.052158 seconds, no gap above.2), same-byte final candidate r1releasefull02 passed the normal full floor: all12 nodes including Boss,248.454610 simulation seconds, HP323.738393, gold395,9 normal potion purchases and6 uses. It observed3 real R1 starts, releases, impacts and finishes, plus22 Q3 launches. No SCRIPT ERROR. Guard wall260.562510 seconds, maximum gap.060596, exit0 and complete owned-process cleanup. No guard protection changed. The earlier failed attempt is retained. This scripted normal-input route is not human full-floor or user aesthetic acceptance.
+
+The exact247-file runtime was rebuilt and verified byte-for-byte as motion_combo16, with245 manifest seals checked and identical pack SHA-2569b9a2792a5d883f2c25069f6236df4c7392f9f8c8c043cb48459e0dc85edc934. This supersedes the earlier pending-promotion status for this exact candidate only. motion_combo15 and all isolated stages remain intact. Existing exact-v3 whole-cast and11 UI results apply unchanged; v2 northern cancellation evidence retains its previously stated scope. Windows execution, audio and final human visual approval remain unvalidated.

@@ -1,6 +1,6 @@
 # R1 target-impact visual candidate
 
-Current development: the complete airborne five-edge R1 performance and its real-impact burst are preserved in star_performance_v3_changes. See RELEASE_STATUS.md for latest actual observations and the failed full-floor sampling attempt. Accepted baseline remains motion_combo15; v3 is not promoted. The original local-contact candidate documented below is preserved as a historical isolated stage.
+Current development: the complete airborne five-edge R1 performance and its real-impact burst are preserved in star_performance_v3_changes. See RELEASE_STATUS.md for latest actual observations, preserved failed attempt and successful full-floor verification. The exact v3 runtime is now preserved as motion_combo16; motion_combo15 remains intact. The original local-contact candidate documented below is preserved as a historical isolated stage.
 
 Accepted baseline remains motion_combo15. The isolated candidate only changes the actual R1 damage-hit drawing branch in fengli_route_20261024/skill_effects.gd.
 

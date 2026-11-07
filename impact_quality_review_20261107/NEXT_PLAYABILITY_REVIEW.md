@@ -1,0 +1,9 @@
+# Next playability target: combat HUD occlusion
+
+Existing normal-camera r08a observations show a living support enemy body and an active ink pool becoming hidden behind the bottom combat HUD as the player moves north. The support enemy was recovering; the observations do not establish an unseen attack initiation or resulting injury. Relevant host, HUD, director and input-router files are byte-identical between the observed earlier baseline and combo15. Stronger ink-pool drawing does not resolve foreground UI occlusion.
+
+Proposed isolated follow-up: compact the166-logical-pixel combat bottom panel toward88–100 pixels, removing unused permanent spacer rows and consolidating key/skill/cooldown information and potion controls. Preserve readable HP, charges, cooldowns, skill details and all existing upgrade/undo/reset interactions and eligibility. Shrink actual layout and mouse interception regions, not just the visual contents. The proposed height is a candidate, not an accepted design.
+
+Do not alter the existing size18 orthographic camera,40-degree pitch, follow bounds or projection; do not enlarge combat view, move enemy bodies above UI, change hit-testing or damage/AI rules. Shared world projection and signed body-click transforms stay unchanged. Test HUD clicks against accidental attacks, held attack entering UI, release/repress and uninterrupted movement.
+
+Reproduce on the normal a route in r08a with support, shield, shooter, thrower and melee enemies. Move north while a support enemy and a real landed ink pool remain south; compare normal full-camera visibility before and after, record current camera target rather than infer it from old samples. No HP, AI, position or timing injection. Prior images support the problem assessment, not final-candidate visual acceptance. No implementation has been made by this assessment.
