@@ -1,0 +1,101 @@
+{
+  "accepted": true,
+  "accepted_as": "motion_combo08",
+  "baseline": "motion_combo07",
+  "candidate": "q3_combo07_draft01",
+  "pack_sha256": "3968f7ee0db26c47bcb4144ac2a8892e03f264582beef8f5c21769018bd09db5",
+  "mechanics_changed": false,
+  "manifest_entries_verified": 243,
+  "tests": {
+    "q3latestshort01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 25.94420597899807,
+      "max_sample_gap": 0.16681770400100504,
+      "peak_rss_plus_swap": 629936128,
+      "owned_cleanup_complete": true
+    },
+    "q3latestfloor01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 252.1722935430007,
+      "max_sample_gap": 0.06976617499822169,
+      "peak_rss_plus_swap": 416555008,
+      "owned_cleanup_complete": true
+    },
+    "q3latestmirror01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 25.16867039399949,
+      "max_sample_gap": 0.055256876003113575,
+      "peak_rss_plus_swap": 627142656,
+      "owned_cleanup_complete": true
+    },
+    "q3latestpre01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.559733515001426,
+      "max_sample_gap": 0.054586507998465095,
+      "peak_rss_plus_swap": 407781376,
+      "owned_cleanup_complete": true
+    },
+    "q3latestpost01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.499367959000665,
+      "max_sample_gap": 0.05409797900210833,
+      "peak_rss_plus_swap": 410304512,
+      "owned_cleanup_complete": true
+    },
+    "q3latestui01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 12.415773062999506,
+      "max_sample_gap": 0.05477188200165983,
+      "peak_rss_plus_swap": 396496896,
+      "owned_cleanup_complete": true
+    }
+  },
+  "full_floor": {
+    "rooms": 12,
+    "boss": true,
+    "simulated_seconds": 240.530343333332,
+    "final_hp": 320.228392857138,
+    "gold": 395,
+    "purchased": 9,
+    "used": 9,
+    "loadout": [
+      "Q3",
+      "E1",
+      "R2",
+      "P2"
+    ],
+    "q3_started": 21,
+    "q3_launched": 21,
+    "q3_contact": 25,
+    "q3_expired": 21
+  },
+  "lifecycle": {
+    "before_release_age": 0.04,
+    "before_pending": 1,
+    "before_waves": 0,
+    "after_release_age": 0.18,
+    "after_waves": 1,
+    "old_and_new_run_clean": true,
+    "shift_cancel_not_supported_or_claimed": true
+  },
+  "visual_review": "Actual left and right rendered frames show the same continuous sword-arm sweep, emitted wave and return. No extra ring/label. Existing actor body and alpha picking share the same transform. Not final aesthetic approval.",
+  "independent_review": "Only three Q3 selector lines plus expected manifest seals differ. All combo07 armored posture, E3 wind and precise alpha picking remain unchanged. No concrete defect found.",
+  "limitations": [
+    "Script-assisted normal inputs, not human full-floor playtest.",
+    "Shared UI checks are not exhaustive Q3-specific UI.",
+    "No death cancellation or Windows release test.",
+    "Prior failed old-package guard runs retained and not relabelled."
+  ]
+}
