@@ -1,22 +1,60 @@
 {
-  "checkpoint": "elixir_combined_source_20261107",
+  "checkpoint": "elixir_combined_source_20261107_followup",
   "accepted_baseline": {
     "name": "combo17",
     "status": "UNCHANGED"
   },
   "three_item_draft03": {
-    "accepted": false
+    "accepted": false,
+    "stride05": {
+      "full_12_row_and_boss_pass": true,
+      "elapsed_seconds": 262.077908,
+      "guard_pass": true,
+      "max_sample_gap_seconds": 0.094841239,
+      "exit_code": 0,
+      "cleanup": true,
+      "combat_samples": 156,
+      "analyzer_checks_passed": 12,
+      "natural_1p5_second_expiry": true,
+      "source_ui_transactions_stats_cleanup": true,
+      "native_mouse_acceptance": false
+    }
   },
   "five_item_combined_source": {
-    "accepted": false
+    "accepted": false,
+    "stable_all_five_full_floor_verified": false,
+    "draft04": {
+      "arcane01": {
+        "focused_normal_effect_cycle_pass": true,
+        "guard_elapsed_seconds": 94.989382,
+        "max_sample_gap_seconds": 0.088892141,
+        "exit_code": 0,
+        "cleanup": true,
+        "ap": 60,
+        "cdr": 0.1,
+        "first_hit_cast_record_nominal": 46,
+        "actual_additional_damage_event_verification": "pending"
+      },
+      "steel01": {
+        "stopped_before_purchase": true,
+        "stop_reason": "sample_gap_untrusted",
+        "elapsed_seconds": 30.017352,
+        "max_sample_gap_seconds": 0.440435414,
+        "cleanup": true
+      }
+    }
   },
   "validation": {
     "static_parameter_unit_hash_checks": {
       "passed": 26
     },
-    "runtime_full_floor": "unverified",
-    "stride_runtime": "partial_only",
-    "steel_production_ally_locomotion": "absent"
+    "runtime_launches": "paused_after_repeated_sample_gap",
+    "steel_dynamic_effect_and_ally_path_behavior": "not_accepted",
+    "steel_production_ally_locomotion": "absent",
+    "warfare_dynamic_effects": "not_accepted",
+    "hunt_dynamic_effects": "not_accepted",
+    "arcane_actual_packet_proof": "not_accepted",
+    "native_mouse_acceptance": false
   },
   "publication": {
     "source_backup_only": true,
