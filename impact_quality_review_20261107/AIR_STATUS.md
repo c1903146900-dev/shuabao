@@ -10,6 +10,10 @@ The fixed aerial stage is independent of terrain and world origin. Its logical56
 
 Source overlay: star_performance_v2_changes/fengli_route_20261024. Builder: rebuild_20261106/build_r1_air.py. Pack SHA-256:4339f7b06259cb76f5689873ba15bddf4b81879f119eafaa0386c6f2153447b3. Recovery requires preserved combo15 and authorized original inputs; original private assets are not included.
 
-Static inspection found no source-position, camera, collision, target, damage, immunity, slowdown or input-rule mutation. Normal-route visual comparison and pause/finish observation are in progress. A second ordinary-input route will walk to a northern position before the first R1 and then use real menu/Start/Confirm cancellation to check the former layout problem and cleanup. No aesthetic, user, full-floor or all-position acceptance is claimed.
+Static inspection found no source-position, camera, collision, target, damage, immunity, slowdown or input-rule mutation. Normal-route comparison r1air01 passed:26 full-cast frames, all five edges, actual return and hold, real1.1-second impact, six positive hits, source position/timing, fixed aerial pause pose, and empty terminal state. Wall119.307615s, max sample gap .083523, exit0/cleanup pass. Actual captures show a distinct tinted wind projection rather than a terrain star marker.
+
+Northern ordinary-input observation r1airnorth01 passed: the hero walked normally to actual(0,0,-10.75998), cast once, and displayed the aerial performance in a position where the ground-stage method failed. At real age .26 seconds, ordinary Shift correctly did not cancel. Normal menu/Start/Confirm then invalidated the old cast, cleared pending action/star/layout and started a clean distinct run. Wall121.752513s, max gap .055757, exit0/cleanup pass. The actual northern capture was inspected for HUD separation.
+
+The candidate is still not promoted. Visual review finds the final release too weak: local body cuts alone convey simultaneous hits, but not a sufficiently coherent outward burst after the hold. A separate stateless real-impact release treatment is being prepared, preserving this version. No aesthetic, user, full-floor or all-position acceptance is claimed.
 
 Public-safe source/build/tests and this aggregate summary only. No images, raw logs, private references, credentials or conversation content are uploaded.
