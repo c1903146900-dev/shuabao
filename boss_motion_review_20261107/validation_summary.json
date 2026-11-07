@@ -86,6 +86,24 @@
       "max_sample_gap": 0.26889216100244084,
       "peak_rss_plus_swap": 408207360,
       "owned_cleanup_complete": true
+    },
+    "bossdrawfixture02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 3.988811777002411,
+      "max_sample_gap": 0.0509546710018185,
+      "peak_rss_plus_swap": 345997312,
+      "owned_cleanup_complete": true
+    },
+    "bossdrawfixture03": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 3.8391699620042345,
+      "max_sample_gap": 0.05231322300096508,
+      "peak_rss_plus_swap": 349048832,
+      "owned_cleanup_complete": true
     }
   },
   "failures": {
@@ -131,5 +149,33 @@
     "stun_seconds": 1,
     "world_time": 1.06,
     "boss_cancel_proven": false
+  },
+  "isolated_render_fixture": {
+    "production_state_changed": false,
+    "gameplay_session_started": false,
+    "recorded_run": "fengli-route-3516787",
+    "frames": [
+      7,
+      25,
+      27,
+      37
+    ],
+    "stages": [
+      "neutral",
+      "windup",
+      "release",
+      "neutral"
+    ],
+    "center_body_and_empty_ground_checks": 4,
+    "fixture_sha256": "3304f056106c1555ab1990ed7868aeee9eaa97cc628f2c146f91f7340838cc19",
+    "production_pack_unchanged": true,
+    "live_cancel_or_fullfloor_proven": false,
+    "note": "Original production _draw_enemy function runs on dedicated test objects and copies. Projection is simplified for side-by-side body comparison; not ownership admission or live gameplay."
+  },
+  "resume_findings": {
+    "memory_only": true,
+    "disk_restore_supported": false,
+    "dedicated_boss_scene_found": false,
+    "session_result_is_diagnostic_only": true
   }
 }
