@@ -54,5 +54,29 @@
     "max_sample_gap": 0.3044625610054936,
     "exit": -15,
     "cleanup_verified": true
+  },
+  "hudmixed01": {
+    "passed": false,
+    "reason": "",
+    "elapsed": 99.42484477099788,
+    "max_sample_gap": 0.05923348900250858,
+    "exit": 9,
+    "cleanup_verified": true
+  },
+  "hudfull02": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 257.25966355100536,
+    "max_sample_gap": 0.05717928900412517,
+    "exit": 0,
+    "cleanup_verified": true
+  },
+  "hudmixed02": {
+    "passed": false,
+    "reason": "GuardError:sample_gap_untrusted",
+    "elapsed": 21.4056849960034,
+    "max_sample_gap": 0.3362932529998943,
+    "exit": -15,
+    "cleanup_verified": true
   }
 }
