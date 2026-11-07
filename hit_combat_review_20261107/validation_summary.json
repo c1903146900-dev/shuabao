@@ -1,0 +1,76 @@
+{
+  "candidate": "directional_hurt_draft01",
+  "accepted_baseline": "motion_combo10",
+  "promoted": false,
+  "runs": {
+    "hitbodybefore01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.472681239996746,
+      "max_sample_gap": 0.0553458540016436,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21296,
+            "start_ticks": 3556059,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02563079199899221
+      }
+    },
+    "hitbodyafter01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.827157190993603,
+      "max_sample_gap": 0.05489805700199213,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21378,
+            "start_ticks": 3564251,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025830778999079484
+      }
+    },
+    "hitchainright01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 14.521671393995348,
+      "max_sample_gap": 0.056825422994734254,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 21460,
+            "start_ticks": 3569772,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02559588100120891
+      }
+    }
+  }
+}
