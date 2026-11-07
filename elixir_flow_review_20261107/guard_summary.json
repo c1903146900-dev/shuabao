@@ -1,0 +1,29 @@
+{
+  "elixirdefs01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 14.119008109999413,
+    "max_sample_gap": 0.052954967999539804,
+    "exit": 0,
+    "cleanup_verified": true,
+    "functional_result": "failed_before_boot_mount"
+  },
+  "elixirdefs02": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 2.8327848140033893,
+    "max_sample_gap": 0.05062598299991805,
+    "exit": 0,
+    "cleanup_verified": true,
+    "functional_result": "verified_read_only_definitions"
+  },
+  "elixirstride01": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 57.117504611000186,
+    "max_sample_gap": 0.05598015699797543,
+    "exit": 0,
+    "cleanup_verified": true,
+    "functional_result": "failed_optional_actor_dead_access"
+  }
+}
