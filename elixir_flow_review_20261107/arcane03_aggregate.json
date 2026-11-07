@@ -1,0 +1,58 @@
+{
+  "scope": "Read-only validation of completed logs; no new runtime launched; aggregate only, no raw events or private identifiers.",
+  "runs": {
+    "elixirarcane03": {
+      "guard_passed": true,
+      "elapsed_seconds": 94.24621755199769,
+      "max_sample_gap_seconds": 0.058590369000739884,
+      "cleanup_confirmed": true,
+      "hard_kernel_guarantee": false
+    },
+    "elixircomponent01": {
+      "guard_passed": true,
+      "elapsed_seconds": 2.6331985579963657,
+      "max_sample_gap_seconds": 0.0511267379988567,
+      "cleanup_confirmed": true,
+      "hard_kernel_guarantee": false
+    }
+  },
+  "arcane_observed": {
+    "inventory_no_effect": true,
+    "consumed_pending_no_effect": true,
+    "battle_ap": 60,
+    "battle_cdr": 0.1,
+    "first_effective_hit_mapping_verified_count": 2,
+    "trigger_sources": [
+      "e1_dagger",
+      "q3"
+    ],
+    "true_packet_amounts": [
+      46,
+      46
+    ],
+    "one_packet_per_observed_trigger_cast": true,
+    "e1_pierce_same_cast_no_second_packet": true,
+    "event_sequences_unique": true,
+    "effect_event_records": 41,
+    "battle_end_active_claims_observation_and_stats_cleared": true,
+    "full_floor": false,
+    "native_os_input_acceptance": false
+  },
+  "component_checks": {
+    "passed": 40,
+    "failed": 0,
+    "fixture_only": true,
+    "spy_damage_packets": true,
+    "natural_flow": false,
+    "real_damage_pipeline": false
+  },
+  "caveats": [
+    "Natural route uses existing Button.pressed signals, not OS clicks; observation is a partial route, not full-floor acceptance.",
+    "Only E1 dagger/pierce and Q3 proc mapping observed; no natural Q1/Q2/E2, replay, cancellation, modifier-combination or AP-change coverage.",
+    "Final lethal Q3 has no extra damage packet, but terminal cleanup and pre-callback event snapshots prevent proving that lethal cast claim from this log.",
+    "CDR projection verified; exact skill cooldown scaling not separately asserted here.",
+    "Final observer retains effect_numeric_acceptance=pending_runtime_projection_contract; this aggregate verifies only the listed evidence, not blanket acceptance.",
+    "Component checks substitute liveness/scope and use a damage spy; they do not prove real admission or combat integration.",
+    "Logs contain Unicode NUL parsing warnings; natural run also has a V-Sync driver warning."
+  ]
+}

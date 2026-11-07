@@ -1,5 +1,5 @@
 {
-  "checkpoint": "elixir_combined_source_20261107_followup",
+  "checkpoint": "elixir_capped_profile_focused_checks_20261107",
   "accepted_baseline": {
     "name": "combo17",
     "status": "UNCHANGED"
@@ -41,20 +41,77 @@
         "elapsed_seconds": 30.017352,
         "max_sample_gap_seconds": 0.440435414,
         "cleanup": true
+      },
+      "arcane03": {
+        "focused_normal_effect_cycle_pass": true,
+        "actual_additional_damage_verified_for_observed_casts": true,
+        "trigger_sources": [
+          "e1_dagger",
+          "q3"
+        ],
+        "true_packet_amounts": [
+          46,
+          46
+        ],
+        "one_packet_per_observed_cast": true,
+        "e1_pierce_no_second_packet": true,
+        "guard_pass": true,
+        "elapsed_seconds": 94.24621755199769,
+        "max_sample_gap_seconds": 0.058590369000739884,
+        "cleanup": true,
+        "full_floor": false,
+        "broader_skill_and_modifier_coverage": false
+      },
+      "steel03": {
+        "focused_normal_effect_cycle_pass": true,
+        "guard_pass": true,
+        "guard_status": "REIMPLEMENTATION_NOT_PRIOR_GUARD",
+        "elapsed_seconds": 88.693856,
+        "max_sample_gap_seconds": 0.11290015000122366,
+        "exit_code": 0,
+        "cleanup": true,
+        "observed_stats": {
+          "max_hp": 483,
+          "defense": 32,
+          "tenacity": 0.25,
+          "self_move_speed": 6
+        },
+        "proportional_hp_activation_removal_verified": true,
+        "live_path_data_and_cleanup_observed": true,
+        "production_ally_speed_verified": false,
+        "visible_moving_trail_verified": false,
+        "full_floor": false
       }
-    }
+    },
+    "candidate_promoted": false
   },
   "validation": {
     "static_parameter_unit_hash_checks": {
       "passed": 26
     },
-    "runtime_launches": "paused_after_repeated_sample_gap",
-    "steel_dynamic_effect_and_ally_path_behavior": "not_accepted",
+    "runtime_launches": "resumed_with_60fps_test_profile; warfare02_result_pending_at_checkpoint",
+    "steel_dynamic_effect_and_ally_path_behavior": "focused_stats_hp_path_data_verified; production_ally_and_visual_acceptance_pending",
     "steel_production_ally_locomotion": "absent",
     "warfare_dynamic_effects": "not_accepted",
     "hunt_dynamic_effects": "not_accepted",
-    "arcane_actual_packet_proof": "not_accepted",
-    "native_mouse_acceptance": false
+    "arcane_actual_packet_proof": "observed_E1_and_Q3_once_each_46_only; broader_acceptance_pending",
+    "native_mouse_acceptance": false,
+    "test_profile": {
+      "max_fps": 60,
+      "guard_changed_by_profile_script": false,
+      "physics_changed_by_profile_script": false,
+      "sample_gap_root_cause_proven": false,
+      "prior_guard_equivalence_proven": false
+    },
+    "component01": {
+      "checks_passed": 40,
+      "checks_failed": 0,
+      "fixture_only": true,
+      "damage_spy_only": true,
+      "real_damage_pipeline": false,
+      "natural_flow": false
+    },
+    "previous_failures_preserved": true
   },
   "publication": {
     "source_backup_only": true,
