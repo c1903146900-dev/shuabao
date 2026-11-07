@@ -1,0 +1,70 @@
+--- motion_combo12/fengli_route_20261024/presentation.gd
++++ boss_motion_combo12_overlay/fengli_route_20261024/presentation.gd
+@@ -40,6 +40,7 @@
+ var dash_trail:Array=[]
+ var enemy_shots:Dictionary={}
+ var enemy_melee_impacts:Dictionary={}
++var boss_body_releases:Dictionary={}
+ var body_pick_regions:Array=[]
+ var body_pick_images:Dictionary={}
+ var body_pick_context:Dictionary={}
+@@ -135,7 +136,7 @@
+  if str(event.get("run_id",""))!=host.shop_session.run_id or str(event.get("room_id",""))!=host.sim.room_id or int(event.get("generation",-1))!=host.sim.encounter_generation:return
+  if not pitcher_zones.accept(event,host.sim,str(host.shop_session.run_id)):_visual_error(pitcher_zones.error);return
+  var current:String=_current_scope()
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+  rescue_effects.accept(event,host.sim)
+  var nail_pose:Dictionary=nail_effects.accept(event,host.sim)
+  if not nail_pose.is_empty():animation=nail_pose
+@@ -145,9 +146,14 @@
+  player_health_cue.accept(event,host.sim)
+  var kind:String=str(event.get("kind",""))
+  if kind in ["dash","e1_pierce_started","q2_started","q2_strike_started","q2_finished","e2_blink","e2_return"]:_forced_motion_pending=true
+- if kind=="encounter_finished":animation.clear();enemy_melee_impacts.clear()
++ if kind=="encounter_finished":animation.clear();enemy_melee_impacts.clear();boss_body_releases.clear()
+  if kind=="enemy_attack_cancelled":enemy_melee_impacts.erase(str(event.get("actor_id","")))
+  if kind=="enemy_impact" and str(event.get("enemy_kind","")) in ["minion","pouncer"] and event.has_all(["actor_id","world_time","sequence"]):enemy_melee_impacts[str(event.actor_id)]=event.duplicate(true)
++ # A real release owns the brief body settle; recover alone can mean cancellation.
++ if str(event.get("enemy_kind",""))=="boss":
++  var boss_id:String=str(event.get("actor_id",""))
++  if kind in ["enemy_warning","enemy_attack_cancelled","boss_wave_cancelled"]:boss_body_releases.erase(boss_id)
++  elif host.sim.phase=="combat" and not host.sim.hero.dead and kind in ["enemy_impact","boss_wave_released"] and event.has_all(["actor_id","world_time","sequence"]):boss_body_releases[boss_id]=event.duplicate(true)
+  if kind=="enemy_shot" and event.has_all(["actor_id","world_time","sequence"]):enemy_shots[str(event.actor_id)]=event.duplicate(true)
+  if kind in ["attack_started","dash_attack_started","dash","q1_started","q3_started","e1_started","e1_pierce_started","r1_started"]:
+   if host.sim.phase!="combat" or host.sim.hero.dead:return
+@@ -176,7 +182,7 @@
+  visible=host.visible
+  pitcher_zones.current(host.sim,str(host.shop_session.run_id))
+  var current:String=_current_scope()
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+  var actual:Vector3=host.sim.hero.position
+  var forced_now:bool=host.sim.hero.dash_left>0.0 or host.sim.hero.cast_state.has("e1_pierce") or host.sim.hero.cast_state.has("q2")
+  default_effects.sample_q2(host.sim)
+@@ -434,6 +440,25 @@
+   attack_squash=.12*open+.04*shock
+   if not receipt.has("armored_guard_pose"):receipt.armored_guard_pose=[]
+   receipt.armored_guard_pose.append({"actor_id":enemy.actor_id,"broken_left":enemy.guard_broken_left,"lean":attack_lean,"squash":attack_squash,"source_mutations":false})
++ if key=="boss" and host.sim.phase=="combat":
++  var forward:Vector2=p(enemy.position+enemy.aim)-at
++  var stage:String="neutral"
++  if str(enemy.state)=="warning":
++   var wind:float=clampf(float(enemy.warning_progress),0.0,1.0)
++   var weight:float=wind*wind*(3.0-2.0*wind)
++   attack_squash=.14*weight
++   attack_lean=-signf(forward.x)*.10*weight
++   stage="windup"
++  elif str(enemy.state) in ["recover","boss_wave_active"] and boss_body_releases.has(str(enemy.actor_id)):
++   var release:Dictionary=boss_body_releases[str(enemy.actor_id)]
++   var age:float=host.sim.clock.world_time-float(release.world_time)
++   if age>=0.0 and age<.28:
++    var settle:float=pow(1.0-age/.28,2.0)
++    attack_squash=-.12*settle
++    attack_lean=signf(forward.x)*.17*settle
++    stage="release"
++  if not receipt.has("boss_body_motion"):receipt.boss_body_motion=[]
++  receipt.boss_body_motion.append({"actor_id":enemy.actor_id,"state":enemy.state,"stage":stage,"lean":attack_lean,"squash":attack_squash,"world_time":host.sim.clock.world_time,"visual_only":true})
+  var body_scale:=Vector2(body_facing*(1+.035*amount)*(1+attack_squash),(1-.035*amount)*(1-attack_squash))
+  body_pick_context={"actor_id":str(enemy.actor_id),"transform":Transform2D(tilt+attack_lean,body_scale,0.0,at)}
+  draw_set_transform(at,tilt+attack_lean,body_scale)

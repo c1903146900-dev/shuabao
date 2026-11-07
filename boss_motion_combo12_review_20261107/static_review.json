@@ -1,0 +1,37 @@
+{
+  "status": "prepared_not_engine_tested",
+  "baseline": "motion_combo12",
+  "origin_candidate": "boss_motion_draft03",
+  "source_sha256": "ff3fb399f0e329522c5da625f142f06793b4dcf23def8d73db199b053a3954e6",
+  "overlay_sha256": "315477610fba26bbe54a6d41f4df782ab002dc04ea150e52e325605a0dca36a8",
+  "static_checks": {
+    "candidate03_reconstructed_exactly": true,
+    "reverse_patch_restores_combo12_exactly": true,
+    "boss_block_only_in_enemy_function": true,
+    "shared_enemy_transform_facing_flash_and_picking_unchanged": true,
+    "terminal_release_storage_guard_preserved": true,
+    "preserved_functions": [
+      "_hero",
+      "_draw_pitcher_zones",
+      "_reaction_sprite",
+      "_flash_sprite",
+      "_record_body_pick",
+      "body_aim_at",
+      "_body_alpha"
+    ],
+    "baseline_protected_file_pins": {
+      "fengli_route_20261024/presentation.gd": "ff3fb399f0e329522c5da625f142f06793b4dcf23def8d73db199b053a3954e6",
+      "__clean_fengli/entry.gd": "c9c5a67d26f5f43394e97adfb363c25af31ff3301c03bccbbd802d9dd05971e5",
+      "fengli_route_20261024/host.gd": "d2ff80b848bd7154f6869d27e6758cb494b21dc7d9ad79bee9647aee98e56747",
+      "fengli_route_20261024/input_router.gd": "651a2b60ea745482c4476ccf764e2d8e5c4f3c681d4cb517c90a8ee5c9473416",
+      "fengli_route_20261024/player_health_cue.gd": "2b571eda6f64690e9462103d7ed62531243691cc3f3ec395acbe489f31d7b708",
+      "fengli_route_20261024/boss_wave.gd": "9ad11de65fe2b75b2791fe0ab1804ee3d150252e927c9319d3b3b1d7efade32f",
+      "fengli_route_20261024/enemy_director.gd": "f03be03ff9490defe9fb67b92566e43e1ab9bc7d1658888c035b4a3adddaa270",
+      "scripts/combat/fengli_sim.gd": "fea7d3ef921a672b06c957ee984b64199ec2a09d6ce59daa1c47ad9e61779bbc"
+    }
+  },
+  "mechanics_changed": false,
+  "engine_or_ui_run": false,
+  "pack_built": false,
+  "live_boss_cancel_proven": false
+}
