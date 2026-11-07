@@ -1,4 +1,4 @@
-# Boss motion rebase onto combo12/13: isolated, not accepted
+# Boss motion rebase onto combo12/13: accepted in motion_combo14
 
 The overlay is derived from motion_combo12, with only the reviewed Boss additions
 from boss_motion_review_20261107/changes03. It does not overwrite combo12 with an
@@ -35,3 +35,5 @@ The last H08 route attempt stopped around room3 under the unchanged sampling
 guard. A verified initial UI path selects H08 and learns E1, and a real room1
 dagger contact applied its stun. Neither proves Boss cancellation or live body
 event handling. Do not report those missing checks as passes.
+
+Latest status: the combo13-based exact tested content is accepted as motion_combo14. See live_validation.md and motion_combo14_review_20261107/README.md; older preparation limits below are historical.

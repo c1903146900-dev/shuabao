@@ -1,7 +1,7 @@
 {
   "observer": "observe_wave_lifecycle.gd",
-  "sha256": "097d3c957f0d946846c94570c7f92abd4d46bb6289bacd377fe1bfa029affec8",
-  "line_count": 544,
+  "sha256": "8d26409fe1c44092db519f7797c9436242daa56e1e42afe388c37afbc5787834",
+  "line_count": 630,
   "preserved_verified_helpers": {
     "key": true,
     "press": true,
@@ -13,9 +13,28 @@
     "use_potion": true,
     "normal_route_tick": true
   },
+  "credited_pose_capture_lifecycle_oracles_unchanged_from_attempt01": {
+    "current_event": true,
+    "read_pose": true,
+    "validate_pose": true,
+    "queue_capture": true,
+    "save_capture": true,
+    "capture_after_draw": true,
+    "sample_wave": true,
+    "open_active_menu": true,
+    "old_pause_intact": true,
+    "menu_capture": true,
+    "lifecycle_step": true
+  },
   "direct_simulation_assignments_found": [],
   "direct_mechanical_or_lifecycle_mutators_found": [],
-  "initial_direction_plan": "normal lateral movement before approaching from authored 20-unit entry gap; source warning must prove horizontal direction",
+  "geometry_check": {
+    "old_target_on_or_inside_authored_parapet_even_without_actor_radius": true,
+    "new_two_segment_path_clear_for_tested_radii_0_5_0_65_1_0": true,
+    "live_source_clipping_preflight_added": true,
+    "not_a_live_navigation_test": true
+  },
+  "initial_direction_plan": "actual warning diagnostic and horizontal gate; no waypoint-completion gate; at most one separately logged uncredited positioning wave and sweep",
   "capture_limit": 7,
   "total_timeout_seconds": 550,
   "boss_timeout_seconds": 50,
@@ -24,5 +43,7 @@
   "gdscript_parser_run": false,
   "production_or_guard_changed": false,
   "contains_private_fixtures": false,
-  "status": "source_only_prepared_not_runtime_validated"
+  "status": "revised_source_only_prepared_not_runtime_validated",
+  "later_goal_validation": "bounded geometry-checked horizontal targets and swept-clear sweep waypoints; blocked goals fail with actual positions, no indefinite unreachable target",
+  "warning_snapshot_registration_review": "boss_wave.commit stores _casts and _owners and warning state before emitting enemy_warning; observer snapshot runs after registration"
 }

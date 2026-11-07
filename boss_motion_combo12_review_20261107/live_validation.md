@@ -1,6 +1,6 @@
 # Boss candidate live validation, 2026-11-07
 
-Status: isolated candidate, not accepted. Accepted development baseline remains motion_combo13.
+Latest status: accepted byte-for-byte as motion_combo14 after the checks recorded below. The following initial sections preserve the historical candidate status and validation sequence.
 
 Combo13 includes the accepted alternating basic returnstroke and combo12 ink material. Its presentation source is identical to combo12, so the additive Boss presentation overlay applies without losing the accepted changes. The isolated builder is rebuild_20261106/build_boss_combo13.py. Candidate pack SHA-256: e7832236116d2a85a724818c782c0bc14f5cdc41e3f2fd0e8b21ee43f88ba702. The only runtime differences from combo13 are presentation.gd and its two generated seal files; all 243 sealed entries verified.
 
@@ -19,3 +19,15 @@ Not yet tested in this run: successful wave release, horizontal left/right direc
 ## Separate complete-floor regression
 
 bossfull13a used the same unchanged ordinary-route observer as accepted combo13. It completed all 12 a-route nodes and defeated the Boss: simulation 241.247629 seconds, remaining HP 315.968393, gold 395, nine potions purchased and four used. Guard passed at wall 253.497132 seconds, peak RSS plus swap 428724224 bytes, maximum gap 0.116337676 seconds, exit 0 and owned cleanup verified. This is script-assisted normal-input/UI gameplay, not a human/OS-input acceptance test. It does not substitute for the separate opposite-direction and active-release lifecycle checks. The Boss candidate remains isolated pending those checks.
+
+## Wave/lifecycle attempt: observer positioning failure
+
+bosswave13a reached the real Boss but correctly exited 9 before any mirror/capture claim: first_warning_before_lateral_approach_completed. The Boss chased the player while the observer moved laterally, invalidating the static-distance assumption in the planned approach. No waves were credited and no screenshots captured. This is an observer-navigation failure, not an environment or game-motion failure. Guard sampling remained within bounds (maximum 0.056082188 seconds; wall 160.515663 seconds; peak 435740672 bytes); cleanup passed. Existing complete-floor result remains valid, but wave directions and new-run lifecycle are still pending. Future observer work must account for the actual chase and preserve strict event/pose checks.
+
+Further source diagnosis identified an unreachable observer waypoint: (5.8,0,10) is inside the authored southeast parapet, which starts at x=3,z=10 before hero-radius expansion. The Boss legitimately chased while the observer could not reach that waypoint. The failed run did not record the warning direction, so it does not demonstrate a direction mismatch. The observer is being revised to use the central opening and qualify actual projected warning direction rather than require waypoint completion. No production scene or enemy behavior change is warranted by this test defect.
+
+## Revised wave/lifecycle pass and acceptance
+
+bosswave13b passed on the unchanged candidate pack after correcting observer navigation. Actual wave projected horizontal components were +18.032593 and -39.991333 pixels per source direction unit. Each had matching source warning/release/advance events and matching signed post-draw pose. First wave had eight release samples and 29 settled samples, then a genuine finish; the second had one immediate release sample before pausing at age 0.0. No uncredited positioning wave was needed. Menu correctly retained the paused active cache; actual new-run confirmation produced encounter_finished, emptied old cache, retired old owners and fresh post-draw frames with no Boss remnants. Guard passed, wall 170.867511 seconds, maximum gap 0.082098357 seconds, peak 436727808 bytes, exit 0 and cleanup passed.
+
+bossui13a subsequently passed all 11 existing UI checks, wall 12.397265 seconds, maximum gap 0.054740685 seconds. With the independent cancellation and complete-floor passes, the exact tested runtime/pack was promoted byte-for-byte to motion_combo14. See motion_combo14_review_20261107/README.md for the accepted baseline and explicit limits. Original failed attempts and combo13 are preserved.

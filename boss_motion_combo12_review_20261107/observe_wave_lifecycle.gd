@@ -1,6 +1,7 @@
 extends SceneTree
 # Isolated normal-input observer. Never mutate production state or guard settings.
-# One normal route; wave 1 -> mandatory sweep -> opposite-horizontal wave 2.
+# One normal route; at most one uncredited positioning wave/sweep, then
+# wave 1 -> mandatory sweep -> opposite-horizontal wave 2.
 # Menu pauses/preserves the old release. Start + Confirm must retire it and create
 # fresh owners/cache. This is NOT a full-floor win or an OS-input/picking test.
 const TOTAL_TIMEOUT:float=550.0
@@ -32,7 +33,14 @@ var waves:Array=[]
 var wave_index:int=-1
 var sweep_warning:Dictionary={}
 var sweep_impact:Dictionary={}
+var positioning_wave:Dictionary={}
+var positioning_sweep_warning:Dictionary={}
+var positioning_sweep_impact:Dictionary={}
+var last_warning_diagnostic:Dictionary={}
+var navigation_issue:Dictionary={}
 var screen_axis:Vector3=Vector3.RIGHT
+var entry_waypoint:Vector3=Vector3.INF
+var entry_waypoint_done:bool=false
 var initial_side_target:Vector3=Vector3.INF
 var initial_side_done:bool=false
 var escape_target:Vector3=Vector3.INF
@@ -59,7 +67,7 @@ func _initialize()->void:
 func fail(reason:String)->void:
  if failed:return
  failed=true
- print("BOSS_WAVE_FAIL ",JSON.stringify({"reason":reason,"stage":stage,"elapsed":elapsed,"route":route,"waves":waves,"sweep_warning":sweep_warning,"sweep_impact":sweep_impact,"lifecycle":lifecycle,"terminal":terminal,"captures":captures.keys(),"full_floor_win":false}))
+ print("BOSS_WAVE_FAIL ",JSON.stringify({"reason":reason,"stage":stage,"elapsed":elapsed,"route":route,"waves":waves,"positioning_wave":positioning_wave,"positioning_sweep_warning":positioning_sweep_warning,"positioning_sweep_impact":positioning_sweep_impact,"last_warning_diagnostic":last_warning_diagnostic,"navigation_issue":navigation_issue,"sweep_warning":sweep_warning,"sweep_impact":sweep_impact,"lifecycle":lifecycle,"terminal":terminal,"captures":captures.keys(),"full_floor_win":false}))
  quit(9)
 
 func key(code:int,on:bool,aim:Vector3=Vector3.INF)->Dictionary:
@@ -113,23 +121,101 @@ func projected_x(direction:Vector3)->float:
  return (host.presentation.p(boss.position+direction)-host.presentation.p(boss.position)).x
 
 func record_wave_warning(event:Dictionary)->void:
- if wave_index<0 and not initial_side_done:fail("first_warning_before_lateral_approach_completed");return
  if str(event.get("shape",""))!="boss_wave_line" or str(event.get("boss_cast_id","")).is_empty():fail("expected_authentic_wave_warning");return
  var direction:Vector3=event.get("direction",Vector3.ZERO)
  if not direction.is_finite() or direction.length_squared()<EPS:fail("invalid_wave_direction");return
  var horizontal:float=projected_x(direction)
+ var boss:Dictionary=host.sim.enemy_by_id(boss_id)
+ last_warning_diagnostic={"event":compact(event),"stage":stage,"hero":host.sim.hero.position,"boss":boss.position,"gap":host.sim.hero.position.distance_to(boss.position),"screen_x":horizontal,"entry_waypoint_done":entry_waypoint_done,"initial_side_done":initial_side_done,"credited_waves":waves.size()}
+ print("BOSS_WAVE_WARNING_DIAGNOSTIC ",JSON.stringify(last_warning_diagnostic))
  # Demand visibly horizontal source aim, not a numerical sign near zero.
- if absf(horizontal)<4.0:fail("wave_direction_not_meaningfully_horizontal");return
+ # Navigation milestones are not proof. A genuinely qualifying early warning
+ # counts; one nonhorizontal early wave may position us but earns no pose credit.
+ if absf(horizontal)<4.0:
+  if wave_index<0 and positioning_wave.is_empty():
+   positioning_wave={"warning":evidence("positioning_wave_warning_uncredited",event),"screen_x":horizontal,"mirror_credit":false}
+   if not set_wave_escape(event):return
+   stage="positioning_wave_warning";return
+  fail("wave_direction_not_meaningfully_horizontal");return
+ if wave_index<0 and not positioning_wave.is_empty() and (positioning_sweep_impact.is_empty() or int(event.sequence)<=int(positioning_sweep_impact.sequence)):fail("positioning_cycle_missing_mandatory_sweep");return
  if wave_index==0 and signf(horizontal)!=-float(waves[0].sign):fail("second_wave_not_opposite_horizontal");return
  if wave_index==0 and (sweep_impact.is_empty() or int(event.sequence)<=int(sweep_impact.sequence)):fail("second_wave_missing_intervening_sweep");return
  wave_index+=1
  waves.append({"warning":evidence("wave%d_warning"%(wave_index+1),event),"sign":signf(horizontal),"screen_x":horizontal,"windup_samples":0,"release_samples":0,"settled_samples":0,"last_windup":-1.0,"last_release":-1.0,"last_settled":-1.0})
+ if not set_wave_escape(event):return
+ stage="wave%d_warning"%(wave_index+1)
+
+func set_wave_escape(event:Dictionary)->bool:
  var boss:Dictionary=host.sim.enemy_by_id(boss_id)
  var cast:Dictionary=host.sim.enemy_director.boss_wave.snapshot(host.sim,boss)
- if str(cast.get("boss_cast_id",""))!=str(event.boss_cast_id) or bool(cast.get("released",true)) or not cast.get("escape",{}).has("destination"):fail("warning_has_no_authoritative_escape");return
+ if str(cast.get("boss_cast_id",""))!=str(event.boss_cast_id) or bool(cast.get("released",true)) or not cast.get("escape",{}).has("destination"):fail("warning_has_no_authoritative_escape");return false
  escape_target=cast.escape.destination
- if not escape_target.is_finite():fail("escape_destination_invalid");return
- stage="wave%d_warning"%(wave_index+1)
+ if not escape_target.is_finite():fail("escape_destination_invalid");return false
+ return true
+
+func clear_goal(origin:Vector3,target:Vector3)->bool:
+ if not target.is_finite():return false
+ var radius:float=host.sim.hero_radius
+ if host.sim.clamp_position(target,radius).distance_to(target)>.02:return false
+ return host.sim._move_clipped(origin,target,radius).distance_to(target)<=.02
+
+func walk_horizontal(boss:Dictionary,side_sign:float,distance:float)->void:
+ var origin:Vector3=host.sim.hero.position
+ var depth:=Vector3(-screen_axis.z,0,screen_axis.x)
+ var radii:Array=[distance,distance-.4,distance-.8]
+ for radius:float in radii:
+  for offset:float in [0.0,1.2,-1.2,2.4,-2.4]:
+   var target:Vector3=boss.position+screen_axis*side_sign*radius+depth*offset
+   var gap:float=target.distance_to(boss.position)
+   if distance>3.8 and gap<=4.0:continue
+   if distance<=3.8 and gap>3.7:continue
+   if clear_goal(origin,target):walk(target,.2);return
+ navigation_issue={"stage":stage,"hero":origin,"boss":boss.position,"requested_side":side_sign,"requested_distance":distance}
+ fail("no_clear_bounded_horizontal_goal")
+
+func start_sweep(event:Dictionary,positioning:bool)->void:
+ if str(event.get("shape",""))!="cone":fail("expected_mandatory_sweep_shape");return
+ if positioning:
+  if not positioning_sweep_warning.is_empty() or not positioning_wave.has("finish") or int(event.sequence)<=int(positioning_wave.finish.sequence):fail("uncorrelated_positioning_sweep_warning");return
+  positioning_sweep_warning=evidence("positioning_sweep_warning_uncredited",event)
+ else:
+  if not sweep_warning.is_empty():fail("expected_one_mandatory_sweep");return
+  sweep_warning=evidence("intervening_sweep_warning",event)
+ var direction:Vector3=event.get("direction",Vector3.ZERO)
+ if not direction.is_finite() or direction.length_squared()<EPS:fail("invalid_sweep_direction");return
+ var side:=Vector3(-direction.z,0,direction.x).normalized()
+ var boss:Dictionary=host.sim.enemy_by_id(boss_id)
+ var origin:Vector3=host.sim.hero.position
+ cross_waypoint=Vector3.INF
+ for radius:float in [3.8,3.2,2.8]:
+  for direction_sign:float in [1.0,-1.0]:
+   var candidate:Vector3=boss.position+side*radius*direction_sign
+   if clear_goal(origin,candidate):cross_waypoint=candidate;break
+  if cross_waypoint.is_finite():break
+ if not cross_waypoint.is_finite():
+  navigation_issue={"stage":stage,"hero":origin,"boss":boss.position,"sweep_direction":direction}
+  fail("no_clear_bounded_sweep_waypoint");return
+ crossed=false;stage="positioning_sweep_warning" if positioning else "sweep_warning"
+
+func watch_positioning(event:Dictionary)->bool:
+ if positioning_wave.is_empty() or wave_index>=0:return false
+ var kind:String=str(event.get("kind",""))
+ if kind=="enemy_impact":
+  if stage!="positioning_sweep_warning" or positioning_sweep_warning.is_empty() or not positioning_sweep_impact.is_empty() or str(event.get("shape",""))!="cone" or int(event.sequence)<=int(positioning_sweep_warning.sequence):fail("uncorrelated_positioning_sweep_impact");return true
+  positioning_sweep_impact=evidence("positioning_sweep_impact_uncredited",event)
+  stage="position_after_warmup";return true
+ if not kind.begins_with("boss_wave_"):return false
+ if str(event.get("boss_cast_id",""))!=str(positioning_wave.warning.boss_cast_id):fail("wrong_positioning_wave_identity");return true
+ if kind=="boss_wave_released":
+  if stage!="positioning_wave_warning" or positioning_wave.has("release") or int(event.sequence)<=int(positioning_wave.warning.sequence) or Vector3(event.get("direction",Vector3.ZERO)).distance_to(Vector3(positioning_wave.warning.direction))>EPS:fail("uncorrelated_positioning_wave_release");return true
+  positioning_wave["release"]=evidence("positioning_wave_release_uncredited",event);stage="positioning_wave_active"
+ elif kind=="boss_wave_advanced":
+  if not positioning_wave.has("release") or int(event.sequence)<=int(positioning_wave.release.sequence):fail("positioning_front_without_release");return true
+  if not positioning_wave.has("advance") and float(event.get("distance",0.0))>float(event.get("previous_distance",0.0))+EPS:positioning_wave["advance"]=evidence("positioning_wave_advance_uncredited",event)
+ elif kind=="boss_wave_finished":
+  if not positioning_wave.has_all(["release","advance"]) or positioning_wave.has("finish") or int(event.sequence)<=int(positioning_wave.advance.sequence):fail("positioning_finish_without_front");return true
+  positioning_wave["finish"]=evidence("positioning_wave_finished_uncredited",event);stage="positioning_await_sweep"
+ return true
 
 func _watch(event:Dictionary)->void:
  if failed or boss_start<0.0 or not current_event(event):return
@@ -151,23 +237,13 @@ func _watch(event:Dictionary)->void:
   return
  if owner and kind in ["enemy_attack_cancelled","boss_wave_cancelled"]:fail("unexpected_cancel_in_successful_release_test");return
  if owner and kind=="enemy_warning":
-  if stage=="approach_wave1":record_wave_warning(event)
-  elif stage=="await_sweep":
-   if not sweep_warning.is_empty() or str(event.get("shape",""))!="cone":fail("expected_one_mandatory_sweep");return
-   sweep_warning=evidence("intervening_sweep_warning",event)
-   var direction:Vector3=event.get("direction",Vector3.ZERO)
-   var side:=Vector3(-direction.z,0,direction.x).normalized()
-   var boss:Dictionary=host.sim.enemy_by_id(boss_id)
-   var origin:Vector3=host.sim.hero.position
-   var left:Vector3=boss.position+side*3.8
-   var right:Vector3=boss.position-side*3.8
-   var left_path:Vector3=host.sim._move_clipped(origin,left,host.sim.hero_radius)
-   var right_path:Vector3=host.sim._move_clipped(origin,right,host.sim.hero_radius)
-   cross_waypoint=left if left_path.distance_to(left)<=right_path.distance_to(right) else right
-   crossed=false;stage="sweep_warning"
+  if stage in ["approach_wave1","position_after_warmup"]:record_wave_warning(event)
+  elif stage=="positioning_await_sweep":start_sweep(event,true)
+  elif stage=="await_sweep":start_sweep(event,false)
   elif stage=="position_wave2":record_wave_warning(event)
   else:fail("unexpected_additional_warning")
   return
+ if owner and watch_positioning(event):return
  if owner and kind=="enemy_impact":
   if stage!="sweep_warning" or sweep_warning.is_empty() or not sweep_impact.is_empty() or str(event.get("shape",""))!="cone" or int(event.sequence)<=int(sweep_warning.sequence):fail("uncorrelated_intervening_sweep");return
   sweep_impact=evidence("intervening_sweep_impact",event);stage="position_wave2";return
@@ -265,14 +341,19 @@ func begin_boss()->void:
  boss_scope=boss_run+":"+boss_room+":"+str(boss_generation)
  screen_axis=host.camera.global_basis.x;screen_axis.y=0.0;screen_axis=screen_axis.normalized()
  if screen_axis.length_squared()<.9:fail("horizontal_camera_axis_invalid");return
- # Authored room entry resets the hero before combat, so preparation movement
- # cannot pre-position this check. Move sideways first at the live entry gap.
+ # Room arrival resets the hero. The foreground parapets block a direct sideways
+ # target at z=10, so leave through the clear central opening before moving aside.
+ # The moving Boss may still commit early; only its actual direction earns credit.
  if host.sim.hero.position.distance_to(bosses[0].position)<14.0:fail("insufficient_initial_gap_for_side_approach");return
- initial_side_target=host.sim.hero.position+screen_axis*5.8
+ entry_waypoint=host.sim.hero.position+Vector3.FORWARD*1.8
+ initial_side_target=entry_waypoint+screen_axis*5.8
+ var entry_clip:Vector3=host.sim._move_clipped(host.sim.hero.position,entry_waypoint,host.sim.hero_radius)
+ var side_clip:Vector3=host.sim._move_clipped(entry_waypoint,initial_side_target,host.sim.hero_radius)
+ if entry_clip.distance_to(entry_waypoint)>.02 or side_clip.distance_to(initial_side_target)>.02:fail("initial_positioning_path_not_clear");return
  output_dir=OS.get_user_data_dir().path_join("boss_wave_lifecycle").path_join(boss_run.validate_filename())
  if DirAccess.make_dir_recursive_absolute(output_dir)!=OK:fail("capture_directory_failed");return
  stage="approach_wave1"
- print("BOSS_WAVE_BEGIN ",JSON.stringify({"run_id":boss_run,"room_id":boss_room,"generation":boss_generation,"actor_id":boss_id,"route":route,"output":output_dir,"normal_input_only":true}))
+ print("BOSS_WAVE_BEGIN ",JSON.stringify({"run_id":boss_run,"room_id":boss_room,"generation":boss_generation,"actor_id":boss_id,"route":route,"output":output_dir,"normal_input_only":true,"hero":host.sim.hero.position,"boss":bosses[0].position,"entry_waypoint":entry_waypoint,"side_target":initial_side_target,"path_geometry_checked":true}))
 
 func sample_wave()->void:
  if wave_index<0:return
@@ -309,21 +390,26 @@ func boss_step()->void:
  tick=0.0
  use_potion()
  if stage=="approach_wave1":
+  if not entry_waypoint_done:
+   if host.sim.hero.position.distance_to(entry_waypoint)<.3:entry_waypoint_done=true
+   else:walk(entry_waypoint,.15);return
   if not initial_side_done:
    if host.sim.hero.position.distance_to(initial_side_target)<.3:
     initial_side_done=true
     print("BOSS_WAVE_SIDE_POSITIONED ",JSON.stringify({"hero":host.sim.hero.position,"boss":boss.position,"gap":host.sim.hero.position.distance_to(boss.position),"world_time":host.sim.clock.world_time}))
    else:walk(initial_side_target,.15);return
-  walk(boss.position+screen_axis*5.8,.2)
- elif stage in ["wave1_warning","wave1_active","wave2_warning","wave2_active"]:
+  walk_horizontal(boss,1.0,5.8)
+ elif stage in ["wave1_warning","wave1_active","wave2_warning","wave2_active","positioning_wave_warning","positioning_wave_active"]:
   if not escape_target.is_finite():fail("wave_escape_missing");return
   walk(escape_target,.15)
- elif stage=="await_sweep":walk(boss.position+screen_axis*float(waves[0].sign)*2.8,.18)
- elif stage in ["sweep_warning","position_wave2"]:
+ elif stage=="await_sweep":walk_horizontal(boss,float(waves[0].sign),2.8)
+ elif stage=="positioning_await_sweep":walk_horizontal(boss,1.0,2.8)
+ elif stage in ["sweep_warning","position_wave2","positioning_sweep_warning","position_after_warmup"]:
   if not crossed:
    if host.sim.hero.position.distance_to(cross_waypoint)<.35:crossed=true
    else:walk(cross_waypoint,.18);return
-  walk(boss.position-screen_axis*float(waves[0].sign)*6.0,.2)
+  var target_sign:float=1.0 if stage in ["positioning_sweep_warning","position_after_warmup"] else -float(waves[0].sign)
+  walk_horizontal(boss,target_sign,6.0)
 
 func open_active_menu(sample:Dictionary)->void:
  if stage!="wave2_active" or waves.size()!=2 or not captures.has_all(["wave1_windup","wave1_release","wave1_settled","wave2_windup","wave2_release"]):fail("active_menu_without_two_signed_waves");return
@@ -378,7 +464,7 @@ func check_fresh_frame()->void:
  lifecycle["new_ids"]=ids;lifecycle["new_run"]=new_run;lifecycle["new_scope"]=expected_scope;lifecycle["fresh_empty_postdraw_frames"]=fresh_frames
  if not captures.has("new_run_initial"):save_capture("new_run_initial",{"new_run":new_run,"scope":expected_scope,"new_ids":ids,"boss_cache_empty":true,"boss_poses":0,"boss_fronts":0,"initial_draft_visible":true})
  if fresh_frames>=2:
-  print("BOSS_WAVE_DIRECTIONS_LIFECYCLE_PASS ",JSON.stringify({"elapsed":elapsed,"boss_seconds":lifecycle_start-boss_start,"waves":waves,"sweep_warning":sweep_warning,"sweep_impact":sweep_impact,"terminal":terminal,"lifecycle":lifecycle,"captures":captures,"successful_wave_release_tested":true,"opposite_horizontal_wave_poses_tested":true,"active_release_menu_new_run_tested":true,"full_floor_win":false,"OS_input_tested":false,"menu_resume_tested":false,"picking_tested":false}))
+  print("BOSS_WAVE_DIRECTIONS_LIFECYCLE_PASS ",JSON.stringify({"elapsed":elapsed,"boss_seconds":lifecycle_start-boss_start,"waves":waves,"positioning_wave_uncredited":positioning_wave,"positioning_sweep_warning_uncredited":positioning_sweep_warning,"positioning_sweep_impact_uncredited":positioning_sweep_impact,"sweep_warning":sweep_warning,"sweep_impact":sweep_impact,"terminal":terminal,"lifecycle":lifecycle,"captures":captures,"successful_wave_release_tested":true,"opposite_horizontal_wave_poses_tested":true,"active_release_menu_new_run_tested":true,"full_floor_win":false,"OS_input_tested":false,"menu_resume_tested":false,"picking_tested":false}))
   quit(0)
 
 func lifecycle_step()->void:
