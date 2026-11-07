@@ -18,4 +18,8 @@ The new normal-route observer targets actual multi-target R1 damage, source-matc
 
 Guarded actual comparison r1impact01 passed: six source-confirmed positive R1 damage events each produced the matching body cut, five defeated targets used their original saved body frame and the surviving armored enemy used its live original drawing. The effect expired on the unchanged real-time lifetime. Actual normal-camera frames show contact on the bodies instead of repeated foot-level stars. This targeted observation did not require room victory and is not a full-floor result. Guard maximum sample gap was 0.055659 seconds, wall duration 125.234 seconds, exit 0, cleanup verified.
 
-Status: normal-route full-floor regression with R1 selected is in progress. Not promoted. No raw logs, captured images, private reference materials, credentials or personal data are included in the public checkpoint.
+Normal-route full-floor regression r1impactfull01 was stopped by the unchanged sampling protection after 118.379 seconds: maximum gap 0.216476 seconds exceeded 0.2 seconds. Owned process cleanup passed. This is a failed guarded run, not a completed floor or gameplay pass; it is retained without automatic retry.
+
+Visual review limitation: the new cuts improve contact placement and silhouette clarity but remain deliberately thin, and the surrounding R1 trails still dominate. This is not final artistic or overall combat-feel acceptance.
+
+Status: candidate remains isolated; accepted baseline remains motion_combo15. A stable full-floor regression remains necessary before promotion. No raw logs, captured images, private reference materials, credentials or personal data are included in the public checkpoint.
