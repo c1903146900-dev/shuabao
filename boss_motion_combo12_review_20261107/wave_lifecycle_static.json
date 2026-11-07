@@ -1,0 +1,28 @@
+{
+  "observer": "observe_wave_lifecycle.gd",
+  "sha256": "097d3c957f0d946846c94570c7f92abd4d46bb6289bacd377fe1bfa029affec8",
+  "line_count": 544,
+  "preserved_verified_helpers": {
+    "key": true,
+    "press": true,
+    "release": true,
+    "walk": true,
+    "draft_step_normal": true,
+    "learn": true,
+    "shop": true,
+    "use_potion": true,
+    "normal_route_tick": true
+  },
+  "direct_simulation_assignments_found": [],
+  "direct_mechanical_or_lifecycle_mutators_found": [],
+  "initial_direction_plan": "normal lateral movement before approaching from authored 20-unit entry gap; source warning must prove horizontal direction",
+  "capture_limit": 7,
+  "total_timeout_seconds": 550,
+  "boss_timeout_seconds": 50,
+  "lifecycle_timeout_seconds": 20,
+  "engines_or_GUI_started": false,
+  "gdscript_parser_run": false,
+  "production_or_guard_changed": false,
+  "contains_private_fixtures": false,
+  "status": "source_only_prepared_not_runtime_validated"
+}
