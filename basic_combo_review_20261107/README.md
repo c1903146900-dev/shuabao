@@ -38,3 +38,8 @@ returnfull03 followed a 60-second idle scheduler check (max .172211, no gap > .2
 Latest isolated candidate returnstroke_combo12_draft01 uses accepted combo12 (including landed ink), with only the same seven-line ordinary arm change plus new seals. All243 manifest entries verified. Pack1f1962274098891b667d621611393d5f55f1dc12758ee6b8d431a01a95abaf7a. Builder rebuild_20261106/build_returnstroke_combo12.py preserves the original builder/candidate.
 
 returnfull04 was stopped at wall138.385 seconds by gap.343603 > .2, cleanup complete. This is not a complete pass. returnui02 passed11 checks, and returncancel03 again proves cast2 canceled at.06 before .216667 contact with no canceled impact and later ordinary attack resumed. That observer writes separate captures; an unused returncancel02 stage is not runtime evidence. No immediate long retry or promotion.
+
+## Accepted as motion_combo13
+returnfull05 passed all12 normal-route rows including Boss with the unchanged combo12-rebased returnstroke pack. Simulation230.874034s, HP420, gold395, nine potions bought/used; Q3started21 and contacts28. Guardwall243.266277s, maxgap.114100, exit0 and clean owned cleanup. Previous failed/interrupted runs remain recorded, not relabeled.
+
+Together with original/native mirror and moving/dodge samples, the unchanged rebase's UI11 and genuine .06-second precontact cancellation checks, this supports accepting the development baseline as motion_combo13. Rebuilt245 runtime files and pack are byte-identical to the tested candidate; pack1f1962274098891b667d621611393d5f55f1dc12758ee6b8d431a01a95abaf7a. Old combo12 retained. Boss-motion candidate is still separate. No Windows/audio/user aesthetic acceptance is claimed.

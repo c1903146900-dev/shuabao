@@ -1,7 +1,7 @@
 {
   "candidate": "returnstroke_combo12_draft01",
-  "accepted_baseline": "motion_combo12",
-  "promoted": false,
+  "accepted_baseline": "motion_combo13",
+  "promoted": true,
   "runs": {
     "combostrokebefore01": {
       "passed": true,
@@ -301,13 +301,36 @@
         "errors": [],
         "seconds": 0.02562296900578076
       }
+    },
+    "returnfull05": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 243.2662767330039,
+      "max_sample_gap": 0.11409963999903994,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 24007,
+            "start_ticks": 3988772,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025760999000340234
+      }
     }
   },
   "native_scope": "Actual held left mouse plus W/S/D and Shift. Moving returnstroke and unchanged dash attack viewed. Dodge transition, not proof of precontact cancellation.",
   "ui_checks": 11,
   "preflight_error": "An existing comboui01 tag was accidentally selected. Guard rejected fresh_external_output_required before launch. Old result is not candidate evidence; fresh returnui01 passed.",
   "lifecycle_static": "Scope reset, matching cast cancellation, replacement by new action, hero-clock expiry, encounter finish and new run clear or supersede animation. No production change. Native Shift occurs 1.04 s after second start, beyond .6333 s duration; precontact cancellation not exercised.",
-  "status": "Isolated candidate; full floor interrupted by sample-gap guard. No promotion.",
+  "status": "Accepted after complete floor on exact combo12 rebase bytes; older interrupted runs retained.",
   "early_cancel": {
     "input": "Normal router Shift, script-assisted source combat, no state injection",
     "attack_age": 0.06,
@@ -318,6 +341,6 @@
     "later_basic_impact": true,
     "visual": "Frame 13 shows dash instead of canceled returnstroke; source hero_frame agrees."
   },
-  "latest_full_scope": "Combo12 rebase interrupted at138.385 seconds by gap.343603; no promotion. UI11 and real precontact cancel pass on rebased bytes.",
+  "latest_full_scope": "All12 rows including Boss; simulation230.874034; HP420; nine potions bought/used; gold395.",
   "pack_sha256": "1f1962274098891b667d621611393d5f55f1dc12758ee6b8d431a01a95abaf7a"
 }
