@@ -1,7 +1,7 @@
 {
   "candidate": "ink_material_draft01",
   "base": "motion_combo11",
-  "promoted": false,
+  "promoted": true,
   "pack_sha256": "f400fce7fbfc1468c071d5896741345ad1ca6ffb30ccff19e597a41f29ea38e0",
   "manifest_verified": 243,
   "runs": {
@@ -73,12 +73,114 @@
         "errors": [],
         "seconds": 0.025634853998781182
       }
+    },
+    "inkfull01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 262.8369217340005,
+      "max_sample_gap": 0.06156917699991027,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23350,
+            "start_ticks": 3893557,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025592589998268522
+      }
+    },
+    "inkui01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 12.5050862470016,
+      "max_sample_gap": 0.055249719000130426,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23432,
+            "start_ticks": 3921687,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02588091500365408
+      }
+    },
+    "inkoverlap01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 3.4947849020027206,
+      "max_sample_gap": 0.053869243994995486,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23514,
+            "start_ticks": 3922977,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025586049996491056
+      }
+    },
+    "inkcross01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 66.02614351199736,
+      "max_sample_gap": 0.05600459600100294,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 23596,
+            "start_ticks": 3925072,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025614220998249948
+      }
     }
   },
   "production_delta": "Only _draw_pitcher_zones colors, width and contained material marks; manifest/generation regenerated.",
   "remaining": [
-    "overlapping player ground-effect readability",
-    "full-floor regression",
-    "user aesthetic acceptance"
-  ]
+    "Windows/hardware/audio acceptance",
+    "User aesthetic acceptance"
+  ],
+  "accepted_baseline": "motion_combo12",
+  "full_floor": {
+    "rows": 12,
+    "boss": true,
+    "simulation_seconds": 250.966666666677,
+    "hp": 321.928392857136,
+    "gold": 395,
+    "potions_bought": 9,
+    "potions_used": 9
+  },
+  "overlap_scope": "Synthetic 1/2/3 pools, actual inherited drawing; no multi-pitcher gameplay claim. Actor/warning crossing tested in normal source r04a."
 }

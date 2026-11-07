@@ -13,3 +13,12 @@ Actual candidate normal-route r04a observation passed. Six half-second samples f
 Independent source review found only material-drawing changes plus regenerated seals; all243 manifest hashes verify. Candidate pack f400fce7fbfc1468c071d5896741345ad1ca6ffb30ccff19e597a41f29ea38e0. Build with python3 -I -B rebuild_20261106/build_ink_material.py NEW_DIRECTORY using original private recovery inputs. Public backup includes safe source/build/observers/aggregate summary, not private assets, screenshots, raw logs or conversation text.
 
 Next: inspect concurrent player-ground effect overlap, normal UI and complete-floor regression before merging. Old combo11 remains accepted.
+
+## Accepted as motion_combo12
+The unchanged pack passed the complete normal first floor, all12 rows including Boss, simulation250.966667 seconds, HP321.928393, gold395, nine potions bought/used. Guard wall262.836922 seconds, maxgap .061569177, exit0 with cleanup. All11 UI checks passed separately.
+
+Normal r04a crossing used legal movement into the source ink pool. Frames2/4 show the player, several nearby enemies, health bars and warning cues clearly above the ink; source left counted down to removal. Guard wall66.026144 seconds, gap .056004596, exit0. This deliberately stayed in danger for visual inspection and is not a recommended combat strategy.
+
+The separate synthetic draw fixture exercised1/2/3 overlapping pools using the actual inherited drawing method, with unchanged fixture data and no visual errors. Viewed result preserves each pool edge without a bright blooming center; material partly covers the synthetic player-ground patch as dictated by existing order. It does not certify real three-pool encounters, real effects underneath or actor collision. The fixture's pre-existing menu text overlaps its upper explanatory heading, but not its three inspected material panels. No production menu issue is claimed.
+
+All245 runtime files and the pack rebuilt as motion_combo12 are byte-identical to the tested ink_material_draft01. All243 manifest entries verify. Previous combo11 retained; alternate-basic-returnstroke and Boss body candidates remain excluded. This is functional/visual engineering acceptance, not Windows/hardware/audio or final user aesthetic acceptance.
