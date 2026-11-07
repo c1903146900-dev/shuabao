@@ -1,0 +1,37 @@
+{
+  "format": "fengli-steel-values-1",
+  "parameters": {
+    "elixir:03.ally_move_bonus": {
+      "value": 10,
+      "unit": "percent_points"
+    },
+    "elixir:03.defense": {
+      "value": 20,
+      "unit": "defense_points"
+    },
+    "elixir:03.max_health": {
+      "value": 15,
+      "unit": "percent_points"
+    },
+    "elixir:03.path_duration": {
+      "value": 1.5,
+      "unit": "seconds"
+    },
+    "elixir:03.price": {
+      "value": 650,
+      "unit": "gold"
+    },
+    "elixir:03.tenacity": {
+      "value": 25,
+      "unit": "percent_points"
+    },
+    "path_width": {
+      "value": 0.8,
+      "unit": "world_units"
+    },
+    "minimum_segment_length": {
+      "value": 1e-06,
+      "unit": "world_units"
+    }
+  }
+}
