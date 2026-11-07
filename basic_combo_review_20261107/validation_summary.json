@@ -1,0 +1,76 @@
+{
+  "candidate": "basic_returnstroke_draft02",
+  "accepted_baseline": "motion_combo11",
+  "promoted": false,
+  "runs": {
+    "combostrokebefore01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 19.088975876002223,
+      "max_sample_gap": 0.0550900919988635,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22116,
+            "start_ticks": 3661145,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02565924399823416
+      }
+    },
+    "combostrokeafter01": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 18.938491651999357,
+      "max_sample_gap": 0.05543053699511802,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22198,
+            "start_ticks": 3671495,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.02555676700285403
+      }
+    },
+    "combostrokeafter02": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 18.887367839000945,
+      "max_sample_gap": 0.13256696500320686,
+      "exit": 0,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "reaps": [
+          {
+            "pid": 22280,
+            "start_ticks": 3676138,
+            "si_code": 1,
+            "si_status": 0
+          }
+        ],
+        "errors": [],
+        "seconds": 0.025642698994488455
+      }
+    }
+  }
+}
