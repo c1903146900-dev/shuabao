@@ -77,13 +77,23 @@
       "max_sample_gap": 0.0542318290026742,
       "peak_rss_plus_swap": 396419072,
       "owned_cleanup_complete": true
+    },
+    "bossh08cancel01": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 42.655442307004705,
+      "max_sample_gap": 0.26889216100244084,
+      "peak_rss_plus_swap": 408207360,
+      "owned_cleanup_complete": true
     }
   },
   "failures": {
     "bossmotionafter01": "Candidate01 inserted boss pose in hero function due ambiguous first body_scale match. Actual parse errors occurred, as well as guard gap failure. Not solely an environment failure. Retained locally.",
     "bossmotionafter03": "Corrected candidate03 stopped at startup under unchanged sampling guard; no candidate Boss frames or gameplay acceptance. No further long retry.",
     "bossmotionafter04": "After a successful final-candidate short UI run, one normal-route attempt stopped after room9 at wall127.104650s, gap0.439360s. No Boss frames or lifecycle result. No immediate repeated long run.",
-    "bossh08draft01": "Observer expected shorthand H12/G29 etc; actual displayed IDs are namespaced fengli_h12/common_g29. Stopped before refresh, corrected exact ID expectations. No game source change."
+    "bossh08draft01": "Observer expected shorthand H12/G29 etc; actual displayed IDs are namespaced fengli_h12/common_g29. Stopped before refresh, corrected exact ID expectations. No game source change.",
+    "bossh08cancel01": "Read-only idle probe had no engines and max gap0.054573s, but the guarded actual route still stopped after42.655442s, gap0.268892s. Reached room3, not Boss. Idle samples do not guarantee future stability. No repeated long run."
   },
   "revision_history": {
     "01": "Wrong insertion location; rejected.",
@@ -108,7 +118,18 @@
     "learned": "E1 rank1",
     "actual_boss_cancellation_tested": false
   },
-  "prepared_not_run": [
-    "observe_h08_cancel.gd: normal H08 selection, E1 route, actual warning contact, post-cancel neutral draw checks and menu/new-run cleanup."
-  ]
+  "prepared_not_run": [],
+  "h08_cancel_route": {
+    "reached_boss": false,
+    "latest_progress": "room3",
+    "actual_first_room_dagger_contact": true,
+    "contact_sequence": 9,
+    "stun_sequence": 10,
+    "marked_sequence": 11,
+    "same_cast_id": 1,
+    "ordinary_target": "enemy_3",
+    "stun_seconds": 1,
+    "world_time": 1.06,
+    "boss_cancel_proven": false
+  }
 }
