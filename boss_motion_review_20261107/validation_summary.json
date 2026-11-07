@@ -1,0 +1,60 @@
+{
+  "accepted": false,
+  "baseline": "motion_combo08",
+  "candidate": "boss_motion_draft03",
+  "pack_sha256": "47b521f9a21fb61af04a7ec8ff0d11a3a2a4e43b80f95a4bca61bc0ab4c35ed8",
+  "manifest_entries_verified": 243,
+  "mechanics_changed": false,
+  "tests": {
+    "bossmotionbefore01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 166.3501474270015,
+      "max_sample_gap": 0.05612958199708373,
+      "peak_rss_plus_swap": 446967808,
+      "owned_cleanup_complete": true
+    },
+    "bossmotionafter01": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 8.134960225001123,
+      "max_sample_gap": 0.3168109969992656,
+      "peak_rss_plus_swap": 309878784,
+      "owned_cleanup_complete": true
+    },
+    "bossmotionui02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 13.482358985002065,
+      "max_sample_gap": 0.15453090199662256,
+      "peak_rss_plus_swap": 398577664,
+      "owned_cleanup_complete": true
+    },
+    "bossmotionafter03": {
+      "passed": false,
+      "reason": "GuardError:sample_gap_untrusted",
+      "exit": -15,
+      "elapsed": 8.157942349000223,
+      "max_sample_gap": 0.2835924540013366,
+      "peak_rss_plus_swap": 384385024,
+      "owned_cleanup_complete": true
+    }
+  },
+  "failures": {
+    "bossmotionafter01": "Candidate01 inserted boss pose in hero function due ambiguous first body_scale match. Actual parse errors occurred, as well as guard gap failure. Not solely an environment failure. Retained locally.",
+    "bossmotionafter03": "Corrected candidate03 stopped at startup under unchanged sampling guard; no candidate Boss frames or gameplay acceptance. No further long retry."
+  },
+  "revision_history": {
+    "01": "Wrong insertion location; rejected.",
+    "02": "Moved block into _draw_enemy before common transform. Passed short startup and 11 shared UI checks; independent read-only review confirmed location.",
+    "03": "Added combat/alive gate before storing release to prevent post-terminal lethal-sweep cache repopulation. Latest unaccepted candidate."
+  },
+  "next_checks": [
+    "Actual candidate Boss before/after visual comparison when scheduling is stable.",
+    "Left/right and vertical release presentation, actual canceled warning, terminal/new-run cache and exact body picking.",
+    "Normal full floor and relevant UI on final candidate before promotion."
+  ]
+}
