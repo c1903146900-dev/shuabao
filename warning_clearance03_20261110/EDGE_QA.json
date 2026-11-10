@@ -1,0 +1,30 @@
+{
+  "candidate_pck": "cddd8fdacc0c3080d32cc925493b62049287f9c5a0332451108f47ec6f12ccc8",
+  "decision": "keep_isolated_do_not_merge",
+  "guard": {
+    "passed": true,
+    "exit": 0,
+    "max_sample_gap": 0.06511637499988865,
+    "elapsed": 39.61725437700011
+  },
+  "native_coverage": "Four-enemy first-room combat, moving attack, standing attack, left then right strafe; preparation and room entry scripted.",
+  "native_audit": {
+    "sampled_frames": 228,
+    "circle_overlap_samples": 0,
+    "clearance_shift_jumps_over_12_pixels": 1,
+    "observed_jump_pixels": 16.94247,
+    "note": "One step at warning progress 0 to 0.04348. This is not evidence of sustained oscillatory jitter."
+  },
+  "isolated_fixture": {
+    "two_warning_centers_distance": 4,
+    "circles_overlap": true,
+    "note": "Adversarial two-enemy projected positions, not observed real enemy positions. Reveals lack of mutual cue layout."
+  },
+  "remaining": [
+    "No real window-edge combat or resized-window acceptance",
+    "Multiple cues can collapse to same overhead row; pairwise layout is absent",
+    "One-frame entry displacement needs assessment before claiming stable animation",
+    "No full-floor run on this visual candidate"
+  ],
+  "recommendation": "Do not expand into another unbounded cue-layout redesign. Keep the restored mainline for playable progress; retain this candidate and exact failure cases for a bounded later pass."
+}
