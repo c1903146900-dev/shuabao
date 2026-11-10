@@ -1,0 +1,40 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -734,6 +734,7 @@
+    _visual_error("unsupported_warning_contract");continue
+   var cue:Dictionary=EnemyWarningCue.project(enemy,p(enemy.position),p(enemy.position+direction)-p(enemy.position))
+   if not cue.accepted:_visual_error("enemy_body_cue_invalid");continue
++  cue=EnemyWarningCue.clear_player(cue,p(host.sim.hero.position),get_viewport_rect())
+   EnemyWarningCue.draw(self,cue)
+   if cue.visible:shown.append(cue.duplicate())
+  receipt["enemy_warning_cues"]=shown
+--- a/fengli_route_20261024/enemy_warning_cue.gd
++++ b/fengli_route_20261024/enemy_warning_cue.gd
+@@ -9,6 +9,27 @@
+  if not (raw is float or raw is int) or not is_finite(float(raw)) or not foot.is_finite() or not forward.is_finite() or forward.length_squared()<.000001:return {"visible":false,"accepted":false}
+  var height:float=46.0 if str(enemy.get("kind",""))=="minion" else 64.0
+  return {"visible":true,"accepted":true,"at":foot+Vector2(0,-height-17),"direction":forward.normalized(),"progress":clampf(float(raw),0,1),"actor_id":str(enemy.get("actor_id",""))}
++static func clear_player(cue:Dictionary,hero_foot:Vector2,viewport:Rect2)->Dictionary:
++ # Preserve the owning enemy horizontal axis; side fallback only when the
++ # viewport edge prevents overhead clearance. Full arrows stay in the viewport.
++ if not cue.get("visible",false):return cue
++ var original:Vector2=cue.at
++ var margin:float=24.0
++ var safe:Rect2=viewport.grow(-margin)
++ var body:=Rect2(hero_foot+Vector2(-36,-66),Vector2(72,68)).grow(margin)
++ var center:=Vector2(clampf(original.x,safe.position.x,safe.end.x),clampf(original.y,safe.position.y,safe.end.y))
++ var candidates:Array[Vector2]=[center,Vector2(center.x,body.position.y-0.5),Vector2(body.position.x-0.5,center.y),Vector2(body.end.x+0.5,center.y)]
++ var best:Vector2=center
++ for raw:Vector2 in candidates:
++  var at:=Vector2(clampf(raw.x,safe.position.x,safe.end.x),clampf(raw.y,safe.position.y,safe.end.y))
++  if body.has_point(at):continue
++  best=at
++  break
++ cue["original_at"]=original
++ cue["at"]=best
++ cue["player_clearance_shift"]=best-original
++ cue["clearance_resolved"]=not body.has_point(best)
++ return cue
+ static func draw(canvas:Node2D,cue:Dictionary)->void:
+  if not cue.get("visible",false):return
+  var at:Vector2=cue.at;var d:Vector2=cue.direction;var side:=d.orthogonal();var amount:float=cue.progress

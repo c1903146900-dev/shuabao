@@ -1,0 +1,58 @@
+{
+  "status": "isolated_not_merged",
+  "base_commit": "6f4269cd06f9ffc9bc0ac5d5e97e36414a1f6399",
+  "base_pck": "30fc86491e3b1b407016770f3040bd7f8be09237660d60220e3f563e8ed289e6",
+  "candidate_pck": "cddd8fdacc0c3080d32cc925493b62049287f9c5a0332451108f47ec6f12ccc8",
+  "source_hashes": {
+    "fengli_route_20261024/presentation.gd": {
+      "before": "27f39489a1fb59ea85d1c6088fa1a683675aad736454182b9596efe968df58a4",
+      "after": "728dc0baaa28c51ceed445ada5653328a62b9a0294826688e744ef550a834e70"
+    },
+    "fengli_route_20261024/enemy_warning_cue.gd": {
+      "before": "b9622ea4b90e3f1cdbc97b1faa43a11a76f5a04e9fcdc67712c0a2ca7c07026c",
+      "after": "a2d8177b368e0bf4348cbe2f25f4051dd6247968a826d473e19e85cecd56549d"
+    }
+  },
+  "changes": [
+    "Reduced conservative hero top clearance by16 logical pixels versus first candidate",
+    "Preserve enemy horizontal axis; only use side fallback if viewport prevents upward clearance",
+    "24 pixel viewport margin covers full existing cue arrow",
+    "Attack direction/progress/state untouched"
+  ],
+  "validation": {
+    "layout_fixture_cases": 40,
+    "fixture_sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        800,
+        600
+      ]
+    ],
+    "native": "Real desktop pointer moving/standing attacks then left+Shift disengagement. Scripted initial setup/first room.",
+    "guard": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 40.53951706099997,
+      "max_sample_gap": 0.06882302600001822,
+      "cleanup": {
+        "leader_reaped": true,
+        "owned_descendants_reaped_or_confirmed_exited": true,
+        "direct_children_empty": true,
+        "original_group_empty": true,
+        "errors": [],
+        "seconds": 0.025594326999907935
+      }
+    }
+  },
+  "comparison": "Candidate02 shortest sideways placement was rejected because it placed a warning over a different enemy. Candidate03 preserves the original x coordinate during ordinary near-player avoidance, removes face occlusion and is lower than candidate01.",
+  "limits": [
+    "No full-floor regression",
+    "Viewport edge checks are isolated arithmetic fixtures, not real resized-window gameplay",
+    "Edge side-fallback ownership, several simultaneous overlapping warnings, transition jitter and tall skill poses remain unaccepted",
+    "ALSA output device unavailable as in baseline; no audible quality check",
+    "Screenshot samples are not continuous-animation or user aesthetic acceptance"
+  ]
+}
