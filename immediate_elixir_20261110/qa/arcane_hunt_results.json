@@ -1,0 +1,17 @@
+{
+  "test": "arcane_hunt_lifetime01",
+  "candidate": "steel_undo_draft02",
+  "fixtures": 4,
+  "passed_assertions": 171,
+  "failed_assertions": 0,
+  "guard_exit": 0,
+  "guard_gap": 0.054518366000138485,
+  "scope": "isolated lifecycle/static attributes only",
+  "not_covered": [
+    "arcane skill proc damage",
+    "hunt elite/boss final damage",
+    "native UI",
+    "normal economy",
+    "rest settlement"
+  ]
+}

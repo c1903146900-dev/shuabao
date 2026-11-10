@@ -1,0 +1,32 @@
+{
+  "candidate": "steel_undo_draft02",
+  "test": "native_shop02",
+  "result": "passed",
+  "guard_exit": 0,
+  "max_sample_gap": 0.0714667960000952,
+  "elapsed": 90.30711954899994,
+  "normal_route": [
+    "r01b",
+    "r02d",
+    "r03a"
+  ],
+  "gold_before": 725,
+  "price": 650,
+  "gold_after": 75,
+  "native_actions": [
+    "purchase war elixir",
+    "drink held war elixir"
+  ],
+  "ad_before": 38,
+  "ad_after": 73,
+  "lifesteal_before": 0,
+  "lifesteal_after": 0.08,
+  "setup": "scripted normal UI signals/router and normal combat resources; no seeded money",
+  "exclusions": [
+    "natural full-slot purchase",
+    "natural same-name duplicate purchase",
+    "full-floor",
+    "other elixirs",
+    "rest settlement"
+  ]
+}

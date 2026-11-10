@@ -1,0 +1,27 @@
+{
+  "candidate_sha256": "30fc86491e3b1b407016770f3040bd7f8be09237660d60220e3f563e8ed289e6",
+  "final": {
+    "coverage_exclusions": {
+      "full_route": false,
+      "normal_economy": false,
+      "normal_ui_full_slot": false,
+      "os_native_input": false,
+      "rest_settlement": false
+    },
+    "failed": 0,
+    "passed": 280,
+    "reason": "complete",
+    "record": "final",
+    "runtime_acceptance": "isolated_source_fixture_only",
+    "wall_ms": 7289
+  },
+  "guard": {
+    "passed": true,
+    "reason": "",
+    "elapsed": 8.00406762900002,
+    "exit": 0,
+    "max_sample_gap": 0.05495940000014343
+  },
+  "owned_cleanup_complete": true,
+  "scope": "Three elixirs x auto/manual, funded independent fixtures. Not normal UI, arcane/hunt, successful rest or full-floor acceptance."
+}

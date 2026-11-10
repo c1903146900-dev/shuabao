@@ -1,0 +1,24 @@
+{
+  "candidate_sha256": "30fc86491e3b1b407016770f3040bd7f8be09237660d60220e3f563e8ed289e6",
+  "test": "steel_v2_full_floor01",
+  "fresh_run": true,
+  "passed": true,
+  "exit": 0,
+  "guard_gap": 0.059650086000146985,
+  "wall_seconds": 253.57253411699958,
+  "game_seconds": 243.009,
+  "rows": 12,
+  "hp_end": 317.148392857141,
+  "max_hp": 420,
+  "gold_end": 395,
+  "purchases": 9,
+  "potions_used": 9,
+  "control": "script-assisted normal source actions, no economic/HP injection",
+  "not_acceptance": [
+    "native full-floor input",
+    "Windows",
+    "audio",
+    "visual user acceptance",
+    "elixir rest cleanup"
+  ]
+}
