@@ -1,0 +1,35 @@
+--- a/fengli_route_20261024/adapted/tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_model.gd
++++ b/fengli_route_20261024/adapted/tests/ink_shop_runtime_stats_20261004/hp_undo_fix01/ink_health_model.gd
+@@ -44,0 +45,2 @@
++ # Capture the actual projection policy before it changes the prior-steel flag.
++ var ratio_projection:bool=_health_projection_preserves_ratio()
+@@ -47,0 +50 @@
++ var transaction_clamp:float=0.0 if ratio_projection else maxf(0.0,before_hp-projected_hp)
+@@ -59 +62 @@
+-  record["hp_clamp"]={"pre_hp":before_hp,"pre_max":before_max,"post_hp":projected_hp,"post_max":after_max,"clamp_delta":maxf(0.0,before_hp-projected_hp),"health_revision":before_health_revision,"room_id":state.shop_visit.room_id,"epoch":state.shop_visit.epoch,"generation":sim.encounter_generation,"actor_id":sim.hero.actor_id}
++  record["hp_clamp"]={"pre_hp":before_hp,"pre_max":before_max,"post_hp":projected_hp,"post_max":after_max,"clamp_delta":transaction_clamp,"health_revision":before_health_revision,"room_id":state.shop_visit.room_id,"epoch":state.shop_visit.epoch,"generation":sim.encounter_generation,"actor_id":sim.hero.actor_id}
+@@ -61 +64 @@
+- result["health_projection"]={"pre_hp":before_hp,"pre_max":before_max,"post_hp":sim.hero.hp,"post_max":after_max,"transaction_clamp":maxf(0.0,before_hp-projected_hp),"undo_restored_own_clamp":restored,"source_health_revision":before_health_revision,"healing_event_emitted":false}
++ result["health_projection"]={"pre_hp":before_hp,"pre_max":before_max,"post_hp":sim.hero.hp,"post_max":after_max,"transaction_clamp":transaction_clamp,"undo_restored_own_clamp":restored,"source_health_revision":before_health_revision,"healing_event_emitted":false}
+@@ -81,0 +85,5 @@
++
++# The default non-steel projection only clamps lost HP. Derived consumers may
++# explicitly declare ratio-preserving projection; it is not discarded HP.
++func _health_projection_preserves_ratio()->bool:
++ return false
+--- a/fengli_route_20261024/potion_model.gd
++++ b/fengli_route_20261024/potion_model.gd
+@@ -166,0 +167,5 @@
++
++# Steel preserves a ratio during maximum-HP projection. Its proportional loss
++# must not also be recorded as a refundable equipment clamp.
++func _health_projection_preserves_ratio()->bool:
++ return elixir_consumer.steel.preserves_hp_ratio()
+--- a/fengli_route_20261024/steel_runtime.gd
++++ b/fengli_route_20261024/steel_runtime.gd
+@@ -30,0 +31,2 @@
++func preserves_hp_ratio()->bool:
++ return _iron_projected or (_consumer!=null and _consumer.get_ref()!=null and _consumer.get_ref().active_item()=="elixir:03")
+@@ -43 +45 @@
+- if (iron or _iron_projected) and before_max!=after_max:
++ if preserves_hp_ratio() and before_max!=after_max:
