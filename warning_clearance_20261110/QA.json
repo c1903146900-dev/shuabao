@@ -1,0 +1,30 @@
+{
+  "status": "isolated_candidate_not_merged",
+  "base_commit": "6f4269cd06f9ffc9bc0ac5d5e97e36414a1f6399",
+  "before_pck": "30fc86491e3b1b407016770f3040bd7f8be09237660d60220e3f563e8ed289e6",
+  "candidate_pck": "7f699a1fd2e40b07c33302230adc1c3c56a88a957c7038419e0ab39ba0c0c2a9",
+  "before_source_sha256": "27f39489a1fb59ea85d1c6088fa1a683675aad736454182b9596efe968df58a4",
+  "after_source_sha256": "ee3bae51bfa657b8ba4b0a2ed4cb9435c17b979b9f7ead505a9ac8d89569b1c2",
+  "evidence": "Two native first-combat samples showed enemy warning circles covering player face/sword arm. Candidate native test moved them above body; dash away restored ordinary placement.",
+  "changes": "Screen position only; source aim/progress/hit geometry/invulnerability unchanged. No added cue.",
+  "tests": {
+    "contact01": {
+      "passed": true,
+      "exit": 0,
+      "max_sample_gap": 0.05529974800003856,
+      "elapsed": 33.81839235199993
+    },
+    "warning01": {
+      "passed": true,
+      "exit": 0,
+      "max_sample_gap": 0.0668713850000131,
+      "elapsed": 44.96678119100011
+    }
+  },
+  "limits": [
+    "Scripted preparation/entry, native mouse and keyboard combat",
+    "No full-floor regression on this candidate",
+    "Conservative player clearance leaves cues higher than necessary; association with enemy and edge transitions need refinement before adoption",
+    "No Windows test or user aesthetic acceptance"
+  ]
+}

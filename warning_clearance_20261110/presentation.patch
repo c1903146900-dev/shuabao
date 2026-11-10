@@ -1,0 +1,18 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -734,6 +734,15 @@
+    _visual_error("unsupported_warning_contract");continue
+   var cue:Dictionary=EnemyWarningCue.project(enemy,p(enemy.position),p(enemy.position+direction)-p(enemy.position))
+   if not cue.accepted:_visual_error("enemy_body_cue_invalid");continue
++  # Keep the existing cue above a nearby player rather than over the face/arm.
++  # Only screen layout changes; source aim, progress and attack geometry stay intact.
++  var hero_foot:Vector2=p(host.sim.hero.position)
++  var player_body:=Rect2(hero_foot+Vector2(-38,-82),Vector2(76,84))
++  var original_at:Vector2=cue.at
++  if player_body.grow(24).has_point(original_at):
++   cue.at.y=minf(original_at.y,player_body.position.y-24)
++  cue["original_at"]=original_at
++  cue["player_clearance_shift"]=cue.at-original_at
+   EnemyWarningCue.draw(self,cue)
+   if cue.visible:shown.append(cue.duplicate())
+  receipt["enemy_warning_cues"]=shown
