@@ -1,0 +1,36 @@
+{
+  "status": "NATIVE_SHORT_PASS_NOT_FULL_REGRESSION",
+  "baseline_pck": "2b216c2971ea1beeb77ebbc73273f07e3290470dbd9a56191e60561cf2f6db89",
+  "candidate_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "restoration": "Two original archives and fixed public source commit d2fe8baf5af2270b7ba3505ef14a8c7184cbebe0 reconstructed both exact packs. 611 public Git blobs checked; late twelve stages checked source before/after, binding and generation.",
+  "native_inputs": [
+    "Stationary Shift after original northward first-room entry",
+    "D movement then immediate A+Shift",
+    "Pause and F8 ordinary close"
+  ],
+  "findings": [
+    "Stationary north dash retained original heading.",
+    "Immediate reverse: first rendered sample at age ~.02 has current mirror -1 and first trail mirror -1. Subsequent trail samples remain -1; baseline archived evidence had first trail +1.",
+    "Dash end sampled at .24 active and .26 inactive; reverse trail empty at .40. Start and post-end screenshots inspected at normal framing; nearby enemies partly obscure first ghost.",
+    "Source event retains distance 4.5, duration .25, iframe_duration .2. No production change this recovery."
+  ],
+  "limits": [
+    "Observer incorrectly reads invulnerable from actor.snapshot(), which lacks the core-computed immunity field; logged false is not gameplay evidence. Per-frame immunity not validated.",
+    "Start screenshot readback skips intermediate .02-.16 source ages; do not claim continuous video or exact frame-perfect visual acceptance.",
+    "No dash-attack or full-floor candidate regression yet. Candidate remains isolated, passed baseline retained.",
+    "ALSA unavailable, fallback Dummy; no actual audio acceptance. Windows not run; no user aesthetic acceptance."
+  ],
+  "guard": {
+    "passed": true,
+    "reason": "",
+    "exit": 0,
+    "elapsed": 43.86128581000003,
+    "max_sample_gap": 0.062276814000028935,
+    "sample_interval": 0.05,
+    "max_allowed_gap": 0.2,
+    "cleanup_at": 595.0,
+    "kill_request_at": 600.0
+  },
+  "cleanup_confirmed": true,
+  "prelaunch_failure": "First wrapper used unavailable python command; exited127 before guard or engine launched. Corrected wrapper uses verified /usr/bin/python3, fresh output. No guard retry or change."
+}
