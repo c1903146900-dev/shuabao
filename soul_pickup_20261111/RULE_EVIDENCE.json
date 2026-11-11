@@ -1,0 +1,49 @@
+{
+  "status": "SOURCE_EVIDENCE_ONLY_NOT_PLAYTEST",
+  "classification": {
+    "user_verbatim": "None supplied or invented.",
+    "formal_source": "Existing catalog provenance retained locally; no private document or reference is included.",
+    "runtime_authority": "Current unchanged hex.bin decoded with the existing portable Variant decoder; round-trip bytes matched.",
+    "presentation_choice": "Small floating wisp, faint exact-radius halo, last-quarter fade and 0.35s pickup spark are new visual choices only."
+  },
+  "current_values": {
+    "G10-1_ordinary_kills": 24,
+    "G10-2_soul_world_lifetime_seconds": 8,
+    "G10-3_speed_percent": 25,
+    "G10-4_speed_actor_duration_seconds": 3,
+    "G10-5_spawn_actor_interval_seconds": 8,
+    "G10-6_pickup_radius_metres": 1.2
+  },
+  "runtime_value_source": "__clean_fengli/hex.bin:hexes.common_g10.values",
+  "runtime_value_sha256": "f4e180e19db1d194c19de696c13cf5e45e6dce49cf68eab74c07c6fb2078a975",
+  "normal_first_floor_reachability": {
+    "route_file": "tests/ink_first_floor_user_route_20261005/runtime01/first_floor.json",
+    "valid_path": [
+      "r01a",
+      "r02a",
+      "r03a",
+      "r04a",
+      "r05a"
+    ],
+    "ordinary_enemies_before_row5": 20,
+    "row5_payload": "ev82_r05a",
+    "row5_roster": [
+      "elite",
+      "minion",
+      "minion",
+      "minion",
+      "minion"
+    ],
+    "condition": "Select G10 before row5 and defeat its elite while at least one ordinary enemy remains. The original elite branch can produce a real, live pickup without money, debug kills or a changed threshold. This is a code/route proof, not a recorded playthrough.",
+    "boundary": "If the last enemy is killed, original end_room clears souls. The overlay does not extend pickups into safe rooms."
+  },
+  "original_mechanics_unchanged": [
+    "source generation and count",
+    "world lifetime and pause behavior",
+    "actor-clock spawn interval and speed buff",
+    "1.2m source pickup test",
+    "learned Q/E reset",
+    "source end_room cleanup"
+  ],
+  "missing_consumer": "Current Fengli presentation and environment contain no soul consumer. Source generation and pickup already exist; this patch adds visibility and actual-pickup feedback, not new G10 combat rules."
+}
