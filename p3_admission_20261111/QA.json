@@ -1,0 +1,124 @@
+{
+  "status": "ISOLATED_P3_ADMISSION_BLOCKED_BY_SKILL_UNDO_DEPENDENCY",
+  "baseline": "exit_reopen02 / e6c7139454e20d4926e07200bf557e1ce54eb57c",
+  "candidate_pck_sha256": "a8c6825b8bf3f010899ee7f8f14f37753a7ca9116b20f1083c4f8b46b33f61b8",
+  "changes": "Admit existing P3 in source binding and four frozen template lists; update template pin. No numeric, combat, warning candidate or guard changes. p3_prepare.py exactly regenerates the three changed files from verified baseline hashes. Rebuild normal manifest, generation and PCK afterward.",
+  "static": {
+    "baseline_sha256_pins_match": true,
+    "full_original_decode_consumed": true,
+    "original_roundtrip_byte_identical": true,
+    "patched_roundtrip_byte_identical": true,
+    "semantic_diff_exactly_four_candidate_lists": true,
+    "reverse_patch_recovers_entire_original_bytes": true,
+    "guard_logic_unchanged": true,
+    "numeric_and_display_payloads_untouched": true,
+    "engine_or_gui_started": false
+  },
+  "native_UI": "Real mouse clicked P passive card, P3 learn and collapse. Lv1, SP1 to0 observed. F7 then starts script-assisted combat.",
+  "normal_combat": {
+    "rooms": 12,
+    "boss_completed": true,
+    "script_assisted": true,
+    "credited_kills": 38,
+    "permanent_AD": 6,
+    "remaining_kills": 3,
+    "actual_AD": 44,
+    "P3_rank": 4,
+    "HP": 315.138392857143,
+    "gold": 795,
+    "potions_bought_and_used": 7,
+    "guard": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 235.6517869039999,
+      "max_sample_gap": 0.07243603500000972,
+      "exit": 0,
+      "cleanup_complete": true
+    }
+  },
+  "fixture": {
+    "assertions": 56,
+    "assertion_failures": [],
+    "blocking_findings": [
+      {
+        "detail": "Real model undo restored rank/SP but retained growth earned at the temporarily lower threshold. No automatic fix is applied; approved immediate redemption does not specify undo dependency handling.",
+        "id": "p3_immediate_redemption_survives_skill_point_refund",
+        "severity": "BLOCKER_REQUIRES_DECISION_OR_AUTHORIZED_DEPENDENCY_FIX"
+      }
+    ],
+    "upgrade_undo": {
+      "after": {
+        "ad": 1.0,
+        "allocations": 0,
+        "candidate": "p3",
+        "credited": 9,
+        "points": 3,
+        "progress": 0,
+        "rank": 1
+      },
+      "before": {
+        "ad": 0.0,
+        "allocations": 0,
+        "candidate": "p3",
+        "credited": 9,
+        "points": 3,
+        "progress": 9,
+        "rank": 1
+      },
+      "case": "upgrade_then_undo",
+      "undo_result": {
+        "ok": true,
+        "reason": "",
+        "state": {
+          "at_training_node": false,
+          "authority": "ink_run_model_source_candidate",
+          "available": 3,
+          "bonus_earned": 0,
+          "earned": 1,
+          "in_combat": false,
+          "level": 1,
+          "leveling_earned": 1,
+          "refundable_transactions": 0,
+          "slots": {
+            "E": {
+              "rank": 0,
+              "skill": ""
+            },
+            "P": {
+              "rank": 1,
+              "skill": "P3"
+            },
+            "Q": {
+              "rank": 0,
+              "skill": ""
+            },
+            "R": {
+              "rank": 0,
+              "skill": ""
+            }
+          },
+          "spent": -2
+        }
+      },
+      "upgraded": {
+        "ad": 1.0,
+        "allocations": 1,
+        "candidate": "p3",
+        "credited": 9,
+        "points": 2,
+        "progress": 0,
+        "rank": 2
+      }
+    },
+    "guard": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 2.9362273080000705,
+      "max_sample_gap": 0.05132059399966238,
+      "exit": 0,
+      "cleanup_complete": true
+    },
+    "limits": "Fixture constructor grants 4SP and directly calls kill hook. Rest cleanup helper only, not full service. No death/revival coverage."
+  },
+  "delivery": "Not admitted as release baseline; no Windows execution, no audio acceptance, no full manual gameplay acceptance. Existing passed exit baseline retained. No private assets, binaries or raw logs included."
+}
