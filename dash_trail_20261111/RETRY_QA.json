@@ -1,0 +1,17 @@
+{
+  "status": "SECOND_STARTUP_STOP_NO_GAMEPLAY",
+  "candidate_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "guard": {
+    "passed": false,
+    "exit": -15,
+    "reason": "GuardError:unowned_engine_detected_no_signal_to_it",
+    "elapsed": 0.15629821000038646,
+    "max_sample_gap": 0.05048095500023919,
+    "max_allowed_gap": 0.2,
+    "sample_interval": 0.05,
+    "cleanup_at": 595.0,
+    "kill_request_at": 600.0
+  },
+  "cleanup_confirmed": true,
+  "scope": "One serial retry after fresh read-only no-engine evidence, original guard unchanged. Independent process timeline retained privately. No gameplay or successful validation, no further retry."
+}
