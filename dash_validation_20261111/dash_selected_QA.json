@@ -1,0 +1,57 @@
+{
+  "status": "SELECTED_TECHNICALLY_PASSED_CANDIDATE",
+  "candidate_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "retained_previous_pck": "2b216c2971ea1beeb77ebbc73273f07e3290470dbd9a56191e60561cf2f6db89",
+  "scope": "Only dash trail sample-local heading correction; no gameplay or guard changes. Warning experiments excluded.",
+  "native_coverage": "Stationary and immediate left reversal, first trail direction, end .24/.26; native Shift+left-mouse dash attack activates. Correct core immunity true before .2, false at .2 and later.",
+  "full_floor": {
+    "script_assisted": true,
+    "state_injection": false,
+    "result": "FINAL NATURAL_PASS time=187.779306000005 rows=12 HP=478.692003105567 gold=395 purchased=9 used=4 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+    "dash_counts": {
+      "damage_from_dash_attack": 3,
+      "dash": 30,
+      "dash_attack_started": 24
+    },
+    "dash_damage_examples": [
+      {
+        "enemy_kind": "armored",
+        "amount": 22.572,
+        "guard_factor": 0.45,
+        "damage_type": "ordinary"
+      },
+      {
+        "enemy_kind": "ranged",
+        "amount": 55.176,
+        "guard_factor": 1.0,
+        "damage_type": "ordinary"
+      },
+      {
+        "enemy_kind": "pitcher",
+        "amount": 55.176,
+        "guard_factor": 1.0,
+        "damage_type": "ordinary"
+      }
+    ],
+    "exit_reopen_pass": true
+  },
+  "guard": {
+    "passed": true,
+    "reason": "",
+    "exit": 0,
+    "elapsed": 199.42911767300006,
+    "max_sample_gap": 0.07532991200014294,
+    "sample_interval": 0.05,
+    "max_allowed_gap": 0.2,
+    "cleanup_at": 595.0,
+    "kill_request_at": 600.0
+  },
+  "cleanup_confirmed": true,
+  "limits": [
+    "Full floor is normal source/UI script-assisted play, not human mouse full-floor acceptance.",
+    "Native dash attack activated but did not hit; three actual hits recorded separately during scripted full floor.",
+    "Immunity states observed with correct core API, not controlled damage fixture for each instant.",
+    "Start screenshot capture skips some intermediate frames; no continuous video acceptance.",
+    "Windows execution, real audio listening and user visual acceptance not done."
+  ]
+}

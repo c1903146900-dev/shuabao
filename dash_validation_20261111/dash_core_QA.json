@@ -1,0 +1,132 @@
+{
+  "status": "CORE_IMMUNITY_AND_NATIVE_DASH_ATTACK_ACTIVATION_PASS",
+  "candidate_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "trace": [
+    {
+      "cast_id": 1,
+      "age": 0.02,
+      "invulnerable": true,
+      "iframe_left": 0.18,
+      "dash_step_immune": false,
+      "dash_left": 0.23,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 1,
+      "age": 0.16,
+      "invulnerable": true,
+      "iframe_left": 0.04,
+      "dash_step_immune": false,
+      "dash_left": 0.0900000000000001,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 1,
+      "age": 0.2,
+      "invulnerable": false,
+      "iframe_left": 2.08166817117217e-17,
+      "dash_step_immune": false,
+      "dash_left": 0.05,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 1,
+      "age": 0.22,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.03,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 1,
+      "age": 0.24,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.01,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 1,
+      "age": 0.26,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.0,
+      "mirror": 1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.0199999999999996,
+      "invulnerable": true,
+      "iframe_left": 0.18,
+      "dash_step_immune": false,
+      "dash_left": 0.23,
+      "mirror": -1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.179999999999996,
+      "invulnerable": true,
+      "iframe_left": 0.02,
+      "dash_step_immune": false,
+      "dash_left": 0.07,
+      "mirror": -1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.199999999999996,
+      "invulnerable": false,
+      "iframe_left": 2.08166817117217e-17,
+      "dash_step_immune": false,
+      "dash_left": 0.05,
+      "mirror": -1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.219999999999995,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.03,
+      "mirror": -1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.239999999999995,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.01,
+      "mirror": -1.0
+    },
+    {
+      "cast_id": 2,
+      "age": 0.259999999999994,
+      "invulnerable": false,
+      "iframe_left": 0.0,
+      "dash_step_immune": false,
+      "dash_left": 0.0,
+      "mirror": -1.0
+    }
+  ],
+  "native_dash_attack": "Actual mouse plus A+Shift triggered leftward dash_attack_started; no enemy hit in that dash. Subsequent normal mouse basic attacks cleared first room; attempted later dash occurred after combat ended and is not counted.",
+  "guard": {
+    "passed": true,
+    "reason": "",
+    "exit": 0,
+    "elapsed": 104.60278936499981,
+    "max_sample_gap": 0.06868741199991746,
+    "sample_interval": 0.05,
+    "max_allowed_gap": 0.2,
+    "cleanup_at": 595.0,
+    "kill_request_at": 600.0
+  },
+  "limits": [
+    "Read-only core immunity-state observation, not controlled incoming damage during every frame.",
+    "No screenshot evidence can establish full continuous animation.",
+    "Full-floor regression tracked separately.",
+    "Audio Dummy fallback, Windows not run; no user aesthetic acceptance."
+  ]
+}
