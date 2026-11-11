@@ -1,0 +1,145 @@
+{
+  "format": "fengli-regen-B12-I12-admission-1",
+  "unit_notice": "Existing 2026-10-08 developer mapping, not an original DOCX time-unit quotation. Only B12/I12 admission; no new undo policy.",
+  "items": {
+    "base:B12": {
+      "commerce": {
+        "name": "活性凝胶",
+        "kind": "equipment",
+        "price": 400,
+        "components": [],
+        "source_id": "base:B12"
+      },
+      "before": {
+        "supported": false,
+        "reason": "regen_time_unit_unresolved",
+        "stats": {},
+        "parameter": "base:B12.stat.health_regen",
+        "source_unit": "health_regen_source_units",
+        "current_value": 3.0,
+        "source_value": 3.0,
+        "passives": [],
+        "actives": [],
+        "tier": "base"
+      },
+      "definition": {
+        "supported": true,
+        "reason": "",
+        "stats": {
+          "hp_regen": 0.6
+        },
+        "parameter": "base:B12.stat.health_regen",
+        "source_unit": "health_regen_source_units",
+        "current_value": 3.0,
+        "source_value": 3.0,
+        "passives": [],
+        "actives": [],
+        "tier": "base",
+        "regen_mapping": {
+          "parameter": "base:B12.stat.health_regen",
+          "current_value": 3,
+          "source_value": 3,
+          "source_ref": "DOCX table 2, row 13",
+          "source_unit": "health_regen_source_units",
+          "resolved_source_unit": "health_points_per_5_actor_combat_seconds",
+          "runtime_stat": "hp_regen",
+          "runtime_unit": "health_points_per_actor_combat_second",
+          "scale": 0.2,
+          "runtime_value": 0.6,
+          "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008"
+        },
+        "unit_aware_label": "战斗生命恢复 +3/5秒（+0.6/秒；随角色战斗时间）",
+        "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008",
+        "runtime_stat": "hp_regen",
+        "scale": 0.2
+      }
+    },
+    "intermediate:I12": {
+      "commerce": {
+        "name": "回生胚体",
+        "kind": "equipment",
+        "price": 1050,
+        "components": [
+          "base:B06",
+          "base:B12"
+        ],
+        "source_id": "intermediate:I12"
+      },
+      "before": {
+        "supported": false,
+        "reason": "regen_time_unit_unresolved",
+        "stats": {},
+        "parameters": [
+          {
+            "parameter": "intermediate:I12.stat.max_health",
+            "source_unit": "health_points",
+            "current_value": 190.0,
+            "source_value": 190.0,
+            "runtime_stat": "max_hp",
+            "scale": 1.0
+          },
+          {
+            "parameter": "intermediate:I12.stat.health_regen",
+            "source_unit": "health_regen_source_units",
+            "current_value": 5.0,
+            "source_value": 5.0,
+            "runtime_stat": "",
+            "scale": 1.0
+          }
+        ],
+        "passives": [],
+        "actives": [],
+        "tier": "intermediate"
+      },
+      "definition": {
+        "supported": true,
+        "reason": "",
+        "stats": {
+          "hp_regen": 1.0,
+          "max_hp": 190.0
+        },
+        "parameters": [
+          {
+            "parameter": "intermediate:I12.stat.max_health",
+            "source_unit": "health_points",
+            "current_value": 190.0,
+            "source_value": 190.0,
+            "runtime_stat": "max_hp",
+            "scale": 1.0
+          },
+          {
+            "parameter": "intermediate:I12.stat.health_regen",
+            "current_value": 5,
+            "source_value": 5,
+            "source_ref": "DOCX table 3, row 13",
+            "source_unit": "health_regen_source_units",
+            "resolved_source_unit": "health_points_per_5_actor_combat_seconds",
+            "runtime_stat": "hp_regen",
+            "runtime_unit": "health_points_per_actor_combat_second",
+            "scale": 0.2,
+            "runtime_value": 1.0,
+            "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008"
+          }
+        ],
+        "passives": [],
+        "actives": [],
+        "tier": "intermediate",
+        "regen_mapping": {
+          "parameter": "intermediate:I12.stat.health_regen",
+          "current_value": 5,
+          "source_value": 5,
+          "source_ref": "DOCX table 3, row 13",
+          "source_unit": "health_regen_source_units",
+          "resolved_source_unit": "health_points_per_5_actor_combat_seconds",
+          "runtime_stat": "hp_regen",
+          "runtime_unit": "health_points_per_actor_combat_second",
+          "scale": 0.2,
+          "runtime_value": 1.0,
+          "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008"
+        },
+        "unit_aware_label": "战斗生命恢复 +5/5秒（+1/秒；随角色战斗时间）",
+        "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008"
+      }
+    }
+  }
+}

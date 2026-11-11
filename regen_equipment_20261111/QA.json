@@ -1,0 +1,126 @@
+{
+  "status": "NATURAL_FUNDS_NATIVE_SHOP_SCRIPT_ASSISTED_FULL_FLOOR_AND_FOCUSED_PASS",
+  "baseline": "G02 fb8fff23eee8678af1f9c116dfe33f569b9b3f2c8a1aa9cd22c673bafae9b0d5; backup26b3bc726d859a0195feda225b6c83368d767efe",
+  "scope": "Admit previously unavailable B12/I12 original regeneration stats and make the combat-time unit explicit in the shop. No added active/passive mechanic.",
+  "source_rules": [
+    "Original design: intermediate equipment combines attributes and does not carry complex mechanisms",
+    "B12 price400 and source regeneration3; I12 total1050 with B06(450)+B12(400)+combine200, maxHP190 and source regeneration5",
+    "Per-five-actor-combat-seconds is a prior developer balancing interpretation from20261008, not an explicit user time-unit quotation; also used by current regeneration training",
+    "Existing actual source regeneration clock, shop transaction ownership, G27 multiplier and HP undo policy are preserved"
+  ],
+  "planned_native_coverage": "No gold/HP/threshold injection. Script controls normal first five rooms; physical mouse shop purchase/synthesis/undo at sixth-row safe service; script resumes normal route/combat. This is not a human full-floor acceptance.",
+  "static_economy": "All current routes yield1135-1490 through first five rooms if nothing is spent. I12 is1050. Prices and income were not modified.",
+  "limitations": [
+    "Native mouse covers shop only; combat/navigation and initial choices/learning are script-assisted, not human full-floor acceptance",
+    "Focused tests explicitly inject funds/HP/Hexes and use empty source encounter; natural route run injects none of those",
+    "No Windows run, real audio listening or multiplayer acceptance",
+    "No isolated native A/B damage-and-heal comparison; exact healing rates verified with the real source clock in focused test",
+    "The per-five-second unit is prior developer interpretation, not original user quotation"
+  ],
+  "guards": {
+    "regen_native01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 260.6442341809998,
+      "max_sample_gap": 0.06486507900081051,
+      "peak_rss_plus_swap": 459579392,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "regen_focused01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 4.689338698999563,
+      "max_sample_gap": 0.05104991100051848,
+      "peak_rss_plus_swap": 315338752,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "tests": {
+    "REGEN_FOCUSED_RESULT": {
+      "checks": 64,
+      "failures": 0,
+      "case_completion": {
+        "commerce_case_done": true,
+        "health_case_done": true,
+        "source_case_done": true
+      },
+      "status": "FIXTURE_PASS_NOT_NATURAL_GAMEPLAY_ACCEPTANCE"
+    },
+    "G02_FOCUSED_RESULT": {
+      "checks": 68,
+      "failures": 0,
+      "case_completion": {
+        "commerce_case_done": true,
+        "source_case_done": true
+      },
+      "status": "FIXTURE_PASS_NOT_NATURAL_FIRST_FLOOR_COMPLETION"
+    },
+    "BODY_FOCUSED_RESULT": {
+      "checks": 68,
+      "failures": 0,
+      "case_completion": {},
+      "status": "FIXTURE_PASS_NOT_GAMEPLAY_ACCEPTANCE"
+    },
+    "P3_REGRESSION_RESULT": {
+      "checks": 109,
+      "failures": 0,
+      "case_completion": {},
+      "status": "FIXTURE_PASS_NOT_GAMEPLAY_ACCEPTANCE"
+    }
+  },
+  "candidate_pck": "ea0e1041797c49221cda590c3838ba7e3e9b623d4c72e960a7f555383f610ca0",
+  "template_sha256": "e8e31a330fe29aff67a1ca1a04c806e9c7e1f8a67c04983af09119b7c6ccb74a",
+  "native_shop": {
+    "earned_gold": 1310,
+    "fixture_injection": false,
+    "route_to_purchase": "r01a through r05a, sixth-row training safe service",
+    "real_mouse_actions": [
+      "B06 buy450:1310->860",
+      "B12 buy400:860->460",
+      "I12 combine200:460->260, two components become one item",
+      "Undo:gold460 and both components restored",
+      "Resynthesize:gold260 and one I12 restored",
+      "Close shop then F7 resumes script navigation/combat"
+    ],
+    "actual_hp_all_transactions": 154.336607142827,
+    "actual_max_hp": [
+      520.8,
+      694.4,
+      756.4
+    ],
+    "max_hp_note": "Selected G24 multiplier is retained; raw equipment HP is140 components then190 final",
+    "raw_equipment_regen_per_second": [
+      0,
+      0.6,
+      1.0
+    ],
+    "UI": "1180x812 actual window; original price, recipe ownership, current200 quote, full unit and pause/postbattle wording visible without clipping",
+    "remaining": "Completed same-run full floor and focused tests"
+  },
+  "static_rebuild": {
+    "portable_replay_exact": true,
+    "inverse_original_bytes_exact": true,
+    "only_stats_changed": [
+      "base:B12",
+      "intermediate:I12"
+    ],
+    "sim_binding_models_unchanged": true
+  },
+  "test_sources": {
+    "focused_regen.gd": "66a1b937e7f6cb8d5af2ab2a7db3a2177072bf84e377cdc0c9a6d72b7fd1f3d0",
+    "native_regen_shop.gd": "6b537353b26e2807441a8321f1edc17512a3e0a7a1e51f50b8f895f5a0e9b2d9",
+    "run_regen_focused.gd": "775a008d33314709dccfa4031a1708c4537fc82e4450169a1181b316f18ebc1f"
+  },
+  "native_final": "FINAL REGEN_NATURAL_FULL_FLOOR_PASS time=249.512334666678 rows=12 HP=607.94678571423 gold=345 purchased=4 used=0 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+  "native_combat": "Subsequent normal rooms reported source regen1.5/second (base0.5+I12 1), I12 inventory held and shop undo empty; HP gain also includes other existing effects, not attributed entirely to I12."
+}

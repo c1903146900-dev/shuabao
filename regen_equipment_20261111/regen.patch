@@ -1,0 +1,47 @@
+--- a/__clean_fengli/machine_template_pins.gd
++++ b/__clean_fengli/machine_template_pins.gd
+@@ -1,4 +1,4 @@
+ extends RefCounted
+ ## Deliberately closed until original103 build validation and independent payload review.
+ const CONFIGURED = true
+-const SHA256 = "cef74befe6080cab6c9c7d375ba2c416689a3dfa955ab29c9688fb2cf3e77386"
++const SHA256 = "e8e31a330fe29aff67a1ca1a04c806e9c7e1f8a67c04983af09119b7c6ccb74a"
+--- a/fengli_route_20261024/shop_theme.gd
++++ b/fengli_route_20261024/shop_theme.gd
+@@ -117,6 +117,7 @@
+     _buy.text="不可购买："+_player_reason(str(_quote.get("reason","")))
+ 
+  _describe_g02()
++ _describe_equipment_regen()
+ 
+ func refresh(force:bool=false)->void:
+  # The inherited fix02 retires emitting rows safely. Clear only our references
+@@ -279,3 +280,28 @@
+   lines.append(_player_reason(str(_quote.get("reason",""))))
+   _buy.text="不可购买："+_player_reason(str(_quote.get("reason","")))
+  _detail.text="\n".join(lines)
++
++func _describe_equipment_regen()->void:
++ # Display the admitted mapping; prices/credits still come from the same ledger.
++ if _selected not in ["base:B12","intermediate:I12"] or not _state.get("ready",false) or not _state.catalog.items.has(_selected):return
++ var item:Dictionary=_state.catalog.items[_selected]
++ var definition:Dictionary=item.equipment_runtime
++ if not definition.get("supported",false):return
++ var lines:Array[String]=["%s | 总价%d金币"%[item.name,int(item.price)]]
++ if definition.stats.has("max_hp"):lines.append("生命上限+%.0f"%float(definition.stats.max_hp))
++ lines.append("战斗生命恢复 +%s/5秒（+%s/秒，随角色战斗时间）"%[str(float(definition.stats.hp_regen)*5.0),str(definition.stats.hp_regen)])
++ lines.append("持续恢复，不是立即治疗；暂停及战斗结束后停止。")
++ var parts:Array[String]=[]
++ for id in item.get("components",[]):
++  var owned:int=0
++  for entry in _state.state.inventory:
++   if entry.id==id:owned+=int(entry.count)
++  parts.append("%s（持有%d）"%[str(_state.catalog.items[id].name),owned])
++ if not parts.is_empty():lines.append("配方："+" + ".join(parts))
++ if _quote.get("accepted",false):
++  lines.append("本次扣款%d金 · 已持组件抵扣%d金"%[int(_quote.charge),int(_quote.credit)])
++  _buy.text="%s %s（%d金币）"%["合成" if int(_quote.credit)>0 else "购买",item.name,int(_quote.charge)]
++ else:
++  lines.append(_player_reason(str(_quote.get("reason",""))))
++  _buy.text="不可购买："+_player_reason(str(_quote.get("reason","")))
++ _detail.text="\n".join(lines)
