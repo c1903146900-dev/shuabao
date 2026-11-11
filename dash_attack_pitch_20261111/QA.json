@@ -1,0 +1,76 @@
+{
+  "status": "ISOLATED_SHORT_TESTED_FULL_REGRESSION_BLOCKED_NOT_SELECTED",
+  "baseline_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "candidate_pck": "b5429886346d515fced08f57fe17f2e05de1dce0819711e99a04664bc4936a21",
+  "bindings": 257,
+  "runtime_diff": [
+    "presentation.gd",
+    "puppet_motion.gd",
+    "manifest.json",
+    "generation.gd"
+  ],
+  "all_gameplay_files_byte_identical": true,
+  "baseline_finding": "Native north and south dash attacks drew the sword sideways at contact. Three-phase labels were not three different displayed textures.",
+  "native_coverage": [
+    "Scripted ordinary first-room setup; real mouse and keyboard north, south, east dash attacks.",
+    "Second real-input run: left dash attack and north dash attack with left mirror.",
+    "Native attacks started as intended but no dash-attack damage event occurred in these short routes."
+  ],
+  "visual_review": [
+    "North and left-mirrored north clearly point blade upward, outside head silhouette; left and right contact remain horizontal.",
+    "No obvious shoulder break, bent blade or extra floating part in inspected clear contact/recovery frames.",
+    "South has downward intent but overlaps front leg/feet and temporary HP cue; unobstructed full silhouette not proven.",
+    "Settled screenshots return to ordinary walking with no retained raised sword."
+  ],
+  "limits": [
+    "Key frames, not continuous video or exact contact instant.",
+    "Observer reads persistent puppet_motion.receipt; after animation ends its stale pitch must not be treated as current draw state. Use presentation.receipt.puppet_motion for future current-state analysis.",
+    "No controlled hit/miss, per-frame damage-immunity, full continuous-motion or Windows verification on this candidate.",
+    "ALSA unavailable; Dummy audio output is not listening QA.",
+    "Full-floor regression aborted at startup by unchanged guard; no gameplay coverage from that run. No retry and no guard changes.",
+    "Candidate not merged or delivered; prior passed baseline remains selected."
+  ],
+  "guards": {
+    "dash_attack_visual01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 59.84496849600009,
+      "max_sample_gap": 0.05994724800007134,
+      "peak_rss_plus_swap": 425877504,
+      "hard_kernel_guarantee": false,
+      "cleanup_complete": true
+    },
+    "dash_attack_pitch01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 60.24759437800003,
+      "max_sample_gap": 0.05819350599995232,
+      "peak_rss_plus_swap": 418877440,
+      "hard_kernel_guarantee": false,
+      "cleanup_complete": true
+    },
+    "dash_attack_pitch02": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 46.389146355999856,
+      "max_sample_gap": 0.061288188000162336,
+      "peak_rss_plus_swap": 418205696,
+      "hard_kernel_guarantee": false,
+      "cleanup_complete": true
+    },
+    "dash_attack_pitch_full01": {
+      "passed": false,
+      "reason": "GuardError:unowned_engine_detected_no_signal_to_it",
+      "exit": -15,
+      "elapsed": 0.15646850500024811,
+      "max_sample_gap": 0.05093499699978565,
+      "peak_rss_plus_swap": 46780416,
+      "hard_kernel_guarantee": false,
+      "cleanup_complete": true
+    }
+  },
+  "full_floor_observer_reuse": "full_floor_dash.gd from existing fe8a433 backup, executed bytes unchanged"
+}

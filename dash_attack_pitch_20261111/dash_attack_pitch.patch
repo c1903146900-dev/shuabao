@@ -1,0 +1,115 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -345,7 +345,7 @@
+  draw_set_transform(at+body_offset,body_rotation,Vector2(_mirror,1.0)*body_scale)
+  if puppet:
+   var local_aim:=Vector2.ZERO
+-  if str(animation.get("kind",""))=="attack_started":
++  if str(animation.get("kind","")) in ["attack_started","dash_attack_started"]:
+    # Undo only the current visual basis; no event, facing or simulation mutation.
+    local_aim=screen_direction.rotated(-body_rotation)/(Vector2(_mirror,1.0)*body_scale)
+   puppet_motion.draw_pose(self,pose_textures[frame.key],str(frame.key),animation,float(frame.get("age",0)),anchor,scale,moving_basic,local_aim)
+--- a/fengli_route_20261024/puppet_motion.gd
++++ b/fengli_route_20261024/puppet_motion.gd
+@@ -6,6 +6,11 @@
+ var arm:=PackedVector2Array([Vector2(700,520),Vector2(880,555),Vector2(1020,665),Vector2(1600,665),Vector2(1600,1030),Vector2(1240,1030),Vector2(1240,895),Vector2(900,770),Vector2(705,680)])
+ var mesh:=ArrayMesh.new()
+ var receipt:Dictionary={}
++# Recover-art front hand and sword only. Keep the head, rear dagger and legs out.
++const DASH_SHOULDER=Vector2(706,627)
++var dash_arm:=PackedVector2Array([Vector2(678,623),Vector2(735,588),Vector2(788,594),Vector2(840,623),Vector2(842,667),Vector2(1144,716),Vector2(1150,796),Vector2(1015,802),Vector2(886,768),Vector2(800,741),Vector2(701,733),Vector2(650,714),Vector2(636,656)])
++# Source triangles, UVs, triangulation and barycentric weights are cached once.
++var dash_aim_parts:Array=[]
+ func blend_curve(t:float)->float:
+  t=clampf(t,0.0,1.0)
+  return t*t*(3.0-2.0*t)
+@@ -60,6 +65,76 @@
+  # swings rather than rotating the whole hero or claiming exact blade collision.
+  var pitch:float=clampf(atan2(local_aim.y,maxf(0.0,local_aim.x))-.59,-1.35,.65)
+  return pitch*envelope
++func dash_aim_pitch(event:Dictionary,age:float,local_aim:Vector2)->float:
++ # Presentation only: accepted dash direction in the current body-local basis.
++ # The existing recover blade slopes down about .17 radians before body lean.
++ if str(event.get("kind",""))!="dash_attack_started" or not local_aim.is_finite() or not is_finite(age) or age<0.0 or local_aim.length_squared()<.00001:return 0.0
++ var timing:Dictionary=event.get("animation",{})
++ var contact:float=maxf(.001,float(timing.get("contact_after",0)))
++ var recovery:float=maxf(.001,float(timing.get("recovery",0)))
++ var hold:float=minf(.08,recovery*.25)
++ var envelope:float=blend_curve(age/(contact*.6))
++ if age>contact+hold:envelope*=1.0-blend_curve((age-contact-hold)/maxf(.001,recovery-hold))
++ # Bounded shoulder pitch keeps the upward blade outside the head silhouette.
++ # Do not rotate the body or claim an exact blade-to-hitbox alignment.
++ return clampf(atan2(local_aim.y,local_aim.x)-.17,-1.35,1.05)*envelope
++func _prepare_dash_aim_parts()->void:
++ if not dash_aim_parts.is_empty():return
++ # Draw the rotating cutout first, then the unchanged body over its shoulder.
++ for is_arm:bool in [true,false]:
++  var part:Dictionary={"arm":is_arm,"corners":PackedVector3Array(),"weights":PackedVector3Array(),"uv":PackedVector2Array(),"indices":PackedInt32Array()}
++  for y in range(18):
++   for x in range(24):
++    var i:int=y*25+x
++    for ids:PackedInt32Array in [PackedInt32Array([i,i+1,i+25]),PackedInt32Array([i+1,i+26,i+25])]:
++     var triangle:=PackedVector2Array()
++     for id:int in ids:triangle.append(Vector2(float(id%25)/24*1536,float(floori(float(id)/25))/18*1024))
++     var pieces:Array=Geometry2D.intersect_polygons(triangle,dash_arm) if is_arm else Geometry2D.clip_polygons(triangle,dash_arm)
++     for polygon:PackedVector2Array in pieces:
++      var faces:PackedInt32Array=Geometry2D.triangulate_polygon(polygon)
++      if faces.is_empty():continue
++      var first:int=part.uv.size()
++      var ab:Vector2=triangle[1]-triangle[0];var ac:Vector2=triangle[2]-triangle[0]
++      for point:Vector2 in polygon:
++       var ap:Vector2=point-triangle[0]
++       var v:float=ap.cross(ac)/ab.cross(ac);var w:float=ab.cross(ap)/ab.cross(ac)
++       part.corners.append(Vector3(ids[0],ids[1],ids[2]))
++       part.weights.append(Vector3(1.0-v-w,v,w))
++       part.uv.append(point/Vector2(1536,1024))
++      for face:int in faces:part.indices.append(first+face)
++  dash_aim_parts.append(part)
++func _dash_mesh_point(vertices:PackedVector3Array,source:Vector2)->Vector2:
++ # Sample the old triangle interpolation, not a second displacement formula.
++ var grid:Vector2=source/Vector2(64,1024.0/18.0)
++ var x:int=clampi(floori(grid.x),0,23);var y:int=clampi(floori(grid.y),0,17)
++ var f:Vector2=grid-Vector2(x,y);var i:int=y*25+x
++ var point:Vector3
++ if f.x+f.y<=1.0:point=vertices[i]*(1.0-f.x-f.y)+vertices[i+1]*f.x+vertices[i+25]*f.y
++ else:point=vertices[i+1]*(1.0-f.y)+vertices[i+26]*(f.x+f.y-1.0)+vertices[i+25]*(1.0-f.x)
++ return Vector2(point.x,point.y)
++func _draw_dash_aim(canvas:CanvasItem,texture:Texture2D,original:PackedVector3Array,pitch:float)->void:
++ _prepare_dash_aim_parts()
++ var pivot:Vector2=_dash_mesh_point(original,DASH_SHOULDER)
++ var vertices:=PackedVector3Array();var uv:=PackedVector2Array();var indices:=PackedInt32Array()
++ for part:Dictionary in dash_aim_parts:
++  var first:int=vertices.size()
++  for index in range(part.uv.size()):
++   var ids:Vector3=part.corners[index];var weights:Vector3=part.weights[index]
++   var old:Vector3=original[int(ids.x)]*weights.x+original[int(ids.y)]*weights.y+original[int(ids.z)]*weights.z
++   var point:=Vector2(old.x,old.y)
++   if bool(part.arm):point=pivot+(point-pivot).rotated(pitch)
++   vertices.append(Vector3(point.x,point.y,0));uv.append(part.uv[index])
++  for index:int in part.indices:indices.append(first+index)
++ var arrays:Array=[];arrays.resize(Mesh.ARRAY_MAX)
++ arrays[Mesh.ARRAY_VERTEX]=vertices;arrays[Mesh.ARRAY_TEX_UV]=uv;arrays[Mesh.ARRAY_INDEX]=indices
++ mesh.clear_surfaces();mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
++ canvas.draw_mesh(mesh,texture)
++ if canvas.has_method("record_hero_mesh"):
++  var positions:=PackedVector2Array()
++  for vertex in vertices:positions.append(Vector2(vertex.x,vertex.y))
++  canvas.record_hero_mesh(texture,positions,uv,indices)
++ receipt.vertices=vertices.size()
++ receipt.dash_aim_cutout=true
+ func dash_thrust(event:Dictionary,age:float)->float:
+  # The event's original clock/contact owns full extension; Q2 uses hero time.
+  var timing:Dictionary=event.get("animation",{})
+@@ -136,6 +211,12 @@
+     moved.x-=25*maxf(0,thrust)*leg_weight
+    var at:Vector2=(moved-anchor)*scale
+    vertices.append(Vector3(at.x,at.y,0));uv.append(source/Vector2(1536,1024))
++ if kind=="dash_attack_started":
++  var aim_pitch:float=dash_aim_pitch(event,age,local_aim)
++  receipt.dash_aim_pitch=aim_pitch
++  if absf(aim_pitch)>.00001:
++   _draw_dash_aim(canvas,texture,vertices,aim_pitch)
++   return
+  for y in range(18):
+   for x in range(24):
+    var i:int=y*25+x
