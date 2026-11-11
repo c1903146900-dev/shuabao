@@ -1,0 +1,539 @@
+{
+  "status": "VALIDATED_DEVELOPMENT_CANDIDATE_NOT_WINDOWS_OR_HUMAN_FULL_PLAY_ACCEPTANCE",
+  "before": "P3 admission e0020eee050ec3b48128ac6e5202dfb966942f7d, based on exit fix e6c7139454e20d4926e07200bf557e1ce54eb57c",
+  "pck_sha256": "e5e9e576a673a46bb58ada67c2b84f39b4be4062b637fbba054ac206c80b3d11",
+  "change": "Only undo/respec of still-refundable allocations reverses that allocation's P3 rank-conversion AD and restores its spent remainder. Prior combat AD/credited kills remain. Original context/enter_level boundaries commit allocations. UI, direct model commands and Sim APIs share idempotent transaction; rank-change events publish after receipt. No numeric or guard change.",
+  "native_UI": {
+    "scope": "Native mouse upgrades and undo after script-assisted normal first two combat rooms; no injected gold/SP/kills",
+    "columns": [
+      "P3_rank",
+      "SP",
+      "permanent_AD",
+      "unredeemed_kills",
+      "credited_kills"
+    ],
+    "state_transitions": [
+      [
+        1,
+        1,
+        0.0,
+        9,
+        9
+      ],
+      [
+        2,
+        0,
+        1.0,
+        0,
+        9
+      ],
+      [
+        1,
+        1,
+        0.0,
+        9,
+        9
+      ],
+      [
+        2,
+        0,
+        1.0,
+        0,
+        9
+      ],
+      [
+        1,
+        1,
+        0.0,
+        9,
+        9
+      ]
+    ],
+    "passed": true
+  },
+  "normal_full_floor": {
+    "result": "FINAL NATURAL_PASS time=221.688888888899 rows=12 HP=420.0 gold=395 purchased=9 used=9 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+    "final_growth": {
+      "credited_kills": 38,
+      "permanent_ad": 6.0,
+      "p3_progress": 3,
+      "ad": 44.0
+    },
+    "guard": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 233.26073222700052,
+      "max_sample_gap": 0.06534115000067686,
+      "exit": 0,
+      "cleanup_complete": true
+    },
+    "scope": "Initial P3 learn and two upgrade/undo cycles use native mouse. Combat/navigation/other learning are script-assisted source actions. No injected gold/SP/XP/kills."
+  },
+  "focused": {
+    "status": "FIXTURE_PASS_NOT_GAMEPLAY_ACCEPTANCE",
+    "checks": 109,
+    "failed": [],
+    "check_results": [
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "historical_growth_fixture_is_1_AD_9_remainder",
+        "passed": true
+      },
+      {
+        "check": "direct_command_commits_rank_SP_AD_without_UI_sync",
+        "passed": true
+      },
+      {
+        "check": "event_published_after_receipt_and_journal",
+        "passed": true
+      },
+      {
+        "check": "event_callback_replay_does_not_reexecute",
+        "passed": true
+      },
+      {
+        "check": "journal_owns_only_one_conversion",
+        "passed": true
+      },
+      {
+        "check": "duplicate_UI_projection_is_noop",
+        "passed": true
+      },
+      {
+        "check": "duplicate_learn_receipt_is_idempotent",
+        "passed": true
+      },
+      {
+        "check": "conflicting_id_does_not_touch_growth",
+        "passed": true
+      },
+      {
+        "check": "direct_undo_restores_exact_before_with_historical_AD",
+        "passed": true
+      },
+      {
+        "check": "duplicate_undo_does_not_restore_twice",
+        "passed": true
+      },
+      {
+        "check": "old_learn_replay_after_undo_does_not_reapply",
+        "passed": true
+      },
+      {
+        "check": "new_upgrade_redeems_restored_unspent_progress",
+        "passed": true
+      },
+      {
+        "check": "new_upgrade_undo_no_free_growth",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "sim_upgrade_below_threshold_retains_remainder",
+        "passed": true
+      },
+      {
+        "check": "sim_undo_no_conversion_exact",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "interleaved_upgrades_have_single_growth_gain",
+        "passed": true
+      },
+      {
+        "check": "undo_p4_zero_conversion_preserves_p2_gain",
+        "passed": true
+      },
+      {
+        "check": "undo_p3_zero_conversion_preserves_p2_gain",
+        "passed": true
+      },
+      {
+        "check": "undo_nonP3_allocation_does_not_remove_P3_growth",
+        "passed": true
+      },
+      {
+        "check": "interleaved_stack_fully_restores_original",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "respec_training_guard_unchanged_and_atomic",
+        "passed": true
+      },
+      {
+        "check": "respec_removes_only_uncommitted_upgrade_gain",
+        "passed": true
+      },
+      {
+        "check": "other_passive_selection_preserves_historical_growth",
+        "passed": true
+      },
+      {
+        "check": "second_respec_does_not_double_inverse",
+        "passed": true
+      },
+      {
+        "check": "relearn_P3_does_not_recredit_historical_kills",
+        "passed": true
+      },
+      {
+        "check": "relearn_upgrade_respec_still_no_free_growth",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "fixture-commit_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-commit_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "battle_commits_upgrade_and_new_kill_growth",
+        "passed": true
+      },
+      {
+        "check": "cross_battle_undo_boundary_unchanged",
+        "passed": true
+      },
+      {
+        "check": "training_respec_retains_all_committed_AD",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "combat_upgrade_is_immediately_committed",
+        "passed": true
+      },
+      {
+        "check": "combat_upgrade_not_new_safe_undo",
+        "passed": true
+      },
+      {
+        "check": "combat_upgrade_growth_survives_training_respec",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "existing_enter_level_boundary_commits_growth",
+        "passed": true
+      },
+      {
+        "check": "respec_after_existing_room_boundary_preserves_commit",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "setup_learn_P3",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_real_encounter_begin",
+        "passed": true
+      },
+      {
+        "check": "fixture-initial_safe_after_end",
+        "passed": true
+      },
+      {
+        "check": "stale_rank_failure_changes_neither_source_nor_model",
+        "passed": true
+      },
+      {
+        "check": "active_transaction_denial_is_atomic",
+        "passed": true
+      },
+      {
+        "check": "invalid_inverse_rejected_before_any_mutation",
+        "passed": true
+      },
+      {
+        "check": "valid_inverse_after_corruption_fixture_restored",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "same_binding_is_idempotent",
+        "passed": true
+      },
+      {
+        "check": "source_cannot_gain_second_authority",
+        "passed": true
+      },
+      {
+        "check": "unbound_direct_P3_cannot_skip_source_transaction",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "newrun_has_no_growth_or_journal",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "rank1_source_threshold_unchanged",
+        "passed": true
+      },
+      {
+        "check": "rank1_below_threshold",
+        "passed": true
+      },
+      {
+        "check": "rank1_duplicate_kill_no_credit",
+        "passed": true
+      },
+      {
+        "check": "rank1_original_kill_growth_preserved",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "rank2_source_threshold_unchanged",
+        "passed": true
+      },
+      {
+        "check": "rank2_below_threshold",
+        "passed": true
+      },
+      {
+        "check": "rank2_duplicate_kill_no_credit",
+        "passed": true
+      },
+      {
+        "check": "rank2_original_kill_growth_preserved",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "rank3_source_threshold_unchanged",
+        "passed": true
+      },
+      {
+        "check": "rank3_below_threshold",
+        "passed": true
+      },
+      {
+        "check": "rank3_duplicate_kill_no_credit",
+        "passed": true
+      },
+      {
+        "check": "rank3_original_kill_growth_preserved",
+        "passed": true
+      },
+      {
+        "check": "catalog_valid",
+        "passed": true
+      },
+      {
+        "check": "single_model_bound_to_source",
+        "passed": true
+      },
+      {
+        "check": "rank4_source_threshold_unchanged",
+        "passed": true
+      },
+      {
+        "check": "rank4_below_threshold",
+        "passed": true
+      },
+      {
+        "check": "rank4_duplicate_kill_no_credit",
+        "passed": true
+      },
+      {
+        "check": "rank4_original_kill_growth_preserved",
+        "passed": true
+      }
+    ],
+    "guard": {
+      "passed": true,
+      "reason": "",
+      "elapsed": 3.1930174210001496,
+      "max_sample_gap": 0.052706559999933233,
+      "exit": 0,
+      "cleanup_complete": true
+    },
+    "scope": {
+      "death_revival": "NOT_RUN",
+      "engine_executed_by_author": false,
+      "fixture_SP": 8,
+      "full_rest_service": "NOT_RUN",
+      "live_Session_UI": "NOT_RUN_BY_THIS_TEST",
+      "natural_full_floor": "NOT_RUN",
+      "old_focused_source_modified": false,
+      "real_model_command": true,
+      "real_sim_skill_APIs": true,
+      "real_source_begin_end": true,
+      "synthetic_direct_kill_hook": true,
+      "training_context_fixture": true
+    }
+  },
+  "recovery": "From prior admission checkpoint, apply zero-context patch to runtime and verify SOURCE_HASHES. Rebuild existing manifest/generation/PCK/descriptor normally; new p3_growth_model.gd must be included (250 manifest entries). Never replace already-sealed runtime files in place. Existing private original archive assets are still required, not included here.",
+  "limits": "No Windows execution, audio hearing, death/revival or manual complete-floor acceptance. Focused test training is real model API but isolated context, not physical service UI. Prior accepted exit runtime retained; warning candidates excluded."
+}

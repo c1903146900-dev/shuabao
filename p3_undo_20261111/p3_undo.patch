@@ -1,0 +1,134 @@
+--- /dev/null
++++ b/fengli_route_20261024/p3_growth_model.gd
+@@ -0,0 +1,90 @@
++extends "res://fengli_route_20261024/adapted/tests/ink_first_floor_user_route_20261005/runtime01/reward_model.gd"
++## P3 rank-change conversion participates in the existing skill transaction.
++## Only each refundable allocation's own conversion is reversible. Combat kills,
++## committed allocations and historical permanent growth never enter this journal.
++var _p3_sim:WeakRef
++var _p3_command_id:String=""
++var _p3_result:Dictionary={}
++
++func bind_p3_sim(sim:Node)->Dictionary:
++ if not is_instance_valid(sim) or sim.get_script().resource_path!="res://fengli_route_20261024/sim.gd":return _deny("exact_fengli_p3_sim_required")
++ if sim._p3_bound_model!=null and not is_same(sim._p3_bound_model.get_ref(),self):return _deny("p3_sim_has_other_authority")
++ if _p3_sim!=null:
++  return {"accepted":true,"reason":""} if is_same(_p3_sim.get_ref(),sim) else _deny("p3_sim_already_bound")
++ if state.revision!=0 or state.hero_id!="fengli" or sim.hero.actor_id!="fengli" or sim.wave!=0 or sim.encounter_generation!=0 or sim.transaction_active:return _deny("fresh_p3_binding_required")
++ for skill in state.skills.values():
++  if int(skill.rank)!=0:return _deny("fresh_p3_binding_required")
++ if sim.hero.credited_kills!=0 or sim.hero.p3_progress!=0 or sim.hero.permanent_ad!=0.0:return _deny("fresh_p3_binding_required")
++ _p3_sim=weakref(sim)
++ return {"accepted":true,"reason":""}
++
++func command(id:String,action:String,args:Dictionary={})->Dictionary:
++ # The original authority owns validation, conflict detection and replay results.
++ if action not in ["learn","undo_skill","respec"] or id.is_empty() or receipts.has(id):return super.command(id,action,args)
++ if not _p3_command_id.is_empty():return _deny("p3_transaction_in_progress")
++ if _p3_sim==null:
++  if args.get("candidate","")=="P3" or state.skills.P.candidate=="P3":return _deny("p3_source_not_bound")
++  return super.command(id,action,args)
++ var sim:Node=_p3_sim.get_ref()
++ if not is_instance_valid(sim):return _deny("p3_source_unavailable")
++ if not sim.begin_p3_growth_projection(self):return _deny("transaction_in_progress")
++ _p3_command_id=id
++ _p3_result={}
++ var result:Dictionary=super.command(id,action,args)
++ # _apply has no outward callback: source rank-change events are deferred until
++ # Model.command and all command wrappers have recorded the single final receipt.
++ var events:Array=sim.end_p3_growth_projection(self)
++ _p3_command_id=""
++ if result.accepted:
++  result["p3_growth_projection"]=_p3_result.duplicate(true)
++  receipts[id].result=result.duplicate(true)
++ else:
++  assert(events.is_empty())
++ _p3_result={}
++ for event in events:sim.emit_event("permanent_attack_gained",event)
++ return result
++
++func _apply(action:String,args:Dictionary)->String:
++ if _p3_command_id.is_empty() or action not in ["learn","undo_skill","respec"]:return super._apply(action,args)
++ var sim:Node=_p3_sim.get_ref()
++ var hero:RefCounted=sim.hero
++ # A live source and ledger must agree before either is mutated. This is an
++ # invariant check, not another gameplay boundary or a new rule sealing growth.
++ if str(hero.loadout.passive)!=str(state.skills.P.candidate).to_lower() or int(hero.ranks.passive)!=int(state.skills.P.rank):return "p3_source_rank_mismatch"
++ if not is_finite(hero.permanent_ad) or hero.permanent_ad<0.0 or hero.p3_progress<0:return "invalid_p3_source_state"
++ var undo_records:Array=[]
++ if action=="undo_skill" and not state.allocations.is_empty():undo_records.append(state.allocations.back())
++ elif action=="respec":undo_records=state.allocations.duplicate(true)
++ var restored_progress:int=0
++ var removed_ad:float=0.0
++ for allocation in undo_records:
++  if not allocation.has("p3_growth"):continue
++  var record:Dictionary=allocation.p3_growth
++  if allocation.slot!="P" or record.get("actor_id","")!=str(state.actor_id) or record.get("run_id","")!=_run_id or str(record.get("command_id","")).is_empty():return "p3_growth_receipt_scope_mismatch"
++  if int(record.get("before_rank",-1))!=int(allocation.before.rank) or int(record.get("after_rank",-1))!=int(allocation.before.rank)+1:return "p3_growth_receipt_rank_mismatch"
++  var spent:int=int(record.get("spent_progress",-1))
++  var delta:float=float(record.get("ad_delta",-1.0))
++  if spent<0 or not is_finite(delta) or delta<0.0:return "invalid_p3_growth_receipt"
++  restored_progress+=spent
++  removed_ad+=delta
++ if removed_ad>hero.permanent_ad:return "p3_growth_inverse_underflow"
++ var allocations_before:int=state.allocations.size()
++ # All inherited action checks complete before the actor is touched. The only
++ # code after success is deterministic scalar inversion and the source's existing
++ # loadout/redemption projection; it cannot reject and cannot emit callbacks here.
++ var reason:String=super._apply(action,args)
++ if not reason.is_empty():return reason
++ hero.permanent_ad-=removed_ad
++ hero.p3_progress+=restored_progress
++ var before_ad:float=hero.permanent_ad
++ var before_progress:int=hero.p3_progress
++ sim._sync_loadout_from_ledger()
++ var delta:float=hero.permanent_ad-before_ad
++ var spent:int=before_progress-hero.p3_progress
++ if action=="learn" and args.get("candidate","")=="P3" and state.allocations.size()>allocations_before:
++  var allocation:Dictionary=state.allocations.back()
++  # Store even a zero conversion so interleaved and successive upgrades retain
++  # exact causal ownership. Existing context/enter_level clears commit it normally.
++  allocation["p3_growth"]={"command_id":_p3_command_id,"actor_id":str(state.actor_id),"run_id":_run_id,"before_rank":int(allocation.before.rank),"after_rank":int(state.skills.P.rank),"ad_delta":delta,"spent_progress":spent}
++ _p3_result={"removed_own_ad":removed_ad,"restored_unredeemed_progress":restored_progress,"rank_change_ad":delta,"rank_change_spent_progress":spent,"permanent_ad":hero.permanent_ad,"unredeemed_progress":hero.p3_progress,"credited_kills":hero.credited_kills}
++ return ""
+--- a/fengli_route_20261024/potion_model.gd
++++ b/fengli_route_20261024/potion_model.gd
+@@ -1 +1 @@
+-extends "res://fengli_route_20261024/adapted/tests/ink_first_floor_user_route_20261005/runtime01/reward_model.gd"
++extends "res://fengli_route_20261024/p3_growth_model.gd"
+--- a/scripts/combat/fengli_sim.gd
++++ b/scripts/combat/fengli_sim.gd
+@@ -13,0 +14,25 @@
++# The route model coordinates only refundable P3 rank-change conversions.
++# Kill growth stays in the original source hook and is never journalled here.
++var _p3_bound_model:WeakRef
++var _p3_projection_owner:WeakRef
++var _p3_projection_events:Array=[]
++func set_progression(ledger:RefCounted)->void:
++ var model:Variant=ledger.get("model")
++ if model!=null and model.has_method("bind_p3_sim"):
++  var bound:Dictionary=model.bind_p3_sim(self)
++  if not bound.accepted:
++   push_error("P3 progression binding failed: "+str(bound.reason))
++   return
++  _p3_bound_model=weakref(model)
++ super.set_progression(ledger)
++func begin_p3_growth_projection(owner:RefCounted)->bool:
++ if _p3_bound_model==null or not is_same(_p3_bound_model.get_ref(),owner) or _p3_projection_owner!=null or transaction_active:return false
++ _p3_projection_owner=weakref(owner)
++ _p3_projection_events.clear()
++ return true
++func end_p3_growth_projection(owner:RefCounted)->Array:
++ assert(_p3_projection_owner!=null and is_same(_p3_projection_owner.get_ref(),owner))
++ var events:Array=_p3_projection_events.duplicate(true)
++ _p3_projection_events.clear()
++ _p3_projection_owner=null
++ return events
+@@ -584 +609,6 @@
+- emit_event("permanent_attack_gained",{"cast_id":cast_id,"source":source,"amount":gains*v("P3-2",rank),"total":hero.permanent_ad,"kills":hero.credited_kills,"remaining_kills":hero.p3_progress})
++ var event:Dictionary={"cast_id":cast_id,"source":source,"amount":gains*v("P3-2",rank),"total":hero.permanent_ad,"kills":hero.credited_kills,"remaining_kills":hero.p3_progress}
++ if _p3_projection_owner!=null and source=="p3_rank_change":
++  # Publish only after the same command has its SP/rank/growth journal and receipt.
++  _p3_projection_events.append(event)
++ else:
++  emit_event("permanent_attack_gained",event)
