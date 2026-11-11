@@ -1,0 +1,35 @@
+--- /dev/null
++++ b/fengli_route_20261024/equipment_hex_model.gd
+@@ -0,0 +1,24 @@
++extends "res://fengli_route_20261024/body_growth_model.gd"
++## Route capability boundary, not a change to either authored Hex effect.
++## The bound commerce task table is empty; only verified economic task receipts
++## exist, not an authored task-completion/reward adapter. Final equipment is held,
++## and the inherited G21 consumer still indexes the old config.items namespace.
++## Keep both unavailable until their full production chains are integrated and
++## verified. Populating a table, aliasing IDs, or merely owning items must not
++## silently claim that integration. No current gold/ownership/progress gate is used.
++## One support predicate protects draws, refreshes, stale selections and effects.
++const EQUIPMENT_HEX_HOLDS := {
++ "common_g17":{"reason":"equipment_task_rewards_not_integrated","missing":["authored_reachable_equipment_tasks","verified_completion_to_G17_award"]},
++ "common_g21":{"reason":"complete_equipment_body_spend_not_integrated","missing":["complete_equipment_runtime","commerce_UID_G21_spend_and_stat_adapter"]}
++}
++
++func support(definition:Dictionary)->Dictionary:
++ var out:Dictionary=super.support(definition)
++ var effect_key:String=str(definition.get("effect_key",""))
++ if EQUIPMENT_HEX_HOLDS.has(effect_key):
++  var hold:Dictionary=EQUIPMENT_HEX_HOLDS[effect_key]
++  out.supported=false
++  out.status="unsupported"
++  out["reason"]=str(hold.reason)
++  out["unavailable_runtime_capabilities"]=hold.missing.duplicate()
++ return out
+--- a/fengli_route_20261024/potion_model.gd
++++ b/fengli_route_20261024/potion_model.gd
+@@ -1,4 +1,4 @@
+-extends "res://fengli_route_20261024/body_growth_model.gd"
++extends "res://fengli_route_20261024/equipment_hex_model.gd"
+ const PotionConsumer=preload("res://tests/ink_potion_recovery_20261008/candidate01/potion_consumer.gd")
+ const FlaskConsumer=preload("res://fengli_route_20261024/flask_consumer.gd")
+ const ElixirConsumer=preload("res://fengli_route_20261024/elixir_consumer.gd")

@@ -1,0 +1,102 @@
+{
+  "status": "PASS_SCOPED_NATIVE_REWARD_SELECTION_PLUS_SCRIPTED_FULL_FLOOR",
+  "baseline_pck": "cdb50b61d1da8b51bd0aa4906cc4f7221d81c32c14b03871f6b9343503c59a6d",
+  "candidate_pck": "7cd9a60b9c6c51fde303c74f0a1064630670c9898687517cbaf5b20c3f1f9ad9",
+  "purpose": "Prevent current Fengli trial from awarding equipment-dependent Hexes whose real completion chains are not integrated. This does not implement those features or change their authored rules.",
+  "rules_preserved": [
+    "G17: complete three different equipment skill-point tasks, then award one bonus skill point; earlier completions count once",
+    "G21: with full completed-equipment slots, every1500 gold spent on body training boosts one current item base stats8%, at most3 boosts per item",
+    "No first-floor or second-floor restriction has been authored; the hold is a current implementation capability boundary",
+    "Four-card Hex offer remains three mixed cards plus one hero card; per-card refresh remains once",
+    "Future integration must explicitly remove the capability hold only after real task rewards/final equipment/G21 commerce UID adapter are verified"
+  ],
+  "observed_before": {
+    "bound_equipment_tasks": 0,
+    "supported_final_equipment": 0,
+    "eligible_hex_count": 48,
+    "fixture_seed48_first_offer": [
+      "common_g08",
+      "common_g06",
+      "common_g17",
+      "fengli_h19"
+    ],
+    "fixture_seed12_first_offer": [
+      "common_g15",
+      "common_g25",
+      "common_g21",
+      "fengli_h15"
+    ],
+    "scope": "one real Session, declared isolated RNG fixtures, actual open/refresh/select commands, not natural gameplay"
+  },
+  "observed_after": {
+    "eligible_hex_count": 46,
+    "focused_checks": 47,
+    "body_regression_checks": 68,
+    "p3_undo_regression_checks": 109,
+    "failures": 0,
+    "coverage": [
+      "read-only eligibility",
+      "four distinct initial cards",
+      "each of four single refreshes",
+      "normal selection",
+      "stale offer rejects unavailable effect without changing state",
+      "saved selected-state projection omits unsupported effect",
+      "other valid advance choices remain available with zero gold and no equipment"
+    ]
+  },
+  "guards": {
+    "equipment_hex_baseline01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 2.9391544159998375,
+      "max_sample_gap": 0.05453605700040498,
+      "peak_rss_plus_swap": 310697984,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "equipment_hex_focused01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 3.9365371710000545,
+      "max_sample_gap": 0.05462024200005544,
+      "peak_rss_plus_swap": 310677504,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "equipment_hex_native01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 286.09445594800036,
+      "max_sample_gap": 0.06545655100035219,
+      "peak_rss_plus_swap": 450990080,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "limitations": [
+    "Not completion of final-equipment or equipment-task feature integration",
+    "No claim of Windows execution, real audio listening or human full-floor experience",
+    "No private assets/templates/documents or raw runtime logs included"
+  ],
+  "recovery": "Apply patch to exact body_shop01 runtime matching SOURCE_HASHES; regenerate authenticated manifest/PCK/descriptor using existing packaging chain. No template or guard changes. Prior body/P3 probes are retained unchanged in their own checkpoints.",
+  "native_UI": {
+    "level1": "Viewed intact four cards, mouse-selected G24 Light Equipment, normal battle resumed",
+    "level4": "Viewed intact four cards, mouse-selected H19 R2 extra needle before R2 learned, demonstrating legitimate advance selection remains allowed",
+    "combat": "Scripted normal controls/economy, natural level progression, all twelve rooms and Boss victory. Lv1/Lv4/Lv7 reward choices used native mouse; no production state/RNG injection.",
+    "level7": "Viewed intact four cards, mouse-selected Final Form, selection closed and continuation resumed",
+    "final_result": "FINAL NATURAL_PASS time=275.033333333331 rows=12 HP=428.388392857131 gold=795 purchased=7 used=2 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+    "all_offer_validation": "Observed script checked every offer after mandatory modal closed; no G17/G21 appeared. Focused probe additionally exercises all four refresh slots and stale selection."
+  }
+}
