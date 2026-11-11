@@ -1,0 +1,57 @@
+{
+  "status": "focused_native_and_final_full_floor_passed",
+  "base_commit": "6f4269cd06f9ffc9bc0ac5d5e97e36414a1f6399",
+  "base_pck": "30fc86491e3b1b407016770f3040bd7f8be09237660d60220e3f563e8ed289e6",
+  "native_candidate_pck": "b1e6b40bc016ce53188e2253edeb62e7e07cdf92e425631ff0c248ed0da3c531",
+  "final_pck": "33a09806e3fe845aa5a3dbe620465c215be2b560e7984bbbf3cf41dcad9bfdf2",
+  "changes": [
+    "M reopens map only at ready north exit after cancelling",
+    "Existing owner, transaction, combat, pause, modal and room-scope checks preserved",
+    "Objective and gate label describe M instead of forced retreat",
+    "No warning layout candidates included"
+  ],
+  "native_coverage": [
+    "Escape closed route; M reopened with identical hero position (0,0,-10.20986)",
+    "M closed again; walking away made M reject with walk-to-exit explanation",
+    "Walking back opened map normally",
+    "Real mouse selected first combat node; M in combat rejected"
+  ],
+  "final_regression": {
+    "normal_full_floor_pass": true,
+    "selected_rows": 12,
+    "boss_defeated": true,
+    "simulation_seconds": 212.728632666675,
+    "ending_hp": 420,
+    "ending_gold": 395,
+    "normal_potion_purchases": 9,
+    "normal_potion_uses": 9,
+    "same_position_reopen_check": true,
+    "guard": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 224.83950016100016,
+      "max_sample_gap": 0.0676160949997211
+    },
+    "all_owned_processes_cleaned": true
+  },
+  "integrity": {
+    "manifest_entries": 249,
+    "all_hashes_match": true,
+    "gameplay_files_changed": [
+      "session.gd",
+      "host.gd"
+    ],
+    "other_changes": [
+      "flow_guidance.gd",
+      "presentation.gd gate label only",
+      "manifest and generation seal"
+    ]
+  },
+  "limits": [
+    "Full floor is script-assisted normal source combat, not human or Windows playthrough",
+    "Native test preceded one gate-label-only change; final code passed complete scripted regression",
+    "Six-level ultimate learn is not claimed: reused floor driver chooses R2 at level7",
+    "ALSA output unavailable, no sound-quality acceptance",
+    "Missing third-passive route availability remains under separate audit"
+  ]
+}

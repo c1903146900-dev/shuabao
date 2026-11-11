@@ -1,0 +1,55 @@
+--- a/fengli_route_20261024/session.gd
++++ b/fengli_route_20261024/session.gd
+@@ -85,6 +85,16 @@
+   exit_map_open=true;_exit_open_serial+=1;_exit_permission_scope=actual_scope
+   _input_suspender.call("upper_exit_map_open")
+  _exit_inside=inside
++
++func reopen_exit_map()->Dictionary:
++ # An explicit local re-open after cancel, never a remote route selector.
++ var reason:String=_safe_boundary_reason()
++ if not reason.is_empty():return _deny(reason)
++ if not room_exit_ready():return _deny("complete_current_node_first")
++ if not _at_room_exit():return _deny("walk_to_upper_exit")
++ _exit_cancel_rearm=false
++ update_room_exit()
++ return {"accepted":_exit_permission_current(),"reason":"" if _exit_permission_current() else "walk_to_upper_exit"}
+ 
+ func close_exit_map()->void:
+  exit_map_open=false;_exit_permission_scope=""
+--- a/fengli_route_20261024/host.gd
++++ b/fengli_route_20261024/host.gd
+@@ -249,7 +249,10 @@
+    if frontdoor_close_run("F10"):get_tree().quit()
+    get_viewport().set_input_as_handled()
+   elif key==KEY_P:_shop(not shop_session.panel_open);get_viewport().set_input_as_handled()
+-  elif key==KEY_M and shop_session.exit_map_open:shop_session.close_exit_map();_refresh();get_viewport().set_input_as_handled()
++  elif key==KEY_M:
++   if shop_session.exit_map_open:shop_session.close_exit_map();_refresh()
++   else:_transition("reopen_exit_map",shop_session.reopen_exit_map())
++   get_viewport().set_input_as_handled()
+   elif key in [KEY_ENTER,KEY_KP_ENTER] and service_continue.visible and not service_continue.disabled:
+    _transition("complete_service",shop_session.complete_service());get_viewport().set_input_as_handled()
+   elif key==KEY_ESCAPE:
+--- a/fengli_route_20261024/flow_guidance.gd
++++ b/fengli_route_20261024/flow_guidance.gd
+@@ -3,7 +3,7 @@
+  if not str(v.get("fault","")).is_empty():return "房间载入异常，请返回菜单重试"
+  if v.get("paused",false):return "已暂停 · 可点技能上方 + 学习；Esc / 空格继续" if int(v.get("points",0))>0 else "已暂停 · Esc / 空格继续"
+  if v.get("map",false):return "点击当前亮起的相邻节点前进 · Esc 返回房间"
+- if v.get("reenter",false):return "地图已关闭：向下离开出口，再向上走入即可重新选路"
++ if v.get("reenter",false):return "地图已关闭：在出口按 M 重新选路，无需退回"
+  if v.get("unlearned",false) and int(v.get("points",0))>0 and str(v.get("status",""))=="preparation":return "出发前先点 Q / E 上方 + 学习技能，再走上方青色出口"
+  match str(v.get("status","")):
+   "service":return "训练区：可先调整技能；按 Enter / 继续前进结束" if v.get("training",false) else "休息区：补给已结算；按 Enter / 继续前进结束"
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -613,7 +613,7 @@
+  elif not completed:line(left.lerp(right,.25)+rise*.45,left.lerp(right,.75)+rise*.45,Color("ed797f"),5.0)
+  var label:String="向上进入路线" if ready else ("完成服务后开启" if str(host.shop_session.status)=="service" else "清敌后开启")
+  if completed:label="首层已完成"
+- elif ready and bool(gate.reenter_required):label="离开门口再进入"
++ elif ready and bool(gate.reenter_required):label="按 M 重新选路"
+  draw_string(font,(left+right)*.5+Vector2(-56,-42),label,HORIZONTAL_ALIGNMENT_LEFT,-1,14,color)
+  receipt["room_exit"]=gate.duplicate(true)
+  receipt["room_exit_display"]={"completed":completed,"ready_visual":ready,"label":label,"source_status":str(host.shop_session.status)}
