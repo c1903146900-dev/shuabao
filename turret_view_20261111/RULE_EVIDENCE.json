@@ -1,0 +1,65 @@
+{
+  "id": "G28_world_turret_gap",
+  "status": "SOURCE_VERIFIED_RUNTIME_NOT_RUN",
+  "source_runtime": "Exact passed 4112ebb6 runtime",
+  "baseline_PCK_prefix": "4112ebb6",
+  "rule": {
+    "values": {
+      "G28-1": 4.0,
+      "G28-2": 0.8,
+      "G28-3": 9.0,
+      "G28-4": 12.0,
+      "G28-5": 18.0,
+      "G28-6": 15.0,
+      "G28-7": 2.0,
+      "G28-8": 3.0
+    },
+    "percent_tokens": [
+      "G28-5",
+      "G28-6"
+    ]
+  },
+  "approved": true,
+  "machine_floor_definition": {
+    "name": "断后炮台",
+    "hero": "",
+    "requires": "",
+    "skill_dependencies": [],
+    "weight": 100,
+    "effect_key": "common_g28",
+    "stats": {},
+    "effects": {
+      "mechanism": "common_g28"
+    },
+    "status": "source_final",
+    "activation_status": "eligible_when_implemented",
+    "ranged_only": false,
+    "release_ready": false,
+    "required_hooks": [
+      "hex.final_design.common_g28.v1"
+    ]
+  },
+  "required_hooks_present": true,
+  "decoder": "g02_equipment_20261111/g02_reencode_portable.py",
+  "binary_decode_roundtrip": "EXACT_BYTES_FOR_HEX_G20_AND_MACHINE",
+  "normal_reachability": "G28 is a positive-weight common candidate, no skill dependencies or ranged restriction; current route support and approved-policy permit selection. Existing Shift requires no learned Q/E. No natural RNG/playthrough was run.",
+  "generic_consumer_findings": {
+    "bridge": "common_hex_bridge._apply commits damage, then emits common_hex_damage; does not create world nodes.",
+    "entity_draws": "presentation._draw enumerates hero/enemies/defeat bodies; _draw_enemy_projectiles reads sim.projectiles enemy-only. skill_effects reads sim.wind_projectiles, nail_effects reads ultimates.nails. None connects runtime.turrets to world drawing.",
+    "hits": "hit_reaction.accept handles positive generic damage, including common_g28; enemy HP bars and defeat already work. contacts array stores generic damage but is never rendered. New view does not add target hit spark, health-bar update, or hurt animation.",
+    "instant_source": "_tick_turrets directly queues _damage at source position; no G28 projectile or flight speed exists. New flash appears only on committed damage; whole line fades in place.",
+    "identity_domains": "Common context defaults run_id=standalone. Route sim.emit_event replaces presentation run_id with route_run_id. Consumer validates outer route identity and original internal run_id against runtime.run_id separately."
+  },
+  "scope": [
+    "Read-only live turret body at actual source position, same actor foot-depth sort",
+    "Source left controls existence; removal/expiry/room/death/end immediately hides",
+    "Real G28 committed damage origin/target trace with 0.12s visual persistence on source world clock",
+    "No rules, numeric values, ranges, cooldowns, damage, new flight or clocks"
+  ],
+  "outstanding": [
+    "GDScript parse/type/runtime checks NOT RUN",
+    "Fixture authored, NOT RUN",
+    "Graphics, actual floor reachability and screenshots NOT RUN",
+    "Guarded fixture must precede any admission; no merge authorization"
+  ]
+}

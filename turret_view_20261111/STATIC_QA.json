@@ -1,0 +1,310 @@
+{
+  "status": "STATIC_CONTRACT_PASS",
+  "checks": [
+    {
+      "check": "baseline_exact:fengli_route_20261024/presentation.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/environment_view.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/hit_reaction.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/skill_effects.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/nail_effects.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/sim.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/g02/common_bridge.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:fengli_route_20261024/equipment_hex_model.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:scripts/combat/common_hex_runtime.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:scripts/combat/common_hex_bridge.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:scripts/combat/hero_combat_core.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:scripts/integration/consumers.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:__clean_fengli/clean_catalog_model.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:__clean_fengli/hex.bin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:__clean_fengli/g20.bin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:__clean_fengli/machine_templates.bin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_exact:first_hero_full_admission_20261020/manifest.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "overlay_exact:fengli_route_20261024/turret_view.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "overlay_exact:fengli_route_20261024/presentation.gd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exact_two_changed_sources_no_guard_assets_or_G10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "existing_manifest_and_all_bound_files_unchanged",
+      "passed": true,
+      "detail": {
+        "count": 257,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "real_shift_ends_spawn_turret",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "real_entity_has_id_and_origin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_world_elapsed_owns_expiry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_controls_active_fire_time",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_selects_nearest_in_original_range",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_shot_has_no_flight",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_expiry_removes_entity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "original_drain_witness_wraps_apply",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "generic_bridge_commits_then_presents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "damage_contains_committed_source_and_target_positions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "event_logged_before_signal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "generic_hit_reaction_already_accepts_G28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "default_skill_hit_filter_excludes_hex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "baseline_projectile_draw_is_enemy_collection_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "view_reads_live_entities_without_spawn_synthesis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "copied_body_fields_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_TTL_controls_visibility",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "complete_scope_includes_sim_run_room_generation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "combat_death_and_common_scope_reject_stale_bodies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "internal_and_route_run_identity_domains_preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "feedback_only_for_original_committed_positive_damage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "deduplication_and_bounded_feedback",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source_world_clock_not_frame_delta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "shared_visual_muzzle_anchor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_target_impact_effect_duplicate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "turret_bodies_use_original_depth_sort",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "actual_foreground_precedes_receipt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scope_death_and_invalid_owner_clear_view",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_simulation_assignment_or_collection_mutation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_gameplay_commands_or_new_clock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_range_circle_or_damage_text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixture_not_autoexecuting_entry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixture_real_shift_and_source_tick",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixture_lifecycle_pause_replay_fake_expiry_covered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "decoded_G28_has_original_parameters",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "decoded_first_floor_candidate_is_eligible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "patch_applies_to_exact_baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "patch_equals_overlay",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "engine_launched": false,
+  "limitations": [
+    "No GDScript parse/type/runtime test.",
+    "Fixture NOT RUN.",
+    "No GUI, screenshots or natural-floor play.",
+    "No admission, merge, PCK or manifest change."
+  ]
+}
