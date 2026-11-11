@@ -1,0 +1,56 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -341,7 +341,11 @@
+  hero_pick_transform=Transform2D(body_rotation,Vector2(_mirror,1.0)*body_scale,0.0,at+body_offset)
+  draw_set_transform(at+body_offset,body_rotation,Vector2(_mirror,1.0)*body_scale)
+  if puppet:
+-  puppet_motion.draw_pose(self,pose_textures[frame.key],str(frame.key),animation,float(frame.get("age",0)),anchor,scale,moving_basic)
++  var local_aim:=Vector2.ZERO
++  if str(animation.get("kind",""))=="attack_started":
++   # Undo only the current visual basis; no event, facing or simulation mutation.
++   local_aim=screen_direction.rotated(-body_rotation)/(Vector2(_mirror,1.0)*body_scale)
++  puppet_motion.draw_pose(self,pose_textures[frame.key],str(frame.key),animation,float(frame.get("age",0)),anchor,scale,moving_basic,local_aim)
+   receipt.puppet_motion=puppet_motion.receipt.duplicate(true)
+  else:
+   receipt.puppet_motion={}
+--- a/fengli_route_20261024/puppet_motion.gd
++++ b/fengli_route_20261024/puppet_motion.gd
+@@ -45,6 +45,21 @@
+  if age<contact:return lerpf(-1.45,.05,blend_curve((age-contact*.6)/(contact*.4)))
+  var t:float=(age-contact)/recovery
+  return lerpf(.05,.5,blend_curve(t/.22)) if t<.22 else lerpf(.5,-.45,blend_curve((t-.22)/.78))
++func basic_aim_pitch(event:Dictionary,age:float,local_aim:Vector2)->float:
++ # Visual-only shoulder correction. Preserve the authored blade/cutout silhouette.
++ # attack_recover blade runs roughly from (890,650) to (1180,825): .54 radians.
++ # At authored contact the existing arm rotation contributes another .05 radians.
++ if str(event.get("kind",""))!="attack_started" or not local_aim.is_finite() or not is_finite(age) or local_aim.length_squared()<.00001:return 0.0
++ var timing:Dictionary=event.get("animation",{})
++ var contact:float=maxf(.001,float(timing.get("contact_after",.2)))
++ var recovery:float=maxf(.001,float(timing.get("recovery",.3)))
++ var hold:float=minf(.08,recovery*.25)
++ var envelope:float=blend_curve(age/(contact*.6))
++ if age>contact+hold:envelope*=1.0-blend_curve((age-contact-hold)/maxf(.001,recovery-hold))
++ # The mirror is already removed by the caller. Cap extreme upward/downward
++ # swings rather than rotating the whole hero or claiming exact blade collision.
++ var pitch:float=clampf(atan2(local_aim.y,maxf(0.0,local_aim.x))-.59,-1.35,.65)
++ return pitch*envelope
+ func dash_thrust(event:Dictionary,age:float)->float:
+  # The event's original clock/contact owns full extension; Q2 uses hero time.
+  var timing:Dictionary=event.get("animation",{})
+@@ -61,12 +76,14 @@
+   positions.append((moved-anchor)*scale)
+  canvas.draw_polygon(positions,PackedColorArray([Color.WHITE]),uv,texture)
+  if canvas.has_method("record_hero_mesh"):canvas.record_hero_mesh(texture,positions,uv,Geometry2D.triangulate_polygon(positions))
+-func draw_pose(canvas:CanvasItem,texture:Texture2D,key:String,event:Dictionary,age:float,anchor:Vector2,scale:float,moving_basic:bool=false)->void:
++func draw_pose(canvas:CanvasItem,texture:Texture2D,key:String,event:Dictionary,age:float,anchor:Vector2,scale:float,moving_basic:bool=false,local_aim:Vector2=Vector2.ZERO)->void:
+  var kind:String=str(event.get("kind",""));var t:float=progress(event,age)
+  receipt={"kind":kind,"source_pose":key,"progress":t,"source_mutations":false}
+  if kind in ["attack_started","e2_spin_started","r1_started","q3_started"]:
+   if body_parts.is_empty():body_parts=Geometry2D.clip_polygons(PackedVector2Array([Vector2.ZERO,Vector2(1536,0),Vector2(1536,1024),Vector2(0,1024)]),arm)
+-  var angle:float=arm_angle(event,age)
++  var aim_pitch:float=basic_aim_pitch(event,age,local_aim)
++  var angle:float=arm_angle(event,age)+aim_pitch
++  receipt.basic_aim_pitch=aim_pitch
+   _polygon(canvas,texture,arm,anchor,scale,angle)
+   if moving_basic:
+    if moving_body_parts.is_empty():

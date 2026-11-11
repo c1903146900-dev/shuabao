@@ -1,0 +1,186 @@
+{
+  "status": "NATIVE_VISUAL_IMPROVEMENT_AND_REGRESSIONS_PASS",
+  "baseline_pck": "1c14d9b640e330ca73b973649c641acc23344e174db5509d95b6cc952b833c93",
+  "candidate_pck": "2b216c2971ea1beeb77ebbc73273f07e3290470dbd9a56191e60561cf2f6db89",
+  "changes": "Ordinary basic attack visual-only shoulder pitch, bounded, smooth return. Source timing, direction, damage and all other actions unchanged. No warning candidate.",
+  "native": "Normal scripted entry, then native mouse attacks upper-right/lower-right, both parity; upper-left and moving lower-left also inspected. Upward blade now points visibly up rather than down. Not exact sword-collider agreement or user aesthetic acceptance.",
+  "baseline_contact_frames": [
+    {
+      "serial": 3,
+      "visual_frame": {
+        "age": 0.24,
+        "cast_id": 1,
+        "contact_is_hit": false,
+        "direction": "(0.303832, 0.0, -0.952726)",
+        "key": "attack_contact",
+        "phase": "contact",
+        "time_domain": "hero"
+      },
+      "puppet_receipt": {
+        "arm_radians": 0.122627498121714,
+        "kind": "attack_started",
+        "moving_basic": false,
+        "progress": 0.378947368421053,
+        "source_mutations": false,
+        "source_pose": "attack_recover"
+      }
+    },
+    {
+      "serial": 8,
+      "visual_frame": {
+        "age": 0.24,
+        "cast_id": 2,
+        "contact_is_hit": false,
+        "direction": "(0.607002, 0.0, 0.7947)",
+        "key": "attack_contact",
+        "phase": "contact",
+        "time_domain": "hero"
+      },
+      "puppet_receipt": {
+        "arm_radians": -0.0952549962434283,
+        "kind": "attack_started",
+        "moving_basic": false,
+        "progress": 0.378947368421053,
+        "source_mutations": false,
+        "source_pose": "attack_recover"
+      }
+    },
+    {
+      "serial": 13,
+      "visual_frame": {
+        "age": 0.26,
+        "cast_id": 3,
+        "contact_is_hit": false,
+        "direction": "(0.607002, 0.0, 0.7947)",
+        "key": "attack_contact",
+        "phase": "contact",
+        "time_domain": "hero"
+      },
+      "puppet_receipt": {
+        "arm_radians": 0.256609166040573,
+        "kind": "attack_started",
+        "moving_basic": false,
+        "progress": 0.410526315789474,
+        "source_mutations": false,
+        "source_pose": "attack_recover"
+      }
+    },
+    {
+      "serial": 17,
+      "visual_frame": {
+        "age": 0.259999999999994,
+        "cast_id": 4,
+        "contact_is_hit": false,
+        "direction": "(0.303832, 0.0, -0.952726)",
+        "key": "attack_contact",
+        "phase": "contact",
+        "time_domain": "hero"
+      },
+      "puppet_receipt": {
+        "arm_radians": -0.363218332081061,
+        "kind": "attack_started",
+        "moving_basic": false,
+        "progress": 0.410526315789465,
+        "source_mutations": false,
+        "source_pose": "attack_recover"
+      }
+    },
+    {
+      "serial": 18,
+      "visual_frame": {
+        "age": 0.259999999999994,
+        "cast_id": 4,
+        "contact_is_hit": false,
+        "direction": "(0.303832, 0.0, -0.952726)",
+        "key": "attack_contact",
+        "phase": "contact",
+        "time_domain": "hero"
+      },
+      "puppet_receipt": {
+        "arm_radians": -0.363218332081061,
+        "kind": "attack_started",
+        "moving_basic": false,
+        "progress": 0.410526315789465,
+        "source_mutations": false,
+        "source_pose": "attack_recover"
+      }
+    }
+  ],
+  "native_limitations": [
+    "Contact samples are actual source ages .24-.26, not identical frame timing.",
+    "Some captures after pause share source age; not continuous animation footage.",
+    "Left-side crowded images include target hit flashes; isolated visibility is strongest in upper-right first attack.",
+    "Windows and actual audio not validated."
+  ],
+  "public_observer": "Only screenshot path adapted to user://; this output-path adaptation not re-executed.",
+  "guards": {
+    "aim_contact01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 53.34208133799984,
+      "max_sample_gap": 0.06525148599939712,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "aim_candidate01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 45.839848248000635,
+      "max_sample_gap": 0.06296937600018282,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "aim_focused01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 2.9367356339989783,
+      "max_sample_gap": 0.05255490800118423,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "aim_full01": {
+      "passed": true,
+      "exit": 0,
+      "elapsed": 206.20296974200028,
+      "max_sample_gap": 0.07835700800023915,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "focused": {
+    "AIM_PITCH_VISUAL_RESULT": {
+      "checks": 351,
+      "failures": [],
+      "completed": {}
+    },
+    "HELD_HUD_FOCUSED_RESULT": {
+      "checks": 170,
+      "failures": [],
+      "completed": {
+        "boundaries": true,
+        "buffer": true,
+        "hold": true,
+        "movement_shift": true,
+        "origin": true
+      }
+    }
+  },
+  "full_floor": {
+    "result": "FINAL NATURAL_PASS time=194.723424666675 rows=12 HP=419.468392857139 gold=395 purchased=9 used=9 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+    "scope": "Normal 12-room route through Boss with script-driven controls, no injected funds/HP/completion. Not human play or aesthetic acceptance."
+  },
+  "independent_static_review": "No source/event/timing mutation; no persistent correction state. Existing cancellation and moving leg behavior unchanged.",
+  "runtime_diff": "Exactly presentation.gd and puppet_motion.gd plus regenerated manifest/generation."
+}
