@@ -1,0 +1,104 @@
+{
+  "format": "fengli-g02-admission-1",
+  "item_id": "final:G02",
+  "commerce": {
+    "name": "修业徽章",
+    "kind": "equipment",
+    "price": 2750,
+    "components": [
+      "intermediate:I13",
+      "intermediate:I17"
+    ],
+    "source_id": "final:G02"
+  },
+  "definition": {
+    "supported": true,
+    "reason": "",
+    "mechanism_prepared": true,
+    "runtime_complete": false,
+    "shop_admitted": false,
+    "runtime_status": "inert_until_original_death_bridge_bound",
+    "name": "修业徽章",
+    "tier": "final",
+    "stats": {
+      "AD": 30,
+      "AP": 45,
+      "max_hp": 250,
+      "cooldown_reduction": 0.1
+    },
+    "parameters": [
+      {
+        "parameter": "final:G02.stat.AD",
+        "source_ref": "DOCX table 12, row 3",
+        "source_unit": "attack_points",
+        "current_value": 30,
+        "source_value": 30,
+        "scale": 1
+      },
+      {
+        "parameter": "final:G02.stat.AP",
+        "source_ref": "DOCX table 12, row 3",
+        "source_unit": "ability_points",
+        "current_value": 45,
+        "source_value": 45,
+        "scale": 1
+      },
+      {
+        "parameter": "final:G02.stat.max_health",
+        "source_ref": "DOCX table 12, row 3",
+        "source_unit": "health_points",
+        "current_value": 250,
+        "source_value": 250,
+        "scale": 1
+      },
+      {
+        "parameter": "final:G02.stat.cdr_pct",
+        "source_ref": "DOCX table 12, row 3",
+        "source_unit": "percent_points",
+        "current_value": 10,
+        "source_value": 10,
+        "scale": 0.01
+      }
+    ],
+    "passives": [],
+    "actives": [],
+    "taskG02": {
+      "stage_id": "task:G02:1",
+      "reward_skill_points": 1,
+      "threshold": 500,
+      "normal_weight": 1,
+      "elite_weight": 10,
+      "boss_weight": 25
+    },
+    "taskG02_source_stage": {
+      "stage_id": "task:G02:1",
+      "task_id": "task:G02",
+      "equipment_id": "final:G02",
+      "stage": 1,
+      "threshold_parameter_id": "task:G02.threshold",
+      "reward_skill_points": 1,
+      "source_ref": "DOCX paragraphs 54-55"
+    },
+    "taskG02_contract": {
+      "scope": "player_equipment_name_run",
+      "held_only": true,
+      "retained_when_sold": true,
+      "retained_across_rooms": true,
+      "once_per_run": true,
+      "duplicate_copies_multiply_progress": false,
+      "reward_skill_points": 1,
+      "participation_scope": "actual_solo_lethal_only",
+      "multiplayer_supported": false
+    },
+    "requires_source_bridge": [
+      "original_holder_death_frame",
+      "current_original_target_rank",
+      "first_original_kill_emission",
+      "same_bound_model_run",
+      "atomic_task_receipt_and_one_sp"
+    ]
+  },
+  "source": "游戏装备系统_v0.2_重新发送(1).docx, table 12 row 3 and paragraphs 54–55; verified existing 2026-10-09 G02 task implementation",
+  "natural_first_floor_completion": false,
+  "first_floor_limit": "Boss-before maximum 2485 gold; G02 price 2750 and task 500 equivalents are unchanged."
+}

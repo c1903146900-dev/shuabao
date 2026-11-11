@@ -1,0 +1,107 @@
+{
+  "status": "NATIVE_FUNDED_THRESHOLD_FIXTURE_FULL_FLOOR_AND_FOCUSED_PASS",
+  "baseline_pck": "7cd9a60b9c6c51fde303c74f0a1064630670c9898687517cbaf5b20c3f1f9ad9",
+  "candidate_pck": "fb8fff23eee8678af1f9c116dfe33f569b9b3f2c8a1aa9cd22c673bafae9b0d5",
+  "implementation": [
+    "G02 original2750 price, I13+I17 components and400 combine charge",
+    "AD30/AP45/maxHP250/CDR10%, existing stat and health transaction projection",
+    "Held-only ordinary1/elite10/Boss25 kills toward500, once per expedition+1SP",
+    "Original source-death and Common G11 execution witnesses, not public event dictionary authority",
+    "Sell freezes progress, rebuy continues, completed reward remains once",
+    "G27 no longer boosts newly admitted final equipment; base/intermediate behavior preserved",
+    "Shop shows original recipe/current quote/task progress and completion"
+  ],
+  "native": {
+    "fixtures": [
+      "Set gold3000 once before shop; not natural income",
+      "After native acquisition set task progress499; not earned completion progress"
+    ],
+    "actions": [
+      "Real mouse bought I13 for1200 and I17 for1150",
+      "Real mouse selected G02, quote400/credit2350, synthesized to one slot",
+      "Real mouse undid synthesis: two components and650 gold restored",
+      "Real mouse synthesized again: one G02 and250 gold; HP stayed420 throughout",
+      "Closed shop then resumed scripted ordinary map combat",
+      "First real ordinary source kill completed499->500, unspentSP0->1, bonusSP0->1",
+      "Continued same twelve-room/Boss scenario; final task completed500, bonusSP remained1"
+    ],
+    "UI": "Normal1180x812 window showed recipe, full stats, actual quote and0/500 task rule before combat. Completed-state UI wording not visually inspected.",
+    "final_result": "FINAL G02_FIXTURE_FULL_FLOOR_PASS time=238.84882433334 rows=12 HP=830.8 gold=845 purchased=8 used=3 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]"
+  },
+  "guards": {
+    "g02_native01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 252.7632254350001,
+      "max_sample_gap": 0.07979356099986035,
+      "peak_rss_plus_swap": 463728640,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "g02_focused02": {
+      "passed": false,
+      "exit": 3,
+      "reason": "",
+      "elapsed": 4.187858883999979,
+      "max_sample_gap": 0.05123312200066721,
+      "peak_rss_plus_swap": 315277312
+    },
+    "g02_focused03": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 3.9142157520000183,
+      "max_sample_gap": 0.05422873399948003,
+      "peak_rss_plus_swap": 315105280,
+      "cleanup_confirmed": true
+    }
+  },
+  "test_history": [
+    "First focused run ended with a probe API error at begin_source: ledger command uses ok rather than accepted. Thirty checks alone are incomplete and NOT a passing G02 test. No production fix inferred from that test error.",
+    "Second focused run fully reached both case tails but failed G11 fixture setup. Third uses actual preparatory damage below the existing 10% pre-hit threshold then a nonlethal triggering hit. This changes only the probe; sealed production and previously exercised native pack remain identical."
+  ],
+  "limitations": [
+    "This is an explicit funded/near-threshold fixture, NOT natural first-floor purchase/task completion",
+    "Current first-floor base income peaks at2485 before Boss and2805 after; cheapest final2750 cannot be bought before Boss without changing economy",
+    "Even hypothetical opening ownership yields only66-90 G02 kill equivalents in first floor, not500",
+    "G17/G21 remain held; one equipment task does not complete their chains",
+    "No Windows execution, real audio listening or human full-floor gameplay acceptance",
+    "Four-act enemy/income/purchase timing model remains to be authored and evaluated; no prices or thresholds changed for this test"
+  ],
+  "recovery": "Apply g02.patch to exact equipment_hex01 runtime per SOURCE_HASHES. Use g02_reencode_portable.py with before runtime, g02_definition.json, sealed new route sim, and fresh output to recreate template/pins/binding. Rebuild manifest/PCK/descriptor through existing chain. Original private packages remain required; no binaries/assets/raw logs/private source documents included.",
+  "focused02": {
+    "checks": 66,
+    "failed": [
+      "actual_G11_execute_counts_original_death",
+      "G11_has_distinct_live_execution_proof"
+    ],
+    "commerce_case_done": true,
+    "source_case_done": true,
+    "body_regression_checks": 68,
+    "p3_regression_checks": 109,
+    "script_errors": false,
+    "interpretation": "Historical failed fixture: a full-to-low hit does not satisfy G11 pre-hit low-health rule. Superseded by focused03; production unchanged."
+  },
+  "focused03": {
+    "checks": 68,
+    "failures": 0,
+    "commerce_case_done": true,
+    "source_case_done": true,
+    "body_regression_checks": 68,
+    "p3_regression_checks": 109,
+    "script_errors": false,
+    "scope": [
+      "Quotes and component credits, duplicate command replay, close/reopen undo",
+      "G27 excludes final stats, maxHP shrink clamp undo and real heal seals stale undo",
+      "Duplicate copies count named task once; sell all freezes, rebuy continues; room/generation scope",
+      "Forged/expired/wrong-run death evidence rejected",
+      "Actual original G11 execute after true nonreaction preparatory damage below existing pre-hit threshold, exact new kill and execution proof verified",
+      "499 plus real source death awards exactly one SP; subsequent kills/sale/rebuy cannot repeat",
+      "G17/G21 remain held; public task command cannot mint reward"
+    ]
+  }
+}

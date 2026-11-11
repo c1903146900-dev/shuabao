@@ -1,0 +1,563 @@
+--- a/__clean_fengli/machine_template_pins.gd
++++ b/__clean_fengli/machine_template_pins.gd
+@@ -1,4 +1,4 @@
+ extends RefCounted
+ ## Deliberately closed until original103 build validation and independent payload review.
+ const CONFIGURED = true
+-const SHA256 = "591394df1d7d28c53ee074bdcb1c7701fe941e85a673e028c8da2a0f522a8784"
++const SHA256 = "cef74befe6080cab6c9c7d375ba2c416689a3dfa955ab29c9688fb2cf3e77386"
+--- a/fengli_route_20261024/binding.gd
++++ b/fengli_route_20261024/binding.gd
+@@ -1,7 +1,7 @@
+ extends RefCounted
+ ## Explicit isolated route source admission. Source digest frozen for isolated foundation probe only; no production admission.
+ const SIM_PATH = "res://fengli_route_20261024/sim.gd"
+-const SIM_SHA256 = "65941fb596201cdaba1ed6cf2984e46ff4dc4f89d5c12193ebb57bc820e13de4"
++const SIM_SHA256 = "12017a7d0fc7a7e1231b19a2c63664566fbaef4c729dd41d92aae8113b0c2c6b"
+ const Consumers = preload("res://scripts/integration/consumers.gd")
+ const CANDIDATES = ["P1","P2","P3","Q1","Q2","Q3","E1","E2","E3","R1","R2"]
+ static func read_capabilities(sim: Node, allow_candidate: bool = false) -> Dictionary:
+--- /dev/null
++++ b/fengli_route_20261024/g02/common_bridge.gd
+@@ -0,0 +1,33 @@
++extends "res://scripts/combat/common_hex_bridge.gd"
++## Original effect drain, with a short-lived identity for its actual G11 entry.
++## No Common rule, queue, RNG, cost, hit, damage or recursion limit is changed.
++var _g02_drained_event:Dictionary={}
++
++func drain()->void:
++ if _draining or _inside_hit>0:return
++ _draining=true
++ var count=0
++ while true:
++  var batch=runtime.drain_events()
++  if batch.is_empty():break
++  for event in batch:
++   count+=1
++   if count>MAX_DRAIN:
++    push_error("Common Hex effect drain exceeded bounded work budget")
++    _g02_drained_event={};_draining=false
++    return
++   if int(event.generation)!=sim().encounter_generation or event.room_id!=sim().room_id:continue
++   _g02_drained_event=event
++   _apply(event)
++   _g02_drained_event={}
++ _draining=false
++
++func original_execute_is_current(event:Dictionary)->bool:
++ var s=sim()
++ return _draining and not _g02_drained_event.is_empty() and is_same(_g02_drained_event,event) and event.get("kind")=="execute" and event.get("source")=="common_g11" and event.get("generation")==s.encounter_generation and event.get("room_id")==s.room_id and runtime.active("g11") and runtime.executed.has(str(event.get("target_id","")))
++
++func _apply(event:Dictionary)->void:
++ if event.get("kind")!="execute":super._apply(event);return
++ var frame:Dictionary=sim()._g02_witness.begin_execute(self,event)
++ super._apply(event)
++ sim()._g02_witness.end_execute(frame)
+--- /dev/null
++++ b/fengli_route_20261024/g02/death_witness.gd
+@@ -0,0 +1,156 @@
++extends RefCounted
++## Dynamic source witnesses only. No wallet, task progress, reward or damage.
++## Adapted from the existing 2026-10-09 G02 original-death bridge. Fengli has no
++## Yan P1 atomic branch. Its real G11 execute instead has a separate drain witness.
++var _source:WeakRef
++var _damage:Array=[]
++var _deaths:Array=[]
++var _emissions:Array=[]
++var _executions:Array=[]
++var _serial:int=0
++
++func _init(source:Node)->void:_source=weakref(source)
++func sim():return _source.get_ref()
++
++func target_current(enemy:Dictionary,committed:bool=false)->bool:
++ var s=sim()
++ return is_instance_valid(s) and s.phase=="combat" and (committed or not s.paused) and not s.hero.dead and not enemy.is_empty() and is_same(enemy,s.enemy_by_id(str(enemy.get("actor_id","")))) and enemy.get("generation") is int and int(enemy.generation)==s.encounter_generation and str(enemy.get("room_id",""))==s.room_id and enemy.get("rank_category") in ["ordinary","elite","boss"]
++
++func begin_damage(enemy:Dictionary,source:String,cast_id:int)->Dictionary:
++ var s=sim()
++ var frame:Dictionary={"enemy":enemy,"source":source,"cast_id":cast_id,"hero":s.hero,"generation":s.encounter_generation,"room_id":s.room_id,"pre_hp":float(enemy.get("hp",0.0)),"expected_hp":float(enemy.get("hp",0.0)),"pre_dead":bool(enemy.get("dead",true)),"seen":false,"damage":{}}
++ _damage.append(frame)
++ return frame
++
++func end_damage(frame:Dictionary)->void:
++ if _damage.is_empty() or not is_same(_damage.back(),frame):return
++ _damage.pop_back()
++ var loss:float=float(frame.pre_hp)-float(frame.enemy.get("hp",0.0))
++ # Propagate a nested child subtree once, to its immediate matching ancestor.
++ for index:int in range(_damage.size()-1,-1,-1):
++  var parent:Dictionary=_damage[index]
++  if is_same(parent.enemy,frame.enemy) and parent.generation==frame.generation and parent.room_id==frame.room_id:
++   if not parent.seen:parent.expected_hp=float(parent.expected_hp)-loss
++   break
++
++func note_damage(data:Dictionary)->void:
++ if _damage.is_empty():return
++ var s=sim()
++ var frame:Dictionary=_damage.back()
++ if not is_same(frame.hero,s.hero) or frame.seen or frame.generation!=s.encounter_generation or frame.room_id!=s.room_id:return
++ var enemy:Dictionary=frame.enemy
++ if not target_current(enemy) or frame.pre_dead or enemy.dead:return
++ if data.get("target")!=enemy.actor_id or data.get("source")!=frame.source or not data.get("cast_id") is int or data.cast_id!=frame.cast_id:return
++ var amount:Variant=data.get("amount")
++ if not (amount is int or amount is float) or not is_finite(float(amount)) or float(amount)<=0.0:return
++ var before:float=frame.expected_hp
++ var after:float=enemy.hp
++ var loss:float=before-after
++ var roundoff:float=maxf(0.000000001,absf(before)*0.0000000000000008881784197001252)
++ if not is_finite(before) or not is_finite(after) or before<=0.0 or after<0.0 or loss<=0.0 or float(amount)>before or absf(loss-float(amount))>roundoff:return
++ frame.seen=true
++ frame.damage={"hp_before":before,"hp_after":after,"amount":float(amount)}
++
++func begin_execute(bridge:RefCounted,event:Dictionary)->Dictionary:
++ var s=sim()
++ var frame:Dictionary={}
++ if is_same(s.common,bridge) and bridge.original_execute_is_current(event) and event.get("source")=="common_g11" and event.get("cast_id") is int:
++  var enemy:Dictionary=s.enemy_by_id(str(event.get("target_id","")))
++  if target_current(enemy) and not enemy.dead and float(enemy.hp)>0.0 and s.ordinary(enemy) and s.cast_is_current(int(event.cast_id)):
++   frame={"enemy":enemy,"source":"common_g11","cast_id":int(event.cast_id),"hero":s.hero,"generation":s.encounter_generation,"room_id":s.room_id,"bridge":bridge,"event":event,"hp_before":float(enemy.hp)}
++ _executions.append(frame) # Invalid nested calls shadow rather than borrow.
++ return frame
++
++func end_execute(frame:Dictionary)->void:
++ if not _executions.is_empty() and is_same(_executions.back(),frame):_executions.pop_back()
++
++func begin_death(enemy:Dictionary,source:String,cast_id:int)->Dictionary:
++ var s=sim()
++ var frame:Dictionary={}
++ var proof:String=""
++ var origin:Dictionary={}
++ if target_current(enemy,true) and not enemy.dead and s.cast_is_current(cast_id):
++  if float(enemy.hp)==0.0 and not _damage.is_empty():
++   var damage:Dictionary=_damage.back()
++   if is_same(damage.hero,s.hero) and is_same(damage.enemy,enemy) and damage.source==source and damage.cast_id==cast_id and damage.generation==s.encounter_generation and damage.room_id==s.room_id and damage.seen and damage.damage.get("hp_after") == 0.0 and float(damage.damage.get("amount",0.0))>0.0:
++    proof="original_damage_death";origin=damage
++  elif source=="common_g11" and not _executions.is_empty():
++   var execute:Dictionary=_executions.back()
++   if not execute.is_empty() and is_same(execute.hero,s.hero) and is_same(execute.enemy,enemy) and execute.cast_id==cast_id and execute.generation==s.encounter_generation and execute.room_id==s.room_id and float(enemy.hp)==float(execute.hp_before) and execute.bridge.original_execute_is_current(execute.event):
++    proof="original_common_execute_death";origin=execute
++  if not proof.is_empty():
++   _serial+=1
++   frame={"enemy":enemy,"source":source,"cast_id":cast_id,"proof":proof,"origin":origin,"hero":s.hero,"generation":s.encounter_generation,"room_id":s.room_id,"rank_category":enemy.rank_category,"death_serial":_serial,"hero_depth":0,"hero_returned":false,"emitted":false,"invalid":false}
++ _deaths.append(frame)
++ return frame
++
++func end_death(frame:Dictionary)->void:
++ if not _deaths.is_empty() and is_same(_deaths.back(),frame):_deaths.pop_back()
++
++func current(frame:Dictionary)->bool:
++ var s=sim()
++ if frame.is_empty() or frame.invalid or not is_same(frame.hero,s.hero) or frame.generation!=s.encounter_generation or frame.room_id!=s.room_id:return false
++ var enemy:Dictionary=frame.enemy
++ if not target_current(enemy,true) or not enemy.dead or float(enemy.hp)!=0.0 or enemy.rank_category!=frame.rank_category:return false
++ if _deaths.is_empty() or not is_same(_deaths.back(),frame):return false
++ if frame.proof=="original_damage_death":return not _damage.is_empty() and is_same(_damage.back(),frame.origin)
++ return frame.proof=="original_common_execute_death" and not _executions.is_empty() and is_same(_executions.back(),frame.origin) and frame.origin.bridge.original_execute_is_current(frame.origin.event)
++
++func matching(enemy:Dictionary,source:String,cast_id:int)->Dictionary:
++ if _deaths.is_empty():return {}
++ var frame:Dictionary=_deaths.back()
++ return frame if not frame.is_empty() and is_same(frame.enemy,enemy) and frame.source==source and frame.cast_id==cast_id and current(frame) else {}
++
++func begin_hero_killed(enemy:Dictionary,source:String,cast_id:int)->Dictionary:
++ var frame:Dictionary=matching(enemy,source,cast_id)
++ if not frame.is_empty():frame.hero_depth+=1
++ return frame
++
++func end_hero_killed(frame:Dictionary)->void:
++ if frame.is_empty():return
++ frame.hero_depth-=1
++ if frame.hero_depth==0 and current(frame):frame.hero_returned=true
++
++func begin_emission(data:Dictionary)->Dictionary:
++ var s=sim()
++ var emission:Dictionary={}
++ if data.get("credit")=="solo_lethal" and data.get("cast_id") is int:
++  var enemy:Dictionary=s.enemy_by_id(str(data.get("target","")))
++  var frame:Dictionary=matching(enemy,str(data.get("source","")),int(data.cast_id))
++  if not frame.is_empty() and not frame.emitted and frame.hero_returned and frame.hero_depth==0:
++   var expected:Dictionary={"target":enemy.actor_id,"position":enemy.position,"source":frame.source,"cast_id":frame.cast_id,"credit":"solo_lethal","enemy_kind":enemy.kind}
++   if data==expected:
++    frame.emitted=true
++    emission={"frame":frame,"raw":data.duplicate(true),"sequence":-1}
++ _emissions.append(emission)
++ return emission
++
++func end_emission(emission:Dictionary)->void:
++ if not _emissions.is_empty() and is_same(_emissions.back(),emission):_emissions.pop_back()
++
++func verify(owner:RefCounted,event:Dictionary,run_id:String)->Dictionary:
++ var s=sim()
++ if not s.g02_model_is_bound(owner) or run_id.is_empty() or str(owner._run_id)!=run_id or event.get("kind")!="kill" or _emissions.is_empty():return {}
++ var emission:Dictionary=_emissions.back()
++ if emission.is_empty():return {}
++ var frame:Dictionary=emission.frame
++ if not current(frame) or not frame.emitted:return {}
++ for key:String in emission.raw:
++  if event.get(key)!=emission.raw[key]:return {}
++ if event.get("generation")!=frame.generation or event.get("room_id")!=frame.room_id or not event.get("sequence") is int:return {}
++ if int(emission.sequence)>=0 and emission.sequence!=event.sequence:return {}
++ var observed:bool=false
++ for recorded:Dictionary in s.event_log:
++  if recorded.get("sequence")==event.sequence and recorded==event:observed=true;break
++ if not observed:return {}
++ emission.sequence=int(event.sequence)
++ var enemy:Dictionary=frame.enemy
++ var scope:Dictionary={"run_id":run_id,"actor_id":owner.state.actor_id,"generation":s.encounter_generation,"room_id":s.room_id}
++ var witness:Dictionary={"scope":scope,"proof":frame.proof,"death_serial":frame.death_serial,"target":enemy.actor_id,"rank_category":frame.rank_category,"source":frame.source,"cast_id":frame.cast_id,"source_bridge_connected":true,"original_target_identity_verified":true,"original_death_commit_verified":true,"hero_killed_return_verified":true,"first_kill_emission_verified":true,"current_scope_verified":true,"bound_owner_verified":true}
++ var target:Dictionary={"actor_id":enemy.actor_id,"rank_category":frame.rank_category,"generation":frame.generation,"room_id":frame.room_id,"dead":enemy.dead,"hp":enemy.hp}
++ return {"schema":"g02_verified_own_death_v1","event":event.duplicate(true),"original_target":target,"witness":witness}
++
++func invalidate()->void:
++ for frame:Dictionary in _deaths:
++  if not frame.is_empty():frame.invalid=true
++ _damage.clear();_deaths.clear();_emissions.clear();_executions.clear()
+--- /dev/null
++++ b/fengli_route_20261024/g02/task02.gd
+@@ -0,0 +1,84 @@
++extends RefCounted
++## Pure G02 task proposal. It trusts the strict internal source bridge contract;
++## public kill dictionaries, field booleans and event-log entries alone prove nothing.
++const ITEM_ID := "final:G02"
++const TASK_ID := "task:G02"
++const SCHEMA := "g02_verified_own_death_v1"
++const MAX_EXACT := 9007199254740991
++const FLAGS := ["source_bridge_connected","original_target_identity_verified","original_death_commit_verified","hero_killed_return_verified","first_kill_emission_verified","current_scope_verified","bound_owner_verified"]
++
++static func valid_tuning(t: Dictionary) -> bool:
++ if t.size() != 6 or t.get("stage_id") != "task:G02:1" or t.get("reward_skill_points") != 1 or not t.get("reward_skill_points") is int: return false
++ for key: String in ["threshold","normal_weight","elite_weight","boss_weight"]:
++  if not t.get(key) is int or int(t[key]) <= 0 or int(t[key]) > MAX_EXACT: return false
++ return true
++
++static func select_unique(inventory: Array, definitions: Dictionary) -> Dictionary:
++ var out: Dictionary = {"equipped":false,"equipment_id":ITEM_ID,"task_id":TASK_ID,"owned_copies":0,"tuning":{}}
++ var definition: Variant = definitions.get(ITEM_ID)
++ if not definition is Dictionary or not _true(definition.get("mechanism_prepared")) or not definition.get("taskG02") is Dictionary or not valid_tuning(definition.taskG02): return out
++ var seen: Dictionary = {}
++ for item: Variant in inventory:
++  if not item is Dictionary: return _empty()
++  if item.get("id") != ITEM_ID: continue
++  if not item.get("uid") is int or int(item.uid) < 0 or not item.get("count") is int or int(item.count) <= 0 or seen.has(item.uid): return _empty()
++  if int(out.owned_copies) > 9223372036854775807-int(item.count): return _empty()
++  seen[item.uid] = true
++  out.owned_copies += int(item.count)
++  out.equipped = true
++  out.tuning = definition.taskG02.duplicate(true)
++ return out
++
++static func evaluate(selection: Dictionary, progress: Variant, completed: Variant, claims: Dictionary, scope: Dictionary, evidence: Dictionary) -> Dictionary:
++ if not _true(selection.get("equipped")) or selection.get("equipment_id") != ITEM_ID or selection.get("task_id") != TASK_ID or not selection.get("tuning") is Dictionary or not valid_tuning(selection.tuning): return _deny("g02_not_equipped_or_invalid_tuning")
++ if not selection.get("owned_copies") is int or int(selection.owned_copies) <= 0: return _deny("g02_invalid_copy_count")
++ if not valid_scope(scope): return _deny("g02_invalid_scope")
++ var threshold: int = int(selection.tuning.threshold)
++ if not progress is int or int(progress) < 0 or int(progress) > threshold or not completed is bool: return _deny("g02_invalid_progress")
++ if completed: return _deny("g02_already_completed")
++ if int(progress) == threshold: return _deny("g02_inconsistent_completion")
++ if claims.size() != 2 or claims.get("scope") != scope or not claims.get("targets") is Dictionary: return _deny("g02_invalid_current_claims")
++ for target: Variant in claims.targets:
++  if not _text(target) or not _true(claims.targets[target]): return _deny("g02_invalid_target_claim")
++ if evidence.get("schema") != SCHEMA: return _deny("g02_internal_witness_required")
++ var event: Variant = evidence.get("event")
++ var original: Variant = evidence.get("original_target")
++ var witness: Variant = evidence.get("witness")
++ if not event is Dictionary or not original is Dictionary or not witness is Dictionary: return _deny("g02_witness_records_required")
++ for flag: String in FLAGS:
++  if not _true(witness.get(flag)): return _deny("g02_verification_required:" + flag)
++ if witness.get("scope") != scope: return _deny("g02_witness_scope_mismatch")
++ if witness.get("proof") not in ["original_damage_death","original_p1_atomic_death","original_common_execute_death"]: return _deny("g02_unknown_death_source")
++ if not witness.get("death_serial") is int or int(witness.death_serial) <= 0: return _deny("g02_real_death_identity_required")
++ if event.get("kind") != "kill" or event.get("credit") != "solo_lethal" or not _text(event.get("source")): return _deny("g02_solo_actual_kill_required")
++ if not event.get("cast_id") is int or int(event.cast_id) < 0 or not event.get("sequence") is int or int(event.sequence) <= 0: return _deny("g02_event_identity_required")
++ if witness.get("source") != event.source or not witness.get("cast_id") is int or witness.cast_id != event.cast_id: return _deny("g02_witness_source_mismatch")
++ if witness.proof == "original_p1_atomic_death" and (event.source != "yanguizhou_p1" or not _true(event.get("p1_supplement"))): return _deny("g02_atomic_p1_source_required")
++ if witness.proof == "original_common_execute_death" and event.source != "common_g11": return _deny("g02_original_execute_source_required")
++ if witness.proof == "original_damage_death" and event.source == "yanguizhou_p1": return _deny("g02_p1_requires_atomic_receipt")
++ for record: Dictionary in [event,original]:
++  if not record.get("generation") is int or record.generation != scope.generation or record.get("room_id") != scope.room_id: return _deny("g02_source_scope_mismatch")
++ var target: Variant = original.get("actor_id")
++ if not _text(target) or event.get("target") != target or witness.get("target") != target: return _deny("g02_original_target_mismatch")
++ if not _true(original.get("dead")) or not _number(original.get("hp")) or float(original.hp) != 0.0: return _deny("g02_original_target_not_dead")
++ var rank: Variant = original.get("rank_category")
++ if rank not in ["ordinary","elite","boss"] or witness.get("rank_category") != rank: return _deny("g02_original_rank_required")
++ if claims.targets.has(target): return _deny("g02_target_already_claimed")
++ var weight_key: String = "normal_weight" if rank == "ordinary" else str(rank) + "_weight"
++ var weight: int = int(selection.tuning[weight_key])
++ var after: int = mini(threshold,int(progress)+weight)
++ var complete: bool = after == threshold
++ return {"eligible":true,"reason":"","equipment_id":ITEM_ID,"task_id":TASK_ID,"scope":scope.duplicate(true),"target":target,"rank_category":rank,"weight":weight,"progress_before":int(progress),"progress_after":after,"completed":complete,"reward_skill_points":1 if complete else 0,"stage_id":"task:G02:1" if complete else "","reward_key":"task:G02:permanent_sp" if complete else "","death_serial":witness.death_serial}
++
++static func valid_scope(scope: Dictionary) -> bool:
++ return scope.size() == 4 and _text(scope.get("run_id")) and _text(scope.get("actor_id")) and scope.get("generation") is int and int(scope.generation) >= 0 and _text(scope.get("room_id"))
++static func _text(v: Variant) -> bool:
++ return v is String and not str(v).strip_edges().is_empty()
++static func _true(v: Variant) -> bool:
++ return v is bool and v
++static func _number(v: Variant) -> bool:
++ return (v is int or v is float) and is_finite(float(v))
++static func _empty() -> Dictionary:
++ return {"equipped":false,"equipment_id":ITEM_ID,"task_id":TASK_ID,"owned_copies":0,"tuning":{}}
++static func _deny(reason: String) -> Dictionary:
++ return {"eligible":false,"reason":reason}
+--- /dev/null
++++ b/fengli_route_20261024/g02_model.gd
+@@ -0,0 +1,134 @@
++extends "res://fengli_route_20261024/equipment_hex_model.gd"
++## G02 is a player/equipment-name task in the existing run ledger. It adds no
++## damage, cooldown, health, timer, wallet, or multiplayer participation rules.
++const TrainingTask = preload("res://fengli_route_20261024/g02/task02.gd")
++var _g02_trusted: Dictionary = {}
++var _g02_original_event: Dictionary = {}
++
++func equipment_runtime_status(id: String) -> Dictionary:
++ var out: Dictionary = super.equipment_runtime_status(id)
++ if id != TrainingTask.ITEM_ID or not out.get("supported",false): return out
++ var sim: Node = _health_sim.get_ref() if _health_sim != null else null
++ if not is_instance_valid(sim) or not sim.has_method("g02_model_is_bound") or not sim.has_method("verify_g02_kill_attribution") or not sim.g02_model_is_bound(self):
++  return {"supported":false,"reason":"g02_original_death_bridge_not_bound"}
++ out.runtime_complete = true;out.shop_admitted = true
++ out.runtime_status = "source_solo_death_task_bound"
++ return out
++
++func _g02_bound(sim: Node, run_id: String) -> bool:
++ if not is_instance_valid(sim) or _health_sim == null or _live_sim == null or _floor_owner == null or _floor_owner.get_ref() == null: return false
++ if not is_same(_health_sim.get_ref(),sim) or not is_same(_live_sim.get_ref(),sim) or run_id.is_empty() or run_id != _run_id: return false
++ if not state.has("shop_visit") or str(state.shop_visit.run_id) != run_id or str(sim.hero.actor_id) != str(state.hero_id): return false
++ return sim.has_method("g02_model_is_bound") and sim.g02_model_is_bound(self)
++
++func record_battle_event(sim: Node, event: Dictionary, run_id: String) -> Dictionary:
++ # Preserve the current Fengli progression/reward caller order.
++ var prior: Dictionary = super.record_battle_event(sim,event,run_id)
++ if not prior.get("accepted",false) or event.get("kind") != "kill": return prior
++ if not _g02_bound(sim,run_id) or not _g02_trusted.is_empty() or not equipment_runtime_status(TrainingTask.ITEM_ID).get("supported",false): return prior
++ var selected: Dictionary = TrainingTask.select_unique(state.inventory,runtime_stat_definitions)
++ var progress: Dictionary = _g02_state()
++ if not selected.equipped or progress.completed: return prior
++ var verified: Dictionary = BattleEvents.verify(sim,self,event,run_id)
++ if verified.has("error"): return _deny(str(verified.error))
++ var evidence: Dictionary = sim.verify_g02_kill_attribution(self,event,run_id)
++ if evidence.is_empty(): return prior
++ var scope: Dictionary = _g02_scope(sim)
++ var proposal: Dictionary = TrainingTask.evaluate(selected,progress.progress,progress.completed,_g02_claims(progress,scope),scope,evidence)
++ if not proposal.get("eligible",false): return prior
++ var request: Dictionary = {"run_id":run_id,"scope":scope,"evidence":evidence,"proposal":proposal}
++ var command_id: String = "equipment-g02:" + JSON.stringify([run_id,state.actor_id,scope.generation,scope.room_id,proposal.target])
++ _g02_trusted = request.duplicate(true)
++ _g02_original_event = event.duplicate(true)
++ var result: Dictionary = command(command_id,"g02_verified_kill",request)
++ _g02_original_event = {};_g02_trusted = {}
++ if not result.get("accepted",false): return result
++ # No task-specific outward event is introduced. Existing observers/rewards
++ # remain on the original kill event; the original command owns its receipt.
++ var out: Dictionary = prior.duplicate(true)
++ out.merge(result,true)
++ out.events = prior.get("events",[]).duplicate(true) + result.get("events",[]).duplicate(true)
++ out["g02_task"] = _g02_state()
++ out["g02_proposal"] = proposal.duplicate(true)
++ return out
++
++func _apply(action: String, args: Dictionary) -> String:
++ if action != "g02_verified_kill": return super._apply(action,args)
++ if _g02_trusted.is_empty() or args != _g02_trusted or _g02_original_event.is_empty(): return "g02_verified_original_kill_required"
++ var sim: Node = _health_sim.get_ref() if _health_sim != null else null
++ if not _g02_bound(sim,str(args.run_id)) or state.phase != "combat" or state.get("actor_dead",false) or state.get("test_mode",false): return "g02_live_holder_required"
++ # A real death already committed before an observer paused the game remains
++ # a death. The source witness rejects new uncommitted work while paused.
++ if sim.phase != "combat" or sim.hero.dead or state.combat_level_id != sim.combat_level_id or args.scope != _g02_scope(sim): return "g02_live_scope_required"
++ var verified: Dictionary = BattleEvents.verify(sim,self,_g02_original_event,_run_id)
++ if verified.has("error"): return str(verified.error)
++ var evidence: Dictionary = sim.verify_g02_kill_attribution(self,_g02_original_event,_run_id)
++ if evidence.is_empty() or evidence != args.evidence: return "g02_original_witness_changed"
++ var next: Dictionary = _g02_state()
++ var selected: Dictionary = TrainingTask.select_unique(state.inventory,runtime_stat_definitions)
++ var claims: Dictionary = _g02_claims(next,args.scope)
++ var proposal: Dictionary = TrainingTask.evaluate(selected,next.progress,next.completed,claims,args.scope,evidence)
++ if not proposal.get("eligible",false) or proposal != args.proposal: return "g02_task_proposal_changed"
++ var fact: Dictionary = {"equipment_id":TrainingTask.ITEM_ID,"event_id":"g02:" + JSON.stringify([_run_id,state.actor_id,args.scope.generation,args.scope.room_id,proposal.target]),"progress":proposal.progress_after}
++ if proposal.completed:
++  if state.completed_equipment_tasks.has(TrainingTask.ITEM_ID) or state.bonus_awards.has(TrainingTask.TASK_ID): return "g02_reward_already_recorded"
++  fact.stage = proposal.stage_id;fact.reward_key = proposal.reward_key
++ var projected: Dictionary = LedgerProjection.evaluate(state,commerce_definitions,"task_effect",fact,true)
++ if not projected.get("accepted",false): return str(projected.get("reason","g02_task_receipt_rejected"))
++ var reason: String = LedgerProjection.commit(state,projected.patch,int(commerce_definitions.slot_limit))
++ if not reason.is_empty(): return reason
++ next.progress = int(proposal.progress_after)
++ next.completed = bool(proposal.completed)
++ next.claim_scope = args.scope.duplicate(true)
++ next.targets = claims.targets.duplicate(true)
++ next.targets[proposal.target] = true
++ if next.completed:
++  # Original authored one-time SP path; no UI or economic receipt grants SP.
++  state.points += int(proposal.reward_skill_points)
++  state.bonus_sp = int(state.get("bonus_sp",0)) + int(proposal.reward_skill_points)
++  state.completed_equipment_tasks[TrainingTask.ITEM_ID] = {"task_id":TrainingTask.TASK_ID,"event_id":fact.event_id}
++  state.bonus_awards[TrainingTask.TASK_ID] = {"amount":int(proposal.reward_skill_points),"source":"authored_equipment_task","definition_version":config.version}
++ state["g02_equipment_progress"] = next
++ _commerce_result = projected.duplicate(true);_commerce_result.erase("patch")
++ return ""
++
++func _g02_state() -> Dictionary:
++ var saved: Dictionary = state.get("g02_equipment_progress",{})
++ if saved.get("run_id") == _run_id and saved.get("actor_id") == state.actor_id and saved.get("equipment_id") == TrainingTask.ITEM_ID: return saved.duplicate(true)
++ return {"run_id":_run_id,"actor_id":state.actor_id,"equipment_id":TrainingTask.ITEM_ID,"progress":0,"completed":false,"claim_scope":{},"targets":{}}
++func _g02_scope(sim: Node) -> Dictionary:
++ return {"run_id":_run_id,"actor_id":state.actor_id,"generation":sim.encounter_generation,"room_id":sim.room_id}
++func _g02_claims(progress: Dictionary, scope: Dictionary) -> Dictionary:
++ return {"scope":scope.duplicate(true),"targets":progress.targets.duplicate(true) if progress.claim_scope == scope else {}}
++func equipment_task_status() -> Dictionary:
++ var out: Dictionary = super.equipment_task_status()
++ var definition: Dictionary = runtime_stat_definitions.get(TrainingTask.ITEM_ID,{})
++ if not definition.has("taskG02"): return out
++ var progress: Dictionary = _g02_state()
++ if not out.has("tasks"): out.tasks = {}
++ out.tasks[TrainingTask.ITEM_ID] = {"name":"百战修业","progress":int(progress.progress),"threshold":int(definition.taskG02.threshold),"completed":bool(progress.completed),"reward_skill_points":1,"held_only":true,"retained_when_sold":true,"retained_across_rooms":true,"once_per_run":true,"multiplayer_supported":false}
++ return out
++func snapshot() -> Dictionary:
++ var out: Dictionary = super.snapshot()
++ out["g02_scope"] = "one_final_equipment_source_task_bound_not_full_catalog"
++ out["g02_equipment"] = _g02_state()
++ return out
++
++# The former base/intermediate-only slice applied G27 to every supported entry.
++# A final item must not acquire that component-only multiplier. All other order,
++# per-UID fields, held-copy counting and support checks remain unchanged.
++func equipment_effects() -> Dictionary:
++ if runtime_stat_definitions.is_empty():return super.equipment_effects()
++ var result:Dictionary={"stats":{},"passives":[],"actives":[],"status":"base_intermediate_plus_source_bound_G02","holds":[]}
++ for entry:Dictionary in state.inventory:
++  var status:Dictionary=equipment_runtime_status(str(entry.id))
++  if not status.get("supported",false):
++   result.holds.append({"id":entry.id,"uid":entry.uid,"reason":status.reason})
++   continue
++  var item_stats:Dictionary=status.stats.duplicate(true)
++  var multiplier:float=1.0+float(state.get("g21_item_bonuses",{}).get(str(entry.uid),{}).get("base_fraction",0.0))
++  if str(status.get("tier","")) in ["base","intermediate"] and _selected_hex_active("common_g27"):
++   multiplier*=1.0+hex_parameter("common_g27","G27-1")/100.0
++  for key in item_stats:item_stats[key]*=multiplier
++  _add_stats(result.stats,item_stats,int(entry.count))
++ return result
+--- a/fengli_route_20261024/potion_model.gd
++++ b/fengli_route_20261024/potion_model.gd
+@@ -1,4 +1,4 @@
+-extends "res://fengli_route_20261024/equipment_hex_model.gd"
++extends "res://fengli_route_20261024/g02_model.gd"
+ const PotionConsumer=preload("res://tests/ink_potion_recovery_20261008/candidate01/potion_consumer.gd")
+ const FlaskConsumer=preload("res://fengli_route_20261024/flask_consumer.gd")
+ const ElixirConsumer=preload("res://fengli_route_20261024/elixir_consumer.gd")
+--- a/fengli_route_20261024/sim.gd
++++ b/fengli_route_20261024/sim.gd
+@@ -2,6 +2,9 @@
+ ## Unadmitted Wind route draft. Real Fengli source skills/core, isolated route identity.
+ ## Inherits the original Fengli action/contact/collision/clock algorithms.
+ const RouteEnemyDirector = preload("res://fengli_route_20261024/enemy_director.gd")
++const G02Witness=preload("res://fengli_route_20261024/g02/death_witness.gd")
++const G02Common=preload("res://fengli_route_20261024/g02/common_bridge.gd")
++var _g02_witness:RefCounted=G02Witness.new(self)
+ var route_run_id: String = ""
+ var _route_owner: WeakRef
+ var equipment_health_revision: int = 0
+@@ -12,6 +15,12 @@
+ func _init()->void:
+  super()
+  enemy_director=RouteEnemyDirector.new(hero_radius)
++ # Fresh construction only. Preserve the same Common runtime and every field;
++ # the Fengli-only child adds an original-execution witness, not another owner.
++ var original=common
++ common=G02Common.new(self)
++ for key in ["runtime","model","settings","context_values","_last_stats","_draining","_inside_hit","_shift_cast","_pending_finishes","_spatial_recorded","_action_origins"]:
++  common.set(key,original.get(key))
+ 
+ func bind_route_identity(owner: RefCounted, new_run_id: String) -> Dictionary:
+  if owner == null or owner.get_script() == null or owner.get_script().resource_path != "res://fengli_route_20261024/session.gd":
+@@ -25,6 +34,8 @@
+  return {"accepted":true,"reason":""}
+ 
+ func emit_event(kind: String, data: Dictionary = {}) -> void:
++ if kind=="damage":_g02_witness.note_damage(data)
++ var g02_emission:Dictionary=_g02_witness.begin_emission(data) if kind=="kill" else {}
+  if kind=="kill" and enemy_director is RouteEnemyDirector: enemy_director.boss_wave.prune(self)
+  var actual: Dictionary = data.duplicate(true)
+  actual["generation"] = encounter_generation
+@@ -32,6 +43,7 @@
+  actual["hero_time"] = hero_time
+  actual["run_id"] = route_run_id
+  super.emit_event(kind, actual)
++ if kind=="kill":_g02_witness.end_emission(g02_emission)
+ 
+ func snapshot() -> Dictionary:
+  var actual: Dictionary = super.snapshot()
+@@ -131,3 +143,31 @@
+ func _clear_wave_transients() -> void:
+  if enemy_director is RouteEnemyDirector: enemy_director.boss_wave.cancel_all(self,"encounter_cleared")
+  super._clear_wave_transients()
++
++# Preserve the inherited Fengli hit/death order and P3/Hex effects. Dynamic
++# witnesses expire with each original call stack and cannot be replayed from UI.
++func damage_enemy(enemy:Dictionary,amount:float,source:String,cast_id:int=0,is_true:bool=false,critical:bool=false,metadata:Dictionary={})->bool:
++ var frame:Dictionary=_g02_witness.begin_damage(enemy,source,cast_id)
++ var result:bool=super.damage_enemy(enemy,amount,source,cast_id,is_true,critical,metadata)
++ _g02_witness.end_damage(frame)
++ return result
++
++func _kill_enemy(enemy:Dictionary,source:String,cast_id:int)->void:
++ var frame:Dictionary=_g02_witness.begin_death(enemy,source,cast_id)
++ super._kill_enemy(enemy,source,cast_id)
++ _g02_witness.end_death(frame)
++
++func _hero_killed(enemy:Dictionary,source:String,cast_id:int)->void:
++ var frame:Dictionary=_g02_witness.begin_hero_killed(enemy,source,cast_id)
++ super._hero_killed(enemy,source,cast_id)
++ _g02_witness.end_hero_killed(frame)
++
++func _hero_clear_transients()->void:
++ _g02_witness.invalidate()
++ super._hero_clear_transients()
++
++func g02_model_is_bound(owner:RefCounted)->bool:
++ return owner!=null and _equipment_health_owner!=null and is_same(_equipment_health_owner.get_ref(),owner) and _ordinary_potion_model!=null and is_same(_ordinary_potion_model.get_ref(),owner) and common.get_script()==G02Common and common.model!=null and is_same(common.model.get_ref(),owner) and owner.has_method("_g02_state")
++
++func verify_g02_kill_attribution(owner:RefCounted,event:Dictionary,run_id:String)->Dictionary:
++ return _g02_witness.verify(owner,event,run_id)
+--- a/fengli_route_20261024/shop_theme.gd
++++ b/fengli_route_20261024/shop_theme.gd
+@@ -116,6 +116,8 @@
+     _detail.text+="\n"+_player_reason(str(_quote.get("reason","")))
+     _buy.text="不可购买："+_player_reason(str(_quote.get("reason","")))
+ 
++ _describe_g02()
++
+ func refresh(force:bool=false)->void:
+  # The inherited fix02 retires emitting rows safely. Clear only our references
+  # at that same rebuild boundary; never free a pressed button synchronously.
+@@ -249,3 +251,31 @@
+   var value:float=float(stats[key])*(100.0 if percent else 1.0)
+   parts.append("%s +%s%s"%[str(labels.get(key,key)),str(value),"%" if percent else ""])
+  return " / ".join(parts)
++
++func _describe_g02()->void:
++ # Read-only UI projection of the same accepted item, quote and task ledger.
++ if _selected!="final:G02" or not _state.get("ready",false) or not _state.catalog.items.has(_selected):return
++ var item:Dictionary=_state.catalog.items[_selected]
++ if not item.equipment_runtime.supported:return
++ var stats:Dictionary=item.equipment_runtime.stats
++ var task:Dictionary=_state.state.get("equipment_task_status",{}).get("tasks",{}).get(_selected,{})
++ var parts:Array[String]=[]
++ for id in item.get("components",[]):
++  var owned:int=0
++  for entry in _state.state.inventory:
++   if entry.id==id:owned+=int(entry.count)
++  parts.append("%s（持有%d）"%[str(_state.catalog.items[id].name),owned])
++ var lines:Array[String]=[
++  "%s | 总价%d金币"%[item.name,int(item.price)],
++  "攻击+%.0f · 法强+%.0f · 生命上限+%.0f · 冷却缩减+%.0f%%"%[float(stats.get("AD",0)),float(stats.get("AP",0)),float(stats.get("max_hp",0)),100.0*float(stats.get("cooldown_reduction",0))],
++  "配方："+" + ".join(parts),
++  "百战修业：%d / %d · %s"%[int(task.get("progress",0)),int(task.get("threshold",500)),"已完成，本局已获得1技能点" if task.get("completed",false) else "完成获得1本局技能点"],
++  "持有时累计：普通1、精英10、Boss25；出售保留进度，重买继续，本局一次。"
++ ]
++ if _quote.get("accepted",false):
++  lines.append("本次扣款%d金 · 已持组件抵扣%d金"%[int(_quote.charge),int(_quote.credit)])
++  _buy.text="%s %s（%d金币）"%["合成" if int(_quote.credit)>0 else "购买",item.name,int(_quote.charge)]
++ else:
++  lines.append(_player_reason(str(_quote.get("reason",""))))
++  _buy.text="不可购买："+_player_reason(str(_quote.get("reason","")))
++ _detail.text="\n".join(lines)
