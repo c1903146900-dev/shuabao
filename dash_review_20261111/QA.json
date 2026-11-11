@@ -1,0 +1,392 @@
+{
+  "status": "OBSERVED_NO_PRODUCTION_CHANGE",
+  "baseline_pck": "2b216c2971ea1beeb77ebbc73273f07e3290470dbd9a56191e60561cf2f6db89",
+  "scope": "Scripted normal room entry, native W+Shift and A+Shift. No injected combat state. Two accepted dashes; an intermediate attempt during cooldown was not an accepted dash.",
+  "events": [
+    {
+      "cast_id": 1,
+      "direction": "(0.0, 0.0, -1.0)",
+      "distance": 4.5,
+      "duration": 0.25,
+      "iframe_duration": 0.2,
+      "real_time": 1.48
+    },
+    {
+      "cast_id": 2,
+      "direction": "(-1.0, 0.0, 0.0)",
+      "distance": 4.5,
+      "duration": 0.25,
+      "iframe_duration": 0.2,
+      "real_time": 8.61999999999991
+    }
+  ],
+  "frames": [
+    {
+      "serial": 0,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {},
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 1,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {},
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 2,
+      "frame": {
+        "age": 0.0600000000000001,
+        "cast_id": 1,
+        "contact_is_hit": false,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 0.24,
+        "source_mutations": false,
+        "source_pose": "dash",
+        "vertices": 475
+      },
+      "trail_count": 2,
+      "trail_mirrors": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "serial": 3,
+      "frame": {
+        "age": 0.2,
+        "cast_id": 1,
+        "contact_is_hit": false,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 0.800000000000001,
+        "source_mutations": false,
+        "source_pose": "dash",
+        "vertices": 475
+      },
+      "trail_count": 2,
+      "trail_mirrors": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "serial": 4,
+      "frame": {
+        "age": 0.32,
+        "cast_id": 1,
+        "contact_is_hit": false,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 1,
+      "trail_mirrors": [
+        1.0
+      ]
+    },
+    {
+      "serial": 5,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 6,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 7,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 8,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 9,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(0.0, 0.0, -1.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 10,
+      "frame": {
+        "age": 0.0599999999999987,
+        "cast_id": 2,
+        "contact_is_hit": false,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 0.239999999999995,
+        "source_mutations": false,
+        "source_pose": "dash",
+        "vertices": 475
+      },
+      "trail_count": 2,
+      "trail_mirrors": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "serial": 11,
+      "frame": {
+        "age": 0.199999999999996,
+        "cast_id": 2,
+        "contact_is_hit": false,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 0.799999999999983,
+        "source_mutations": false,
+        "source_pose": "dash",
+        "vertices": 475
+      },
+      "trail_count": 2,
+      "trail_mirrors": [
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "serial": 12,
+      "frame": {
+        "age": 0.319999999999993,
+        "cast_id": 2,
+        "contact_is_hit": false,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "dash",
+        "phase": "dash",
+        "time_domain": "real"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 1,
+      "trail_mirrors": [
+        -1.0
+      ]
+    },
+    {
+      "serial": 13,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 14,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 15,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 16,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    },
+    {
+      "serial": 17,
+      "frame": {
+        "cast_id": -1,
+        "direction": "(-1.0, 0.0, 0.0)",
+        "key": "idle",
+        "phase": "idle"
+      },
+      "puppet": {
+        "kind": "dash",
+        "progress": 1.0,
+        "source_mutations": false,
+        "source_pose": "dashattack_recover",
+        "vertices": 475
+      },
+      "trail_count": 0,
+      "trail_mirrors": []
+    }
+  ],
+  "findings": "Native samples showed displacement, fading trail, and return to neutral pose; no persistent ghost or demonstrated wrong dash direction. Left dash samples showed left-facing ghosts, but prior facing was already left so this does not disprove a reversal-first-tick issue.",
+  "limits": [
+    "First screenshot was source age .06; nominal .05 timer labels are not actual frame times.",
+    "Subsequent captures .20 and .32 skipped exact start and .25 end transition; cannot infer smoothness or a visible snap from those stills alone.",
+    "Static code has discrete pose changes and a small landing transform discontinuity; actual perceptible defect not established.",
+    "Stationary prior-facing dash, immediate direction reversal first ghost, exact boundary animation and Windows listening remain unverified.",
+    "No automatic test is user visual acceptance."
+  ],
+  "public_observer": "Screenshot output changed to user:// only; adaptation not re-executed.",
+  "guard": {
+    "passed": true,
+    "exit": 0,
+    "elapsed": 59.535220597999796,
+    "max_sample_gap": 0.07400712999879033,
+    "max_allowed_gap": 0.2,
+    "sample_interval": 0.05,
+    "cleanup_at": 595.0,
+    "kill_request_at": 600.0,
+    "cleanup_confirmed": true
+  },
+  "test_sha256": "ca65ab4f0830d22679d9a63f837b3f2b4205ecabc6c042a6672af3e6a2af4292"
+}
