@@ -1,0 +1,303 @@
+--- a/__clean_fengli/machine_template_pins.gd
++++ b/__clean_fengli/machine_template_pins.gd
+@@ -1,4 +1,4 @@
+ extends RefCounted
+ ## Deliberately closed until original103 build validation and independent payload review.
+ const CONFIGURED = true
+-const SHA256 = "cafff310f093ab6883497a702b2064b1b38ca672eaea559cfd693eec7a7fed49"
++const SHA256 = "591394df1d7d28c53ee074bdcb1c7701fe941e85a673e028c8da2a0f522a8784"
+--- /dev/null
++++ b/fengli_route_20261024/body_growth_model.gd
+@@ -0,0 +1,90 @@
++extends "res://fengli_route_20261024/p3_growth_model.gd"
++## Only the original paid draw's support predicate is narrowed. The original
++## command owns rollback, RNG, debit, receipts, body records and health sealing.
++const TRAINING_CAPS := {"attack_speed":2.5,"cooldown_reduction":0.65,"tenacity":1.0,"crit_chance":1.0}
++const TRAINING_ACTOR_KEYS := {"attack_speed":"attack_speed","cooldown_reduction":"cdr","tenacity":"tenacity","crit_chance":"crit_chance"}
++var _training_draw_scope: bool = false
++var _training_draw_ids: Array = []
++
++func support(definition: Dictionary) -> Dictionary:
++ var out: Dictionary = super.support(definition)
++ if _training_draw_scope and definition.get("formal_training",false) and str(definition.get("id","")) not in _training_draw_ids:
++  out.supported = false
++  out.status = "unsupported"
++  out["reason"] = "training_effective_cap_reached"
++ return out
++
++func training_eligibility_for_stats(effective_stats: Dictionary) -> Dictionary:
++ # Pure eligibility over an explicit final-effective view. This is a read-only
++ # inspection seam; no caller-supplied projection reaches the paid authority.
++ var eligible: Array = []
++ var excluded: Dictionary = {}
++ if not config.body.get("formal_training_pool",false) or config.body.outcomes.size()!=12:
++  return {"accepted":false,"reason":"formal_training12_required","eligible_ids":eligible,"excluded_ids":excluded,"effective_stats":effective_stats.duplicate(true)}
++ for stat: String in TRAINING_CAPS:
++  var value: Variant = effective_stats.get(TRAINING_ACTOR_KEYS[stat])
++  if not (value is int or value is float) or not is_finite(float(value)):
++   return {"accepted":false,"reason":"training_effective_stats_unavailable","eligible_ids":[],"excluded_ids":{},"effective_stats":{}}
++ for id: String in config.body.outcomes:
++  var outcome: Dictionary = config.body.outcomes[id]
++  if not super.support(outcome).supported:
++   excluded[id] = "unsupported_effect"
++   continue
++  var stat: String = str(outcome.runtime_stat)
++  if TRAINING_CAPS.has(stat) and float(effective_stats[TRAINING_ACTOR_KEYS[stat]]) >= float(TRAINING_CAPS[stat]):
++   excluded[id] = "training_effective_cap_reached"
++  else:
++   eligible.append(id)
++ return {"accepted":eligible.size()>=3,"reason":"" if eligible.size()>=3 else "body_pool_exhausted","eligible_ids":eligible,"excluded_ids":excluded,"effective_stats":effective_stats.duplicate(true)}
++
++func training_eligibility() -> Dictionary:
++ var sim: Node = _health_sim.get_ref() if _health_sim != null else null
++ # The original consumer keeps this effective view synchronized after commands.
++ # Reading it includes Common caps and Fengli actor modifiers. Calling Common.project_stats here
++ # would write its cooldown_bonus field, so this predicate never calls it.
++ if not is_instance_valid(sim) or sim.common.model == null or not is_same(sim.common.model.get_ref(),self):
++  return {"accepted":false,"reason":"training_effective_source_unbound","eligible_ids":[],"excluded_ids":{},"effective_stats":{}}
++ var effective: Dictionary = sim.hero.stats.duplicate(true)
++ # Fengli adds E3/H02/H09/H14 in actor getters after static/Common projection.
++ # Read those final values; never project here or mutate transient source state.
++ effective.attack_speed = sim.hero.attack_speed()
++ effective.tenacity = sim.hero.tenacity()
++ effective.crit_chance = sim.hero.critical_chance()
++ return training_eligibility_for_stats(effective)
++
++func _apply_commerce(envelope: Dictionary) -> String:
++ if str(envelope.get("operation","")) != "pay_body": return super._apply_commerce(envelope)
++ if _training_draw_scope: return "reentrant_training_draw"
++ var eligibility: Dictionary = training_eligibility()
++ if not eligibility.accepted: return str(eligibility.reason)
++ _training_draw_ids = eligibility.eligible_ids.duplicate()
++ _training_draw_scope = true
++ var reason: String = super._apply_commerce(envelope)
++ _training_draw_scope = false
++ _training_draw_ids = []
++ return reason
++
++func training_status() -> Dictionary:
++ var pending: Dictionary = {}
++ var completed: int = 0
++ for purchase: Dictionary in state.body:
++  if str(purchase.get("selected","")).is_empty(): pending = purchase.duplicate(true)
++  else: completed += 1
++ var options: Array = []
++ for id: String in pending.get("candidates",[]):
++  if config.body.outcomes.has(id): options.append(config.body.outcomes[id].duplicate(true))
++ var eligibility: Dictionary = training_eligibility()
++ var reason: String = str(eligibility.reason)
++ if not pending.is_empty(): reason = "body_choice_pending"
++ if reason.is_empty() and not commerce_definitions.is_empty():
++  var quote: Dictionary = LedgerProjection.evaluate(state,commerce_definitions,"pay_body",{"purchase_id":"formal-training-quote:"+str(state.revision)},true)
++  if not quote.accepted: reason = str(quote.reason)
++ elif reason.is_empty(): reason = "commerce_unbound"
++ return {"price":int(config.body.cost),"completed_count":completed,"purchase_count":state.body.size(),"pending":pending,"options":options,
++  "eligibility":eligibility,"can_pay":reason.is_empty(),"reason":reason,"token":commerce_token(),"free_available":false,"free_credit_authority":"not_connected",
++  "permanent":true,"undoable":false,"equipment_slots_used":0,"potion_slots_used":0}
++
++func snapshot() -> Dictionary:
++ var out: Dictionary = super.snapshot()
++ out["formal_training"] = training_status()
++ return out
+--- /dev/null
++++ b/fengli_route_20261024/body_shop_service.gd
+@@ -0,0 +1,65 @@
++extends RefCounted
++## UI intent adapter only: one existing Session, wallet, RNG and body ledger.
++## The immutable catalog owns price/outcomes; no new draw, refund or refresh path.
++var _owner:WeakRef
++
++func _init(owner:RefCounted)->void:
++ _owner=weakref(owner)
++
++func _location_reason()->String:
++ var owner:RefCounted=_owner.get_ref()
++ if owner==null:return "session_unavailable"
++ var reason:String=owner.shop_location_reason()
++ if not reason.is_empty():return reason
++ if not owner.panel_open:return "shop_panel_not_open"
++ if not owner.ledger.model.state.shop_visit.get("ui_open",false):return "shop_panel_not_open"
++ if owner.initial_modal_open or not owner.ledger.model.snapshot().pending_milestones.is_empty():return "mandatory_hex_pending"
++ # Do not use _safe_boundary_reason here: a paid pending selection must remain
++ # reachable after closing/reopening this same shop. That guard still blocks exit.
++ return ""
++
++func view()->Dictionary:
++ var owner:RefCounted=_owner.get_ref()
++ if owner==null or owner.ledger==null:return {"ready":false}
++ var model:RefCounted=owner.ledger.model
++ var definition:Dictionary=model.config.get("body",{})
++ var training:Dictionary=model.training_status()
++ var reason:String=_location_reason()
++ var can_select:bool=reason.is_empty() and not training.pending.is_empty()
++ if reason.is_empty():reason=str(training.reason)
++ return {"ready":true,"can_buy":reason.is_empty(),"can_select":can_select,"reason":reason,"cost":int(training.price),"count":int(training.purchase_count),"pending":training.pending.duplicate(true),"outcomes":definition.get("outcomes",{}).duplicate(true),"eligibility":training.eligibility.duplicate(true),"token":training.token.duplicate(true)}
++
++func submit(id:String,action:String,args:Dictionary)->Dictionary:
++ var reason:String=_location_reason()
++ if not reason.is_empty():return _deny(reason)
++ if id.is_empty():return _deny("missing_command_id")
++ var permitted:Array=["epoch","revision","room_id"]
++ if action=="select_body":permitted.append_array(["purchase_id","outcome"])
++ for key in args:
++  if key not in permitted:return _deny("unsupported_training_argument")
++ var owner:RefCounted=_owner.get_ref()
++ var model:RefCounted=owner.ledger.model
++ var arguments:Dictionary={"epoch":args.get("epoch",-1),"revision":args.get("revision",-1),"room_id":args.get("room_id","")}
++ var result:Dictionary
++ if action=="buy_body":
++  # Stable command identity, not a fresh sequence on retries. The real commerce
++  # owner is the only caller allowed to submit pay_body to the existing kernel.
++  arguments["purchase_id"]=owner.run_id+"|body|"+id
++  result=owner.ledger.shop_authority(owner,id,"pay_body",arguments)
++ elif action=="select_body":
++  var runtime_reason:String=owner.ledger._runtime_preflight()
++  if not runtime_reason.is_empty():return _deny(runtime_reason)
++  if not model.receipts.has(id):
++   var token:Dictionary=model.commerce_token()
++   if arguments.epoch!=token.epoch:return _deny("stale_epoch")
++   if arguments.revision!=token.revision:return _deny("stale_revision")
++   if arguments.room_id!=token.room_id:return _deny("stale_room")
++  # Preserve the displayed token in the original receipt request, as in the
++  # existing 2026-10-09 formal-training adapter. Only fresh commits project stats.
++  result=owner.ledger._refresh_committed(model.command(id,"select_body",args.duplicate(true)))
++ else:return _deny("unknown_body_intent")
++ if result.get("accepted",false):owner.growth_dirty=true
++ return result
++
++func _deny(reason:String)->Dictionary:
++ return {"accepted":false,"changed":false,"reason":reason,"events":[]}
+--- a/fengli_route_20261024/potion_model.gd
++++ b/fengli_route_20261024/potion_model.gd
+@@ -1,4 +1,4 @@
+-extends "res://fengli_route_20261024/p3_growth_model.gd"
++extends "res://fengli_route_20261024/body_growth_model.gd"
+ const PotionConsumer=preload("res://tests/ink_potion_recovery_20261008/candidate01/potion_consumer.gd")
+ const FlaskConsumer=preload("res://fengli_route_20261024/flask_consumer.gd")
+ const ElixirConsumer=preload("res://fengli_route_20261024/elixir_consumer.gd")
+--- a/fengli_route_20261024/session.gd
++++ b/fengli_route_20261024/session.gd
+@@ -31,6 +31,8 @@
+ var _service_exit_serial := 0
+ var _service_present := false
+ var _service_ready := false
++const BodyShop = preload("res://fengli_route_20261024/body_shop_service.gd")
++var body_shop:RefCounted=BodyShop.new(self)
+ 
+ func initialize_session(_source_sim: Node, _new_run_id: String, _diagnostic: bool = false) -> Dictionary:
+  return _deny("explicit_initialize_floor_definition_and_opt_in_required")
+@@ -316,7 +318,11 @@
+  # only and cannot clear the journal; next-room authority commits all entries.
+  return super.open_panel()
+ 
++func body_shop_view()->Dictionary:
++ return body_shop.view()
++
+ func submit(id: String, action: String, args: Dictionary) -> Dictionary:
++ if action in ["buy_body","select_body"]:return _record(body_shop.submit(id,action,args))
+  var reason := shop_location_reason()
+  if not reason.is_empty(): return _record(_deny(reason))
+  if action == "consume":
+--- a/fengli_route_20261024/shop_theme.gd
++++ b/fengli_route_20261024/shop_theme.gd
+@@ -3,6 +3,12 @@
+ ## Quotes, commerce tokens and commands still use the inherited ledger path.
+ var _elixir_drink_buttons: Dictionary = {}
+ var _elixir_status: Label
++var _body_buy:Button
++var _body_shade:ColorRect
++var _body_panel:PanelContainer
++var _body_heading:Label
++var _body_cards:Array=[]
++var _body_view:Dictionary={}
+ func _ready() -> void:
+  super._ready()
+  _elixir_status=Label.new()
+@@ -44,6 +50,8 @@
+     box.border_color = Color("426678")
+     child.add_theme_stylebox_override("panel", box)
+ 
++ _build_body_controls()
++
+ func _detail_for_selected() -> void:
+  super._detail_for_selected()
+  # 3. Project existing selection only; never select, toggle or enable a row.
+@@ -117,6 +125,7 @@
+    _elixir_drink_buttons.clear()
+  super.refresh(force)
+  if not _state.get("ready",false) or not visible:return
++ _refresh_body_controls()
+  _refresh_elixir_controls()
+  _title.text="安全商店 · 金币 %d · 装备 %d / 6"%[int(_state.state.gold),_state.state.inventory.size()]
+  var receipt:Dictionary=_state.last_receipt
+@@ -173,4 +182,70 @@
+ 
+ func _player_reason(reason:String)->String:
+  var labels:Dictionary={"same_name_elixir_active":"同名合剂已生效，不能再次饮用","elixir_prebattle_only":"合剂只能在战前安全商店饮用","elixir_run_finished":"本局已结束，不能再饮用合剂","elixir_consumer_unbound":"合剂效果尚未接入","elixir_effect_not_supported":"此合剂效果暂未开放","already_used":"合剂已使用，该交易及其依赖不能撤回","missing_item":"这瓶合剂已不在装备栏，请刷新","stale_room":"房间已变化，请重新打开商店","insufficient_gold":"金币不足","inventory_full":"六个装备槽已满","potion_cap":"普通药剂已达携带上限","recovery_mutex":"普通药剂与循环药壶不能同时持有","flask_already_owned":"已持有这档药壶","flask_upgrade_order":"请按顺序升级药壶","unresolved_flask_switch_economics":"本试玩不支持出售药壶","undo_boundary":"本次商店访问没有可撤回的交易","hp_dependency_changed":"生命状态已变化，这笔交易不能撤回","hp_consumption_dependency":"药品已经使用，这笔交易不能撤回","stale_revision":"状态已变化，请重新选择商品","stale_epoch":"商店状态已变化，请重新打开商店","shop_after_real_battle_only":"战斗中不能打开商店","mandatory_hex_pending":"请先完成待选海克斯"}
++ labels.merge({"body_choice_pending":"先完成已支付的锻体选择","body_pool_exhausted":"当前有效锻体选项不足三项","body_task_preflight_required":"锻体炉心的任务联动尚未接入，暂不能锻体","body_unavailable":"锻体尚未开放","already_selected":"这次锻体已经选定","invalid_body_choice":"该选项不在本次锻体候选中","missing_body_purchase":"找不到这次锻体记录"})
+  return str(labels.get(reason,"当前无法完成此操作。"))
++
++func _build_body_controls()->void:
++ _body_buy=Button.new();_body_buy.name="BodyPurchase"
++ _body_buy.text="锻体";_body_buy.tooltip_text="固定价格，随机三选一；可多次购买，不退款、不洗点、不刷新。"
++ _undo.get_parent().add_child(_body_buy)
++ _undo.get_parent().move_child(_body_buy,_close.get_index())
++ _body_buy.pressed.connect(func():
++  if _body_view.get("can_buy",false):_request("buy_body",{},_body_view.token))
++ _body_shade=ColorRect.new();_body_shade.name="BodyChoiceShade"
++ _body_shade.color=Color(.025,.035,.07,.94);_body_shade.mouse_filter=Control.MOUSE_FILTER_STOP
++ add_child(_body_shade);_body_shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);_body_shade.hide()
++ _body_panel=PanelContainer.new();_body_panel.name="BodyChoicePanel";add_child(_body_panel)
++ _body_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
++ _body_panel.offset_left=-420;_body_panel.offset_right=420;_body_panel.offset_top=-155;_body_panel.offset_bottom=155
++ var style:=StyleBoxFlat.new();style.bg_color=Color("141a30");style.border_color=Color("42e4d1");style.set_border_width_all(2)
++ style.content_margin_left=22;style.content_margin_right=22;style.content_margin_top=20;style.content_margin_bottom=20
++ _body_panel.add_theme_stylebox_override("panel",style)
++ var content:=VBoxContainer.new();content.add_theme_constant_override("separation",18);_body_panel.add_child(content)
++ _body_heading=Label.new();_body_heading.name="BodyChoiceHeading";_body_heading.add_theme_font_size_override("font_size",22);content.add_child(_body_heading)
++ var hint:=Label.new();hint.text="选一项永久提升本局属性。不退款、不洗点、不刷新。";content.add_child(hint)
++ var choices:=HBoxContainer.new();choices.add_theme_constant_override("separation",14);content.add_child(choices)
++ for index in range(3):
++  var button:=Button.new();button.name="BodyChoice%d"%index
++  button.custom_minimum_size=Vector2(245,96);button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
++  choices.add_child(button);_body_cards.append(button)
++  button.pressed.connect(_select_body_choice.bind(index))
++ var close:=Button.new();close.name="BodyChoiceClose";close.text="稍后选择，关闭商店（选择结果会保留）"
++ content.add_child(close);close.pressed.connect(func():close_requested.emit())
++ _body_panel.hide()
++
++func _refresh_body_controls()->void:
++ if _body_buy==null or _session==null:return
++ _body_view=_session.body_shop_view()
++ if not _body_view.get("ready",false):return
++ _body_buy.text="锻体 · %d金币 · 随机三选一"%int(_body_view.cost)
++ _body_buy.disabled=not bool(_body_view.can_buy)
++ _body_buy.tooltip_text=_player_reason(str(_body_view.reason)) if _body_buy.disabled else "每次价格固定；可重复购买。不退款、不洗点、不刷新。"
++ var pending:Dictionary=_body_view.pending
++ _body_shade.visible=not pending.is_empty();_body_panel.visible=not pending.is_empty()
++ if pending.is_empty():return
++ _body_heading.text="锻体第%d次 · 已支付%d金币 · 请选择一项"%[int(pending.purchase_id),int(pending.cost)]
++ for index in range(3):
++  var button:Button=_body_cards[index]
++  if index>=pending.candidates.size():button.disabled=true;button.text="无有效选项";continue
++  var id:String=str(pending.candidates[index])
++  var outcome:Dictionary=_body_view.outcomes.get(id,{})
++  button.disabled=outcome.is_empty() or not _body_view.get("can_select",false)
++  button.text=str(outcome.get("name",id))+"\n"+str(outcome.get("label",_body_effect_text(outcome.get("stats",{}))))
++  button.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
++  button.tooltip_text="选定后立即生效，本次选择不可撤销。"
++
++func _select_body_choice(index:int)->void:
++ if not visible or _body_view.get("pending",{}).is_empty():return
++ var pending:Dictionary=_body_view.pending
++ if index<0 or index>=pending.candidates.size() or _body_cards[index].disabled:return
++ _request("select_body",{"purchase_id":int(pending.purchase_id),"outcome":str(pending.candidates[index])},_body_view.token)
++
++func _body_effect_text(stats:Dictionary)->String:
++ var labels:Dictionary={"AD":"攻击力","AP":"法术强度","attack_speed":"攻速","crit_chance":"暴击率","cooldown_reduction":"冷却缩减","max_hp":"生命上限","defense":"防御","move_speed":"移速","lifesteal":"吸血","tenacity":"韧性","penetration":"穿透","hp_regen":"生命回复"}
++ var parts:Array[String]=[]
++ for key in stats:
++  var percent:bool=key in ["attack_speed","crit_chance","cooldown_reduction","move_speed","lifesteal","tenacity"]
++  var value:float=float(stats[key])*(100.0 if percent else 1.0)
++  parts.append("%s +%s%s"%[str(labels.get(key,key)),str(value),"%" if percent else ""])
++ return " / ".join(parts)

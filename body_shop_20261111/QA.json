@@ -1,0 +1,92 @@
+{
+  "status": "PASS_SCOPED_NATIVE_SHOP_PLUS_SCRIPTED_FULL_FLOOR",
+  "baseline_pck": "e5e9e576a673a46bb58ada67c2b84f39b4be4062b637fbba054ac206c80b3d11",
+  "candidate_pck": "cdb50b61d1da8b51bd0aa4906cc4f7221d81c32c14b03871f6b9343503c59a6d",
+  "changes": [
+    "Expose existing authoritative paid training in normal shop",
+    "Replace old seven prototype outcomes with verified formal twelve",
+    "900 gold per purchase, original RNG distinct three choices, permanent no refund/no reroll/no slots",
+    "Preserve paid offer on shop close/reopen; block leaving until chosen",
+    "Exclude capped final-effective outcomes without modifying gameplay caps"
+  ],
+  "native_UI": {
+    "funding": "950 earned by scripted ordinary combat, no grant",
+    "buy": "native mouse click; gold950->50",
+    "offer": [
+      "penetration+5",
+      "AD+8",
+      "CDR+4%"
+    ],
+    "reopen": "native close button then P retained identical offer, no second debit",
+    "selection": "native AD card; AD38->46, inventory0/6, HP258.964642857118 unchanged",
+    "remaining_floor": "same run, scripted combat/route and ordinary item buys, twelve rooms and Boss victory",
+    "end": {
+      "level": 9,
+      "gold": 495,
+      "HP": 525.0,
+      "AD": 46.0,
+      "training_purchases": 1,
+      "potions_bought_and_used": 4
+    }
+  },
+  "focused": {
+    "BODY_FOCUSED_RESULT": {
+      "checks": 68,
+      "failures": [],
+      "status": "FIXTURE_PASS_NOT_GAMEPLAY_ACCEPTANCE"
+    },
+    "P3_REGRESSION_RESULT": {
+      "checks": 109,
+      "failures": [],
+      "status": "FIXTURE_PASS_NOT_GAMEPLAY_ACCEPTANCE"
+    }
+  },
+  "guards": {
+    "body_native01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 346.30661828699976,
+      "max_sample_gap": 0.07727408199934871,
+      "peak_rss_plus_swap": 456269824,
+      "rss_plus_swap_cap": 1610612736,
+      "min_available": 2147483648,
+      "sample_interval": 0.05,
+      "max_allowed_gap": 0.2,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "body_focused01": {
+      "passed": true,
+      "reason": "",
+      "exit": 0,
+      "elapsed": 3.6873190919995977,
+      "max_sample_gap": 0.05196562299988727,
+      "peak_rss_plus_swap": 310685696,
+      "rss_plus_swap_cap": 1610612736,
+      "min_available": 2147483648,
+      "sample_interval": 0.05,
+      "max_allowed_gap": 0.2,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "rules_provenance": "Formal12 numeric catalog verified against original equipment design pages8-9 and preserved formal-training implementation. User directly required repeat fixed-price purchase without refund/reset/refresh. Regeneration1.5 per5 actor-combat seconds is preserved developer mapping, not an explicit unit quote from user document.",
+  "limitations": [
+    "Scripted full-floor victory is not human gameplay/aesthetic acceptance",
+    "Only AD option selected with real mouse; twelve numeric projections and cap cases use declared isolated fixtures",
+    "Dynamic E3/H14 cap getter integration statically reviewed, not activated in this test",
+    "Actual map training-node reset, death/revival, Windows execution and real audio listening not covered",
+    "Audio driver unavailable; Dummy output, no listening claim",
+    "Paid training does not open held G05 task/final-equipment capabilities",
+    "No private assets or binary templates included; original private packages still required for complete recovery"
+  ],
+  "recovery": [
+    "Apply body_shop.patch to exact passed baseline matching SOURCE_HASHES",
+    "Use body_reencode_portable.py with before runtime, body_definition_v12.json and fresh output; template SHA591394df1d7d28c53ee074bdcb1c7701fe941e85a673e028c8da2a0f522a8784",
+    "Copy generated template/pins plus new source into isolated runtime and rebuild authenticated descriptors via existing packaging chain",
+    "Original guards unchanged; test scripts require authenticated candidate boot; run_focused_body also requires unchanged focused_p3_undo.gd from prior checkpoint"
+  ]
+}

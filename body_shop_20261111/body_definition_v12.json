@@ -1,0 +1,447 @@
+{
+  "name": "锻体·三选一",
+  "status": "source_final",
+  "provenance": "equipment_source_20261004_formal_training12",
+  "source_ref": "DOCX paragraph 72",
+  "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+  "unresolved": [],
+  "release_ready": false,
+  "mode": "choose_three",
+  "cost": 900,
+  "required_hooks": [
+    "stats.v1"
+  ],
+  "outcomes": {
+    "training:01": {
+      "name": "攻击锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 2",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:01",
+      "formal_training": true,
+      "stats": {
+        "AD": 8
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.AD.v1"
+      ],
+      "label": "攻击力 +8",
+      "source_stat": "AD",
+      "source_value": 8,
+      "current_value": 8,
+      "source_unit": "attack_points",
+      "runtime_stat": "AD",
+      "runtime_value": 8,
+      "original_source": {
+        "id": "training:01",
+        "name": "攻击锻体",
+        "stat": "AD",
+        "source_value": 8,
+        "source_price": 900
+      },
+      "parameter": "training:01.value"
+    },
+    "training:02": {
+      "name": "秘法锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 3",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:02",
+      "formal_training": true,
+      "stats": {
+        "AP": 14
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.AP.v1"
+      ],
+      "label": "法术强度 +14",
+      "source_stat": "AP",
+      "source_value": 14,
+      "current_value": 14,
+      "source_unit": "ability_points",
+      "runtime_stat": "AP",
+      "runtime_value": 14,
+      "original_source": {
+        "id": "training:02",
+        "name": "秘法锻体",
+        "stat": "AP",
+        "source_value": 14,
+        "source_price": 900
+      },
+      "parameter": "training:02.value"
+    },
+    "training:03": {
+      "name": "极速锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 4",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:03",
+      "formal_training": true,
+      "stats": {
+        "attack_speed": 0.08
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.attack_speed.v1"
+      ],
+      "label": "攻击速度 +8%",
+      "source_stat": "attack_speed_pct",
+      "source_value": 8,
+      "current_value": 8,
+      "source_unit": "percent_points",
+      "runtime_stat": "attack_speed",
+      "runtime_value": 0.08,
+      "original_source": {
+        "id": "training:03",
+        "name": "极速锻体",
+        "stat": "attack_speed_pct",
+        "source_value": 8,
+        "source_price": 900
+      },
+      "parameter": "training:03.value"
+    },
+    "training:04": {
+      "name": "锐眼锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 5",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:04",
+      "formal_training": true,
+      "stats": {
+        "crit_chance": 0.05
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.crit_chance.v1"
+      ],
+      "label": "暴击率 +5%",
+      "source_stat": "crit_chance_pct",
+      "source_value": 5,
+      "current_value": 5,
+      "source_unit": "percent_points",
+      "runtime_stat": "crit_chance",
+      "runtime_value": 0.05,
+      "original_source": {
+        "id": "training:04",
+        "name": "锐眼锻体",
+        "stat": "crit_chance_pct",
+        "source_value": 5,
+        "source_price": 900
+      },
+      "parameter": "training:04.value"
+    },
+    "training:05": {
+      "name": "冷凝锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 6",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:05",
+      "formal_training": true,
+      "stats": {
+        "cooldown_reduction": 0.04
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.cooldown_reduction.v1"
+      ],
+      "label": "冷却缩减 +4%",
+      "source_stat": "cdr_pct",
+      "source_value": 4,
+      "current_value": 4,
+      "source_unit": "percent_points",
+      "runtime_stat": "cooldown_reduction",
+      "runtime_value": 0.04,
+      "original_source": {
+        "id": "training:05",
+        "name": "冷凝锻体",
+        "stat": "cdr_pct",
+        "source_value": 4,
+        "source_price": 900
+      },
+      "parameter": "training:05.value"
+    },
+    "training:06": {
+      "name": "生命锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 7",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:06",
+      "formal_training": true,
+      "stats": {
+        "max_hp": 90
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.max_hp.v1"
+      ],
+      "label": "最大生命 +90",
+      "source_stat": "max_health",
+      "source_value": 90,
+      "current_value": 90,
+      "source_unit": "health_points",
+      "runtime_stat": "max_hp",
+      "runtime_value": 90,
+      "original_source": {
+        "id": "training:06",
+        "name": "生命锻体",
+        "stat": "max_health",
+        "source_value": 90,
+        "source_price": 900
+      },
+      "parameter": "training:06.value"
+    },
+    "training:07": {
+      "name": "装甲锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 8",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:07",
+      "formal_training": true,
+      "stats": {
+        "defense": 7
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.defense.v1"
+      ],
+      "label": "防御力 +7",
+      "source_stat": "defense",
+      "source_value": 7,
+      "current_value": 7,
+      "source_unit": "defense_points",
+      "runtime_stat": "defense",
+      "runtime_value": 7,
+      "original_source": {
+        "id": "training:07",
+        "name": "装甲锻体",
+        "stat": "defense",
+        "source_value": 7,
+        "source_price": 900
+      },
+      "parameter": "training:07.value"
+    },
+    "training:08": {
+      "name": "疾行锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 9",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:08",
+      "formal_training": true,
+      "stats": {
+        "move_speed": 0.03
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.move_speed.v1"
+      ],
+      "label": "移动速度 +3%",
+      "source_stat": "move_speed_pct",
+      "source_value": 3,
+      "current_value": 3,
+      "source_unit": "percent_points",
+      "runtime_stat": "move_speed",
+      "runtime_value": 0.03,
+      "original_source": {
+        "id": "training:08",
+        "name": "疾行锻体",
+        "stat": "move_speed_pct",
+        "source_value": 3,
+        "source_price": 900
+      },
+      "parameter": "training:08.value"
+    },
+    "training:09": {
+      "name": "血疗锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 10",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:09",
+      "formal_training": true,
+      "stats": {
+        "lifesteal": 0.02
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.lifesteal.v1"
+      ],
+      "label": "吸血 +2%",
+      "source_stat": "lifesteal_pct",
+      "source_value": 2,
+      "current_value": 2,
+      "source_unit": "percent_points",
+      "runtime_stat": "lifesteal",
+      "runtime_value": 0.02,
+      "original_source": {
+        "id": "training:09",
+        "name": "血疗锻体",
+        "stat": "lifesteal_pct",
+        "source_value": 2,
+        "source_price": 900
+      },
+      "parameter": "training:09.value"
+    },
+    "training:10": {
+      "name": "定心锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 11",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:10",
+      "formal_training": true,
+      "stats": {
+        "tenacity": 0.06
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.tenacity.v1"
+      ],
+      "label": "韧性 +6%",
+      "source_stat": "tenacity_pct",
+      "source_value": 6,
+      "current_value": 6,
+      "source_unit": "percent_points",
+      "runtime_stat": "tenacity",
+      "runtime_value": 0.06,
+      "original_source": {
+        "id": "training:10",
+        "name": "定心锻体",
+        "stat": "tenacity_pct",
+        "source_value": 6,
+        "source_price": 900
+      },
+      "parameter": "training:10.value"
+    },
+    "training:11": {
+      "name": "破甲锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 12",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:11",
+      "formal_training": true,
+      "stats": {
+        "penetration": 5
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.penetration.v1"
+      ],
+      "label": "穿甲 +5",
+      "source_stat": "penetration",
+      "source_value": 5,
+      "current_value": 5,
+      "source_unit": "penetration_points",
+      "runtime_stat": "penetration",
+      "runtime_value": 5,
+      "original_source": {
+        "id": "training:11",
+        "name": "破甲锻体",
+        "stat": "penetration",
+        "source_value": 5,
+        "source_price": 900
+      },
+      "parameter": "training:11.value"
+    },
+    "training:12": {
+      "name": "再生锻体",
+      "status": "source_final",
+      "provenance": "equipment_source_20261004_formal_training12",
+      "source_ref": "DOCX table 15, row 13",
+      "design_notice": "正式12项来源；等权沿用原抽取实现；恢复沿用每5秒单位映射",
+      "unresolved": [],
+      "release_ready": false,
+      "id": "training:12",
+      "formal_training": true,
+      "stats": {
+        "hp_regen": 0.3
+      },
+      "weight": 100,
+      "required_hooks": [
+        "stats.v1",
+        "stat.hp_regen.v1"
+      ],
+      "label": "战斗生命恢复 +1.5/5秒（+0.3/秒；随角色战斗时间）",
+      "source_stat": "health_regen",
+      "source_value": 1.5,
+      "current_value": 1.5,
+      "source_unit": "health_regen_source_units",
+      "runtime_stat": "hp_regen",
+      "runtime_value": 0.3,
+      "original_source": {
+        "id": "training:12",
+        "name": "再生锻体",
+        "stat": "health_regen",
+        "source_value": 1.5,
+        "source_price": 900
+      },
+      "parameter": "training:12.value",
+      "regen_mapping": {
+        "parameter": "training:12.value",
+        "current_value": 1.5,
+        "source_value": 1.5,
+        "source_ref": "DOCX table 15, row 13",
+        "source_unit": "health_regen_source_units",
+        "resolved_source_unit": "health_points_per_5_actor_combat_seconds",
+        "runtime_stat": "hp_regen",
+        "runtime_unit": "health_points_per_actor_combat_second",
+        "scale": 0.2,
+        "runtime_value": 0.3,
+        "rule_provenance": "developer_balance_regen_per5_combat_seconds_20261008"
+      }
+    }
+  },
+  "formal_training_pool": true,
+  "purchase_count_cap": null,
+  "equipment_slots_used": 0,
+  "potion_slots_used": 0,
+  "source_rule": {
+    "rule_id": "paragraph:072",
+    "source_text": "锻体为商店中的即时成长项目，不占装备格或药品栏。每次锻体固定价格900金币，价格永不递增，购买次数没有上限。每次随机展示3个不同的纯属性选项，选择1个永久获得；达到属性硬上限后不再出现无效选项。",
+    "source_ref": "DOCX paragraph 72"
+  },
+  "free_credit_authority": "not_connected"
+}
