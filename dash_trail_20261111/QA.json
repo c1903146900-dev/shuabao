@@ -1,0 +1,45 @@
+{
+  "status": "ISOLATED_CANDIDATE_NOT_VALIDATED_GUARD_STOP",
+  "baseline_pck": "2b216c2971ea1beeb77ebbc73273f07e3290470dbd9a56191e60561cf2f6db89",
+  "candidate_pck": "4112ebb636b77732788de4ed57d3d75f4dae67b488c9e76c063b8061a2e37c93",
+  "native_baseline": "Stationary Shift followed prior north-facing. Native rightward movement then immediate left+Shift reproduced first ghost facing right while actual dash/body face left. Cast2 age .04 mirror -1 and stored trail mirror +1; age .18 stored mirrors +1,-1.",
+  "change": "Sample-local trail mirror now uses projected source-owned hero.dash_direction; vertical fallback keeps existing mirror. No shared-mirror write, animation, direction, distance, duration, invulnerability or trail timing change.",
+  "limits": [
+    "Candidate stopped before gameplay; no claim fix passed.",
+    "Baseline traces cover first native rendered samples and pre-end .22/.24 then .38; screenshot readback skipped exact .25 end boundary.",
+    "Candidate observer reduces screenshot captures to start/post-end/settled, but did not run.",
+    "Source code review supports fix and dash-attack heading compatibility; no native candidate dash-attack test yet.",
+    "Windows and user aesthetic acceptance not run."
+  ],
+  "guards": {
+    "dash_boundary02": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 42.90742957200018,
+      "max_sample_gap": 0.07927130300049612,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "dash_candidate01": {
+      "passed": false,
+      "exit": -15,
+      "reason": "GuardError:unowned_engine_detected_no_signal_to_it",
+      "elapsed": 0.15809708899905672,
+      "max_sample_gap": 0.050301383998885285,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "public_observer": "Screenshot paths adapted to user://; adaptation not re-executed.",
+  "test_sha256": {
+    "observe_dash_reversal.gd": "73b29bd0743882c0af1b11502392d2018c4c60de284b10124925eee76dc615f7",
+    "observe_dash_boundary.gd": "55752c2ee62640814d19d887b164ef67eb8e65abd99c971e4269fc59dc695911"
+  }
+}
