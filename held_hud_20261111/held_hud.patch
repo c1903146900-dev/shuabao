@@ -1,0 +1,33 @@
+--- a/fengli_route_20261024/input_router.gd
++++ b/fengli_route_20261024/input_router.gd
+@@ -42,10 +42,12 @@
+   suspend_input("host_input_blocked")
+   if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:_left_physical = true
+   return {"accepted":false,"reason":"host_input_blocked"}
+- # A HUD click suppresses pointer combat only. It must not forget physically
+- # held movement keys; modal/focus boundaries above still clear all input.
++ # A HUD click still requires a fresh battlefield press. Mere pointer motion
++ # only pauses an already eligible hold; it cannot revive a suppressed hold.
++ # Held movement and all modal/focus boundaries retain their existing rules.
+  if pointer_blocked:
+-  pending.clear();_held_suppressed=true
++  pending.clear()
++  if not event is InputEventMouseMotion:_held_suppressed=true
+   if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:_left_physical=true
+   return {"accepted":false,"reason":"pointer_input_blocked"}
+  if event is InputEventKey:
+@@ -66,8 +68,13 @@
+ func update_held_basic(ground: Vector3, pointer_blocked: bool) -> Dictionary:
+  var source: Node = _sim()
+  if source == null:return {"accepted":false,"reason":"unbound"}
+- if source.paused or source.hero.dead or source.phase != "combat" or source.encounter_generation != _generation or pointer_blocked:
++ if source.paused or source.hero.dead or source.phase != "combat" or source.encounter_generation != _generation:
+   _held_suppressed = true;pending.clear()
++ # Hover discards queued taps and blocks this frame, but never changes whether
++ # the physical hold began in the battlefield and survived its safety boundaries.
++ if pointer_blocked:
++  pending.clear()
++  return {"accepted":false,"reason":"pointer_input_blocked"}
+  if not pending.is_empty():
+   if float(source.real_time)>float(pending.expires):pending.clear()
+   else:

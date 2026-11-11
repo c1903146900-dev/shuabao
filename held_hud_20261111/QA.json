@@ -1,0 +1,163 @@
+{
+  "status": "NATIVE_HOVER_FIX_AND_SCRIPT_REGRESSIONS_PASS",
+  "baseline_pck": "ea0e1041797c49221cda590c3838ba7e3e9b623d4c72e960a7f555383f610ca0",
+  "baseline_evidence": [
+    {
+      "attacks": 2,
+      "blocked": false,
+      "cooldown": 0.892380952380952,
+      "elapsed": 84.6499859999979,
+      "hp": 26.3299999999961,
+      "lock": 0.156666666666667,
+      "move": "(0.0, 0.0, 0.0)",
+      "paused": false,
+      "physical": true,
+      "pointer": "(784.2712, 521.267)",
+      "suppressed": false
+    },
+    {
+      "attacks": 2,
+      "blocked": true,
+      "cooldown": 0.792380952380952,
+      "elapsed": 84.7583333333313,
+      "hp": 26.3799999999961,
+      "lock": 0.0566666666666667,
+      "move": "(0.0, 0.0, 0.0)",
+      "paused": false,
+      "physical": true,
+      "pointer": "(708.3391, 614.6606)",
+      "suppressed": true
+    },
+    {
+      "attacks": 2,
+      "blocked": false,
+      "cooldown": 0.672380952380952,
+      "elapsed": 84.8681666666646,
+      "hp": 26.4399999999961,
+      "lock": 0.0,
+      "move": "(0.0, 0.0, 0.0)",
+      "paused": false,
+      "physical": true,
+      "pointer": "(860.2035, 427.8734)",
+      "suppressed": true
+    }
+  ],
+  "native_limits": "Physical drag was short. Return to playfield occurred while cooldown still0.67 seconds; no claim that this native gesture waited a full attack cycle. Permanent suppression follows inspected router code; sustained-cycle checks must be reported separately.",
+  "interrupted_attempt": "First attempt lost tool/environment connection before gameplay inputs; source stayed paused with0 attacks. After recovery stopped through F8, guard exit0 and clean. Not evidence of game fault or successful reproduction.",
+  "production_changes_yet": true,
+  "guards": {
+    "baseline02": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 128.89785558099902,
+      "max_sample_gap": 0.0632137459997466,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "candidate01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 120.39823017100025,
+      "max_sample_gap": 0.0687569710007665,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "baseline01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 165.59954152799946,
+      "max_sample_gap": 0.06899347500075237,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "full01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 195.00833754400082,
+      "max_sample_gap": 0.06740643900047871,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    },
+    "focused01": {
+      "passed": true,
+      "exit": 0,
+      "reason": "",
+      "elapsed": 3.1369483990001754,
+      "max_sample_gap": 0.05373702500037325,
+      "max_allowed_gap": 0.2,
+      "sample_interval": 0.05,
+      "cleanup_at": 595.0,
+      "kill_request_at": 600.0,
+      "cleanup_confirmed": true
+    }
+  },
+  "candidate_pck": "1c14d9b640e330ca73b973649c641acc23344e174db5509d95b6cc952b833c93",
+  "source_changes": "Only router hover suppression; no new state, damage/cooldown/aim/movement/dash changes",
+  "native_candidate": {
+    "physical_mouse_and_D_hold": true,
+    "HUD_hover_attack_count": 1,
+    "HUD_hover_cooldown_reached_zero": true,
+    "HUD_hover_no_attacks": true,
+    "same_press_return_attack_count": 2,
+    "movement_preserved": "(1,0,0)",
+    "UI_origin_drag_after_cooldown": "suppressed=true, attacks stayed2",
+    "timestamps": {
+      "hover_eligible": 62.7722222222212,
+      "hover_zero_cd": 62.9905555555546,
+      "return_resumes_without_new_down": 63.5439521904752,
+      "UI_origin_blocked_after_return": 102.232058999995
+    },
+    "long_cycle_scope": "Candidate has actual native cooldown-expiry-during-hover and auto-resume evidence, beyond the short baseline drag."
+  },
+  "test_output_adaptation": "Public observer changes only screenshot output to user://; that path adaptation is not re-executed. Original executed observer retained locally.",
+  "focused": {
+    "checks": 170,
+    "failures": [],
+    "completed": {
+      "boundaries": true,
+      "buffer": true,
+      "hold": true,
+      "movement_shift": true,
+      "origin": true
+    },
+    "scope": {
+      "OS_mouse": "NOT_RUN",
+      "ai_and_auto_finish_disabled": true,
+      "empty_encounter_fixture": true,
+      "engine_run_by_author": false,
+      "full_floor": "NOT_RUN",
+      "pause_and_dead_flag_negative_fixtures": true,
+      "real_route_source": true,
+      "real_router": true,
+      "simulated_input_events": true,
+      "source_clock_advanced_by_step": true
+    },
+    "status": "FIXTURE_PASS_NOT_NATIVE_ACCEPTANCE"
+  },
+  "full_floor": {
+    "result": "FINAL NATURAL_PASS time=183.697654000002 rows=12 HP=520.8 gold=395 purchased=9 used=9 route=[\"r01a\", \"r02a\", \"r03a\", \"r04a\", \"r05a\", \"r06a\", \"r07a\", \"r08a\", \"r09a\", \"r10a\", \"r11a\", \"r12boss\"]",
+    "scope": "Script-assisted normal route, no injected funds or completion. Not human playthrough or native HUD gesture test."
+  },
+  "limitations": [
+    "Windows not executed",
+    "Audio uses Dummy; listening quality unverified",
+    "Native evidence limited to first-room pointer gestures",
+    "Isolated warning-layout candidate not included"
+  ]
+}
