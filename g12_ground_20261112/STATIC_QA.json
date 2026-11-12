@@ -1,0 +1,166 @@
+{
+  "status": "OFFLINE_ONLY_NOT_ENGINE_TESTED",
+  "checks": [
+    {
+      "check": "source_schedules_real_bombardment",
+      "passed": true
+    },
+    {
+      "check": "source_executes_area_damage",
+      "passed": true
+    },
+    {
+      "check": "source_emits_actual_area_effect",
+      "passed": true
+    },
+    {
+      "check": "baseline_route_missing_g12_consumers",
+      "passed": true
+    },
+    {
+      "check": "signatures_unchanged",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:for entry:Variant in live.scheduled:",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:entry.get(\"kind\",\"\")!=\"bombardment\"",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:float(entry.due)-float(live.time)",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:float(entry.radius)",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:event.get(\"kind\",\"\")!=\"common_hex_area_effect\"",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:event.get(\"source\",\"\")!=\"common_g12\"",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:not sim.common._draining",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:sim.event_log.back()!=event",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:int(event.sequence)<=_last_sequence",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:_impacts.size()>32",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:sim.hero.dead",
+      "passed": true
+    },
+    {
+      "check": "source_or_lifecycle:not live.active(\"g12\")",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:damage_enemy",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:request_action",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:schedule_effect",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:create_timer",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:Time.",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:live.scheduled.append",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:live.scheduled.erase",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:live.time =",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:sim.step",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutation:projectiles.append",
+      "passed": true
+    },
+    {
+      "check": "no_warning_event_to_impact",
+      "passed": true
+    },
+    {
+      "check": "impact_source_world_clock",
+      "passed": true
+    },
+    {
+      "check": "ground_below_actors",
+      "passed": true
+    },
+    {
+      "check": "scope_and_death_cleanup",
+      "passed": true
+    },
+    {
+      "check": "owner_invalid_cleanup",
+      "passed": true
+    },
+    {
+      "check": "actual_event_hook",
+      "passed": true
+    },
+    {
+      "check": "only_helper_presentation_binding_changes",
+      "passed": true
+    },
+    {
+      "check": "finite_closed_actual_radius_0.001",
+      "passed": true
+    },
+    {
+      "check": "finite_closed_actual_radius_1.0",
+      "passed": true
+    },
+    {
+      "check": "finite_closed_actual_radius_5.0",
+      "passed": true
+    },
+    {
+      "check": "finite_closed_actual_radius_1000.0",
+      "passed": true
+    },
+    {
+      "check": "258_exact_bindings",
+      "passed": true
+    },
+    {
+      "check": "generation_pin",
+      "passed": true
+    }
+  ],
+  "count": 40
+}

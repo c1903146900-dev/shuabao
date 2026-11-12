@@ -1,0 +1,20 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -15,0 +16,2 @@
++const BombardmentView=preload("res://fengli_route_20261024/bombardment_view.gd")
++var bombardment_view=BombardmentView.new()
+@@ -141 +143,2 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();bombardment_view.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ bombardment_view.accept(event,host.sim)
+@@ -183,0 +187 @@
++  bombardment_view.clear()
+@@ -191 +195 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();bombardment_view.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+@@ -381 +385 @@
+- if host.sim.hero.dead:rescue_effects.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
++ if host.sim.hero.dead:rescue_effects.clear();bombardment_view.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
+@@ -384,0 +389,2 @@
++ bombardment_view.draw_ground(self,host.sim)
++ receipt["common_bombardment"]=bombardment_view.receipt.duplicate(true)
