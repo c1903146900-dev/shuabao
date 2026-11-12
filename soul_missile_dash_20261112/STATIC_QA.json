@@ -1,0 +1,74 @@
+{
+  "status": "OFFLINE_ONLY_NOT_ENGINE_VALIDATED",
+  "count": 17,
+  "checks": [
+    {
+      "check": "one_exact_aim_site",
+      "passed": true
+    },
+    {
+      "check": "only_one_presentation_line_changed",
+      "passed": true
+    },
+    {
+      "check": "all_existing_function_signatures_preserved",
+      "passed": true
+    },
+    {
+      "check": "soul_pickup_view.gd_unchanged",
+      "passed": true
+    },
+    {
+      "check": "missile_view.gd_unchanged",
+      "passed": true
+    },
+    {
+      "check": "soul_pickups_cleanup_preserved",
+      "passed": true
+    },
+    {
+      "check": "missile_view_cleanup_preserved",
+      "passed": true
+    },
+    {
+      "check": "original_dash_helper_exact",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_or_other_changes",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch.gd_two_old_sites",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch.gd_only_current_frame_receipt_fix",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch.gd_no_stale_helper_read",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch_mirror.gd_two_old_sites",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch_mirror.gd_only_current_frame_receipt_fix",
+      "passed": true
+    },
+    {
+      "check": "observe_dash_attack_pitch_mirror.gd_no_stale_helper_read",
+      "passed": true
+    },
+    {
+      "check": "259_exact_bindings",
+      "passed": true
+    },
+    {
+      "check": "generation_exact",
+      "passed": true
+    }
+  ]
+}

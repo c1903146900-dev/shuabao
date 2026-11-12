@@ -1,0 +1,5 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -354 +354 @@
+-  if str(animation.get("kind",""))=="attack_started":
++  if str(animation.get("kind","")) in ["attack_started","dash_attack_started"]:

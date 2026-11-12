@@ -1,0 +1,260 @@
+extends RefCounted
+## Visual-only original-art cutout. Timing and displacement remain source-owned.
+const SHOULDER=Vector2(685,575)
+var body_parts:Array=[]
+var moving_body_parts:Array=[]
+var arm:=PackedVector2Array([Vector2(700,520),Vector2(880,555),Vector2(1020,665),Vector2(1600,665),Vector2(1600,1030),Vector2(1240,1030),Vector2(1240,895),Vector2(900,770),Vector2(705,680)])
+var mesh:=ArrayMesh.new()
+var receipt:Dictionary={}
+# Recover-art front hand and sword only. Keep the head, rear dagger and legs out.
+const DASH_SHOULDER=Vector2(706,627)
+var dash_arm:=PackedVector2Array([Vector2(678,623),Vector2(735,588),Vector2(788,594),Vector2(840,623),Vector2(842,667),Vector2(1144,716),Vector2(1150,796),Vector2(1015,802),Vector2(886,768),Vector2(800,741),Vector2(701,733),Vector2(650,714),Vector2(636,656)])
+# Source triangles, UVs, triangulation and barycentric weights are cached once.
+var dash_aim_parts:Array=[]
+func blend_curve(t:float)->float:
+ t=clampf(t,0.0,1.0)
+ return t*t*(3.0-2.0*t)
+func progress(event:Dictionary,age:float)->float:
+ var timing:Dictionary=event.get("animation",{})
+ return clampf(age/maxf(.001,float(timing.get("contact_after",0))+float(timing.get("recovery",0))),0,1)
+func pose_key(event:Dictionary,age:float)->String:
+ if str(event.get("kind",""))=="e1_pierce_started":return "dashattack_contact"
+ if str(event.get("kind",""))=="q1_started":return "q1_contact"
+ if str(event.get("kind","")) in ["attack_started","e2_spin_started","r1_started","q3_started"]:return "attack_recover"
+ if str(event.get("kind",""))=="q2_strike_started":return "dashattack_contact"
+ if str(event.get("kind",""))=="dash_attack_started":return "dashattack_recover"
+ var t:float=progress(event,age)
+ return "dashattack_recover" if t<.12 or t>=1.0 else "dash"
+func r1_weight(event:Dictionary,age:float)->float:
+ # Match the already authored real-time action-trail beat, not extra damage.
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",1.1)))
+ var recovery:float=maxf(.001,float(timing.get("recovery",.5)))
+ var sampled:float=minf(age,contact)
+ var weight:float=-sin(sampled*TAU/.19)*blend_curve(sampled/.06)
+ if age>contact:weight*=1-blend_curve((age-contact)/recovery)
+ return weight
+func arm_angle(event:Dictionary,age:float)->float:
+ if str(event.get("kind",""))=="r1_started":return -.45+.95*r1_weight(event,age)
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",.2)))
+ var recovery:float=maxf(.001,float(timing.get("recovery",.3)))
+ # Alternate only ordinary accepted basic serials. This is visual variation,
+ # not a new combo tier, finisher, damage rule or action-clock change.
+ if str(event.get("kind",""))=="attack_started" and int(event.get("combo",0))>0 and int(event.combo)%2==0:
+  if age<contact*.6:return lerpf(-.45,.50,blend_curve(age/(contact*.6)))
+  if age<contact:return lerpf(.50,.05,blend_curve((age-contact*.6)/(contact*.4)))
+  var return_t:float=(age-contact)/recovery
+  return lerpf(.05,-.85,blend_curve(return_t/.22)) if return_t<.22 else lerpf(-.85,-.45,blend_curve((return_t-.22)/.78))
+ if age<contact*.6:return lerpf(-.45,-1.45,blend_curve(age/(contact*.6)))
+ if age<contact:return lerpf(-1.45,.05,blend_curve((age-contact*.6)/(contact*.4)))
+ var t:float=(age-contact)/recovery
+ return lerpf(.05,.5,blend_curve(t/.22)) if t<.22 else lerpf(.5,-.45,blend_curve((t-.22)/.78))
+func basic_aim_pitch(event:Dictionary,age:float,local_aim:Vector2)->float:
+ # Visual-only shoulder correction. Preserve the authored blade/cutout silhouette.
+ # attack_recover blade runs roughly from (890,650) to (1180,825): .54 radians.
+ # At authored contact the existing arm rotation contributes another .05 radians.
+ if str(event.get("kind",""))!="attack_started" or not local_aim.is_finite() or not is_finite(age) or local_aim.length_squared()<.00001:return 0.0
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",.2)))
+ var recovery:float=maxf(.001,float(timing.get("recovery",.3)))
+ var hold:float=minf(.08,recovery*.25)
+ var envelope:float=blend_curve(age/(contact*.6))
+ if age>contact+hold:envelope*=1.0-blend_curve((age-contact-hold)/maxf(.001,recovery-hold))
+ # The mirror is already removed by the caller. Cap extreme upward/downward
+ # swings rather than rotating the whole hero or claiming exact blade collision.
+ var pitch:float=clampf(atan2(local_aim.y,maxf(0.0,local_aim.x))-.59,-1.35,.65)
+ return pitch*envelope
+func dash_aim_pitch(event:Dictionary,age:float,local_aim:Vector2)->float:
+ # Presentation only: accepted dash direction in the current body-local basis.
+ # The existing recover blade slopes down about .17 radians before body lean.
+ if str(event.get("kind",""))!="dash_attack_started" or not local_aim.is_finite() or not is_finite(age) or age<0.0 or local_aim.length_squared()<.00001:return 0.0
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",0)))
+ var recovery:float=maxf(.001,float(timing.get("recovery",0)))
+ var hold:float=minf(.08,recovery*.25)
+ var envelope:float=blend_curve(age/(contact*.6))
+ if age>contact+hold:envelope*=1.0-blend_curve((age-contact-hold)/maxf(.001,recovery-hold))
+ # Bounded shoulder pitch keeps the upward blade outside the head silhouette.
+ # Do not rotate the body or claim an exact blade-to-hitbox alignment.
+ return clampf(atan2(local_aim.y,local_aim.x)-.17,-1.35,1.05)*envelope
+func _prepare_dash_aim_parts()->void:
+ if not dash_aim_parts.is_empty():return
+ # Draw the rotating cutout first, then the unchanged body over its shoulder.
+ for is_arm:bool in [true,false]:
+  var part:Dictionary={"arm":is_arm,"corners":PackedVector3Array(),"weights":PackedVector3Array(),"uv":PackedVector2Array(),"indices":PackedInt32Array()}
+  for y in range(18):
+   for x in range(24):
+    var i:int=y*25+x
+    for ids:PackedInt32Array in [PackedInt32Array([i,i+1,i+25]),PackedInt32Array([i+1,i+26,i+25])]:
+     var triangle:=PackedVector2Array()
+     for id:int in ids:triangle.append(Vector2(float(id%25)/24*1536,float(floori(float(id)/25))/18*1024))
+     var pieces:Array=Geometry2D.intersect_polygons(triangle,dash_arm) if is_arm else Geometry2D.clip_polygons(triangle,dash_arm)
+     for polygon:PackedVector2Array in pieces:
+      var faces:PackedInt32Array=Geometry2D.triangulate_polygon(polygon)
+      if faces.is_empty():continue
+      var first:int=part.uv.size()
+      var ab:Vector2=triangle[1]-triangle[0];var ac:Vector2=triangle[2]-triangle[0]
+      for point:Vector2 in polygon:
+       var ap:Vector2=point-triangle[0]
+       var v:float=ap.cross(ac)/ab.cross(ac);var w:float=ab.cross(ap)/ab.cross(ac)
+       part.corners.append(Vector3(ids[0],ids[1],ids[2]))
+       part.weights.append(Vector3(1.0-v-w,v,w))
+       part.uv.append(point/Vector2(1536,1024))
+      for face:int in faces:part.indices.append(first+face)
+  dash_aim_parts.append(part)
+func _dash_mesh_point(vertices:PackedVector3Array,source:Vector2)->Vector2:
+ # Sample the old triangle interpolation, not a second displacement formula.
+ var grid:Vector2=source/Vector2(64,1024.0/18.0)
+ var x:int=clampi(floori(grid.x),0,23);var y:int=clampi(floori(grid.y),0,17)
+ var f:Vector2=grid-Vector2(x,y);var i:int=y*25+x
+ var point:Vector3
+ if f.x+f.y<=1.0:point=vertices[i]*(1.0-f.x-f.y)+vertices[i+1]*f.x+vertices[i+25]*f.y
+ else:point=vertices[i+1]*(1.0-f.y)+vertices[i+26]*(f.x+f.y-1.0)+vertices[i+25]*(1.0-f.x)
+ return Vector2(point.x,point.y)
+func _draw_dash_aim(canvas:CanvasItem,texture:Texture2D,original:PackedVector3Array,pitch:float)->void:
+ _prepare_dash_aim_parts()
+ var pivot:Vector2=_dash_mesh_point(original,DASH_SHOULDER)
+ var vertices:=PackedVector3Array();var uv:=PackedVector2Array();var indices:=PackedInt32Array()
+ for part:Dictionary in dash_aim_parts:
+  var first:int=vertices.size()
+  for index in range(part.uv.size()):
+   var ids:Vector3=part.corners[index];var weights:Vector3=part.weights[index]
+   var old:Vector3=original[int(ids.x)]*weights.x+original[int(ids.y)]*weights.y+original[int(ids.z)]*weights.z
+   var point:=Vector2(old.x,old.y)
+   if bool(part.arm):point=pivot+(point-pivot).rotated(pitch)
+   vertices.append(Vector3(point.x,point.y,0));uv.append(part.uv[index])
+  for index:int in part.indices:indices.append(first+index)
+ var arrays:Array=[];arrays.resize(Mesh.ARRAY_MAX)
+ arrays[Mesh.ARRAY_VERTEX]=vertices;arrays[Mesh.ARRAY_TEX_UV]=uv;arrays[Mesh.ARRAY_INDEX]=indices
+ mesh.clear_surfaces();mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+ canvas.draw_mesh(mesh,texture)
+ if canvas.has_method("record_hero_mesh"):
+  var positions:=PackedVector2Array()
+  for vertex in vertices:positions.append(Vector2(vertex.x,vertex.y))
+  canvas.record_hero_mesh(texture,positions,uv,indices)
+ receipt.vertices=vertices.size()
+ receipt.dash_aim_cutout=true
+func dash_thrust(event:Dictionary,age:float)->float:
+ # The event's original clock/contact owns full extension; Q2 uses hero time.
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",0)))
+ var recovery:float=maxf(.001,float(timing.get("recovery",0)))
+ if age<contact*.45:return -1.0
+ if age<contact:return lerpf(-1.0,1.0,blend_curve((age-contact*.45)/(contact*.55)))
+ return 1.0-blend_curve((age-contact)/recovery)
+func _polygon(canvas:CanvasItem,texture:Texture2D,points:PackedVector2Array,anchor:Vector2,scale:float,angle:float=0)->void:
+ var positions:=PackedVector2Array();var uv:=PackedVector2Array()
+ for point in points:
+  uv.append(point/Vector2(1536,1024))
+  var moved:Vector2=SHOULDER+(point-SHOULDER).rotated(angle) if angle!=0 else point
+  positions.append((moved-anchor)*scale)
+ canvas.draw_polygon(positions,PackedColorArray([Color.WHITE]),uv,texture)
+ if canvas.has_method("record_hero_mesh"):canvas.record_hero_mesh(texture,positions,uv,Geometry2D.triangulate_polygon(positions))
+func draw_pose(canvas:CanvasItem,texture:Texture2D,key:String,event:Dictionary,age:float,anchor:Vector2,scale:float,moving_basic:bool=false,local_aim:Vector2=Vector2.ZERO)->void:
+ var kind:String=str(event.get("kind",""));var t:float=progress(event,age)
+ receipt={"kind":kind,"source_pose":key,"progress":t,"source_mutations":false}
+ if kind in ["attack_started","e2_spin_started","r1_started","q3_started"]:
+  if body_parts.is_empty():body_parts=Geometry2D.clip_polygons(PackedVector2Array([Vector2.ZERO,Vector2(1536,0),Vector2(1536,1024),Vector2(0,1024)]),arm)
+  var aim_pitch:float=basic_aim_pitch(event,age,local_aim)
+  var angle:float=arm_angle(event,age)+aim_pitch
+  receipt.basic_aim_pitch=aim_pitch
+  _polygon(canvas,texture,arm,anchor,scale,angle)
+  if moving_basic:
+   if moving_body_parts.is_empty():
+    var upper:=PackedVector2Array([Vector2.ZERO,Vector2(1536,0),Vector2(1536,770),Vector2(0,770)])
+    for polygon in body_parts:
+     moving_body_parts.append_array(Geometry2D.intersect_polygons(polygon,upper))
+   for polygon in moving_body_parts:_polygon(canvas,texture,polygon,anchor,scale)
+  else:
+   for polygon in body_parts:_polygon(canvas,texture,polygon,anchor,scale)
+  receipt.moving_basic=moving_basic
+  receipt.arm_radians=angle
+  return
+ var vertices:=PackedVector3Array();var uv:=PackedVector2Array();var indices:=PackedInt32Array()
+ for y in range(19):
+  for x in range(25):
+   var source:=Vector2(float(x)/24*1536,float(y)/18*1024)
+   var moved:Vector2=source
+   if key=="dash":
+    var pulse:float=sin(t*PI)
+    var leg:float=blend_curve((source.y-610)/300)
+    moved.x=lerpf(source.x,596+(source.x-596)*.72,leg*pulse)
+    moved.y-=42*leg*pulse
+    moved.x+=65*pulse*(1-leg)
+    moved.x+=23*sin(t*TAU)*blend_curve((450-source.x)/400)
+   elif kind=="e1_pierce_started":
+    # Travel-only tuck and release; no fabricated contact or path displacement.
+    var pulse:float=sin(t*PI)
+    var leg_weight:float=blend_curve((source.y-730)/170)
+    moved.x=lerpf(source.x,596+(source.x-596)*.78,leg_weight*pulse)
+    moved.y-=38*leg_weight*pulse
+   elif kind=="q1_started":
+    # Existing Q1 art: keep the blade rigid, blend only through shoulder/forearm.
+    var thrust:float=dash_thrust(event,age)
+    var arm_weight:float=blend_curve((source.x-740)/200)*blend_curve((source.y-390)/80)*(1-blend_curve((source.y-610)/70))
+    moved.x+=105*thrust*arm_weight
+   elif kind=="q2_strike_started":
+    # Actual forward-pointing contact art, not the trailing recovery blade.
+    var thrust:float=dash_thrust(event,age)
+    var arm_weight:float=blend_curve((source.x-880)/120)*blend_curve((source.y-480)/40)*(1-blend_curve((source.y-640)/60))
+    moved.x+=(50*thrust-15)*arm_weight
+    var leg_weight:float=blend_curve((source.y-730)/170)
+    moved.y-=26*sin(t*PI)*leg_weight
+   elif kind=="dash_attack_started":
+    # The existing thrust blade stays rigid; shoulder weight blends translation.
+    var thrust:float=dash_thrust(event,age)
+    var arm_weight:float=blend_curve((source.x-620)/220)*blend_curve((source.y-570)/65)*(1-blend_curve((source.y-790)/90))
+    moved.x+=115*thrust*arm_weight
+    var leg_weight:float=blend_curve((source.y-740)/180)
+    moved.y-=22*maxf(0,thrust)*leg_weight
+    moved.x-=25*maxf(0,thrust)*leg_weight
+   var at:Vector2=(moved-anchor)*scale
+   vertices.append(Vector3(at.x,at.y,0));uv.append(source/Vector2(1536,1024))
+ if kind=="dash_attack_started":
+  var aim_pitch:float=dash_aim_pitch(event,age,local_aim)
+  receipt.dash_aim_pitch=aim_pitch
+  if absf(aim_pitch)>.00001:
+   _draw_dash_aim(canvas,texture,vertices,aim_pitch)
+   return
+ for y in range(18):
+  for x in range(24):
+   var i:int=y*25+x
+   indices.append_array(PackedInt32Array([i,i+1,i+25,i+1,i+26,i+25]))
+ var arrays:Array=[];arrays.resize(Mesh.ARRAY_MAX)
+ arrays[Mesh.ARRAY_VERTEX]=vertices;arrays[Mesh.ARRAY_TEX_UV]=uv;arrays[Mesh.ARRAY_INDEX]=indices
+ mesh.clear_surfaces();mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+ canvas.draw_mesh(mesh,texture)
+ if canvas.has_method("record_hero_mesh"):
+  var positions:=PackedVector2Array()
+  for vertex in vertices:positions.append(Vector2(vertex.x,vertex.y))
+  canvas.record_hero_mesh(texture,positions,uv,indices)
+ receipt.vertices=vertices.size()
+
+func body_pose(event:Dictionary,age:float)->Dictionary:
+ if str(event.get("kind",""))=="r1_started":
+  var weight:float=r1_weight(event,age)
+  return {"lean":.055*weight,"offset":Vector2(2*weight,-absf(weight)),"scale":Vector2(1+.02*absf(weight),1-.02*absf(weight))}
+ var timing:Dictionary=event.get("animation",{})
+ var contact:float=maxf(.001,float(timing.get("contact_after",0)))
+ var duration:float=contact+float(timing.get("recovery",0))
+ if str(event.get("kind",""))=="e1_pierce_started":
+  var pulse:float=sin(progress(event,age)*PI)
+  return {"lean":.08*pulse,"offset":Vector2(2*pulse,0),"scale":Vector2(1+.04*pulse,1-.04*pulse)}
+ if str(event.get("kind",""))=="q1_started":
+  var thrust:float=dash_thrust(event,age)
+  return {"lean":.045*thrust,"offset":Vector2(3*thrust,absf(thrust)),"scale":Vector2(1+.025*absf(thrust),1-.025*absf(thrust))}
+ if str(event.get("kind","")) in ["dash_attack_started","q2_strike_started"]:
+  var thrust:float=dash_thrust(event,age)
+  return {"lean":.10*thrust,"offset":Vector2(4.5*thrust,1.5*absf(thrust)),"scale":Vector2(1+.045*absf(thrust),1-.045*absf(thrust))}
+ if str(event.get("kind",""))=="dash":
+  if age>=duration:
+   var settle:float=1-blend_curve((age-duration)/.10)
+   return {"lean":.025*settle,"offset":Vector2(0,2*settle),"scale":Vector2(1+.045*settle,1-.045*settle)}
+  var pulse:float=sin(progress(event,age)*PI)
+  return {"lean":-.09*pulse,"offset":Vector2.ZERO,"scale":Vector2(1+.09*pulse,1-.09*pulse)}
+ var weight:float=0
+ if age<contact*.6:weight=-blend_curve(age/(contact*.6))
+ elif age<contact:weight=lerpf(-1,1,blend_curve((age-contact*.6)/(contact*.4)))
+ else:weight=1-blend_curve((age-contact)/maxf(.001,duration-contact))
+ return {"lean":.085*weight,"offset":Vector2(3.5*weight,-1.4*absf(weight)),"scale":Vector2(1+.025*absf(weight),1-.025*absf(weight))}
