@@ -1,0 +1,28 @@
+--- a/fengli_route_20261024/soul_pickup_view.gd
++++ b/fengli_route_20261024/soul_pickup_view.gd
+@@ -96,0 +97,17 @@
++ for pickup: Dictionary in state.get("pickups", []):
++  # Pickup feedback stays on the floor, away from the hero's face and weapon.
++  # Screen-space decoration only, not a new interaction or damage radius.
++  var at: Vector2 = view.p(pickup.position)
++  if not at.is_finite(): continue
++  var alpha: float = float(pickup.life_fraction)
++  var progress: float = 1.0 - alpha
++  var radius: Vector2 = Vector2(28.0, 10.0).lerp(Vector2(42.0, 15.0), progress)
++  # Four separated curved glints remain visible around a nearby actor silhouette.
++  for quadrant: int in range(4):
++   var arc := PackedVector2Array()
++   for index: int in range(7):
++    var angle: float = float(quadrant) * PI * 0.5 + 0.18 + float(index) * 0.19
++    arc.append(at + Vector2(cos(angle) * radius.x, sin(angle) * radius.y))
++   view.draw_polyline(arc, Color(0.03, 0.12, 0.16, 0.85 * alpha), 4.5, true)
++   view.draw_polyline(arc, Color(0.55, 1.0, 0.79, alpha), 2.5, true)
++
+@@ -112,7 +128,0 @@
+- for pickup: Dictionary in state.get("pickups", []):
+-  var at: Vector2 = view.p(pickup.position) + Vector2(0.0, -17.0)
+-  if not at.is_finite(): continue
+-  var alpha: float = float(pickup.life_fraction)
+-  var distance: float = 6.0 + 15.0 * (1.0 - alpha)
+-  for direction: Vector2 in [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]:
+-   view.draw_line(at + direction * distance, at + direction * (distance + 4.0), Color(0.65, 1.0, 0.83, alpha), 2.0, true)
