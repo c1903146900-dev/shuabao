@@ -1,0 +1,147 @@
+{
+  "status": "OFFLINE_ONLY",
+  "checks": [
+    {
+      "check": "baseline_missing_common_missile_render",
+      "passed": true
+    },
+    {
+      "check": "real_source_iterator",
+      "passed": true
+    },
+    {
+      "check": "source_gate:entry.get(\"kind\",\"\")!=\"missile\"",
+      "passed": true
+    },
+    {
+      "check": "source_gate:entry.get(\"source\",\"\")!=\"common_g16\"",
+      "passed": true
+    },
+    {
+      "check": "source_gate:live.generation!=sim.encounter_generation",
+      "passed": true
+    },
+    {
+      "check": "source_gate:live.room_id!=sim.room_id",
+      "passed": true
+    },
+    {
+      "check": "source_gate:not live.active(\"g16\")",
+      "passed": true
+    },
+    {
+      "check": "source_gate:sim.hero.dead",
+      "passed": true
+    },
+    {
+      "check": "source_gate:sim.phase!=\"combat\"",
+      "passed": true
+    },
+    {
+      "check": "source_gate:float(entry.left)<=0.0",
+      "passed": true
+    },
+    {
+      "check": "source_gate:target.get(\"dead\",true)",
+      "passed": true
+    },
+    {
+      "check": "no_gameplay_mutator",
+      "passed": true
+    },
+    {
+      "check": "no_event_spawn_entry",
+      "passed": true
+    },
+    {
+      "check": "no_retained_entity_store",
+      "passed": true
+    },
+    {
+      "check": "receipt_and_draw_hook",
+      "passed": true
+    },
+    {
+      "check": "scope_clear_hook",
+      "passed": true
+    },
+    {
+      "check": "only_presentation_and_binding_change",
+      "passed": true
+    },
+    {
+      "check": "only_one_new_renderer",
+      "passed": true
+    },
+    {
+      "check": "tested_geometry_matches_source",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_0",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_1",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_2",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_3",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_4",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_5",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_6",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_7",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_8",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_9",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_10",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_11",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_12",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_13",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_14",
+      "passed": true
+    },
+    {
+      "check": "finite_bounded_glyph_15",
+      "passed": true
+    }
+  ],
+  "count": 35,
+  "engine_run": false
+}

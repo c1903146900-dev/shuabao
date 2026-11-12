@@ -1,0 +1,13 @@
+# Isolated G16 source-missile display
+
+Baseline: passed 4112ebb6 (dash_trail01), not layered on G10, G28 or dash-attack-pitch candidates. Existing common G16 logic already emits real missile entities after eligible nonultimate actions and moves them toward chosen targets before committing damage. Fengli presentation previously rendered only sim.projectiles (enemy projectiles), not common.runtime.projectiles. No G16 renderer or missiles_fired consumer existed in the route. This is a source-evidenced missing visual connection, not a newly observed gameplay failure.
+
+The new missile_view.gd draws a compact cyan/gold bolt at each live G16 source position, oriented toward that entity's actual target. It never spawns from notifications, chooses a target, moves a source entity, advances a timer, adds collision, range, damage or impact effects. G11 corpses and other sources are excluded. Invalid/expired entries, dead targets, hero death, inactive G16, room/generation mismatch and non-combat state are hidden. Every sample is rebuilt from live source arrays; no cached projectile survives source removal. Existing generic hit feedback remains unchanged.
+
+Only presentation.gd plus the new helper change; binding manifest/generation are resealed. Existing core, reward, skill, stat, timing, guard and other presentation helpers are byte-identical. Expected PCK4fc948341498585e5f42093a56d107d81aad7872a7a5cea433da795356d420f3 has258 bindings. This checkpoint is NOT merged or selected for delivery.
+
+Offline checks cover exact changed-file scope, source read filters, no gameplay mutator/event-created projectile, draw/clear integration, and bounded finite geometry in16 directions. STATIC_QA.json is offline evidence only, not Godot parsing, runtime or screenshot proof. The prepared RefCounted source-array fixture is unexecuted and has no engine launcher. It requires an authorized authenticated guarded flow; it does not prove the natural G16 trigger.
+
+Still unverified: GDScript loading, actual source-triggered projectiles, multiple targets, wall/target disappearance during live combat, pause and room lifecycle in the engine, normal-camera readability, full first floor, Windows or audible output. Keep candidate isolated until these checks become safely possible. No game engine was launched in this work.
+
+Apply presentation.patch with zero-context support against exact before hash, add changes/fengli_route_20261024/missile_view.gd, and reseal with the existing public recovery tool. The full presentation source is provided for exact recovery; do not alter the established guard. No private reference, artwork, executable, raw log or credentials are included.

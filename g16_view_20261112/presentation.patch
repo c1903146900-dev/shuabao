@@ -1,0 +1,22 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -3,0 +4,2 @@
++const MissileView=preload("res://fengli_route_20261024/missile_view.gd")
++var missile_view=MissileView.new()
+@@ -141 +143 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+@@ -191 +193 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+@@ -381 +383 @@
+- if host.sim.hero.dead:rescue_effects.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
++ if host.sim.hero.dead:missile_view.clear();rescue_effects.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
+@@ -444,0 +447,2 @@
++ missile_view.draw(self,host.sim)
++ receipt["common_missiles"]=missile_view.receipt.duplicate(true)
+@@ -748 +752,3 @@
+-func _draw_enemy_projectiles()->void:
++func _draw_enemy_projectiles()
++ missile_view.draw(self,host.sim)
++ receipt["common_missiles"]=missile_view.receipt.duplicate(true)->void:
