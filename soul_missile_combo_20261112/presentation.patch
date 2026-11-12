@@ -1,0 +1,28 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -3,0 +4,2 @@
++const MissileView=preload("res://fengli_route_20261024/missile_view.gd")
++var missile_view=MissileView.new()
+@@ -15,0 +18,2 @@
++const SoulPickups=preload("res://fengli_route_20261024/soul_pickup_view.gd")
++var soul_pickups=SoulPickups.new()
+@@ -141 +145,2 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ soul_pickups.accept(event,host.sim)
+@@ -183,0 +189 @@
++  soul_pickups.clear()
+@@ -191 +197 @@
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+@@ -381 +387 @@
+- if host.sim.hero.dead:rescue_effects.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
++ if host.sim.hero.dead:missile_view.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
+@@ -384,0 +391 @@
++ soul_pickups.draw_ground(self,host.sim)
+@@ -438,0 +446,2 @@
++ soul_pickups.draw_foreground(self,host.sim)
++ receipt["soul_pickups"]=soul_pickups.receipt.duplicate(true)
+@@ -444,0 +454,2 @@
++ missile_view.draw(self,host.sim)
++ receipt["common_missiles"]=missile_view.receipt.duplicate(true)

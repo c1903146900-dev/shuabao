@@ -1,0 +1,54 @@
+{
+  "status": "OFFLINE_ONLY",
+  "checks": [
+    {
+      "check": "all_function_signatures_unchanged",
+      "passed": true
+    },
+    {
+      "check": "soul_pickup_view.gd_exact_approved_candidate_bytes",
+      "passed": true
+    },
+    {
+      "check": "missile_view.gd_exact_approved_candidate_bytes",
+      "passed": true
+    },
+    {
+      "check": "soul_pickups_scope_and_death_cleanup",
+      "passed": true
+    },
+    {
+      "check": "missile_view_scope_and_death_cleanup",
+      "passed": true
+    },
+    {
+      "check": "owner_invalid_hides_presentation",
+      "passed": true
+    },
+    {
+      "check": "soul_ground_before_actors",
+      "passed": true
+    },
+    {
+      "check": "missile_after_enemy_projectiles",
+      "passed": true
+    },
+    {
+      "check": "soul_event_and_receipt",
+      "passed": true
+    },
+    {
+      "check": "only_visual_helpers_presentation_and_reseal",
+      "passed": true
+    },
+    {
+      "check": "all_259_bindings",
+      "passed": true
+    },
+    {
+      "check": "generation_pin",
+      "passed": true
+    }
+  ],
+  "count": 12
+}
