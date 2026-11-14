@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -136,7 +136,7 @@
+  initial_controller.refresh()
+  _refresh()
+ func _select_row(row:int,node_id:String)->void:
+- var selected:Dictionary=shop_session.select_node(row,node_id)
++ var selected:Dictionary=shop_session.select_node_for_entry(row,node_id)
+  if not selected.accepted:_transition("select_node",selected);return
+  var entered:Dictionary=shop_session.enter_selected_node()
+  if entered.accepted:input_router.suspend_input("room_entered");hitstop_left=0.0;last_hitstop_cast=-1;_follow_camera(sim.hero.position,1.0)

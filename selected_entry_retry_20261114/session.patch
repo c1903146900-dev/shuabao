@@ -1,0 +1,29 @@
+--- 
++++ 
+@@ -119,7 +119,26 @@
+ 
+ func available_choices() -> Array:
+  if row_state == null or status not in ["preparation", "between_rooms"] or not exit_map_open: return []
++ # A denied pre-commit entry retains its selection. Offer only that same node,
++ # and only when the original full preflight says entry is currently safe.
++ if row_state.snapshot().status == "selected":
++  var ready: Dictionary = next_room_preflight()
++  if not ready.accepted: return []
++  var node: Dictionary = ready.node
++  return [{"row_number":node.row_number,"node_id":node.node_id,"payload_ref":node.payload_ref,"node_type":node.payload.node_type,"kind":node.payload.kind}]
+  return row_state.available_choices()
++
++func select_node_for_entry(row_number: int, node_id: String) -> Dictionary:
++ # This is NOT a second selection or a second commerce path. A retry preserves
++ # the original receipt/identity and still enters via enter_selected_node().
++ if row_state != null and row_state.snapshot().status == "selected":
++  var identity: Dictionary = row_state.selected_identity()
++  if int(identity.row_number) != row_number or str(identity.node_id) != node_id:
++   return _record(_deny("selected_node_retry_mismatch"))
++  var ready: Dictionary = next_room_preflight()
++  if not ready.accepted: return _record(ready)
++  return _record({"accepted":true,"reason":"selected_node_retry_ready"})
++ return select_node(row_number, node_id)
+ 
+ func select_node(row_number: int, node_id: String) -> Dictionary:
+  if not _exit_permission_current() or not _at_room_exit() or not room_exit_ready():return _record(_deny("walk_to_upper_exit"))
