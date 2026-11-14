@@ -1,0 +1,26 @@
+--- a/fengli_route_20261024/enemy_director.gd
++++ b/fengli_route_20261024/enemy_director.gd
+@@ -314,12 +314,17 @@
+ func _closest_guard(sim, enemy: Dictionary) -> Dictionary:
+  var best: Dictionary={}
+  var distance:=8.0
+- for other in sim._nearby(enemy.position,12,enemy.actor_id):
+-  if other.dead or other.kind!="armored": continue
+-  var d: float=other.position.distance_to(enemy.position)
+-  if d<distance:
+-   best=other
+-   distance=d
++ # Cover the full authored radius, not the collision query's adjacent cells.
++ var lower:Vector2i=sim._cell(enemy.position-Vector3(8.0,0,8.0))
++ var upper:Vector2i=sim._cell(enemy.position+Vector3(8.0,0,8.0))
++ for x in range(lower.x,upper.x+1):
++  for z in range(lower.y,upper.y+1):
++   for other in sim.spatial.get(Vector2i(x,z),[]):
++    if other.actor_id==enemy.actor_id or other.dead or other.kind!="armored":continue
++    var d:float=other.position.distance_to(enemy.position)
++    if d<distance:
++     best=other
++     distance=d
+  return best
+ 
+ func active_threat_weight(sim) -> int:
