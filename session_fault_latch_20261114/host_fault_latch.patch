@@ -1,0 +1,13 @@
+--- a/fengli_route_20261024/host.gd
++++ b/fengli_route_20261024/host.gd
+@@ -123,6 +123,10 @@
+  _sync_pause()
+ func _sync_pause()->void:
+  if sim==null:return
++ # Session faults are terminal for this run. Do not undo their pause next frame.
++ if shop_session.status=="faulted" and floor_error.is_empty():
++  floor_error="session:"+str(shop_session.fault.get("reason","unknown"))
++  input_router.suspend_input("session_fault")
+  sim.paused=_frontdoor_suspended or manual_paused or not _presentation_ready or not floor_error.is_empty() or shop_session.panel_open or shop_session.initial_modal_open
+  if route_audio!=null:route_audio.sync_lifecycle(sim.paused,finished)
+ func _shop(open:bool)->void:
