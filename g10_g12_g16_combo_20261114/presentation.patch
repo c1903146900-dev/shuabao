@@ -1,0 +1,52 @@
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -17,6 +17,8 @@
+ var rescue_effects=RescueEffects.new()
+ const SoulPickups=preload("res://fengli_route_20261024/soul_pickup_view.gd")
+ var soul_pickups=SoulPickups.new()
++const BombardmentView=preload("res://fengli_route_20261024/bombardment_view.gd")
++var bombardment_view=BombardmentView.new()
+ const NailEffects=preload("res://fengli_route_20261024/nail_effects.gd")
+ var nail_effects=NailEffects.new()
+ const PuppetMotion=preload("res://fengli_route_20261024/puppet_motion.gd")
+@@ -142,7 +144,8 @@
+  if str(event.get("run_id",""))!=host.shop_session.run_id or str(event.get("room_id",""))!=host.sim.room_id or int(event.get("generation",-1))!=host.sim.encounter_generation:return
+  if not pitcher_zones.accept(event,host.sim,str(host.shop_session.run_id)):_visual_error(pitcher_zones.error);return
+  var current:String=_current_scope()
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();bombardment_view.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ bombardment_view.accept(event,host.sim)
+  soul_pickups.accept(event,host.sim)
+  rescue_effects.accept(event,host.sim)
+  var nail_pose:Dictionary=nail_effects.accept(event,host.sim)
+@@ -186,6 +189,7 @@
+ func _process(_dt:float)->void:
+  active=is_instance_valid(host) and host.get_instance_id()==_owner_id and is_instance_valid(camera) and is_instance_valid(host.sim) and host.sim.get_instance_id()==_sim_id and is_instance_valid(host.shop_session) and host.shop_session.get_instance_id()==_session_id and host.shop_session._owner_intact() and visual_errors.is_empty()
+  if not active:
++  bombardment_view.clear()
+   soul_pickups.clear()
+   default_effects.r1_star.clear()
+   enemy_defeat.clear()
+@@ -194,7 +198,7 @@
+  enemy_defeat.step(host.sim,str(host.shop_session.run_id),_dt,visible and not host.finished and not host._frontdoor_suspended)
+  pitcher_zones.current(host.sim,str(host.shop_session.run_id))
+  var current:String=_current_scope()
+- if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
++ if current!=scope:scope=current;animation.clear();hit_reaction.clear();enemy_defeat.clear();player_health_cue.clear();missile_view.clear();dash_trail.clear();contacts.clear();enemy_shots.clear();enemy_melee_impacts.clear();boss_body_releases.clear();default_effects.clear();rescue_effects.clear();bombardment_view.clear();soul_pickups.clear();nail_effects.clear();_last_position=Vector3.INF;_walk_distance=0.0;_walking=false;_walk_sample_time=-1.0;_forced_motion_pending=false;_forced_motion_previous=false
+  var actual:Vector3=host.sim.hero.position
+  if host.sim.hero.dead or host.sim.phase!="combat":default_effects.r1_star.clear()
+  var forced_now:bool=host.sim.hero.dash_left>0.0 or host.sim.hero.cast_state.has("e1_pierce") or host.sim.hero.cast_state.has("q2")
+@@ -384,10 +388,12 @@
+  _draw_environment()
+  receipt={"host_id":_owner_id,"sim_id":_sim_id,"session_id":_session_id,"scope":scope,"source_time":host.sim.clock.world_time,"real_time":host.sim.real_time,"hero_time":host.sim.hero_time,"errors":visual_errors.duplicate(),"r1_star_visual":{},"walking_cycle":"layered_four_phase_actual_displacement_unverified"}
+  # The actual terminal owns death; never leave a standing sprite after true_dead.
+- if host.sim.hero.dead:missile_view.clear();rescue_effects.clear();soul_pickups.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
++ if host.sim.hero.dead:missile_view.clear();rescue_effects.clear();bombardment_view.clear();soul_pickups.clear();nail_effects.clear();enemy_defeat.clear();default_effects.r1_star.clear();return
+  enemy_defeat.begin_frame(host.sim,str(host.shop_session.run_id))
+  _draw_room_exit()
+  default_effects.draw_ground(self,host.sim)
++ bombardment_view.draw_ground(self,host.sim)
++ receipt["common_bombardment"]=bombardment_view.receipt.duplicate(true)
+  soul_pickups.draw_ground(self,host.sim)
+  _e2_shadow_body()
+  if not default_effects.error.is_empty():_visual_error(default_effects.error);return
