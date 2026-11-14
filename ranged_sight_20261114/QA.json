@@ -1,0 +1,23 @@
+{
+  "base_pck_sha256": "87533e97b657add32a4fb6f0db2531fdf5847871994ffe11cc5ce3c31029a7db",
+  "candidate_pck_sha256": "26a9805d5eb77dc9138b65ecdd4b3c663eddd8093912a2279b8e6bdf40e774d6",
+  "base_director_sha256": "f03be03ff9490defe9fb67b92566e43e1ab9bc7d1658888c035b4a3adddaa270",
+  "candidate_director_sha256": "3b7ce9449822bd9aed159f1feda6fb6afdcb20447aa6c9970328409481e28d2f",
+  "binding_checks": {
+    "base": 260,
+    "candidate": 260
+  },
+  "changed_runtime_files": [
+    "fengli_route_20261024/enemy_director.gd",
+    "first_hero_full_admission_20261020/manifest.json",
+    "release_generation_20261020/generation.gd"
+  ],
+  "python_geometry_cases": 10,
+  "python_geometry_result": "PASS independent model only",
+  "godot_parse": "NOT RUN",
+  "engine_fixture": "PREPARED NOT RUN",
+  "natural_room": "NOT RUN",
+  "full_floor": "NOT RUN",
+  "selected_baseline": false,
+  "asset_binary_raw_log_included": false
+}

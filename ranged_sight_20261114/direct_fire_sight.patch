@@ -1,0 +1,97 @@
+--- a/fengli_route_20261024/enemy_director.gd
++++ b/fengli_route_20261024/enemy_director.gd
+@@ -183,6 +183,7 @@
+  if distance>float(PROFILES[enemy.kind][5]): return false
+  if enemy.kind in ["ranged","pitcher","support"] and distance<3.3: return false
+  if enemy.kind=="pouncer" and distance<2.2: return false
++ if enemy.kind in ["ranged","support"] and not _clear_shot(sim,enemy,enemy.position): return false
+  return true
+ 
+ func _move_role(sim, enemy: Dictionary, dt: float) -> void:
+@@ -215,6 +216,22 @@
+   if away.length_squared()<personal*personal and away.length_squared()>0.001:
+    separation+=away.normalized()*(personal-away.length())*5.0
+  var speed: float=enemy.speed*(1.0-enemy.slow_amount if enemy.slow_left>0 else 1.0)
++ # Only direct-fire roles seek a reachable firing lane when occluded.
++ if enemy.kind in ["ranged","support"]:
++  if not _clear_shot(sim,enemy,enemy.position):
++   enemy.nav_points=[];enemy.nav_left=0.0
++   var waypoint: Vector3=_firing_waypoint(sim,enemy,dt)
++   var destination: Vector3=enemy.position.move_toward(waypoint,speed*dt)+separation*dt
++   if destination.distance_to(sim.hero.position)<enemy.radius+_bound_hero_radius+0.10:
++    var away: Vector3=sim.hero.position.direction_to(destination)
++    if away.length_squared()<EPS:away=Vector3.RIGHT*float(enemy.flank_sign)
++    var perimeter: Vector3=sim.hero.position+away*(enemy.radius+_bound_hero_radius+0.10)
++    destination=Vector3(enemy.position).move_toward(perimeter,(speed+separation.length())*dt)
++   enemy.position=_clip_motion(sim,enemy.position,destination,enemy.radius)
++   enemy.facing=_turn_facing(enemy.get("facing",toward),toward,minf(1.0,dt*8.0))
++   enemy.aim=enemy.facing
++   return
++  enemy.erase("sight_path");enemy.erase("sight_target");enemy.erase("sight_left")
+  var desired: Vector3=enemy.position+(motion*speed+separation)*dt
+  # Collision with the hero is soft spacing; enemies cannot body-stack on the hero.
+  if desired.distance_to(sim.hero.position)<enemy.radius+_bound_hero_radius+0.10:
+@@ -519,3 +536,63 @@
+ 
+ func debug_snapshot(sim) -> Dictionary:
+  return {"version":VERSION,"active_threat_weight":active_threat_weight(sim),"max_threat_weight":MAX_THREAT_WEIGHT,"peak_threat_weight":peak_threat_weight,"commit_gap_left":commit_gap_left,"commits":commits,"open_escape_sectors":last_open_sector_count}
++
++# Direct bolts collide with walls; lobbed pitcher attacks intentionally do not.
++func _clear_shot(sim,enemy:Dictionary,at:Vector3)->bool:
++ var direction:Vector3=at.direction_to(sim.hero.position)
++ var origin:Vector3=at+direction*(float(enemy.radius)+0.18)
++ var radius:float=0.17 if enemy.kind=="support" else 0.14
++ # Include the muzzle segment so an origin beyond a thin wall is not accepted.
++ return _sight_leg(sim,at,origin,radius) and _sight_leg(sim,origin,sim.hero.position,radius)
++
++func _sight_leg(sim,a:Vector3,b:Vector3,radius:float)->bool:
++ return _clip_motion(sim,a,b,radius).distance_squared_to(b)<0.00001
++
++func _firing_waypoint(sim,enemy:Dictionary,dt:float)->Vector3:
++ var origin:Vector3=enemy.position
++ var path:Array=enemy.get("sight_path",[])
++ while not path.is_empty() and origin.distance_to(path[0])<0.06:path.pop_front()
++ enemy.sight_left=maxf(0.0,float(enemy.get("sight_left",0.0))-dt)
++ var old_target:Vector3=enemy.get("sight_target",Vector3.INF)
++ if enemy.sight_left<=0.0 or old_target.distance_to(sim.hero.position)>1.0 or (not path.is_empty() and not _sight_leg(sim,origin,path[0],enemy.radius)):
++  path=_firing_path(sim,enemy)
++  enemy.sight_path=path;enemy.sight_target=sim.hero.position;enemy.sight_left=0.4
++ return origin if path.is_empty() else Vector3(path[0])
++
++func _firing_path(sim,enemy:Dictionary)->Array:
++ # Small room obstacle graph. Every edge is validated with actual actor clipping.
++ var nodes:Array=[Vector3(enemy.position),Vector3(sim.hero.position)]
++ for obstacle in sim.obstacles:
++  var half:Vector3=obstacle.half+Vector3(enemy.radius+0.22,0,enemy.radius+0.22)
++  for x in [-1.0,1.0]:
++   for z in [-1.0,1.0]:
++    var point:Vector3=obstacle.position+Vector3(x*half.x,0,z*half.z)
++    if absf(point.x)>sim.arena_half_extent-enemy.radius or absf(point.z)>sim.arena_half_extent-enemy.radius:continue
++    var free:bool=true
++    for other in sim.obstacles:
++     var delta:Vector3=point-Vector3(other.position)
++     if absf(delta.x)<other.half.x+enemy.radius and absf(delta.z)<other.half.z+enemy.radius:free=false;break
++    if free:nodes.append(point)
++ var distances:Array=[];var parents:Array=[];var visited:Array=[]
++ for i in range(nodes.size()):distances.append(INF);parents.append(-1);visited.append(false)
++ distances[0]=0.0
++ var goal:int=-1
++ for iteration in range(nodes.size()):
++  var current:int=-1
++  for i in range(nodes.size()):
++   if not visited[i] and (current<0 or distances[i]<distances[current]):current=i
++  if current<0 or not is_finite(float(distances[current])):break
++  # A legal firing corner is sufficient; hero center may be too close to a wall
++  # for the larger enemy body even though a reachable shot exists.
++  if current!=0 and _clear_shot(sim,enemy,nodes[current]):goal=current;break
++  visited[current]=true
++  for next in range(nodes.size()):
++   if visited[next] or next==current:continue
++   var cost:float=float(distances[current])+Vector3(nodes[current]).distance_to(nodes[next])
++   if cost<float(distances[next]) and _sight_leg(sim,nodes[current],nodes[next],enemy.radius):
++    distances[next]=cost;parents[next]=current
++ var path:Array=[];var at:int=goal
++ if at<0 or int(parents[at])<0:return path
++ while at!=0:
++  path.push_front(nodes[at]);at=int(parents[at])
++ return path
