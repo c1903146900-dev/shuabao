@@ -1,0 +1,20 @@
+--- a/scripts/combat/fengli_sim.gd
++++ b/scripts/combat/fengli_sim.gd
+@@ -163,7 +163,7 @@
+  var critical:bool=rng.randf()<hero.critical_chance()
+  var amount:float=hero.ad()*(float(T.runtime().dash_attack.ad_multiplier) if dash else f("ATK-1"))*(float(T.runtime().critical_multiplier) if critical else 1.0)
+  var shape:Dictionary={"kind":"cone","radius":float(T.runtime().dash_attack.reach) if dash else float(hero.stats.attack_range),"degrees":float(T.runtime().dash_attack.degrees) if dash else float(T.runtime().basic_shape.degrees)}
+- if not dash:shape["fengli_circle_sector"]=true
++ shape["fengli_circle_sector"]=true
+  return {"damage":amount,"contact_after":contact,"recovery":duration-contact,"duration":duration,"critical":critical,"shape":shape,"swept":dash,"follow_origin":true,"time_domain":"real" if dash else "hero"}
+ func _hero_dash_spec()->Dictionary:
+  return {"distance":v("D-1"),"duration":v("D-2"),"iframe_duration":v("D-3"),"cooldown":v("D-4")*(1.0-f("E3-6",int(hero.cast_state.e3.rank)) if _e3_active() else 1.0)}
+@@ -809,7 +809,7 @@
+ 
+ func common_requires_explicit_movement()->bool:return true
+ 
+-# Opt-in ordinary Fengli basic only; all shared/default cone and dash queries unchanged.
++# Opt-in Fengli basic and dash attack; shared/default cone queries unchanged.
+ func shape_targets(origin:Vector3,direction:Vector3,shape:Dictionary)->Array:
+  if shape.get("kind","")=="cone" and shape.get("fengli_circle_sector",false):
+   var geometry=preload("res://scripts/combat/fengli_sector_geometry.gd")
