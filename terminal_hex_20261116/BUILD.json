@@ -1,0 +1,34 @@
+{
+  "base": "2c552be19883c8473d72717b9ccfcf2d4ce34155f3e12cfa962205aec4efe346",
+  "candidate": "fb7626991be89ee62452c6dea06309da2e21fcc8e340339775bcdc11d4f86d23",
+  "bindings": 258,
+  "changed": [
+    "fengli_route_20261024/growth_controller.gd",
+    "fengli_route_20261024/host.gd",
+    "first_hero_full_admission_20261020/manifest.json",
+    "release_generation_20261020/generation.gd"
+  ],
+  "source_before_sha256": "0df074b388793aa6021dcc8646c1b3ddfa6a763bd29a51884d7efc071c28caf1",
+  "source_after_sha256": "52af785a7c78a06bbb50cf350f7a7939589227fcca177151f44b29afdc8707a6",
+  "engine_run": false,
+  "parser_run": false,
+  "full_floor": false,
+  "selected": false,
+  "original_controller_changed": false,
+  "progression_session_rewards_changed": false,
+  "static_model": {
+    "predicate_cases": 352,
+    "live_state_equivalence_cases": 128,
+    "terminal_pending_open_prevented": 21,
+    "exact_changed_files": [
+      "fengli_route_20261024/growth_controller.gd",
+      "fengli_route_20261024/host.gd",
+      "first_hero_full_admission_20261020/manifest.json",
+      "release_generation_20261020/generation.gd"
+    ],
+    "all_other_runtime_bytes_unchanged": true,
+    "rewards_pending_mutated": false,
+    "engine_run": false,
+    "parser_run": false
+  }
+}

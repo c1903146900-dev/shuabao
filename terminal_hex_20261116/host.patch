@@ -1,0 +1,11 @@
+--- a/fengli_route_20261024/host.gd
++++ b/fengli_route_20261024/host.gd
+@@ -9,7 +9,7 @@
+ const AudioOutput = preload("res://fengli_route_20261024/audio_output.gd")
+ const OverloadProjection = preload("res://fengli_route_20261024/overload_projection.gd")
+ const GrowthHUD = preload("res://fengli_route_20261024/growth_hud.gd")
+-const Controller = preload("res://tests/ink_q3_input_growth_20261004/controller.gd")
++const Controller = preload("res://fengli_route_20261024/growth_controller.gd")
+ const RouteMap = preload("res://route_map_visual_refresh_20261026/route_map.gd")
+ const ShopPanel = preload("res://fengli_route_20261024/shop_theme.gd")
+ const RoomLayout = preload("res://tests/ink_first_floor_room_art_20261004/room_layout.gd")
