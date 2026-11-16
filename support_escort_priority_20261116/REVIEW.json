@@ -1,0 +1,26 @@
+{
+  "scope": "Python branch model and source invariance only; not GDScript execution",
+  "input_director_sha256": "bf6d7226cb3984b04cb2a452011886c1a3fe8f9aa5049a6184413893f5d8e27f",
+  "proposed_director_sha256": "324271748dc05975ea5a4e114bef79905bd33db48c8624c900e4dd05ec22da4b",
+  "branch_cases": 80,
+  "changed_expected_escort_cases": 2,
+  "baseline_unchanged": true,
+  "engine_run": false,
+  "pck_built": false,
+  "published": false,
+  "counterexample_positions": {
+    "support": [
+      -6.0,
+      -6.0
+    ],
+    "guard": [
+      -6.0,
+      -2.0
+    ],
+    "hero": [
+      -1.0,
+      -11.0
+    ]
+  },
+  "counterexample_condition": "shot occluded; source branch changes from guard-follow to sight route; geometry needs actual engine confirmation"
+}

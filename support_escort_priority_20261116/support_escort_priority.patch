@@ -1,0 +1,30 @@
+--- a/fengli_route_20261024/enemy_director.gd
++++ b/fengli_route_20261024/enemy_director.gd
+@@ -192,6 +192,7 @@
+  var toward:=offset.normalized() if distance>EPS else Vector3.RIGHT
+  var side:=Vector3(-toward.z,0,toward.x)*float(enemy.flank_sign)
+  var motion:=toward
++ var following_guard:bool=false
+  match enemy.kind:
+   "pouncer":
+    motion=(toward*0.75+side*0.70).normalized() if distance>4.2 else (side*0.95-toward*0.32).normalized()
+@@ -202,6 +203,7 @@
+    if enemy.kind=="support":
+     var guard: Dictionary=_closest_guard(sim,enemy)
+     if not guard.is_empty() and distance>5.0:
++     following_guard=true
+      var behind: Vector3=guard.position+sim.hero.position.direction_to(guard.position)*2.2
+      motion=enemy.position.direction_to(behind) if enemy.position.distance_to(behind)>1.6 else side*0.35
+   _:
+@@ -216,9 +218,9 @@
+   if away.length_squared()<personal*personal and away.length_squared()>0.001:
+    separation+=away.normalized()*(personal-away.length())*5.0
+  var speed: float=enemy.speed*(1.0-enemy.slow_amount if enemy.slow_left>0 else 1.0)
+- # Only direct-fire roles seek a reachable firing lane when occluded.
++ # Preserve support escort priority; a blocked shot still cannot commit.
+  if enemy.kind in ["ranged","support"]:
+-  if not _clear_shot(sim,enemy,enemy.position):
++  if not following_guard and not _clear_shot(sim,enemy,enemy.position):
+    enemy.nav_points=[];enemy.nav_left=0.0
+    var waypoint: Vector3=_firing_waypoint(sim,enemy,dt)
+    var destination: Vector3=enemy.position.move_toward(waypoint,speed*dt)+separation*dt
