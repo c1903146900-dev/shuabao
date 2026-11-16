@@ -1,0 +1,22 @@
+--- a/fengli_route_20261024/flow_guidance.gd
++++ b/fengli_route_20261024/flow_guidance.gd
+@@ -17,3 +17,8 @@
+ 
+ static func reason_text(reason:String)->String:
+  return str({"shop_requires_noncombat_or_settled_victory":"战斗中不能购物：清除本房敌人后再按 P", "shop_after_real_battle_only":"战斗中不能购物：清除本房敌人后再按 P", "safe_node_required":"当前仍在战斗，请先清除敌人", "walk_to_upper_exit":"先走到上方青色出口再选择路线", "complete_current_node_first":"先完成当前房间；休息 / 训练区按 Enter 继续", "resume_before_room_transition":"先按 Esc / 空格恢复游戏", "close_shop_before_room_transition":"先按 P / Esc 关闭商店", "mandatory_hex_pending":"先完成海克斯强化选择", "body_choice_pending":"先完成当前成长选择", "terminal_settlement_pending":"战斗正在结算，请稍后再试"}.get(reason,"操作未完成，请稍后重试"))
++
++static func objective_for(view:Dictionary,notice:String,remaining:float)->String:
++ var important:bool=not str(view.get("fault","")).is_empty() or bool(view.get("paused",false)) or bool(view.get("map",false)) or str(view.get("status","")) in ["completed","defeated"]
++ if remaining>0.0 and not important:return notice
++ return text_for(view)
+--- a/fengli_route_20261024/host.gd
++++ b/fengli_route_20261024/host.gd
+@@ -213,7 +213,7 @@
+   initial_hud.bottom_popup.hide()
+  var status_text:String={"preparation":"准备出发","combat":"清除敌人","between_rooms":"房间已清理 · 前往上方出口","service":"休整服务","completed":"首层完成","defeated":"本局结束","aborted":"本局已结束"}.get(str(shop_session.status),"等待房间状态")
+  status_label.text="风厉 · 第1层 · 已完成 %d / 12 · "%shop_session.node_index+status_text
+- objective_label.text=notice if notice_left>0.0 and not manual_paused else FlowGuidance.text_for({"status":shop_session.status,"paused":manual_paused,"map":route_map.visible,"training":shop_session._entered_service("training"),"enemies":sim.living().size(),"fault":floor_error,"points":shop_session.ledger.model.state.points,"reenter":shop_session.room_exit_view().get("reenter_required",false),"unlearned":int(sim.hero.ranks.q)==0 and int(sim.hero.ranks.e)==0})
++ objective_label.text=FlowGuidance.objective_for({"status":shop_session.status,"paused":manual_paused,"map":route_map.visible,"training":shop_session._entered_service("training"),"enemies":sim.living().size(),"fault":floor_error,"points":shop_session.ledger.model.state.points,"reenter":shop_session.room_exit_view().get("reenter_required",false),"unlearned":int(sim.hero.ranks.q)==0 and int(sim.hero.ranks.e)==0},notice,notice_left)
+  terminal_projection=TerminalProjection.project(shop_session.snapshot(),shop_session.ledger.model.state,shop_session.ledger.model.receipts)
+  terminal_label.visible=shop_session.status in ["completed","defeated"] and bool(terminal_projection.get("ready",false)) and not shop_session.initial_modal_open
+  terminal_panel.visible=terminal_label.visible
