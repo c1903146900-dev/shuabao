@@ -1,0 +1,63 @@
+--- a/fengli_route_20261024/host.gd
++++ b/fengli_route_20261024/host.gd
+@@ -190,6 +190,8 @@
+  if overload.has("effective"):combat_stats.merge(overload.effective,true)
+  initial_controller.present_combat({"hp":sim.hero.hp,"hp_max":sim.hero.stats.max_hp,"stats":combat_stats,"phase":sim.phase,"room_id":sim.room_id})
+  initial_hud.present_source_vitals(sim.hero.hp,sim.hero.stats.max_hp,sim.hero.cooldowns)
++ var interaction_boundary:String=shop_session._safe_boundary_reason() if shop_session.status=="service" or shop_session._entered_service("training") else ""
++ initial_hud.present_training_boundary(FlowGuidance.reason_text(interaction_boundary) if shop_session._entered_service("training") and not interaction_boundary.is_empty() else "")
+  # Read existing core state without snapshot(): that method synchronizes charges.
+  # The HUD neither starts recovery nor advances a second clock.
+  var q3_projection:Dictionary={}
+@@ -206,7 +208,9 @@
+  if map_visible:route_map.present(shop_session.available_choices(),shop_session.row_state.snapshot(),shop_session.panel_open or shop_session.initial_modal_open)
+  map_done.visible=route_map.visible
+  service_continue.visible=shop_session.status=="service" and not shop_session._service_ready and not map_visible and not shop_session.panel_open and not shop_session.initial_modal_open
+- service_continue.disabled=shop_session._service_ready or sim.paused
++ var service_boundary:String=interaction_boundary if shop_session.status=="service" else ""
++ service_continue.disabled=shop_session._service_ready or sim.paused or not service_boundary.is_empty()
++ service_continue.tooltip_text=FlowGuidance.reason_text(service_boundary) if not service_boundary.is_empty() else "准备好后，走到上方青色出口选择下一房间"
+  # Preserve the original complete refresh while open and once when closing.
+  # Direct force/rebind/category paths in ShopPanel are unchanged.
+  if shop_session.panel_open or shop_panel.visible:shop_panel.refresh(false)
+--- a/fengli_route_20261024/growth_hud.gd
++++ b/fengli_route_20261024/growth_hud.gd
+@@ -96,6 +96,7 @@
+ var bottom_dash:Label
+ var bottom_undo:Button
+ var bottom_respec:Button
++var _training_block_reason:String=""
+ var _cooldowns:Dictionary={}
+ var _hp:float=0.0
+ var _max_hp:float=1.0
+@@ -291,7 +292,7 @@
+  bottom_undo=Button.new();bottom_undo.text="撤销";bottom_undo.custom_minimum_size=Vector2(48,32);_style_button(bottom_undo);info.add_child(bottom_undo);bottom_undo.pressed.connect(func():
+   if LearningProjection.can_undo(_state):adapter.request("undo_new_points"))
+  bottom_respec=Button.new();bottom_respec.text="洗点";bottom_respec.custom_minimum_size=Vector2(48,32);_style_button(bottom_respec);info.add_child(bottom_respec);bottom_respec.pressed.connect(func():
+-  if LearningProjection.can_respec(_state):training_requested.emit())
++  if LearningProjection.can_respec(_state) and _training_block_reason.is_empty():training_requested.emit())
+  bottom_popup=PanelContainer.new();bottom_popup.add_theme_stylebox_override("panel",_panel());add_child(bottom_popup);move_child(bottom_popup,1)
+  var popup_body:=VBoxContainer.new();bottom_popup.add_child(popup_body)
+  var close:=Button.new();close.text="收起技能说明";_style_button(close);popup_body.add_child(close);close.pressed.connect(func():bottom_open_slot="";bottom_popup.hide())
+@@ -363,7 +364,7 @@
+  _refresh_e2()
+  _refresh_r2()
+  bottom_undo.disabled=not LearningProjection.can_undo(_state)
+- bottom_respec.disabled=not LearningProjection.can_respec(_state)
++ _refresh_training_availability()
+  _status()
+  _rebuild_cards()
+ func _slot_action(slot:String)->void:
+@@ -463,3 +464,12 @@
+  var target:=Vector2(minf(1052.0,maxf(0.0,available.x-32.0)),minf(680.0,maxf(0.0,available.y-32.0)))
+  hex_draft.position=(available-target)*0.5
+  hex_draft.size=target
++
++# Read-only session boundary projection; the original reset command remains authority.
++func present_training_boundary(reason:String)->void:
++ _training_block_reason=reason
++ _refresh_training_availability()
++func _refresh_training_availability()->void:
++ if bottom_respec==null:return
++ bottom_respec.disabled=not LearningProjection.can_respec(_state) or not _training_block_reason.is_empty()
++ bottom_respec.tooltip_text=_training_block_reason if not _training_block_reason.is_empty() else "仅训练区可洗点"
