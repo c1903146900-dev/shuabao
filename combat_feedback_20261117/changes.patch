@@ -1,0 +1,95 @@
+--- a/fengli_route_20261024/sim.gd
++++ b/fengli_route_20261024/sim.gd
+@@ -6,6 +6,7 @@
+ const G02Common=preload("res://fengli_route_20261024/g02/common_bridge.gd")
+ var _g02_witness:RefCounted=G02Witness.new(self)
+ var route_run_id: String = ""
++var dash_visual_samples: Array = [] # Bounded presentation history; no gameplay consumer.
+ var _route_owner: WeakRef
+ var equipment_health_revision: int = 0
+ var _equipment_health_owner: WeakRef
+@@ -163,6 +164,7 @@
+  _g02_witness.end_hero_killed(frame)
+ 
+ func _hero_clear_transients()->void:
++ dash_visual_samples.clear()
+  _g02_witness.invalidate()
+  super._hero_clear_transients()
+ 
+@@ -171,3 +173,18 @@
+ 
+ func verify_g02_kill_attribution(owner:RefCounted,event:Dictionary,run_id:String)->Dictionary:
+  return _g02_witness.verify(owner,event,run_id)
++
++func _hero_actual_movement(origin:Vector3,destination:Vector3)->void:
++ # Observe only this source-owned dash slice, before any remainder walk.
++ var state:Dictionary=_dash_state
++ var generation:int=encounter_generation
++ var room:String=room_id
++ var serial:int=dash_serial
++ var heading:Vector3=hero.dash_direction
++ var is_dash:bool=phase=="combat" and not hero.dead and hero.dash_left>0.0 and not state.is_empty()
++ super._hero_actual_movement(origin,destination)
++ if not is_dash or not _dash_motion_current(state,generation,room,serial):return
++ if not origin.is_finite() or not destination.is_finite() or not heading.is_finite() or origin.distance_to(destination)<=.01:return
++ if not dash_visual_samples.is_empty() and real_time-float(dash_visual_samples.back().time)<=.025:return
++ dash_visual_samples.append({"position":destination,"time":real_time,"direction":heading})
++ if dash_visual_samples.size()>5:dash_visual_samples.pop_front()
+--- a/fengli_route_20261024/presentation.gd
++++ b/fengli_route_20261024/presentation.gd
+@@ -209,14 +209,21 @@
+  _walk_sample_time=sample_time
+  if host.sim.hero.dead or host.sim.phase!="combat":dash_trail.clear()
+  else:
+-  dash_trail=dash_trail.filter(func(sample:Dictionary)->bool:return host.sim.real_time-float(sample.time)<.15)
+-  if host.sim.hero.dash_left>0 and _last_position.is_finite() and actual.distance_to(_last_position)>.01 and not host.sim.paused:
+-   if dash_trail.is_empty() or host.sim.real_time-float(dash_trail.back().time)>.025:
+-    # Sample the source-owned dash heading now, not the previous rendered frame.
+-    var trail_direction:Vector2=p(actual+host.sim.hero.dash_direction)-p(actual)
+-    var trail_mirror:float=(-1.0 if trail_direction.x<0 else 1.0) if absf(trail_direction.x)>.001 else _mirror
+-    dash_trail.append({"position":actual,"time":host.sim.real_time,"mirror":trail_mirror})
+-    if dash_trail.size()>5:dash_trail.pop_front()
++  # Consume source-owned clipped dash positions, including slices that end
++  # between render frames. Never substitute the post-dash walking position.
++  var previous_trail:Array=dash_trail
++  dash_trail=[]
++  for sample:Dictionary in host.sim.dash_visual_samples:
++   if host.sim.real_time-float(sample.time)>=.15:continue
++   var trail_direction:Vector2=p(sample.position+sample.direction)-p(sample.position)
++   var trail_mirror:float=(-1.0 if trail_direction.x<0 else 1.0) if absf(trail_direction.x)>.001 else _mirror
++   # Keep each existing ghost's captured facing, especially vertical movement.
++   # A later body turn must not flip an already visible afterimage.
++   for prior:Dictionary in previous_trail:
++    if prior.time==sample.time and prior.position==sample.position:
++     trail_mirror=float(prior.mirror)
++     break
++   dash_trail.append({"position":sample.position,"time":sample.time,"mirror":trail_mirror})
+  _last_position=actual
+  _forced_motion_pending=false;_forced_motion_previous=forced_now
+  queue_redraw()
+--- a/scripts/combat/hero_combat_core.gd
++++ b/scripts/combat/hero_combat_core.gd
+@@ -586,7 +586,7 @@
+  # Surviving threshold passives inspect exact before/after HP and cannot heal a lethal packet.
+  _hero_after_incoming(before_hp,lost,event)
+  if control>0 and not hero_control_immune(): hero.stun_left=maxf(hero.stun_left,control*(1.0-hero.tenacity()))
+- emit_event("damage",{"target":hero.actor_id,"position":hero.position,"amount":lost,"raw":raw,"absorbed":event.absorbed,"direction":direction,"source":event.get("source","enemy"),"damage_type":"true" if is_true else "ordinary"})
++ emit_event("damage",{"target":hero.actor_id,"position":hero.position,"amount":lost,"hp_before":before_hp,"raw":raw,"absorbed":event.absorbed,"direction":direction,"source":event.get("source","enemy"),"damage_type":"true" if is_true else "ordinary"})
+  if hero.hp<=0 and not _hero_death(): _common_true_death()
+  common.drain()
+ 
+--- a/fengli_route_20261024/player_health_cue.gd
++++ b/fengli_route_20261024/player_health_cue.gd
+@@ -25,7 +25,11 @@
+  # Only current source emissions may create a hurt cue, never a guessed hit.
+  if sim.event_log.is_empty() or sim.event_log.back()!=event:return false
+  var maximum:float=float(sim.hero.stats.max_hp)
+- var before:float=clampf((float(sim.hero.hp)+float(amount))/maximum,0,1)
++ # Threshold passives may already have healed before damage is emitted.
++ # Prefer the source's pre-loss HP rather than counting that heal as old HP.
++ var source_before:Variant=event.get("hp_before")
++ var before_hp:float=float(source_before) if (source_before is int or source_before is float) and is_finite(float(source_before)) else float(sim.hero.hp)+float(amount)
++ var before:float=clampf(before_hp/maximum,0,1)
+  # Multiple actual losses in one short burst merge one bounded tail.
+  prior_ratio=maxf(before,prior_ratio) if float(when)-time<.35 else before
+  var direction:Variant=event.get("direction",Vector3.ZERO)
