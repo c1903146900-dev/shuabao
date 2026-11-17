@@ -1,0 +1,347 @@
+--- a/fengli_route_20261024/input_router.gd
++++ b/fengli_route_20261024/input_router.gd
+@@ -46,7 +46,8 @@
+  # only pauses an already eligible hold; it cannot revive a suppressed hold.
+  # Held movement and all modal/focus boundaries retain their existing rules.
+  if pointer_blocked:
+-  pending.clear()
++  # Mere hover must not discard an already accepted keyboard buffer.
++  if not (event is InputEventMouseMotion and str(pending.get("action",""))=="shift"):pending.clear()
+   if not event is InputEventMouseMotion:_held_suppressed=true
+   if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:_left_physical=true
+   return {"accepted":false,"reason":"pointer_input_blocked"}
+@@ -70,9 +71,9 @@
+  if source == null:return {"accepted":false,"reason":"unbound"}
+  if source.paused or source.hero.dead or source.phase != "combat" or source.encounter_generation != _generation:
+   _held_suppressed = true;pending.clear()
+- # Hover discards queued taps and blocks this frame, but never changes whether
+- # the physical hold began in the battlefield and survived its safety boundaries.
+- if pointer_blocked:
++ # Hover still blocks pointer attacks; queued keyboard dodge retains its
++ # original lifetime and source-owned eligibility, independent of mouse position.
++ if pointer_blocked and str(pending.get("action",""))!="shift":
+   pending.clear()
+   return {"accepted":false,"reason":"pointer_input_blocked"}
+  if not pending.is_empty():
+@@ -81,6 +82,7 @@
+    var result:Dictionary=source.request_action(str(pending.action),pending.aim,"")
+    if result.get("accepted",false):pending.clear();return result
+    if str(result.get("reason","")) not in ["action_locked","dashing","cooldown","dash_attack_used"]:pending.clear()
++ if pointer_blocked:return {"accepted":false,"reason":"pointer_input_blocked"}
+  if not _left_physical or _held_suppressed or source.hero.dash_left > 0.0:return {"accepted":false,"reason":"held_basic_suppressed"}
+  # Match original arena non-notifying held retry: no permanent command-ID growth.
+  return source.request_action("attack",ground,"")
+--- a/fengli_route_20261024/audio_policy.gd
++++ b/fengli_route_20261024/audio_policy.gd
+@@ -15,7 +15,7 @@
+  var round_id:int=0
+  var lane:String="move"
+  match kind:
+-  "attack_started", "dash_attack_started":cue="basic_move"
++  "attack_motion", "dash_attack_motion":cue="basic_move"
+   "dash":
+    if not event.get("dash_id") is int or int(event.dash_id)<=0:return {}
+    var duration:Variant=event.get("duration")
+--- a/scripts/combat/hero_combat_core.gd
++++ b/scripts/combat/hero_combat_core.gd
+@@ -254,7 +254,7 @@
+  var targets: Array=[]
+  if event.get("delivery","")=="hero": _hero_basic_impact(event)
+  else:
+-  targets=shape_targets(event.origin,event.direction,event.get("shape",{}))
++  targets=_basic_impact_targets(event)
+   for target in targets:
+    if claim_hit(event.cast_id,target.actor_id,"basic"):
+     var metadata: Dictionary=event.get("metadata",{}).duplicate(true)
+@@ -263,6 +263,9 @@
+  _hero_basic_completed(event,targets)
+  if not event.get("defer_completion",false): finish_cast(event.cast_id)
+  emit_event("attack_impact",{"position":event.origin,"direction":event.direction,"cast_id":event.cast_id,"source":event.source,"combo":event.combo,"hit_count":targets.size(),"target_ids":targets.map(func(t): return t.actor_id),"contact_after":event.get("contact_after",0),"recovery":event.get("recovery",0)})
++
++func _basic_impact_targets(event:Dictionary)->Array:
++ return shape_targets(event.origin,event.direction,event.get("shape",{}))
+ 
+ func start_dash(context: Dictionary) -> Dictionary:
+  var spec: Dictionary=_hero_dash_spec()
+@@ -285,26 +288,86 @@
+  emit_event("dash",{"position":hero.position,"direction":hero.dash_direction,"duration":spec.duration,"distance":spec.get("distance",0),"iframe_duration":dash_iframe_left,"invulnerable":dash_iframe_left>0,"dash_id":dash_serial,"cast_id":context.cast_id})
+  return {"accepted":true}
+ 
+-func _sweep_dash_attack(before: Vector3, after: Vector3) -> void:
+- if dash_attack.is_empty() or not dash_attack.get("swept",false) or not effect_is_current(dash_attack) or real_time+TIME_EPS<float(dash_attack.contact_due): return
+- var direction: Vector3=dash_attack.direction
+- var shape: Dictionary=dash_attack.get("shape",{}).duplicate(true)
+- var travel: float=maxf(0,(after-before).dot(direction))
+- var targets: Array=[]
+- if shape.get("kind","")=="rectangle":
+-  shape.length=float(shape.get("length",0))+travel
+-  targets=shape_targets(before,direction,shape)
+- else: targets=shape_targets(after,direction,shape)
+- for target in targets:
+-  if target.actor_id in dash_attack.hits: continue
+-  var contact: Vector3=before.lerp(after,clampf((Vector3(target.position)-before).dot(direction)/maxf(travel,.001),0,1))
+-  if _move_clipped(contact,target.position,.05).distance_squared_to(target.position)>.01: continue
+-  if not claim_hit(dash_attack.cast_id,target.actor_id,"basic"): continue
+-  dash_attack.hits.append(target.actor_id)
+-  var metadata: Dictionary=dash_attack.get("metadata",{}).duplicate(true)
+-  metadata.merge({"direction":direction,"basic_attack":true,"combo":dash_attack.get("combo",0)},false)
+-  damage_enemy(target,float(dash_attack.get("damage",0)),str(dash_attack.source),int(dash_attack.cast_id),dash_attack.get("is_true",false),dash_attack.get("critical",false),metadata)
+-  emit_event("dash_attack_hit",{"position":target.position,"target":target.actor_id,"cast_id":dash_attack.cast_id,"dash_id":dash_serial})
++func _dash_sweep_live(attack:Dictionary,cast_id:int,generation:int,room:String)->bool:
++ return phase=="combat" and not paused and not hero.dead and not dash_attack.is_empty() and is_same(dash_attack,attack) and int(dash_attack.get("cast_id",-1))==cast_id and encounter_generation==generation and room_id==room and effect_is_current(dash_attack)
++
++func _sweep_dash_attack(before: Vector3, after: Vector3, started_at:float=-1.0, span:float=0.0, motion_speed:float=-1.0) -> void:
++ if phase!="combat" or paused or hero.dead or dash_attack.is_empty() or not dash_attack.get("swept",false) or not effect_is_current(dash_attack) or real_time+TIME_EPS<float(dash_attack.contact_due): return
++ var attack:Dictionary=dash_attack
++ var cast_id:int=int(attack.cast_id);var generation:int=encounter_generation;var room:String=room_id
++ var direction:Vector3=attack.direction
++ var shape:Dictionary=attack.get("shape",{}).duplicate(true)
++ var targets:Array=_dash_sweep_targets(before,after,direction,shape)
++ for target:Dictionary in targets:
++  if not _dash_sweep_live(attack,cast_id,generation,room):return
++  if target.is_empty() or target.dead or target.state=="spawn" or not is_same(target,enemy_by_id(str(target.actor_id))):continue
++  if target.actor_id in attack.hits:continue
++  # Query at consumption time: an earlier hit may move/kill another target.
++  var contact:Vector3=_dash_sweep_contact(before,after,direction,shape,target,started_at,span,motion_speed)
++  if not contact.is_finite():continue
++  if _move_clipped(contact,target.position,.05).distance_squared_to(target.position)>.01:continue
++  if not claim_hit(cast_id,target.actor_id,"basic"):continue
++  attack.hits.append(target.actor_id)
++  var metadata:Dictionary=attack.get("metadata",{}).duplicate(true)
++  metadata.merge({"direction":direction,"basic_attack":true,"combo":attack.get("combo",0)},false)
++  damage_enemy(target,float(attack.get("damage",0)),str(attack.source),cast_id,attack.get("is_true",false),attack.get("critical",false),metadata)
++  if not _dash_sweep_live(attack,cast_id,generation,room):return
++  emit_event("dash_attack_hit",{"position":target.position,"target":target.actor_id,"cast_id":cast_id,"dash_id":dash_serial})
++
++func _dash_sweep_targets(before:Vector3,after:Vector3,direction:Vector3,shape:Dictionary)->Array:
++ var query:Dictionary=shape.duplicate(true)
++ if query.get("kind","")=="rectangle":
++  query.length=float(query.get("length",0))+maxf(0.0,(after-before).dot(direction))
++  return shape_targets(before,direction,query)
++ return shape_targets(after,direction,query)
++
++func _dash_sweep_contact(before:Vector3,after:Vector3,direction:Vector3,_shape:Dictionary,target:Dictionary,_started_at:float=-1.0,_span:float=0.0,_motion_speed:float=-1.0)->Vector3:
++ var travel:float=maxf(0.0,(after-before).dot(direction))
++ return before.lerp(after,clampf((Vector3(target.position)-before).dot(direction)/maxf(travel,.001),0,1))
++
++func _dash_motion_current(state:Dictionary,generation:int,room:String,serial:int)->bool:
++ return phase=="combat" and not hero.dead and encounter_generation==generation and room_id==room and dash_serial==serial and not _dash_state.is_empty() and is_same(_dash_state,state)
++
++func _dash_completion_attack_current(state:Dictionary)->bool:
++ var attack:Dictionary=state.get("completion_attack",{})
++ return not attack.is_empty() and is_same(dash_attack,attack) and int(attack.get("cast_id",-1))==int(state.get("completion_attack_cast",-2))
++
++func _finish_dash_motion(state:Dictionary,generation:int,room:String,serial:int)->void:
++ # A real hit may pause the game at the end of movement. Keep a resumable
++ # completion state; each notification is advanced BEFORE its callback.
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ var movement_cast:int=int(state.cast_id)
++ if int(state.get("completion_stage",0))==0:
++  state.completion_stage=1
++  common.movement_complete(movement_cast)
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ if int(state.get("completion_stage",0))==1:
++  state.completion_stage=2
++  finish_cast(movement_cast)
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ if int(state.get("completion_stage",0))==2:
++  state.completion_stage=3
++  common.dash_complete()
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ if int(state.get("completion_stage",0))==3:
++  state.completion_stage=4
++  if not dash_attack.is_empty() and dash_attack.get("swept",false) and real_time+TIME_EPS>=float(dash_attack.contact_due):
++   state.completion_attack=dash_attack
++   state.completion_attack_cast=int(dash_attack.cast_id)
++   state.completion_hits=dash_attack.hits.size()
++   _hero_basic_completed(dash_attack,[])
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ if int(state.get("completion_stage",0))==4:
++  state.completion_stage=5
++  if _dash_completion_attack_current(state):finish_cast(int(state.completion_attack_cast))
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ if int(state.get("completion_stage",0))==5:
++  state.completion_stage=6
++  if _dash_completion_attack_current(state):
++   emit_event("dash_attack_ended",{"position":hero.position,"cast_id":int(state.completion_attack_cast),"dash_id":serial,"hit_count":int(state.completion_hits)})
++ if not _dash_motion_current(state,generation,room,serial) or paused:return
++ _dash_state.clear()
++ _hero_dash_completed(serial)
+ 
+ func _step_player_locomotion(real_dt: float) -> void:
+  var before: Vector3=hero.position
+@@ -312,22 +375,22 @@
+  var immune_before: float=dash_iframe_left
+  dash_step_immune=immune_before>TIME_EPS and immune_before+TIME_EPS>=real_dt
+  dash_iframe_left=maxf(0,dash_iframe_left-real_dt)
+- if slice>0 and not _dash_state.is_empty():
+-  hero.position=_move_clipped(before,before+hero.dash_direction*float(_dash_state.distance)/float(_dash_state.duration)*slice,hero_radius)
+-  _hero_actual_movement(before,hero.position)
+-  _sweep_dash_attack(before,hero.position)
+-  hero.dash_left=maxf(0,hero.dash_left-slice)
++ if not _dash_state.is_empty() and (slice>0.0 or hero.dash_left<=TIME_EPS):
++  var moving_dash:Dictionary=_dash_state
++  var motion_generation:int=encounter_generation;var motion_room:String=room_id;var motion_serial:int=dash_serial
++  if slice>0.0:
++   var dash_speed:float=float(moving_dash.distance)/float(moving_dash.duration)
++   hero.position=_move_clipped(before,before+hero.dash_direction*dash_speed*slice,hero_radius)
++   _hero_actual_movement(before,hero.position)
++   if not _dash_motion_current(moving_dash,motion_generation,motion_room,motion_serial):return
++   _sweep_dash_attack(before,hero.position,real_time-real_dt,slice,dash_speed)
++   if not _dash_motion_current(moving_dash,motion_generation,motion_room,motion_serial):return
++   # Consume elapsed movement even if the synchronous hit callback paused.
++   hero.dash_left=maxf(0,hero.dash_left-slice)
+   if hero.dash_left<=TIME_EPS:
+    hero.dash_left=0
+-   common.movement_complete(_dash_state.cast_id)
+-   finish_cast(_dash_state.cast_id)
+-   common.dash_complete()
+-   if not dash_attack.is_empty() and dash_attack.get("swept",false) and real_time+TIME_EPS>=float(dash_attack.contact_due):
+-    _hero_basic_completed(dash_attack,[])
+-    finish_cast(dash_attack.cast_id)
+-    emit_event("dash_attack_ended",{"position":hero.position,"cast_id":dash_attack.cast_id,"dash_id":dash_serial,"hit_count":dash_attack.hits.size()})
+-   _dash_state.clear()
+-   _hero_dash_completed(dash_serial)
++   _finish_dash_motion(moving_dash,motion_generation,motion_room,motion_serial)
++ if phase!="combat" or paused or hero.dead:return
+  if _hero_locomotion_allowed() and hero.movement_lock_left<=TIME_EPS and real_dt>slice:
+   var before_walk:Vector3=hero.position
+   hero.position=_move_clipped(hero.position,hero.position+hero.move_intent.limit_length(1)*hero.speed()*(real_dt-slice),hero_radius)
+@@ -362,6 +425,9 @@
+   return
+  real_time+=real_dt
+  _step_player_locomotion(real_dt)
++ if phase!="combat" or paused or hero.dead:
++  dash_step_immune=false
++  return
+  _dispatch_pending(true)
+  dash_step_immune=false
+  revision+=1
+@@ -408,6 +474,7 @@
+  if presentation_ending: finish_presentation()
+  _hero_pre_step(actor_dt,real_dt)
+  _step_player_locomotion(real_dt)
++ if phase!="combat" or paused or hero.dead:return
+  heal(float(hero.stats.regen)*actor_dt,false,{"source":"regeneration"})
+  _build_spatial()
+  _dispatch_pending()
+--- a/scripts/combat/fengli_sim.gd
++++ b/scripts/combat/fengli_sim.gd
+@@ -834,3 +834,35 @@
+ 
+ func _hero_actual_movement(origin:Vector3,destination:Vector3)->void:
+  _steel_moved(origin,destination)
++
++func _fengli_sweep_supported(before:Vector3,after:Vector3,direction:Vector3,shape:Dictionary)->bool:
++ if shape.get("kind","")!="cone" or not shape.get("fengli_circle_sector",false):return false
++ var geometry=preload("res://scripts/combat/fengli_sector_geometry.gd")
++ return geometry.sweep_supported(before,after,direction,float(shape.get("radius",0)),float(shape.get("degrees",0)))
++
++func _dash_sweep_targets(before:Vector3,after:Vector3,direction:Vector3,shape:Dictionary)->Array:
++ if not _fengli_sweep_supported(before,after,direction,shape):return super._dash_sweep_targets(before,after,direction,shape)
++ return enemies.filter(func(e):return not e.dead and e.state!="spawn")
++
++func _dash_sweep_contact(before:Vector3,after:Vector3,direction:Vector3,shape:Dictionary,target:Dictionary,started_at:float=-1.0,span:float=0.0,motion_speed:float=-1.0)->Vector3:
++ if not _fengli_sweep_supported(before,after,direction,shape):return super._dash_sweep_contact(before,after,direction,shape,target,started_at,span,motion_speed)
++ if paused or hero.dead or dash_attack.is_empty() or not effect_is_current(dash_attack):return Vector3.INF
++ var first:Vector3=before
++ if started_at>=0.0:
++  if not is_finite(started_at) or not is_finite(span) or not is_finite(motion_speed) or span<0.0 or motion_speed<0.0:return Vector3.INF
++  var due:float=float(dash_attack.contact_due)
++  if due>started_at+span+TIME_EPS:return Vector3.INF
++  var travel:float=(after-before).length()
++  if travel>0.0:
++   # Nominal speed, NOT wall-clipped distance/span. A wall stops movement early.
++   var elapsed:float=maxf(0.0,due-started_at)
++   first=before.lerp(after,clampf(elapsed*motion_speed/travel,0.0,1.0))
++ var geometry=preload("res://scripts/combat/fengli_sector_geometry.gd")
++ return geometry.swept_contact(first,after,direction,float(shape.get("radius",0)),float(shape.get("degrees",0)),target.position,float(target.radius))
++
++func _basic_impact_targets(event:Dictionary)->Array:
++ var targets:Array=super._basic_impact_targets(event)
++ if event.get("kind","")!="core_dash_contact" or not event.get("dash",false) or not event.get("swept",false):return targets
++ # Late contact after the dash ended must obey the same wall rule; ordinary
++ # attacks and unrelated skills preserve their existing targeting unchanged.
++ return targets.filter(func(target):return _move_clipped(event.origin,target.position,.05).distance_squared_to(target.position)<=.01)
+--- a/scripts/combat/fengli_sector_geometry.gd
++++ b/scripts/combat/fengli_sector_geometry.gd
+@@ -21,3 +21,24 @@
+   var nearest:Vector2=edge*clampf(point.dot(edge),0.0,radius)
+   if point.distance_squared_to(nearest)<=enemy_radius*enemy_radius:return true
+  return false
++
++# The analytic witness applies only to forward, collinear planar sweeps.
++# Other shapes/degenerate inputs retain the original query contract.
++static func sweep_supported(before:Vector3,after:Vector3,direction:Vector3,radius:float,degrees:float)->bool:
++ if not before.is_finite() or not after.is_finite() or not direction.is_finite() or not is_finite(radius) or not is_finite(degrees):return false
++ if radius<0.0 or degrees<=0.0 or degrees>=180.0 or direction.y!=0.0 or before.y!=after.y or direction.length_squared()<=0.0:return false
++ var half:float=deg_to_rad(degrees*.5)
++ if half<=0.0 or half>=PI*.5 or not is_finite(tan(half)) or tan(half)<=0.0:return false
++ var delta:Vector3=after-before;var forward:Vector3=direction.normalized()
++ var travel:float=delta.dot(forward)
++ return travel>=0.0 and (delta-forward*travel).length_squared()<=0.000000000001
++
++static func swept_contact(before:Vector3,after:Vector3,direction:Vector3,radius:float,degrees:float,at:Vector3,enemy_radius:float)->Vector3:
++ if not sweep_supported(before,after,direction,radius,degrees) or not at.is_finite() or not is_finite(enemy_radius) or enemy_radius<0.0 or at.y!=before.y:return Vector3.INF
++ var forward:Vector3=direction.normalized();var travel:float=(after-before).dot(forward)
++ var offset:Vector3=at-before;var lateral:float=absf(offset.dot(Vector3(-forward.z,0,forward.x)))
++ var half:float=deg_to_rad(degrees*.5)
++ var nearest_forward:float=minf(lateral/tan(half),radius*cos(half))
++ var displacement:float=clampf(offset.dot(forward)-nearest_forward,0.0,travel)
++ var witness:Vector3=before+forward*displacement
++ return witness if intersects(witness,forward,radius,degrees,at,enemy_radius) else Vector3.INF
+--- a/fengli_route_20261024/audio_output.gd
++++ b/fengli_route_20261024/audio_output.gd
+@@ -22,6 +22,7 @@
+ var _variants: Dictionary = {}
+ var _streams: Dictionary = {}
+ var _players: Array[AudioStreamPlayer] = []
++var _voice_info: Dictionary = {} # Playback metadata only; never reschedules consumed claims.
+ var _paused: bool = true
+ var _muted: bool = false
+ var _closed: bool = false
+@@ -72,6 +73,7 @@
+ 
+ func stop_all() -> void:
+  for player in _players:player.stop()
++ _voice_info.clear()
+ 
+ func consume(event: Dictionary) -> void:
+  var source: Node=_live_source()
+@@ -106,6 +108,7 @@
+  var cue: String=str(request.cue)
+  var bank_key:String=str(request.bank)
+  var reason: String=""
++ var preempted_bank: String=""
+  if _paused or _muted or _closed:reason="blocked"
+  elif now-int(_last_usec.get(bank_key,-MIN_INTERVAL_USEC))<MIN_INTERVAL_USEC:reason="rate_limit"
+  elif not faults.is_empty() or _streams.get(bank_key,[]).is_empty():reason="missing_stream"
+@@ -113,13 +116,27 @@
+   var selected: AudioStreamPlayer=null
+   for player in _players:
+    if not player.playing:selected=player;break
++  # Only authenticated contact may replace an older low-priority movement cue.
++  # Free voices always win; contact never interrupts another contact.
++  if selected==null and cue=="contact" and bank_key=="contact" and int(request.get("priority",0))==2:
++   var oldest_sequence: int=sequence
++   for player in _players:
++    var info: Dictionary=_voice_info.get(player.get_instance_id(),{})
++    if int(info.get("priority",0))!=1 or str(info.get("bank","")) not in ["basic_move","q2_move","e2_move","blink_move"]:continue
++    var started_sequence: int=int(info.get("sequence",sequence))
++    if started_sequence<oldest_sequence:
++     selected=player;oldest_sequence=started_sequence
++   if selected!=null:
++    preempted_bank=str(_voice_info[selected.get_instance_id()].bank)
++    selected.stop()
+   if selected==null:reason="voice_limit"
+   else:
+    var bank: Array=_streams[bank_key]
+    var variant: int=int(_variants.get(bank_key,0))%bank.size()
+    selected.stream=bank[variant];selected.play()
++   _voice_info[selected.get_instance_id()]={"bank":bank_key,"priority":int(request.get("priority",0)),"sequence":sequence}
+    _variants[bank_key]=variant+1;_last_usec[bank_key]=now
+- history.append({"scope":_scope,"sequence":sequence,"cast_id":request.cast_id,"identity_kind":request.identity_kind,"claim":claim,"cue":cue,"bank":bank_key,"played":reason.is_empty(),"reason":reason,"real_time":event.get("real_time"),"hero_time":event.get("hero_time"),"wall_usec":now})
++ history.append({"scope":_scope,"sequence":sequence,"cast_id":request.cast_id,"identity_kind":request.identity_kind,"claim":claim,"cue":cue,"bank":bank_key,"played":reason.is_empty(),"reason":reason,"preempted_bank":preempted_bank,"real_time":event.get("real_time"),"hero_time":event.get("hero_time"),"wall_usec":now})
+  if history.size()>128:history.pop_front()
+ 
+ func snapshot() -> Dictionary:
